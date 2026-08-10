@@ -1,0 +1,10 @@
+<svg width="60" height="112" viewBox="0 0 60 112" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <mask id="easyCardNotch">
+      <rect width="60" height="112" fill="black"/>
+      <rect y="52" width="60" height="60" fill="white"/>
+      <path d="M48 0C54.6274 0 60 5.37258 60 12V64C60 70.6274 54.6274 76 48 76H40C31.1634 76 24 83.1634 24 92V100C24 106.627 18.6274 112 12 112H0V0H48Z" fill="black"/>
+    </mask>
+  </defs>
+  <rect width="60" height="112" fill="white" mask="url(#easyCardNotch)"/>
+</svg>

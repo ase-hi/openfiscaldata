@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title>열린재정</title>
+
+
+<link type="text/css" rel="stylesheet" href="../css/realgrid/realgrid-white.css">
+<link type="text/css" rel="stylesheet" href="../css/realgrid/realgrid-style.css">
+
+
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<script src="../js/jquery-4.0.0.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
+<script src="../js/pub-ui.js"></script>
+
+</head>
+<body class="body-main">
+
+    <dl class="skipLink">
+        <dt>바로가기 메뉴</dt>	
+        <dd><a href="#gnbMenu">주메뉴 바로가기</a></dd>
+        <dd><a href="#content">본문 바로가기</a></dd>
+    </dl>
+    <div class="wrap">
+        <script>
+            // 헤더
+            $.ajax({url:"common/header.txt", dataType:"text", success:function(data){
+                document.querySelector('.wrap').insertAdjacentHTML('afterbegin', data);
+            }});
+        </script>
+                
+        <section class="main-hero is-ai">
+            <div class="main-hero-inner">
+                <div class="main-hero-content">
+                    <h2 class="tit-visual">국민 모두의 재정<br>투명한 재정! 투명한 대한민국!</h2>
+                    <form class="main-hero-search" role="search">
+                        <div class="search-mode-toggle" aria-label="검색 방식 선택">
+                            <button type="button" class="is-active" data-search-mode="ai" aria-pressed="true">AI 검색</button>
+                            <button type="button" data-search-mode="normal" aria-pressed="false">일반 검색</button>
+                        </div>
+                        <label for="mainHeroSearchInput" class="sr-only">검색어</label>
+                        <input type="search" id="mainHeroSearchInput" placeholder="대한민국 재정, 무엇이든 물어보세요">
+                        <button type="submit" class="btn-hero-search" aria-label="검색"></button>
+                    </form>
+                </div>
+                <div class="main-hero-visual">
+                    <img class="main-hero-building" src="../images/main/img-main-building.png" alt="">
+                    <img class="main-hero-bee bee-ai" src="../images/main/img-main-bee-ai.png" alt="">
+                    <img class="main-hero-bee bee-normal" src="../images/main/img-main-bee-search.png" alt="">
+                </div>
+            </div>
+        </section>
+        <div class="container" id="content">
+            <div class="main-contents">
+                <section class="main-service-group">
+                    <h2>쉽게 보는 재정</h2>
+                    <div class="main-service-grid">
+                        <a href="javascript:void(0);" class="main-service-card color-blue">
+                            <img src="../images/main/ico-finance-understanding.png" alt="">
+                            <span><strong>재정의 이해</strong><em>재정의 운영, 제도에 대한<br>쉬운 해설</em></span>
+                        </a>
+                        <a href="javascript:void(0);" class="main-service-card color-cyan">
+                            <img src="../images/main/ico-youth-finance.png" alt="">
+                            <span><strong>청소년 재정교실</strong><em>청소년을 위한 재정교실</em></span>
+                        </a>
+                        <a href="javascript:void(0);" class="main-service-card color-indigo">
+                            <img src="../images/main/ico-finance-museum.png" alt="">
+                            <span><strong>온라인 재정박물관</strong><em>재정의 과거 역사와 현재,<br>미래</em></span>
+                        </a>
+                        <a href="javascript:void(0);" class="main-service-card color-navy">
+                            <img src="../images/main/ico-national-finance.png" alt="">
+                            <span><strong>한눈에 보는 국가재정</strong><em>중앙·지방·지방교육재정을<br>한눈에</em></span>
+                        </a>
+                    </div>
+                </section>
+
+                <section class="main-service-group">
+                    <h2>깊이 보는 데이터</h2>
+                    <div class="main-service-grid">
+                        <a href="javascript:void(0);" class="main-service-card">
+                            <img src="../images/main/ico-finance-dataset.png" alt="">
+                            <span><strong>재정 데이터셋</strong><em>중앙·지방·지방교육재정<br>상세 통계</em></span>
+                        </a>
+                        <a href="javascript:void(0);" class="main-service-card">
+                            <img src="../images/main/ico-finance-library.png" alt="">
+                            <span><strong>재정자료실</strong><em>재정자료를 한곳에 모으고,<br>AI가 요약</em></span>
+                        </a>
+                        <a href="javascript:void(0);" class="main-service-card">
+                            <img src="../images/main/ico-statistics-ai.png" alt="">
+                            <span><strong>통계분석AI</strong><em>시각화 그래프로 한눈에 확인</em></span>
+                        </a>
+                        <a href="javascript:void(0);" class="main-service-card">
+                            <img src="../images/main/ico-finance-law-ai.png" alt="">
+                            <span><strong>재정법령AI</strong><em>법령 관련 질의에 대한 특화 AI</em></span>
+                        </a>
+                    </div>
+                </section>
+
+                <div class="main-budget-summary">
+                    <div class="data">
+                        <strong class="title">올해의 나라살림·2026 본예산</strong>
+                        <span class="divider" aria-hidden="true"></span>
+                        <dl><dt>총수입</dt><dd>675.3조</dd></dl>
+                        <dl><dt>총지출</dt><dd>725.8조</dd></dl>
+                        <dl><dt>재정수지</dt><dd>-25.3조</dd></dl>
+                        <dl><dt>국가채무(D1)</dt><dd>1,415조</dd></dl>
+                        <button type="button" class="info" aria-label="예산 정보 안내"></button>
+                    </div>
+                    <a href="javascript:void(0);" class="link">한눈에 보는 중앙재정 바로가기</a>
+                </div>
+
+                <div class="main-board-grid">
+                    <section class="main-board-card type1">
+                        <div class="main-board-head">
+                            <h2>재정 칼럼</h2>
+                        </div>
+                        <a href="javascript:void(0);" class="main-board-content">
+                            <span class="main-board-text">
+                                <strong>[2026년 8월호] 국가채무 결산감사와 K-방산</strong>
+                                <span>2026년 우리나라 정부 예산은 728조 원으로 편성되어 나라 살림살이가 이루어지고 있습니다. 그중 국방 분야 예산은 65조 원으로 편성되어 정부의 재정이 국민의 안전과 국방력 강화에 활용되고 있습니다.…</span>
+                            </span>
+                            <img src="../images/main/thumb-finance-column.png" alt="">
+                        </a>
+                    </section>
+                    <section class="main-board-card type2">
+                        <div class="main-board-head">
+                            <h2>공지사항・이벤트</h2>
+                            <a href="javascript:void(0);">더보기</a>
+                        </div>
+                        <a href="javascript:void(0);" class="main-board-content">
+                            <span class="main-board-text">
+                                <strong>[알기쉬운 재정용어사전] 개편기념, 초성 퀴즈 풀고 재정잘알 되기 프로젝트!</strong>
+                                <span class="main-board-body">
+                                    <span>재정 및 경제 분야에서 MDB는 다자개발은행을 뜻합니다.MDB는 회원국들이 낸 출자금과 이를 바탕으로 국제 금융시장에서 채권을 발행해 조달한 차입금을 바탕으로 운영됩니다. 공신력 높은 선진국들이 주주로 참여하고 있어 아주 낮은 금리로 자금을 조달한 뒤, 이를 개도국에 저리로 융자해 주는 구조입니다.</span>
+                                    <time datetime="2026-12-16">2026년 12월 16일</time>
+                                </span>
+                            </span>
+                        </a>
+                    </section>
+                </div>
+            </div>
+            <script>
+                // 플로팅메뉴
+                $.ajax({url:"common/floating.txt", dataType:"text", success:function(data){
+                    document.querySelector('.main-contents').insertAdjacentHTML('beforeend', data);
+                    $('.floating-quick-list li:nth-child(1)').remove();
+                    $('.floating-quick-list li:nth-child(1)').remove();
+                }});
+            </script>
+        </div>
+        <!-- // container -->
+
+        <section class="main-banner-links" aria-label="관련 사이트">
+            <div class="main-banner-inner">
+                <button type="button" class="banner-btn prev" aria-label="이전"></button>
+                <div class="swiper main-banner-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><a href="javascript:void(0);"><img src="../images/main/banner/logo-gov24.png" alt="정부24"></a></div>
+                        <div class="swiper-slide"><a href="javascript:void(0);"><img src="../images/main/banner/logo-participatory-budget.png" alt="국민참여예산"></a></div>
+                        <div class="swiper-slide"><a href="javascript:void(0);"><img src="../images/main/banner/logo-enara.png" alt="e나라재산 국유재산포털"></a></div>
+                        <div class="swiper-slide"><a href="javascript:void(0);"><img src="../images/main/banner/logo-efinance-learn.png" alt="e재정배움"></a></div>
+                        <div class="swiper-slide"><a href="javascript:void(0);"><img src="../images/main/banner/logo-ntr-popcon.png" alt="NTR POPCON 국세외수입포털"></a></div>
+                        <div class="swiper-slide"><a href="javascript:void(0);"><img src="../images/main/banner/logo-kipf.png" alt="KIPF 한국조세재정연구원"></a></div>
+                        <div class="swiper-slide"><a href="javascript:void(0);"><img src="../images/main/banner/logo-gov24.png" alt="정부24"></a></div>
+                        <div class="swiper-slide"><a href="javascript:void(0);"><img src="../images/main/banner/logo-participatory-budget.png" alt="국민참여예산"></a></div>
+                        <div class="swiper-slide"><a href="javascript:void(0);"><img src="../images/main/banner/logo-enara.png" alt="e나라재산 국유재산포털"></a></div>
+                        <div class="swiper-slide"><a href="javascript:void(0);"><img src="../images/main/banner/logo-efinance-learn.png" alt="e재정배움"></a></div>
+                        <div class="swiper-slide"><a href="javascript:void(0);"><img src="../images/main/banner/logo-ntr-popcon.png" alt="NTR POPCON 국세외수입포털"></a></div>
+                        <div class="swiper-slide"><a href="javascript:void(0);"><img src="../images/main/banner/logo-kipf.png" alt="KIPF 한국조세재정연구원"></a></div>
+                    </div>
+                </div>
+                <div class="banner-controls">
+                    <button type="button" class="banner-btn pause" aria-label="자동재생 일시정지" aria-pressed="false"></button>
+                    <button type="button" class="banner-btn next" aria-label="다음"></button>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            // 푸터
+            $.ajax({url:"common/footer.txt", dataType:"text", success:function(data){
+                document.querySelector('.wrap').insertAdjacentHTML('beforeend', data);
+            }});
+        </script>
+    </div>
+    <!-- // wrap -->
+
+
+
+
+
+
+
+
+
+    <script>
+
+        $('.search-mode-toggle button').on('click', function(){
+            var mode = $(this).data('search-mode');
+            $(this).addClass('is-active').attr('aria-pressed', 'true')
+                .siblings().removeClass('is-active').attr('aria-pressed', 'false');
+            $('.main-hero').toggleClass('is-ai', mode === 'ai');
+        });
+
+        var mainBannerSwiper = new Swiper('.main-banner-swiper', {
+            slidesPerView: 2,
+            spaceBetween: 0,
+            loop: true,
+            loopAdditionalSlides: 12,
+            watchOverflow: false,
+            speed: 600,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: false
+            },
+            breakpoints: {
+                769: {slidesPerView: 4},
+                1025: {slidesPerView: 6}
+            }
+        });
+
+        mainBannerSwiper.autoplay.start();
+
+        $('.main-banner-links .banner-btn.prev').on('click', function(){ mainBannerSwiper.slidePrev(); });
+        $('.main-banner-links .banner-btn.next').on('click', function(){ mainBannerSwiper.slideNext(); });
+
+        $('.main-banner-links').on('click', '.banner-btn.pause', function(e){
+            e.preventDefault();
+            var $btn = $(this);
+            if ($btn.hasClass('is-paused')) {
+                mainBannerSwiper.autoplay.start();
+                $btn.removeClass('is-paused').attr({'aria-label':'자동재생 일시정지','aria-pressed':'false'});
+            } else {
+                mainBannerSwiper.autoplay.stop();
+                $btn.addClass('is-paused').attr({'aria-label':'자동재생 시작','aria-pressed':'true'});
+            }
+        });
+    </script>
+</body>
+</html>

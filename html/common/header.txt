@@ -1,0 +1,279 @@
+  <!-- header -->
+  <header class="header">
+    <div class="masthead">
+      <div class="wrapper">
+        <div class="masthead-notice">
+          <i class="ico-flag" aria-hidden="true"></i>
+          <p>이 누리집은 대한민국 공식 전자정부 누리집입니다.</p>
+        </div>
+        <div class="masthead-util mo-hide">
+          <button type="button" class="masthead-btn">SNS 로그인</button>
+          <span class="bar" aria-hidden="true"></span>
+          <button type="button" class="masthead-btn">재정 캘린더</button>
+          <span class="bar" aria-hidden="true"></span>
+          <div class="lang-switch">
+            <button type="button" class="on">KOR</button>
+            <button type="button">ENG</button>
+          </div>
+          <span class="bar" aria-hidden="true"></span>
+          <div class="font-setting">
+            <button type="button" class="font-setting-btn" aria-expanded="false" aria-haspopup="true" aria-controls="fontSettingMenu">
+              <i class="ico-font-view" aria-hidden="true"></i>
+              <span>화면크기</span>
+              <i class="ico-font-arrow" aria-hidden="true"></i>
+            </button>
+            <div class="font-setting-dropdown" id="fontSettingMenu" hidden>
+              <div class="font-setting-box">
+                <ul class="font-setting-list">
+                  <li><button type="button" data-fs="sm"><i class="ico-fs ico-fs-sm" aria-hidden="true"></i><span>작게</span></button></li>
+                  <li><button type="button" data-fs="md" class="is-active"><i class="ico-fs ico-fs-md" aria-hidden="true"></i><span>보통</span></button></li>
+                  <li><button type="button" data-fs="lg"><i class="ico-fs ico-fs-lg" aria-hidden="true"></i><span>조금 크게</span></button></li>
+                  <li><button type="button" data-fs="xl"><i class="ico-fs ico-fs-xl" aria-hidden="true"></i><span>크게</span></button></li>
+                  <li><button type="button" data-fs="xxl"><i class="ico-fs ico-fs-xxl" aria-hidden="true"></i><span>가장 크게</span></button></li>
+                </ul>
+                <div class="font-setting-reset">
+                  <button type="button" data-fs="md" data-reset="true"><i class="ico-font-reset" aria-hidden="true"></i><span>초기화</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span class="bar" aria-hidden="true"></span>
+          <button type="button" class="masthead-btn"><i class="ico-menu-all" aria-hidden="true"></i>전체 메뉴</button>          
+        </div>
+      </div>
+    </div>
+
+    <div class="header-menu">
+      <div class="wrapper">
+        <h1 class="logo">
+          <a href="../index.html">
+            <img src="../images/common/logo.svg" alt="모두의 재정">
+          </a>
+        </h1>
+        <nav class="gnb-menu-wrap" id="gnbMenu">
+          <ul class="gnb-menu">
+            <li>
+              <a href="javascript:void(0);">알기쉬운 재정</a>
+              <div class="depth-wrap">
+                <div class="gnb-mega">
+                  <div class="gnb-mega-title">알기쉬운 재정</div>
+                  <div class="gnb-mega-cols">
+                    <div class="gnb-mega-col">
+                      <div class="gnb-mega-2d">재정의 이해</div>
+                      <ul>
+                        <li><a href="javascript:void(0);">재정개요</a></li>
+                        <li><a href="javascript:void(0);">예산·결산·재정 절차</a></li>
+                        <li><a href="javascript:void(0);">재정수지와 국가 채무</a></li>
+                        <li><a href="javascript:void(0);">재정 제도</a></li>
+                      </ul>
+                    </div>
+                    <div class="gnb-mega-col">
+                      <div class="gnb-mega-2d">멀티미디어 재정교실</div>
+                      <ul>
+                        <li><a href="javascript:void(0);">재정개요</a></li>
+                        <li><a href="javascript:void(0);">예산·결산·재정 절차</a></li>
+                        <li><a href="javascript:void(0);">재정수지와 국가 채무</a></li>
+                        <li><a href="javascript:void(0);">재정 제도</a></li>
+                        <li><a href="javascript:void(0);">기타</a></li>
+                      </ul>
+                    </div>
+                    <div class="gnb-mega-col">
+                      <div class="gnb-mega-2d">청소년 재정교실</div>
+                      <ul>
+                        <li><a href="javascript:void(0);">재정개요</a></li>
+                        <li><a href="javascript:void(0);">국가재정과 재정운용절차</a></li>
+                        <li><a href="javascript:void(0);">재정수지와 국가채무</a></li>
+                        <li><a href="javascript:void(0);">주요재정제도</a></li>
+                        <li><a href="javascript:void(0);">경제교육자료</a></li>
+                      </ul>
+                    </div>
+                    <div class="gnb-mega-col">
+                      <div class="gnb-mega-2d">재정 이모저모</div>
+                      <ul>
+                        <li><a href="javascript:void(0);">재정칼럼</a></li>
+                        <li><a href="javascript:void(0);">이슈별 재정정보</a></li>
+                        <li><a href="javascript:void(0);">내 월급은 어떻게 쓰일까?</a></li>
+                        <li><a href="javascript:void(0);">빅데이터 재정뉴스</a></li>
+                      </ul>
+                    </div>
+                    <div class="gnb-mega-col gnb-mega-ext">
+                      <div class="outer-link-wrap">
+                        <a href="javascript:void(0);" target="_blank" rel="noopener noreferrer" class="gnb-mega-btn"><span>온라인 재정박물관</span><svg class="ico-gnb-outer" width="16" height="16" aria-hidden="true" focusable="false"><use href="../images/common/simbol.svg#ico-outer-link"></use></svg></a>
+                        <a href="javascript:void(0);" target="_blank" rel="noopener noreferrer" class="gnb-mega-btn"><span>e-재정배움 바로가기</span><svg class="ico-gnb-outer" width="16" height="16" aria-hidden="true" focusable="false"><use href="../images/common/simbol.svg#ico-outer-link"></use></svg></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a href="javascript:void(0);">알기쉬운 재정통계</a>
+              <div class="depth-wrap">
+                <div class="gnb-mega">
+                  <div class="gnb-mega-title">알기쉬운 재정통계</div>
+                  <div class="gnb-mega-cols">
+                    <div class="gnb-mega-col">
+                      <a href="javascript:void(0);" class="gnb-mega-2d">한 눈에 보는 국가재정</a>
+                    </div>
+                    <div class="gnb-mega-col">
+                      <div class="gnb-mega-2d">중앙재정</div>
+                      <ul>
+                        <li><a href="javascript:void(0);">한눈에 보는 중앙재정</a></li>
+                        <li><a href="javascript:void(0);">재정사업</a></li>
+                        <li><a href="javascript:void(0);">재정수입</a></li>
+                        <li><a href="javascript:void(0);">재정지출</a></li>
+                        <li><a href="javascript:void(0);">재정수치</a></li>
+                        <li><a href="javascript:void(0);">국가채무</a></li>
+                        <li><a href="javascript:void(0);">성과관리</a></li>
+                      </ul>
+                    </div>
+                    <div class="gnb-mega-col">
+                      <div class="gnb-mega-2d">지방재정</div>
+                      <ul>
+                        <li><a href="javascript:void(0);">한눈에 보는 지방재정</a></li>
+                        <li><a href="javascript:void(0);">분야별(사업별) 지출</a></li>
+                        <li><a href="javascript:void(0);">세입·세출 예산</a></li>
+                        <li><a href="javascript:void(0);">세입·세출 결산</a></li>
+                        <li><a href="javascript:void(0);">중기지방재정계획</a></li>
+                      </ul>
+                    </div>
+                    <div class="gnb-mega-col">
+                      <div class="gnb-mega-2d">지방교육재정</div>
+                      <ul>
+                        <li><a href="javascript:void(0);">한눈에 보는 지방교육재정</a></li>
+                        <li><a href="javascript:void(0);">분야별(사업별) 지출</a></li>
+                        <li><a href="javascript:void(0);">세입·세출 예산</a></li>
+                        <li><a href="javascript:void(0);">세입·세출 결산</a></li>
+                        <li><a href="javascript:void(0);">중기지방교육재정계획</a></li>
+                      </ul>
+                    </div>
+                    <div class="gnb-mega-col">
+                      <div class="gnb-mega-2d">기타</div>
+                      <ul>
+                        <li><a href="javascript:void(0);">경제통계지표</a></li>
+                        <li><a href="javascript:void(0);">국제통계지표</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a href="javascript:void(0);">재정연구실</a>
+              <div class="depth-wrap">
+                <div class="gnb-mega">
+                  <div class="gnb-mega-title">재정연구실</div>
+                  <div class="gnb-mega-cols">
+                    <div class="gnb-mega-col">
+                      <div class="gnb-mega-2d">재정데이터셋</div>
+                      <ul>
+                        <li><a href="javascript:void(0);">재정통계분석AI</a></li>
+                        <li><a href="javascript:void(0);">통계제공현황</a></li>
+                        <li><a href="javascript:void(0);">재정상세통계</a></li>
+                        <li><a href="javascript:void(0);">시계열통계분석</a></li>
+                        <li><a href="javascript:void(0);">재정자료실</a></li>
+                      </ul>
+                    </div>
+                    <div class="gnb-mega-col">
+                      <div class="gnb-mega-2d">재정자료분석AI</div>
+                      <ul>
+                        <li><a href="javascript:void(0);">재정자료</a></li>
+                        <li><a href="javascript:void(0);">재정법령</a></li>
+                      </ul>
+                    </div>
+                    <div class="gnb-mega-col">
+                      <div class="gnb-mega-2d">재정법령AI</div>
+                      <ul>
+                        <li><a href="javascript:void(0);">재정법령</a></li>
+                        <li><a href="javascript:void(0);">재정데이터 개방</a></li>
+                      </ul>
+                    </div>
+                    <div class="gnb-mega-col">
+                      <div class="gnb-mega-2d">OPEN API</div>
+                      <ul>
+                        <li><a href="javascript:void(0);">재정데이터 가공요청</a></li>
+                        <li><a href="javascript:void(0);">재정데이터 분석</a></li>
+                      </ul>
+                    </div>
+                    <div class="gnb-mega-col">
+                      <div class="gnb-mega-2d">재정분석교육서비스이용</div>
+                      <ul>
+                        <li><a href="javascript:void(0);">데이터분석서비스(KODAS) 이용</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a href="javascript:void(0);">함께하는 재정</a>
+              <div class="depth-wrap">
+                <div class="gnb-mega">
+                  <div class="gnb-mega-title">함께하는 재정</div>
+                  <div class="gnb-mega-cols">
+                    <div class="gnb-mega-col">
+                      <div class="gnb-mega-2d">참여예산제도</div>
+                      <ul>
+                        <li><a href="javascript:void(0);">참여예산제도 소개</a></li>
+                      </ul>
+                    </div>
+                    <div class="gnb-mega-col">
+                      <div class="gnb-mega-2d">정부혜택찾기</div>
+                      <ul>
+                        <li><a href="javascript:void(0);">정부지원사업은?</a></li>
+                        <li><a href="javascript:void(0);">정부지원사업 범위 및 관련기관</a></li>
+                        <li><a href="javascript:void(0);">지원사업 찾기</a></li>
+                      </ul>
+                    </div>
+                    <div class="gnb-mega-col">
+                      <div class="gnb-mega-2d">정부발주사업</div>
+                      <ul>
+                        <li><a href="javascript:void(0);">정부발주사업</a></li>
+                        <li><a href="javascript:void(0);">나라장터 조달정보</a></li>
+                      </ul>
+                    </div>
+                    <div class="gnb-mega-col">
+                      <div class="gnb-mega-2d">개선요청·설문조사</div>
+                      <ul>
+                        <li><a href="javascript:void(0);">모두의재정 개선요청</a></li>
+                        <li><a href="javascript:void(0);">데이터 공개요청</a></li>
+                        <li><a href="javascript:void(0);">설문조사</a></li>
+                        <li><a href="javascript:void(0);">재정원정대</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a href="javascript:void(0);">알림·안내</a>
+              <div class="depth-wrap">
+                <div class="gnb-mega">
+                  <div class="gnb-mega-title">알림·안내</div>
+                  <div class="gnb-mega-cols">
+                    <div class="gnb-mega-col">
+                      <a href="javascript:void(0);" class="gnb-mega-2d">모두의재정 소개</a>
+                    </div>
+                    <div class="gnb-mega-col">
+                      <a href="javascript:void(0);" class="gnb-mega-2d">공지사항</a>
+                    </div>
+                    <div class="gnb-mega-col">
+                      <a href="javascript:void(0);" class="gnb-mega-2d">자주 묻는 질문</a>
+                    </div>
+                    <div class="gnb-mega-col">
+                      <a href="javascript:void(0);" class="gnb-mega-2d">Q&amp;A</a>
+                    </div>
+                    <div class="gnb-mega-col">
+                      <a href="javascript:void(0);" class="gnb-mega-2d">재정관련사이트</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </nav>
+        <button type="button" class="btn-m-menu"><i class="ico-menu-mo" aria-hidden="true"></i>전체메뉴</button>
+      </div>
+    </div>
+  </header>
+  <!-- // header -->

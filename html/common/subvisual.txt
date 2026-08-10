@@ -1,0 +1,20 @@
+<div class="sub-visual visual-notice" id="visual-notice">
+    <div class="wrapper">
+        <div class="sub-visual-text">
+            <p class="tit">알림 · 안내</p>
+            <p class="desc">한눈에 보는 우리나라 재정 현황과 통계 정보</p>
+        </div>
+    </div>
+</div>
+
+<div class="sub-visual visual-" id="">
+    <div class="wrapper">
+        <div class="sub-visual-text">
+            <p class="tit">-</p>
+            <p class="desc">-</p>
+        </div>
+        <div class="sub-visual-img" aria-hidden="true">
+            <img src="../images/common/sub-visual/visua-obj.png" alt="">
+        </div>
+    </div>
+</div>

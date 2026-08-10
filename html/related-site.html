@@ -1,0 +1,236 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title>열린재정</title>
+
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<script src="../js/jquery-4.0.0.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/pub-ui.js"></script>
+
+</head>
+<body>
+
+    <dl class="skipLink">
+        <dt>바로가기 메뉴</dt>	
+        <dd><a href="#gnbMenu">주메뉴 바로가기</a></dd>
+        <dd><a href="#content">본문 바로가기</a></dd>
+    </dl>
+    <div class="wrap">
+        <script id="header-template">
+            // 헤더
+            $.ajax({url:"common/header.txt", dataType:"text", success:function(data){
+                $('#header-template').replaceWith(data);
+            }});
+        </script>
+
+        <div class="container" id="content">
+            <script id="subvisual-template">
+                $.ajax({url:"common/subvisual.txt", dataType:"text", success:function(data){
+                    $('#subvisual-template').replaceWith($(data).filter('#visual-notice'));
+                }});
+            </script>
+
+            <script id="breadcrumb-template">
+                // breadcrumb메뉴
+                $.ajax({url:"common/breadcrumb.txt", dataType:"text", success:function(data){
+                    $('#breadcrumb-template').replaceWith(data);
+                    breadcrumbMenu();
+                }});
+            </script>
+            
+            <div class="contents">
+                <div class="title-main-wrap">
+                    <h2 class="title-main">재정관련 사이트</h2>
+                </div>
+
+               <!-- 탭 -->
+                <div class="tab-main">
+                    <ul>
+                        <li class="on"><a href="javascript:void(0);" data-tab-id="tab-domestic">국내기관</a></li>
+                        <li><a href="javascript:void(0);" data-tab-id="tab-international">국제기관</a></li>
+                        <li><a href="javascript:void(0);" data-tab-id="tab-country">국가별 사이트</a></li>
+                    </ul>
+                </div>
+
+
+                <!-- 국내기관 -->
+                <div class="tab-content" id="tab-domestic">
+                    <ul class="related-site-list">
+                        <li><a href="http://eiec.kdi.re.kr" target="_blank"><span class="logo"><img src="../images/logos/logo-kdi-eiec.png" alt="KDI 경제정보센터"></span><span class="name">KDI 경제정보센터</span></a></li>
+                        <li><a href="http://www.alio.go.kr" target="_blank"><span class="logo"><img src="../images/logos/logo-alio.png" alt="공공기관 알리오"></span><span class="name">공공기관 알리오</span></a></li>
+                        <li><a href="http://gafsc.kipf.re.kr" target="_blank"><span class="logo"><img src="../images/logos/logo-gafsc.png" alt="국가회계재정통계센터"></span><span class="name">국가회계재정통계센터</span></a></li>
+                        <li><a href="http://www.nabo.go.kr" target="_blank"><span class="logo"><img src="../images/logos/logo-nabo.png" alt="국회예산정책처"></span><span class="name">국회예산정책처</span></a></li>
+                        <li><a href="http://ifi.moef.go.kr" target="_blank"><span class="logo"><img src="../images/logos/logo-moef-ifi.png" alt="기획재정부 국제금융기구"></span><span class="name">기획재정부 국제금융기구</span></a></li>
+                        <li><a href="http://ktb.moef.go.kr" target="_blank"><span class="logo"><img src="../images/logos/logo-moef-ktb.png" alt="기획재정부 국채시장"></span><span class="name">기획재정부 국채시장</span></a></li>
+                        <li><a href="http://finance.na.go.kr" target="_blank"><span class="logo"><img src="../images/logos/logo-assembly-finance.png" alt="기획재정위원회"></span><span class="name">기획재정위원회</span></a></li>
+                        <li><a href="http://www.kiep.go.kr" target="_blank"><span class="logo"><img src="../images/logos/logo-kiep.png" alt="대외경제정책연구원"></span><span class="name">대외경제정책연구원</span></a></li>
+                        <li><a href="https://infrainfo.kdi.re.kr" target="_blank"><span class="logo"><img src="../images/logos/logo-pimac-infrainfo.png" alt="민간투자사업 정보공개시스템"></span><span class="name">민간투자사업 정보공개시스템</span></a></li>
+                        <li><a href="http://www.bokgwon.go.kr" target="_blank"><span class="logo"><img src="../images/logos/logo-lottery-commission.png" alt="복권위원회"></span><span class="name">복권위원회</span></a></li>
+                        <li><a href="http://www.investpool.go.kr" target="_blank"><span class="logo"><img src="../images/logos/logo-investpool.png" alt="연기금투자풀운영회"></span><span class="name">연기금투자풀운영회</span></a></li>
+                        <li><a href="http://likms.assembly.go.kr/bill" target="_blank"><span class="logo"><img src="../images/logos/logo-billinfo.png" alt="의안정보시스템"></span><span class="name">의안정보시스템</span></a></li>
+                        <li><a href="http://www.eduinfo.go.kr" target="_blank"><span class="logo"><img src="../images/logos/logo-eduinfo.png" alt="지방교육재정 알리미"></span><span class="name">지방교육재정 알리미</span></a></li>
+                        <li><a href="http://lofin.mois.go.kr" target="_blank"><span class="logo"><img src="../images/logos/logo-lofin365.png" alt="지방재정365"></span><span class="name">지방재정365</span></a></li>
+                        <li><a href="http://www.peoplepower21.org/Tax" target="_blank"><span class="logo"><img src="../images/logos/logo-peoplepower-tax.png" alt="참여연대 조세재정개혁센터"></span><span class="name">참여연대 조세재정개혁센터</span></a></li>
+                        <li><a href="http://www.cleaneye.go.kr" target="_blank"><span class="logo"><img src="../images/logos/logo-cleaneye.png" alt="클린아이"></span><span class="name">클린아이</span></a></li>
+                        <li><a href="http://ecos.bok.or.kr" target="_blank"><span class="logo"><img src="../images/logos/logo-bok-ecos.png" alt="한국은행 경제통계시스템"></span><span class="name">한국은행 경제통계시스템</span></a></li>
+                        <li><a href="http://www.kapf.or.kr" target="_blank"><span class="logo"><img src="../images/logos/logo-kpea.png" alt="한국재정학회"></span><span class="name">한국재정학회</span></a></li>
+                        <li><a href="http://www.kipf.re.kr" target="_blank"><span class="logo"><img src="../images/logos/logo-kipf.png" alt="한국조세재정연구원"></span><span class="name">한국조세재정연구원</span></a></li>
+                        <li><a href="http://www.kilf.re.kr" target="_blank"><span class="logo"><img src="../images/logos/logo-kilf.png" alt="한국지방세연구원"></span><span class="name">한국지방세연구원</span></a></li>
+                        <li><a href="http://www.klota.or.kr" target="_blank"><span class="logo"><img src="../images/logos/logo-klota.png" alt="한국지방세학회"></span><span class="name">한국지방세학회</span></a></li>
+                        <li><a href="https://www.lofa.or.kr/index.do" target="_blank"><span class="logo"><img src="../images/logos/logo-lofa.png" alt="한국지방재정공제회"></span><span class="name">한국지방재정공제회</span></a></li>
+                        <li><a href="http://www.kalf.or.kr" target="_blank"><span class="logo"><img src="../images/logos/logo-kalf.png" alt="한국지방재정학회"></span><span class="name">한국지방재정학회</span></a></li>
+                    </ul>
+                </div>
+
+                <!-- 국제기관 -->
+                <div class="tab-content" id="tab-international" style="display: none;">
+                    <ul class="related-site-list">
+                        <li><a href="http://www.adb.org" target="_blank"><span class="logo"><img src="../images/logos/logo-adb.png" alt="ADB(아시아개발은행)"></span><span class="name">ADB(아시아개발은행)</span></a></li>
+                        <li><a href="http://www.bis.org" target="_blank"><span class="logo"><img src="../images/logos/logo-bis.png" alt="BIS(국제결제은행)"></span><span class="name">BIS(국제결제은행)</span></a></li>
+                        <li><a href="http://www.ecb.int" target="_blank"><span class="logo"><img src="../images/logos/logo-ecb.png" alt="ECB(유럽중앙은행)"></span><span class="name">ECB(유럽중앙은행)</span></a></li>
+                        <li><a href="http://www.un.org" target="_blank"><span class="logo"><img src="../images/logos/logo-ecosoc.png" alt="ECOSOC(국제연합경제사회이사회)"></span><span class="name">ECOSOC(국제연합경제사회이사회)</span></a></li>
+                        <li><a href="http://www.ifc.org" target="_blank"><span class="logo"><img src="../images/logos/logo-ifc.png" alt="IFC(국제금융공사)"></span><span class="name">IFC(국제금융공사)</span></a></li>
+                        <li><a href="http://www.imf.org" target="_blank"><span class="logo"><img src="../images/logos/logo-imf.png" alt="IMF(국제통화기금)"></span><span class="name">IMF(국제통화기금)</span></a></li>
+                        <li><a href="http://www.itdashboard.gov" target="_blank"><span class="logo"><img src="../images/logos/logo-itdashboard.png" alt="ITDashboard(미국)"></span><span class="name">ITDashboard(미국)</span></a></li>
+                        <li><a href="http://www.oecd.org" target="_blank"><span class="logo"><img src="../images/logos/logo-oecd.png" alt="OECD(경제개발협력기구)"></span><span class="name">OECD(경제개발협력기구)</span></a></li>
+                        <li><a href="https://openspending.org" target="_blank"><span class="logo"><img src="../images/logos/logo-openspending.png" alt="Open Spending"></span><span class="name">Open Spending</span></a></li>
+                        <li><a href="http://www.pbec.org" target="_blank"><span class="logo"><img src="../images/logos/logo-pbec.png" alt="PBEC(태평양경제협의회)"></span><span class="name">PBEC(태평양경제협의회)</span></a></li>
+                        <li><a href="http://usaspending.gov" target="_blank"><span class="logo"><img src="../images/logos/logo-usaspending.png" alt="USA Spending(미국)"></span><span class="name">USA Spending(미국)</span></a></li>
+                        <li><a href="http://www.worldbank.org" target="_blank"><span class="logo"><img src="../images/logos/logo-wb.png" alt="WB(세계은행)"></span><span class="name">WB(세계은행)</span></a></li>
+                        <li><a href="https://www.esm.europa.eu" target="_blank"><span class="logo"><img src="../images/logos/logo-esm.png" alt="유럽재정안정기금"></span><span class="name">유럽재정안정기금</span></a></li>
+                    </ul>
+                </div>
+
+
+                <!-- 국가별 사이트 -->
+                <div class="tab-content" id="tab-country" style="display: none;">
+                    <div class="tab-category" role="tablist" aria-label="국가별 지역 선택">
+                        <button type="button" role="tab" class="on" data-tab-id="tab-east-asia-pacific">동아시아 및 태평양</button>
+                        <button type="button" role="tab" data-tab-id="tab-europe-central-asia">유럽 및 중앙아시아</button>
+                        <button type="button" role="tab" data-tab-id="tab-americas">북미와 남미</button>
+                        <button type="button" role="tab" data-tab-id="tab-south-asia">남아시아</button>
+                        <button type="button" role="tab" data-tab-id="tab-middle-east-africa">중동 및 아프리카</button>
+                    </div>
+                    <!-- 동아시아 및 태평양 -->
+                    <div class="tab-content" id="tab-east-asia-pacific">
+                        <ul class="related-site-list">
+                            <li><a href="http://www.treasury.govt.nz" target="_blank"><span class="logo"><img src="../images/logos/logo-country-nz-treasury.png" alt="뉴질랜드 재무부"></span><span class="name">뉴질랜드 재무부</span></a></li>
+                            <li><a href="http://eng.dgbas.gov.tw" target="_blank"><span class="logo"><img src="../images/logos/logo-country-tw-dgbas.png" alt="대만 정부예산회계 시스템"></span><span class="name">대만 정부예산회계 시스템</span></a></li>
+                            <li><a href="http://budgettransparency.gov.tl" target="_blank"><span class="logo"><img src="../images/logos/logo-country-tl-budget.png" alt="동티모르 예산 투명성 포탈사이트"></span><span class="name">동티모르 예산 투명성 포탈사이트</span></a></li>
+                            <li><a href="http://www.mof.gov.vn" target="_blank"><span class="logo"><img src="../images/logos/logo-country-vn-mof.png" alt="베트남 재경부(재무예산관리정보시스템)"></span><span class="name">베트남 재경부(재무예산관리정보시스템)</span></a></li>
+                            <li><a href="http://www.mof.gov.sg" target="_blank"><span class="logo"><img src="../images/logos/logo-country-sg-mof.png" alt="싱가포르 재경부"></span><span class="name">싱가포르 재경부</span></a></li>
+                            <li><a href="http://www.singaporebudget.gov.sg" target="_blank"><span class="logo"><img src="../images/logos/logo-country-sg-budget.png" alt="싱가포르 정부예산시스템"></span><span class="name">싱가포르 정부예산시스템</span></a></li>
+                            <li><a href="http://www.mof.go.jp" target="_blank"><span class="logo"><img src="../images/logos/logo-country-jp-mof.png" alt="일본 재경부"></span><span class="name">일본 재경부</span></a></li>
+                            <li><a href="http://www.e-stat.go.jp" target="_blank"><span class="logo"><img src="../images/logos/logo-country-jp-estat.png" alt="일본 재정통계"></span><span class="name">일본 재정통계</span></a></li>
+                            <li><a href="http://www.mof.gov.cn" target="_blank"><span class="logo"><img src="../images/logos/logo-country-cn-mof.png" alt="중국 재경부"></span><span class="name">중국 재경부</span></a></li>
+                            <li><a href="http://www.gfmis.go.th" target="_blank"><span class="logo"><img src="../images/logos/logo-country-th-gfmis.png" alt="태국 재정행정경영정보시스템(GFMIS)"></span><span class="name">태국 재정행정경영정보시스템(GFMIS)</span></a></li>
+                            <li><a href="http://pfm.gov.ph" target="_blank"><span class="logo"><img src="../images/logos/logo-country-no.png" alt="필리핀 공공재정관리개혁시스템"></span><span class="name">필리핀 공공재정관리개혁시스템</span></a></li>
+                            <li><a href="http://www.dbm.gov.ph" target="_blank"><span class="logo"><img src="../images/logos/logo-country-ph-gifmis.png" alt="필리핀 통합재정관리정보시스템(GIFMIS)"></span><span class="name">필리핀 통합재정관리정보시스템(GIFMIS)</span></a></li>
+                            <li><a href="http://www.moef.go.kr" target="_blank"><span class="logo"><img src="../images/logos/logo-country-kr-moef.png" alt="한국 기획재정부"></span><span class="name">한국 기획재정부</span></a></li>
+                            <li><a href="http://www.openfiscaldata.go.kr" target="_blank"><span class="logo"><img src="../images/logos/logo-country-kr-openfiscal.png" alt="한국 통합재정정보공개시스템"></span><span class="name">한국 통합재정정보공개시스템</span></a></li>
+                            <li><a href="http://www.kipf.re.kr" target="_blank"><span class="logo"><img src="../images/logos/logo-country-kr-kipf.png" alt="한국 조세재정연구원(KIPF)"></span><span class="name">한국 조세재정연구원(KIPF)</span></a></li>
+                            <li><a href="http://www.finance.gov.au/publications/index.html" target="_blank"><span class="logo"><img src="../images/logos/logo-country-au-finance.png" alt="호주 재정 간행물 및 보고서"></span><span class="name">호주 재정 간행물 및 보고서</span></a></li>
+                            <li><a href="http://www.budget.gov.au" target="_blank"><span class="logo"><img src="../images/logos/logo-country-au-budget.png" alt="호주 중앙예산관리시스템"></span><span class="name">호주 중앙예산관리시스템</span></a></li>
+                        </ul>
+                    </div>
+                    <!-- 유럽 및 중앙아시아 -->
+                    <div class="tab-content" id="tab-europe-central-asia" style="display: none;">
+                        <ul class="related-site-list">
+                            <li><a href="https://data.overheid.nl" target="_blank"><span class="logo"><img src="../images/logos/logo-country-nl-opendata.png" alt="네덜란드 오픈데이터 포털"></span><span class="name">네덜란드 오픈데이터 포털</span></a></li>
+                            <li><a href="http://www.rijksoverheid.nl" target="_blank"><span class="logo"><img src="../images/logos/logo-country-nl-rijksoverheid.png" alt="네덜란드 재경부"></span><span class="name">네덜란드 재경부</span></a></li>
+                            <li><a href="http://www.rijksbegroting.nl" target="_blank"><span class="logo"><img src="../images/logos/logo-country-nl-finance.png" alt="네덜란드 재무부"></span><span class="name">네덜란드 재무부</span></a></li>
+                            <li><a href="http://www.statsbudsjettet.no" target="_blank"><span class="logo"><img src="../images/logos/logo-country-no-budget.png" alt="노르웨이 재경부 국가예산성과시스템"></span><span class="name">노르웨이 재경부 국가예산성과시스템</span></a></li>
+                            <li><a href="http://www.ungokonomi.no" target="_blank"><span class="logo"><img src="../images/logos/logo-country-no-fiscal.png" alt="노르웨이 재경부 재정정보공개포털"></span><span class="name">노르웨이 재경부 재정정보공개포털</span></a></li>
+                            <li><a href="http://www.dfo.no/no/Tjenester" target="_blank"><span class="logo"><img src="../images/logos/logo-country-no-dfo.png" alt="노르웨이 재정관리부서(DFØ)"></span><span class="name">노르웨이 재정관리부서(DFØ)</span></a></li>
+                            <li><a href="http://uk.fm.dk" target="_blank"><span class="logo"><img src="../images/logos/logo-country-no.png" alt="덴마크 재경부"></span><span class="name">덴마크 재경부</span></a></li>
+                            <li><a href="http://www.bundesfinanzministerium.de" target="_blank"><span class="logo"><img src="../images/logos/logo-country-de-mof.png" alt="독일 재경부"></span><span class="name">독일 재경부</span></a></li>
+                            <li><a href="http://datamarts.roskazna.ru" target="_blank"><span class="logo"><img src="../images/logos/logo-country-ru-datamart.png" alt="러시아 연방 연방재무부 데이터-마트 시스템"></span><span class="name">러시아 연방 연방재무부 데이터-마트 시스템</span></a></li>
+                            <li><a href="http://www.sweden.gov.se" target="_blank"><span class="logo"><img src="../images/logos/logo-country-se-mof.png" alt="스웨덴 재경부"></span><span class="name">스웨덴 재경부</span></a></li>
+                            <li><a href="http://www.minhap.gob.es" target="_blank"><span class="logo"><img src="../images/logos/logo-country-no.png" alt="스페인 재정행정부"></span><span class="name">스페인 재정행정부</span></a></li>
+                            <li><a href="http://www.mf.gov.si" target="_blank"><span class="logo"><img src="../images/logos/logo-country-si-mof.png" alt="슬로베니아 재경부"></span><span class="name">슬로베니아 재경부</span></a></li>
+                            <li><a href="http://www.irelandstat.gov.ie" target="_blank"><span class="logo"><img src="../images/logos/logo-country-ie-irelandstat.png" alt="아일랜드 정부성과측정시스템"></span><span class="name">아일랜드 정부성과측정시스템</span></a></li>
+                            <li><a href="https://www.rahandusministeerium.ee/et" target="_blank"><span class="logo"><img src="../images/logos/logo-country-no.png" alt="에스토니아 재경부"></span><span class="name">에스토니아 재경부</span></a></li>
+                            <li><a href="http://pub.stat.ee/px-web.2001/Dialog/statfile1.asp" target="_blank"><span class="logo"><img src="../images/logos/logo-country-no.png" alt="에스토니아 통계정보시스템"></span><span class="name">에스토니아 통계정보시스템</span></a></li>
+                            <li><a href="http://data.gov.uk/dataset/coins" target="_blank"><span class="logo"><img src="../images/logos/logo-country-uk-coins.png" alt="영국 결합된온라인정보시스템(COINS)"></span><span class="name">영국 결합된온라인정보시스템(COINS)</span></a></li>
+                            <li><a href="https://app.wheredoesmymoneygo.org" target="_blank"><span class="logo"><img src="../images/logos/logo-country-no.png" alt="영국 나의 돈은 어디로 흘러가고 있는가?"></span><span class="name">영국 나의 돈은 어디로 흘러가고 있는가?</span></a></li>
+                            <li><a href="http://openspending.org" target="_blank"><span class="logo"><img src="../images/logos/logo-country-uk-openspending.png" alt="영국 오픈 지출"></span><span class="name">영국 오픈 지출</span></a></li>
+                            <li><a href="http://data.gov.uk/dataset/oscar" target="_blank"><span class="logo"><img src="../images/logos/logo-country-uk-oscar.png" alt="영국 회계 보고 온라인시스템(OSCAR)"></span><span class="name">영국 회계 보고 온라인시스템(OSCAR)</span></a></li>
+                            <li><a href="https://www.usp.gv.at/Portal.Node/usp/public" target="_blank"><span class="logo"><img src="../images/logos/logo-country-at-usp.png" alt="오스트리아 비즈니스 서비스 포털"></span><span class="name">오스트리아 비즈니스 서비스 포털</span></a></li>
+                            <li><a href="https://finanzonline.bmf.gv.at/fon" target="_blank"><span class="logo"><img src="../images/logos/logo-country-at-finanzonline.png" alt="오스트리아 재경부"></span><span class="name">오스트리아 재경부</span></a></li>
+                            <li><a href="http://www.kahip.org" target="_blank"><span class="logo"><img src="../images/logos/logo-country-tr-kahip.png" alt="터키 공공 지출 모니터링 플랫폼"></span><span class="name">터키 공공 지출 모니터링 플랫폼</span></a></li>
+                            <li><a href="http://www.data.gouv.fr" target="_blank"><span class="logo"><img src="../images/logos/logo-country-fr-datagouv.png" alt="프랑스 열린정부데이터 포탈"></span><span class="name">프랑스 열린정부데이터 포탈</span></a></li>
+                            <li><a href="http://www.tresor.economie.gouv.fr" target="_blank"><span class="logo"><img src="../images/logos/logo-country-fr-tresor.png" alt="프랑스 재무부 일반 이사회"></span><span class="name">프랑스 재무부 일반 이사회</span></a></li>
+                            <li><a href="http://www.economie.gouv.fr" target="_blank"><span class="logo"><img src="../images/logos/logo-country-fr-economie.png" alt="프랑스 재정경제부"></span><span class="name">프랑스 재정경제부</span></a></li>
+                            <li><a href="http://www.suomi.fi/suomifi/english/index.html" target="_blank"><span class="logo"><img src="../images/logos/logo-country-fi-suomi.png" alt="핀란드 공공 행정의 원스톱 서비스"></span><span class="name">핀란드 공공 행정의 원스톱 서비스</span></a></li>
+                        </ul>
+                    </div>
+                    <!-- 북미와 남미 -->
+                    <div class="tab-content" id="tab-americas" style="display: none;">
+                        <ul class="related-site-list">
+                            <li><a href="https://www.transparenciapresupuestaria.gob.mx" target="_blank"><span class="logo"><img src="../images/logos/logo-country-no.png" alt="멕시코 예산 투명성 포털 (성과평가시스템)"></span><span class="name">멕시코 예산 투명성 포털 (성과평가시스템)</span></a></li>
+                            <li><a href="https://www.gob.mx/shcp" target="_blank"><span class="logo"><img src="../images/logos/logo-country-mx-shcp.png" alt="멕시코 재경/공공신용부"></span><span class="name">멕시코 재경/공공신용부</span></a></li>
+                            <li><a href="http://usaspending.gov" target="_blank"><span class="logo"><img src="../images/logos/logo-country-us-usaspending.png" alt="미국 USAspending.gov"></span><span class="name">미국 USAspending.gov</span></a></li>
+                            <li><a href="https://www.whitehouse.gov" target="_blank"><span class="logo"><img src="../images/logos/logo-country-us-opengov.png" alt="미국 열린정부"></span><span class="name">미국 열린정부</span></a></li>
+                            <li><a href="http://www.oncop.gob.ve/site/vistas/principal/sigecof.php" target="_blank"><span class="logo"><img src="../images/logos/logo-country-no.png" alt="베네수엘라 관리 및 공공재정 제어 통합시스템 (SIGECOF)"></span><span class="name">베네수엘라 관리 및 공공재정 제어 통합시스템 (SIGECOF)</span></a></li>
+                            <li><a href="http://www.cgu.gov.br" target="_blank"><span class="logo"><img src="../images/logos/logo-country-br-cgu.png" alt="브라질 공적 자금 현명하게 사용하기"></span><span class="name">브라질 공적 자금 현명하게 사용하기</span></a></li>
+                            <li><a href="http://www.acessoainformacao.gov.br/Sistema" target="_blank"><span class="logo"><img src="../images/logos/logo-country-no.png" alt="브라질 연방 예산 포탈"></span><span class="name">브라질 연방 예산 포탈</span></a></li>
+                            <li><a href="https://www.siop.planejamento.gov.br/modulo/login/index.html" target="_blank"><span class="logo"><img src="../images/logos/logo-country-br-siop.png" alt="브라질 예산 및 계획 시스템(SIOP)"></span><span class="name">브라질 예산 및 계획 시스템(SIOP)</span></a></li>
+                            <li><a href="http://www.portaldatransparencia.gov.br" target="_blank"><span class="logo"><img src="../images/logos/logo-country-br-transparency.png" alt="브라질 투명성 포털"></span><span class="name">브라질 투명성 포털</span></a></li>
+                            <li><a href="http://administracionfinanciera.mecon.gov.ar" target="_blank"><span class="logo"><img src="../images/logos/logo-country-no.png" alt="아르헨티나 통합재정정보시스템(SIDIF)"></span><span class="name">아르헨티나 통합재정정보시스템(SIDIF)</span></a></li>
+                            <li><a href="http://sitiodelciudadano.mecon.gov.ar/sici/home.html" target="_blank"><span class="logo"><img src="../images/logos/logo-country-no.png" alt="아르헨티나 공공재정경제부 국가예산공개"></span><span class="name">아르헨티나 공공재정경제부 국가예산공개</span></a></li>
+                            <li><a href="http://www.mecon.gov.ar" target="_blank"><span class="logo"><img src="../images/logos/logo-country-ar-mecon.png" alt="아르헨티나 공공재정경제부"></span><span class="name">아르헨티나 공공재정경제부</span></a></li>
+                            <li><a href="http://www.transparenciafiscal.gob.sv" target="_blank"><span class="logo"><img src="../images/logos/logo-country-sv-fiscal.png" alt="엘 살바도르 재경부 재정 투명성 포털"></span><span class="name">엘 살바도르 재경부 재정 투명성 포털</span></a></li>
+                            <li><a href="https://www.gub.uy/ministerio-economia-finanzas" target="_blank"><span class="logo"><img src="../images/logos/logo-country-uy-mef.png" alt="우루과이 재경부"></span><span class="name">우루과이 재경부</span></a></li>
+                            <li><a href="http://www.cgn.gub.uy" target="_blank"><span class="logo"><img src="../images/logos/logo-country-uy-cgn.png" alt="우루과이 회계부 예산집행시스템"></span><span class="name">우루과이 회계부 예산집행시스템</span></a></li>
+                            <li><a href="https://sigfe.dipres.gob.cl/590/w3-channel.html" target="_blank"><span class="logo"><img src="../images/logos/logo-country-cl-sigfe.png" alt="칠레 국가재정관리정보시스템(SIGFE)"></span><span class="name">칠레 국가재정관리정보시스템(SIGFE)</span></a></li>
+                            <li><a href="http://www.hacienda.cl" target="_blank"><span class="logo"><img src="../images/logos/logo-country-cl-hacienda.png" alt="칠레 재경부 (예산이사회)"></span><span class="name">칠레 재경부 (예산이사회)</span></a></li>
+                            <li><a href="http://www.pte.gov.co" target="_blank"><span class="logo"><img src="../images/logos/logo-country-co-pte.png" alt="콜롬비아 재정 투명성 포털"></span><span class="name">콜롬비아 재정 투명성 포털</span></a></li>
+                            <li><a href="http://www.hacienda.gov.py" target="_blank"><span class="logo"><img src="../images/logos/logo-country-py-hacienda.png" alt="파라과이 재경부"></span><span class="name">파라과이 재경부</span></a></li>
+                        </ul>
+                    </div>
+                    <!-- 남아시아 -->
+                    <div class="tab-content" id="tab-south-asia" style="display: none;">
+                        <ul class="related-site-list">
+                            <li><a href="http://www.cgaindia.org/elekha/elekhahome.asp" target="_blank"><span class="logo"><img src="../images/logos/logo-country-no.png" alt="인도 국립정보학센터 e-Lekha 솔루션"></span><span class="name">인도 국립정보학센터 e-Lekha 솔루션</span></a></li>
+                            <li><a href="https://pfms.nic.in/NewDefaultHome.aspx" target="_blank"><span class="logo"><img src="../images/logos/logo-country-no.png" alt="인도 중앙관리모니터링시스템(PFMS)"></span><span class="name">인도 중앙관리모니터링시스템(PFMS)</span></a></li>
+                        </ul>
+                    </div>
+                    <!-- 중동 및 아프리카 -->
+                    <div class="tab-content" id="tab-middle-east-africa" style="display: none;">
+                        <ul class="related-site-list">
+                            <li><a href="http://www.mofea.gm" target="_blank"><span class="logo"><img src="../images/logos/logo-country-no.png" alt="감비아 통합재정관리정보시스템(IFMIS)"></span><span class="name">감비아 통합재정관리정보시스템(IFMIS)</span></a></li>
+                            <li><a href="http://www.mefb.gov.mg" target="_blank"><span class="logo"><img src="../images/logos/logo-country-mg-mefb.png" alt="마다가스카르 통합공공재정관리시스템"></span><span class="name">마다가스카르 통합공공재정관리시스템</span></a></li>
+                            <li><a href="http://www.finances.gov.ma" target="_blank"><span class="logo"><img src="../images/logos/logo-country-no.png" alt="모로코 재정 경제부"></span><span class="name">모로코 재정 경제부</span></a></li>
+                            <li><a href="https://mof.govmu.org/Pages/default.aspx" target="_blank"><span class="logo"><img src="../images/logos/logo-country-mu-mof.png" alt="모리셔스 재정경제개발부"></span><span class="name">모리셔스 재정경제개발부</span></a></li>
+                            <li><a href="http://www.gfmis.gov.jo" target="_blank"><span class="logo"><img src="../images/logos/logo-country-no.png" alt="요르단 정부재정관리정보시스템(GFMIS)"></span><span class="name">요르단 정부재정관리정보시스템(GFMIS)</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <!-- //contents -->
+
+            <script id="floating-template">
+                // 플로팅메뉴
+                $.ajax({url:"common/floating.txt", dataType:"text", success:function(data){
+                    $('#floating-template').replaceWith(data);
+                }});
+            </script>
+        </div>
+        <script id="footer-template">
+            // 푸터
+            $.ajax({url:"common/footer.txt", dataType:"text", success:function(data){
+                $('#footer-template').replaceWith(data);
+            }});
+        </script>
+    </div>
+    <!-- // wrap -->
+
+    
+</body>
+</html>

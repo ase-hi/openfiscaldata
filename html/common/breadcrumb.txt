@@ -1,0 +1,33 @@
+<div class="breadcrumb">
+    <div class="wrapper">
+        <nav class="bc-nav" aria-label="페이지 경로">
+            <a href="/" class="bc-home" aria-label="홈으로 이동"><i class="ico-bc-home"></i></a>
+            <ul class="bc-depth">
+                <li>
+                    <button type="button" class="bc-btn"><span>1depth 메뉴</span><i class="ico-bc-arrow"></i></button>
+                    <ul class="bc-menu">
+                        <li><a href="javascript:;"><span>메뉴메뉴메뉴</span></a></li>
+                        <li><a href="javascript:;"><span>메뉴메뉴메뉴</span></a></li>
+                        <li><a href="javascript:;"><span>메뉴메뉴메뉴</span></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <button type="button" class="bc-btn"><span>2depth 메뉴</span><i class="ico-bc-arrow"></i></button>
+                    <ul class="bc-menu">
+                        <li><a href="javascript:;"><span>메뉴메뉴메뉴</span></a></li>
+                        <li><a href="javascript:;"><span>메뉴메뉴메뉴</span></a></li>
+                        <li><a href="javascript:;"><span>메뉴메뉴메뉴</span></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <button type="button" class="bc-btn"><span>3depth 메뉴</span><i class="ico-bc-arrow"></i></button>
+                    <ul class="bc-menu">
+                        <li><a href="javascript:;"><span>메뉴메뉴메뉴</span></a></li>
+                        <li><a href="javascript:;">메뉴메뉴메뉴</a></li>
+                        <li><a href="javascript:;">메뉴메뉴메뉴</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+
+  
+  
+  
+  
+  <!-- footer -->
+  <footer class="footer">
+    <div class="wrapper footer-inner">
+      <div class="footer-left">
+        <div class="footer-brand">
+          <img src="../images/common/ico-emblem-gov.svg" alt="" class="footer-emblem">
+        </div>
+        <div class="footer-body">
+          <ul class="footer-menu">
+            <li><a href="javascript:void(0);">이용약관</a></li>
+            <li><a href="javascript:void(0);">개인정보처리방침</a></li>
+            <li><a href="javascript:void(0);">저작권 및 공공데이터 이용정책</a></li>
+            <li><a href="javascript:void(0);">이메일무단수집거부</a></li>
+            <li><a href="javascript:void(0);">공공데이터개방</a></li>
+          </ul>
+          <div class="footer-info">
+            <address>(30112) 세종특별자치시 도움6로 42 정부세종청사 중앙동 기획예산처</address>
+            <p class="footer-tel">고객센터 번호 : 1811-8822</p>
+            <p class="footer-copyright">Copyright 2022 기획예산처 All Rights Reserved.</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-badge">
+        <img src="../images/common/logo-fis.svg" alt="한국재정정보원" class="footer-fis-logo">
+        <img src="../images/common/badge-wa.png" alt="과학기술정보통신부 웹접근성 품질인증마크" class="footer-wa-badge">
+      </div>
+    </div>
+  </footer>
+  <!-- // footer -->
+

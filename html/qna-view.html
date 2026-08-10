@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title>열린재정</title>
+
+
+<link type="text/css" rel="stylesheet" href="../css/realgrid/realgrid-white.css">
+<link type="text/css" rel="stylesheet" href="../css/realgrid/realgrid-style.css">
+
+
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<script src="../js/jquery-4.0.0.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
+<script src="../js/pub-ui.js"></script>
+
+</head>
+<body>
+
+    <dl class="skipLink">
+        <dt>바로가기 메뉴</dt>	
+        <dd><a href="#gnbMenu">주메뉴 바로가기</a></dd>
+        <dd><a href="#content">본문 바로가기</a></dd>
+    </dl>
+    <div class="wrap">
+        <script id="header-template">
+            // 헤더
+            $.ajax({url:"common/header.txt", dataType:"text", success:function(data){
+                $('#header-template').replaceWith(data);
+            }});
+        </script>
+
+        <div class="container" id="content">
+            <script id="subvisual-template">
+                $.ajax({url:"common/subvisual.txt", dataType:"text", success:function(data){
+                    $('#subvisual-template').replaceWith($(data).filter('#visual-notice'));
+                }});
+            </script>
+
+            <script id="breadcrumb-template">
+                // breadcrumb메뉴
+                $.ajax({url:"common/breadcrumb.txt", dataType:"text", success:function(data){
+                    $('#breadcrumb-template').replaceWith(data);
+                    breadcrumbMenu();
+                }});
+            </script>
+            
+            <div class="contents">
+                <div class="title-main-wrap">
+                    <h2 class="title-main">Q&A</h2>
+                </div>
+
+                <div class="view-detail-wrap">
+
+                    <article class="view-detail">
+                        <header class="view-detail-head">
+                            <div class="view-detail-title">
+                                <span class="view-detail-state is-complete">답변완료</span>
+                                <h3>[오류내용] 국가결산보고서 관련</h3>
+                            </div>
+                            <div class="view-detail-info">
+                                <dl>
+                                    <dt>작성자</dt>
+                                    <dd>홍길동</dd>
+                                </dl>
+                                <dl>
+                                    <dt>등록일</dt>
+                                    <dd>2026-07-01</dd>
+                                </dl>
+                                <dl>
+                                    <dt>조회</dt>
+                                    <dd>29</dd>
+                                </dl>
+                            </div>
+                        </header>
+
+
+                        <div class="view-detail-body qna-detail-content">
+                            <div class="qna-question">
+                                <p>안녕하세요.</p>
+                                <p>지방재정365 오픈API를 활용해 재정정보를 연동하려고 하는데, 인증키 발급 후에도 응답 오류가 발생합니다.</p>
+                                <p>API 연동 가이드 문서와 실제 응답 스펙이 다른 것 같은데 확인 부탁드립니다.</p>
+                            </div>
+                            <div class="qna-answer">
+                                <p>안녕하세요 열린재정 운영자입니다.</p>
+                                <p>현재 일부 결산데이터가 검증 및 공개하는데 시간이 걸리는 관계로, 결산보고서도 이에 따라 늦춰지게 되었습니다.</p>
+                                <p>공개시기가 늦어짐에 대해 너른 양해를 부탁드립니다.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <div class="prev-next">
+                        <dl>
+                            <dt>이전글</dt>
+                            <dd><a href="javascript:void(0);">열린재정 중앙정부, 지방교육재정 통계 신규 공개 및 재정데이터 분석사례 게시판 신설!!</a></dd>
+                        </dl>
+                        <dl>
+                            <dt>다음글</dt>
+                            <dd><a href="javascript:void(0);">[알기쉬운 재정용어사전] 개편기념, 초성 퀴즈 풀고 재정잘알 되기 프로젝트!</a></dd>
+                        </dl>
+                    </div>
+                    <div class="btn-bottom-wrap">
+                        <button type="button" class="btn-nm st-dark">목록</button>
+                        <div class="right">
+                            <button type="button" class="btn-nm st-white">수정</button>
+                            <button type="button" class="btn-nm st-white">삭제</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- //contents -->
+
+            <script id="floating-template">
+                // 플로팅메뉴
+                $.ajax({url:"common/floating.txt", dataType:"text", success:function(data){
+                    $('#floating-template').replaceWith(data);
+                }});
+            </script>
+        </div>
+        <script id="footer-template">
+            // 푸터
+            $.ajax({url:"common/footer.txt", dataType:"text", success:function(data){
+                $('#footer-template').replaceWith(data);
+            }});
+        </script>
+    </div>
+    <!-- // wrap -->
+
+</body>
+</html>

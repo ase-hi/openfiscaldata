@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title>열린재정</title>
+
+
+<link type="text/css" rel="stylesheet" href="../css/realgrid/realgrid-white.css">
+<link type="text/css" rel="stylesheet" href="../css/realgrid/realgrid-style.css">
+
+
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<script src="../js/jquery-4.0.0.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
+<script src="../js/pub-ui.js"></script>
+
+</head>
+<body>
+
+    <dl class="skipLink">
+        <dt>바로가기 메뉴</dt>	
+        <dd><a href="#gnbMenu">주메뉴 바로가기</a></dd>
+        <dd><a href="#content">본문 바로가기</a></dd>
+    </dl>
+    <div class="wrap">
+        <script id="header-template">
+            // 헤더
+            $.ajax({url:"common/header.txt", dataType:"text", success:function(data){
+                $('#header-template').replaceWith(data);
+            }});
+        </script>
+
+        <div class="container" id="content">
+            <script id="subvisual-template">
+                $.ajax({url:"common/subvisual.txt", dataType:"text", success:function(data){
+                    $('#subvisual-template').replaceWith($(data).filter('#visual-notice'));
+                }});
+            </script>
+
+            <script id="breadcrumb-template">
+                // breadcrumb메뉴
+                $.ajax({url:"common/breadcrumb.txt", dataType:"text", success:function(data){
+                    $('#breadcrumb-template').replaceWith(data);
+                    breadcrumbMenu();
+                }});
+            </script>
+            
+            <div class="contents">
+                <div class="title-main-wrap">
+                    <h2 class="title-main">Q&A</h2>
+                    <div class="right">
+                        <div class="util-search">
+                            <label for="utilSearchType" class="sr-only">검색 구분</label>
+                            <select class="util-search-sel" id="utilSearchType">
+                                <option>제목+내용</option>
+                                <option>제목</option>
+                                <option>내용</option>
+                            </select>
+                            <label for="utilSearchKeyword" class="sr-only">검색어</label>
+                            <input type="text" class="util-search-input" id="utilSearchKeyword" placeholder="검색어를 입력하세요.">
+                            <button type="button" class="util-search-btn">검색</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-main">
+                    <ul>
+                        <li class="on"><a href="javascript:void(0);" data-tab-id="tab-all">전체</a></li>
+                        <li><a href="javascript:void(0);" data-tab-id="tab-stats">통계</a></li>
+                        <li><a href="javascript:void(0);" data-tab-id="tab-contents">콘텐츠</a></li>
+                        <li><a href="javascript:void(0);" data-tab-id="tab-ai">AI서비스</a></li>
+                        <li><a href="javascript:void(0);" data-tab-id="tab-howto">이용방법</a></li>
+                        <li><a href="javascript:void(0);" data-tab-id="tab-error">오류신고</a></li>
+                        <li><a href="javascript:void(0);" data-tab-id="tab-etc">기타</a></li>
+                    </ul>
+                </div>
+
+
+                <div class="data-util type-title">
+                    <div class="left">
+                        <div class="total">전체 <em>85,007</em>건</div>
+                    </div>
+                    <div class="right">
+                        <button type="button" class="btn-sm st-blue"><svg width="32" height="32" class="ico-plus"><use href="../images/common/simbol.svg#ico-plus"></use></svg><span>문의하기</span></button>
+                    </div>
+                </div>
+
+                <div class="data-default">
+                    <div class="scroll">
+                        <table>
+                            <caption class="sr-only">문의 목록 — 번호, 문의유형, 답변상태, 제목, 작성자, 등록일</caption>
+                            <colgroup>
+                                <col style="width:80px">
+                                <col style="width:100px">
+                                <col style="width:100px">
+                                <col>
+                                <col style="width:100px">
+                                <col style="width:140px">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">NO</th>
+                                    <th scope="col">문의유형</th>
+                                    <th scope="col">답변상태</th>
+                                    <th scope="col">제목</th>
+                                    <th scope="col">작성자</th>
+                                    <th scope="col">등록일</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>101</td>
+                                    <td>컨텐츠</td>
+                                    <td><span class="qna-state is-complete">답변완료</span></td>
+                                    <td class="align-l"><a href="javascript:void(0);" class="link-txt-hover"><span class="ellips">프로그램 선거지표 업데이트 시점 문의</span><i class="ico-lock"></i></a></td>
+                                    <td>홍길동</td>
+                                    <td>2026.07.01</td>
+                                </tr>
+                                <tr>
+                                    <td>100</td>
+                                    <td>오류내용</td>
+                                    <td><span class="qna-state is-waiting">접수대기</span></td>
+                                    <td class="align-l"><a href="javascript:void(0);" class="link-txt-hover"><span class="ellips">법률자문 비용 지급수수료 집행 문의</span></a></td>
+                                    <td>홍길동</td>
+                                    <td>2026.07.01</td>
+                                </tr>
+                                <tr>
+                                    <td>99</td>
+                                    <td>개선요청</td>
+                                    <td><span class="qna-state is-complete">답변완료</span></td>
+                                    <td class="align-l"><a href="javascript:void(0);" class="link-txt-hover"><span class="ellips">국가결산보고서 관련</span></a></td>
+                                    <td>홍길동</td>
+                                    <td>2026.06.05</td>
+                                </tr>
+                                <tr>
+                                    <td>98</td>
+                                    <td>이용문의</td>
+                                    <td><span class="qna-state is-waiting">접수대기</span></td>
+                                    <td class="align-l"><a href="javascript:void(0);" class="link-txt-hover"><span class="ellips">총 사업비 및 총 사업비 관리번호 문의</span></a></td>
+                                    <td>홍길동</td>
+                                    <td>2026.05.08</td>
+                                </tr>
+                                <tr>
+                                    <td>96</td>
+                                    <td>컨텐츠</td>
+                                    <td><span class="qna-state is-waiting">접수대기</span></td>
+                                    <td class="align-l"><a href="javascript:void(0);" class="link-txt-hover"><span class="ellips">프로그램 선거지표 업데이트 시점 문의</span></a></td>
+                                    <td>홍길동</td>
+                                    <td>2026.04.24</td>
+                                </tr>
+                                <tr>
+                                    <td>95</td>
+                                    <td>컨텐츠</td>
+                                    <td><span class="qna-state is-complete">답변완료</span></td>
+                                    <td class="align-l"><a href="javascript:void(0);" class="link-txt-hover"><span class="ellips">법률자문 비용 지급수수료 집행 문의</span></a></td>
+                                    <td>홍길동</td>
+                                    <td>2026.03.11</td>
+                                </tr>
+                                <tr>
+                                    <td>94</td>
+                                    <td>이용문의</td>
+                                    <td><span class="qna-state is-complete">답변완료</span></td>
+                                    <td class="align-l"><a href="javascript:void(0);" class="link-txt-hover"><span class="ellips">국가결산보고서 관련</span></a></td>
+                                    <td>홍길동</td>
+                                    <td>2026.02.27</td>
+                                </tr>
+                                <tr>
+                                    <td>93</td>
+                                    <td>개선요청</td>
+                                    <td><span class="qna-state is-waiting">접수대기</span></td>
+                                    <td class="align-l"><a href="javascript:void(0);" class="link-txt-hover"><span class="ellips">총 사업비 및 총 사업비 관리번호 문의</span></a></td>
+                                    <td>홍길동</td>
+                                    <td>2026.01.07</td>
+                                </tr>
+                                <tr>
+                                    <td>92</td>
+                                    <td>컨텐츠</td>
+                                    <td><span class="qna-state is-complete">답변완료</span></td>
+                                    <td class="align-l"><a href="javascript:void(0);" class="link-txt-hover"><span class="ellips">프로그램 선거지표 업데이트 시점 문의</span></a></td>
+                                    <td>홍길동</td>
+                                    <td>2025.12.19</td>
+                                </tr>
+                                <tr>
+                                    <td>91</td>
+                                    <td>오류내용</td>
+                                    <td><span class="qna-state is-complete">답변완료</span></td>
+                                    <td class="align-l"><a href="javascript:void(0);" class="link-txt-hover"><span class="ellips">[당첨자 발표] 2025년 열린재정 사용자 만족도 설문조사 이벤트</span></a></td>
+                                    <td>홍길동</td>
+                                    <td>2025.12.04</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                
+                <div class="pagination-wrap">
+                    <nav class="pagination-type" aria-label="페이지네이션" id="pagination">
+                        <button type="button" class="pg-prev" aria-label="이전 페이지" disabled="">
+                        <i class="ico-pg-arrow"></i>
+                        <span>이전</span>
+                        </button>
+                        <ul class="pg-list"><li class="on"><button type="button" aria-current="page">1</button></li><li><button type="button" aria-label="2페이지">2</button></li><li><button type="button" aria-label="3페이지">3</button></li><li><button type="button" aria-label="4페이지">4</button></li><li><button type="button" aria-label="5페이지">5</button></li><li><button type="button" aria-label="6페이지">6</button></li><li><button type="button" aria-label="7페이지">7</button></li><li><button type="button" aria-label="8페이지">8</button></li><li class="pg-ellipsis"><button type="button" aria-label="8페이지 이동"><span class="dots"><span></span><span></span><span></span></span></button></li><li><button type="button" aria-label="99페이지">99</button></li></ul>
+                        <button type="button" class="pg-next" aria-label="다음 페이지">
+                        <span>다음</span>
+                        <i class="ico-pg-arrow"></i>
+                        </button>
+                    </nav>
+                </div>
+
+                <script id="feedback-template">
+                    // 피드백
+                    $.ajax({url:"common/feedback.txt", dataType:"text", success:function(data){
+                        $('#feedback-template').replaceWith(data);
+                        pageFeedback();
+                    }});
+                </script>
+            </div>
+            <!-- //contents -->
+
+            <script id="floating-template">
+                // 플로팅메뉴
+                $.ajax({url:"common/floating.txt", dataType:"text", success:function(data){
+                    $('#floating-template').replaceWith(data);
+                }});
+            </script>
+        </div>
+        <script id="footer-template">
+            // 푸터
+            $.ajax({url:"common/footer.txt", dataType:"text", success:function(data){
+                $('#footer-template').replaceWith(data);
+            }});
+        </script>
+    </div>
+    <!-- // wrap -->
+</body>
+</html>

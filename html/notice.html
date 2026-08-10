@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title>열린재정</title>
+
+
+<link type="text/css" rel="stylesheet" href="../css/realgrid/realgrid-white.css">
+<link type="text/css" rel="stylesheet" href="../css/realgrid/realgrid-style.css">
+
+
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<script src="../js/jquery-4.0.0.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
+<script src="../js/pub-ui.js"></script>
+
+</head>
+<body>
+
+    <dl class="skipLink">
+        <dt>바로가기 메뉴</dt>	
+        <dd><a href="#gnbMenu">주메뉴 바로가기</a></dd>
+        <dd><a href="#content">본문 바로가기</a></dd>
+    </dl>
+    <div class="wrap">
+        <script id="header-template">
+            // 헤더
+            $.ajax({url:"common/header.txt", dataType:"text", success:function(data){
+                $('#header-template').replaceWith(data);
+            }});
+        </script>
+
+        <div class="container" id="content">
+            <script id="subvisual-template">
+                $.ajax({url:"common/subvisual.txt", dataType:"text", success:function(data){
+                    $('#subvisual-template').replaceWith($(data).filter('#visual-notice'));
+                }});
+            </script>
+
+            <script id="breadcrumb-template">
+                // breadcrumb메뉴
+                $.ajax({url:"common/breadcrumb.txt", dataType:"text", success:function(data){
+                    $('#breadcrumb-template').replaceWith(data);
+                    breadcrumbMenu();
+                }});
+            </script>
+            
+            <div class="contents">
+                <div class="title-main-wrap">
+                    <h2 class="title-main">공지사항</h2>
+                    <div class="right">
+                        <div class="util-search">
+                            <label for="utilSearchType" class="sr-only">검색 구분</label>
+                            <select class="util-search-sel" id="utilSearchType">
+                                <option>제목+내용</option>
+                                <option>제목</option>
+                                <option>내용</option>
+                            </select>
+                            <label for="utilSearchKeyword" class="sr-only">검색어</label>
+                            <input type="text" class="util-search-input" id="utilSearchKeyword" placeholder="검색어를 입력하세요.">
+                            <button type="button" class="util-search-btn">검색</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="data-util">
+                    <div class="left">
+                        <div class="total">총 <em>85,007</em>건</div>
+                    </div>
+                </div>
+
+                <div class="data-default">
+                    <div class="scroll">
+                        <table>
+                            <caption class="sr-only">공지사항 목록</caption>
+                            <colgroup>
+                                <col style="width:80px">
+                                <col style="width:auto;min-width:300px">
+                                <col style="width:80px">
+                                <col style="width:140px">
+                                <col style="width:100px">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">NO</th>
+                                    <th scope="col">제목</th>
+                                    <th scope="col">첨부</th>
+                                    <th scope="col">등록일</th>
+                                    <th scope="col">조회수</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><i class="ico-notice-pin" aria-label="공지"></i></td>
+                                    <td class="align-l">
+                                        <a href="javascript:void(0);" class="link-txt-hover">
+                                            <span class="tag tag-red">이벤트</span>
+                                            <span class="ellips">[알기쉬운 재정용어사전] 개편기념, 초성 퀴즈 풀고 재정잘알 되기!</span>
+                                        </a>
+                                    </td>
+                                    <td><i class="ico-tbl-file" aria-label="첨부파일"></i></td>
+                                    <td>2026.07.01</td>
+                                    <td>131</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="ico-notice-pin" aria-label="공지"></i></td>
+                                    <td class="align-l">
+                                        <a href="javascript:void(0);" class="link-txt-hover">
+                                            <span class="tag tag-red">이벤트</span>
+                                            <span class="ellips">[열린재정] 새 단장, 여러분의 의견으로 완성됩니다.</span>
+                                        </a>
+                                    </td>
+                                    <td></td>
+                                    <td>2026.07.01</td>
+                                    <td>129</td>
+                                </tr>
+                                <tr>
+                                    <td>98</td>
+                                    <td class="align-l">
+                                        <a href="javascript:void(0);" class="link-txt-hover">
+                                            <span class="tag tag-blue">공모전</span>
+                                            <span class="ellips">2026 모두의 재정 국민홍보단 ‘재정원정대’ 선정 발표</span>
+                                        </a>
+                                    </td>
+                                    <td></td>
+                                    <td>2026.06.05</td>
+                                    <td>428</td>
+                                </tr>
+                                <tr>
+                                    <td>97</td>
+                                    <td class="align-l">
+                                        <a href="javascript:void(0);" class="link-txt-hover">
+                                            <span class="tag tag-yellow">콘텐츠</span>
+                                            <span class="ellips">2026 모두의 재정 국민홍보단 ‘재정원정대’ 모집</span>
+                                        </a>
+                                    </td>
+                                    <td><i class="ico-tbl-file" aria-label="첨부파일"></i></td>
+                                    <td>2026.05.08</td>
+                                    <td>514</td>
+                                </tr>
+                                <tr>
+                                    <td>96</td>
+                                    <td class="align-l">
+                                        <a href="javascript:void(0);" class="link-txt-hover">
+                                            <span class="tag tag-gray">일반</span>
+                                            <span class="ellips">2026년 재정데이터분석 미니 프로젝트 안내</span>
+                                        </a>
+                                    </td>
+                                    <td><i class="ico-tbl-file" aria-label="첨부파일"></i></td>
+                                    <td>2026.04.24</td>
+                                    <td>638</td>
+                                </tr>
+                                <tr>
+                                    <td>95</td>
+                                    <td class="align-l">
+                                        <a href="javascript:void(0);" class="link-txt-hover">
+                                            <span class="tag tag-gray">일반</span>
+                                            <span class="ellips">시스템 정기점검에 따른 서비스 이용 안내</span>
+                                        </a>
+                                    </td>
+                                    <td></td>
+                                    <td>2026.03.11</td>
+                                    <td>836</td>
+                                </tr>
+                                <tr>
+                                    <td>94</td>
+                                    <td class="align-l">
+                                        <a href="javascript:void(0);" class="link-txt-hover">
+                                            <span class="tag tag-gray">일반</span>
+                                            <span class="ellips">재정통계 데이터 제공 항목 확대 안내</span>
+                                        </a>
+                                    </td>
+                                    <td><i class="ico-tbl-file" aria-label="첨부파일"></i></td>
+                                    <td>2026.02.27</td>
+                                    <td>1100</td>
+                                </tr>
+                                <tr>
+                                    <td>93</td>
+                                    <td class="align-l">
+                                        <a href="javascript:void(0);" class="link-txt-hover">
+                                            <span class="tag tag-blue">공모전</span>
+                                            <span class="ellips">2025 재정정보 활용 ‘우수사례’ 발표</span>
+                                        </a>
+                                    </td>
+                                    <td><i class="ico-tbl-file" aria-label="첨부파일"></i></td>
+                                    <td>2026.01.07</td>
+                                    <td>1256</td>
+                                </tr>
+                                <tr>
+                                    <td>92</td>
+                                    <td class="align-l">
+                                        <a href="javascript:void(0);" class="link-txt-hover">
+                                            <span class="tag tag-yellow">콘텐츠</span>
+                                            <span class="ellips">2025 재정정보 활용 공모전 개최 결과</span>
+                                        </a>
+                                    </td>
+                                    <td><i class="ico-tbl-file" aria-label="첨부파일"></i></td>
+                                    <td>2025.12.19</td>
+                                    <td>1302</td>
+                                </tr>
+                                <tr>
+                                    <td>91</td>
+                                    <td class="align-l">
+                                        <a href="javascript:void(0);" class="link-txt-hover">
+                                            <span class="tag tag-gray">일반</span>
+                                            <span class="ellips">[당첨자 발표] 2025년 열린재정 사용자 만족도 설문조사 이벤트</span>
+                                        </a>
+                                    </td>
+                                    <td></td>
+                                    <td>2025.12.04</td>
+                                    <td>1358</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="pagination-wrap">
+                    <nav class="pagination-type" aria-label="페이지네이션" id="pagination">
+                        <button type="button" class="pg-prev" aria-label="이전 페이지" disabled="">
+                        <i class="ico-pg-arrow"></i>
+                        <span>이전</span>
+                        </button>
+                        <ul class="pg-list"><li class="on"><button type="button" aria-current="page">1</button></li><li><button type="button" aria-label="2페이지">2</button></li><li><button type="button" aria-label="3페이지">3</button></li><li><button type="button" aria-label="4페이지">4</button></li><li><button type="button" aria-label="5페이지">5</button></li><li><button type="button" aria-label="6페이지">6</button></li><li><button type="button" aria-label="7페이지">7</button></li><li><button type="button" aria-label="8페이지">8</button></li><li class="pg-ellipsis"><button type="button" aria-label="8페이지 이동"><span class="dots"><span></span><span></span><span></span></span></button></li><li><button type="button" aria-label="99페이지">99</button></li></ul>
+                        <button type="button" class="pg-next" aria-label="다음 페이지">
+                        <span>다음</span>
+                        <i class="ico-pg-arrow"></i>
+                        </button>
+                    </nav>
+                </div>
+
+                <script id="feedback-template">
+                    // 피드백
+                    $.ajax({url:"common/feedback.txt", dataType:"text", success:function(data){
+                        $('#feedback-template').replaceWith(data);
+                        pageFeedback();
+                    }});
+                </script>
+            </div>
+            <!-- //contents -->
+
+            <script id="floating-template">
+                // 플로팅메뉴
+                $.ajax({url:"common/floating.txt", dataType:"text", success:function(data){
+                    $('#floating-template').replaceWith(data);
+                }});
+            </script>
+        </div>
+        <script id="footer-template">
+            // 푸터
+            $.ajax({url:"common/footer.txt", dataType:"text", success:function(data){
+                $('#footer-template').replaceWith(data);
+            }});
+        </script>
+    </div>
+    <!-- // wrap -->
+
+
+
+</html>

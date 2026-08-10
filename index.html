@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="format-detection" content="telephone=no"/>
+<title>title</title>
+
+<script src="js/jquery-4.0.0.min.js"></script>
+
+<!-- style -->
+<style type="text/css">
+  *{margin:0;padding:0;}
+  body {padding:20px; font-family:Tahoma, Sans-Serif; color:#333; font-size:11px; background-color:#fff;}
+  h1 {color:#000; letter-spacing:-2px;}
+  h2 {margin-top:20px;padding-left:10px;letter-spacing:-2px;position:relative;font-size:18px;}
+  h2:before{content:'';display:block;position:absolute;top:50%;left:0;width:5px;height:5px;background:#333;transform:translateY(-50%);-webkit-transform:translateY(-50%);}
+  .currentsite {display:block; position:absolute; right:40px; top:20px;}
+  .mwork table {width:100%; border-collapse:collapse; border:0px solid #666;margin-top:10px;}
+  .mwork caption {text-align:left; font-size:200%; color:#999;}
+  .mwork th {padding:6px; border:1px solid #fff; color:#fff; font-size:110%; background-color:#1F5DBE;}
+  .mwork td {height:16px; padding:4px; padding-left:10px; border:1px solid #666;}
+  .mwork a,
+  .mwork a:link, #mwork a:visited {color:#009; text-decoration:none;}
+  .mwork a:hover, #mwork a:active {color:#00f; text-decoration:underline;}
+  .mwork td:hover {background-color:#ddd !important;}
+  
+
+  .title td{background:#eee;}
+
+</style>
+<!-- //style -->
+
+<script>
+  $(function(){
+    let data = [
+      // 공통
+
+      ["공통", "title", "", "", ""],
+      ["", "로딩", "", "", "", "html/loading.html", "", "", ""],
+
+      ["공통페이지", "title", "", "", ""],
+      ["", "메인", "", "", "", "html/main.html", "", "", ""],
+
+      ["알림·안내", "title", "", "", "", ""],         
+      ["", "공지사항", "", "", "", "html/notice.html", "", "", ""],
+      ["", "", "상세", "", "", "html/notice-view.html", "", "", ""],
+      ["", "자주 묻는 질문", "", "", "", "html/faq.html", "", "", ""],
+      ["", "Q&A", "", "", "", "html/qna.html", "", "", ""],
+      ["", "", "상세", "", "", "html/qna-view.html", "", "", ""],
+      ["", "", "등록", "", "", "html/qna-regist.html", "", "", ""],
+      ["", "재정관련 사이트", "", "", "", "html/related-site.html", "", "", ""],
+
+      
+    ];
+
+
+
+    for(var i = 0 ; i<= data.length -1 ; i++){
+      if(data[i][1] == 'title'){
+        $('tbody').append('<tr class="title">'+
+          '<td>'+data[i][0]+'</td>' +
+          '<td></td>' +
+          '<td></td>' +
+          '<td></td>' +
+          '<td></td>' +
+          '<td></td>' +
+          '<td></td>' +
+        '</tr>')
+      }else{
+        function cell(v){
+          var v2 = v == null ? '' : String(v);
+          var rightAlign = v2.indexOf('팝업') !== -1;
+          return '<td' + (rightAlign ? ' style="text-align:right;"' : '') + '>' + v2 + '</td>';
+        }
+        $('tbody').append('<tr>'+
+          cell(data[i][0]) +
+          cell(data[i][1]) +
+          cell(data[i][2]) +
+          cell(data[i][3]) +
+          cell(data[i][4]) +
+          ((data[i][5]).includes('html') ? '<td><a href="'+data[i][5]+'">'+data[i][5]+'</a></td>' :'<td>'+ data[i][5] +'</td>') +
+          cell(data[i][7]) +
+        '</tr>')
+      }
+    }
+
+  });
+
+
+
+
+</script>
+
+</head>
+<!-- html body -->
+<body>
+<!-- sheet -->
+<h1>Publishing Work Sheet </h1>
+
+<div class="mwork">
+  <table>
+    <colgroup>
+			<col style="width:120px" />
+			<col style="width:150px" />
+			<col style="width:150px" />
+			<col style="width:150px" />
+			<col style="width:150px" />
+			<col style="width:200px" />
+			<col style="width:auto" />
+    </colgroup>
+
+    <thead>
+      <tr>
+				<th>Category</th>
+				<th>1Depth</th>
+				<th>2Depth</th>
+				<th>3Depth</th>
+				<th>4Depth</th>
+				<th>FileName/Link</th>
+				<th>Memo</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+  </table>
+</div>
+<!-- //sheet -->
+
+</body>
+</html>

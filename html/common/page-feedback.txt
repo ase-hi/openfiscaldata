@@ -1,0 +1,16 @@
+
+  <!-- page-feedback -->
+  <div class="page-feedback">
+      <p class="page-feedback-txt">이 페이지가 도움이 되셨나요?</p>
+      <div class="page-feedback-btns">
+          <button type="button" class="btn-feedback">
+              <svg class="ico-thumb-up" aria-hidden="true" focusable="false"><use href="../images/common/simbol.svg#ico-thumb-up"></use></svg>
+              <span>도움이 됐어요</span>
+          </button>
+          <button type="button" class="btn-feedback">
+              <svg class="ico-thumb-down" aria-hidden="true" focusable="false"><use href="../images/common/simbol.svg#ico-thumb-up"></use></svg>
+              <span>아쉬워요</span>
+          </button>
+      </div>
+  </div>
+  <!-- // page-feedback -->

@@ -1,0 +1,27 @@
+<div class="page-feedback">
+    <div class="page-feedback-head">
+        <p class="page-feedback-txt">이 페이지가 도움이 되셨나요?</p>
+        <div class="page-feedback-btns">
+            <button type="button" class="btn-feedback" data-feedback="positive">
+                <i class="ico-thumb-up" aria-hidden="true"></i>
+                <span>도움이 됐어요</span>
+            </button>
+            <button type="button" class="btn-feedback" data-feedback="negative">
+                <i class="ico-thumb-down" aria-hidden="true"></i>
+                <span>아쉬워요</span>
+            </button>
+        </div>
+    </div>
+    <div class="page-feedback-form" hidden>
+        <p class="page-feedback-label">의견이 있다면 자유롭게 적어주세요 (선택)</p>
+        <div class="page-feedback-field">
+            <label for="pageFeedbackText" class="sr-only">의견 입력</label>
+            <textarea id="pageFeedbackText" class="page-feedback-textarea" maxlength="500" placeholder="페이지를이용하면서 느낀 점, 보완이 필요한 부분, 개선 제안 등을 알려주세요."></textarea>
+            <p class="page-feedback-count"><span class="page-feedback-count-current">0</span><span class="page-feedback-count-sep">/</span><span class="page-feedback-count-max">500</span></p>
+        </div>
+        <div class="page-feedback-actions">
+            <button type="button" class="btn-feedback-cancel">취소</button>
+            <button type="button" class="btn-feedback-submit">의견 보내기</button>
+        </div>
+    </div>
+</div>
