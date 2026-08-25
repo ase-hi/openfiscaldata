@@ -1,0 +1,490 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title>열린재정</title>
+
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/pub-ui.js"></script>
+
+</head>
+<body>
+
+    <dl class="skipLink">
+        <dt>바로가기 메뉴</dt>	
+        <dd><a href="#gnbMenu">주메뉴 바로가기</a></dd>
+        <dd><a href="#content">본문 바로가기</a></dd>
+    </dl>
+    <div class="wrap">
+        <script id="header-template">
+            // 헤더
+            $.ajax({url:"common/header.txt", dataType:"text", success:function(data){
+                $('#header-template').replaceWith(data);
+            }});
+        </script>
+
+        <div class="container" id="content">
+            <script id="subvisual-template">
+                $.ajax({url:"common/subvisual.txt", dataType:"text", success:function(data){
+                    $('#subvisual-template').replaceWith($(data).filter('#visual-together'));
+                }});
+            </script>
+
+            <script id="breadcrumb-template">
+                // breadcrumb메뉴
+                $.ajax({url:"common/breadcrumb.txt", dataType:"text", success:function(data){
+                    $('#breadcrumb-template').replaceWith(data);
+                    breadcrumbMenu();
+                }});
+            </script>
+            
+            <div class="contents">
+                <div class="title-main-wrap">
+                    <h2 class="title-main">지원사업 상세검색</h2>
+                </div>
+                <div class="form-search-box detail-search">
+                <div class="form-filter-head">
+                    <div class="form-filter-title"><strong>기본조건</strong></div>
+                    <div class="right">
+                    <button type="button" class="btn-term-guide">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5.67676 14.5H13.4893C14.1103 14.4982 14.7054 14.2606 15.1445 13.839C15.5836 13.4175 15.8312 12.8462 15.833 12.25V4.75C15.8312 4.15381 15.5836 3.58255 15.1445 3.16098C14.7054 2.73941 14.1103 2.50178 13.4893 2.5H5.67676C5.05573 2.50178 4.46066 2.73941 4.02153 3.16098C3.58239 3.58255 3.33486 4.15381 3.33301 4.75V15.25C3.33301 15.8467 3.57994 16.419 4.01948 16.841C4.45901 17.2629 5.05516 17.5 5.67676 17.5H15.0518C15.259 17.5 15.4577 17.421 15.6042 17.2803C15.7507 17.1397 15.833 16.9489 15.833 16.75C15.833 16.5511 15.7507 16.3603 15.6042 16.2197C15.4577 16.079 15.259 16 15.0518 16H5.67676C5.46956 16 5.27084 15.921 5.12433 15.7803C4.97782 15.6397 4.89551 15.4489 4.89551 15.25C4.89551 15.0511 4.97782 14.8603 5.12433 14.7197C5.27084 14.579 5.46956 14.5 5.67676 14.5ZM9.58301 4.75C9.73752 4.75 9.88857 4.79399 10.017 4.8764C10.1455 4.95881 10.2457 5.07594 10.3048 5.21299C10.3639 5.35003 10.3794 5.50083 10.3492 5.64632C10.3191 5.7918 10.2447 5.92544 10.1354 6.03033C10.0262 6.13522 9.88697 6.20665 9.73542 6.23559C9.58387 6.26453 9.42679 6.24968 9.28404 6.19291C9.14128 6.13614 9.01927 6.04001 8.93342 5.91668C8.84758 5.79334 8.80176 5.64834 8.80176 5.5C8.80176 5.30109 8.88407 5.11032 9.03058 4.96967C9.17709 4.82902 9.37581 4.75 9.58301 4.75ZM8.80176 7.75C8.80176 7.55109 8.88407 7.36032 9.03058 7.21967C9.17709 7.07902 9.37581 7 9.58301 7C9.79021 7 9.98892 7.07902 10.1354 7.21967C10.2819 7.36032 10.3643 7.55109 10.3643 7.75V11.5C10.3643 11.6989 10.2819 11.8897 10.1354 12.0303C9.98892 12.171 9.79021 12.25 9.58301 12.25C9.37581 12.25 9.17709 12.171 9.03058 12.0303C8.88407 11.8897 8.80176 11.6989 8.80176 11.5V7.75Z" fill="#0B50D0"/>
+                        </svg>
+                        <span>용어설명</span>
+                    </button>
+                    </div>
+                </div>
+                <div class="form-filter-body">
+                    <div class="form-search-fields">
+                    <div class="form-row">
+                        <div class="fm">
+                        <label for="benefit-status" class="label">수혜상태</label>
+                        <div class="sel">
+                            <select id="benefit-status" aria-label="수혜상태">
+                            <option selected="">전체</option>
+                            <option>선택</option>
+                            </select>
+                        </div>
+                        </div>
+                        <div class="fm">
+                        <label for="benefit-dept" class="label">부처</label>
+                        <div class="sel">
+                            <select id="benefit-dept" aria-label="부처">
+                            <option selected="">전체</option>
+                            <option>선택</option>
+                            </select>
+                        </div>
+                        </div>
+                        <div class="fm">
+                        <label for="benefit-gender" class="label">성별</label>
+                        <div class="sel">
+                            <select id="benefit-gender" aria-label="성별">
+                            <option selected="">전체</option>
+                            <option>선택</option>
+                            </select>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="fm">
+                        <label for="benefit-region" class="label">지역</label>
+                        <div class="sel">
+                            <select id="benefit-region" aria-label="지역">
+                            <option selected="">전체</option>
+                            <option>선택</option>
+                            </select>
+                        </div>
+                        </div>
+                        <div class="fm fm-span-2">
+                        <label for="benefit-project" class="label">사업명</label>
+                        <div class="inp">
+                            <input type="text" id="benefit-project" placeholder="검색어를 입력하세요." aria-label="사업명">
+                        <button type="button" style="display:none;" class="btn-del"></button></div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <!-- 생애주기별 선택 -->
+                <div class="form-filter-head">
+                    <div class="form-filter-title"><strong>생애주기별 선택</strong><em class="form-filter-count"><em class="num">00</em>건 선택</em></div>
+                    <div class="right">
+                    <button class="btn-toggle">
+                        <svg class="ico-arrow-down" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 10L12 15L17 10" stroke="#33363D" stroke-width="1.4" stroke-linecap="round"></path></svg>
+                    </button>
+                    </div>
+                </div>
+                <div class="form-filter-body" style="display: none;">
+                    <div class="input-choice-wrap">
+                    <div class="input-choice"><input type="checkbox" id="life-all"><label for="life-all">전체</label></div>
+                    <div class="input-choice"><input type="checkbox" id="life-infant"><label for="life-infant">영유아</label></div>
+                    <div class="input-choice"><input type="checkbox" id="life-child"><label for="life-child">아동</label></div>
+                    <div class="input-choice"><input type="checkbox" id="life-teen"><label for="life-teen">청소년</label></div>
+                    <div class="input-choice"><input type="checkbox" id="life-youth"><label for="life-youth">청년</label></div>
+                    <div class="input-choice"><input type="checkbox" id="life-middle"><label for="life-middle">중년</label></div>
+                    <div class="input-choice"><input type="checkbox" id="life-senior"><label for="life-senior">장년</label></div>
+                    <div class="input-choice"><input type="checkbox" id="life-old"><label for="life-old">노년</label></div>
+                    <div class="input-choice"><input type="checkbox" id="life-any"><label for="life-any">연령무관</label></div>
+                    </div>
+                </div>
+
+                <!-- 생애주기별 선택 -->
+                <div class="form-filter-head">
+                    <div class="form-filter-title"><strong>테마검색</strong><em class="form-filter-count"><em class="num">00</em>건 선택</em></div>
+                    <div class="right">
+                    <button class="btn-toggle">
+                        <svg class="ico-arrow-down" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 10L12 15L17 10" stroke="#33363D" stroke-width="1.4" stroke-linecap="round"></path></svg>
+                    </button>
+                    </div>
+                </div>
+                <div class="form-filter-body" style="display: none;">
+                    <div class="form-filter-detail">
+                    <div class="form-filter-detail-block">
+                        <strong class="form-filter-detail-side">정부혜택</strong>
+                        <div class="form-filter-detail-content">
+                        <div class="form-filter-subgroup">
+                            <div class="form-filter-subside">
+                            <div class="input-choice"><input type="checkbox" id="theme-gov-all"><label for="theme-gov-all">전체</label></div>
+                            </div>
+                            <div class="form-filter-subcontent">
+                            <div class="input-choice-wrap">
+                                <div class="input-choice"><input type="checkbox" id="theme-gov-central"><label for="theme-gov-central">중앙부처</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-gov-local"><label for="theme-gov-local">지자체</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-gov-edu"><label for="theme-gov-edu">교육청</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-gov-public"><label for="theme-gov-public">공공기관</label></div>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="form-filter-detail-block">
+                        <strong class="form-filter-detail-side">국고지원사업</strong>
+                        <div class="form-filter-detail-content">
+                        <div class="form-filter-subgroup">
+                            <div class="form-filter-subside">
+                            <strong>소득수준</strong>
+                            <div class="input-choice"><input type="checkbox" id="theme-income-all"><label for="theme-income-all">전체</label></div>
+                            </div>
+                            <div class="form-filter-subcontent">
+                            <div class="input-choice-wrap">
+                                <div class="input-choice"><input type="checkbox" id="theme-income-1"><label for="theme-income-1">기초생활보호대상자</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-income-2"><label for="theme-income-2">차상위계층</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-income-3"><label for="theme-income-3">차차상위계층</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-income-4"><label for="theme-income-4">소득하위50%이하</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-income-5"><label for="theme-income-5">소득하위70%이하</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-income-6"><label for="theme-income-6">긴급지원대상자</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-income-7"><label for="theme-income-7">기타취약계층</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-income-8"><label for="theme-income-8">소득무관</label></div>
+                            </div>
+                            </div>
+                        </div>
+
+                        <div class="form-filter-subgroup">
+                            <div class="form-filter-subside">
+                            <strong>취업·직장</strong>
+                            <div class="input-choice"><input type="checkbox" id="theme-job-all"><label for="theme-job-all">전체</label></div>
+                            </div>
+                            <div class="form-filter-subcontent">
+                            <div class="input-choice-wrap">
+                                <div class="input-choice"><input type="checkbox" id="theme-job-1"><label for="theme-job-1">대기업</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-job-2"><label for="theme-job-2">중견기업</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-job-3"><label for="theme-job-3">중기업</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-job-4"><label for="theme-job-4">소기업</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-job-5"><label for="theme-job-5">소상공인</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-job-6"><label for="theme-job-6">취업직장무관</label></div>
+                            </div>
+                            </div>
+                        </div>
+
+                        <div class="form-filter-subgroup">
+                            <div class="form-filter-subside">
+                            <strong>직업안정</strong>
+                            <div class="input-choice"><input type="checkbox" id="theme-work-all"><label for="theme-work-all">전체</label></div>
+                            </div>
+                            <div class="form-filter-subcontent">
+                            <div class="input-choice-wrap">
+                                <div class="input-choice"><input type="checkbox" id="theme-work-1"><label for="theme-work-1">사회초년생</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-work-2"><label for="theme-work-2">근로자/직장인</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-work-3"><label for="theme-work-3">농업인</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-work-4"><label for="theme-work-4">어업인</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-work-5"><label for="theme-work-5">임업인</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-work-6"><label for="theme-work-6">축산업인</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-work-7"><label for="theme-work-7">취업모(워킹맘)</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-work-8"><label for="theme-work-8">실직자/구직자</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-work-9"><label for="theme-work-9">창업자</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-work-10"><label for="theme-work-10">자영업자</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-work-11"><label for="theme-work-11">직업무관</label></div>
+                            </div>
+                            </div>
+                        </div>
+
+                        <div class="form-filter-subgroup">
+                            <div class="form-filter-subside">
+                            <strong>생활지원</strong>
+                            <div class="input-choice"><input type="checkbox" id="theme-life-all"><label for="theme-life-all">전체</label></div>
+                            </div>
+                            <div class="form-filter-subcontent">
+                            <div class="input-choice-wrap">
+                                <div class="input-choice"><input type="checkbox" id="theme-life-1"><label for="theme-life-1">다문화가족</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-life-2"><label for="theme-life-2">이주청소년</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-life-3"><label for="theme-life-3">북한이탈</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-life-4"><label for="theme-life-4">한부모가정</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-life-5"><label for="theme-life-5">신혼부부</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-life-6"><label for="theme-life-6">임산부영유아가정</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-life-7"><label for="theme-life-7">소년소녀가장</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-life-8"><label for="theme-life-8">조손가정</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-life-9"><label for="theme-life-9">장기의료환자</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-life-10"><label for="theme-life-10">장애인</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-life-11"><label for="theme-life-11">보훈대상자</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-life-12"><label for="theme-life-12">1인가정</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-life-13"><label for="theme-life-13">생활지원무관</label></div>
+                            </div>
+                            </div>
+                        </div>
+
+                        <div class="form-filter-subgroup">
+                            <div class="form-filter-subside">
+                            <strong>교육지원</strong>
+                            <div class="input-choice"><input type="checkbox" id="theme-edu-all"><label for="theme-edu-all">전체</label></div>
+                            </div>
+                            <div class="form-filter-subcontent">
+                            <div class="input-choice-wrap">
+                                <div class="input-choice"><input type="checkbox" id="theme-edu-1"><label for="theme-edu-1">유치원생</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-edu-2"><label for="theme-edu-2">초등학교</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-edu-3"><label for="theme-edu-3">중학교</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-edu-4"><label for="theme-edu-4">고등학교</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-edu-5"><label for="theme-edu-5">대학</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-edu-6"><label for="theme-edu-6">대학원</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-edu-7"><label for="theme-edu-7">교육기타</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-edu-8"><label for="theme-edu-8">교육지원무관</label></div>
+                            </div>
+                            </div>
+                        </div>
+
+                        <div class="form-filter-subgroup">
+                            <div class="form-filter-subside">
+                            <strong>분야</strong>
+                            <div class="input-choice"><input type="checkbox" id="theme-field-all"><label for="theme-field-all">전체</label></div>
+                            </div>
+                            <div class="form-filter-subcontent">
+                            <div class="input-choice-wrap">
+                                <div class="input-choice"><input type="checkbox" id="theme-field-1"><label for="theme-field-1">일반·지방행정</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-field-2"><label for="theme-field-2">공공질서및안전</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-field-3"><label for="theme-field-3">통일·외교</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-field-4"><label for="theme-field-4">국방</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-field-5"><label for="theme-field-5">교육</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-field-6"><label for="theme-field-6">문화 및 관광</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-field-7"><label for="theme-field-7">환경</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-field-8"><label for="theme-field-8">사회복지</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-field-9"><label for="theme-field-9">보건</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-field-10"><label for="theme-field-10">농림수산</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-field-11"><label for="theme-field-11">산업·중소기업 및 에너지</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-field-12"><label for="theme-field-12">교육 및 물류</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-field-13"><label for="theme-field-13">통신</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-field-14"><label for="theme-field-14">국토및지역개발</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-field-15"><label for="theme-field-15">과학기술</label></div>
+                                <div class="input-choice"><input type="checkbox" id="theme-field-16"><label for="theme-field-16">예비비</label></div>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="form-filter-detail-row">
+                        <strong class="form-filter-detail-label">연구개발</strong>
+                        <div class="input-choice-wrap">
+                        <div class="input-choice"><input type="checkbox" id="theme-rnd-1"><label for="theme-rnd-1">개별공고</label></div>
+                        <div class="input-choice"><input type="checkbox" id="theme-rnd-2"><label for="theme-rnd-2">통합공고</label></div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="form-search-btns">
+                    <button type="button" class="btn-reset">초기화</button>
+                    <button type="button" class="btn-search">검색</button>
+                </div>
+                </div>    
+
+                <div class="data-util">
+                    <div class="left">
+                        <div class="tab-filter" role="tablist" aria-label="카테고리 선택">
+                            <button type="button" role="tab" class="on" data-tab-id="tab-all" aria-selected="true">전체</button>
+                            <button type="button" role="tab" data-tab-id="tab-benefit" aria-selected="false">정부혜택</button>
+                            <button type="button" role="tab" data-tab-id="tab-subsidy" aria-selected="false">국고지원사업</button>
+                            <button type="button" role="tab" data-tab-id="tab-rnd" aria-selected="false">연구개발지원</button>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="sort-toggle" role="group" aria-label="정렬">
+                            <button type="button" class="on" aria-pressed="true">정확도</button>
+                            <button type="button" aria-pressed="false">최신순</button>
+                            <button type="button" aria-pressed="false">인기순</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content">
+                    <div class="data-util">
+                        <div class="left">
+                            <div class="total">총 <em>85,007</em>건</div>
+                        </div>
+                        <div class="right">
+                            <div class="view-type-toggle" role="group" aria-label="보기 형식">
+                                <button type="button" class="view-type-btn on" data-view="list" aria-pressed="true">
+                                    <i class="ico-list"></i>
+                                    <span>목록</span>
+                                </button>
+                                <button type="button" class="view-type-btn" data-view="card" aria-pressed="false">
+                                    <i class="ico-card"></i>
+                                    <span>카드</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="benefit-result-table is-list">
+                        <ul class="benefit-result-list">
+                            <li>
+                                <span class="benefit-badge is-green">
+                                    <span class="badge-list">카테고리명-연관기관</span>
+                                    <span class="badge-card">연구개발지원</span>
+                                </span>
+                                <div class="info">
+                                    <a href="javascript:void(0);" class="tit">[출연금-NTIS] 2027년도 한-일(JSPS) 협력사업 신규과제 공모 (현력연구-공동세미나)</a>
+                                    <p class="desc">한·일 양국 연구자 간 협력연구를 지원하여 과학기술 교류 및 공동 연구 성과 창출을 도모합니다.</p>
+                                    <p class="meta">[공고기관명] 한국연구재단, [부처명]과학기술정보통신부</p>
+                                    <ul class="detail">
+                                        <li><span class="label">사업기간</span><span class="value">-</span></li>
+                                        <li><span class="label">수행기관</span><span class="value">한국연구재단</span></li>
+                                        <li><span class="label">담당부서</span><span class="value">과학기술정보통신부</span></li>
+                                        <li><span class="label">문의전화</span><span class="value">129</span></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-badge is-green">
+                                    <span class="badge-list">카테고리명-연관기관</span>
+                                    <span class="badge-card">연구개발지원</span>
+                                </span>
+                                <div class="info">
+                                    <a href="javascript:void(0);" class="tit">[출연금-NTIS] 2027년도 한-일(JSPS) 협력사업 신규과제 공모 (현력연구-공동세미나)</a>
+                                    <p class="desc">돌봄이 필요한 만 6~12세 아동에게 맞춤형 돌봄 서비스를 제공하여 돌봄 사각지대를 해소합니다.</p>
+                                    <p class="meta">[공고기관명] 한국연구재단, [부처명]과학기술정보통신부</p>
+                                    <ul class="detail">
+                                        <li><span class="label">사업기간</span><span class="value">-</span></li>
+                                        <li><span class="label">수행기관</span><span class="value">한국연구재단</span></li>
+                                        <li><span class="label">담당부서</span><span class="value">과학기술정보통신부</span></li>
+                                        <li><span class="label">문의전화</span><span class="value">129</span></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-badge is-green">
+                                    <span class="badge-list">카테고리명-연관기관</span>
+                                    <span class="badge-card">연구개발지원</span>
+                                </span>
+                                <div class="info">
+                                    <a href="javascript:void(0);" class="tit">[출연금-NTIS] 2027년도 한-일(JSPS) 협력사업 신규과제 공모 (현력연구-공동세미나)</a>
+                                    <p class="desc">어린이집·유치원 등을 이용하지 않는 가정양육 영유아에게 가정양육 수당을 지원함으로써 양육 부담을 덜어드립니다.</p>
+                                    <p class="meta">[공고기관명] 한국연구재단, [부처명]과학기술정보통신부</p>
+                                    <ul class="detail">
+                                        <li><span class="label">사업기간</span><span class="value">-</span></li>
+                                        <li><span class="label">수행기관</span><span class="value">한국연구재단</span></li>
+                                        <li><span class="label">담당부서</span><span class="value">과학기술정보통신부</span></li>
+                                        <li><span class="label">문의전화</span><span class="value">129</span></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <script id="feedback-template">
+                    // 피드백
+                    $.ajax({url:"common/feedback.txt", dataType:"text", success:function(data){
+                        $('#feedback-template').replaceWith(data);
+                        pageFeedback();
+                    }});
+                </script>
+
+            </div>
+            <!-- //contents -->
+
+            <script id="floating-template">
+                // 플로팅메뉴
+                $.ajax({url:"common/floating.txt", dataType:"text", success:function(data){
+                    $('#floating-template').replaceWith(data);
+                }});
+            </script>
+        </div>
+        <script id="footer-template">
+            // 푸터
+            $.ajax({url:"common/footer.txt", dataType:"text", success:function(data){
+                $('#footer-template').replaceWith(data);
+            }});
+        </script>
+    </div>
+    <!-- // wrap -->
+
+<script>
+$(function(){
+  $('.view-type-toggle').on('click', '.view-type-btn', function(){
+    var view = $(this).data('view');
+    $(this).addClass('on').attr('aria-pressed', 'true')
+      .siblings('.view-type-btn').removeClass('on').attr('aria-pressed', 'false');
+    $('.benefit-result-table')
+      .toggleClass('is-list', view === 'list')
+      .toggleClass('is-card', view === 'card');
+  });
+
+  $('.sort-toggle').on('click', 'button', function(){
+    $(this).addClass('on').attr('aria-pressed', 'true')
+      .siblings('button').removeClass('on').attr('aria-pressed', 'false');
+  });
+
+  $('.btn-toggle').on('click', function(){
+    var $head = $(this).closest('.form-filter-head');
+    var $body = $head.next('.form-filter-body');
+    $head.toggleClass('on');
+    $body.toggle();
+  });
+
+  function bindCheckboxAll($all, $items){
+    if(!$all.length || !$items.length) return;
+    $all.on('change', function(){
+      $items.prop('checked', this.checked);
+      $all.prop('indeterminate', false);
+    });
+    $items.on('change', function(){
+      var checkedCount = $items.filter(':checked').length;
+      $all.prop('checked', checkedCount === $items.length);
+      $all.prop('indeterminate', checkedCount > 0 && checkedCount < $items.length);
+    });
+  }
+
+  $('.form-filter-subgroup').each(function(){
+    var $group = $(this);
+    var $all = $group.find('.form-filter-subside input[type="checkbox"]');
+    var $items = $group.find('.form-filter-subcontent input[type="checkbox"]');
+    bindCheckboxAll($all, $items);
+  });
+
+  $('.form-filter-body > .input-choice-wrap').each(function(){
+    var $wrap = $(this);
+    var $all = $wrap.find('input[type="checkbox"]').filter(function(){
+      return $(this).next('label').text().trim() === '전체';
+    }).first();
+    var $items = $wrap.find('input[type="checkbox"]').not($all);
+    bindCheckboxAll($all, $items);
+  });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title>열린재정</title>
+
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/pub-ui.js"></script>
+
+</head>
+<body>
+
+    <dl class="skipLink">
+        <dt>바로가기 메뉴</dt>	
+        <dd><a href="#gnbMenu">주메뉴 바로가기</a></dd>
+        <dd><a href="#content">본문 바로가기</a></dd>
+    </dl>
+    <div class="wrap">
+        <script id="header-template">
+            // 헤더
+            $.ajax({url:"common/header.txt", dataType:"text", success:function(data){
+                $('#header-template').replaceWith(data);
+            }});
+        </script>
+
+        <div class="container" id="content">
+            <script id="subvisual-template">
+                $.ajax({url:"common/subvisual.txt", dataType:"text", success:function(data){
+                    $('#subvisual-template').replaceWith($(data).filter('#visual-together'));
+                }});
+            </script>
+
+            <script id="breadcrumb-template">
+                // breadcrumb메뉴
+                $.ajax({url:"common/breadcrumb.txt", dataType:"text", success:function(data){
+                    $('#breadcrumb-template').replaceWith(data);
+                    breadcrumbMenu();
+                }});
+            </script>
+            
+            <div class="contents">
+                <div class="title-main-wrap">
+                    <h2 class="title-main">나라장터 조달정보</h2>
+                </div>
+
+                <div class="info-guide">
+                    <div class="info-guide-head">
+                        <i class="ico-info-guide" aria-hidden="true"></i>
+                        <strong class="info-guide-tit">정보 이용안내</strong>
+                    </div>
+                    <div class="info-guide-body">
+                        <ul class="dash-list">
+                            <li>나라장터(조달)와 연계하여 공고 및 입찰정보를 제공합니다.</li>
+                            <li>조달정보는 개찰일자를 기준으로 수집하고 있으며 아래 정보는 실제 제공하는 정보와 1~2일 정도 차이가 발생할 수 있습니다.</li>
+                            <li>엑셀 다운로드 시 최대 약 10,000건 기준으로 다운로드 하시길 권장합니다.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="form-search-box">
+                    <div class="form-search-fields">
+                        <div class="form-row">
+                            <div class="fm">
+                                <label for="bid-no" class="label">입찰공고번호</label>
+                                <div class="inp">
+                                    <input type="text" id="bid-no" placeholder="입찰공고번호 입력" aria-label="입찰공고번호">
+                                </div>
+                            </div>
+                            <div class="fm">
+                                <label for="bid-name" class="label">입찰명</label>
+                                <div class="inp">
+                                    <input type="text" id="bid-name" placeholder="입찰명 입력" aria-label="입찰명">
+                                </div>
+                            </div>
+                            <div class="fm">
+                                <label for="bid-contract" class="label">계약방법</label>
+                                <div class="inp">
+                                    <input type="text" id="bid-contract" placeholder="계약방법 입력" aria-label="계약방법">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="fm">
+                                <label for="bid-start-date" class="label">입찰일자</label>
+                                <div class="input-date">
+                                    <input type="text" id="bid-start-date" class="datepicker start-date" placeholder="YYYY.MM.DD" title="시작일" aria-label="입찰 시작일">
+                                    <span class="dash">~</span>
+                                    <input type="text" class="datepicker end-date" placeholder="YYYY.MM.DD" title="종료일" aria-label="입찰 종료일">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-search-btns">
+                        <button type="button" class="btn-reset">초기화</button>
+                        <button type="button" class="btn-search">검색</button>
+                    </div>
+                </div>
+
+                <div class="data-util">
+                    <div class="left">
+                        <div class="total">전체 <em>85,007</em>건</div>
+                    </div>
+                    <div class="right">
+                        <span class="data-unit">(단위 : 천원)</span>
+                        <button type="button" class="btn-sm btn-white btn-excel">
+                            <i class="ico-excel" aria-hidden="true"></i>
+                            <span>엑셀다운로드</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="data-default" style="height: 500px;background: #dedede;display:flex;justify-content:center;align-items:center;font-size:30px;">테이블영역</div>
+
+                <script id="feedback-template">
+                    // 피드백
+                    $.ajax({url:"common/feedback.txt", dataType:"text", success:function(data){
+                        $('#feedback-template').replaceWith(data);
+                        pageFeedback();
+                    }});
+                </script>                
+            </div>
+            <!-- //contents -->
+
+            <script id="floating-template">
+                // 플로팅메뉴
+                $.ajax({url:"common/floating.txt", dataType:"text", success:function(data){
+                    $('#floating-template').replaceWith(data);
+                }});
+            </script>
+        </div>
+        <script id="footer-template">
+            // 푸터
+            $.ajax({url:"common/footer.txt", dataType:"text", success:function(data){
+                $('#footer-template').replaceWith(data);
+            }});
+        </script>
+    </div>
+    <!-- // wrap -->
+
+
+</body>
+</html>

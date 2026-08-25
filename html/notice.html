@@ -6,15 +6,10 @@
 <meta name="format-detection" content="telephone=no"/>
 <title>열린재정</title>
 
-
-<link type="text/css" rel="stylesheet" href="../css/realgrid/realgrid-white.css">
-<link type="text/css" rel="stylesheet" href="../css/realgrid/realgrid-style.css">
-
-
 <link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
 <link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
 <link type="text/css" rel="stylesheet" href="../css/style.css">
-<script src="../js/jquery-4.0.0.min.js"></script>
+<script src="../js/jquery-1.12.4.min.js"></script>
 <script src="../js/jquery-ui/jquery-ui.min.js"></script>
 <script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
 <script src="../js/pub-ui.js"></script>
@@ -77,7 +72,7 @@
                 <div class="data-default">
                     <div class="scroll">
                         <table>
-                            <caption class="sr-only">공지사항 목록</caption>
+                            <caption class="sr-only">공지사항 목록 — 번호, 제목, 첨부, 등록일, 조회수</caption>
                             <colgroup>
                                 <col style="width:80px">
                                 <col style="width:auto;min-width:300px">
@@ -95,23 +90,23 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td><i class="ico-notice-pin" aria-label="공지"></i></td>
+                                <tr class="rg-fixed-row">
+                                    <td><img src="../images/common/ico-notice-pin.png" alt="공지" class="ico-notice-pin" style="height: 32px;"></td>
                                     <td class="align-l">
                                         <a href="javascript:void(0);" class="link-txt-hover">
-                                            <span class="tag tag-red">이벤트</span>
+                                            <img class="ico-data-tag" src="../images/common/ico-tag-event.png" alt="이벤트" style="height: 24px;">
                                             <span class="ellips">[알기쉬운 재정용어사전] 개편기념, 초성 퀴즈 풀고 재정잘알 되기!</span>
                                         </a>
                                     </td>
-                                    <td><i class="ico-tbl-file" aria-label="첨부파일"></i></td>
+                                    <td><img src="../images/common/ico-data-file.png" alt="첨부파일" class="ico-data-file" style="height: 24px;"></td>
                                     <td>2026.07.01</td>
                                     <td>131</td>
                                 </tr>
-                                <tr>
-                                    <td><i class="ico-notice-pin" aria-label="공지"></i></td>
+                                <tr class="rg-fixed-row">
+                                    <td><img src="../images/common/ico-notice-pin.png" alt="공지" class="ico-notice-pin" style="height: 32px;"></td>
                                     <td class="align-l">
                                         <a href="javascript:void(0);" class="link-txt-hover">
-                                            <span class="tag tag-red">이벤트</span>
+                                            <img class="ico-data-tag" src="../images/common/ico-tag-event.png" alt="이벤트" style="height: 24px;">
                                             <span class="ellips">[열린재정] 새 단장, 여러분의 의견으로 완성됩니다.</span>
                                         </a>
                                     </td>
@@ -123,8 +118,9 @@
                                     <td>98</td>
                                     <td class="align-l">
                                         <a href="javascript:void(0);" class="link-txt-hover">
-                                            <span class="tag tag-blue">공모전</span>
-                                            <span class="ellips">2026 모두의 재정 국민홍보단 ‘재정원정대’ 선정 발표</span>
+                                            <img class="ico-data-tag" src="../images/common/ico-tag-contest.png" alt="공모전" style="height: 24px;">
+                                            <span class="ellips">2026 모두의 재정 국민홍보단 ‘재정원정대’ 선정 발표2026 모두의 재정 국민홍보단 ‘재정원정대’ 선정 발표2026 모두의 재정 국민홍보단 ‘재정원정대’ 선정 발표2026 모두의 재정 국민홍보단 ‘재정원정대’ 선정 발표2026 모두의 재정 국민홍보단 ‘재정원정대’ 선정 발표2026 모두의 재정 국민홍보단 ‘재정원정대’ 선정 발표</span>
+                                            <img class="ico-data-tag" src="../images/common/ico-new.png" alt="신규" style="height: 20px;">
                                         </a>
                                     </td>
                                     <td></td>
@@ -135,11 +131,11 @@
                                     <td>97</td>
                                     <td class="align-l">
                                         <a href="javascript:void(0);" class="link-txt-hover">
-                                            <span class="tag tag-yellow">콘텐츠</span>
+                                            <img class="ico-data-tag" src="../images/common/ico-tag-contents.png" alt="콘텐츠" style="height: 24px;">
                                             <span class="ellips">2026 모두의 재정 국민홍보단 ‘재정원정대’ 모집</span>
                                         </a>
                                     </td>
-                                    <td><i class="ico-tbl-file" aria-label="첨부파일"></i></td>
+                                    <td><img src="../images/common/ico-data-file.png" alt="첨부파일" class="ico-data-file" style="height: 24px;"></td>
                                     <td>2026.05.08</td>
                                     <td>514</td>
                                 </tr>
@@ -147,11 +143,11 @@
                                     <td>96</td>
                                     <td class="align-l">
                                         <a href="javascript:void(0);" class="link-txt-hover">
-                                            <span class="tag tag-gray">일반</span>
+                                            <img class="ico-data-tag" src="../images/common/ico-tag-normal.png" alt="일반" style="height: 24px;">
                                             <span class="ellips">2026년 재정데이터분석 미니 프로젝트 안내</span>
                                         </a>
                                     </td>
-                                    <td><i class="ico-tbl-file" aria-label="첨부파일"></i></td>
+                                    <td><img src="../images/common/ico-data-file.png" alt="첨부파일" class="ico-data-file" style="height: 24px;"></td>
                                     <td>2026.04.24</td>
                                     <td>638</td>
                                 </tr>
@@ -159,7 +155,7 @@
                                     <td>95</td>
                                     <td class="align-l">
                                         <a href="javascript:void(0);" class="link-txt-hover">
-                                            <span class="tag tag-gray">일반</span>
+                                            <img class="ico-data-tag" src="../images/common/ico-tag-normal.png" alt="일반" style="height: 24px;">
                                             <span class="ellips">시스템 정기점검에 따른 서비스 이용 안내</span>
                                         </a>
                                     </td>
@@ -171,11 +167,11 @@
                                     <td>94</td>
                                     <td class="align-l">
                                         <a href="javascript:void(0);" class="link-txt-hover">
-                                            <span class="tag tag-gray">일반</span>
+                                            <img class="ico-data-tag" src="../images/common/ico-tag-normal.png" alt="일반" style="height: 24px;">
                                             <span class="ellips">재정통계 데이터 제공 항목 확대 안내</span>
                                         </a>
                                     </td>
-                                    <td><i class="ico-tbl-file" aria-label="첨부파일"></i></td>
+                                    <td><img src="../images/common/ico-data-file.png" alt="첨부파일" class="ico-data-file" style="height: 24px;"></td>
                                     <td>2026.02.27</td>
                                     <td>1100</td>
                                 </tr>
@@ -183,11 +179,11 @@
                                     <td>93</td>
                                     <td class="align-l">
                                         <a href="javascript:void(0);" class="link-txt-hover">
-                                            <span class="tag tag-blue">공모전</span>
+                                            <img class="ico-data-tag" src="../images/common/ico-tag-contest.png" alt="공모전" style="height: 24px;">
                                             <span class="ellips">2025 재정정보 활용 ‘우수사례’ 발표</span>
                                         </a>
                                     </td>
-                                    <td><i class="ico-tbl-file" aria-label="첨부파일"></i></td>
+                                    <td><img src="../images/common/ico-data-file.png" alt="첨부파일" class="ico-data-file" style="height: 24px;"></td>
                                     <td>2026.01.07</td>
                                     <td>1256</td>
                                 </tr>
@@ -195,11 +191,11 @@
                                     <td>92</td>
                                     <td class="align-l">
                                         <a href="javascript:void(0);" class="link-txt-hover">
-                                            <span class="tag tag-yellow">콘텐츠</span>
+                                            <img class="ico-data-tag" src="../images/common/ico-tag-contents.png" alt="콘텐츠" style="height: 24px;">
                                             <span class="ellips">2025 재정정보 활용 공모전 개최 결과</span>
                                         </a>
                                     </td>
-                                    <td><i class="ico-tbl-file" aria-label="첨부파일"></i></td>
+                                    <td><img src="../images/common/ico-data-file.png" alt="첨부파일" class="ico-data-file" style="height: 24px;"></td>
                                     <td>2025.12.19</td>
                                     <td>1302</td>
                                 </tr>
@@ -207,7 +203,7 @@
                                     <td>91</td>
                                     <td class="align-l">
                                         <a href="javascript:void(0);" class="link-txt-hover">
-                                            <span class="tag tag-gray">일반</span>
+                                            <img class="ico-data-tag" src="../images/common/ico-tag-normal.png" alt="일반" style="height: 24px;">
                                             <span class="ellips">[당첨자 발표] 2025년 열린재정 사용자 만족도 설문조사 이벤트</span>
                                         </a>
                                     </td>

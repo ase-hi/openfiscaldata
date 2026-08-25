@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title>열린재정</title>
+
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/pub-ui.js"></script>
+
+</head>
+<body>
+
+
+
+<div class="popup-wrap" id="tempPopId">
+  <div class="dim"></div>
+  <div class="pop-wrap">
+    <div class="popup">
+      <div class="pop-header">
+        <h2 class="title">세부사업 정보</h2>
+        <div class="right">
+          <button type="button" class="btn-close"><i class="ico-close"></i></button>
+        </div>
+      </div>
+      <div class="pop-body">
+        <div class="pop-guide has-btns">
+            <p class="pop-guide-txt">세부 사업 상세 정보는 <span class="point">원문보기</span> 및 <span class="point">다운로드</span>를 이용하세요.</p>
+            <div class="pop-guide-btns">
+                <button type="button" class="btn-sm btn-white">원문보기</button>
+                <button type="button" class="btn-sm btn-bg-blue-line">다운로드</button>
+            </div>
+        </div>
+        <div class="section-wrap">
+            <div class="title-section-wrap">
+                <h3 class="title-section">사업 코드 정보</h3>
+            </div>
+            <div class="data-detail">
+                <table>
+                    <caption class="sr-only">사업 코드 정보 — 소관, 회계, 계정, 분야명(코드), 부문명(코드), 프로그램명(코드), 단위사업명(코드), 세부사업</caption>
+                    <colgroup>
+                        <col style="width:160px">
+                        <col style="width:170px">
+                        <col style="width:160px">
+                        <col style="width:auto">
+                        <col style="width:160px">
+                        <col style="width:auto">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">소관</th>
+                            <td>감사원</td>
+                            <th scope="row">회계</th>
+                            <td>일반회계</td>
+                            <th scope="row">계정</th>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">분야명(코드)</th>
+                            <td>일반·지방행정</td>
+                            <th scope="row">부문명(코드)</th>
+                            <td>일반행정</td>
+                            <th scope="row">프로그램명(코드)</th>
+                            <td>감사활동</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">단위사업명(코드)</th>
+                            <td>청사 및 시설물 관리</td>
+                            <th scope="row">세부사업</th>
+                            <td colspan="3">노후시설 개보수 및 업무시설 정비</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section-wrap">
+            <div class="title-section-wrap">
+                <h3 class="title-section">예산 총괄표</h3>
+                <div class="right">
+                    <span class="data-unit">(단위 : 백만원)</span>
+                </div>
+            </div>
+            <div class="data-default st-line">
+                <div class="scroll">
+                    <table>
+                        <caption class="sr-only">예산 총괄표 — 사업명, 2024년 결산, 2025년 예산(본예산, 추경), 2026년 예산(본예산, 추경), 증감율, 사업구조 변경여부</caption>
+                        <colgroup>
+                            <col style="width:auto;min-width: 200px;;">
+                            <col style="width:95px">
+                            <col style="width:85px">
+                            <col style="width:135px">
+                            <col style="width:85px">
+                            <col style="width:135px">
+                            <col style="width:92px">
+                            <col style="width:94px">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col" rowspan="2">사업명</th>
+                                <th scope="col" rowspan="2">2024년<br>결산</th>
+                                <th scope="col" colspan="2">2025년 예산</th>
+                                <th scope="col" colspan="2">2026년 예산</th>
+                                <th scope="col" rowspan="2">증감율</th>
+                                <th scope="col" rowspan="2">사업구조<br>변경여부</th>
+                            </tr>
+                            <tr>
+                                <th scope="col">본예산</th>
+                                <th scope="col">추경<br><span class="normal">(수정지출계획액)</span></th>
+                                <th scope="col">본예산</th>
+                                <th scope="col">추경<br><span class="normal">(수정지출계획액)</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="align-l">노후시설 개보수 및 업무시설 정비</td>
+                                <td class="align-r">3,767</td>
+                                <td class="align-r">2,102</td>
+                                <td class="align-r">2,102</td>
+                                <td class="align-r">958</td>
+                                <td class="align-r">2,012</td>
+                                <td class="align-r">-52.4</td>
+                                <td class="align-c">N</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="pop-footer">
+        <div class="btn-wrap">
+            <div class="right">
+                <button type="button" class="btn-nm btn-blue">닫기</button>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script>
+  popOpen('#tempPopId');
+</script>
+
+</body>
+</html>

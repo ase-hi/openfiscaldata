@@ -1,20 +1,59 @@
-<div class="sub-visual visual-notice" id="visual-notice">
+<div class="sub-visual visual-finance" id="visual-finance">
     <div class="wrapper">
         <div class="sub-visual-text">
-            <p class="tit">알림 · 안내</p>
-            <p class="desc">한눈에 보는 우리나라 재정 현황과 통계 정보</p>
+            <p class="tit">알기쉬운 재정</p>
+            <p class="desc">쉽게 이해할 수 있는 재정 정보</p>
+        </div>
+        <div class="sub-visual-img" aria-hidden="true">
+            <img src="../images/common/sub-visual/visual-finance.png" alt="">
         </div>
     </div>
 </div>
 
-<div class="sub-visual visual-" id="">
+<div class="sub-visual visual-statistics" id="visual-statistics">
     <div class="wrapper">
         <div class="sub-visual-text">
-            <p class="tit">-</p>
-            <p class="desc">-</p>
+            <p class="tit">알기쉬운 재정통계</p>
+            <p class="desc">중앙 · 지방 · 교육재정 주요지표를 한눈에 확인</p>
         </div>
         <div class="sub-visual-img" aria-hidden="true">
-            <img src="../images/common/sub-visual/visua-obj.png" alt="">
+            <img src="../images/common/sub-visual/visual-statistics.png" alt="">
+        </div>
+    </div>
+</div>
+
+<div class="sub-visual visual-lab" id="visual-lab">
+    <div class="wrapper">
+        <div class="sub-visual-text">
+            <p class="tit">재정연구실</p>
+            <p class="desc">재정데이터셋 · 법령 · 통계 AI 분석까지 전문적인 연구환경</p>
+        </div>
+        <div class="sub-visual-img" aria-hidden="true">
+            <img src="../images/common/sub-visual/visual-lab.png" alt="">
+        </div>
+    </div>
+</div>
+
+<div class="sub-visual visual-together" id="visual-together">
+    <div class="wrapper">
+        <div class="sub-visual-text">
+            <p class="tit">함께하는 재정</p>
+            <p class="desc">참여, 지원혜택 사업정보를 확인</p>
+        </div>
+        <div class="sub-visual-img" aria-hidden="true">
+            <img src="../images/common/sub-visual/visual-together.png" alt="">
+        </div>
+    </div>
+</div>
+
+<div class="sub-visual visual-notice" id="visual-notice">
+    <div class="wrapper">
+        <div class="sub-visual-text">
+            <p class="tit">알림 · 안내</p>
+            <p class="desc">모두의 재정 주요소식과 국내외 재정 관련 사이트 안내</p>
+        </div>
+        <div class="sub-visual-img" aria-hidden="true">
+            <img src="../images/common/sub-visual/visual-notice.png" alt="">
         </div>
     </div>
 </div>

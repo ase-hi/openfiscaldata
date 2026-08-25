@@ -52,7 +52,7 @@
         </h1>
         <nav class="gnb-menu-wrap" id="gnbMenu">
           <ul class="gnb-menu">
-            <li>
+            <li class="active">
               <a href="javascript:void(0);">알기쉬운 재정</a>
               <div class="depth-wrap">
                 <div class="gnb-mega">

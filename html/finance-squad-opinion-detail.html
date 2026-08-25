@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -7,11 +7,9 @@
 <title>열린재정</title>
 
 <link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
-<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
 <link type="text/css" rel="stylesheet" href="../css/style.css">
 <script src="../js/jquery-1.12.4.min.js"></script>
 <script src="../js/jquery-ui/jquery-ui.min.js"></script>
-<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
 <script src="../js/pub-ui.js"></script>
 
 </head>
@@ -33,7 +31,7 @@
         <div class="container" id="content">
             <script id="subvisual-template">
                 $.ajax({url:"common/subvisual.txt", dataType:"text", success:function(data){
-                    $('#subvisual-template').replaceWith($(data).filter('#visual-notice'));
+                    $('#subvisual-template').replaceWith($(data).filter('#visual-together'));
                 }});
             </script>
 
@@ -42,12 +40,12 @@
                 $.ajax({url:"common/breadcrumb.txt", dataType:"text", success:function(data){
                     $('#breadcrumb-template').replaceWith(data);
                     breadcrumbMenu();
-                }});
+                }}); 
             </script>
             
             <div class="contents">
                 <div class="title-main-wrap">
-                    <h2 class="title-main">공지사항</h2>
+                    <h2 class="title-main">재정원정대</h2>
                 </div>
 
                 <div class="view-detail-wrap">
@@ -55,54 +53,33 @@
                     <article class="view-detail">
                         <header class="view-detail-head">
                             <div class="view-detail-title">
-                                <h3>[열린재정] 새 단장, 여러분의 의견을 완성됩니다.</h3>
+                                <h3>개선제안 의견 드립니다.</h3>
                             </div>
                             <div class="view-detail-info">
                                 <dl>
                                     <dt>작성자</dt>
-                                    <dd>한국재정정보원</dd>
+                                    <dd>홍길동</dd>
                                 </dl>
                                 <dl>
-                                    <dt>등록일</dt>
-                                    <dd>2026-07-01</dd>
+                                    <dt>등록일자</dt>
+                                    <dd>2026-06-06 23시</dd>
                                 </dl>
                                 <dl>
-                                    <dt>조회</dt>
-                                    <dd>29</dd>
+                                    <dt>상태</dt>
+                                    <dd>등록</dd>
                                 </dl>
                             </div>
                         </header>
 
-                        <div class="view-files">
-                            <div class="view-files-head">
-                                <button type="button" class="view-files-toggle">
-                                    <span>첨부 <em>2개</em></span>
-                                </button>
-                                <button type="button" class="view-files-save">모두저장</button>
+                        <div class="view-detail-body opinion-detail-body">
+                            <div class="opinion-block">
+                                <h4>현황 및 문제점</h4>
+                                <p>안녕하세요 모두의 재정 홈페이지 사용자로 개선 제안의견이 있어 글 남기게 되었습니다. 사이트를 이용하면서 많은 도움을 받고 있지만 불편한 사항이 한가지 있었습니다. 다름이 아니라 통계 데이터를 사용하는데 데이터 찾는게 너무 어려워서요 조금 더 쉽게 찾을 수 있는 방법이 없을까 고민하다 글을 남기게 되었습니다. ······</p>
                             </div>
-                            <ul class="view-files-list">
-                                <li>
-                                    <i class="ico-file"></i>
-                                    <a href="javascript:void(0);">새 누리집의 화면 디자인과 메뉴 구성.pdf</a>
-                                    <span class="file-size">121.9KB</span>
-                                    <button type="button" class="file-preview">미리보기</button>
-                                </li>
-                                <li>
-                                    <i class="ico-file"></i>
-                                    <a href="javascript:void(0);">[서식] 시안 의견서 양식.hwp</a>
-                                    <span class="file-size">428.4KB</span>
-                                    <button type="button" class="file-preview">미리보기</button>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="view-detail-body">
-                            <h4>「열린재정」 새 단장, 여러분의 의견으로 완성됩니다!</h4>
-                            <p>재정정보공개시스템(열린재정)이 국민 누구나 어렵고 복잡한 재정 정보를<br>더 쉽고 편리하게 이용할 수 있도록 <strong>「모두의 재정」</strong>으로 새롭게 개편됩니다.</p>
-                            <p>새 누리집의 화면 디자인과 메뉴 구성을 국민 눈높이에 맞춰 결정하고자 의견을 받습니다.<br>직접 시안을 보시고 더 나은 안을 골라주시고, 발전을 위한 개선 의견도 자유롭게 남겨주세요!</p>
-                            <p>남겨주신 소중한 의견은 향후 국민 맞춤형 재정정보 서비스 개편에 중요한 참고 자료로 적극 활용될 예정입니다.<br>여러분의 많은 관심과 참여를 부탁드립니다.</p>
-                            
-                            <img src="../images/temp/temp-banner.jpg" alt="">
+                            <div class="opinion-block is-answer">
+                                <h4>개선방안</h4>
+                                <p>제가 생각한 개선방안은 아래와 같습니다.</p>
+                            </div>
                         </div>
                     </article>
 
@@ -117,8 +94,17 @@
                         </dl>
                     </div>
                     <div class="btn-bottom-wrap">
-                        <button type="button" class="btn-nm st-dark">목록</button>
+                        <a href="finance-squad-opinion.html" class="btn-nm st-dark">목록</a>
                     </div>
+
+                    <script id="feedback-template">
+                        // 피드백
+                        $.ajax({url:"common/feedback.txt", dataType:"text", success:function(data){
+                            $('#feedback-template').replaceWith(data);
+                            pageFeedback();
+                        }});
+                    </script>
+
                 </div>
 
             </div>

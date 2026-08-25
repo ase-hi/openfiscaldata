@@ -6,7 +6,7 @@
 <meta name="format-detection" content="telephone=no"/>
 <title>title</title>
 
-<script src="js/jquery-4.0.0.min.js"></script>
+<script src="js/jquery-1.12.4.min.js"></script>
 
 <!-- style -->
 <style type="text/css">
@@ -38,11 +38,12 @@
 
       ["공통", "title", "", "", ""],
       ["", "로딩", "", "", "", "html/loading.html", "", "", ""],
+      ["", "페이징", "", "", "", "html/paging.html", "", "", ""],
 
       ["공통페이지", "title", "", "", ""],
       ["", "메인", "", "", "", "html/main.html", "", "", ""],
 
-      ["알림·안내", "title", "", "", "", ""],         
+      ["알림·안내", "title", "", "", "", ""], 
       ["", "공지사항", "", "", "", "html/notice.html", "", "", ""],
       ["", "", "상세", "", "", "html/notice-view.html", "", "", ""],
       ["", "자주 묻는 질문", "", "", "", "html/faq.html", "", "", ""],
@@ -51,7 +52,29 @@
       ["", "", "등록", "", "", "html/qna-regist.html", "", "", ""],
       ["", "재정관련 사이트", "", "", "", "html/related-site.html", "", "", ""],
 
-      
+      ["함께하는 재정", "title", "", "", "", ""],
+      ["", "정부혜택찾기", "정부지원사업은?", "", "", "html/benefit-gov-support.html", "", "", ""],
+      ["", "", "지원사업 간편검색", "", "", "html/benefit-search-simple.html", "", "", ""],
+      ["", "", "", "상세", "", "html/benefit-search-simple-view.html", "", "", ""],
+      ["", "", "지원사업 상세검색", "", "", "html/benefit-search-detail.html", "", "", ""],
+      ["", "", "정부발주사업", "정부구매예산 사업정보", "", "html/benefit-purchase-budget.html", "", "", ""],
+      ["", "", "", "", "세부사업정보", "html/pop-benefit-purchase-detail.html", "", "", ""],
+      ["", "", "", "나라장터 조달정보", "", "html/benefit-g2b-procurement.html", "", "", ""],
+      ["", "개선요청・설문조사", "모두의재정 개선요청", "", "", "html/improve-request.html", "", "", ""],
+      ["", "", "", "상세", "", "html/improve-request-detail.html", "", "", ""],
+      ["", "", "", "등록", "", "html/improve-request-regist.html", "", "", ""],
+      ["", "", "설문조사", "", "", "html/survey-list.html", "", "", ""],
+      ["", "", "", "상세", "", "html/survey-view.html", "", "", ""],
+      ["", "", "", "둥록", "", "html/survey-regist.html", "", "", ""],
+      ["", "", "", "개인정보 수집 이용동의", "", "html/pop-survey-privacy.html", "", "", ""],
+      ["", "", "", "설문", "", "html/survey.html", "", "", ""],
+      ["", "", "재정원정대", "주요활동", "", "html/finance-squad-activity.html", "", "", ""],
+      ["", "", "", "", "상세", "html/finance-squad-activity-detail.html", "", "", ""],
+      ["", "", "", "의견제안", "", "html/finance-squad-opinion.html", "", "", ""],
+      ["", "", "", "", "상세", "html/finance-squad-opinion-detail.html", "", "", ""],
+      ["", "", "", "", "등록", "html/finance-squad-opinion-regist.html", "", "", ""],
+      ["", "", "", "", "개인정보 수집 이용동의", "html/pop-finance-squad-privacy.html", "", "", ""],
+
     ];
 
 
@@ -70,7 +93,7 @@
       }else{
         function cell(v){
           var v2 = v == null ? '' : String(v);
-          var rightAlign = v2.indexOf('팝업') !== -1;
+          var rightAlign = v2.indexOf('') !== -1;
           return '<td' + (rightAlign ? ' style="text-align:right;"' : '') + '>' + v2 + '</td>';
         }
         $('tbody').append('<tr>'+

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title>열린재정</title>
+
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/pub-ui.js"></script>
+
+</head>
+<body>
+
+    <dl class="skipLink">
+        <dt>바로가기 메뉴</dt>	
+        <dd><a href="#gnbMenu">주메뉴 바로가기</a></dd>
+        <dd><a href="#content">본문 바로가기</a></dd>
+    </dl>
+    <div class="wrap">
+        <script id="header-template">
+            // 헤더
+            $.ajax({url:"common/header.txt", dataType:"text", success:function(data){
+                $('#header-template').replaceWith(data);
+            }});
+        </script>
+
+        <div class="container" id="content">
+            <script id="subvisual-template">
+                $.ajax({url:"common/subvisual.txt", dataType:"text", success:function(data){
+                    $('#subvisual-template').replaceWith($(data).filter('#visual-together'));
+                }});
+            </script>
+
+            <script id="breadcrumb-template">
+                // breadcrumb메뉴
+                $.ajax({url:"common/breadcrumb.txt", dataType:"text", success:function(data){
+                    $('#breadcrumb-template').replaceWith(data);
+                    breadcrumbMenu();
+                }});
+            </script>
+            
+            <div class="contents">
+                <div class="title-main-wrap">
+                    <h2 class="title-main">재정원정대</h2>
+                </div>
+
+                <div class="info-guide">
+                    <div class="info-guide-head">
+                        <i class="ico-info-guide" aria-hidden="true"></i>
+                        <strong class="info-guide-tit">정보 이용안내</strong>
+                    </div>
+                    <div class="info-guide-body">
+                        <ol class="number-list">
+                            <li>비밀글로 설정하지 않을 경우 작성하신 내용에 개인정보(민감정보 포함)가 공개될 수 있습니다. 개인정보(민감정보 포함)가 포함되어 있는 경우<br>반드시 비밀글로 작성하여 체크해주시기 바랍니다.
+                                <p class="info-sub">※ 개인정보(민감정보 포함): 성명, 주민등록번호, 핸드폰번호, 주소, 계좌번호, 건강정보, 장애정보, 인종·민족정보, 사상·신념 등</p>
+                            </li>
+                            <li>홈페이지에 맞지 않는 내용의 게시물은 임의로 삭제될 수 있습니다.</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <form class="write-form">
+                    <div class="data-util">
+                        <div class="right">
+                            <p class="txt-required"><span class="ico-required"><span class="sr-only">(필수)</span></span> 필수 입력 항목입니다.</p>
+                        </div>
+                    </div>
+                    <div class="data-detail regist-form-table">
+                        <table>
+                            <caption class="sr-only">재정원정대 의견제안 작성</caption>
+                            <colgroup>
+                                <col style="width:210px">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row"><label for="opinion-title" class="required">제목 <span class="ico-required"><span class="sr-only">(필수)</span></span></label></th>
+                                    <td><input type="text" id="opinion-title" placeholder="제목을 입력해주세요." required style="width:100%;"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">비밀글 여부</th>
+                                    <td>
+                                        <div class="input-choice">
+                                            <input type="checkbox" id="opinion-secret">
+                                            <label for="opinion-secret">비밀글로 설정 <span>(작성자와 담당자만 열람 가능합니다.)</span></label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="opinion-proposer" class="required">제안자 <span class="ico-required"><span class="sr-only">(필수)</span></span></label></th>
+                                    <td>
+                                        <div class="row-inline">
+                                            <input type="text" id="opinion-proposer" value="홍길동" required style="width:240px;">
+                                            <span class="txt-hint">※ 제안자는 등록후 마스킹 처리 됩니다. (예 : 김****)</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><span class="required">이메일 <span class="ico-required"><span class="sr-only">(필수)</span></span></span></th>
+                                    <td>
+                                        <div class="input-email">
+                                            <input type="text" id="opinion-email-id" aria-label="이메일 아이디" required>
+                                            <span class="at">@</span>
+                                            <input type="text" id="opinion-email-domain" aria-label="이메일 도메인" required>
+                                            <select id="opinion-email-select" aria-label="이메일 도메인 선택">
+                                                <option value="" selected>선택</option>
+                                                <option value="naver.com">naver.com</option>
+                                                <option value="gmail.com">gmail.com</option>
+                                                <option value="daum.net">daum.net</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="row-textarea">
+                                    <th scope="row"><label for="opinion-status" class="required">현황 및 문제점 <span class="ico-required"><span class="sr-only">(필수)</span></span></label></th>
+                                    <td>
+                                        <textarea id="opinion-status" maxlength="400" placeholder="내용을 입력해주세요. (한글 최대 400자 이내)" required></textarea>
+                                        <div class="text-count"><em>0</em><span>/400</span></div>
+                                    </td>
+                                </tr>
+                                <tr class="row-textarea">
+                                    <th scope="row"><label for="opinion-improve" class="required">개선방향 <span class="ico-required"><span class="sr-only">(필수)</span></span></label></th>
+                                    <td>
+                                        <textarea id="opinion-improve" maxlength="400" placeholder="내용을 입력해주세요. (한글 최대 400자 이내)" required></textarea>
+                                        <div class="text-count"><em>0</em><span>/400</span></div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="privacy-agree">
+                        <div class="input-choice">
+                            <input type="checkbox" id="opinion-privacy-agree">
+                            <label for="opinion-privacy-agree">개인정보 수집·이용에 동의합니다.<em>(필수)</em></label>
+                        </div>
+                        <a href="pop-finance-squad-privacy.html" target="_blank" class="btn-link-terms">약관보기</a>
+                    </div>
+
+                    <div class="btn-bottom-wrap">
+                        <a href="finance-squad-opinion.html" class="btn-nm st-dark">목록</a>
+                        <div class="right">
+                            <button type="button" class="btn-nm st-blue">등록</button>
+                        </div>
+                    </div>
+                </form>
+
+                <script id="feedback-template">
+                    // 피드백
+                    $.ajax({url:"common/feedback.txt", dataType:"text", success:function(data){
+                        $('#feedback-template').replaceWith(data);
+                        pageFeedback();
+                    }});
+                </script>
+
+            </div>
+            <!-- //contents -->
+
+            <script id="floating-template">
+                // 플로팅메뉴
+                $.ajax({url:"common/floating.txt", dataType:"text", success:function(data){
+                    $('#floating-template').replaceWith(data);
+                }});
+            </script>
+        </div>
+        <script id="footer-template">
+            // 푸터
+            $.ajax({url:"common/footer.txt", dataType:"text", success:function(data){
+                $('#footer-template').replaceWith(data);
+            }});
+        </script>
+    </div>
+    <!-- // wrap -->
+
+    <script>
+        $('#opinion-status, #opinion-improve').on('input', function(){
+            $(this).closest('td').find('.text-count em').text(this.value.length);
+        });
+    </script>
+</body>
+</html>

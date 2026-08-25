@@ -25,12 +25,11 @@
 
     .sub-visual{position:relative;width:100%;min-height:180px;height:180px;overflow:hidden;background:#cfe0f8 url('../images/common/sub-visual/bg.png') no-repeat 50% 50%;background-size:cover;}
     .sub-visual .wrapper{position:relative;display:flex;align-items:center;height:100%;}
-    .sub-visual.visual-notice .wrapper{background: url('../images/common/sub-visual/visual-notice.png') no-repeat 100% 50%; background-size:auto 140px;}
     .sub-visual-text{position:relative;z-index:2;display:flex;flex-direction:column;gap:7px;}
     .sub-visual-text .tit{margin:0;font-family:'Jalnan Gothic','Pretendard GOV',sans-serif;font-size:40px;font-weight:400;line-height:1.4;letter-spacing:1px;color:#1e2124;}
     .sub-visual-text .desc{margin:0;font-size:17px;font-weight:600;line-height:1.5;color:#3e4766;}
-    .sub-visual-img{position:absolute;right:0;top:50%;z-index:1;width:367px;transform:translateY(-42%);pointer-events:none;}
-    .sub-visual-img img{display:block;width:100%;height:auto;}
+    .sub-visual-img{position:absolute;right:0;top:50%;z-index:1;transform:translateY(-50%);pointer-events:none;}
+    .sub-visual-img img{display:block;height:160px;width:auto;max-width:none;}
 
     .header{position:fixed;top:0;left:0;width:100%; z-index:40;min-width: 1440px;}
 
@@ -68,7 +67,6 @@
     .header .masthead .font-setting-list button .ico-fs-lg{width:26px;height:26px;background-image:url('../images/common/ico-font-size-3.svg');}
     .header .masthead .font-setting-list button .ico-fs-xl{width:28px;height:28px;background-image:url('../images/common/ico-font-size-4.svg');}
     .header .masthead .font-setting-list button .ico-fs-xxl{width:30px;height:30px;background-image:url('../images/common/ico-font-size-5.svg');}
-    /* Figma action states: Default / Hover / Pressed / Selected */
     .header .masthead .font-setting-list button:hover{background:#eef2f7;}
     .header .masthead .font-setting-list button:active{background:#d6e0eb;}
     .header .masthead .font-setting-list button.is-active{background:#eef2f7;font-weight:700;}
@@ -305,9 +303,7 @@
 .floating-quick-list .icon svg{display:block;width:32px;height:32px;}
 .floating-top{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;width:60px;height:60px;padding:0;border:0;border-radius:50%;background:#596584;font-family:'Pretendard GOV',sans-serif;font-size:15px;font-weight:400;line-height:1.5;color:#fff;cursor:pointer;box-shadow:none;transition:background-color .2s ease,transform .2s ease;}
 .floating-top:before{content:'';display:block;width: 15px;height:7px;background: url("data:image/svg+xml,%3Csvg width='15' height='7' viewBox='0 0 15 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.311791 6.56651C-0.1121 6.17055 -0.102655 5.53736 0.33331 5.15245L5.53328 0.565536C6.38834 -0.188565 7.74994 -0.188459 8.60506 0.565536L13.805 5.15245C14.2412 5.53734 14.2516 6.17049 13.8276 6.56651C13.4036 6.96253 12.706 6.97089 12.2697 6.58604L7.06971 2.00011L1.86974 6.58604C1.43349 6.97079 0.735867 6.96221 0.311791 6.56651Z' fill='white'/%3E%3C/svg%3E") no-repeat 50% 50%;background-size: 15px 7px;}
-@media all and (min-width:1025px){
-    /* 좌우 위치(left)는 js floatingQuickStop()에서 .container 우측 끝 좌표 기준으로 계산해 지정한다 */
-}
+
 @media all and (min-width:1025px) and (hover:hover){
     .floating-quick-list a:hover{transform:translateY(-2px);}
     .floating-quick-list a:hover .icon{transform:scale(1.06);}

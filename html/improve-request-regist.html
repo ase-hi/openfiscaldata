@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -7,11 +7,9 @@
 <title>열린재정</title>
 
 <link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
-<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
 <link type="text/css" rel="stylesheet" href="../css/style.css">
 <script src="../js/jquery-1.12.4.min.js"></script>
 <script src="../js/jquery-ui/jquery-ui.min.js"></script>
-<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
 <script src="../js/pub-ui.js"></script>
 
 </head>
@@ -33,7 +31,7 @@
         <div class="container" id="content">
             <script id="subvisual-template">
                 $.ajax({url:"common/subvisual.txt", dataType:"text", success:function(data){
-                    $('#subvisual-template').replaceWith($(data).filter('#visual-notice'));
+                    $('#subvisual-template').replaceWith($(data).filter('#visual-together'));
                 }});
             </script>
 
@@ -47,7 +45,7 @@
             
             <div class="contents">
                 <div class="title-main-wrap">
-                    <h2 class="title-main">Q&A</h2>
+                    <h2 class="title-main">모두의재정 개선요청</h2>
                 </div>
 
                 <div class="info-guide">
@@ -68,50 +66,38 @@
                 <form class="write-form">
                     <div class="data-util">
                         <div class="right">
-                        <p class="txt-required"><span class="ico-required"><span class="sr-only">(필수)</span></span> 필수 입력 항목입니다.</p>
+                            <p class="txt-required"><span class="ico-required"><span class="sr-only">(필수)</span></span> 필수 입력 항목입니다.</p>
                         </div>
                     </div>
                     <div class="data-detail regist-form-table">
                         <table>
-                            <caption class="sr-only">Q&amp;A 문의 작성</caption>
+                            <caption class="sr-only">모두의재정 개선요청 작성</caption>
                             <colgroup>
                                 <col style="width:210px">
                                 <col>
                             </colgroup>
                             <tbody>
                                 <tr>
-                                    <th scope="row"><label for="qna-type" class="required">문의유형 <span class="ico-required"><span class="sr-only">(필수)</span></span></label></th>
-                                    <td>
-                                        <select id="qna-type" aria-label="문의유형" required>
-                                            <option value="">문의유형 선택</option>
-                                            <option>컨텐츠</option>
-                                            <option>오류내용</option>
-                                            <option>개선요청</option>
-                                            <option>이용문의</option>
-                                        </select>
-                                    </td>
-                            </tr>
-                                <tr>
-                                    <th scope="row"><label for="qna-title" class="required">제목 <span class="ico-required"><span class="sr-only">(필수)</span></span></label></th>
-                                    <td><input type="text" id="qna-title" placeholder="제목을 입력해주세요." required style="width:100%;"></td>
+                                    <th scope="row"><label for="improve-title" class="required">제목 <span class="ico-required"><span class="sr-only">(필수)</span></span></label></th>
+                                    <td><input type="text" id="improve-title" placeholder="제목을 입력해주세요." required style="width:100%;"></td>
                                 </tr>
                                 <tr>
                                     <th scope="row">비밀글 여부</th>
                                     <td>
                                         <div class="input-choice">
-                                            <input type="checkbox" id="qna-secret">
-                                            <label for="qna-secret">비밀글로 설정 <span>(작성자와 담당자만 열람 가능합니다.)</span></label>
+                                            <input type="checkbox" id="improve-secret">
+                                            <label for="improve-secret">비밀글로 설정 <span>(작성자와 담당자만 열람 가능합니다.)</span></label>
                                         </div>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th scope="row"><label for="qna-writer" class="required">작성자 <span class="ico-required"><span class="sr-only">(필수)</span></span></label></th>
-                                    <td><input type="text" id="qna-writer" value="홍길동" required></td>
+                                    <th scope="row"><label for="improve-writer" class="required">작성자 <span class="ico-required"><span class="sr-only">(필수)</span></span></label></th>
+                                    <td><input type="text" id="improve-writer" value="홍길동" required ></td>
                                 </tr>
                                 <tr>
-                                    <th scope="row"><label for="qna-content" class="required">내용 <span class="ico-required"><span class="sr-only">(필수)</span></span></label></th>
+                                    <th scope="row"><label for="improve-content" class="required">내용 <span class="ico-required"><span class="sr-only">(필수)</span></span></label></th>
                                     <td>
-                                        <textarea id="qna-content" maxlength="400" placeholder="내용을 입력해주세요. (한글 최대 400자 이내 입력 가능합니다.)" required></textarea>
+                                        <textarea id="improve-content" maxlength="400" placeholder="내용을 입력해주세요. (한글 최대 400자 이내 입력 가능합니다.)" required></textarea>
                                         <div class="text-count"><em>0</em><span>/400</span></div>
                                     </td>
                                 </tr>
@@ -119,13 +105,20 @@
                         </table>
                     </div>
                     <div class="btn-bottom-wrap">
-                        <button type="button" class="btn-nm st-dark">목록</button>
+                        <a href="improve-request.html" class="btn-nm st-dark">목록</a>
                         <div class="right">
                             <button type="button" class="btn-nm st-blue">등록</button>
                         </div>
                     </div>
-                    
                 </form>
+
+                <script id="feedback-template">
+                    // 피드백
+                    $.ajax({url:"common/feedback.txt", dataType:"text", success:function(data){
+                        $('#feedback-template').replaceWith(data);
+                        pageFeedback();
+                    }});
+                </script>
 
             </div>
             <!-- //contents -->
@@ -146,17 +139,9 @@
     </div>
     <!-- // wrap -->
 
-
-
-
-
-
-
-
-
     <script>
-        $('#qna-content').on('input', function(){
-            $('.text-count em').text(this.value.length);
+        $('#improve-content').on('input', function(){
+            $(this).closest('td').find('.text-count em').text(this.value.length);
         });
     </script>
 </body>

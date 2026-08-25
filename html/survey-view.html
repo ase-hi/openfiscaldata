@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -33,7 +33,7 @@
         <div class="container" id="content">
             <script id="subvisual-template">
                 $.ajax({url:"common/subvisual.txt", dataType:"text", success:function(data){
-                    $('#subvisual-template').replaceWith($(data).filter('#visual-notice'));
+                    $('#subvisual-template').replaceWith($(data).filter('#visual-together'));
                 }});
             </script>
 
@@ -47,7 +47,7 @@
             
             <div class="contents">
                 <div class="title-main-wrap">
-                    <h2 class="title-main">공지사항</h2>
+                    <h2 class="title-main">설문조사</h2>
                 </div>
 
                 <div class="view-detail-wrap">
@@ -55,54 +55,20 @@
                     <article class="view-detail">
                         <header class="view-detail-head">
                             <div class="view-detail-title">
-                                <h3>[열린재정] 새 단장, 여러분의 의견을 완성됩니다.</h3>
+                                <h3>2018년 상반기 사용자 만족도조사</h3>
                             </div>
                             <div class="view-detail-info">
                                 <dl>
-                                    <dt>작성자</dt>
-                                    <dd>한국재정정보원</dd>
-                                </dl>
-                                <dl>
-                                    <dt>등록일</dt>
-                                    <dd>2026-07-01</dd>
-                                </dl>
-                                <dl>
-                                    <dt>조회</dt>
-                                    <dd>29</dd>
+                                    <dt>설문기간</dt>
+                                    <dd>2026-07-22~2026-07-31</dd>
                                 </dl>
                             </div>
                         </header>
 
-                        <div class="view-files">
-                            <div class="view-files-head">
-                                <button type="button" class="view-files-toggle">
-                                    <span>첨부 <em>2개</em></span>
-                                </button>
-                                <button type="button" class="view-files-save">모두저장</button>
-                            </div>
-                            <ul class="view-files-list">
-                                <li>
-                                    <i class="ico-file"></i>
-                                    <a href="javascript:void(0);">새 누리집의 화면 디자인과 메뉴 구성.pdf</a>
-                                    <span class="file-size">121.9KB</span>
-                                    <button type="button" class="file-preview">미리보기</button>
-                                </li>
-                                <li>
-                                    <i class="ico-file"></i>
-                                    <a href="javascript:void(0);">[서식] 시안 의견서 양식.hwp</a>
-                                    <span class="file-size">428.4KB</span>
-                                    <button type="button" class="file-preview">미리보기</button>
-                                </li>
-                            </ul>
-                        </div>
-
                         <div class="view-detail-body">
-                            <h4>「열린재정」 새 단장, 여러분의 의견으로 완성됩니다!</h4>
-                            <p>재정정보공개시스템(열린재정)이 국민 누구나 어렵고 복잡한 재정 정보를<br>더 쉽고 편리하게 이용할 수 있도록 <strong>「모두의 재정」</strong>으로 새롭게 개편됩니다.</p>
-                            <p>새 누리집의 화면 디자인과 메뉴 구성을 국민 눈높이에 맞춰 결정하고자 의견을 받습니다.<br>직접 시안을 보시고 더 나은 안을 골라주시고, 발전을 위한 개선 의견도 자유롭게 남겨주세요!</p>
-                            <p>남겨주신 소중한 의견은 향후 국민 맞춤형 재정정보 서비스 개편에 중요한 참고 자료로 적극 활용될 예정입니다.<br>여러분의 많은 관심과 참여를 부탁드립니다.</p>
-                            
-                            <img src="../images/temp/temp-banner.jpg" alt="">
+                            <p>본 조사는 열린재정 사용자를 대상으로 열린재정 정보 품질 및 이용편의성에 대한 만족도 측정을 위한 설문조사입니다. 금회 실시하는 조사 결과는 2018년 하반기 열린재정 운영에 반영될 소중한 자료로 사용될 예정입니다.</p>
+                            <p>열린재정의 보다 나은 서비스 개선을 위해 많은 참여 부탁드립니다.</p>
+                            <p>2018.2.7. 기획재정부·한국재정정보원</p>
                         </div>
                     </article>
 
@@ -117,9 +83,20 @@
                         </dl>
                     </div>
                     <div class="btn-bottom-wrap">
-                        <button type="button" class="btn-nm st-dark">목록</button>
+                        <a href="survey.html" class="btn-nm st-dark">목록</a>
+                        <div class="right">
+                            <button type="button" class="btn-nm st-blue">설문참여</button>
+                        </div>
                     </div>
                 </div>
+
+                <script id="feedback-template">
+                    // 피드백
+                    $.ajax({url:"common/feedback.txt", dataType:"text", success:function(data){
+                        $('#feedback-template').replaceWith(data);
+                        pageFeedback();
+                    }});
+                </script>
 
             </div>
             <!-- //contents -->

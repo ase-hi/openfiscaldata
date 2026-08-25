@@ -305,30 +305,136 @@ function fontSettingMenu(){
     })
   }
 
+
   function tabEvt(){
-    $(document).off('click.tabEvt').on('click.tabEvt', '[data-tab-id]', function(e){
-      e.stopPropagation();
-      var $trigger = $(this);
-      var tabid = $trigger.data('tab-id');
-      // <li><a data-tab-id> 구조(.tab-main)는 li에, <button data-tab-id> 구조(.tab-category)는 버튼 자체에 on을 준다
-      var $active = $trigger.parent().is('li') ? $trigger.parent() : $trigger;
+    let tabs = [];
 
-      $active.addClass('on').siblings().removeClass('on');
-
-      $active.add($active.siblings()).each(function(){
-        var $el = $(this);
-        var id = $el.is('[data-tab-id]') ? $el.data('tab-id') : $el.find('[data-tab-id]').data('tab-id');
-        if(id) $('#' + id).hide();
-      });
-      $('#' + tabid).show();
-
-      if($trigger.parents('.tab-condition').length > 0){
-        var $selectd = $trigger.parents('.tab-condition').find('.selected');
-        $selectd.find('button').text($trigger.text());
-      }
+    // role="tab" 요소는 roving tabindex로 관리: 활성 탭만 일반 Tab 키로 도달 가능하게 하고
+    // 나머지는 tabindex="-1"로 빼서, Enter를 누르지 않은 채 Tab만 눌렀을 때 보이지 않는 패널의
+    // 탭으로 잘못 진입하거나 포커스가 패널↔탭 사이를 도돌이표처럼 맴도는 것을 막는다.
+    $('[role="tab"]').each(function(){
+      if(!$(this).is('[aria-selected="true"]')) $(this).attr('tabindex', '-1');
     });
 
+    $('[data-tab-id]').on('click', function(e){
+      e.stopPropagation();
+      let tabid = $(this).data('tab-id');
+
+      tabs = [];
+      tabs.push(tabid);
+
+      if($(this).is('[role="tab"]')) $(this).attr('tabindex', '0');
+
+      let $li = $(this).parents('li').first();
+      if($li.length){
+        let $group = $li.siblings().addBack();
+        let activeClass = $group.is('.is-active') ? 'is-active' : 'on';
+        $group.removeClass(activeClass);
+        $li.addClass(activeClass);
+        if($(this).is('[aria-selected]')) $(this).attr('aria-selected', 'true');
+        $li.siblings().find('[data-tab-id]').each(function(){
+          if($(this).is('[aria-selected]')) $(this).attr('aria-selected', 'false');
+          if($(this).is('[role="tab"]')) $(this).attr('tabindex', '-1');
+          tabs.push($(this).data('tab-id'));
+        });
+      }else{
+        let $group = $(this).siblings('[data-tab-id]').addBack();
+        let activeClass = $group.is('.is-active') ? 'is-active' : 'on';
+        $group.removeClass(activeClass);
+        $(this).addClass(activeClass);
+        if($(this).is('[aria-selected]')) $(this).attr('aria-selected', 'true');
+        $(this).siblings('[data-tab-id]').each(function(){
+          if($(this).is('[aria-selected]')) $(this).attr('aria-selected', 'false');
+          if($(this).is('[role="tab"]')) $(this).attr('tabindex', '-1');
+          tabs.push($(this).data('tab-id'));
+        });
+      }
+
+      tabs.forEach(function(v){
+        $('#'+v).hide();
+      });
+      $('#'+tabid).show();
+
+      if($(this).parents('.tab-condition').length > 0){
+        let $selectd = $(this).parents('.tab-condition').find('.selected');
+        $selectd.find('button').text($(this).text())
+      }
+    })
+
   }
+
+  // [data-tab-id] 탭에서 Enter로 활성화 시 해당 .tab-content 내부 첫 포커스로 이동,
+  // 그 영역의 마지막 포커스에서 Tab으로 빠져나갈 때 다음 탭으로 이동(마지막 탭이면 그대로 통과)
+  function tabPanelFocusFlow(){
+    var focusableSel = 'a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+    function getTabGroup($tab){
+      var $li = $tab.parents('li').first();
+      if($li.length){
+        return $li.parent().children('li').find('[data-tab-id]');
+      }
+      return $tab.parent().children('[data-tab-id]');
+    }
+
+    // 버튼/링크에서 Enter를 누르면 브라우저는 keydown → click → keyup 순으로 이벤트를 발생시킨다.
+    // keyup 시점에는 이미 click(=tabEvt의 show/hide 처리)이 끝난 뒤이므로, 마우스 클릭과 섞이지
+    // 않으면서도 별도 타이밍 추정(setTimeout) 없이 안전하게 패널 내부로 포커스를 옮길 수 있다.
+    $('[data-tab-id]').on('keyup', function(e){
+      if(e.key !== 'Enter') return;
+      var tabid = $(this).data('tab-id');
+      if(!tabid) return;
+      var $panel = $('#' + tabid);
+      if(!$panel.length) return;
+
+      var $target = $panel.find(focusableSel).filter(':visible').first();
+      if($target.length) $target.trigger('focus');
+    });
+
+    $(document).on('keydown', '.tab-content', function(e){
+      if(e.key !== 'Tab') return;
+      var $panel = $(this);
+      if($panel.css('display') === 'none') return;
+
+      var $focusables = $panel.find(focusableSel).filter(':visible');
+      if(!$focusables.length) return;
+
+      var $currentTab = $('[data-tab-id="' + $panel.attr('id') + '"]');
+      if(!$currentTab.length) return;
+      var $tabGroup = getTabGroup($currentTab);
+      var idx = $tabGroup.index($currentTab);
+
+      if(!e.shiftKey){
+        // 정방향: 패널 마지막 요소에서 Tab → 다음 탭
+        if(e.target !== $focusables.last()[0]) return;
+        var $nextTab = $tabGroup.eq(idx + 1);
+        if(!$nextTab.length) return;
+
+        e.preventDefault();
+        // 포커스만 옮기면 패널은 그대로 이전 탭 것이라, Enter를 안 누르고 계속 Tab만 누를 경우
+        // 같은 패널로 되돌아와 도돌이표가 된다. 다음 탭을 함께 활성화해 포커스 위치와 화면에
+        // 보이는 패널을 항상 일치시켜 둔다(같은 탭에서 다시 Enter를 눌러도 동일 패널이 재표시될
+        // 뿐이라 문제 없음).
+        $nextTab.trigger('click');
+        $nextTab.trigger('focus');
+      } else {
+        // 역방향: 패널 첫 요소에서 Shift+Tab → 이전 탭을 활성화하고 그 패널의 마지막 요소로 이동
+        if(e.target !== $focusables.first()[0]) return;
+        // jQuery의 .eq(-1)은 "없음"이 아니라 "마지막 요소"를 가리키므로, idx가 0일 때
+        // .eq(idx-1)을 그대로 쓰면 첫 탭인데도 마지막 탭으로 잘못 순환(wrap)한다.
+        if(idx <= 0) return; // 첫 탭이면 기본 동작(탭 버튼으로 이동)에 맡김
+        var $prevTab = $tabGroup.eq(idx - 1);
+        if(!$prevTab.length) return;
+
+        e.preventDefault();
+        $prevTab.trigger('click');
+        var $prevPanel = $('#' + $prevTab.data('tab-id'));
+        var $prevTarget = $prevPanel.find(focusableSel).filter(':visible').last();
+        if($prevTarget.length) $prevTarget.trigger('focus');
+        else $prevTab.trigger('focus');
+      }
+    });
+  }
+
 
 
   function initPaginationType(nav, options){
@@ -427,28 +533,28 @@ function fontSettingMenu(){
 
 
 // 스크롤 방향에 따라 body에 scroll-down/scroll-up 클래스 부여
-function scrollDirection(){
-  var lastScrollTop = $(window).scrollTop();
-  var ticking = false;
+// function scrollDirection(){
+//   var lastScrollTop = $(window).scrollTop();
+//   var ticking = false;
 
-  $(window).on('scroll.scrollDirection', function(){
-    if(ticking) return;
-    ticking = true;
+//   $(window).on('scroll.scrollDirection', function(){
+//     if(ticking) return;
+//     ticking = true;
 
-    requestAnimationFrame(function(){
-      var scrollTop = $(window).scrollTop();
+//     requestAnimationFrame(function(){
+//       var scrollTop = $(window).scrollTop();
 
-      if(scrollTop > lastScrollTop){
-        $('body').removeClass('scroll-up').addClass('scroll-down');
-      }else if(scrollTop < lastScrollTop){
-        $('body').removeClass('scroll-down').addClass('scroll-up');
-      }
+//       if(scrollTop > lastScrollTop){
+//         $('body').removeClass('scroll-up').addClass('scroll-down');
+//       }else if(scrollTop < lastScrollTop){
+//         $('body').removeClass('scroll-down').addClass('scroll-up');
+//       }
 
-      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-      ticking = false;
-    });
-  });
-}
+//       lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+//       ticking = false;
+//     });
+//   });
+// }
 
 
 // floating-quick이 푸터 영역 아래로 내려가지 않도록 고정 (PC, min-width:1025px)
@@ -515,7 +621,137 @@ function floatingQuickStop(){
 
 
 
+  // DATE
+  function datepicker(){
+    if($(".datepicker").length <= 0) return;
+    $(".datepicker").datepicker({
+      showOn: 'focus', 
+      dateFormat:"yy.mm.dd",
+      changeYear:true,
+      changeMonth:true,
+      showMonthAfterYear:true,
+      monthNames:['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+      monthNamesShort:['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+      dayNames:['일','월','화','수','목','금','토'],
+      dayNamesShort:['일','월','화','수','목','금','토'],
+      dayNamesMin:['일','월','화','수','목','금','토'],
+      minDate: '',
+      maxDate: '',
+      // yearSuffix: '년',
+      onClose: function( selectedDate ) {
+        //add on event 
+      }	,
+      beforeShow: function(input, inst) {
+        
+        if($(input).data('min')) $(input).datepicker('option', 'minDate', $(input).data('min'));
+        if($(input).data('max')) $(input).datepicker('option', 'maxDate', $(input).data('max'));
+  
+        setTimeout(function(){
+          if($('.ui-datepicker-year option').text().indexOf('년') == -1) $('.ui-datepicker-year option').append('년')
+        }, 10)
+        },
+        onChangeMonthYear: function(input, inst) {
+        setTimeout(function(){
+          if($('.ui-datepicker-year option').text().indexOf('년') == -1) $('.ui-datepicker-year option').append('년')
+        }, 10)
+        },
+    });
+  }
 
+
+
+// 팝업
+let lastFocusedElement = null;
+
+function popClose(popup){
+  let $popup = $(popup);
+  $popup.fadeOut();
+  $('body, html').css('overflow', '');
+  $('body').removeClass('pop-open');
+  
+  // 팝업을 닫을 때 원래 포커스 위치로 복귀
+  if(lastFocusedElement) {
+    lastFocusedElement.focus();
+    lastFocusedElement = null;
+  }
+}
+
+function popOpen(popup, callback){
+  let $popup = $(popup);
+  scrollPosition = $(window).scrollTop();
+  
+  // 팝업을 연 버튼 저장
+  lastFocusedElement = document.activeElement;
+
+  $popup.removeAttr('style');
+  $popup.fadeIn();
+  $('body, html').css('overflow', 'hidden');
+  $('body').addClass('pop-open');
+  
+  // 팝업이 열린 후 첫 번째 포커스 가능한 요소로 포커스 이동
+  setTimeout(() => {
+    const focusableElements = $popup.find(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    ).filter(':visible');
+    if(focusableElements.length > 0) {
+      focusableElements.first().focus();
+    }
+  }, 100);
+  
+  $popup.find('.btn-close').on('click', function(){
+    popClose(popup);
+  });
+
+  // 포커스 트랩 설정
+  setupFocusTrap($popup);
+
+  if(callback) callback();
+}
+
+function setupFocusTrap($popup) {
+  // 팝업 내부의 포커스 가능한 모든 요소 찾기
+  const focusableElements = $popup.find(
+    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+  ).filter(':visible');
+  
+  if(focusableElements.length === 0) return;
+  
+  const firstElement = focusableElements.first()[0];
+  const lastElement = focusableElements.last()[0];
+  
+  // 기존 이벤트 제거 (중복 방지)
+  $popup.off('keydown.focustrap');
+  
+  // 탭 키 이벤트 처리
+  $popup.on('keydown.focustrap', function(e) {
+    // Tab 키가 아니면 무시
+    if(e.key !== 'Tab') return;
+    
+    // Shift + Tab (역방향)
+    if(e.shiftKey) {
+      if(document.activeElement === firstElement) {
+        e.preventDefault();
+        lastElement.focus();
+      }
+    } 
+    // Tab (정방향)
+    else {
+      if(document.activeElement === lastElement) {
+        e.preventDefault();
+        // 마지막 요소에서 Tab을 누르면 팝업 닫기
+        popClose('#' + $popup.attr('id'));
+      }
+    }
+  });
+  
+  // ESC 키로 팝업 닫기
+  $popup.off('keydown.escape');
+  $popup.on('keydown.escape', function(e) {
+    if(e.key === 'Escape') {
+      popClose('#' + $popup.attr('id'));
+    }
+  });
+}
 
 
 // ready
@@ -536,8 +772,10 @@ $(function(){
   inputDel('.inp');
   inputDel('.input-search');
   inputDel('.main-hero-search');
-  scrollDirection();
+  // scrollDirection();
   floatingQuickStop();
+
+  datepicker();
 
   $(document).on('click', '.floating-top', function(){
     $('html, body').stop(true).animate({scrollTop: 0}, 300);
