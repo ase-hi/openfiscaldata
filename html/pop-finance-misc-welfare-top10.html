@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title>열린재정</title>
+
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
+<script src="../js/pub-ui.js"></script>
+
+</head>
+<body>
+
+
+
+<div class="popup-wrap" id="tempPopId">
+  <div class="dim"></div>
+  <div class="pop-wrap">
+    <div class="popup" style="width:1300px;">
+      <div class="pop-header">
+        <h2 class="title">사회복지 세출예산 (TOP 10)</h2>
+        <div class="right">
+          <button type="button" class="btn-close"><i class="ico-close"></i></button>
+        </div>
+      </div>
+      <div class="pop-body">
+        <div class="data-default">
+          <div class="scroll">
+            <table>
+              <caption class="sr-only">사회복지 세출예산 TOP 10 — 소관, 분야, 부문, 프로그램, 단위사업, 세출예산금액</caption>
+              <colgroup>
+                <col style="width:80px;">
+                <col style="width:160px;min-width: 150px;">
+                <col style="width:160px;min-width: 150px;">
+                <col style="width:160px;min-width: 150px;">
+                <col style="width:auto;min-width: 190px;">
+                <col style="width:auto;min-width: 190px;">
+                <col style="width:auto;min-width: 190px;">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">NO</th>
+                  <th scope="col">소관</th>
+                  <th scope="col">분야</th>
+                  <th scope="col">부문</th>
+                  <th scope="col">프로그램</th>
+                  <th scope="col">단위사업</th>
+                  <th scope="col">세출예산금액 (천원)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="rank-medal"><img src="../images/content/rank-medal-1.svg" alt="1"></span></td>
+                  <td class="is-semibold">보건복지부</td>
+                  <td class="is-semibold">사회복지</td>
+                  <td>공적연금</td>
+                  <td>국민연금운영(급여지급)</td>
+                  <td>국민연금급여지급</td>
+                  <td class="c-blue">54,508,464,000</td>
+                </tr>
+                <tr>
+                  <td><span class="rank-medal"><img src="../images/content/rank-medal-2.svg" alt="2"></span></td>
+                  <td class="is-semibold">인사혁신처</td>
+                  <td class="is-semibold">사회복지</td>
+                  <td>공적연금</td>
+                  <td>공무원연금급여지급</td>
+                  <td>퇴직급여</td>
+                  <td class="c-blue">24,907,621,000</td>
+                </tr>
+                <tr>
+                  <td><span class="rank-medal"><img src="../images/content/rank-medal-3.svg" alt="3"></span></td>
+                  <td class="is-semibold">보건복지부</td>
+                  <td class="is-semibold">사회복지</td>
+                  <td>노인</td>
+                  <td>노인생활안정</td>
+                  <td>기초연금 지원</td>
+                  <td class="c-blue">23,137,815,000</td>
+                </tr>
+                <tr>
+                  <td><span class="rank-num">4</span></td>
+                  <td class="is-semibold">고용노동부</td>
+                  <td class="is-semibold">사회복지</td>
+                  <td>고용</td>
+                  <td>고용안전망확충</td>
+                  <td>실업급여</td>
+                  <td class="c-blue">12,122,807,000</td>
+                </tr>
+                <tr>
+                  <td><span class="rank-num">5</span></td>
+                  <td class="is-semibold">국토교통부</td>
+                  <td class="is-semibold">사회복지</td>
+                  <td>주택</td>
+                  <td>구입 · 전세자금</td>
+                  <td>주택구입 · 전세자금(융자)</td>
+                  <td class="c-blue">10,301,581,000</td>
+                </tr>
+                <tr>
+                  <td><span class="rank-num">6</span></td>
+                  <td class="is-semibold">보건복지부</td>
+                  <td class="is-semibold">사회복지</td>
+                  <td>기초생활보장</td>
+                  <td>기초생활보장</td>
+                  <td>의료급여</td>
+                  <td class="c-blue">9,839,997,000</td>
+                </tr>
+                <tr>
+                  <td><span class="rank-num">7</span></td>
+                  <td class="is-semibold">보건복지부</td>
+                  <td class="is-semibold">사회복지</td>
+                  <td>기초생활보장</td>
+                  <td>기초생활보장</td>
+                  <td>기초생활급여</td>
+                  <td class="c-blue">9,224,529,000</td>
+                </tr>
+                <tr>
+                  <td><span class="rank-num">8</span></td>
+                  <td class="is-semibold">국토교통부</td>
+                  <td class="is-semibold">사회복지</td>
+                  <td>주택</td>
+                  <td>임대주택지원(출자)</td>
+                  <td>임대주택지원</td>
+                  <td class="c-blue">8,327,363,000</td>
+                </tr>
+                <tr>
+                  <td><span class="rank-num">9</span></td>
+                  <td class="is-semibold">고용노동부</td>
+                  <td class="is-semibold">사회복지</td>
+                  <td>노동</td>
+                  <td>산재보험</td>
+                  <td>산재보험급여</td>
+                  <td class="c-blue">8,146,300,000</td>
+                </tr>
+                <tr>
+                  <td><span class="rank-num">10</span></td>
+                  <td class="is-semibold">국토교통부</td>
+                  <td class="is-semibold">사회복지</td>
+                  <td>주택</td>
+                  <td>임대주택지원(출자)</td>
+                  <td>다가구매입임대(융자)</td>
+                  <td class="c-blue">6,378,752,000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script>
+  popOpen('#tempPopId');
+</script>
+
+</body>
+</html>

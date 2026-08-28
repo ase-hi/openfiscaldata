@@ -58,6 +58,7 @@ table{width:100%;border-collapse:collapse;border-spacing:0;}
 
 
 .c-red{ color:#EB003B !important;}
+.c-blue{ color:#0B50D0 !important;}
 
 .align-l{text-align:left !important;}
 .align-r{text-align:right !important;}
@@ -81,7 +82,7 @@ table{width:100%;border-collapse:collapse;border-spacing:0;}
 }
 
 *:focus-visible,
-*:focus-visible { outline: 1px dotted rgba(0, 0, 0, 0.7) !important; outline-offset:-3px; }
+*:focus-visible { outline: 2px dotted rgba(0, 0, 0, 0.7) !important; outline-offset:-3px; }
 select:focus-visible,
 input:focus-visible { outline: none !important;}
 
@@ -304,7 +305,6 @@ html .ui-datepicker.month .ui-datepicker-buttonpane{margin-top:0;border-top:none
 
 /* ico */
 [class*=ico-]{display:inline-block;background-position:50% 50% !important;background-repeat:no-repeat !important;background-size:100% 100% !important;}
-.btn-xsm .ico-arrow-r,
 .btn-xsm .ico-down,
 .btn-xsm .ico-download,
 .btn-xsm .ico-outer-link{min-width: 16px;width: 16px;height:16px;/* background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.66602 2.5C10.0342 2.50004 10.333 2.79883 10.333 3.16699C10.3328 3.53501 10.0341 3.83296 9.66602 3.83301H4C3.90795 3.83301 3.83301 3.90795 3.83301 4L3.83496 16C3.83497 16.092 3.90901 16.1669 4.00098 16.167H15.999C16.0911 16.167 16.166 16.092 16.166 16V10.333C16.1663 9.96504 16.465 9.66699 16.833 9.66699C17.2008 9.66721 17.4988 9.96518 17.499 10.333V16C17.499 16.8284 16.8275 17.5 15.999 17.5H4.00098C3.17268 17.4999 2.50106 16.8283 2.50098 16L2.5 4C2.5 3.17158 3.17156 2.5 4 2.5H9.66602ZM16.833 2.5C17.201 2.50018 17.499 2.79891 17.499 3.16699V7.66699C17.4989 8.035 17.201 8.33381 16.833 8.33398C16.4649 8.33398 16.1661 8.03511 16.166 7.66699V4.77637L9.6377 11.3047C9.37735 11.565 8.95469 11.565 8.69434 11.3047C8.43426 11.0444 8.43437 10.6226 8.69434 10.3623L15.2236 3.83301H12.333C11.9649 3.83301 11.6662 3.53503 11.666 3.16699C11.666 2.7988 11.9648 2.5 12.333 2.5H16.833Z' fill='%23212529'/%3E%3C/svg%3E");*/}
@@ -313,6 +313,10 @@ html .ui-datepicker.month .ui-datepicker-buttonpane{margin-top:0;border-top:none
 .ico-notice{width: 19px;height:15px;background-image: url("data:image/svg+xml,%3Csvg width='19' height='15' viewBox='0 0 19 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M1.73549 5.00781C1.32929 5.00781 1 5.3371 1 5.74331V8.27232C1 8.67852 1.32929 9.00781 1.73549 9.00781H3.5C3.77614 9.00781 4 9.23167 4 9.50781C4 9.78395 3.77614 10.0078 3.5 10.0078H1.73549C0.777007 10.0078 0 9.23081 0 8.27232V5.74331C0 4.78482 0.777007 4.00781 1.73549 4.00781H3.5C3.77614 4.00781 4 4.23167 4 4.50781C4 4.78395 3.77614 5.00781 3.5 5.00781H1.73549Z' fill='%231C4CBF'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M11 1.73827C11 1.16059 10.3646 0.8084 9.87469 1.11457L4 4.78626V9.23201L9.87469 12.9037C10.3646 13.2099 11 12.8577 11 12.28V1.73827ZM9.3447 0.266573C10.5006 -0.455879 12 0.375151 12 1.73827V12.28C12 13.6431 10.5006 14.4741 9.3447 13.7517L3 9.78625V4.23201L9.3447 0.266573Z' fill='%231C4CBF'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M16.3979 1.63863C16.5932 1.8339 16.5932 2.15048 16.3979 2.34574L14.8536 3.89011C14.6583 4.08537 14.3417 4.08537 14.1464 3.89011C13.9512 3.69485 13.9512 3.37826 14.1464 3.183L15.6908 1.63863C15.8861 1.44337 16.2027 1.44337 16.3979 1.63863Z' fill='%231C4CBF'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M16.3979 11.7364C16.5932 11.5411 16.5932 11.2245 16.3979 11.0293L14.8536 9.48489C14.6583 9.28963 14.3417 9.28963 14.1464 9.48489C13.9512 9.68015 13.9512 9.99674 14.1464 10.192L15.6908 11.7364C15.8861 11.9316 16.2027 11.9316 16.3979 11.7364Z' fill='%231C4CBF'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M18.0118 6.82702C18.0131 6.55088 17.7903 6.32596 17.5142 6.32465L15.2152 6.31374C14.9391 6.31243 14.7141 6.53522 14.7128 6.81136C14.7115 7.0875 14.9343 7.31241 15.2105 7.31373L17.5095 7.32464C17.7856 7.32595 18.0105 7.10316 18.0118 6.82702Z' fill='%231C4CBF'/%3E%3C/svg%3E") }
 .ico-speaker{width: 22px;height:22px;background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 5L6 9H2V15H6L11 19V5Z' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M15.54 8.46094C16.4774 9.39858 17.004 10.6701 17.004 11.9959C17.004 13.3218 16.4774 14.5933 15.54 15.5309' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");}
 .ico-arr-r{width: 16px;height:16px;background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M5.60566 13.1572C5.8027 13.3762 6.13992 13.3939 6.35886 13.1969L11.6922 8.39709C11.8046 8.29595 11.8688 8.15186 11.8688 8.00067C11.8688 7.84948 11.8046 7.70539 11.6922 7.60424L6.35888 2.80392C6.13995 2.60687 5.80273 2.6246 5.60568 2.84354C5.40862 3.06247 5.42636 3.39969 5.64529 3.59674L10.5382 8.00063L5.64532 12.404C5.42637 12.6011 5.40862 12.9383 5.60566 13.1572Z' fill='%2333363D'/%3E%3C/svg%3E");}
+.ico-tab-arr-l,
+.ico-tab-arr-r{display:block;flex:none;width:20px;height:20px;background-repeat:no-repeat;background-position:50% 50%;background-size:20px 20px;}
+.ico-tab-arr-l{background-image:url('../images/common/ico-tab-arr-l.svg');}
+.ico-tab-arr-r{background-image:url('../images/common/ico-tab-arr-r.svg');}
 
 
 [class*=btn-] i:only-child{margin:0;}
@@ -324,11 +328,11 @@ html .ui-datepicker.month .ui-datepicker-buttonpane{margin-top:0;border-top:none
 .btn-sm,
 .btn-xsm{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;border:1px solid transparent;white-space:nowrap;font-weight:400;line-height:1.5;gap:4px;cursor:pointer;transition:background-color .2s ease,border-color .2s ease,color .2s ease;}
 .btn-xlg,
-.btn-lg{height:64px;min-width:98px;padding:0 24px;border-radius:8px;font-size:19px;}
-.btn-md{height:56px;min-width:90px;padding:0 20px;border-radius:8px;font-size:19px;}
-.btn-nm{height:48px;min-width:78px;padding:0 16px;border-radius:6px;font-size:17px;}
-.btn-sm{height:40px;min-width:64px;padding:0 12px;border-radius:6px;font-size:15px;}
-.btn-xsm{height:32px;min-width:60px;padding:0 10px;border-radius:4px;font-size:15px;gap:2px;}
+.btn-lg{height:64px;min-width:98px;padding:0 24px;border-radius:8px;font-size:19px;line-height:64px;}
+.btn-md{height:56px;min-width:90px;padding:0 20px;border-radius:8px;font-size:19px;line-height:56px;}
+.btn-nm{height:48px;min-width:78px;padding:0 16px;border-radius:6px;font-size:17px;line-height:48px;}
+.btn-sm{height:40px;min-width:64px;padding:0 12px;border-radius:6px;font-size:15px;line-height:40px;}
+.btn-xsm{height:32px;min-width:60px;padding:0 10px;border-radius:4px;font-size:15px;gap:2px;line-height:32px;}
 .btn-xlg [class*=ico-],
 .btn-lg [class*=ico-],
 .btn-md [class*=ico-]{width:24px;height:24px;min-width:24px;}
@@ -342,7 +346,7 @@ html .ui-datepicker.month .ui-datepicker-buttonpane{margin-top:0;border-top:none
 .btn-blue-line,
 .btn-bg-blue-line{background:#ecf2fe;border-color:#256ef4;color:#0b50d0;}
 .st-white,
-.btn-white{background:#fff;border-color:#58616a;color:#1e2124;}
+.btn-white{background:#fff;border-color:#B1B8BE;color:#1e2124;}
 .st-dark,
 .btn-dark{background:#363b4a;border-color:#363b4a;color:#fff;}
 
@@ -384,7 +388,7 @@ html .ui-datepicker.month .ui-datepicker-buttonpane{margin-top:0;border-top:none
 .btn-white:disabled,
 .btn-navy:disabled{background:#cdd1d5;border-color:#cdd1d5;color:#6d7882;cursor:default;}
 
-.btn-bottom-wrap{display:flex;align-items:center;margin-top:40px;}
+.btn-bottom-wrap{display:flex;align-items:center;margin-top:24px;}
 .btn-bottom-wrap .right{margin-left:auto;display:flex;align-items:center;gap:16px;}
 [class*=btn-]:disabled{opacity: 1;}
 
@@ -428,13 +432,13 @@ html .ui-datepicker.month .ui-datepicker-buttonpane{margin-top:0;border-top:none
 
 /* tab */
 * + .tab-main{margin-top:32px;}
-.tab-main{background:#fff;overflow-x:auto;padding-bottom:1px;}
-.tab-main ~ .tab-content{margin-top:40px;}
-.tab-main + *{margin:0 auto;margin-top:40px;}
+.tab-main{background:#fff;padding-bottom:1px;}
+.tab-main ~ .tab-content{margin-top:48px;}
+.tab-main + *{margin:0 auto;margin-top:48px;}
 .tab-main ul{height:56px;background:#fff;display:flex;flex-direction:row;align-items:stretch;border-bottom:none;}
 .tab-main ul:after{content:"";display:block;clear:both;}
-.tab-main ul li{flex:1;min-width:80px;}
-.tab-main ul li a{display:flex;position:relative; justify-content:center;align-items:center;padding:0 8px;white-space:nowrap;position:relative;height:56px;font-size:21px;font-weight:700;line-height:1.5;color:#464c53;text-align:center;border-bottom:2px solid #b1b8be;box-sizing:border-box}
+.tab-main ul li{flex:1;min-width: 154px;}
+.tab-main ul li a{display:flex;position:relative; justify-content:center;align-items:center; padding:0 40px;white-space:nowrap;position:relative;height:56px;font-size:21px;font-weight:700;line-height:1.5;color:#464c53;text-align:center;border-bottom:2px solid #b1b8be;box-sizing:border-box}
 .tab-main ul li.on a{ color:#052B57;}
 .tab-main ul li.on a:after{content:'';display:block;position:absolute;bottom:-2px;left:0;width:100%; height:4px;background:#063A74;}
 
@@ -442,7 +446,26 @@ html .ui-datepicker.month .ui-datepicker-buttonpane{margin-top:0;border-top:none
 @media (min-width:1025px) {
     .tab-main ul li a:hover {background:#EEF2F7;}
 }
+
+/* tab (swiper, 탭 개수가 많아 넘칠 때) */
+.tab-main .tab-main-swiper{position:relative;}
+.tab-main .swiper-slide{width:auto;min-width:auto;}
+.tab-main .swiper-button-prev,
+.tab-main .swiper-button-next{position:absolute;top:0;width:56px;height:56px;margin:0;padding:0;border:0;border-radius:0;background:transparent;z-index:2;display:flex;align-items:stretch;cursor:pointer;}
+.tab-main .swiper-button-prev:after,
+.tab-main .swiper-button-next:after{display:none;content:none !important;}
+.tab-main .swiper-button-prev{left:0;}
+.tab-main .swiper-button-next{right:0;}
+.tab-main .tab-swiper-icon{flex:none;display:flex;align-items:center;justify-content:center;width:32px;background:#fff;box-sizing:border-box;}
+.tab-main .swiper-button-prev .tab-swiper-icon{padding:0 8px 0 4px;border-right:1px solid #cdd1d5;}
+.tab-main .swiper-button-next .tab-swiper-icon{padding:0 4px 0 8px;border-left:1px solid #cdd1d5;}
+.tab-main .tab-swiper-grad{flex:none;width:24px;height:100%;pointer-events:none;}
+.tab-main .swiper-button-prev .tab-swiper-grad{background:linear-gradient(to right,#fff,rgba(255,255,255,.25));}
+.tab-main .swiper-button-next .tab-swiper-grad{background:linear-gradient(to right,rgba(255,255,255,.25),#fff);}
+.tab-main .swiper-button-disabled{display:none;}
+.tab-main .swiper-button-lock{display:none;}
 @media (max-width:1024px) {
+    .tab-main{overflow-x:auto;}
     .tab-main ~ .tab-content{margin-top:45px;}
     .tab-main ul li a{padding:0 8px;font-size:21px;}
 }
@@ -489,10 +512,10 @@ html .ui-datepicker.month .ui-datepicker-buttonpane{margin-top:0;border-top:none
 
 .util-search{display:flex;align-items:center;gap:12px;max-width: 100%;}
 .util-search-input,
-.util-search-sel{flex:none;min-width:118px;height:40px !important;min-height:40px !important;padding:0 36px 0 16px;border:1px solid #8a949e;border-radius:6px;font-size:15px !important;font-weight:400;line-height:1.5;color:#464c53;box-sizing:border-box;-webkit-appearance:none;appearance:none;}
+.util-search-sel{flex:none;min-width:118px;padding:0 36px 0 16px;border:1px solid #8a949e;border-radius:6px;font-size:17px !important;font-weight:400;line-height:1.5;color:#464c53;box-sizing:border-box;-webkit-appearance:none;appearance:none;}
 .util-search-sel{background-color:#fff;background-image:url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.66602 5.4668L7.99935 10.8001L13.3327 5.4668' stroke='%2333363D' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;background-size:16px 16px;}
 .util-search-input::placeholder{color:#8a949e;}
-.util-search-btn{flex:none;display:inline-flex;align-items:center;justify-content:center;min-width:64px;height:40px;padding:0 12px;border:none;border-radius:6px;background:#363b4a;font-family:'Pretendard GOV',sans-serif;font-size:15px;font-weight:400;line-height:1.5;color:#fff;cursor:pointer;box-sizing:border-box;}
+.util-search-btn{flex:none;display:inline-flex;align-items:center;justify-content:center;min-width:64px;height:48px;padding:0 16px;border:none;border-radius:6px;background:#363b4a;font-family:'Pretendard GOV',sans-serif;font-size:17px;font-weight:400;line-height:1.5;color:#fff;cursor:pointer;box-sizing:border-box;}
 .data-util .util-search-btn:hover{background:#485166;}
 @media all and (max-width:1024px){
     .data-util + *{margin-top:12px;}

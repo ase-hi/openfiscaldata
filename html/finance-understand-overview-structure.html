@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title>열린재정</title>
+
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
+<script src="../js/pub-ui.js"></script>
+
+</head>
+<body>
+
+    <dl class="skipLink">
+        <dt>바로가기 메뉴</dt>	
+        <dd><a href="#gnbMenu">주메뉴 바로가기</a></dd>
+        <dd><a href="#content">본문 바로가기</a></dd>
+    </dl>
+    <div class="wrap">
+        <script id="header-template">
+            // 헤더
+            $.ajax({url:"common/header.txt", dataType:"text", success:function(data){
+                $('#header-template').replaceWith(data);
+            }});
+        </script>
+
+        <div class="container" id="content">
+            <script id="subvisual-template">
+                $.ajax({url:"common/subvisual.txt", dataType:"text", success:function(data){
+                    $('#subvisual-template').replaceWith($(data).filter('#visual-finance'));
+                }});
+            </script>
+
+            <script id="breadcrumb-template">
+                // breadcrumb메뉴
+                $.ajax({url:"common/breadcrumb.txt", dataType:"text", success:function(data){
+                    $('#breadcrumb-template').replaceWith(data);
+                    breadcrumbMenu();
+                }});
+            </script>
+            
+            <div class="contents">
+                <div class="title-main-wrap">
+                    <h2 class="title-main">재정개요</h2>
+                    <div class="right">
+                        <button type="button" class="btn-nm st-white"><span>한눈에 보는 국가재정 바로가기</span><i class="ico-arr-r"></i></button>
+                    </div>
+                </div>
+                <div class="tab-main">
+                    <ul role="tablist">
+                        <li><a href="finance-understand-overview-meaning.html" data-tab-id="tab1" role="tab" aria-selected="false">재정의 의의</a></li>
+                        <li class="on"><a href="finance-understand-overview-structure.html" data-tab-id="tab2" role="tab" aria-selected="true">재정구조</a></li>
+                        <li><a href="finance-understand-overview-means.html" data-tab-id="tab3" role="tab" aria-selected="false">재정의 운용수단</a></li>
+                    </ul>
+                </div>
+                <div class="tab-content">
+                    <section class="section-wrap">
+                        <div class="title-section-wrap">
+                            <h3 class="title-section">1. 일반정부 재정</h3>
+                        </div>
+                        <div class="paragraph">
+                            <p>일반정부 재정은 중앙정부와 지방정부뿐 아니라, 정부가 통제하는 비영리 공공기관과 사회보장기금까지 포함해 공공재정 전체를 보는 개념입니다. 오늘날 재정은 정부 예산서 밖에서도 공공기관을 통해 상당 부분 집행되므로, 일반정부 기준을 써야 국가의 실제 지출·부채·재정건전성을 정확히 파악할 수 있습니다. 이는 국제통화기금(IMF, International Monetary Fund)의 ｢정부재정통계편람｣(GFS, Government Finance Statistics Manual)에 기반한 개념으로, 재정 통계의 객관적인 국제비교 및 투명성･신뢰성 제고를 위하여 활용됩니다.</p>
+                        </div>
+                    </section>
+
+                    <section class="section-wrap">
+                        <div class="title-section-wrap">
+                            <h3 class="title-section">2. 중앙정부 재정</h3>
+                        </div>
+                        <div class="paragraph">
+                            <p>중앙정부 재정은 국가 전체를 대표하는 중앙정부가 조세, 국채, 세외수입 등을 통해 재원을 마련하고, 이를 국방·외교·치안·복지·산업정책 등 전국 단위의 공공기능에 사용하는 재정입니다. 거시경제 안정과 소득재분배, 국가균형발전 조정 기능까지 맡기 때문에 정책 범위와 파급효과가 가장 넓습니다. 법률에 따라 집행되는 예산과 기금이 포함되며, 국가의 재정건전성과 채무관리의 핵심 기준이 됩니다. 결국 중앙정부 재정은 국가가 직접 책임지는 재정이라고 볼 수 있습니다. 국민이 체감하는 핵심 공공서비스의 상당 부분도 이 재정을 통해 집행됩니다.</p>
+                        </div>
+                    </section>
+
+                    <section class="section-wrap">
+                        <div class="title-section-wrap">
+                            <h3 class="title-section">3. 지방재정</h3>
+                        </div>
+                        <div class="paragraph">
+                            <p>지방재정은 지방자치단체가 지역 주민의 생활과 지역 발전을 위해 운용하는 재정으로, 지방세·세외수입·지방교부세·국고보조금 등을 재원으로 합니다. 도로, 상하수도, 지역복지, 문화·체육, 지역개발처럼 생활과 밀접한 사업이 중심이며, 지역별 수요에 맞춘 자율적 집행이 특징입니다. 지방재정은 주민과 가장 가까운 수준에서 공공서비스를 제공한다는 점에서 지방자치의 실질적 기반입니다. 동시에 지역 간 재정력 차이가 커서 중앙정부의 조정과 재정지원이 중요한 영역이기도 합니다. 따라서 지방재정은 지역 문제를 지역에서 해결하기 위한 재정이라고 이해할 수 있습니다.</p>
+                        </div>
+                    </section>
+
+                    <section class="section-wrap">
+                        <div class="title-section-wrap">
+                            <h3 class="title-section">4. 지방교육재정</h3>
+                        </div>
+                        <div class="paragraph">
+                            <p>지방교육재정은 시·도교육청이 유치원, 초·중·고등교육을 지원하기 위해 편성·집행하는 재정으로, 지방교육재정교부금과 교육비특별회계가 핵심 재원입니다. 학교시설 확충, 교원 인건비, 무상교육, 교육복지, 교육행정 운영 등 교육서비스 전반에 사용됩니다. 지방자치단체의 일반재정과는 구분되며, 교육의 공공성과 안정성을 확보하기 위해 별도의 재정체계를 갖습니다. 교육은 장기적 인적자본 형성의 기반이므로, 지방교육재정은 단순한 행정비가 아니라 미래 성장과 사회통합에 직결됩니다. 그래서 지방교육재정은 지역 교육을 안정적으로 운영하기 위한 독립적 재정으로 볼 수 있습니다.</p>
+                        </div>
+                    </section>
+
+                    <section class="section-wrap">
+                        <div class="title-section-wrap">
+                            <h3 class="title-section">5. 공공기관</h3>
+                        </div>
+                        <div class="paragraph">
+                            <p>공공기관은 국가 재정에서 공공기관은 단순한 보조기관이 아니라, 정부의 투자·출자·재정지원 아래 공공서비스와 정책사업을 수행하는 공기업, 준정부기관, 기타공공기관을 뜻합니다. 이들은 국가가 직접 운영하기 어려운 영역에서 정책을 집행하고, 서비스 공급을 담당하며, 재정의 전달·보완 통로가 되는 재정 주체입니다. 실제로 전기·가스·철도·도로 같은 기반서비스와 국민연금·건강보험 같은 사회보장서비스, 연구개발과 산업·문화 진흥 기능까지 폭넓게 담당합니다. 따라서 국가재정은 예산서에 드러나는 중앙·지방정부 재정만으로는 충분히 설명되지 않고, 공공기관을 통해 흘러가는 재정활동까지 함께 봐야 실제 규모와 경제적 영향력을 정확히 파악할 수 있습니다.</p>
+                        </div>
+                        <div class="diagram-box diagram-finance-structure">
+                            <div class="diagram-box-head">
+                                <strong class="diagram-box-tit">우리나라 재정의 구조</strong>
+                            </div>
+                            <div class="diagram">
+                                <img src="../images/content/diagram-finance-structure.png" alt="재정, 중앙정부 재정, 지방정부 재정, 일반재정, 교육재정, 예산, 기금, 일반회계, 특별회계, 교육비 특별회계, 공공기관으로 구성된 우리나라 재정 구조도">
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <script id="learn-more-about-finance-template">
+                        // learn more about finance
+                        $.ajax({url:"common/learn-more-about-finance-template.txt", dataType:"text", success:function(data){
+                            $('#learn-more-about-finance-template').replaceWith(data);
+                            cardSlideSwiper();
+                        }});
+                    </script>
+                </div>
+                <!-- // tab-content -->
+
+                <script id="feedback-template">
+                    // 피드백
+                    $.ajax({url:"common/feedback.txt", dataType:"text", success:function(data){
+                        $('#feedback-template').replaceWith(data);
+                        pageFeedback();
+                    }});
+                </script>
+            </div>
+            <!-- //contents -->
+
+            <script id="floating-template">
+                // 플로팅메뉴
+                $.ajax({url:"common/floating.txt", dataType:"text", success:function(data){
+                    $('#floating-template').replaceWith(data);
+                }});
+            </script>
+        </div>
+        <script id="footer-template">
+            // 푸터
+            $.ajax({url:"common/footer.txt", dataType:"text", success:function(data){
+                $('#footer-template').replaceWith(data);
+            }});
+        </script>
+    </div>
+    <!-- // wrap -->
+
+    
+</body>
+</html>

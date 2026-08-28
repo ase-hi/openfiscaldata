@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title>열린재정</title>
+
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
+<script src="../js/pub-ui.js"></script>
+
+</head>
+<body>
+
+    <dl class="skipLink">
+        <dt>바로가기 메뉴</dt>	
+        <dd><a href="#gnbMenu">주메뉴 바로가기</a></dd>
+        <dd><a href="#content">본문 바로가기</a></dd>
+    </dl>
+    <div class="wrap">
+        <script id="header-template">
+            // 헤더
+            $.ajax({url:"common/header.txt", dataType:"text", success:function(data){
+                $('#header-template').replaceWith(data);
+            }});
+        </script>
+
+        <div class="container" id="content">
+            <script id="subvisual-template">
+                $.ajax({url:"common/subvisual.txt", dataType:"text", success:function(data){
+                    $('#subvisual-template').replaceWith($(data).filter('#visual-together'));
+                }});
+            </script>
+
+            <script id="breadcrumb-template">
+                // breadcrumb메뉴
+                $.ajax({url:"common/breadcrumb.txt", dataType:"text", success:function(data){
+                    $('#breadcrumb-template').replaceWith(data);
+                    breadcrumbMenu();
+                }});
+            </script>
+            
+            <div class="contents">
+                
+                <div class="view-detail-wrap">
+                    <article class="view-detail">
+                        <header class="subject-head">
+                            <div class="subject-title">
+                                <h3 class="tit">경제를 왜 배워야 할까?</h3>
+                            </div>
+                            <div class="subject-info">
+                                <dl>
+                                    <dt>등록일</dt>
+                                    <dd>2026-07-01</dd>
+                                </dl>
+                                <dl>
+                                    <dt>조회</dt>
+                                    <dd>29</dd>
+                                </dl>
+                            </div>
+                        </header>
+                        <div class="view-files">
+                            <ul class="view-files-list">
+                                <li>
+                                    <i class="ico-file"></i>
+                                    <a href="javascript:void(0);">새 누리집의 화면 디자인과 메뉴 구성.pdf</a>
+                                    <span class="file-size">121.9KB</span>
+                                    <button type="button" class="file-download">다운로드</button>
+                                </li>
+                                <li>
+                                    <i class="ico-file"></i>
+                                    <a href="javascript:void(0);">[서식] 시안 의견서 양식.hwp</a>
+                                    <span class="file-size">428.4KB</span>
+                                    <button type="button" class="file-download">다운로드</button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="view-detail-body">
+                            <p><strong>[단원명]</strong><br>1차시: 나라살림은 무엇일까요? (45분)</p>
+                            <p>2차시: 나라살림은 어떻게 마련할까요?(45분)</p>
+                            <p>3차시: 나라살림은 어떻게 운영될까요?(45분)</p>
+                            <p>4차시: 나라살림 참여 및 보조금 알아보기(45분)</p>
+                            <br>
+                            <p><strong>[목표]</strong></p>
+                            <p>1차시: 정부가 제공하는 서비스를 살펴보고 정부와 나라살림의 역할을 이해할 수 있다</p>
+                            <p>2차시: 세금을 내는 이유와 세금의 종류, 쓰임새를 설명할 수 있다</p>
+                            <p>3차시: 나라살림이 어떻게 운영되는지 설명할 수 있다</p>
+                            <p>4차시: 나라살림 참여에 대해 이해하고 아이디어를 제시할 수 있다</p>
+                            <br>
+                            <p><strong>[출처]</strong> 한국재정정보원</p>
+                        </div>
+                    </article>
+                </div>
+
+             
+
+                <div class="btn-bottom-wrap">
+                    <a href="survey.html" class="btn-nm st-dark">목록</a>
+                </div>
+
+                <script id="feedback-template">
+                    // 피드백
+                    $.ajax({url:"common/feedback.txt", dataType:"text", success:function(data){
+                        $('#feedback-template').replaceWith(data);
+                        pageFeedback();
+                    }});
+                </script>
+
+            </div>
+            <!-- //contents -->
+
+            <script id="floating-template">
+                // 플로팅메뉴
+                $.ajax({url:"common/floating.txt", dataType:"text", success:function(data){
+                    $('#floating-template').replaceWith(data);
+                }});
+            </script>
+        </div>
+        <script id="footer-template">
+            // 푸터
+            $.ajax({url:"common/footer.txt", dataType:"text", success:function(data){
+                $('#footer-template').replaceWith(data);
+            }});
+        </script>
+    </div>
+    <!-- // wrap -->
+
+</body>
+</html>
