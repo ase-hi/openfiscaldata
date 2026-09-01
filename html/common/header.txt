@@ -9,7 +9,7 @@
         <div class="masthead-util mo-hide">
           <button type="button" class="masthead-btn">SNS 로그인</button>
           <span class="bar" aria-hidden="true"></span>
-          <button type="button" class="masthead-btn">재정 캘린더</button>
+          <button type="button" class="masthead-btn btn-finance-calendar-open">재정 캘린더</button>
           <span class="bar" aria-hidden="true"></span>
           <div class="lang-switch">
             <button type="button" class="on">KOR</button>
@@ -38,7 +38,7 @@
             </div>
           </div>
           <span class="bar" aria-hidden="true"></span>
-          <button type="button" class="masthead-btn"><i class="ico-menu-all" aria-hidden="true"></i>전체 메뉴</button>          
+          <button type="button" class="masthead-btn btn-all-menu-open"><i class="ico-menu-all" aria-hidden="true"></i>전체 메뉴</button>          
         </div>
       </div>
     </div>
@@ -272,8 +272,309 @@
             </li>
           </ul>
         </nav>
-        <button type="button" class="btn-m-menu"><i class="ico-menu-mo" aria-hidden="true"></i>전체메뉴</button>
+        <div class="header-util pc-hide">
+          <button type="button" class="header-util-btn btn-finance-calendar-open">
+            <i class="ico-header-calendar" aria-hidden="true"></i>
+            <span>재정캘린더</span>
+          </button>
+          <button type="button" class="header-util-btn">
+            <i class="ico-header-login" aria-hidden="true"></i>
+            <span>SNS 로그인</span>
+          </button>
+          <button type="button" class="btn-m-menu header-util-btn btn-all-menu-open">
+            <i class="ico-header-menu" aria-hidden="true"></i>
+            <span>전체메뉴</span>
+          </button>
+        </div>
       </div>
     </div>
+
   </header>
   <!-- // header -->
+
+
+
+    <div class="all-menu-layer" id="allMenuLayer" hidden aria-hidden="true">
+      <div class="all-menu-dim"></div>
+      <div class="all-menu-wrap" role="dialog" aria-modal="true" aria-labelledby="allMenuTitle">
+        <div class="all-menu-head">
+          <div class="all-menu-head-top">
+            <h2 id="allMenuTitle" class="all-menu-tit">전체 메뉴</h2>
+            <button type="button" class="btn-all-menu-close" aria-label="전체 메뉴 닫기"><span class="btn-all-menu-close-txt">전체메뉴 닫기</span><i class="ico-all-menu-close" aria-hidden="true"></i></button>
+          </div>
+          <div class="all-menu-head-util">
+            <button type="button" class="all-menu-lang-btn"><i class="ico-all-menu-globe" aria-hidden="true"></i><span>언어변경</span></button>
+            <div class="all-menu-lang-sel-wrap">
+              <button type="button" class="all-menu-lang-sel" aria-expanded="false" aria-haspopup="listbox" aria-controls="allMenuLangList">
+                <span class="all-menu-lang-value">KOREAN</span>
+                <i class="ico-all-menu-arrow-down" aria-hidden="true"></i>
+              </button>
+              <div class="all-menu-lang-dropdown" id="allMenuLangList" hidden>
+                <div class="all-menu-lang-box">
+                  <ul class="all-menu-lang-list" role="listbox" aria-label="언어 선택">
+                    <li class="selected" role="presentation"><button type="button" role="option" aria-selected="true" data-lang="ko" data-label="KOREAN">KOREAN</button></li>
+                    <li role="presentation"><button type="button" role="option" aria-selected="false" data-lang="en" data-label="ENGLISH">ENGLISH</button></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="all-menu-body">
+          <div class="all-menu-lnb" role="tablist" aria-label="전체 메뉴 카테고리">
+            <ul>
+              <li class="on"><button type="button" role="tab" aria-selected="true" data-panel="0"><span>알기쉬운<br>재정</span></button></li>
+              <li><button type="button" role="tab" aria-selected="false" data-panel="1"><span>알기쉬운<br>재정통계</span></button></li>
+              <li><button type="button" role="tab" aria-selected="false" data-panel="2"><span>재정<br>연구실</span></button></li>
+              <li><button type="button" role="tab" aria-selected="false" data-panel="3"><span>함께하는<br>재정</span></button></li>
+              <li><button type="button" role="tab" aria-selected="false" data-panel="4"><span>알림<br>안내</span></button></li>
+            </ul>
+          </div>
+          <div class="all-menu-content">
+            <div class="all-menu-panel on" data-panel="0" role="tabpanel">
+              <h3 class="all-menu-col-tit">알기쉬운 재정</h3>
+              <div class="all-menu-group">
+                <button type="button" class="all-menu-group-tit">재정의 이해<i class="ico-all-menu-arrow-up" aria-hidden="true"></i></button>
+                <ul class="all-menu-sub">
+                  <li><a href="javascript:void(0);">재정개요</a></li>
+                  <li><a href="javascript:void(0);">예산·결산·재정 절차</a></li>
+                  <li><a href="javascript:void(0);">재정수지와 국가 채무</a></li>
+                  <li><a href="javascript:void(0);">재정 제도</a></li>
+                </ul>
+              </div>
+              <div class="all-menu-group is-title-only">
+                <button type="button" class="all-menu-group-tit is-accent">멀티미디어 재정교실<i class="ico-all-menu-arrow-up" aria-hidden="true"></i></button>
+                <ul class="all-menu-sub">
+                  <li><a href="javascript:void(0);">재정개요</a></li>
+                  <li><a href="javascript:void(0);">예산·결산·재정 절차</a></li>
+                  <li><a href="javascript:void(0);">재정수지와 국가 채무</a></li>
+                  <li><a href="javascript:void(0);">재정 제도</a></li>
+                  <li><a href="javascript:void(0);">기타</a></li>
+                </ul>
+              </div>
+              <div class="all-menu-group is-highlight">
+                <button type="button" class="all-menu-group-tit">청소년 재정교실<i class="ico-all-menu-arrow-up" aria-hidden="true"></i></button>
+                <ul class="all-menu-sub">
+                  <li><a href="javascript:void(0);" class="is-active">재정수업자료</a></li>
+                  <li><a href="javascript:void(0);">재정콘텐츠</a></li>
+                  <li><a href="javascript:void(0);">재정동영상</a></li>
+                  <li><a href="javascript:void(0);">재정게임</a></li>
+                </ul>
+              </div>
+              <div class="all-menu-group">
+                <button type="button" class="all-menu-group-tit">재정 이모저모<i class="ico-all-menu-arrow-up" aria-hidden="true"></i></button>
+                <ul class="all-menu-sub">
+                  <li><a href="javascript:void(0);">재정칼럼</a></li>
+                  <li><a href="javascript:void(0);">이슈별 재정정보</a></li>
+                  <li><a href="javascript:void(0);">내 월급은 어떻게 쓰일까?</a></li>
+                  <li><a href="javascript:void(0);">빅데이터 재정뉴스</a></li>
+                </ul>
+              </div>
+              <div class="all-menu-group is-link">
+                <a href="javascript:void(0);" target="_blank" rel="noopener noreferrer" class="all-menu-group-tit is-external">온라인 재정박물관<i class="ico-all-menu-outer" aria-hidden="true"></i></a>
+              </div>
+              <div class="all-menu-group is-link">
+                <a href="javascript:void(0);" target="_blank" rel="noopener noreferrer" class="all-menu-group-tit is-external">e-재정배움 바로가기<i class="ico-all-menu-outer" aria-hidden="true"></i></a>
+              </div>
+            </div>
+            <div class="all-menu-panel" data-panel="1" role="tabpanel" hidden>
+              <h3 class="all-menu-col-tit">알기쉬운 재정통계</h3>
+              <div class="all-menu-group is-title-only">
+                <a href="javascript:void(0);" class="all-menu-group-tit">한 눈에 보는 국가재정</a>
+              </div>
+              <div class="all-menu-group">
+                <button type="button" class="all-menu-group-tit">중앙재정<i class="ico-all-menu-arrow-up" aria-hidden="true"></i></button>
+                <ul class="all-menu-sub">
+                  <li><a href="javascript:void(0);">한눈에 보는 중앙재정</a></li>
+                  <li><a href="javascript:void(0);">재정사업</a></li>
+                  <li><a href="javascript:void(0);">재정수입</a></li>
+                  <li><a href="javascript:void(0);">재정지출</a></li>
+                  <li><a href="javascript:void(0);">재정수지</a></li>
+                  <li><a href="javascript:void(0);">국가채무</a></li>
+                  <li><a href="javascript:void(0);">성과관리</a></li>
+                </ul>
+              </div>
+              <div class="all-menu-group">
+                <button type="button" class="all-menu-group-tit">지방재정<i class="ico-all-menu-arrow-up" aria-hidden="true"></i></button>
+                <ul class="all-menu-sub">
+                  <li><a href="javascript:void(0);">한눈에 보는 지방재정</a></li>
+                  <li><a href="javascript:void(0);">분야별(사업별) 지출</a></li>
+                  <li><a href="javascript:void(0);">세입·세출 예산</a></li>
+                  <li><a href="javascript:void(0);">세입·세출 결산</a></li>
+                  <li><a href="javascript:void(0);">중기지방재정계획</a></li>
+                </ul>
+              </div>
+              <div class="all-menu-group">
+                <button type="button" class="all-menu-group-tit">지방교육재정<i class="ico-all-menu-arrow-up" aria-hidden="true"></i></button>
+                <ul class="all-menu-sub">
+                  <li><a href="javascript:void(0);">한눈에 보는 지방교육재정</a></li>
+                  <li><a href="javascript:void(0);">분야별(사업별) 지출</a></li>
+                  <li><a href="javascript:void(0);">세입·세출 예산</a></li>
+                  <li><a href="javascript:void(0);">세입·세출 결산</a></li>
+                  <li><a href="javascript:void(0);">중기지방교육재정계획</a></li>
+                </ul>
+              </div>
+              <div class="all-menu-group">
+                <button type="button" class="all-menu-group-tit">기타<i class="ico-all-menu-arrow-up" aria-hidden="true"></i></button>
+                <ul class="all-menu-sub">
+                  <li><a href="javascript:void(0);">경제통계지표</a></li>
+                  <li><a href="javascript:void(0);">국제통계지표</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="all-menu-panel" data-panel="2" role="tabpanel" hidden>
+              <h3 class="all-menu-col-tit">재정연구실</h3>
+              <div class="all-menu-group">
+                <button type="button" class="all-menu-group-tit">재정데이터셋<i class="ico-all-menu-arrow-up" aria-hidden="true"></i></button>
+                <ul class="all-menu-sub">
+                  <li><a href="javascript:void(0);">재정통계분석AI</a></li>
+                  <li><a href="javascript:void(0);">통계제공현황</a></li>
+                  <li><a href="javascript:void(0);">재정상세통계</a></li>
+                  <li><a href="javascript:void(0);">시계열통계분석</a></li>
+                  <li><a href="javascript:void(0);">재정자료실</a></li>
+                </ul>
+              </div>
+              <div class="all-menu-group">
+                <button type="button" class="all-menu-group-tit">재정자료분석AI<i class="ico-all-menu-arrow-up" aria-hidden="true"></i></button>
+                <ul class="all-menu-sub">
+                  <li><a href="javascript:void(0);">재정자료</a></li>
+                  <li><a href="javascript:void(0);">재정법령</a></li>
+                </ul>
+              </div>
+              <div class="all-menu-group">
+                <button type="button" class="all-menu-group-tit">재정법령AI<i class="ico-all-menu-arrow-up" aria-hidden="true"></i></button>
+                <ul class="all-menu-sub">
+                  <li><a href="javascript:void(0);">재정법령</a></li>
+                  <li><a href="javascript:void(0);">재정데이터 개방</a></li>
+                </ul>
+              </div>
+              <div class="all-menu-group">
+                <button type="button" class="all-menu-group-tit">OPEN API<i class="ico-all-menu-arrow-up" aria-hidden="true"></i></button>
+                <ul class="all-menu-sub">
+                  <li><a href="javascript:void(0);">재정데이터 가공요청</a></li>
+                  <li><a href="javascript:void(0);">재정데이터 분석</a></li>
+                </ul>
+              </div>
+              <div class="all-menu-group">
+                <button type="button" class="all-menu-group-tit">재정분석교육서비스이용<i class="ico-all-menu-arrow-up" aria-hidden="true"></i></button>
+                <ul class="all-menu-sub">
+                  <li><a href="javascript:void(0);">데이터분석서비스(KODAS) 이용</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="all-menu-panel" data-panel="3" role="tabpanel" hidden>
+              <h3 class="all-menu-col-tit">함께하는 재정</h3>
+              <div class="all-menu-group">
+                <button type="button" class="all-menu-group-tit">참여예산제도<i class="ico-all-menu-arrow-up" aria-hidden="true"></i></button>
+                <ul class="all-menu-sub">
+                  <li><a href="javascript:void(0);">참여예산제도 소개</a></li>
+                </ul>
+              </div>
+              <div class="all-menu-group">
+                <button type="button" class="all-menu-group-tit">정부혜택찾기<i class="ico-all-menu-arrow-up" aria-hidden="true"></i></button>
+                <ul class="all-menu-sub">
+                  <li><a href="javascript:void(0);">정부지원사업은?</a></li>
+                  <li><a href="javascript:void(0);">정부지원사업 범위 및 관련기관</a></li>
+                  <li><a href="javascript:void(0);">지원사업 찾기</a></li>
+                </ul>
+              </div>
+              <div class="all-menu-group">
+                <button type="button" class="all-menu-group-tit">정부발주사업<i class="ico-all-menu-arrow-up" aria-hidden="true"></i></button>
+                <ul class="all-menu-sub">
+                  <li><a href="javascript:void(0);">정부발주사업</a></li>
+                  <li><a href="javascript:void(0);">나라장터 조달정보</a></li>
+                </ul>
+              </div>
+              <div class="all-menu-group">
+                <button type="button" class="all-menu-group-tit">개선요청·설문조사<i class="ico-all-menu-arrow-up" aria-hidden="true"></i></button>
+                <ul class="all-menu-sub">
+                  <li><a href="javascript:void(0);">모두의재정 개선요청</a></li>
+                  <li><a href="javascript:void(0);">데이터 공개요청</a></li>
+                  <li><a href="javascript:void(0);">설문조사</a></li>
+                  <li><a href="javascript:void(0);">재정원정대</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="all-menu-panel" data-panel="4" role="tabpanel" hidden>
+              <h3 class="all-menu-col-tit">알림·안내</h3>
+              <div class="all-menu-group is-single"><a href="javascript:void(0);" class="all-menu-group-tit">모두의재정 소개</a></div>
+              <div class="all-menu-group is-single"><a href="javascript:void(0);" class="all-menu-group-tit">공지사항</a></div>
+              <div class="all-menu-group is-single"><a href="javascript:void(0);" class="all-menu-group-tit">자주 묻는 질문</a></div>
+              <div class="all-menu-group is-single"><a href="javascript:void(0);" class="all-menu-group-tit">Q&amp;A</a></div>
+              <div class="all-menu-group is-single"><a href="javascript:void(0);" class="all-menu-group-tit">재정관련사이트</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>  
+
+
+  <!-- 재정캘린더 -->
+  <div class="popup-wrap finance-calendar-popup" id="financeCalendarPopup" style="display:none;">
+    <div class="dim"></div>
+    <div class="pop-wrap">
+      <div class="popup" role="dialog" aria-modal="true" aria-labelledby="financeCalendarTitle">
+        <div class="pop-header">
+          <h2 class="title" id="financeCalendarTitle">재정 일정</h2>
+          <div class="right">
+            <button type="button" class="btn-close" aria-label="재정 일정 닫기"><i class="ico-close"></i></button>
+          </div>
+        </div>
+        <div class="pop-body">
+          <div class="finance-calendar">
+            <div class="finance-calendar-left">
+              <div class="finance-calendar-nav">
+                <button type="button" class="finance-calendar-prev" aria-label="이전 달"><i class="ico-carousel-arr-l" aria-hidden="true"></i></button>
+                <div class="finance-calendar-selects">
+                  <div class="finance-calendar-select" data-type="year">
+                    <button type="button" class="finance-calendar-select-btn" aria-expanded="false" aria-haspopup="listbox" aria-label="년도 선택">
+                      <span class="finance-calendar-select-value">2026년</span>
+                    </button>
+                    <ul class="finance-calendar-select-list" role="listbox" aria-label="년도 선택" hidden></ul>
+                  </div>
+                  <div class="finance-calendar-select" data-type="month">
+                    <button type="button" class="finance-calendar-select-btn" aria-expanded="false" aria-haspopup="listbox" aria-label="월 선택">
+                      <span class="finance-calendar-select-value">9월</span>
+                    </button>
+                    <ul class="finance-calendar-select-list" role="listbox" aria-label="월 선택" hidden></ul>
+                  </div>
+                </div>
+                <button type="button" class="finance-calendar-next" aria-label="다음 달"><i class="ico-carousel-arr-r" aria-hidden="true"></i></button>
+              </div>
+              <div class="finance-calendar-grid">
+                <div class="finance-calendar-weekdays" aria-hidden="true">
+                  <span class="is-sun">일</span>
+                  <span>월</span>
+                  <span>화</span>
+                  <span>수</span>
+                  <span>목</span>
+                  <span>금</span>
+                  <span class="is-sat">토</span>
+                </div>
+                <div class="finance-calendar-days" id="financeCalendarDays"></div>
+              </div>
+            </div>
+            <div class="finance-calendar-right">
+              <p class="finance-calendar-selected-date" id="financeCalendarSelectedDate"></p>
+              <ul class="finance-calendar-list" id="financeCalendarList"></ul>
+              <div class="finance-calendar-empty" id="financeCalendarEmpty" hidden>
+                <i class="ico-finance-calendar-empty" aria-hidden="true"></i>
+                <p>조회된 일정이 없습니다.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="application/json" id="financeCalendarData">[
+    {"date":"2026-09-06","title":"예산 편성 일정 안내"},
+    {"date":"2026-09-06","title":"국가재정법 시행령 개정 공고"},
+    {"date":"2026-09-14","title":"지방 공기업 예산 편성 기준"},
+    {"date":"2026-09-23","title":"2027년도 예산안 국회 제출"},
+    {"date":"2026-09-23","title":"재정정보공개 설명회"},
+    {"date":"2026-10-15","title":"국고보조금 집행 점검"},
+    {"date":"2026-11-01","title":"결산서 공개"}
+  ]</script>
+

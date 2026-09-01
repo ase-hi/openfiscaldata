@@ -1,4 +1,5 @@
 <aside class="floating-quick" aria-label="빠른 메뉴">
+    <div class="dim"></div>
     <ul class="floating-quick-list">
         <li>
             <a href="#content">
@@ -13,7 +14,7 @@
                 <div class="icon" aria-hidden="true">
                     <svg width="32" height="32"><use href="../images/common/simbol.svg#ico-quick-ai"></use></svg>
                 </div>
-                <span>AI에게 <br>묻기</span>
+                <span>AI <br>도우미</span>
             </a>
         </li>
         <li>
@@ -39,10 +40,16 @@
 </g>
 </svg>
                 </div>
-                <span>재정 용어</span>
+                <span>재정 용어<span class="pc-hide">사전</span></span>
             </a>
         </li>
     </ul>
+    <button type="button" class="floating-quick-toggle" aria-expanded="false" aria-label="빠른 메뉴 열기">
+        <svg class="ico-floating-more" width="24" height="24" viewBox="0 0 16 16" aria-hidden="true"><use href="../images/common/simbol.svg#ico-plus"></use></svg>
+        <svg class="ico-floating-close" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 6L18 18M18 6L6 18" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+    </button>
     <button type="button" class="floating-top" aria-label="페이지 맨 위로 이동">
         <span>위로</span>
     </button>

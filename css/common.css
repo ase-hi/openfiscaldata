@@ -519,7 +519,7 @@ html .ui-datepicker.month .ui-datepicker-buttonpane{margin-top:0;border-top:none
 .data-util .util-search-btn:hover{background:#485166;}
 @media all and (max-width:1024px){
     .data-util + *{margin-top:12px;}
-    .util-search{width:100%;gap:8px;}
+    .util-search{width:100%;gap:12px;}
     .util-search-sel{width:auto;min-width:118px;}
     .util-search-input{flex:1 1 auto;width:auto;min-width:0;}
 }
@@ -544,9 +544,11 @@ html .ui-datepicker.month .ui-datepicker-buttonpane{margin-top:0;border-top:none
 @media all and (max-width:1024px){
     * + .title-main-wrap{margin-top:24px;}
     .title-main-wrap{flex-direction: column;gap:16px;align-items: flex-start;}
-    .title-main-wrap .right{margin-left:0;width:100%;}
-    .title-main-wrap .right .util-search{flex-wrap: wrap;width:100%;}
-    .title-main-wrap .right .util-search select{width:100%;}
+    .title-main-wrap .right{display:block;width:100%;}
+    .title-main-wrap .right .util-search{flex-wrap:wrap;align-items:stretch;flex-shrink:0;width:calc(100% + 32px);max-width:none;margin:0 -16px;padding:32px 16px;background:#F4F5F6;box-sizing:border-box;}
+    .title-main-wrap .right .util-search .util-search-sel,
+    .title-main-wrap .right .util-search .util-search-input,
+    .title-main-wrap .right .util-search .util-search-btn{width:100%;flex:1 1 100%;}
     .title-main{font-weight: 700;font-size: 32px;color: #000;}
 
 }
@@ -639,6 +641,7 @@ html .ui-datepicker.month .ui-datepicker-buttonpane{margin-top:0;border-top:none
   .pagination-type .pg-list li:not(.on) button:hover{background:rgba(0, 54, 117, 0.1);}
 }
 @media all and (max-width:1024px){
+    .pagination-wrap{margin-top:16px;}
     .pagination-type{gap:0.125rem;}
     .pagination-type .pg-list{gap:0.125rem;}
     .pagination-type .pg-list button{width:2.25rem;height:2.25rem;border-radius:0.3125rem;font-size:0.9375rem;}

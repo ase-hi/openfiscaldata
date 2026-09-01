@@ -131,6 +131,105 @@ function gnbMenu(){
   });
 }
 
+function allMenu(){
+  var $layer = $('#allMenuLayer');
+  if(!$layer.length) return;
+
+  function closeLangDropdown(){
+    $layer.find('.all-menu-lang-sel-wrap').removeClass('is-open')
+      .find('.all-menu-lang-sel').attr('aria-expanded', 'false')
+      .end().find('.all-menu-lang-dropdown').attr('hidden', true);
+  }
+
+  function resetMobileMenu(){
+    if($(window).width() > 1024) return;
+    var $firstLnb = $layer.find('.all-menu-lnb li:first');
+    var $firstPanel = $layer.find('.all-menu-panel[data-panel="0"]');
+    $layer.find('.all-menu-lnb li').removeClass('on');
+    $layer.find('.all-menu-lnb button').attr('aria-selected', 'false');
+    $firstLnb.addClass('on').find('button').attr('aria-selected', 'true');
+    $layer.find('.all-menu-panel').removeClass('on').attr('hidden', true);
+    $firstPanel.addClass('on').removeAttr('hidden');
+    $layer.find('.all-menu-group').removeClass('on');
+  }
+
+  function openMenu(){
+    resetMobileMenu();
+    closeLangDropdown();
+    $layer.removeAttr('hidden').attr('aria-hidden', 'false').addClass('is-open');
+    $('body').addClass('mo-hidden');
+    $layer.find('.btn-all-menu-close').focus();
+  }
+
+  function closeMenu(){
+    closeLangDropdown();
+    $layer.attr('hidden', true).attr('aria-hidden', 'true').removeClass('is-open');
+    $('body').removeClass('mo-hidden');
+  }
+
+  $(document).off('click.allMenuOpen').on('click.allMenuOpen', '.btn-all-menu-open', function(e){
+    e.preventDefault();
+    openMenu();
+  });
+
+  $layer.off('click.allMenuClose').on('click.allMenuClose', '.btn-all-menu-close, .all-menu-dim', function(e){
+    e.preventDefault();
+    closeMenu();
+  });
+
+  $(document).off('keydown.allMenu').on('keydown.allMenu', function(e){
+    if(e.key === 'Escape' && $layer.hasClass('is-open')) closeMenu();
+  });
+
+  $layer.off('click.allMenuLnb').on('click.allMenuLnb', '.all-menu-lnb button[data-panel]', function(){
+    var panelIdx = $(this).data('panel');
+    $(this).closest('li').addClass('on').siblings().removeClass('on');
+    $(this).attr('aria-selected', 'true').closest('li').siblings().find('button').attr('aria-selected', 'false');
+    $layer.find('.all-menu-panel').removeClass('on').attr('hidden', true)
+      .filter('[data-panel="' + panelIdx + '"]').addClass('on').removeAttr('hidden')
+      .find('.all-menu-group').removeClass('on');
+  });
+
+  $layer.off('click.allMenuAcc').on('click.allMenuAcc', '.all-menu-group-tit:not(.is-external)', function(e){
+    if($(window).width() > 1024) return;
+    if($(this).is('a')) return;
+    e.preventDefault();
+    var $group = $(this).closest('.all-menu-group');
+    if($group.hasClass('is-single') || $group.hasClass('is-link')) return;
+    $group.toggleClass('on').siblings('.all-menu-group:not(.is-link):not(.is-single)').removeClass('on');
+  });
+
+  $layer.off('click.allMenuLang').on('click.allMenuLang', '.all-menu-lang-sel', function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    var $wrap = $(this).closest('.all-menu-lang-sel-wrap');
+    var willOpen = !$wrap.hasClass('is-open');
+    closeLangDropdown();
+    if(willOpen){
+      $wrap.addClass('is-open');
+      $(this).attr('aria-expanded', 'true');
+      $wrap.find('.all-menu-lang-dropdown').removeAttr('hidden');
+    }
+  });
+
+  $layer.off('click.allMenuLangItem').on('click.allMenuLangItem', '.all-menu-lang-list button[data-lang]', function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    var label = $(this).data('label');
+    var $wrap = $(this).closest('.all-menu-lang-sel-wrap');
+    $wrap.find('.all-menu-lang-value').text(label);
+    $wrap.find('.all-menu-lang-list li').removeClass('selected').find('button').attr('aria-selected', 'false');
+    $(this).closest('li').addClass('selected');
+    $(this).attr('aria-selected', 'true');
+    closeLangDropdown();
+  });
+
+  $layer.off('click.allMenuLangOutside').on('click.allMenuLangOutside', function(e){
+    if(!$(e.target).closest('.all-menu-lang-sel-wrap').length) closeLangDropdown();
+  });
+}
+
+
 // loading
 function loading(){
   const loadingHtml = `<div class="loading-bar" role="status" aria-live="polite">
@@ -630,28 +729,81 @@ function fontSettingMenu(){
 
 
 // 스크롤 방향에 따라 body에 scroll-down/scroll-up 클래스 부여
-// function scrollDirection(){
-//   var lastScrollTop = $(window).scrollTop();
-//   var ticking = false;
+function scrollDirection(){
+  var lastScrollTop = $(window).scrollTop();
+  var ticking = false;
 
-//   $(window).on('scroll.scrollDirection', function(){
-//     if(ticking) return;
-//     ticking = true;
+  $(window).on('scroll.scrollDirection', function(){
+    if(ticking) return;
+    ticking = true;
 
-//     requestAnimationFrame(function(){
-//       var scrollTop = $(window).scrollTop();
+    requestAnimationFrame(function(){
+      var scrollTop = $(window).scrollTop();
 
-//       if(scrollTop > lastScrollTop){
-//         $('body').removeClass('scroll-up').addClass('scroll-down');
-//       }else if(scrollTop < lastScrollTop){
-//         $('body').removeClass('scroll-down').addClass('scroll-up');
-//       }
+      if(scrollTop > lastScrollTop){
+        $('body').removeClass('scroll-up').addClass('scroll-down');
+      }else if(scrollTop < lastScrollTop){
+        $('body').removeClass('scroll-down').addClass('scroll-up');
+      }
 
-//       lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-//       ticking = false;
-//     });
-//   });
-// }
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+      ticking = false;
+    });
+  });
+}
+
+
+function floatingQuickMobile(){
+  var $quick = $('.floating-quick');
+  if(!$quick.length || $quick.data('floatingMobileInit')) return;
+  $quick.data('floatingMobileInit', true);
+
+  function closeQuick(){
+    $quick.removeClass('is-open');
+    $quick.find('.floating-quick-toggle').attr('aria-expanded', 'false').attr('aria-label', '빠른 메뉴 열기');
+    $('body').removeClass('mo-hidden');
+  }
+
+  function openQuick(){
+    if($(window).width() > 1024) return;
+    $quick.addClass('is-open');
+    $quick.find('.floating-quick-toggle').attr('aria-expanded', 'true').attr('aria-label', '빠른 메뉴 닫기');
+    $('body').addClass('mo-hidden');
+  }
+
+  $(document).off('click.floatingQuickToggle').on('click.floatingQuickToggle', '.floating-quick-toggle', function(e){
+    e.preventDefault();
+    if($(window).width() > 1024) return;
+    if($quick.hasClass('is-open')) closeQuick();
+    else openQuick();
+  });
+
+  $quick.off('click.floatingQuickDim').on('click.floatingQuickDim', '.dim', function(){
+    if($(window).width() > 1024) return;
+    closeQuick();
+  });
+
+  $quick.off('click.floatingQuickLink').on('click.floatingQuickLink', '.floating-quick-list a', function(){
+    if($(window).width() > 1024 || !$quick.hasClass('is-open')) return;
+    closeQuick();
+  });
+
+  $(document).off('keydown.floatingQuick').on('keydown.floatingQuick', function(e){
+    if(e.key === 'Escape' && $quick.hasClass('is-open')) closeQuick();
+  });
+
+  $(window).off('resize.floatingQuick').on('resize.floatingQuick', function(){
+    if($(window).width() > 1024 && $quick.hasClass('is-open')) closeQuick();
+  });
+}
+
+function tryFloatingQuickMobile(){
+  if($('.floating-quick').length){
+    floatingQuickMobile();
+  }else{
+    setTimeout(tryFloatingQuickMobile, 50);
+  }
+}
 
 
 // floating-quick이 푸터 영역 아래로 내려가지 않도록 고정 (PC, min-width:1025px)
@@ -851,6 +1003,222 @@ function setupFocusTrap($popup) {
 }
 
 
+function financeCalendar(){
+  var $popup = $('#financeCalendarPopup');
+  if(!$popup.length || $popup.data('financeCalendarInit')) return;
+  $popup.data('financeCalendarInit', true);
+
+  var schedules = [];
+  try{
+    schedules = JSON.parse($('#financeCalendarData').text());
+  }catch(e){
+    schedules = [];
+  }
+
+  var scheduleMap = {};
+  schedules.forEach(function(item){
+    if(!scheduleMap[item.date]) scheduleMap[item.date] = [];
+    scheduleMap[item.date].push(item);
+  });
+
+  var state = {
+    year: 2026,
+    month: 8,
+    selected: '2026-09-14'
+  };
+
+  var dayNames = ['일','월','화','수','목','금','토'];
+
+  function pad(n){ return (n < 10 ? '0' : '') + n; }
+  function toDateKey(y, m, d){ return y + '-' + pad(m + 1) + '-' + pad(d); }
+
+  function closeFinanceSelects(){
+    $popup.find('.finance-calendar-select').removeClass('is-open')
+      .find('.finance-calendar-select-btn').attr('aria-expanded', 'false')
+      .end().find('.finance-calendar-select-list').attr('hidden', true);
+  }
+
+  function initSelectLists(){
+    var $yearSelect = $popup.find('.finance-calendar-select[data-type="year"]');
+    var $monthSelect = $popup.find('.finance-calendar-select[data-type="month"]');
+    var i, html;
+
+    if(!$yearSelect.find('li').length){
+      html = '';
+      for(i = 2020; i <= 2030; i++){
+        html += '<li><button type="button" data-value="' + i + '">' + i + '년</button></li>';
+      }
+      $yearSelect.find('.finance-calendar-select-list').html(html);
+
+      html = '';
+      for(i = 1; i <= 12; i++){
+        html += '<li><button type="button" data-value="' + (i - 1) + '">' + i + '월</button></li>';
+      }
+      $monthSelect.find('.finance-calendar-select-list').html(html);
+    }
+  }
+
+  function updateSelectUI(){
+    $popup.find('.finance-calendar-select[data-type="year"] .finance-calendar-select-value').text(state.year + '년');
+    $popup.find('.finance-calendar-select[data-type="month"] .finance-calendar-select-value').text((state.month + 1) + '월');
+
+    $popup.find('.finance-calendar-select[data-type="year"] li').removeClass('selected')
+      .filter(function(){ return +$(this).find('button').data('value') === state.year; }).addClass('selected');
+    $popup.find('.finance-calendar-select[data-type="month"] li').removeClass('selected')
+      .filter(function(){ return +$(this).find('button').data('value') === state.month; }).addClass('selected');
+  }
+
+  function fillSelects(){
+    initSelectLists();
+    updateSelectUI();
+  }
+
+  function renderCalendar(){
+    var firstDay = new Date(state.year, state.month, 1);
+    var startWeekday = firstDay.getDay();
+    var daysInMonth = new Date(state.year, state.month + 1, 0).getDate();
+    var daysInPrevMonth = new Date(state.year, state.month, 0).getDate();
+    var $days = $('#financeCalendarDays');
+    var html = '';
+    var i, dayNum, key, y, m, cls;
+
+    for(i = 0; i < startWeekday; i++){
+      dayNum = daysInPrevMonth - startWeekday + i + 1;
+      y = state.month === 0 ? state.year - 1 : state.year;
+      m = state.month === 0 ? 11 : state.month - 1;
+      key = toDateKey(y, m, dayNum);
+      html += '<button type="button" class="finance-calendar-day is-other" data-date="' + key + '"><span>' + dayNum + '</span></button>';
+    }
+
+    for(i = 1; i <= daysInMonth; i++){
+      key = toDateKey(state.year, state.month, i);
+      cls = 'finance-calendar-day';
+      if(key === state.selected) cls += ' is-selected';
+      if(scheduleMap[key]) cls += ' has-event';
+      html += '<button type="button" class="' + cls + '" data-date="' + key + '"><span>' + i + '</span></button>';
+    }
+
+    i = 1;
+    while((startWeekday + daysInMonth + i - 1) % 7 !== 0){
+      y = state.month === 11 ? state.year + 1 : state.year;
+      m = state.month === 11 ? 0 : state.month + 1;
+      key = toDateKey(y, m, i);
+      html += '<button type="button" class="finance-calendar-day is-other" data-date="' + key + '"><span>' + i + '</span></button>';
+      i++;
+    }
+
+    $days.html(html);
+  }
+
+  function renderSchedule(){
+    var parts = state.selected.split('-');
+    var dateObj = new Date(+parts[0], +parts[1] - 1, +parts[2]);
+    var weekday = dayNames[dateObj.getDay()];
+    var events = scheduleMap[state.selected] || [];
+    var $list = $('#financeCalendarList');
+    var $empty = $('#financeCalendarEmpty');
+    var html = '';
+
+    $('#financeCalendarSelectedDate').text(+parts[0] + '년 ' + (+parts[1]) + '월 ' + (+parts[2]) + '일(' + weekday + ')');
+
+    if(events.length){
+      events.forEach(function(item){
+        html += '<li><span class="finance-calendar-item">' + item.title + '</span></li>';
+      });
+      $list.html(html).removeAttr('hidden');
+      $empty.attr('hidden', true);
+    }else{
+      $list.empty().attr('hidden', true);
+      $empty.removeAttr('hidden');
+    }
+  }
+
+  function setMonth(year, month){
+    state.year = year;
+    state.month = month;
+    fillSelects();
+    renderCalendar();
+  }
+
+  fillSelects();
+  renderCalendar();
+  renderSchedule();
+
+  $(document).off('click.financeCalendarOpen').on('click.financeCalendarOpen', '.btn-finance-calendar-open', function(e){
+    e.preventDefault();
+    popOpen('#financeCalendarPopup');
+  });
+
+  $popup.off('click.financeCalendarClose').on('click.financeCalendarClose', '.dim, .btn-close', function(e){
+    e.preventDefault();
+    popClose('#financeCalendarPopup');
+  });
+
+  $popup.off('click.financeCalendarDay').on('click.financeCalendarDay', '.finance-calendar-day', function(){
+    var date = $(this).data('date');
+    var parts = date.split('-');
+    state.selected = date;
+    state.year = +parts[0];
+    state.month = +parts[1] - 1;
+    fillSelects();
+    renderCalendar();
+    renderSchedule();
+  });
+
+  $popup.off('click.financeCalendarNav').on('click.financeCalendarNav', '.finance-calendar-prev', function(){
+    var m = state.month - 1;
+    var y = state.year;
+    if(m < 0){ m = 11; y--; }
+    setMonth(y, m);
+  });
+
+  $popup.off('click.financeCalendarNavNext').on('click.financeCalendarNavNext', '.finance-calendar-next', function(){
+    var m = state.month + 1;
+    var y = state.year;
+    if(m > 11){ m = 0; y++; }
+    setMonth(y, m);
+  });
+
+  $popup.off('click.financeCalendarSelectBtn').on('click.financeCalendarSelectBtn', '.finance-calendar-select-btn', function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    var $select = $(this).closest('.finance-calendar-select');
+    var willOpen = !$select.hasClass('is-open');
+    closeFinanceSelects();
+    if(willOpen){
+      $select.addClass('is-open');
+      $(this).attr('aria-expanded', 'true');
+      $select.find('.finance-calendar-select-list').removeAttr('hidden');
+    }
+  });
+
+  $popup.off('click.financeCalendarSelectItem').on('click.financeCalendarSelectItem', '.finance-calendar-select-list button', function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    var $select = $(this).closest('.finance-calendar-select');
+    var value = +$(this).data('value');
+    if($select.data('type') === 'year'){
+      setMonth(value, state.month);
+    }else{
+      setMonth(state.year, value);
+    }
+    closeFinanceSelects();
+  });
+
+  $popup.off('click.financeCalendarSelectOutside').on('click.financeCalendarSelectOutside', function(e){
+    if(!$(e.target).closest('.finance-calendar-select').length) closeFinanceSelects();
+  });
+}
+
+function tryFinanceCalendar(){
+  if($('#financeCalendarPopup').length && $('#financeCalendarData').length){
+    financeCalendar();
+  }else{
+    setTimeout(tryFinanceCalendar, 50);
+  }
+}
+
+
 // ready
 $(function(){
   function tryGnbMenu() {
@@ -861,6 +1229,15 @@ $(function(){
     }
   }
   tryGnbMenu();
+  function tryAllMenu(){
+    if($('#allMenuLayer').length){
+      allMenu();
+    }else{
+      setTimeout(tryAllMenu, 50);
+    }
+  }
+  tryAllMenu();
+  tryFinanceCalendar();
   breadcrumbMenu();
   fontSettingMenu();
   viewFilesToggle();
@@ -870,8 +1247,9 @@ $(function(){
   inputDel('.inp');
   inputDel('.input-search');
   inputDel('.main-hero-search');
-  // scrollDirection();
+  scrollDirection();
   floatingQuickStop();
+  tryFloatingQuickMobile();
 
   datepicker();
 
