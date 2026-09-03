@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title>열린재정</title>
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
+<script src="../js/pub-ui.js"></script>
+</head>
+<body>
+    <dl class="skipLink">
+        <dt>바로가기 메뉴</dt>
+        <dd><a href="#gnbMenu">주메뉴 바로가기</a></dd>
+        <dd><a href="#content">본문 바로가기</a></dd>
+    </dl>
+    <div class="wrap">
+        <script id="header-template">
+            $.ajax({url:"common/header.txt", dataType:"text", success:function(data){
+                $('#header-template').replaceWith(data);
+            }});
+        </script>
+        <div class="container" id="content">
+            <script id="subvisual-template">
+                $.ajax({url:"common/subvisual.txt", dataType:"text", success:function(data){
+                    $('#subvisual-template').replaceWith($(data).filter('#visual-finance'));
+                }});
+            </script>
+            <script id="breadcrumb-template">
+                $.ajax({url:"common/breadcrumb.txt", dataType:"text", success:function(data){
+                    $('#breadcrumb-template').replaceWith(data);
+                    breadcrumbMenu();
+                }});
+            </script>
+            <div class="contents">
+                <div class="title-main-wrap">
+                    <h2 class="title-main">재정제도</h2>
+                </div>
+                <div class="tab-main">
+                    <div class="swiper tab-main-swiper">
+                        <ul class="swiper-wrapper" role="tablist">
+                        <li class="swiper-slide"><a href="finance-understand-system-feasibility.html" data-tab-id="tab1" role="tab" aria-selected="false">예비타당성조사</a></li>
+                        <li class="swiper-slide on"><a href="finance-understand-system-gender-budget.html" data-tab-id="tab2" role="tab" aria-selected="true">성인지 예산제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-ghg-budget.html" data-tab-id="tab3" role="tab" aria-selected="false">온실가스감축인지 예산제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-tax-expenditure.html" data-tab-id="tab4" role="tab" aria-selected="false">조세지출 예산제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-citizen-budget.html" data-tab-id="tab5" role="tab" aria-selected="false">국민참여예산제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-social-insurance.html" data-tab-id="tab6" role="tab" aria-selected="false">8대 사회보험</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-levy.html" data-tab-id="tab7" role="tab" aria-selected="false">부담금</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-local-adjustment.html" data-tab-id="tab8" role="tab" aria-selected="false">지방재정조정제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-program-budget.html" data-tab-id="tab9" role="tab" aria-selected="false">프로그램예산제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-performance.html" data-tab-id="tab10" role="tab" aria-selected="false">성과관리제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-total-cost.html" data-tab-id="tab11" role="tab" aria-selected="false">총사업비 관리제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-private-investment.html" data-tab-id="tab12" role="tab" aria-selected="false">민간투자제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-performance-pay.html" data-tab-id="tab13" role="tab" aria-selected="false">예산성과금제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-fiscal-rule.html" data-tab-id="tab14" role="tab" aria-selected="false">재정준칙</a></li>
+                        </ul>
+                        <button type="button" class="swiper-button-prev" aria-label="이전 탭">
+                            <span class="tab-swiper-icon"><i class="ico-tab-arr-l" aria-hidden="true"></i></span>
+                            <span class="tab-swiper-grad" aria-hidden="true"></span>
+                        </button>
+                        <button type="button" class="swiper-button-next" aria-label="다음 탭">
+                            <span class="tab-swiper-grad" aria-hidden="true"></span>
+                            <span class="tab-swiper-icon"><i class="ico-tab-arr-r" aria-hidden="true"></i></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="tab-content">
+                                        <section class="section-wrap">
+                        <div class="title-section-wrap">
+                            <h3 class="title-section">1. 성인지 예산제도의 의의</h3>
+                        </div>
+                                                <div class="paragraph">
+                            <p>성인지 예산제도는 예산이 여성과 남성에게 미치는 영향을 미리 분석하여, 이를 예산 편성과 집행, 결산에 반영하는 제도입니다. 단순히 여성만을 위한 별도 예산을 편성하는 것이 아니라, 정부예산이 성별에 따라 다르게 작용할 수 있다는 점을 고려해 성불평등을 줄이는 방향으로 예산을 설계하고 평가하는 데 목적이 있습니다. 다시 말해, 성평등을 정책 구호가 아니라 예산의 실제 작동 방식으로 연결하는 제도라고 볼 수 있습니다.</p>
+                        </div>
+                    </section>                    <section class="section-wrap">
+                        <div class="title-section-wrap">
+                            <h3 class="title-section">2. 법적 근거와 핵심 내용</h3>
+                        </div>
+                                                <div class="paragraph">
+                            <p>성인지 예산제도는 국가재정법에 근거를 두고 있으며, 2010 회계연도부터 본격적으로 적용되었습니다. 정부는 예산과 기금을 편성할때 여성과 남성에게 미치는 효과를 평가하고, 그 결과를 다음연도 예산에 반영하도록 노력해야 합니다. 이를 위해 예산 편성 단계에서는 성인지 예산서, 집행 이후에는 성인지 결산서를 작성하며, 이 보고서에는 성평등 기대효과, 성과목표, 성별 수혜분석, 집행실적, 성평등 효과분석 등이 포함됩니다. 또한 성별영향 평가 결과도 함께 반영하도록 규정하고 있어, 성인지 예산은 성평등 정책과 재정운용을 연결하는 중요한 장치입니다.</p>
+                        </div>
+                    </section>                    <section class="section-wrap">
+                        <div class="title-section-wrap">
+                            <h3 class="title-section">3. 운영체계와 역할 분담</h3>
+                        </div>
+                                                <div class="paragraph">
+                            <p>성인지 예산제도는 여러 기관이 협력해 운영합니다. 기획예산처는 총괄부처로서 작성기준을 마련하고 각 부처의 성인지 예·결산서를 취합·검토해 국회에 제출합니다. <br>성평등가족부는 작성지침 마련과 교육, 지원을 담당하며, 한국양성평등교육진흥원은 실무자 교육을 맡고, 한국여성정책연구원의 성인지예산센터는 컨설팅과 자료 지원을 수행합니다. 
+                                <br>또한 성인지 예·결산 협의회는 대상사업 선정과 작성기준 마련 등 주요 사항을 심의하는 협의체로 기능합니다. 이렇게 제도가 운영되기 때문에, 성인지 예산은 단순한 형식적 서류가 아니라 부처 간 협업을 통해 관리되는 재정제도입니다.</p>
+                        </div>
+                    </section>
+                    <script id="learn-more-about-finance-template">
+                        $.ajax({url:"common/learn-more-about-finance-template.txt", dataType:"text", success:function(data){
+                            $('#learn-more-about-finance-template').replaceWith(data);
+                            cardSlideSwiper();
+                        }});
+                    </script>
+                </div>
+                <script id="feedback-template">
+                    $.ajax({url:"common/feedback.txt", dataType:"text", success:function(data){
+                        $('#feedback-template').replaceWith(data);
+                        pageFeedback();
+                    }});
+                </script>
+            </div>
+            <script id="floating-template">
+                $.ajax({url:"common/floating.txt", dataType:"text", success:function(data){
+                    $('#floating-template').replaceWith(data);
+                }});
+            </script>
+        </div>
+        <script id="footer-template">
+            $.ajax({url:"common/footer.txt", dataType:"text", success:function(data){
+                $('#footer-template').replaceWith(data);
+            }});
+        </script>
+    </div>
+</body>
+</html>

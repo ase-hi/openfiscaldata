@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title>열린재정</title>
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
+<script src="../js/pub-ui.js"></script>
+</head>
+<body>
+    <dl class="skipLink">
+        <dt>바로가기 메뉴</dt>
+        <dd><a href="#gnbMenu">주메뉴 바로가기</a></dd>
+        <dd><a href="#content">본문 바로가기</a></dd>
+    </dl>
+    <div class="wrap">
+        <script id="header-template">
+            $.ajax({url:"common/header.txt", dataType:"text", success:function(data){
+                $('#header-template').replaceWith(data);
+            }});
+        </script>
+        <div class="container" id="content">
+            <script id="subvisual-template">
+                $.ajax({url:"common/subvisual.txt", dataType:"text", success:function(data){
+                    $('#subvisual-template').replaceWith($(data).filter('#visual-finance'));
+                }});
+            </script>
+            <script id="breadcrumb-template">
+                $.ajax({url:"common/breadcrumb.txt", dataType:"text", success:function(data){
+                    $('#breadcrumb-template').replaceWith(data);
+                    breadcrumbMenu();
+                }});
+            </script>
+            <div class="contents">
+                <div class="title-main-wrap">
+                    <h2 class="title-main">재정제도</h2>
+                </div>
+                <div class="tab-main">
+                    <div class="swiper tab-main-swiper">
+                        <ul class="swiper-wrapper" role="tablist">
+                        <li class="swiper-slide"><a href="finance-understand-system-feasibility.html" data-tab-id="tab1" role="tab" aria-selected="false">예비타당성조사</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-gender-budget.html" data-tab-id="tab2" role="tab" aria-selected="false">성인지 예산제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-ghg-budget.html" data-tab-id="tab3" role="tab" aria-selected="false">온실가스감축인지 예산제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-tax-expenditure.html" data-tab-id="tab4" role="tab" aria-selected="false">조세지출 예산제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-citizen-budget.html" data-tab-id="tab5" role="tab" aria-selected="false">국민참여예산제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-social-insurance.html" data-tab-id="tab6" role="tab" aria-selected="false">8대 사회보험</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-levy.html" data-tab-id="tab7" role="tab" aria-selected="false">부담금</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-local-adjustment.html" data-tab-id="tab8" role="tab" aria-selected="false">지방재정조정제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-program-budget.html" data-tab-id="tab9" role="tab" aria-selected="false">프로그램예산제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-performance.html" data-tab-id="tab10" role="tab" aria-selected="false">성과관리제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-total-cost.html" data-tab-id="tab11" role="tab" aria-selected="false">총사업비 관리제도</a></li>
+                        <li class="swiper-slide on"><a href="finance-understand-system-private-investment.html" data-tab-id="tab12" role="tab" aria-selected="true">민간투자제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-performance-pay.html" data-tab-id="tab13" role="tab" aria-selected="false">예산성과금제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-fiscal-rule.html" data-tab-id="tab14" role="tab" aria-selected="false">재정준칙</a></li>
+                        </ul>
+                        <button type="button" class="swiper-button-prev" aria-label="이전 탭">
+                            <span class="tab-swiper-icon"><i class="ico-tab-arr-l" aria-hidden="true"></i></span>
+                            <span class="tab-swiper-grad" aria-hidden="true"></span>
+                        </button>
+                        <button type="button" class="swiper-button-next" aria-label="다음 탭">
+                            <span class="tab-swiper-grad" aria-hidden="true"></span>
+                            <span class="tab-swiper-icon"><i class="ico-tab-arr-r" aria-hidden="true"></i></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="tab-content">
+                                        <section class="section-wrap">
+                        <div class="title-section-wrap">
+                            <h3 class="title-section">1. 민간투자제도의 개요</h3>
+                        </div>
+                        <div class="paragraph">
+                            <p>민간투자제도는 민간이 정부를 대신하여 사회기반시설에 투자하고 일정기간 운영하여 투자비를 회수하는 방식입니다. 
+                                부족한 재정을 보완하여 사회기반시설을 적기에 제공할 수 있고, 민간의 창의와 효율을 활용할 수 있는 이점이 있으며, 다양화를 골자로 하는 「사회간접자본시설에 대한 민간투자법」으로 개정했습니다.
+                                <br>2005년에는 BTL을 도입하고, 공공투자관리센터를 설치하는 「사회기반시설에 대한 민간투자법」으로 개정했습니다.
+                                <br>2016년에는 BTL에 대하여 민간제안을 허용하고 공공청사를 민간투자사업으로 시행할 수 있도록 하는 일부개정을 실시했습니다.
+                                <br>1994년 제도 도입 이후, 2016년까지 총702건, 105.6조 원 규모의 실시협약을 체결했습니다. 이중 BTO방식은 총 231건, 74.7조 원이며, BTL방식은 471건, 30.9조 원입니다.</p>
+                        </div>
+                    </section>                    
+                    <section class="section-wrap">
+                        <div class="title-section-wrap">
+                            <h3 class="title-section">2. 민간투자사업 대표 추진방식</h3>
+                        </div>
+                        <div class="cont-box">
+                            <ul class="cont-box-list">
+                                <li>
+                                    <b>BTO(Build-Transfer-Operate, 수익형 민간투자사업)</b>
+                                    <p class="txt">민간자금으로 건설한 후, 소유권을 정부로 이전한다. 해당 사업을 운영하면서 사용료 징수 등으로 투자비를 회수하는 방법입니다.<br>주로 도로, 철도 등 수익 창출이 용이한 시설을 대상으로 합니다.</p>
+                                </li>
+                                <li>
+                                    <b>BTL(Build-Transfer-Lease, 임대형 민간투자사업)</b>
+                                    <p class="txt">민간자금으로 건설한 후, 소유권을 정부로 이전합니다. 해당 사업을 운영하면서 정부지급금(임대료, 운영비) 등으로 투자비를 회수하는 방법입니다.<br>주로 학교, 문화시설 등 수익 창출이 어려운 시설을 대상으로 합니다.</p>
+                                </li>
+                            </ul>
+
+                            
+                        </div>
+                    </section>                    <section class="section-wrap">
+                        <div class="title-section-wrap">
+                            <h3 class="title-section">3. 민간투자사업 추진절차</h3>
+                        </div>
+                                                <div class="cont-box">
+                            <ol class="cont-box-num">
+                                <li>
+                                    <strong class="tit">민간제안사업(민간이 주무관청에 민간투자사업 추진 제안서를 제출함으로써 사업 시작)</strong>
+                                    <p class="txt">민간제안서 접수 → 적격성조사 및 추진여부 검토 → 사업지정 및 제3자 공고 → 평가ㆍ협상ㆍ사업자지정 → 실시계획 승인 및 착공</p>
+                                </li>
+                                <li>
+                                    <strong class="tit">정부고시사업(주무관청이 사업을 지정하고 시설사업기본계획을 고시함으로써 사업 시작)</strong>
+                                    <p class="txt">주무관청 요청으로 예타 및 적격성조사 → 대상사업 지정 공고 → 시설사업 기본계획 고시 → 민간의 사업계획서 제출 → 평가ㆍ협상ㆍ사업자지정 → 실시계획 승인 및 착공</p>
+                                </li>
+                            </ol>
+                        </div>
+                    </section>                    <section class="section-wrap">
+                        <div class="title-section-wrap">
+                            <h3 class="title-section">4. 민간투자사업 대상</h3>
+                        </div>
+                                                <div class="paragraph">
+                            <p>민간투자사업의 대상은 「사회기반시설에 대한 민간투자법」 제2조제1호에 정의된 53개 시설이며, 세부항목은 다음과 같습니다.</p>
+                        </div>                        <div class="cont-box">
+                            <p>도로 및 도로의 부속물, 노외주차장, 지능형 교통체계, 자전거도로, 철도, 철도시설, 도시철도, 항만시설, 어항시설, 신항만건설 대상시설, 공항시설, 다목적댐, 하천시설, 수도 및 중수도, 여객자동차터미널, 물류터미널ㆍ물류단지, 택시공영차고지, 전기통신설비, 초고속정보통신망, 정보통신망, 공간정보체계, 유비쿼터스도시기반시설, 전원설비, 가스공급시설, 집단에너지시설,신ㆍ재생에너지 시설, 하수도ㆍ공공하수처리시설/분뇨처리시설/하ㆍ폐수 재이용시설, 폐기물 처리시설, 폐수종말처리시설, 재활용시설, 공공처리시설, 공공청사(지자체 청사 제외), 관광지․관광단지, 생활ㆍ전문체육시설, 도서관, 박물관ㆍ미술관, 국제회의시설, 문화시설, 청소년수련시설, 과학관, 도시공원, 유치원 및 학교, 군 교육ㆍ훈련, 병영생활 및 주거에 필요한 시설, 복지ㆍ체육시설, 공공임대주택, 산업집적기반시설, 노인주거복지ㆍ노인의료복지ㆍ재가노인복지시설, 공공보건의료시설, 보육시설, 장애인복지시설, 아동복지시설, 화장시설, 자연휴양림, 수목원</p>
+                        </div>
+                    </section>
+                    <script id="learn-more-about-finance-template">
+                        $.ajax({url:"common/learn-more-about-finance-template.txt", dataType:"text", success:function(data){
+                            $('#learn-more-about-finance-template').replaceWith(data);
+                            cardSlideSwiper();
+                        }});
+                    </script>
+                </div>
+                <script id="feedback-template">
+                    $.ajax({url:"common/feedback.txt", dataType:"text", success:function(data){
+                        $('#feedback-template').replaceWith(data);
+                        pageFeedback();
+                    }});
+                </script>
+            </div>
+            <script id="floating-template">
+                $.ajax({url:"common/floating.txt", dataType:"text", success:function(data){
+                    $('#floating-template').replaceWith(data);
+                }});
+            </script>
+        </div>
+        <script id="footer-template">
+            $.ajax({url:"common/footer.txt", dataType:"text", success:function(data){
+                $('#footer-template').replaceWith(data);
+            }});
+        </script>
+    </div>
+</body>
+</html>

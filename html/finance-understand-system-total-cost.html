@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title>열린재정</title>
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
+<script src="../js/pub-ui.js"></script>
+</head>
+<body>
+    <dl class="skipLink">
+        <dt>바로가기 메뉴</dt>
+        <dd><a href="#gnbMenu">주메뉴 바로가기</a></dd>
+        <dd><a href="#content">본문 바로가기</a></dd>
+    </dl>
+    <div class="wrap">
+        <script id="header-template">
+            $.ajax({url:"common/header.txt", dataType:"text", success:function(data){
+                $('#header-template').replaceWith(data);
+            }});
+        </script>
+        <div class="container" id="content">
+            <script id="subvisual-template">
+                $.ajax({url:"common/subvisual.txt", dataType:"text", success:function(data){
+                    $('#subvisual-template').replaceWith($(data).filter('#visual-finance'));
+                }});
+            </script>
+            <script id="breadcrumb-template">
+                $.ajax({url:"common/breadcrumb.txt", dataType:"text", success:function(data){
+                    $('#breadcrumb-template').replaceWith(data);
+                    breadcrumbMenu();
+                }});
+            </script>
+            <div class="contents">
+                <div class="title-main-wrap">
+                    <h2 class="title-main">재정제도</h2>
+                </div>
+                <div class="tab-main">
+                    <div class="swiper tab-main-swiper">
+                        <ul class="swiper-wrapper" role="tablist">
+                        <li class="swiper-slide"><a href="finance-understand-system-feasibility.html" data-tab-id="tab1" role="tab" aria-selected="false">예비타당성조사</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-gender-budget.html" data-tab-id="tab2" role="tab" aria-selected="false">성인지 예산제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-ghg-budget.html" data-tab-id="tab3" role="tab" aria-selected="false">온실가스감축인지 예산제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-tax-expenditure.html" data-tab-id="tab4" role="tab" aria-selected="false">조세지출 예산제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-citizen-budget.html" data-tab-id="tab5" role="tab" aria-selected="false">국민참여예산제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-social-insurance.html" data-tab-id="tab6" role="tab" aria-selected="false">8대 사회보험</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-levy.html" data-tab-id="tab7" role="tab" aria-selected="false">부담금</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-local-adjustment.html" data-tab-id="tab8" role="tab" aria-selected="false">지방재정조정제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-program-budget.html" data-tab-id="tab9" role="tab" aria-selected="false">프로그램예산제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-performance.html" data-tab-id="tab10" role="tab" aria-selected="false">성과관리제도</a></li>
+                        <li class="swiper-slide on"><a href="finance-understand-system-total-cost.html" data-tab-id="tab11" role="tab" aria-selected="true">총사업비 관리제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-private-investment.html" data-tab-id="tab12" role="tab" aria-selected="false">민간투자제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-performance-pay.html" data-tab-id="tab13" role="tab" aria-selected="false">예산성과금제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-fiscal-rule.html" data-tab-id="tab14" role="tab" aria-selected="false">재정준칙</a></li>
+                        </ul>
+                        <button type="button" class="swiper-button-prev" aria-label="이전 탭">
+                            <span class="tab-swiper-icon"><i class="ico-tab-arr-l" aria-hidden="true"></i></span>
+                            <span class="tab-swiper-grad" aria-hidden="true"></span>
+                        </button>
+                        <button type="button" class="swiper-button-next" aria-label="다음 탭">
+                            <span class="tab-swiper-grad" aria-hidden="true"></span>
+                            <span class="tab-swiper-icon"><i class="ico-tab-arr-r" aria-hidden="true"></i></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="tab-content">
+                                        <section class="section-wrap">
+                        <div class="title-section-wrap">
+                            <h3 class="title-section">1. 총사업비 관리 강화를 통한 효율성제고</h3>
+                        </div>
+                                                <div class="paragraph">
+                            <p>정부예산의 낭비를 방지하기 위해서는 사업의 착수를 신중하게 하는 것도 필요하지만 사업이 시작된 이후 예산이 올바르게 사용되도록 관리하는 것도 중요합니다. 이런 관점에서 실시되고 있는 것이 대형투자사업에 대한 총사업비 관리제도입니다. 즉, 총사업비 관리제도는 국고지원으로 시행되는 대규모투자사업의 총사업비를 사업 추진단계별로 합리적으로 조정하고 관리함으로써 재정지출의 효율성을 제고하고 시설공사의 품질을 확보하기 위해 ‘국가재정법(구. 예산회계법)’에 근거를 두고 1994년부터 운영되고 있습니다.. 현재 총사업비관리는 국가 직접시행사업, 국가대행사업, 국고보조사업 및 국고보조를 받는 민간기관의 사업 중 사업기간이 2년 이상으로 총사업비가 토목사업은 500억원 이상이면서 국가의 재정지원 규모가 300억원 이상, 건축사업･연구개발사업은 200억원 이상인 사업을 대상으로 하고 있으며, 방위비와 정액으로 국고를 지원하는 사업 등은 관리대상에서 제외되고 있습니다.</p>
+                        </div>
+                    </section>                    <section class="section-wrap">
+                        <div class="title-section-wrap">
+                            <h3 class="title-section">2. 총사업비 증가 통제 제도화</h3>
+                        </div>
+                                                <div class="paragraph">
+                            <p>총사업비의 불합리한 증가를 제도적으로 억제하기 위한 제도 개선 내용은 다음과 같습니다.</p>
+                        </div>                        <div class="cont-box">
+                            <ol class="cont-box-num">
+                                <li>
+                                    <strong class="tit">예비타당성 조사제도의 도입</strong>
+                                    <p class="txt">예비타당성조사제도는 대형 재정사업의 시작을 신중하게 함으로써 재정운용의 효율성을 높이는 데에 그 목적이 있는 제도이다. 예비타당성조사제도의 실시로 사업 착수 전에 면밀한 타당성 검토를 거쳐 사업의 추진여부를 결정하게 됨에 따라 사업 착수 이후 잦은 사업계획 변경으로 불합리하게 총사업비를 증액할 수 있는 여지를 제거할 수 있게 되었다.</p>
+                                </li>
+                                <li>
+                                    <strong class="tit">타당성 재조사제도의 도입</strong>
+                                    <p class="txt">타당성 재조사제도는 일정요건에 해당하는 경우 사업 추진여부를 원점에서 재검토하기 위한 제도이다. 총사업비가 100분의 20이상 증가하거나 수요예측치가 이전단계 대비 100분의 30이상 감소하는 등이 타당성재조사를 시행하는 요건에 해당된다.</p>
+                                </li>
+                                <li>
+                                    <strong class="tit">수요예측재조사 제도의 도입</strong>
+                                    <p class="txt">수요예측 재조사제도는 기본계획수립, 타당성조사, 기본설계 또는 실시설계 과정 등에서 수요예측치가 100분의 30이상 감소하였는지를 전문 연구기관에 검토ㆍ의뢰하고 이를 확인하는 경우 타당성재조사를 시행토록 하는 제도이다. 이외에도 총사업비 조정이 일정한 원칙과 기준 하에 이루어질 수 있도록 총사업비 관리지침 위반시 재정페널티와 제재요구 등 책임성을 제고토록 하고 있다.</p>
+                                </li>
+                            </ol>
+                        </div>
+                    </section>
+                    <script id="learn-more-about-finance-template">
+                        $.ajax({url:"common/learn-more-about-finance-template.txt", dataType:"text", success:function(data){
+                            $('#learn-more-about-finance-template').replaceWith(data);
+                            cardSlideSwiper();
+                        }});
+                    </script>
+                </div>
+                <script id="feedback-template">
+                    $.ajax({url:"common/feedback.txt", dataType:"text", success:function(data){
+                        $('#feedback-template').replaceWith(data);
+                        pageFeedback();
+                    }});
+                </script>
+            </div>
+            <script id="floating-template">
+                $.ajax({url:"common/floating.txt", dataType:"text", success:function(data){
+                    $('#floating-template').replaceWith(data);
+                }});
+            </script>
+        </div>
+        <script id="footer-template">
+            $.ajax({url:"common/footer.txt", dataType:"text", success:function(data){
+                $('#footer-template').replaceWith(data);
+            }});
+        </script>
+    </div>
+</body>
+</html>

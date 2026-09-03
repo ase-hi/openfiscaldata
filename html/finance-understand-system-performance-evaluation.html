@@ -47,46 +47,50 @@
             
             <div class="contents">
                 <div class="title-main-wrap">
-                    <h2 class="title-main">재정원정대</h2>
-                </div>
-
-                <div class="tab-main">
-                    <ul>
-                        <li class="on"><a href="javascript:void(0);">주요활동</a></li>
-                        <li><a href="javascript:void(0);">의견제안</a></li>
-                    </ul>
+                    <h2 class="title-main">재정사업평가결과</h2>
                 </div>
 
                 <div class="form-search-box row-type">
                     <div class="form-search-fields">
-                        <div class="fm">
-                            <label for="reg-start-date" class="label">등록일</label>
-                            <div class="input-date">
-                                <input type="text" id="reg-start-date" class="datepicker start-date" placeholder="YYYY-MM-DD" title="시작일" aria-label="등록 시작일">
-                                <span class="dash">~</span>
-                                <input type="text" class="datepicker end-date" placeholder="YYYY-MM-DD" title="종료일" aria-label="등록 종료일">
-                            </div>
+                      <div class="fm">
+                        <label for="eval-year" class="label">평가연도</label>
+                        <div class="sel">
+                          <select id="eval-year" aria-label="평가연도">
+                            <option selected>선택</option>
+                          </select>
                         </div>
-                        <div class="fm auto">
-                            <label for="reg-keyword" class="label">검색어</label>
-                            <div class="inp auto">
-                                <input type="text" id="reg-keyword" placeholder="검색어를 입력하세요" aria-label="검색어">
-                            </div>
+                      </div>
+                      <div class="fm">
+                        <label for="eval-jurisdiction" class="label">소관</label>
+                        <div class="sel">
+                          <select id="eval-jurisdiction" aria-label="소관">
+                            <option selected>선택</option>
+                          </select>
                         </div>
+                      </div>
+                      <div class="fm mo-column">
+                        <label for="eval-system" class="label">재정사업평가제도</label>
+                        <div class="sel">
+                          <select id="eval-system" aria-label="재정사업평가제도">
+                            <option selected>선택</option>
+                          </select>
+                        </div>
+                      </div>
                     </div>
                     <div class="form-search-btns">
-                        <button type="button" class="btn-reset">초기화</button>
-                        <button type="button" class="btn-search">검색</button>
+                      <button type="button" class="btn-reset">초기화</button>
+                      <button type="button" class="btn-search">검색</button>
                     </div>
-                </div>
-
+                  </div>
+              
+                
                 <div class="data-util">
                     <div class="left">
-                        <div class="total">전체 <em>85,007</em>건</div>
+                        <div class="total">총 <em>85,007</em>건</div>
                     </div>
                 </div>
-
-                <div class="data-default" style="height: 500px;background: #dedede;display:flex;justify-content:center;align-items:center;font-size:30px;">테이블영역</div>
+                <div class="data-default" style="height: 500px;background: #dedede;display:flex;justify-content:center;align-items:center;font-size:30px;">테이블영역</div>            
+              
 
                 <script id="feedback-template">
                     // 피드백
@@ -95,7 +99,6 @@
                         pageFeedback();
                     }});
                 </script>
-
             </div>
             <!-- //contents -->
 

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title>열린재정</title>
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
+<script src="../js/pub-ui.js"></script>
+</head>
+<body>
+    <dl class="skipLink">
+        <dt>바로가기 메뉴</dt>
+        <dd><a href="#gnbMenu">주메뉴 바로가기</a></dd>
+        <dd><a href="#content">본문 바로가기</a></dd>
+    </dl>
+    <div class="wrap">
+        <script id="header-template">
+            $.ajax({url:"common/header.txt", dataType:"text", success:function(data){
+                $('#header-template').replaceWith(data);
+            }});
+        </script>
+        <div class="container" id="content">
+            <script id="subvisual-template">
+                $.ajax({url:"common/subvisual.txt", dataType:"text", success:function(data){
+                    $('#subvisual-template').replaceWith($(data).filter('#visual-finance'));
+                }});
+            </script>
+            <script id="breadcrumb-template">
+                $.ajax({url:"common/breadcrumb.txt", dataType:"text", success:function(data){
+                    $('#breadcrumb-template').replaceWith(data);
+                    breadcrumbMenu();
+                }});
+            </script>
+            <div class="contents">
+                <div class="title-main-wrap">
+                    <h2 class="title-main">재정제도</h2>
+                </div>
+                <div class="tab-main">
+                    <div class="swiper tab-main-swiper">
+                        <ul class="swiper-wrapper" role="tablist">
+                        <li class="swiper-slide"><a href="finance-understand-system-feasibility.html" data-tab-id="tab1" role="tab" aria-selected="false">예비타당성조사</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-gender-budget.html" data-tab-id="tab2" role="tab" aria-selected="false">성인지 예산제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-ghg-budget.html" data-tab-id="tab3" role="tab" aria-selected="false">온실가스감축인지 예산제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-tax-expenditure.html" data-tab-id="tab4" role="tab" aria-selected="false">조세지출 예산제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-citizen-budget.html" data-tab-id="tab5" role="tab" aria-selected="false">국민참여예산제도</a></li>
+                        <li class="swiper-slide on"><a href="finance-understand-system-social-insurance.html" data-tab-id="tab6" role="tab" aria-selected="true">8대 사회보험</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-levy.html" data-tab-id="tab7" role="tab" aria-selected="false">부담금</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-local-adjustment.html" data-tab-id="tab8" role="tab" aria-selected="false">지방재정조정제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-program-budget.html" data-tab-id="tab9" role="tab" aria-selected="false">프로그램예산제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-performance.html" data-tab-id="tab10" role="tab" aria-selected="false">성과관리제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-total-cost.html" data-tab-id="tab11" role="tab" aria-selected="false">총사업비 관리제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-private-investment.html" data-tab-id="tab12" role="tab" aria-selected="false">민간투자제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-performance-pay.html" data-tab-id="tab13" role="tab" aria-selected="false">예산성과금제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-fiscal-rule.html" data-tab-id="tab14" role="tab" aria-selected="false">재정준칙</a></li>
+                        </ul>
+                        <button type="button" class="swiper-button-prev" aria-label="이전 탭">
+                            <span class="tab-swiper-icon"><i class="ico-tab-arr-l" aria-hidden="true"></i></span>
+                            <span class="tab-swiper-grad" aria-hidden="true"></span>
+                        </button>
+                        <button type="button" class="swiper-button-next" aria-label="다음 탭">
+                            <span class="tab-swiper-grad" aria-hidden="true"></span>
+                            <span class="tab-swiper-icon"><i class="ico-tab-arr-r" aria-hidden="true"></i></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="tab-content">
+                                        <section class="section-wrap">
+                        <div class="title-section-wrap">
+                            <h3 class="title-section">1. 8대 사회보험의 의의</h3>
+                        </div>
+                                                <div class="paragraph">
+                            <p>우리나라의 8대 사회보험은 국민연금, 공무원연금, 군인연금, 사학연금, 고용보험, 산재보험, 건강보험, 노인장기요양보험으로 구성되며 국민의 생애 전반에 걸친 위험을 분담하는 핵심 안전망입니다. 동시에 사회보험은 국가재정과도 밀접하게 연결되어 있어, 일부 제도를 관리하는 기금의 흑자나 적자가 재정수지 해석에 영향을 미칩니다. 따라서 사회보험 재정을 볼 때는 단기 수지뿐 아니라 장기 재정전망, 국가지원금 규모, 고령화에 따른 지출 확대를 함께 고려해야 합니다.</p>
+                        </div>
+                    </section>                    <section class="section-wrap">
+                        <div class="title-section-wrap">
+                            <h3 class="title-section">2. 사회보험의 재정운용 방식</h3>
+                        </div>
+                                                <div class="paragraph">
+                            <p>사회보험은 제도별로 재정운용 구조가 다릅니다. 국민연금, 공무원연금, 군인연금, 사학연금, 고용보험, 산재보험은 국가재정과 연결된 기금으로 운용되며 국회의 심의·의결을 받습니다. 반면 건강보험과 장기요양보험은 국가재정 바깥의 공단 회계로 운영되므로 직접적인 예산·결산 심의 대상은 아니며, 국가의 법정지원금이나 보험료 부담금만 재정에 반영됩니다. 특히 국민연금, 사학연금, 고용보험, 산재보험은 사회보장성기금으로 별도 분류되어 관리재정수지 계산에서 제외됩니다.</p>
+                        </div>
+                    </section>                    <section class="section-wrap">
+                        <div class="title-section-wrap">
+                            <h3 class="title-section">3. 8대 사회보험의 재정수지 특징</h3>
+                        </div>
+                                                <div class="paragraph">
+                            <p>사회보험의 재정수지는 기본적으로 수입에서 지출을 차감하여 산출하지만, 어떤 수입과 지출을 포함하는지는 제도마다 다를 수 있습니다. 이는 8대 사회보험이 동일한 사회보험이라 하더라도 
+                                재원조달 방식, 회계·기금 운영구조, 정부지원 방식, 급여구조가 서로 다르기 때문입니다.</p>
+                                
+                             <p>예를 들어 국민연금은 보험료수입과 기금운용수익 등에서 연금급여와 기금운영비 등을 차감하여 재정수지를 산출하며, 일반회계 전입금과 같은 내부거래는 제외합니다. 사학연금은 가입자와 법인의 부담금뿐 아니라 국가부담금도 수입에 포함합니다. 공무원연금은 연금제도와 관련된 보험료수입과 연금급여·운영비 등을 중심으로 재정수지를 산출하며, 군인연금은 국가보전금이 수입에 포함되므로 국가보전금의 포함 여부에 따라 재정수지의 모습이 크게 달라질 수 있습니다. 고용보험과 산재보험도 각 제도의 재정구조에 따라 일반회계 전입금, 기금 간 거래, 정부지원금 등의 포함범위가 서로 다릅니다. 건강보험과 장기요양보험은 국민건강보험공단 회계로 운영되는 국가재정 외 사회보험으로, 국가의 법정지원금 등을 수입에 포함하여 재정수지를 산출합니다. 재정운용계획은 수입과 지출의 균형을 고려하여 수립하지만 실제 결산에서는 흑자 또는 적자가 발생할 수 있습니다.</p>
+                                
+                             <p>이러한 제도별 차이는 통합재정수지와 관리재정수지에 사회보험이 반영되는 방식에도 나타납니다. 8대 사회보험 가운데 국민연금·사학연금·고용보험·산재보험·공무원연금·군인연금 등 6개 사회보험은 국가재정에 포함되는 기금으로 운영되므로 그 재정수지가 통합재정수지에 반영됩니다. 반면 건강보험과 장기요양보험은 국민건강보험공단 회계로 운영되기 때문에 보험회계 자체의 재정수지는 통합재정수지에 포함되지 않습니다.
+                                
+                             <p>다만 관리재정수지를 산출할 때에는 통합재정수지에 포함된 6개 사회보험 중에서도 처리방식이 다시 구분됩니다. 국민연금기금 · 사립학교교직원연금기금 · 고용보험기금 · 산업재해보상보험및예방기금 등 4개 사회보장성기금의 수지는 관리재정수지 산정 시 제외됩니다. 이들 기금은 장기적인 사회보장 목적을 위해 보험료를 적립하거나 운용하는 특성이 있어 정부의 당해 연도 실질적인 재정운용 상황을 파악할 때 별도로 구분하기 때문입니다. 이에 비해 공무원연금과 군인연금의 재정수지는 관리재정수지에도 포함됩니다. 건강보험과 장기요양보험은 애초에 국가재정 외에서 운영되므로 통합재정수지뿐 아니라 관리재정수지에도 보험회계 자체가 포함되지 않습니다. 다만 정부가 이들 보험에 지원하는 국고지원금은 정부의 예산지출로서 국가재정에 반영될 수 있습니다.</p>
+                                
+                             <p>따라서 8대 사회보험의 재정상태를 비교할 때에는 단순히 재정수지의 흑자·적자 규모만 비교하기보다, 각 제도의 수입·지출 산출범위, 정부지원 여부, 회계·기금 구조와 함께 통합재정수지 및 관리재정수지에 어떻게 반영되는지를 함께 살펴볼 필요가 있습니다.</p>
+                        </div>
+                    </section>                   
+                    <section class="section-wrap">
+                        <div class="title-section-wrap">
+                            <h3 class="title-section">4. 국가지원금과 재정전망</h3>
+                        </div>
+                        <div class="paragraph">
+                            <p>국가는 사회보험의 안정적 운영을 위해 보험료 지원, 급여 보완, 적자보전 등의 방식으로 재정을 지원합니다. 이러한 지원은 가입자 부담을 덜어 주고 제도 운영을 안정시키는 역할을 합니다. 다만 고령화와 제도 성숙으로 인해 연금과 건강보험, 장기요양보험의 지출은 앞으로 더 늘어날 가능성이 큽니다. 실제로 공적연금은 장기적으로 적자 전환과 기금 소진이 전망되고, 건강보험과 장기요양보험도 중장기적으로 재정압박이 커질 것으로 예상됩니다.</p>
+                        </div>
+                    </section>
+                    <script id="learn-more-about-finance-template">
+                        $.ajax({url:"common/learn-more-about-finance-template.txt", dataType:"text", success:function(data){
+                            $('#learn-more-about-finance-template').replaceWith(data);
+                            cardSlideSwiper();
+                        }});
+                    </script>
+                </div>
+                <script id="feedback-template">
+                    $.ajax({url:"common/feedback.txt", dataType:"text", success:function(data){
+                        $('#feedback-template').replaceWith(data);
+                        pageFeedback();
+                    }});
+                </script>
+            </div>
+            <script id="floating-template">
+                $.ajax({url:"common/floating.txt", dataType:"text", success:function(data){
+                    $('#floating-template').replaceWith(data);
+                }});
+            </script>
+        </div>
+        <script id="footer-template">
+            $.ajax({url:"common/footer.txt", dataType:"text", success:function(data){
+                $('#footer-template').replaceWith(data);
+            }});
+        </script>
+    </div>
+</body>
+</html>

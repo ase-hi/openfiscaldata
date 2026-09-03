@@ -171,6 +171,10 @@ input.error{border-color:#D63D4A !important;outline:1px solid #D63D4A !important
 .fm .label{color: #1F2228;font-weight: 600;font-size: 17px;}
 .fm.auto,
 .fm .auto{flex:1;}
+@media all and (max-width:768px) {
+.fm.mo-column{flex-direction: column;align-items: flex-start;}
+.fm.mo-column input, select, .sel{width:100% !important;}
+}
 
 .input-addr{width:100%;}
 .input-addr .addr-code{display:inline-flex;align-items:center;gap:8px;}
@@ -467,7 +471,13 @@ html .ui-datepicker.month .ui-datepicker-buttonpane{margin-top:0;border-top:none
 @media (max-width:1024px) {
     .tab-main{overflow-x:auto;}
     .tab-main ~ .tab-content{margin-top:45px;}
-    .tab-main ul li a{padding:0 8px;font-size:21px;}
+    .tab-main ul li a{padding:0 16px;font-size:21px;}
+    /* 모바일은 스와이퍼 대신 일반 가로 스크롤 (js에서 swiper destroy) */
+    .tab-main .tab-main-swiper{overflow:visible;}
+    .tab-main .tab-main-swiper .swiper-wrapper{width:max-content;min-width:100%;transform:none !important;}
+    .tab-main .tab-main-swiper .swiper-slide{flex:none;}
+    .tab-main .swiper-button-prev,
+    .tab-main .swiper-button-next{display:none;}
 }
 
 .detail-search-wrap{background:#fff;}
@@ -534,7 +544,6 @@ html .ui-datepicker.month .ui-datepicker-buttonpane{margin-top:0;border-top:none
   .view-type-toggle .view-type-btn:not(.on):hover{background:rgba(238, 242, 247, 0.6);}
 }
 
-* + .title-main-wrap{margin-top:40px;}
 .title-main-wrap + *{margin-top:40px;}
 .title-main-wrap{display:flex;align-items:center;flex-wrap: wrap;}
 .title-main-wrap .right{margin-left:auto;display:flex;align-items:center;gap:8px 12px;flex-wrap: wrap;}

@@ -70,11 +70,7 @@
                     <div class="gnb-mega-col">
                       <div class="gnb-mega-2d">멀티미디어 재정교실</div>
                       <ul>
-                        <li><a href="javascript:void(0);">재정개요</a></li>
-                        <li><a href="javascript:void(0);">예산·결산·재정 절차</a></li>
-                        <li><a href="javascript:void(0);">재정수지와 국가 채무</a></li>
-                        <li><a href="javascript:void(0);">재정 제도</a></li>
-                        <li><a href="javascript:void(0);">기타</a></li>
+                        <li><a href="javascript:void(0);">멀티미디어 재정교실</a></li>
                       </ul>
                     </div>
                     <div class="gnb-mega-col">
@@ -345,17 +341,13 @@
               <div class="all-menu-group is-title-only">
                 <button type="button" class="all-menu-group-tit is-accent">멀티미디어 재정교실<i class="ico-all-menu-arrow-up" aria-hidden="true"></i></button>
                 <ul class="all-menu-sub">
-                  <li><a href="javascript:void(0);">재정개요</a></li>
-                  <li><a href="javascript:void(0);">예산·결산·재정 절차</a></li>
-                  <li><a href="javascript:void(0);">재정수지와 국가 채무</a></li>
-                  <li><a href="javascript:void(0);">재정 제도</a></li>
-                  <li><a href="javascript:void(0);">기타</a></li>
+                  <li><a href="javascript:void(0);">멀티미디어 재정교실</a></li>
                 </ul>
               </div>
-              <div class="all-menu-group is-highlight">
+              <div class="all-menu-group">
                 <button type="button" class="all-menu-group-tit">청소년 재정교실<i class="ico-all-menu-arrow-up" aria-hidden="true"></i></button>
                 <ul class="all-menu-sub">
-                  <li><a href="javascript:void(0);" class="is-active">재정수업자료</a></li>
+                  <li><a href="javascript:void(0);">재정수업자료</a></li>
                   <li><a href="javascript:void(0);">재정콘텐츠</a></li>
                   <li><a href="javascript:void(0);">재정동영상</a></li>
                   <li><a href="javascript:void(0);">재정게임</a></li>

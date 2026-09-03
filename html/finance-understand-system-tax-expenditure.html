@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title>열린재정</title>
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
+<script src="../js/pub-ui.js"></script>
+</head>
+<body>
+    <dl class="skipLink">
+        <dt>바로가기 메뉴</dt>
+        <dd><a href="#gnbMenu">주메뉴 바로가기</a></dd>
+        <dd><a href="#content">본문 바로가기</a></dd>
+    </dl>
+    <div class="wrap">
+        <script id="header-template">
+            $.ajax({url:"common/header.txt", dataType:"text", success:function(data){
+                $('#header-template').replaceWith(data);
+            }});
+        </script>
+        <div class="container" id="content">
+            <script id="subvisual-template">
+                $.ajax({url:"common/subvisual.txt", dataType:"text", success:function(data){
+                    $('#subvisual-template').replaceWith($(data).filter('#visual-finance'));
+                }});
+            </script>
+            <script id="breadcrumb-template">
+                $.ajax({url:"common/breadcrumb.txt", dataType:"text", success:function(data){
+                    $('#breadcrumb-template').replaceWith(data);
+                    breadcrumbMenu();
+                }});
+            </script>
+            <div class="contents">
+                <div class="title-main-wrap">
+                    <h2 class="title-main">재정제도</h2>
+                </div>
+                <div class="tab-main">
+                    <div class="swiper tab-main-swiper">
+                        <ul class="swiper-wrapper" role="tablist">
+                        <li class="swiper-slide"><a href="finance-understand-system-feasibility.html" data-tab-id="tab1" role="tab" aria-selected="false">예비타당성조사</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-gender-budget.html" data-tab-id="tab2" role="tab" aria-selected="false">성인지 예산제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-ghg-budget.html" data-tab-id="tab3" role="tab" aria-selected="false">온실가스감축인지 예산제도</a></li>
+                        <li class="swiper-slide on"><a href="finance-understand-system-tax-expenditure.html" data-tab-id="tab4" role="tab" aria-selected="true">조세지출 예산제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-citizen-budget.html" data-tab-id="tab5" role="tab" aria-selected="false">국민참여예산제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-social-insurance.html" data-tab-id="tab6" role="tab" aria-selected="false">8대 사회보험</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-levy.html" data-tab-id="tab7" role="tab" aria-selected="false">부담금</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-local-adjustment.html" data-tab-id="tab8" role="tab" aria-selected="false">지방재정조정제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-program-budget.html" data-tab-id="tab9" role="tab" aria-selected="false">프로그램예산제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-performance.html" data-tab-id="tab10" role="tab" aria-selected="false">성과관리제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-total-cost.html" data-tab-id="tab11" role="tab" aria-selected="false">총사업비 관리제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-private-investment.html" data-tab-id="tab12" role="tab" aria-selected="false">민간투자제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-performance-pay.html" data-tab-id="tab13" role="tab" aria-selected="false">예산성과금제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-fiscal-rule.html" data-tab-id="tab14" role="tab" aria-selected="false">재정준칙</a></li>
+                        </ul>
+                        <button type="button" class="swiper-button-prev" aria-label="이전 탭">
+                            <span class="tab-swiper-icon"><i class="ico-tab-arr-l" aria-hidden="true"></i></span>
+                            <span class="tab-swiper-grad" aria-hidden="true"></span>
+                        </button>
+                        <button type="button" class="swiper-button-next" aria-label="다음 탭">
+                            <span class="tab-swiper-grad" aria-hidden="true"></span>
+                            <span class="tab-swiper-icon"><i class="ico-tab-arr-r" aria-hidden="true"></i></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="tab-content">
+                                        <section class="section-wrap">
+                        <div class="title-section-wrap">
+                            <h3 class="title-section">1. 조세지출의 개념</h3>
+                        </div>
+                                                <div class="paragraph">
+                            <p>조세지출은 세금 감면, 비과세, 소득공제, 세액공제, 우대세율 적용, 과세이연 등과 같은 조세특례를 통해 납세자에게 사실상 재정지원을 제공하면서 발생하는 국가 세입의 감소를 말합니다. 일반예산에서 직접 돈을 쓰는 대신 세금을 덜 걷는 방식으로 지원하는 것이므로, 실질적으로는 지출과 비슷한 효과를 냅니다. 따라서 조세지출은 "보이지 않는 재정지출"이라고 부르기도 합니다.</p>
+                        </div>
+                    </section>                    <section class="section-wrap">
+                        <div class="title-section-wrap">
+                            <h3 class="title-section">2. 조세지출예산서와 국세감면율</h3>
+                        </div>
+                                                <div class="paragraph">
+                            <p>정부는 조세지출을 투명하게 관리하기 위해 조세지출예산서를 작성하여 예산안과 함께 국회에 제출합니다. 이 예산서는 직전연도, 당해연도, 다음연도의 국세감면 실적과 전망을 담고 있어, 조세특례가 얼마나 재정에 영향을 미치는지를 보여 줍니다. 조세지출액은 사회복지, 산업・중소기업・에너지.보건,일반・지방행정 분야가 큰 비중을 차지합니다. 또한 정부는 국세감면율이 일정 수준을 넘지 않도록 관리하는 국세감면율 한도제를 운영하고 있습니다.</p>
+                        </div>
+                    </section>                    <section class="section-wrap">
+                        <div class="title-section-wrap">
+                            <h3 class="title-section">3. 조세특례평가제도</h3>
+                        </div>
+                                                <div class="paragraph">
+                            <p>조세특례가 늘어나면 세수 감소와 제도 비효율이 생길 수 있기 때문에, 정부는 조세특례에 대한 평가제도를 운영합니다. 새로 도입되는 조세특례가 일정 규모 이상이면 예비타당성평가를 받아야 하고, 일몰이 도래하는 조세특례 중 큰 규모의 제도는 의무심층평가를 거치게 됩니다. 다만 실제로는 예비타당성평가가 면제되는 경우도 많고, 심층평가 결과가 제도 개편으로 충분히 이어지지 않는 한계도 지적됩니다. 즉, 조세특례평가제도는 조세감면이 관행적으로 확대되는 것을 막고, 필요성과 효과를 점검하는 장치입니다.</p>
+                        </div>
+                    </section>                    <section class="section-wrap">
+                        <div class="title-section-wrap">
+                            <h3 class="title-section">4. 의의와 시사점</h3>
+                        </div>
+                                                <div class="paragraph">
+                            <p>조세지출은 직접적인 예산지출과 달리 세금 감면의 형태로 나타나기 때문에 겉으로는 잘 드러나지 않지만, 국가재정에는 큰 영향을 미칩니다. 특히 사회복지, 산업지원, 보건 분야에서 조세지출 비중이 높아 재정정책의 중요한 수단으로 활용되고 있습니다. 따라서 조세지출은 단순한 세금 혜택이 아니라, 재정지원의 한 방식으로 이해해야 하며, 조세지출예산서와 평가제도를 통해 투명성과 효율성을 함께 관리하는 것이 중요합니다.</p>
+                        </div>
+                    </section>
+                    <script id="learn-more-about-finance-template">
+                        $.ajax({url:"common/learn-more-about-finance-template.txt", dataType:"text", success:function(data){
+                            $('#learn-more-about-finance-template').replaceWith(data);
+                            cardSlideSwiper();
+                        }});
+                    </script>
+                </div>
+                <script id="feedback-template">
+                    $.ajax({url:"common/feedback.txt", dataType:"text", success:function(data){
+                        $('#feedback-template').replaceWith(data);
+                        pageFeedback();
+                    }});
+                </script>
+            </div>
+            <script id="floating-template">
+                $.ajax({url:"common/floating.txt", dataType:"text", success:function(data){
+                    $('#floating-template').replaceWith(data);
+                }});
+            </script>
+        </div>
+        <script id="footer-template">
+            $.ajax({url:"common/footer.txt", dataType:"text", success:function(data){
+                $('#footer-template').replaceWith(data);
+            }});
+        </script>
+    </div>
+</body>
+</html>

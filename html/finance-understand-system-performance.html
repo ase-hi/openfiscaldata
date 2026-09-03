@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title>열린재정</title>
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
+<script src="../js/pub-ui.js"></script>
+</head>
+<body>
+    <dl class="skipLink">
+        <dt>바로가기 메뉴</dt>
+        <dd><a href="#gnbMenu">주메뉴 바로가기</a></dd>
+        <dd><a href="#content">본문 바로가기</a></dd>
+    </dl>
+    <div class="wrap">
+        <script id="header-template">
+            $.ajax({url:"common/header.txt", dataType:"text", success:function(data){
+                $('#header-template').replaceWith(data);
+            }});
+        </script>
+        <div class="container" id="content">
+            <script id="subvisual-template">
+                $.ajax({url:"common/subvisual.txt", dataType:"text", success:function(data){
+                    $('#subvisual-template').replaceWith($(data).filter('#visual-finance'));
+                }});
+            </script>
+            <script id="breadcrumb-template">
+                $.ajax({url:"common/breadcrumb.txt", dataType:"text", success:function(data){
+                    $('#breadcrumb-template').replaceWith(data);
+                    breadcrumbMenu();
+                }});
+            </script>
+            <div class="contents">
+                <div class="title-main-wrap">
+                    <h2 class="title-main">재정제도</h2>
+                </div>
+                <div class="tab-main">
+                    <div class="swiper tab-main-swiper">
+                        <ul class="swiper-wrapper" role="tablist">
+                        <li class="swiper-slide"><a href="finance-understand-system-feasibility.html" data-tab-id="tab1" role="tab" aria-selected="false">예비타당성조사</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-gender-budget.html" data-tab-id="tab2" role="tab" aria-selected="false">성인지 예산제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-ghg-budget.html" data-tab-id="tab3" role="tab" aria-selected="false">온실가스감축인지 예산제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-tax-expenditure.html" data-tab-id="tab4" role="tab" aria-selected="false">조세지출 예산제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-citizen-budget.html" data-tab-id="tab5" role="tab" aria-selected="false">국민참여예산제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-social-insurance.html" data-tab-id="tab6" role="tab" aria-selected="false">8대 사회보험</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-levy.html" data-tab-id="tab7" role="tab" aria-selected="false">부담금</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-local-adjustment.html" data-tab-id="tab8" role="tab" aria-selected="false">지방재정조정제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-program-budget.html" data-tab-id="tab9" role="tab" aria-selected="false">프로그램예산제도</a></li>
+                        <li class="swiper-slide on"><a href="finance-understand-system-performance.html" data-tab-id="tab10" role="tab" aria-selected="true">성과관리제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-total-cost.html" data-tab-id="tab11" role="tab" aria-selected="false">총사업비 관리제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-private-investment.html" data-tab-id="tab12" role="tab" aria-selected="false">민간투자제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-performance-pay.html" data-tab-id="tab13" role="tab" aria-selected="false">예산성과금제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-fiscal-rule.html" data-tab-id="tab14" role="tab" aria-selected="false">재정준칙</a></li>
+                        </ul>
+                        <button type="button" class="swiper-button-prev" aria-label="이전 탭">
+                            <span class="tab-swiper-icon"><i class="ico-tab-arr-l" aria-hidden="true"></i></span>
+                            <span class="tab-swiper-grad" aria-hidden="true"></span>
+                        </button>
+                        <button type="button" class="swiper-button-next" aria-label="다음 탭">
+                            <span class="tab-swiper-grad" aria-hidden="true"></span>
+                            <span class="tab-swiper-icon"><i class="ico-tab-arr-r" aria-hidden="true"></i></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="tab-content">
+                                        <section class="section-wrap">
+                        <div class="title-section-wrap">
+                            <h3 class="title-section">1. 성과관리제도란?</h3>
+                        </div>
+                                                <div class="paragraph">
+                            <p>성과관리제도는 정부가 재정사업의 목표를 세우고 그 결과를 평가해 다음 예산에 반영하도록 하여, 정부예산을 효율적으로 사용하여 성과를 낼 수 있도록 하고, 운영자의 책임을 중시하도록 고안된 제도입니다.</p>
+                        </div>                        <div class="cont-box">
+                            <ul class="cont-box-list">
+                                <li>
+                                    <p><b>「성과목표관리」 는 임무→비전→전략목표→프로그램목표→성과지표 체계로 관리하며, 예산과 성과를 연계합니다.</b></p>
+                                    <a href="javascript:void(0);" class="btn-sm btn-white"><span>성과목표관리 바로가기</span><i class="ico-arr-r"></i></a>
+                                </li>
+                                <li>
+                                    <p><b>「핵심재정사업 성과관리」 는 핵심재정사업(군)을 선정하여 全주기적 밀착·집중 관리를 통해 가시적 성과 창출을 목표로 하는 성과관리 제도입니다.</b></p>
+                                    <a href="javascript:void(0);" class="btn-sm btn-white"><span>핵심 재정사업 성과관리 바로가기</span><i class="ico-arr-r"></i></a>
+                                </li>
+                                <li>
+                                    <p><b>「재정사업 자율평가 결과」 는 평점·등급으로 제공되며, 등급이 낮은 사업은 예산 삭감 및 제도개선 대상이 됩니다.</b></p>
+                                    <a href="javascript:void(0);" class="btn-sm btn-white"><span>재정사업평가 결과 바로가기</span><i class="ico-arr-r"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>                    <section class="section-wrap">
+                        <div class="title-section-wrap">
+                            <h3 class="title-section">2. 재정성과목표관리 기본구조</h3>
+                        </div>
+                                                <div class="paragraph">
+                            <p>각 기관의 임무·전략목표와 연계된 프로그램 목표 및 이를 측정할 수 있는 성과지표를 사전에 설정하고 성과 달성여부를 확인·점검·평가하여 그 결과를 다음 연도 예산 편성과 정책 개선에 다시 활용합니다</p>
+                        </div>                        
+                        <div class="diagram-box diagram-system-performance-structure">
+                            <div class="diagram-box-head">
+                                <strong class="diagram-box-tit">재정성과목표관리 기본구조</strong>
+                            </div>
+                            <div class="diagram">
+                                <img src="../images/content/diagram-system-performance-structure.png" alt="성과계획 수립, 재정운용, 성과측정·평가의 순환 구조를 보여주는 재정성과목표관리 기본구조 도식">
+                            </div>
+                        </div>
+                    </section>                    <section class="section-wrap">
+                        <div class="title-section-wrap">
+                            <h3 class="title-section">3. 재정성과목표관리를 위한 성과목표체계</h3>
+                        </div>
+                        <div class="diagram-box diagram-system-performance-goal">
+                            <div class="diagram-box-head">
+                                <strong class="diagram-box-tit">재정성과목표관리를 위한 성과목표체계</strong>
+                            </div>
+                            <div class="diagram">
+                                <img src="../images/content/diagram-system-performance-goal.png" alt="임무, 비전, 전략목표, 프로그램 목표, 성과지표의 계층 구조를 보여주는 성과목표체계 도식">
+                            </div>
+                        </div>
+                    </section>                    <section class="section-wrap">
+                        <div class="title-section-wrap">
+                            <h3 class="title-section">4. 재정성과정보 공개현황</h3>
+                        </div>
+                                                <div class="paragraph">
+                            <p>재정성과정보는 모두의재정 등 여러 웹사이트에서 공개하고 있습니다.</p>
+                        </div>                        <div class="cont-box">
+                            <ol class="cont-box-num">
+                                <li>
+                                    <strong class="tit">성과계획서·보고서, 재정사업 자율평가, 기금운용평가는 모두의재정에서 최종보고서(한글 또는 PDF 파일) 공개</strong>
+                                    <p class="txt">예)결산 정보는 Excel 등 사용자 필요에 따라 정보를 가공·분석할 수 있는 형태로 제공되고 있으나 성과정보는 한글이나 PDF 형태로 제공</p>
+                                </li>
+                                <li>
+                                    <strong class="tit">보조사업평가는 e나라도움에서 사업별 최종 평가보고서(PDF) 공개</strong>
+                                </li>
+                                <li>
+                                    <strong class="tit">R&amp;D 평가는 NTIS 시스템에서 사업별 평가결과를 DB화하여 인포그래픽 등과 함께 공개(사업별 최종보고서도 함께 공개)</strong>
+                                    <p class="txt">*평가연도, 부처명, 사업명, 자체/상위/특정/종료/추적 평가 등급(우수·보통·미흡 등)</p>
+                                </li>
+                                <li>
+                                    <strong class="tit">재난안전, 일자리 사업평가 등은 사업별 평가결과는 미공개하고 부처 홈페이지에서 보도자료를 공개</strong>
+                                </li>
+                            </ol>
+                        </div>
+                    </section>
+                    <script id="learn-more-about-finance-template">
+                        $.ajax({url:"common/learn-more-about-finance-template.txt", dataType:"text", success:function(data){
+                            $('#learn-more-about-finance-template').replaceWith(data);
+                            cardSlideSwiper();
+                        }});
+                    </script>
+                </div>
+                <script id="feedback-template">
+                    $.ajax({url:"common/feedback.txt", dataType:"text", success:function(data){
+                        $('#feedback-template').replaceWith(data);
+                        pageFeedback();
+                    }});
+                </script>
+            </div>
+            <script id="floating-template">
+                $.ajax({url:"common/floating.txt", dataType:"text", success:function(data){
+                    $('#floating-template').replaceWith(data);
+                }});
+            </script>
+        </div>
+        <script id="footer-template">
+            $.ajax({url:"common/footer.txt", dataType:"text", success:function(data){
+                $('#footer-template').replaceWith(data);
+            }});
+        </script>
+    </div>
+</body>
+</html>

@@ -418,6 +418,7 @@ body.mo-hidden{overflow:hidden;}
 .all-menu-group-tit.is-external{cursor:pointer;}
 .all-menu-group-tit .ico-all-menu-arrow-up,
 .all-menu-group-tit .ico-all-menu-outer{margin-left:auto;}
+a.all-menu-group-tit:hover{color:#0b50d0;}
 .all-menu-group:not(.on) .all-menu-group-tit .ico-all-menu-arrow-up{background-image:url('../images/common/ico-all-menu-arrow-down.svg');}
 .all-menu-sub{margin:0;padding:8px 0;list-style:none;}
 .all-menu-sub > li > a{display:block;padding:12px 8px;border-radius:8px;font-size:17px;font-weight:400;line-height:1.5;color:#33363d;text-decoration:none;}

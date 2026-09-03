@@ -315,23 +315,77 @@ function pageFeedback(){
 }
 
 // 탭 개수가 많아 넘칠 때 스와이프되는 tab-main (js/swiper10.3.1 필요)
+// PC(min-width:1025px)에서만 스와이퍼 사용, 모바일에서는 일반 가로 스크롤 (css에서 처리)
 function tabMainSwiper(){
   if(typeof Swiper === 'undefined') return;
+  if(!$('.tab-main-swiper').length) return;
 
-  $('.tab-main-swiper').each(function(){
-    new Swiper(this, {
-      slidesPerView: 'auto',
-      watchOverflow: true,
-      navigation: {
-        nextEl: $(this).find('.swiper-button-next')[0],
-        prevEl: $(this).find('.swiper-button-prev')[0],
-      },
-      on: {
-        lock: function(){ this.el.classList.add('is-locked'); },
-        unlock: function(){ this.el.classList.remove('is-locked'); },
-      },
+  var mq = window.matchMedia('(min-width:1025px)');
+
+  // 현재 탭(li.on)이 영역 밖으로 숨지 않도록, 최대한 앞쪽에 보이는 시작 위치를 구함
+  // (이전 탭 1개를 앞에 두어 좌측 prev 버튼에 가려지지 않게 함)
+  function startIndex($swiper){
+    var $slides = $swiper.find('.swiper-slide');
+    var idx = $slides.index($slides.filter('.on'));
+    if(idx <= 0) return 0;
+    return idx - 1;
+  }
+
+  function build(){
+    $('.tab-main-swiper').each(function(){
+      if(this.swiper) return;
+
+      new Swiper(this, {
+        slidesPerView: 'auto',
+        watchOverflow: true,
+        initialSlide: startIndex($(this)),
+        navigation: {
+          nextEl: $(this).find('.swiper-button-next')[0],
+          prevEl: $(this).find('.swiper-button-prev')[0],
+        },
+        on: {
+          lock: function(){ this.el.classList.add('is-locked'); },
+          unlock: function(){ this.el.classList.remove('is-locked'); },
+        },
+      });
     });
-  });
+  }
+
+  function destroy(){
+    $('.tab-main-swiper').each(function(){
+      if(this.swiper) this.swiper.destroy(true, true);
+      this.classList.remove('is-locked');
+    });
+  }
+
+  // 모바일(가로 스크롤)에서도 현재 탭이 최대한 앞쪽에 보이도록 스크롤 위치 이동
+  function scrollToActive(){
+    $('.tab-main-swiper').each(function(){
+      var $scroller = $(this).closest('.tab-main');
+      if(!$scroller.length) return;
+
+      var $slides = $(this).find('.swiper-slide');
+      var idx = startIndex($(this));
+      var target = $slides.get(idx);
+      if(!target) return;
+
+      $scroller[0].scrollLeft = target.offsetLeft;
+    });
+  }
+
+  function update(){
+    if(mq.matches){
+      build();
+    }else{
+      destroy();
+      scrollToActive();
+    }
+  }
+
+  update();
+
+  if(mq.addEventListener) mq.addEventListener('change', update);
+  else mq.addListener(update);
 }
 
 // 카드 슬라이드 (js/swiper10.3.1 필요)
@@ -875,7 +929,7 @@ function floatingQuickStop(){
     if($(".datepicker").length <= 0) return;
     $(".datepicker").datepicker({
       showOn: 'focus', 
-      dateFormat:"yy.mm.dd",
+      dateFormat:"yy-mm-dd",
       changeYear:true,
       changeMonth:true,
       showMonthAfterYear:true,

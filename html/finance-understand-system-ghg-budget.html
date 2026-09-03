@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title>열린재정</title>
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
+<script src="../js/pub-ui.js"></script>
+</head>
+<body>
+    <dl class="skipLink">
+        <dt>바로가기 메뉴</dt>
+        <dd><a href="#gnbMenu">주메뉴 바로가기</a></dd>
+        <dd><a href="#content">본문 바로가기</a></dd>
+    </dl>
+    <div class="wrap">
+        <script id="header-template">
+            $.ajax({url:"common/header.txt", dataType:"text", success:function(data){
+                $('#header-template').replaceWith(data);
+            }});
+        </script>
+        <div class="container" id="content">
+            <script id="subvisual-template">
+                $.ajax({url:"common/subvisual.txt", dataType:"text", success:function(data){
+                    $('#subvisual-template').replaceWith($(data).filter('#visual-finance'));
+                }});
+            </script>
+            <script id="breadcrumb-template">
+                $.ajax({url:"common/breadcrumb.txt", dataType:"text", success:function(data){
+                    $('#breadcrumb-template').replaceWith(data);
+                    breadcrumbMenu();
+                }});
+            </script>
+            <div class="contents">
+                <div class="title-main-wrap">
+                    <h2 class="title-main">재정제도</h2>
+                </div>
+                <div class="tab-main">
+                    <div class="swiper tab-main-swiper">
+                        <ul class="swiper-wrapper" role="tablist">
+                        <li class="swiper-slide"><a href="finance-understand-system-feasibility.html" data-tab-id="tab1" role="tab" aria-selected="false">예비타당성조사</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-gender-budget.html" data-tab-id="tab2" role="tab" aria-selected="false">성인지 예산제도</a></li>
+                        <li class="swiper-slide on"><a href="finance-understand-system-ghg-budget.html" data-tab-id="tab3" role="tab" aria-selected="true">온실가스감축인지 예산제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-tax-expenditure.html" data-tab-id="tab4" role="tab" aria-selected="false">조세지출 예산제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-citizen-budget.html" data-tab-id="tab5" role="tab" aria-selected="false">국민참여예산제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-social-insurance.html" data-tab-id="tab6" role="tab" aria-selected="false">8대 사회보험</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-levy.html" data-tab-id="tab7" role="tab" aria-selected="false">부담금</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-local-adjustment.html" data-tab-id="tab8" role="tab" aria-selected="false">지방재정조정제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-program-budget.html" data-tab-id="tab9" role="tab" aria-selected="false">프로그램예산제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-performance.html" data-tab-id="tab10" role="tab" aria-selected="false">성과관리제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-total-cost.html" data-tab-id="tab11" role="tab" aria-selected="false">총사업비 관리제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-private-investment.html" data-tab-id="tab12" role="tab" aria-selected="false">민간투자제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-performance-pay.html" data-tab-id="tab13" role="tab" aria-selected="false">예산성과금제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-fiscal-rule.html" data-tab-id="tab14" role="tab" aria-selected="false">재정준칙</a></li>
+                        </ul>
+                        <button type="button" class="swiper-button-prev" aria-label="이전 탭">
+                            <span class="tab-swiper-icon"><i class="ico-tab-arr-l" aria-hidden="true"></i></span>
+                            <span class="tab-swiper-grad" aria-hidden="true"></span>
+                        </button>
+                        <button type="button" class="swiper-button-next" aria-label="다음 탭">
+                            <span class="tab-swiper-grad" aria-hidden="true"></span>
+                            <span class="tab-swiper-icon"><i class="ico-tab-arr-r" aria-hidden="true"></i></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="tab-content">
+                                        <section class="section-wrap">
+                        <div class="title-section-wrap">
+                            <h3 class="title-section">1. 온실가스감축인지 예산제도의 의의</h3>
+                        </div>
+                                                <div class="paragraph">
+                            <p>온실가스감축인지 예산제도는 국가와 지방자치단체가 운용하는 예산과 기금이 온실가스 감축과 기후변화에 어떤 영향을 미치는지를 평가하고, 그 결과를 예산 편성·집행·결산 과정에 반영하는 제도입니다. ｢탄소중립기본법｣과 ｢국가재정법｣에 근거하며, 재정사업을 통해 탄소중립과 기후위기 대응이라는 국가적 목표를 실현하려는 데 목적이 있습니다. 즉, 예산이 단순한 지출계획에 그치는 것이 아니라, 기후정책을 실행하는 수단으로 작동하도록 만드는 제도입니다.</p>
+                        </div>
+                    </section>                    <section class="section-wrap">
+                        <div class="title-section-wrap">
+                            <h3 class="title-section">2. 추진체계</h3>
+                        </div>
+                                                <div class="paragraph">
+                            <p>기획예산처가 총괄하고, 기후에너지환경부와 협의하여 운영계획과 작성기준을 마련합니다. 이후 각 부처에 예산서와 결산서 작성지침 및 서식을 배포하고, 한국환경공단이 실무교육과 기술지원을 맡아 감축효과 분석을 지원합니다. 작성된 온실가스감축인지 예산서와 결산서는 각각 예산안 첨부서류와 결산보고서 부속서류로 국회에 제출됩니다. 
+                                <br>따라서 이 제도는 단순한 행정서류가 아니라, 재정과 기후정책을 연결하는 공식적 운영체계입니다.</p>
+                        </div>
+                    </section>                    <section class="section-wrap">
+                        <div class="title-section-wrap">
+                            <h3 class="title-section">3. 작성방식과 분석기준</h3>
+                        </div>
+                                                <div class="paragraph">
+                            <p>온실가스감축인지 예산서는 기본적으로 세부사업 단위로 작성하되, 실제 감축효과와 성과목표는 감축사업에 해당하는 내역사업 단위에서 구체적으로 분석합니다. 
+                                <br>예산서에는 온실가스 감축기여도, 감축효과, 성과목표, 산출근거 등이 포함되며, 감축효과는 예산 투입 시점이 아니라 실제 감축이 발생하는 시점부터 산정합니다. 
+                                <br>최대 10년간 연도별 감축효과를 제시해야 하며, 정량사업·정성사업·R&amp;D 사업으로 나누어 분석합니다. 
+                                <br>2024년부터는 세부사업 전체 예산과 감축사업 예산을 구분해 함께 표기하도록 서식이 개선되어, 과다계상 문제를 줄이도록 보완되었습니다.</p>
+                        </div>
+                    </section>                    <section class="section-wrap">
+                        <div class="title-section-wrap">
+                            <h3 class="title-section">4. 대상사업 선정과 의미</h3>
+                        </div>
+                                                <div class="paragraph">
+                            <p>작성 대상은 국가 예산과 기금으로 운영되는 사업 중 온실가스 감축에 기여하고, 국가 탄소중립 정책과 연계되는 사업입니다. 대상사업은 먼저 감축사업 정의에 해당하는지 확인한 뒤, 전환·산업·건물·수송 등 탄소중립 기본계획상의 감축유형에 따라 최종 선정됩니다. 즉, 모든 재정사업이 대상이 되는 것은 아니며, 실제로 기후변화 대응 효과가 있는 사업을 중심으로 관리합니다. 이 제도는 재정사업의 기후영향을 계량화하고, 국가 재정이 탄소중립 실현에 얼마나 기여하는지 보여 준다는 점에서 의미가 큽니다.</p>
+                        </div>
+                    </section>
+                    <script id="learn-more-about-finance-template">
+                        $.ajax({url:"common/learn-more-about-finance-template.txt", dataType:"text", success:function(data){
+                            $('#learn-more-about-finance-template').replaceWith(data);
+                            cardSlideSwiper();
+                        }});
+                    </script>
+                </div>
+                <script id="feedback-template">
+                    $.ajax({url:"common/feedback.txt", dataType:"text", success:function(data){
+                        $('#feedback-template').replaceWith(data);
+                        pageFeedback();
+                    }});
+                </script>
+            </div>
+            <script id="floating-template">
+                $.ajax({url:"common/floating.txt", dataType:"text", success:function(data){
+                    $('#floating-template').replaceWith(data);
+                }});
+            </script>
+        </div>
+        <script id="footer-template">
+            $.ajax({url:"common/footer.txt", dataType:"text", success:function(data){
+                $('#footer-template').replaceWith(data);
+            }});
+        </script>
+    </div>
+</body>
+</html>

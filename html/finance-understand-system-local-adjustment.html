@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title>열린재정</title>
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
+<script src="../js/pub-ui.js"></script>
+</head>
+<body>
+    <dl class="skipLink">
+        <dt>바로가기 메뉴</dt>
+        <dd><a href="#gnbMenu">주메뉴 바로가기</a></dd>
+        <dd><a href="#content">본문 바로가기</a></dd>
+    </dl>
+    <div class="wrap">
+        <script id="header-template">
+            $.ajax({url:"common/header.txt", dataType:"text", success:function(data){
+                $('#header-template').replaceWith(data);
+            }});
+        </script>
+        <div class="container" id="content">
+            <script id="subvisual-template">
+                $.ajax({url:"common/subvisual.txt", dataType:"text", success:function(data){
+                    $('#subvisual-template').replaceWith($(data).filter('#visual-finance'));
+                }});
+            </script>
+            <script id="breadcrumb-template">
+                $.ajax({url:"common/breadcrumb.txt", dataType:"text", success:function(data){
+                    $('#breadcrumb-template').replaceWith(data);
+                    breadcrumbMenu();
+                }});
+            </script>
+            <div class="contents">
+                <div class="title-main-wrap">
+                    <h2 class="title-main">재정제도</h2>
+                </div>
+                <div class="tab-main">
+                    <div class="swiper tab-main-swiper">
+                        <ul class="swiper-wrapper" role="tablist">
+                        <li class="swiper-slide"><a href="finance-understand-system-feasibility.html" data-tab-id="tab1" role="tab" aria-selected="false">예비타당성조사</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-gender-budget.html" data-tab-id="tab2" role="tab" aria-selected="false">성인지 예산제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-ghg-budget.html" data-tab-id="tab3" role="tab" aria-selected="false">온실가스감축인지 예산제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-tax-expenditure.html" data-tab-id="tab4" role="tab" aria-selected="false">조세지출 예산제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-citizen-budget.html" data-tab-id="tab5" role="tab" aria-selected="false">국민참여예산제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-social-insurance.html" data-tab-id="tab6" role="tab" aria-selected="false">8대 사회보험</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-levy.html" data-tab-id="tab7" role="tab" aria-selected="false">부담금</a></li>
+                        <li class="swiper-slide on"><a href="finance-understand-system-local-adjustment.html" data-tab-id="tab8" role="tab" aria-selected="true">지방재정조정제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-program-budget.html" data-tab-id="tab9" role="tab" aria-selected="false">프로그램예산제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-performance.html" data-tab-id="tab10" role="tab" aria-selected="false">성과관리제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-total-cost.html" data-tab-id="tab11" role="tab" aria-selected="false">총사업비 관리제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-private-investment.html" data-tab-id="tab12" role="tab" aria-selected="false">민간투자제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-performance-pay.html" data-tab-id="tab13" role="tab" aria-selected="false">예산성과금제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-fiscal-rule.html" data-tab-id="tab14" role="tab" aria-selected="false">재정준칙</a></li>
+                        </ul>
+                        <button type="button" class="swiper-button-prev" aria-label="이전 탭">
+                            <span class="tab-swiper-icon"><i class="ico-tab-arr-l" aria-hidden="true"></i></span>
+                            <span class="tab-swiper-grad" aria-hidden="true"></span>
+                        </button>
+                        <button type="button" class="swiper-button-next" aria-label="다음 탭">
+                            <span class="tab-swiper-grad" aria-hidden="true"></span>
+                            <span class="tab-swiper-icon"><i class="ico-tab-arr-r" aria-hidden="true"></i></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="tab-content">
+                                        <section class="section-wrap">
+                        <div class="title-section-wrap">
+                            <h3 class="title-section">1. 지방재정조정제도의 의의</h3>
+                        </div>
+                                                <div class="paragraph">
+                            <p>지방재정조정제도는 지방자치단체 간 재정력 격차를 줄여 공공서비스 수준을 균형 있게 맞추고, 지역 간 외부효과가 큰 공공재를 적절히 공급하며, 중앙정부 위임사무 비용을 분담하기 위해 재원을 이전·조정하는 제도입니다. 재정이 약한 지역도 기본적인 행정서비스와 교육서비스를 제공할 수 있도록 하는 것이 핵심입니다. 중앙정부와 지방자치단체 간, 그리고 지방자치단체 상호 간에 이루어지는 각종 교부·보조·전출 등이 모두 지방재정조정제도에 포함됩니다.</p>
+                        </div>
+                    </section>                    <section class="section-wrap">
+                        <div class="title-section-wrap">
+                            <h3 class="title-section">2. 수직적 조정(중앙정부→지방정부)</h3>
+                        </div>
+                                                <div class="paragraph">
+                            <p>지방재정조정제도의 수직적 조정은 중앙정부가 지방자치단체·교육자치단체에 재원을 내려보내는 방식으로 재정불균형을 완화하는 것입니다. 주요 수단은 지방교부세, 국고보조금, 지방교육재정교부금입니다. 지방교부세는 재원보장과 재정격차 완화를 위해 보통·특별·부동산·소방안전교부세로 나누어 교부되며, 일부는 용도가 자유로운 일반재원, 일부는 특정 목적 재원입니다. 국고보조금은 특정 사업 수행을 위해 용도와 조건을 지정해 지원하는 재원이고, 지방교육재정교부금은 지역 간 교육격차를 줄이기 위해 교육기관·교육행정기관 운영비를 보통·특별교부금 형태로 지원하는 제도입니다.</p>
+                        </div>
+                    </section>                    <section class="section-wrap">
+                        <div class="title-section-wrap">
+                            <h3 class="title-section">3. 수평적 조정(지방정부→지방정부)</h3>
+                        </div>
+                                                <div class="paragraph">
+                            <p>지방조정제도의 수평적 조정은 광역자치단체와 기초자치단체, 일반자치단체와 교육자치단체 사이에서 재정을 조정하는 방식입니다. 대표 수단은 시·도비 보조금, 조정교부금, 교육청 전출금입니다. 시·도비 보조금은 광역자치단체가 정책적 필요나 위임사무 수행을 위해 기초자치단체 사업비를 지원하는 재원입니다. 조정교부금은 자치구·시·군 간 세원 불균형을 완화하기 위해 특별·광역시의 시세와 시·도의 도세 일부를 재원으로 하여 재정력이 약한 자치단체에 더 많이 배분하는 제도입니다. 교육청 전출금은 지방자치단체 일반회계에서 교육청으로 이전되는 재원으로, 지방교육세·담배소비세·시·도세 전출금과 기타 전출금으로 구성되어 교육비특별회계의 중요한 세입을 형성합니다.</p>
+                        </div>
+                    </section>                    <section class="section-wrap">
+                        <div class="title-section-wrap">
+                            <h3 class="title-section">4. 조정절차와 시사점</h3>
+                        </div>
+                                                <div class="paragraph">
+                            <p>지방재정조정제도는 내국세·지방세·교육세 등에서 일정 비율을 떼어 재원을 산정하고, 각 지방의 재정수요와 재정능력을 반영한 기준에 따라 배분하는 방식으로 운용됩니다. 이렇게 중앙과 광역·기초 간, 일반재정과 교육재정 간에 재원이 이전되면서 지방 전체의 재정 격차가 완화되고 공공서비스 공급이 보완됩니다. 동시에 지방재정에서 의존재원 비중이 높다는 점은, 재정조정제도가 필수적이지만 지방 자체재원 확충과 재정 자율성 강화도 중요한 과제라는 점을 함께 보여줍니다.</p>
+                        </div>                        <div class="info-panel">
+                            <div class="info-panel-head">
+                                <strong class="info-panel-tit">중앙정부 지방재정조정제도</strong>
+                            </div>
+                            <div class="info-panel-body">
+                                <div class="table-secondary">
+                                    <div class="scroll">
+                                        <table>
+                                            <caption class="sr-only">중앙정부 지방재정조정제도 비교표 — 지방교부세, 국고보조금, 지방교육재정교부금, 영유아특별회계, 고등·평생교육지원특별회계의 근거법령, 재원구성, 용도, 성격</caption>
+                                            <colgroup>
+                                                <col style="width:120px;">
+                                                <col style="width:352px;min-width: 200px">
+                                                <col style="width:352px;min-width: 200px">
+                                                <col style="width:auto;min-width: 240px;">
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col" rowspan="3" class="is-empty"><span class="sr-only">구분</span></th>
+                                                    <th scope="col" rowspan="3">지방교부세</th>
+                                                    <th scope="col" rowspan="3">국고보조금</th>
+                                                    <th scope="col">지방교육재정교부금</th>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="col">영유아특별회계</th>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="col">고등·평생교육지원특별회계</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row" rowspan="3">근거법령</th>
+                                                    <td rowspan="3">「지방교부세법」</td>
+                                                    <td rowspan="3">「보조금 관리에 관한 법률」</td>
+                                                    <td>「지방교육재정교부금법」</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>「영유아특별회계법」</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>「고등·평생교육지원특별회계법」</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" rowspan="3">재원구성</th>
+                                                    <td rowspan="3">
+                                                        <ul class="table-dot-list">
+                                                            <li>보통·특별교부세 : 지방재정 배부대상 내국세 총액의 19.24%</li>
+                                                            <li>부동산 교부세 : 종합부동산세 전액</li>
+                                                            <li>소방안전교부세 : 담배에 부과되는 개별소비세의 45%</li>
+                                                        </ul>
+                                                    </td>
+                                                    <td rowspan="3">
+                                                        <p>국가 예산으로 계상</p>
+                                                        <p>사업특성 및 지방자치단체의 재정여건 등을 고려하여 차등보조율을 적용하며 국가와 지방자치단체가 사업비를 각각 분담</p>
+                                                    </td>
+                                                    <td>
+                                                        <ul class="table-dot-list">
+                                                            <li>
+                                                                지방재정 배부대상 내국세 총액의 20.79%와 교육세 일부
+                                                                <ul class="table-dash-list">
+                                                                    <li>보통교부금(내국세 교부금 96.2% + 특별회계전입금을 제외한 교육세)</li>
+                                                                    <li>특별교부금(내국세 교부금 3.8%)</li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <ul class="table-dot-list">
+                                                            <li>교육세 일부</li>
+                                                            <li>중앙정부 일반회계 전입금 등</li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <ul class="table-dot-list">
+                                                            <li>
+                                                                교육세 일부
+                                                                <ul class="table-dash-list">
+                                                                    <li>교육세 세입예산액 중 영유아특별회계로 지원되는 금액을 제외한 금액의 50%</li>
+                                                                </ul>
+                                                            </li>
+                                                            <li>일반회계 전입금 등</li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" rowspan="3">용도</th>
+                                                    <td rowspan="3">
+                                                        <ul class="table-dot-list">
+                                                            <li>보통·부동산교부세 : 용도지정 없이 자치단체 일반예산으로 사용</li>
+                                                            <li>특별교부세 : 용도지정·조건부여 가능</li>
+                                                            <li>소방안전교부세 : 특수수요는 용도 지정 가능 (소방분야에 75% 이상 사용)</li>
+                                                        </ul>
+                                                    </td>
+                                                    <td rowspan="3">용도와 조건이 지정되어 특정목적 재원으로 운용</td>
+                                                    <td>
+                                                        <ul class="table-dot-list">
+                                                            <li>보통교부금 : 용도지정 없음</li>
+                                                            <li>특별교부금 : 용도지정·조건부여 기능</li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <ul class="table-dot-list">
+                                                            <li>누리과정 지원</li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <ul class="table-dot-list">
+                                                            <li>고등 및 평생교육 지원</li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" rowspan="3">성격</th>
+                                                    <td rowspan="3">
+                                                        <ul class="table-dot-list">
+                                                            <li>보통·부동산교부세 : 일반재원(자주재원)</li>
+                                                            <li>특별교부세 : 특정재원(자주재원)</li>
+                                                            <li>소방안전교부세 : 일반 및 특정재원</li>
+                                                        </ul>
+                                                    </td>
+                                                    <td rowspan="3" class="align-c">특정목적재원</td>
+                                                    <td>
+                                                        <ul class="table-dot-list">
+                                                            <li>보통교부금 : 일반재원(자주재원)</li>
+                                                            <li>특별교부금 : 특정재원(자주재원)</li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <ul class="table-dot-list">
+                                                            <li>특정목적재원(이전재원)</li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <ul class="table-dot-list">
+                                                            <li>특정목적재원(이전재원)</li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <script id="learn-more-about-finance-template">
+                        $.ajax({url:"common/learn-more-about-finance-template.txt", dataType:"text", success:function(data){
+                            $('#learn-more-about-finance-template').replaceWith(data);
+                            cardSlideSwiper();
+                        }});
+                    </script>
+                </div>
+                <script id="feedback-template">
+                    $.ajax({url:"common/feedback.txt", dataType:"text", success:function(data){
+                        $('#feedback-template').replaceWith(data);
+                        pageFeedback();
+                    }});
+                </script>
+            </div>
+            <script id="floating-template">
+                $.ajax({url:"common/floating.txt", dataType:"text", success:function(data){
+                    $('#floating-template').replaceWith(data);
+                }});
+            </script>
+        </div>
+        <script id="footer-template">
+            $.ajax({url:"common/footer.txt", dataType:"text", success:function(data){
+                $('#footer-template').replaceWith(data);
+            }});
+        </script>
+    </div>
+</body>
+</html>

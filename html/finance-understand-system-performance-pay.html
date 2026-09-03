@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title>열린재정</title>
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
+<script src="../js/pub-ui.js"></script>
+</head>
+<body>
+    <dl class="skipLink">
+        <dt>바로가기 메뉴</dt>
+        <dd><a href="#gnbMenu">주메뉴 바로가기</a></dd>
+        <dd><a href="#content">본문 바로가기</a></dd>
+    </dl>
+    <div class="wrap">
+        <script id="header-template">
+            $.ajax({url:"common/header.txt", dataType:"text", success:function(data){
+                $('#header-template').replaceWith(data);
+            }});
+        </script>
+        <div class="container" id="content">
+            <script id="subvisual-template">
+                $.ajax({url:"common/subvisual.txt", dataType:"text", success:function(data){
+                    $('#subvisual-template').replaceWith($(data).filter('#visual-finance'));
+                }});
+            </script>
+            <script id="breadcrumb-template">
+                $.ajax({url:"common/breadcrumb.txt", dataType:"text", success:function(data){
+                    $('#breadcrumb-template').replaceWith(data);
+                    breadcrumbMenu();
+                }});
+            </script>
+            <div class="contents">
+                <div class="title-main-wrap">
+                    <h2 class="title-main">재정제도</h2>
+                </div>
+                <div class="tab-main">
+                    <div class="swiper tab-main-swiper">
+                        <ul class="swiper-wrapper" role="tablist">
+                        <li class="swiper-slide"><a href="finance-understand-system-feasibility.html" data-tab-id="tab1" role="tab" aria-selected="false">예비타당성조사</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-gender-budget.html" data-tab-id="tab2" role="tab" aria-selected="false">성인지 예산제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-ghg-budget.html" data-tab-id="tab3" role="tab" aria-selected="false">온실가스감축인지 예산제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-tax-expenditure.html" data-tab-id="tab4" role="tab" aria-selected="false">조세지출 예산제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-citizen-budget.html" data-tab-id="tab5" role="tab" aria-selected="false">국민참여예산제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-social-insurance.html" data-tab-id="tab6" role="tab" aria-selected="false">8대 사회보험</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-levy.html" data-tab-id="tab7" role="tab" aria-selected="false">부담금</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-local-adjustment.html" data-tab-id="tab8" role="tab" aria-selected="false">지방재정조정제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-program-budget.html" data-tab-id="tab9" role="tab" aria-selected="false">프로그램예산제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-performance.html" data-tab-id="tab10" role="tab" aria-selected="false">성과관리제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-total-cost.html" data-tab-id="tab11" role="tab" aria-selected="false">총사업비 관리제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-private-investment.html" data-tab-id="tab12" role="tab" aria-selected="false">민간투자제도</a></li>
+                        <li class="swiper-slide on"><a href="finance-understand-system-performance-pay.html" data-tab-id="tab13" role="tab" aria-selected="true">예산성과금제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-fiscal-rule.html" data-tab-id="tab14" role="tab" aria-selected="false">재정준칙</a></li>
+                        </ul>
+                        <button type="button" class="swiper-button-prev" aria-label="이전 탭">
+                            <span class="tab-swiper-icon"><i class="ico-tab-arr-l" aria-hidden="true"></i></span>
+                            <span class="tab-swiper-grad" aria-hidden="true"></span>
+                        </button>
+                        <button type="button" class="swiper-button-next" aria-label="다음 탭">
+                            <span class="tab-swiper-grad" aria-hidden="true"></span>
+                            <span class="tab-swiper-icon"><i class="ico-tab-arr-r" aria-hidden="true"></i></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="tab-content">
+                                        <section class="section-wrap">
+                        <div class="title-section-wrap">
+                            <h3 class="title-section">1. 예산성과금제도의 개요</h3>
+                        </div>
+                         <div class="paragraph">
+                            <p>예산성과금제도는 예산의 집행방법 또는 제도의 개선 등으로 지출이 절약되거나 수입이 증대된 경우에 지출절약 또는 수입증대에 기여한 자에게 인센티브를 지급하는 제도입니다.<br>스톡옵션, 특별 상여금 등 다양한 인센티브를 통하여 수익성을 제고하고 비용을 절약하는 민간의 경영기법을 공공부문에 적용한 것으로 1998년 5월 도입되었습니다.<br>이후, 1999년 2월 「예산회계법」 개정과 1999년 8월 「예산성과금규정」 제정을 통하여 제도적 근거가 마련되었으며 현재는 「예산회계법」을 전면 개편한 「국가재정법」과 그에 따른 「예산성과금 규정」에 그 근거를 두고 있습니다.</p>
+                        </div>
+                    </section>                    
+                    <section class="section-wrap">
+                        <div class="title-section-wrap">
+                            <h3 class="title-section">2. 지급요건</h3>
+                        </div>
+                                                <div class="paragraph">
+                            <p>예산성과금은 예산의 집행방법 또는 제도의 개선 등으로 인하여 지출이 절약되거나 수입이 증대된 때 지급할 수 있습니다.<br><b>“지출이 절약”</b>된 경우는 자발적인 노력을 통하여 정원감축, 예산의 집행방법 또는 제도의 개선 등으로 업무성과를 종전 수준 또는 그 이상으로 유지하면서 경비를 적게 사용하여 예산이 남게 된 경우 또는 예산편성과정에서 절약예상액을 미리 감액 편성하거나 반영하지 아니하는 경우를 말합니다.<br><b>“수입이 증대”</b>된 경우는 새로운 세입원의 발굴 또는 제도 개선 등 특별한 노력으로 국고의 수입(국채발행수입금 및 차입금을 제외한 국세·관세 및 세외수입 등 일체의 세입재원을 말한다)이 증대 되거나「국유재산법」 제5조에 따른 국유재산이 늘어난 경우를 말합니다.</p>
+                        </div>
+                    </section>                    <section class="section-wrap">
+                        <div class="title-section-wrap">
+                            <h3 class="title-section">3. 지출절약 또는 수입증대에 기여한 자</h3>
+                        </div>
+                                                <div class="paragraph">
+                            <p>지출절약 또는 수입증대에 기여한 자에는 중앙관서 소속의 공무원 뿐만 아니라 법령에 따라 중앙관서의 사무를 위임·위탁받아 수행하는 기관의 임직원도 포함됩니다.<br>특히, 「국민 제안 규정」 등에 따라 채택된 국민제안을 한 자 및 중앙관서의 장에게 예산낭비신고를 하거나 예산낭비 방지와 관련한 제안을 한 자도 기여자가 될 수 있습니다.<br>또한 조직 구성원이 집단적으로 노력하여 지출절약이나 수입증대를 한 경우에는 그 조직의 최소단위 조직도 기여자로 할 수 있습니다.</p>
+                        </div>
+                    </section>                    <section class="section-wrap">
+                        <div class="title-section-wrap">
+                            <h3 class="title-section">4. 신청 및 심사</h3>
+                        </div>
+                                                <div class="paragraph">
+                            <p>중앙관서의 장은 예산성과금을 지급하려면 자체심사위원회를 거쳐 기획예산처장관에게 예산성과금 지급 심사를 요청해야 합니다.<br>예산성과금의 지급 여부 및 지급규모 등은 민간위원 및 정부위원으로 구성된 예산성과금심사위원회에서 창의성, 노력의 정도, 재정개선효과 및 파급효과 등을 종합적으로 고려하여 결정합니다.</p>
+                        </div>
+                    </section>                    <section class="section-wrap">
+                        <div class="title-section-wrap">
+                            <h3 class="title-section">5. 예산성과금 지금 규모</h3>
+                        </div>
+                                                <div class="paragraph">
+                            <p>예산성과금의 지급규모는 지출절약 및 수입증대의 유형 등에 따라 달라지나 최대 6천만원을 초과할 수 없습니다.<br>다만, 지출절약 또는 수입증대의 내용이 유사 사업 또는 다른 행정기관 등에 확대 적용됨에 따라 지출절약 또는 수입증대의 효과가 현저한 경우 등 일정 요건에 해당하면 위원회 결정으로 130%까지 지급이 가능합니다. </p>
+                            <p>지급대상은 지출절약 또는 수입증대에 직접 기여한 자에 한하며 기여자가 다수인 경우 주기여자와 보조 기여자로 구분하며, 성과금은 신청건별 지급액을 주기여자, 보조기여자의 기여도에 따라 배분합니다.</p>
+                        </div>                        <div class="info-panel">
+                            <div class="info-panel-head">
+                                <strong class="info-panel-tit">예산성과금 지급 규모</strong>
+                            </div>
+                            <div class="info-panel-body">
+                                <div class="table-secondary">
+                                    <div class="scroll">
+                                        <table>
+                                            <caption class="sr-only">지출절약 및 수입증대에 따른 지급한도 — 구분, 지급한도, 비고</caption>
+                                            <colgroup>
+                                                <col style="width:200px">
+                                                <col style="width:200px">
+                                                <col>
+                                                <col style="width:400px">
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col" colspan="2">비고</th>
+                                                    <th scope="col">지급한도</th>
+                                                    <th scope="col">비고</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="rowgroup" rowspan="3">지출절약의 경우</th>
+                                                    <td>정원감축</td>
+                                                    <td class="align-c">감축된 인원의 인건비 1년분</td>
+                                                    <td class="align-c" rowspan="4">최대 6천만원, 다만 위원회 결정으로<br>30% 추가지급 가능</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>경상적 경비</td>
+                                                    <td class="align-c">절약된 경비의 50%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>주요사업비</td>
+                                                    <td class="align-c">절약된 사업비의 10%</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" colspan="2">수입증대의 경우</th>
+                                                    <td class="align-c">수입증대액의 10%</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>                    <section class="section-wrap">
+                        <div class="title-section-wrap">
+                            <h3 class="title-section">6. 제도운영 방향</h3>
+                        </div>
+                                                <div class="paragraph">
+                            <p>1998년 제도 도입 이후 20여년의 운영결과 예산성과금제도는 공무원들의 많은 관심과 참여 속에 공직 사회에 새로운 일하는 방식을 구축하는데 기여하였다고 판단됩니다.<br>최근 저출산, 고령화, 양극화 등에 대한 재정의 적극적 역할에 대한 기대가 점점 커지고 있는 상황에서 지출절약 및 수입증대를 위한 공무원들의 적극적 노력 또한 더불어 중요해지고 있습니다.<br>정부는 앞으로도 재정 집행현장에서 지출을 절약하고 수입을 증대하는 풍토가 확산될 수 있도록 예산성과금제도를 효율적으로 운영해 나갈 계획입니다.</p>
+                        </div>
+                    </section>
+                    <script id="learn-more-about-finance-template">
+                        $.ajax({url:"common/learn-more-about-finance-template.txt", dataType:"text", success:function(data){
+                            $('#learn-more-about-finance-template').replaceWith(data);
+                            cardSlideSwiper();
+                        }});
+                    </script>
+                </div>
+                <script id="feedback-template">
+                    $.ajax({url:"common/feedback.txt", dataType:"text", success:function(data){
+                        $('#feedback-template').replaceWith(data);
+                        pageFeedback();
+                    }});
+                </script>
+            </div>
+            <script id="floating-template">
+                $.ajax({url:"common/floating.txt", dataType:"text", success:function(data){
+                    $('#floating-template').replaceWith(data);
+                }});
+            </script>
+        </div>
+        <script id="footer-template">
+            $.ajax({url:"common/footer.txt", dataType:"text", success:function(data){
+                $('#footer-template').replaceWith(data);
+            }});
+        </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title>열린재정</title>
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
+<script src="../js/pub-ui.js"></script>
+</head>
+<body>
+    <dl class="skipLink">
+        <dt>바로가기 메뉴</dt>
+        <dd><a href="#gnbMenu">주메뉴 바로가기</a></dd>
+        <dd><a href="#content">본문 바로가기</a></dd>
+    </dl>
+    <div class="wrap">
+        <script id="header-template">
+            $.ajax({url:"common/header.txt", dataType:"text", success:function(data){
+                $('#header-template').replaceWith(data);
+            }});
+        </script>
+        <div class="container" id="content">
+            <script id="subvisual-template">
+                $.ajax({url:"common/subvisual.txt", dataType:"text", success:function(data){
+                    $('#subvisual-template').replaceWith($(data).filter('#visual-finance'));
+                }});
+            </script>
+            <script id="breadcrumb-template">
+                $.ajax({url:"common/breadcrumb.txt", dataType:"text", success:function(data){
+                    $('#breadcrumb-template').replaceWith(data);
+                    breadcrumbMenu();
+                }});
+            </script>
+            <div class="contents">
+                <div class="title-main-wrap">
+                    <h2 class="title-main">재정제도</h2>
+                </div>
+                <div class="tab-main">
+                    <div class="swiper tab-main-swiper">
+                        <ul class="swiper-wrapper" role="tablist">
+                        <li class="swiper-slide"><a href="finance-understand-system-feasibility.html" data-tab-id="tab1" role="tab" aria-selected="false">예비타당성조사</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-gender-budget.html" data-tab-id="tab2" role="tab" aria-selected="false">성인지 예산제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-ghg-budget.html" data-tab-id="tab3" role="tab" aria-selected="false">온실가스감축인지 예산제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-tax-expenditure.html" data-tab-id="tab4" role="tab" aria-selected="false">조세지출 예산제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-citizen-budget.html" data-tab-id="tab5" role="tab" aria-selected="false">국민참여예산제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-social-insurance.html" data-tab-id="tab6" role="tab" aria-selected="false">8대 사회보험</a></li>
+                        <li class="swiper-slide on"><a href="finance-understand-system-levy.html" data-tab-id="tab7" role="tab" aria-selected="true">부담금</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-local-adjustment.html" data-tab-id="tab8" role="tab" aria-selected="false">지방재정조정제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-program-budget.html" data-tab-id="tab9" role="tab" aria-selected="false">프로그램예산제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-performance.html" data-tab-id="tab10" role="tab" aria-selected="false">성과관리제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-total-cost.html" data-tab-id="tab11" role="tab" aria-selected="false">총사업비 관리제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-private-investment.html" data-tab-id="tab12" role="tab" aria-selected="false">민간투자제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-performance-pay.html" data-tab-id="tab13" role="tab" aria-selected="false">예산성과금제도</a></li>
+                        <li class="swiper-slide"><a href="finance-understand-system-fiscal-rule.html" data-tab-id="tab14" role="tab" aria-selected="false">재정준칙</a></li>
+                        </ul>
+                        <button type="button" class="swiper-button-prev" aria-label="이전 탭">
+                            <span class="tab-swiper-icon"><i class="ico-tab-arr-l" aria-hidden="true"></i></span>
+                            <span class="tab-swiper-grad" aria-hidden="true"></span>
+                        </button>
+                        <button type="button" class="swiper-button-next" aria-label="다음 탭">
+                            <span class="tab-swiper-grad" aria-hidden="true"></span>
+                            <span class="tab-swiper-icon"><i class="ico-tab-arr-r" aria-hidden="true"></i></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="tab-content">
+                                        <section class="section-wrap">
+                        <div class="title-section-wrap">
+                            <h3 class="title-section">1. 부담금의 의의와 개념</h3>
+                        </div>
+                                                <div class="paragraph">
+                            <p>부담금은 세금이 아니라, 특정 공익사업을 위해 법률에 근거하여 부과되는 금전적 의무를 의미합니다. 공공사업이 필요해지도록 만든 원인을 제공했거나, 그 사업으로부터 특별한 이익을 얻는 분들께 비용을 부담시키는 제도입니다. 이를 통해 공익사업 재원을 확보하면서, “원인자와 수익자가 비용을 책임진다”는 원칙을 실현하고자 합니다. 따라서 부담금은 재정 조달 수단이자 재정의 형평성과 책임성을 높이는 장치로 볼수 있습니다.</p>
+                        </div>
+                    </section>                    <section class="section-wrap">
+                        <div class="title-section-wrap">
+                            <h3 class="title-section">2. 부담금의 분류 및 기능</h3>
+                        </div>
+                                                <div class="paragraph">
+                            <p>부담금은 목적과 성격에 따라 이용자·원인자 부담금, 수익자 부담금, 유도성 부담금으로 나뉩니다. 이용자·원인자 부담금은 도로·상하수도 같은 시설의 설치·유지 비용을 그 시설을 사용하는 분이나 필요성을 만든 분께 부담시키는 형태입니다. 수익자 부담금은 공공사업으로 인해 개발이익 등 특별한 이익을 얻는 분께 그 이익의 일부를 환수하는 방식으로 부과됩니다. 유도성 부담금은 장애인고용부담금, 배출부과금처럼 금전 부담을 통해 바람직한 행동을 늘리고 바람직하지 않은 행동을 줄이도록 유도하는 부담금입니다.</p>
+                        </div>
+                    </section>                    <section class="section-wrap">
+                        <div class="title-section-wrap">
+                            <h3 class="title-section">3. 부담금 관리제도 및 운용</h3>
+                        </div>
+                                                <div class="paragraph">
+                            <p>부담금이 남용되거나 목적과 다르게 쓰이지 않도록 하기 위해 별도의 관리제도가 마련되어 있습니다. 새 부담금을 만들거나 변경할 때에는 법률에 근거를 두고, 부과 주체·목적·요건·산정기준·부과요율·존속기간 등을 구체적으로 규정해야 합니다. 또한 내부 심사와 전문가 심의를 통해 기존 부담금과의 중복 여부, 재원조성 필요성, 조세 대신 부담금을 쓰는 것이 타당한지 등을 검토받습니다. 아울러 각 부처는 매년 징수·사용 실적을 보고하고 정부는 정기적으로 운용평가를 실시하여, 효과가 부족하거나 부적절한 부담금은 폐지나 개선을 추진하도록 하고 있습니다.</p>
+                        </div>
+                    </section>                    <section class="section-wrap">
+                        <div class="title-section-wrap">
+                            <h3 class="title-section">4. 부담금 개편사례</h3>
+                        </div>
+                                                <div class="paragraph">
+                            <p>부담금이 ‘숨은 세금’으로 국민·기업 부담을 키운다는 문제의식 아래, 여러 부담금을 폐지·감면하는 방향으로 개편이 추진되어왔습니다. 예를 들어 학교용지부담금, 영화상영관 입장권 부과금, 일부 환경·수질 관련 부담금 등이 폐지 또는 요율 인하로 조정되어 분양가·요금 인하 효과를 노리고 있습니다. 출국납부금의 경우 금액을 인하하고 면제 대상을 확대해 항공 이용자의 부담을 줄이는 조치가 시행되었습니다. 이러한 개편은 부담금 본래 목적이 약화되거나 시대 변화와 맞지 않는 부담금은 정비하고, 필요한 부담금은 관리체계를 강화해 ‘합리적인 부담금 구조’를 만들려는 흐름으로 이해됩니다.</p>
+                        </div>
+                    </section>
+                    <script id="learn-more-about-finance-template">
+                        $.ajax({url:"common/learn-more-about-finance-template.txt", dataType:"text", success:function(data){
+                            $('#learn-more-about-finance-template').replaceWith(data);
+                            cardSlideSwiper();
+                        }});
+                    </script>
+                </div>
+                <script id="feedback-template">
+                    $.ajax({url:"common/feedback.txt", dataType:"text", success:function(data){
+                        $('#feedback-template').replaceWith(data);
+                        pageFeedback();
+                    }});
+                </script>
+            </div>
+            <script id="floating-template">
+                $.ajax({url:"common/floating.txt", dataType:"text", success:function(data){
+                    $('#floating-template').replaceWith(data);
+                }});
+            </script>
+        </div>
+        <script id="footer-template">
+            $.ajax({url:"common/footer.txt", dataType:"text", success:function(data){
+                $('#footer-template').replaceWith(data);
+            }});
+        </script>
+    </div>
+</body>
+</html>
