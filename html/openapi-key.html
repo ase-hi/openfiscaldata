@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title>열린재정</title>
+
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
+<script src="../js/pub-ui.js"></script>
+
+</head>
+<body>
+
+    <dl class="skipLink">
+        <dt>바로가기 메뉴</dt>
+        <dd><a href="#gnbMenu">주메뉴 바로가기</a></dd>
+        <dd><a href="#content">본문 바로가기</a></dd>
+    </dl>
+    <div class="wrap">
+        <script id="header-template">
+            // 헤더
+            $.ajax({url:"common/header.txt", dataType:"text", success:function(data){
+                $('#header-template').replaceWith(data);
+            }});
+        </script>
+
+        <div class="container" id="content">
+            <script id="subvisual-template">
+                $.ajax({url:"common/subvisual.txt", dataType:"text", success:function(data){
+                    $('#subvisual-template').replaceWith($(data).filter('#visual-lab'));
+                }});
+            </script>
+
+            <script id="breadcrumb-template">
+                // breadcrumb메뉴
+                $.ajax({url:"common/breadcrumb.txt", dataType:"text", success:function(data){
+                    $('#breadcrumb-template').replaceWith(data);
+                    breadcrumbMenu();
+                }});
+            </script>
+
+            <div class="contents openapi-key-page">
+                <div class="title-main-wrap">
+                    <h2 class="title-main">OPEN API</h2>
+                </div>
+
+                <div class="tab-main">
+                    <ul role="tablist">
+                        <li><a href="openapi-about.html" role="tab" aria-selected="false">OPEN API란?</a></li>
+                        <li><a href="openapi-list.html" role="tab" aria-selected="false">OPEN API 목록</a></li>
+                        <li><a href="openapi-case-list.html" role="tab" aria-selected="false">활용사례</a></li>
+                        <li class="on"><a href="openapi-key.html" role="tab" aria-selected="true">인증키 관리</a></li>
+                    </ul>
+                </div>
+
+                <div class="tab-content">
+                    <div class="cont-box st2">
+                        <ul class="cont-box-list">
+                            <li>인증키 발급(신규)은 종료되었습니다. 기존에 발급받은 인증키는 계속 이용할 수 있습니다.</li>
+                            <li>사용하지 않는 인증키는 이용중지(폐기) 처리하여 잘못된 호출이 일어나지 않도록 해주세요.</li>
+                        </ul>
+                    </div>
+
+                    <section class="section-wrap">
+                        <div class="title-section-wrap">
+                            <h3 class="title-section">인증키 목록</h3>
+                            <div class="right">
+                                <div class="total">전체 <em>00</em>건</div>
+                            </div>
+                        </div>
+
+                        <div class="form-search-box st-compact">
+                            <div class="form-search-fields">
+                            <div class="form-search-status">
+                                <span class="bar-label">상태</span>
+                                <div class="input-choice-wrap">
+                                <div class="input-choice">
+                                    <input type="radio" name="caseStatus" id="caseStatusAll" checked>
+                                    <label for="caseStatusAll">전체</label>
+                                </div>
+                                <div class="input-choice">
+                                    <input type="radio" name="caseStatus" id="caseStatusNormal">
+                                    <label for="caseStatusNormal">정상</label>
+                                </div>
+                                <div class="input-choice">
+                                    <input type="radio" name="caseStatus" id="caseStatusStop">
+                                    <label for="caseStatusStop">이용중지(폐기)</label>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="form-search-action">
+                                <label for="caseUsagePurpose" class="bar-label">활용용도</label>
+                                <div class="inp">
+                                <input type="text" id="caseUsagePurpose" placeholder="활용용도를 입력하세요.">
+                                </div>
+                                <button type="button" class="btn-search">검색</button>
+                            </div>
+                            </div>
+                        </div>
+
+                        <div class="data-default line-type openapi-key-table">
+                            <div class="scroll">
+                                <table>
+                                    <caption class="sr-only">인증키 목록 — NO, 제목, 인증키, 발급일자, 상태, 복사, 폐기, 이용내역</caption>
+                                    <colgroup>
+                                        <col style="width:80px">
+                                        <col style="width:auto;min-width:160px">
+                                        <col style="width:auto;min-width:200px">
+                                        <col style="width:180px">
+                                        <col style="width:104px">
+                                        <col style="width:92px">
+                                        <col style="width:92px">
+                                        <col style="width:92px">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">NO</th>
+                                            <th scope="col">제목</th>
+                                            <th scope="col">인증키</th>
+                                            <th scope="col">발급일자</th>
+                                            <th scope="col">상태</th>
+                                            <th scope="col">복사</th>
+                                            <th scope="col">폐기</th>
+                                            <th scope="col">이용내역</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>통계분석 서비스</td>
+                                            <td>a1b2c3****-****-e5f6</td>
+                                            <td>2025-03-10</td>
+                                            <td>
+                                                <span class="tag-state st-blue">정상</span>
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn-xsm btn-white">복사</button>
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn-xsm btn-white">폐기</button>
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn-xsm btn-white">보기</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="section-wrap">
+                        <div class="title-section-wrap">
+                            <h3 class="title-section">인증키 이용내역</h3>
+                            <p class="title-section-note">※ 최근 3개월까지의 이용내역을 조회합니다.</p>
+                        </div>
+
+                        <div class="form-search-box st-compact">
+                            <div class="form-search-fields">
+                            <div class="form-search-action">
+                                <label for="caseAuthKey" class="sr-only">인증키 선택</label>
+                                <div class="sel">
+                                <select id="caseAuthKey" aria-label="인증키 선택">
+                                    <option selected>인증키 선택</option>
+                                </select>
+                                </div>
+                                <button type="button" class="btn-search">검색</button>
+                            </div>
+                            </div>
+                        </div>
+
+
+                        <div class="data-default line-type openapi-key-usage-table">
+                            <div class="scroll">
+                                <table>
+                                    <caption class="sr-only">인증키 이용내역 — NO, 기준일, 호출(건), 데이터(건), 평균 응답속도(초), 호출량(MB)</caption>
+                                    <colgroup>
+                                        <col style="width:80px">
+                                        <col style="width:auto;min-width:160px">
+                                        <col style="width:auto;min-width:160px">
+                                        <col style="width:auto;min-width:160px">
+                                        <col style="width:auto;min-width:160px">
+                                        <col style="width:auto;min-width:160px">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">NO</th>
+                                            <th scope="col">기준일</th>
+                                            <th scope="col">호출(건)</th>
+                                            <th scope="col">데이터(건)</th>
+                                            <th scope="col">평균 응답속도(초)</th>
+                                            <th scope="col">호출량(MB)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>2026-07-28</td>
+                                            <td>1,240</td>
+                                            <td>85,300</td>
+                                            <td>0.42</td>
+                                            <td>12.5</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <script id="feedback-template">
+                    // 피드백
+                    $.ajax({url:"common/feedback.txt", dataType:"text", success:function(data){
+                        $('#feedback-template').replaceWith(data);
+                        pageFeedback();
+                    }});
+                </script>
+            </div>
+            <!-- //contents -->
+
+            <script id="floating-template">
+                // 플로팅메뉴
+                $.ajax({url:"common/floating.txt", dataType:"text", success:function(data){
+                    $('#floating-template').replaceWith(data);
+                }});
+            </script>
+        </div>
+        <script id="footer-template">
+            // 푸터
+            $.ajax({url:"common/footer.txt", dataType:"text", success:function(data){
+                $('#footer-template').replaceWith(data);
+            }});
+        </script>
+    </div>
+    <!-- // wrap -->
+
+</body>
+</html>

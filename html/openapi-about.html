@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title>열린재정</title>
+
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
+<script src="../js/pub-ui.js"></script>
+
+</head>
+<body>
+
+    <dl class="skipLink">
+        <dt>바로가기 메뉴</dt>
+        <dd><a href="#gnbMenu">주메뉴 바로가기</a></dd>
+        <dd><a href="#content">본문 바로가기</a></dd>
+    </dl>
+    <div class="wrap">
+        <script id="header-template">
+            // 헤더
+            $.ajax({url:"common/header.txt", dataType:"text", success:function(data){
+                $('#header-template').replaceWith(data);
+            }});
+        </script>
+
+        <div class="container" id="content">
+            <script id="subvisual-template">
+                $.ajax({url:"common/subvisual.txt", dataType:"text", success:function(data){
+                    $('#subvisual-template').replaceWith($(data).filter('#visual-lab'));
+                }});
+            </script>
+
+            <script id="breadcrumb-template">
+                // breadcrumb메뉴
+                $.ajax({url:"common/breadcrumb.txt", dataType:"text", success:function(data){
+                    $('#breadcrumb-template').replaceWith(data);
+                    breadcrumbMenu();
+                }});
+            </script>
+
+            <div class="contents">
+                <div class="title-main-wrap">
+                    <h2 class="title-main">OPEN API</h2>
+                </div>
+
+                <div class="tab-main">
+                    <ul role="tablist">
+                        <li class="on"><a href="openapi-about.html" role="tab" aria-selected="true">OPEN API란?</a></li>
+                        <li><a href="openapi-list.html" role="tab" aria-selected="false">OPEN API 목록</a></li>
+                        <li><a href="openapi-case.html" role="tab" aria-selected="false">활용사례</a></li>
+                        <li><a href="openapi-key.html" role="tab" aria-selected="false">인증키 관리</a></li>
+                    </ul>
+                </div>
+
+                <div class="tab-content">
+                    <div class="info-guide is-summary">
+                        <div class="info-guide-head">
+                            <span class="ico-openapi-sdk" aria-hidden="true"></span>
+                            <strong class="info-guide-tit">인증키 없이, 누구나 여는 Open API.</strong>
+                        </div>
+                        <div class="info-guide-body">
+                            <p>모두의재정은 Open API 제공으로 디지털플랫폼정부 서비스를 실현합니다. 
+                            <br>재정수입구조, 국세수입추이, 조세부담률 및 국민부담률 추이 등 약 150개의 재정데이터를 별도 인증키 신청 없이 바로 제공받으실 수 있습니다. 통계 웹사이트 구축, DB 연동, 모바일 앱 개발 등 원하는 서비스에 자유롭게 활용해 보세요.</p>
+                            <p class="info-guide-note">* 기존에 발급받은 인증키는 계속 이용할 수 있습니다.</p>
+                        </div>
+                    </div>
+                    <section class="section-wrap">
+                        <div class="title-section-wrap">
+                            <h3 class="title-section">정부 지원사업 범위</h3>
+                        </div>
+                        <ul class="openapi-feature-grid">
+                            <li>
+                                <div class="openapi-feature-text">
+                                    <strong class="openapi-feature-tit">다양한 재정정보 제공</strong>
+                                    <p class="openapi-feature-desc">재정수입구조, 국세수입추이 등 약 150개의 <br class="mo-hide">데이터를 Open API로 만나보실 수 있습니다.</p>
+                                </div>
+                                <div class="openapi-feature-thumb">
+                                    <img src="../images/content/img-openapi-feature-01.png" alt="">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="openapi-feature-text">
+                                    <strong class="openapi-feature-tit">자유로운 서비스 개발</strong>
+                                    <p class="openapi-feature-desc">웹사이트 구축, DB 연동, 모바일 앱 개발 등에 <br class="mo-hide">편리하게 활용할 수 있습니다.</p>
+                                </div>
+                                <div class="openapi-feature-thumb">
+                                    <img src="../images/content/img-openapi-feature-02.png" alt="">
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+                    <section class="section-wrap">
+                        <div class="title-section-wrap">
+                            <h3 class="title-section">제공 데이터 유형</h3>
+                        </div>
+                        <ul class="openapi-data-grid">
+                            <li>
+                                <div class="openapi-data-icon is-blue">
+                                    <img src="../images/content/ico-openapi-data-01.svg" alt="">
+                                </div>
+                                <div class="openapi-data-body">
+                                    <strong class="openapi-data-tit">재정 수입구조</strong>
+                                    <p class="openapi-data-desc">연도별 국가의 본예산 총수입 구성을 확인할 수 있습니다.<br>(예: 국세, 지방세, 기타 수입 등)</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="openapi-data-icon is-teal">
+                                    <img src="../images/content/ico-openapi-data-02.svg" alt="">
+                                </div>
+                                <div class="openapi-data-body">
+                                    <strong class="openapi-data-tit">국세수입 추이</strong>
+                                    <p class="openapi-data-desc">내국세, 관세 등 세입의 변화 추이를<br>살펴볼 수 있습니다.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="openapi-data-icon is-blue">
+                                    <img src="../images/content/ico-openapi-data-03.svg" alt="">
+                                </div>
+                                <div class="openapi-data-body">
+                                    <strong class="openapi-data-tit">재정사업별 예산 시계열</strong>
+                                    <p class="openapi-data-desc">연도별 재정 사업의 예산 배정정보를<br>제공합니다.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="openapi-data-icon is-teal">
+                                    <img src="../images/content/ico-openapi-data-04.svg" alt="">
+                                </div>
+                                <div class="openapi-data-body">
+                                    <strong class="openapi-data-tit">재정산업 집행실적</strong>
+                                    <p class="openapi-data-desc">예산 대비 집행된 금액 데이터를<br>제공합니다.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="openapi-data-icon is-blue">
+                                    <img src="../images/content/ico-openapi-data-05.svg" alt="">
+                                </div>
+                                <div class="openapi-data-body">
+                                    <strong class="openapi-data-tit">민간투자사업 현황</strong>
+                                    <p class="openapi-data-desc">민간투자 형태 사업의 종류와 규모 등<br>현황 정보를 제공합니다.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="openapi-data-icon is-teal">
+                                    <img src="../images/content/ico-openapi-data-06.svg" alt="">
+                                </div>
+                                <div class="openapi-data-body">
+                                    <strong class="openapi-data-tit">경제통계지표 / 국제비교통계</strong>
+                                    <p class="openapi-data-desc">한국은행, 통계청 등의 일반 경제 지표와 IMF·OECD 등<br>국제 지표 비교 데이터를 제공합니다.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+                    <section class="section-wrap">
+                        <div class="title-section-wrap">
+                            <h3 class="title-section">서비스 이용방법</h3>
+                        </div>
+                        <div class="openapi-guide-box">
+                            <div class="openapi-step">
+                                <div class="openapi-step-head">
+                                    <span class="openapi-step-num" aria-hidden="true">1</span>
+                                    <div class="openapi-step-text">
+                                        <strong class="openapi-step-tit">필요한 API를 목록에서 바로 확인하세요.</strong>
+                                        <p class="openapi-step-desc">별도의 인증키 발급키 없이, OPEN API 목록에서 제공 중인 데이터를 바로 확인할 수 있습니다.</p>
+                                    </div>
+                                    <a href="openapi-list.html" class="btn-nm btn-blue openapi-step-btn">OPEN API 목록 보기<span class="ico-arr-r-w" aria-hidden="true"></span></a>
+                                </div>
+                                <div class="openapi-step-shot">
+                                    <img src="../images/content/img-openapi-step1.png" alt="OPEN API 목록 화면">
+                                </div>
+                            </div>
+                            <div class="openapi-step">
+                                <div class="openapi-step-head">
+                                    <span class="openapi-step-num" aria-hidden="true">2</span>
+                                    <div class="openapi-step-text">
+                                        <strong class="openapi-step-tit">필요한 데이터를 선택해 상세 정보를 확인하세요.</strong>
+                                        <p class="openapi-step-desc">OPEN API 탭에서 요청주소, 기본인자, 요청인자를 한눈에 확인할 수 있습니다.</p>
+                                    </div>
+                                </div>
+                                <div class="openapi-step-shot">
+                                    <img src="../images/content/img-openapi-step2.png" alt="OPEN API 상세 정보 화면">
+                                </div>
+                            </div>
+                            <div class="openapi-step">
+                                <div class="openapi-step-head">
+                                    <span class="openapi-step-num" aria-hidden="true">3</span>
+                                    <div class="openapi-step-text">
+                                        <strong class="openapi-step-tit">데이터별 API를 테스트하고 결과를 바로 확인하세요.</strong>
+                                        <p class="openapi-step-desc">샘플 URL, Open API 테스트, 결과 메시지 탭에서 요청 결과를 바로 확인할 수 있습니다.</p>
+                                    </div>
+                                </div>
+                                <div class="openapi-step-detail">
+                                    <ul class="openapi-step-tabs" role="tablist">
+                                        <li><button type="button" role="tab" data-tab-id="tab-output" disabled aria-selected="false">출력값</button></li>
+                                        <li class="on"><button type="button" data-tab-id="tab-sample" role="tab" aria-selected="true">샘플URL</button></li>
+                                        <li><button type="button" role="tab" data-tab-id="tab-test" aria-selected="false">OPEN API테스트</button></li>
+                                        <li><button type="button" role="tab" data-tab-id="tab-result" aria-selected="false">결과메시지</button></li>
+                                    </ul>
+                                    <div class="tab-content" id="tab-output" style="display:none;">
+                                        출력값
+                                        <br>출력값
+                                        <br>출력값
+                                    </div>
+                                    <div class="tab-content" id="tab-sample">
+                                        <div class="openapi-step-shot st2">
+                                            <img src="../images/content/img-openapi-step3.png" alt="OPEN API 샘플 URL 화면">
+                                        </div>
+                                        <div class="openapi-step-sub">
+                                            <div class="openapi-step-sub-head">
+                                                <strong>API 요청 URL 확인</strong>
+                                            </div>
+                                            <p class="openapi-step-sub-desc">발급받은 인증키와 제시된 요청주소 뒷부분에 검색요청인자 파라미터로 삽입하여 API 통신 기본 구성을 세팅합니다.</p>
+                                        </div>
+                                    </div>
+                                    <div class="tab-content" id="tab-test" style="display:none;">
+                                        <div class="openapi-step-shot st2">
+                                            <img src="../images/content/img-openapi-step3-test.png" alt="OPEN API 테스트 화면">
+                                        </div>
+                                        <div class="openapi-step-sub">
+                                            <div class="openapi-step-sub-head">
+                                                <strong>데이터별 OPEN API 확인 방법</strong>
+                                            </div>
+                                            <p class="openapi-step-sub-desc">요청된 데이터는 결과값 항목에 맞춰 출력된 코드를 확인할 수 있습니다.</p>
+                                        </div>
+                                    </div>
+                                    <div class="tab-content" id="tab-result" style="display:none;">
+                                        <div class="openapi-step-shot st2">
+                                            <img src="../images/content/img-openapi-step3-result.png" alt="OPEN API 결과메시지 화면">
+                                        </div>
+                                        <div class="openapi-step-sub">
+                                            <div class="openapi-step-sub-head">
+                                                <strong>데이터별 OPEN API 확인 방법</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <script id="feedback-template">
+                    // 피드백
+                    $.ajax({url:"common/feedback.txt", dataType:"text", success:function(data){
+                        $('#feedback-template').replaceWith(data);
+                        pageFeedback();
+                    }});
+                </script>
+            </div>
+            <!-- //contents -->
+
+            <script id="floating-template">
+                // 플로팅메뉴
+                $.ajax({url:"common/floating.txt", dataType:"text", success:function(data){
+                    $('#floating-template').replaceWith(data);
+                }});
+            </script>
+        </div>
+        <script id="footer-template">
+            // 푸터
+            $.ajax({url:"common/footer.txt", dataType:"text", success:function(data){
+                $('#footer-template').replaceWith(data);
+            }});
+        </script>
+    </div>
+    <!-- // wrap -->
+
+<style>
+
+</style>
+
+</body>
+</html>

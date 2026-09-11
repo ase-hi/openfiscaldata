@@ -482,6 +482,67 @@ function viewFilesToggle(){
   });
 }
 
+function dataTreeToggle(){
+  // 하위 메뉴 펼침/접힘
+  $(document).off('click.dataTreeToggle').on('click.dataTreeToggle', '.data-tree-toggle', function(){
+    var $li = $(this).closest('li');
+    var $sub = $li.children('.data-tree-sub');
+    if(!$sub.length) return;
+    var open = !$li.hasClass('is-open');
+    $li.toggleClass('is-open', open);
+    $(this).attr('aria-expanded', open ? 'true' : 'false');
+    $sub.stop(true, true).slideToggle(200);
+    treeAllOff($li.closest('.data-tree'));
+  });
+
+  // 전체보기 : 누르면 하위 메뉴 전체 펼침 / 다시 누르면 전체 접힘
+  $(document).off('click.dataTreeAll').on('click.dataTreeAll', '.data-tree-all', function(e){
+    e.preventDefault();
+    var $tree = $(this).closest('.data-tree');
+    var open = !$(this).hasClass('on');
+
+    $(this).toggleClass('on', open);
+    if(open){ $(this).attr('aria-current', 'true'); }
+    else{ $(this).removeAttr('aria-current'); }
+
+    // 하위 항목 선택 해제
+    $tree.find('.data-tree-sub > li').removeClass('on')
+      .children('a').removeAttr('aria-current');
+
+    // 모든 그룹 펼치기 / 접기
+    $tree.find('.data-tree-list > li').each(function(){
+      var $li = $(this);
+      var $sub = $li.children('.data-tree-sub');
+      if(!$sub.length) return;
+      $li.toggleClass('is-open', open);
+      $li.children('.data-tree-toggle').attr('aria-expanded', open ? 'true' : 'false');
+      $sub.stop(true, true)[open ? 'slideDown' : 'slideUp'](200);
+    });
+  });
+
+  // 하위 항목 선택
+  $(document).off('click.dataTreeItem').on('click.dataTreeItem', '.data-tree-sub > li > a', function(e){
+    e.preventDefault();
+    var $tree = $(this).closest('.data-tree');
+    $tree.find('.data-tree-sub > li').removeClass('on')
+      .children('a').removeAttr('aria-current');
+    $(this).parent().addClass('on');
+    $(this).attr('aria-current', 'true');
+    treeAllOff($tree);
+  });
+
+  function treeAllOff($tree){
+    $tree.find('.data-tree-all').removeClass('on').removeAttr('aria-current');
+  }
+}
+
+function segmentedToggle(){
+  $(document).off('click.segmentedToggle').on('click.segmentedToggle', '.segmented button', function(){
+    $(this).addClass('on').attr('aria-pressed', 'true')
+      .siblings('button').removeClass('on').attr('aria-pressed', 'false');
+  });
+}
+
 function fontSettingMenu(){
   var storageKey = 'fis-font-size';
   // Ctrl + 처럼 화면 전체를 확대/축소 (CSS zoom)
@@ -1272,6 +1333,86 @@ function tryFinanceCalendar(){
   }
 }
 
+// 파일첨부 : .input-upload 영역에서 공통으로 사용 (여러 개 배치 가능)
+// 파일 선택 전 : .upload-field(입력필드 + 파일찾기/파일삭제) 노출
+// 파일 선택 후 : .input-upload에 .is-selected 추가 → .upload-file-list(파일명+용량+삭제) 로 교체
+function fileUpload(){
+  // 용량 표기 (예: 121.9KB)
+  function fileSize(bytes){
+    if(typeof bytes !== 'number' || isNaN(bytes)) return '';
+    if(bytes >= 1024 * 1024) return (bytes / 1024 / 1024).toFixed(1) + 'MB';
+    if(bytes >= 1024) return (bytes / 1024).toFixed(1) + 'KB';
+    return bytes + 'B';
+  }
+
+  // 선택된 파일 목록 그리기
+  function drawFiles($wrap, files){
+    var $list = $wrap.find('.upload-file-list').empty();
+    var i;
+
+    for(i = 0; i < files.length; i++){
+      var $item = $('<div class="upload-file-item"></div>');
+      var $info = $('<span class="upload-file-info"></span>');
+      var $text = $('<span class="upload-file-text"></span>');
+
+      $info.append('<i class="ico-file-attach" aria-hidden="true"></i>');
+      $text.append($('<span class="upload-file-name"></span>').text(files[i].name));
+      if(files[i].size){
+        $text.append($('<span class="upload-file-size"></span>').text(fileSize(files[i].size)));
+      }
+      $info.append($text);
+
+      $item.append($info);
+      $item.append('<button type="button" class="btn-file-remove"><span class="sr-only">첨부파일 삭제</span></button>');
+      $list.append($item);
+    }
+
+    $wrap.addClass('is-selected');
+  }
+
+  // 초기화 : 선택 파일과 목록을 비우고 폼 영역으로 돌림
+  function resetFiles($wrap){
+    var $file = $wrap.find('.upload-file');
+
+    $file.val('');
+    if($file[0] && $file[0].value){ $file.replaceWith($file.clone(true)); }
+
+    $wrap.removeClass('is-selected');
+    $wrap.find('.upload-file-list').empty();
+    $wrap.find('.upload-name').val('');
+  }
+
+  // 파일찾기 : 숨겨둔 file input 열기
+  $(document).off('click.fileUpload').on('click.fileUpload', '.input-upload .btn-file-find', function(){
+    $(this).closest('.input-upload').find('.upload-file').trigger('click');
+  });
+
+  // 파일 선택 시 파일 목록으로 교체
+  $(document).off('change.fileUpload').on('change.fileUpload', '.input-upload .upload-file', function(){
+    var $wrap = $(this).closest('.input-upload');
+    var files = this.files;
+
+    if(files && files.length){
+      drawFiles($wrap, files);
+    }else if(this.value){
+      drawFiles($wrap, [{ name: this.value.split(/[\\/]/).pop() }]);
+    }else{
+      resetFiles($wrap);
+    }
+  });
+
+  // 파일 목록의 삭제(x) : 다시 폼 영역으로
+  $(document).off('click.fileUploadRemove').on('click.fileUploadRemove', '.input-upload .btn-file-remove', function(){
+    resetFiles($(this).closest('.input-upload'));
+  });
+
+  // 파일삭제 버튼
+  $(document).off('click.fileUploadDel').on('click.fileUploadDel', '.input-upload .btn-file-del', function(){
+    resetFiles($(this).closest('.input-upload'));
+  });
+}
+
+
 
 // ready
 $(function(){
@@ -1295,6 +1436,8 @@ $(function(){
   breadcrumbMenu();
   fontSettingMenu();
   viewFilesToggle();
+  dataTreeToggle();
+  segmentedToggle();
   contSlideSwiper();
   tabEvt();
   tabMainSwiper();
@@ -1304,7 +1447,7 @@ $(function(){
   scrollDirection();
   floatingQuickStop();
   tryFloatingQuickMobile();
-
+  fileUpload();
   datepicker();
 
   $(document).on('click', '.floating-top', function(){

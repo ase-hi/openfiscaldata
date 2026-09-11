@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title>열린재정</title>
+
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
+<script src="../js/pub-ui.js"></script>
+
+</head>
+<body>
+
+    <dl class="skipLink">
+        <dt>바로가기 메뉴</dt>
+        <dd><a href="#gnbMenu">주메뉴 바로가기</a></dd>
+        <dd><a href="#content">본문 바로가기</a></dd>
+    </dl>
+    <div class="wrap">
+        <script id="header-template">
+            // 헤더
+            $.ajax({url:"common/header.txt", dataType:"text", success:function(data){
+                $('#header-template').replaceWith(data);
+            }});
+        </script>
+
+        <div class="container" id="content">
+            <script id="subvisual-template">
+                $.ajax({url:"common/subvisual.txt", dataType:"text", success:function(data){
+                    $('#subvisual-template').replaceWith($(data).filter('#visual-lab'));
+                }});
+            </script>
+
+            <script id="breadcrumb-template">
+                // breadcrumb메뉴
+                $.ajax({url:"common/breadcrumb.txt", dataType:"text", success:function(data){
+                    $('#breadcrumb-template').replaceWith(data);
+                    breadcrumbMenu();
+                }});
+            </script>
+
+            <div class="contents">
+                <div class="title-main-wrap">
+                    <h2 class="title-main">데이터분석서비스(KODAS) 이용</h2>
+                </div>
+
+                <div class="tab-main">
+                    <ul role="tablist">
+                        <li><a href="kodas-about.html" role="tab" aria-selected="false">KODAS 개요</a></li>
+                        <li><a href="kodas-data-list.html" role="tab" aria-selected="false">제공 데이터 목록</a></li>
+                        <li class="on"><a href="kodas-apply-step1.html" role="tab" aria-selected="true">데이터분석 이용신청</a></li>
+                        <li><a href="kodas-my-request.html" role="tab" aria-selected="false">나의 데이터분석 신청현황</a></li>
+                        <li><a href="kodas-location.html" role="tab" aria-selected="false">오시는 길</a></li>
+                    </ul>
+                </div>
+
+                <div class="tab-content">
+                    <ol class="step-progress">
+                        <li class="is-done">
+                            <span class="step-progress-num">1</span>
+                            <span class="step-progress-label">약관동의</span>
+                        </li>
+                        <li class="is-current">
+                            <span class="step-progress-num">2</span>
+                            <span class="step-progress-label">신청정보입력</span>
+                        </li>
+                    </ol>
+                    <form action="" class="kodas-apply-form">
+                        <div class="section-wrap">
+                            <div class="title-section-wrap">
+                                <h3 class="title-section">개인정보 수집 이용 동의</h3>
+                                <div class="right">
+                                    <p class="txt-required"><span class="ico-required"><span class="sr-only">(필수)</span></span> 필수 입력 항목입니다.</p>
+                                </div>
+                            </div>
+                            <div class="data-detail regist-form-table st2">
+                                <table>
+                                    <caption class="sr-only">개인정보 수집 이용 동의 — 신청구분, 신청목적, 분석명, 분석내용, 분석기간(예정)</caption>
+                                    <colgroup>
+                                        <col style="width:210px">
+                                        <col>
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">신청구분</th>
+                                            <td>세종 FIS재정분석교육센터</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><label for="applyPurpose" class="required">신청목적 <span class="ico-required"><span class="sr-only">(필수)</span></span></label></th>
+                                            <td><input type="text" id="applyPurpose" placeholder="신청승인을 검토하기 위한 신청목적을 입력하세요" required style="width:100%;"></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><label for="applyName" class="required">분석명 <span class="ico-required"><span class="sr-only">(필수)</span></span></label></th>
+                                            <td><input type="text" id="applyName" placeholder="분석명을 입력하세요" required style="width:100%;"></td>
+                                        </tr>
+                                        <tr class="row-textarea">
+                                            <th scope="row"><label for="applyContent" class="required">분석내용 <span class="ico-required"><span class="sr-only">(필수)</span></span></label></th>
+                                            <td>
+                                                <textarea id="applyContent" maxlength="400" placeholder="연구배경 및 목적, 연구내용, 연구방법, 기대효과 및 활용 등을 입력하세요" required style="width:100%;"></textarea>
+                                                <div class="text-count"><em>0</em><span>/400</span></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><span class="required">분석기간(예정) <span class="ico-required"><span class="sr-only">(필수)</span></span></span></th>
+                                            <td>
+                                                <div class="cell-flex">
+                                                    <div class="input-date">
+                                                        <input type="text" class="datepicker" id="applyPeriodStart" value="2026-01-01" aria-label="분석 시작일">
+                                                        <span class="dash">~</span>
+                                                        <input type="text" class="datepicker" id="applyPeriodEnd" value="2026-01-31" aria-label="분석 종료일">
+                                                    </div>
+                                                    <span class="cell-note">※ 분석 기간은 필요하면 추가승인을 받아야 합니다.</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="section-wrap">
+                            <div class="title-section-wrap">
+                                <h3 class="title-section">이용자 정보</h3>
+                            </div>
+                            <div class="data-detail regist-form-table st2">
+                                <table>
+                                    <caption class="sr-only">이용자 정보 — 이름, 이메일, 전화번호</caption>
+                                    <colgroup>
+                                        <col style="width:210px">
+                                        <col>
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row"><label for="userName" class="required">이름 <span class="ico-required"><span class="sr-only">(필수)</span></span></label></th>
+                                            <td><input type="text" id="userName" placeholder="이름을 입력하세요" required style="width:100%;"></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><span class="required">이메일 <span class="ico-required"><span class="sr-only">(필수)</span></span></span></th>
+                                            <td>
+                                                <div class="input-email">
+                                                    <input type="text" id="userEmailId" aria-label="이메일 아이디">
+                                                    <span class="at">@</span>
+                                                    <input type="text" id="userEmailDomain" aria-label="이메일 도메인">
+                                                    <select id="userEmailDomainSelect" aria-label="이메일 도메인 선택">
+                                                        <option value="" selected>직접입력</option>
+                                                        <option value="naver.com">naver.com</option>
+                                                        <option value="gmail.com">gmail.com</option>
+                                                        <option value="daum.net">daum.net</option>
+                                                        <option value="korea.kr">korea.kr</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><label for="userTel" class="required">전화번호 <span class="ico-required"><span class="sr-only">(필수)</span></span></label></th>
+                                            <td><input type="text" id="userTel" placeholder="휴대폰 번호를 입력하세요" required style="width:100%;"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="section-wrap">
+                            <div class="title-section-wrap">
+                                <h3 class="title-section">분석환경</h3>
+                            </div>
+                            <div class="data-detail regist-form-table st2">
+                                <table>
+                                    <caption class="sr-only">분석환경 — 사용 분석 도구, 기본 자원 할당</caption>
+                                    <colgroup>
+                                        <col style="width:210px">
+                                        <col>
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">사용 분석 도구</th>
+                                            <td>
+                                                <div class="segmented" role="group" aria-label="사용 분석 도구">
+                                                    <button type="button" class="on" aria-pressed="true">Python</button>
+                                                    <button type="button" aria-pressed="false">R</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">기본 자원 할당</th>
+                                            <td>CPU : 2CORE, MEMORY : 16G</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="section-wrap">
+                            <div class="title-section-wrap">
+                                <h3 class="title-section">추가자료 요청</h3>
+                            </div>
+                            <div class="data-detail regist-form-table st2">
+                                <table>
+                                    <caption class="sr-only">추가자료 요청 — 추가자료 요청여부, 자료명, 데이터 주기, 기간, 분류, 소관, 요청자료의 세부설명, 활용목적</caption>
+                                    <colgroup>
+                                        <col style="width:210px">
+                                        <col style="width:430px">
+                                        <col style="width:210px">
+                                        <col>
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">추가자료 요청여부</th>
+                                            <td colspan="3">
+                                                <div class="cell-flex">
+                                                    <div class="segmented" role="group" aria-label="추가자료 요청여부">
+                                                        <button type="button" class="on" aria-pressed="true">필요</button>
+                                                        <button type="button" aria-pressed="false">불필요</button>
+                                                    </div>
+                                                    <a href="javascript:void(0);" class="btn-link-copy"><i class="ico-copy" aria-hidden="true"></i><span>기본제공데이터 목록보기</span></a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><label for="addDataName" class="required">자료명 <span class="ico-required"><span class="sr-only">(필수)</span></span></label></th>
+                                            <td colspan="3"><input type="text" id="addDataName" placeholder="예) OOOO부의 OO사업 관련 자료" required style="width:100%;"></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><span class="required">데이터 주기 <span class="ico-required"><span class="sr-only">(필수)</span></span></span></th>
+                                            <td>
+                                                <div class="input-choice-wrap">
+                                                    <div class="input-choice"><input type="radio" id="addCycle1" name="addCycle"><label for="addCycle1">연간</label></div>
+                                                    <div class="input-choice"><input type="radio" id="addCycle2" name="addCycle"><label for="addCycle2">분기</label></div>
+                                                    <div class="input-choice"><input type="radio" id="addCycle3" name="addCycle"><label for="addCycle3">월간</label></div>
+                                                </div>
+                                            </td>
+                                            <th scope="row"><span class="required">기간 <span class="ico-required"><span class="sr-only">(필수)</span></span></span></th>
+                                            <td>
+                                                <div class="input-date">
+                                                    <input type="text" class="datepicker" id="addPeriodStart" value="2026-01-01" aria-label="자료 기간 시작일">
+                                                    <span class="dash">~</span>
+                                                    <input type="text" class="datepicker" id="addPeriodEnd" value="2026-01-31" aria-label="자료 기간 종료일">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><span class="required">분류 <span class="ico-required"><span class="sr-only">(필수)</span></span></span></th>
+                                            <td colspan="3">
+                                                <div class="cell-flex">
+                                                    <div class="input-choice-wrap">
+                                                        <div class="input-choice"><input type="checkbox" id="addType1"><label for="addType1">예산</label></div>
+                                                        <div class="input-choice"><input type="checkbox" id="addType2" checked><label for="addType2">집행</label></div>
+                                                        <div class="input-choice"><input type="checkbox" id="addType3"><label for="addType3">결산</label></div>
+                                                        <div class="input-choice"><input type="checkbox" id="addType4"><label for="addType4">재무</label></div>
+                                                        <div class="input-choice"><input type="checkbox" id="addType5"><label for="addType5">수지</label></div>
+                                                        <div class="input-choice"><input type="checkbox" id="addType6"><label for="addType6">기타</label></div>
+                                                    </div>
+                                                    <input type="text" class="auto" id="addTypeEtc" placeholder="직접 입력" aria-label="분류 직접 입력" disabled>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><label for="addDept">소관</label></th>
+                                            <td colspan="3"><input type="text" id="addDept" placeholder="예) 기획재정부, 국토교통부" style="width:100%;"></td>
+                                        </tr>
+                                        <tr class="row-textarea">
+                                            <th scope="row"><label for="addDetail" class="required">요청자료의 세부설명 <span class="ico-required"><span class="sr-only">(필수)</span></span><span class="th-sub">(500자 이내)</span></label></th>
+                                            <td colspan="3">
+                                                <textarea id="addDetail" maxlength="500" placeholder="입력하세요" required></textarea>
+                                                <div class="textarea-foot">
+                                                    <p class="txt-ps">※ 상세하게 작성할수록 원하는 자료에 가까운 자료를 제공받을 수 있습니다.</p>
+                                                    <div class="text-count"><em>0</em><span>/500</span></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="row-textarea">
+                                            <th scope="row"><label for="addUsage" class="required">활용목적 <span class="ico-required"><span class="sr-only">(필수)</span></span><span class="th-sub">(500자 이내)</span></label></th>
+                                            <td colspan="3">
+                                                <textarea id="addUsage" maxlength="500" placeholder="입력하세요" required></textarea>
+                                                <div class="textarea-foot">
+                                                    <p class="txt-ps">※ 활용 목적 외 사용에 관한 법적 책임은 신청자에 있습니다.</p>
+                                                    <div class="text-count"><em>0</em><span>/500</span></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="btn-bottom-wrap">
+                            <a href="kodas-apply-step1.html" class="btn-nm st-white">이전단계</a>
+                            <div class="right">
+                                <button type="submit" class="btn-nm st-blue">신청완료</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <script id="feedback-template">
+                    // 피드백
+                    $.ajax({url:"common/feedback.txt", dataType:"text", success:function(data){
+                        $('#feedback-template').replaceWith(data);
+                        pageFeedback();
+                    }});
+                </script>
+            </div>
+            <!-- //contents -->
+
+            <script id="floating-template">
+                // 플로팅메뉴
+                $.ajax({url:"common/floating.txt", dataType:"text", success:function(data){
+                    $('#floating-template').replaceWith(data);
+                }});
+            </script>
+        </div>
+        <script id="footer-template">
+            // 푸터
+            $.ajax({url:"common/footer.txt", dataType:"text", success:function(data){
+                $('#footer-template').replaceWith(data);
+            }});
+        </script>
+    </div>
+    <!-- // wrap -->
+
+<script>
+$(function(){
+    // 분류 '기타' 체크 시 직접입력 활성화
+    $('#addType6').on('change', function(){
+        var on = $(this).is(':checked');
+        $('#addTypeEtc').prop('disabled', !on);
+        if(!on){ $('#addTypeEtc').val(''); }
+    });
+});
+</script>
+
+</body>
+</html>

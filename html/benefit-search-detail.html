@@ -53,10 +53,8 @@
                 <div class="form-filter-head">
                     <div class="form-filter-title"><strong>기본조건</strong></div>
                     <div class="right">
-                    <button type="button" class="btn-term-guide">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M5.67676 14.5H13.4893C14.1103 14.4982 14.7054 14.2606 15.1445 13.839C15.5836 13.4175 15.8312 12.8462 15.833 12.25V4.75C15.8312 4.15381 15.5836 3.58255 15.1445 3.16098C14.7054 2.73941 14.1103 2.50178 13.4893 2.5H5.67676C5.05573 2.50178 4.46066 2.73941 4.02153 3.16098C3.58239 3.58255 3.33486 4.15381 3.33301 4.75V15.25C3.33301 15.8467 3.57994 16.419 4.01948 16.841C4.45901 17.2629 5.05516 17.5 5.67676 17.5H15.0518C15.259 17.5 15.4577 17.421 15.6042 17.2803C15.7507 17.1397 15.833 16.9489 15.833 16.75C15.833 16.5511 15.7507 16.3603 15.6042 16.2197C15.4577 16.079 15.259 16 15.0518 16H5.67676C5.46956 16 5.27084 15.921 5.12433 15.7803C4.97782 15.6397 4.89551 15.4489 4.89551 15.25C4.89551 15.0511 4.97782 14.8603 5.12433 14.7197C5.27084 14.579 5.46956 14.5 5.67676 14.5ZM9.58301 4.75C9.73752 4.75 9.88857 4.79399 10.017 4.8764C10.1455 4.95881 10.2457 5.07594 10.3048 5.21299C10.3639 5.35003 10.3794 5.50083 10.3492 5.64632C10.3191 5.7918 10.2447 5.92544 10.1354 6.03033C10.0262 6.13522 9.88697 6.20665 9.73542 6.23559C9.58387 6.26453 9.42679 6.24968 9.28404 6.19291C9.14128 6.13614 9.01927 6.04001 8.93342 5.91668C8.84758 5.79334 8.80176 5.64834 8.80176 5.5C8.80176 5.30109 8.88407 5.11032 9.03058 4.96967C9.17709 4.82902 9.37581 4.75 9.58301 4.75ZM8.80176 7.75C8.80176 7.55109 8.88407 7.36032 9.03058 7.21967C9.17709 7.07902 9.37581 7 9.58301 7C9.79021 7 9.98892 7.07902 10.1354 7.21967C10.2819 7.36032 10.3643 7.55109 10.3643 7.75V11.5C10.3643 11.6989 10.2819 11.8897 10.1354 12.0303C9.98892 12.171 9.79021 12.25 9.58301 12.25C9.37581 12.25 9.17709 12.171 9.03058 12.0303C8.88407 11.8897 8.80176 11.6989 8.80176 11.5V7.75Z" fill="#0B50D0"/>
-                        </svg>
+                    <button type="button" class="btn-sm btn-white btn-term-guide">
+                        <i class="ico-guide" aria-hidden="true"></i>
                         <span>용어설명</span>
                     </button>
                     </div>
@@ -316,11 +314,11 @@
 
                 <div class="data-util">
                     <div class="left">
-                        <div class="tab-filter" role="tablist" aria-label="카테고리 선택">
-                            <button type="button" role="tab" class="on" data-tab-id="tab-all" aria-selected="true">전체</button>
-                            <button type="button" role="tab" data-tab-id="tab-benefit" aria-selected="false">정부혜택</button>
-                            <button type="button" role="tab" data-tab-id="tab-subsidy" aria-selected="false">국고지원사업</button>
-                            <button type="button" role="tab" data-tab-id="tab-rnd" aria-selected="false">연구개발지원</button>
+                        <div class="input-choice-wrap" role="group" aria-label="카테고리 선택">
+                            <div class="input-choice"><input type="checkbox" id="cateAll"><label for="cateAll">전체</label></div>
+                            <div class="input-choice"><input type="checkbox" id="cateBenefit"><label for="cateBenefit">정부혜택</label></div>
+                            <div class="input-choice"><input type="checkbox" id="cateSubsidy"><label for="cateSubsidy">국고지원사업</label></div>
+                            <div class="input-choice"><input type="checkbox" id="cateRnd"><label for="cateRnd">연구개발지원</label></div>
                         </div>
                     </div>
                     <div class="right">
