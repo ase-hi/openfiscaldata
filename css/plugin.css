@@ -1,0 +1,67 @@
+﻿@charset "utf-8";
+
+
+/* ===========================================
+    grid
+=========================================== */
+
+.rg-header .rg-table tr td{position:relative; background: #f4f5f6;letter-spacing:0;font-weight: 700;font-size:15px;border-color:#cdd1d5; padding-left:8px !important;padding-right:8px !important;vertical-align: middle;white-space: nowrap;  color:#131416;}
+.rg-header .rg-table tr td:hover{background:#f4f5f6 !important;}
+.rg-header .rg-table tr td:last-child{border-right:none;}
+.rg-body .rg-table tr td{vertical-align: middle;border-color:#cdd1d5;padding-left:8px !important;padding-right:8px !important; color:#464c53;font-weight:400;font-size:15px;background:initial !important;}
+.rg-body .rg-table tr td .ico-lock{vertical-align:middle;margin-left:5px;transform:translateY(-1px);}
+.rg-body .rg-table tr.rg-fixed-row td{background:#F5F8FD !important;padding:8px;}
+.rg-fixed-row-bar{display:none;}
+
+
+/* ===========================================
+    tree (공통)
+=========================================== */
+
+.side-tree .treebox{height:640px;max-height:640px;overflow:auto;padding:16px;background:#f4f5f6;box-sizing:border-box;}
+.tree_cont{min-width:max-content;height:auto !important;}
+
+/* jstree 기본 스프라이트(32px.png) */
+.tree_cont.jstree-default .jstree-node,
+.tree_cont.jstree-default .jstree-icon{background-image:url('../js/jstree/32px.png');}
+
+.tree_cont.jstree-default .jstree-container-ul > .jstree-node{margin-left:0;}
+.tree_cont.jstree-default .jstree-node{margin-bottom:0;line-height:24px;min-height:24px;background-position:-292px -4px;background-repeat:repeat-y;}
+.tree_cont.jstree-default .jstree-last{background:transparent;}
+
+.tree_cont.jstree-default .jstree-icon{width:24px;height:24px;line-height:24px;}
+.tree_cont.jstree-default .jstree-anchor{display:inline-block;height:24px;line-height:24px;padding:0 4px 0 2px;font-size:15px;font-weight:400;color:#33363d;vertical-align:top;}
+.tree_cont.jstree-default .jstree-anchor:focus,
+.tree_cont.jstree-default .jstree-anchor:focus-visible{outline:1px dashed #33363d !important;outline-offset:-2px !important;}
+
+/* 펼침/접힘 꺾쇠 (ocl) */
+.tree_cont.jstree-default .jstree-open > .jstree-ocl{background-position:-132px -4px;}
+.tree_cont.jstree-default .jstree-closed > .jstree-ocl{background-position:-100px -4px;}
+.tree_cont.jstree-default .jstree-leaf > .jstree-ocl{background-position:-68px -4px;}
+
+.tree_cont.jstree-default .jstree-themeicon{background-image:url('../images/common/ico-tree-folder.svg') !important;background-position:center !important;background-size:15px 11px !important;background-repeat:no-repeat !important;}
+.tree_cont.jstree-default .jstree-themeicon.jstree-file{background-image:url('../images/common/ico-tree-page.svg') !important;background-size:11.347px 13.607px !important;}
+
+.tree_cont.jstree-default .jstree-checkbox,
+.tree_cont.jstree-default .jstree-checkbox:hover{background:url('../images/common/ico-tree-checkbox.svg') center / 16px 16px no-repeat !important;}
+.tree_cont.jstree-default.jstree-checkbox-selection .jstree-clicked > .jstree-checkbox,
+.tree_cont.jstree-default.jstree-checkbox-selection .jstree-clicked > .jstree-checkbox:hover,
+.tree_cont.jstree-default .jstree-checked > .jstree-checkbox,
+.tree_cont.jstree-default .jstree-checked > .jstree-checkbox:hover{background-image:url('../images/common/ico-tree-checkbox-checked.svg') !important;}
+
+.tree_cont.jstree-default .jstree-hovered{background:#eef2f7 !important;box-shadow:none !important;border-radius:4px;}
+.tree_cont.jstree-default .jstree-clicked{background:#eceef3 !important;box-shadow:none !important;border-radius:4px;}
+
+@media (max-width:1024px){
+    .side-tree .treebox{height:480px;max-height:480px;}
+}
+
+
+
+
+/* ===========================================
+    realpivot
+=========================================== */
+
+.realpivot div.realpivot-cell.realpivot-col-sum, .realpivot div.realpivot-cell.realpivot-row-sum{background:#ECF2FE;}
+.realpivot div.realpivot-focus-guide{background: #ECF2FE;}

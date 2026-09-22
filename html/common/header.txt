@@ -232,7 +232,7 @@
                       <div class="gnb-mega-2d">개선요청·설문조사</div>
                       <ul>
                         <li><a href="javascript:void(0);">모두의재정 개선요청</a></li>
-                        <li><a href="javascript:void(0);">데이터 공개요청</a></li>
+                        <li><a href="javascript:void(0);">데이터 공개요청 <svg class="ico-gnb-outer" width="16" height="16" aria-hidden="true" focusable="false"><use href="../images/common/simbol.svg#ico-outer-link"></use></svg></a></li>
                         <li><a href="javascript:void(0);">설문조사</a></li>
                         <li><a href="javascript:void(0);">재정원정대</a></li>
                       </ul>

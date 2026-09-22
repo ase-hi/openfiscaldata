@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title>국민참여예산제도 | 모두의 재정</title>
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
+<script src="../js/pub-ui.js"></script>
+</head>
+<body>
+    <dl class="skipLink">
+        <dt>바로가기 메뉴</dt>
+        <dd><a href="#gnbMenu">주메뉴 바로가기</a></dd>
+        <dd><a href="#content">본문 바로가기</a></dd>
+    </dl>
+    <div class="wrap">
+        <script id="header-template">
+            $.ajax({url:"common/header.txt", dataType:"text", success:function(data){
+                $('#header-template').replaceWith(data);
+            }});
+        </script>
+        <div class="container" id="content">
+            <script id="subvisual-template">
+                $.ajax({url:"common/subvisual.txt", dataType:"text", success:function(data){
+                    $('#subvisual-template').replaceWith($(data).filter('#visual-together'));
+                }});
+            </script>
+            <script id="breadcrumb-template">
+                $.ajax({url:"common/breadcrumb.txt", dataType:"text", success:function(data){
+                    $('#breadcrumb-template').replaceWith(data);
+                    breadcrumbMenu();
+                }});
+            </script>
+
+            <div class="contents participatory-budget-page">
+                <div class="title-main-wrap">
+                    <h2 class="title-main">참여예산제도 소개</h2>
+                </div>
+                <nav class="tab-main" aria-label="참여예산제도 소개">
+                    <ul>
+                        <li><a href="participatory-budget-national.html">국민참여예산제도</a></li>
+                        <li class="on"><a href="participatory-budget-local.html" aria-current="page">주민참여예산제도</a></li>
+                    </ul>
+                </nav>
+
+                <div class="tab-content">
+                    <section class="guide-box budget-intro" aria-labelledby="budget-intro-title">
+                        <div class="guide-box-head">
+                            <h3 class="guide-box-tit" id="budget-intro-title">주민참여예산제도란?</h3>
+                        </div>
+                        <div class="guide-box-body">
+                            <p>행정안전부의 제도적 지원 아래 각 지방자치단체는 재정운용의 비효율성을 극복하고, 지방예산의 책임성 및 행정의 투명성 제고하기위해 주민참여예산제도를 운영하고 있습니다. 예산 편성 등 예산과정에 주민이 직접 참여하는 제도로 지역별 특색에 따라 다양하게 운영되고 있습니다.</p>
+                            <p>주민참여예산제도에는 주민참여예산위원회와 주민총회 등에 직접 참여하여 제안사업을 검토하고 예산편성 과정에 의견을 제시할 수 있습니다.</p>
+                            <p>그리고 각 지방자치단체의 주민참여예산 홈페이지를 통해 정기·수시로 온라인 투표에 참여할 수 있습니다.</p>
+                        </div>
+                        <div class="guide-box-foot">
+                            <a href="javascript:void(0);" class="btn-nm st-dark">주민참여예산 홈페이지 바로가기<i class="ico-arr-r-w" aria-hidden="true"></i></a>
+                        </div>
+                    </section>
+
+                    <section class="section-wrap budget-direction" aria-labelledby="budget-direction-title">
+                        <div class="title-section-wrap">
+                            <h3 class="title-section" id="budget-direction-title">추진 배경 및 방향</h3>
+                        </div>
+                        <div class="content-card-list">
+                            <div class="content-card">
+                                <h4>추진목적</h4>
+                                <p>예산편성과정에 주민 직접 참여 &nbsp; → &nbsp; 예산낭비・재정운용의 비효율성 극복, 지방예산의 책임성・행정의 투명성 제고</p>
+                            </div>
+                            <div class="content-card">
+                                <h4>추진방향</h4>
+                                <ol class="num-list">
+                                    <li>예산편성 과정에 주민들이 직접 참여하는 재정민주주의 실현</li>
+                                    <li>다양한 주민의견 수렴 및 의견반영</li>
+                                    <li>예산편성 과정 및 결과 공개로 투명한 예산관리 및 주민의 알권리 충족</li>
+                                </ol>
+                            </div>
+                            <div class="content-card">
+                                <h4>법적근거</h4>
+                                <p>지방재정법 제39조(지방예산 편성 과정의 주민 참여), 같은 법 시행령 제46조<br>운영기구 및 주민참여예산제도 운영조례</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="section-wrap budget-join" aria-labelledby="budget-join-title">
+                        <div class="title-section-wrap">
+                            <h3 class="title-section" id="budget-join-title">주민참여예산제도 참여방법</h3>
+                        </div>
+                        <ul class="budget-join-list">
+                            <li>
+                                <span class="budget-join-img"><img src="../images/content/ico-local-budget-apply.png" width="126" height="126" alt=""></span>
+                                <strong>사업공모</strong>
+                            </li>
+                            <li>
+                                <span class="budget-join-img st-lg"><img src="../images/content/ico-local-budget-vote.png" width="137" height="137" alt=""></span>
+                                <strong>참여예산 투표</strong>
+                            </li>
+                            <li>
+                                <span class="budget-join-img"><img src="../images/content/ico-local-budget-survey.png" width="126" height="126" alt=""></span>
+                                <strong>설문조사</strong>
+                            </li>
+                            <li>
+                                <span class="budget-join-img"><img src="../images/content/ico-local-budget-hearing.png" width="126" height="126" alt=""></span>
+                                <strong>공청회</strong>
+                            </li>
+                            <li>
+                                <span class="budget-join-img"><img src="../images/content/ico-local-budget-forum.png" width="126" height="126" alt=""></span>
+                                <strong>토론회</strong>
+                            </li>
+                        </ul>
+                        <div class="info-guide">
+                            <div class="info-guide-body">
+                                <ul class="dot-list">
+                                    <li><strong>직접참여 :</strong> 각 지방자치단체는 관련 조례에 따라 주민참여예산위원회와 주민총회 등을 운영하며, 이를 통해 직접 참여할 수 있습니다</li>
+                                    <li><strong>온라인참여 :</strong> 온라인을 통해 정기, 수시로 사업제안신청 및 선정을 위한 투표에 참여할 수 있습니다.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <script id="feedback-template">
+                    $.ajax({url:"common/feedback.txt", dataType:"text", success:function(data){
+                        $('#feedback-template').replaceWith(data);
+                        pageFeedback();
+                    }});
+                </script>
+            </div>
+            <script id="floating-template">
+                $.ajax({url:"common/floating.txt", dataType:"text", success:function(data){
+                    $('#floating-template').replaceWith(data);
+                }});
+            </script>
+        </div>
+        <script id="footer-template">
+            $.ajax({url:"common/footer.txt", dataType:"text", success:function(data){
+                $('#footer-template').replaceWith(data);
+            }});
+        </script>
+    </div>
+
+</body>
+</html>

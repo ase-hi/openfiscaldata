@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title>열린재정</title>
+
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<link type="text/css" rel="stylesheet" href="../css/plugin.css">
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
+<script src="../js/pub-ui.js"></script>
+
+<link rel="stylesheet" href="../js/jstree/style.css">
+<script src="../js/jstree/jstree.min.js"></script>
+</head>
+<body>
+
+    <dl class="skipLink">
+        <dt>바로가기 메뉴</dt>
+        <dd><a href="#gnbMenu">주메뉴 바로가기</a></dd>
+        <dd><a href="#content">본문 바로가기</a></dd>
+    </dl>
+    <div class="wrap">
+        <script id="header-template">
+            // 헤더
+            $.ajax({url:"common/header.txt", dataType:"text", success:function(data){
+                $('#header-template').replaceWith(data);
+            }});
+        </script>
+
+        <div class="container" id="content">
+            <script id="subvisual-template">
+                $.ajax({url:"common/subvisual.txt", dataType:"text", success:function(data){
+                    $('#subvisual-template').replaceWith($(data).filter('#visual-lab'));
+                }});
+            </script>
+
+            <script id="breadcrumb-template">
+                // breadcrumb메뉴
+                $.ajax({url:"common/breadcrumb.txt", dataType:"text", success:function(data){
+                    $('#breadcrumb-template').replaceWith(data);
+                    breadcrumbMenu();
+                }});
+            </script>
+
+            <div class="contents">
+                <div class="title-main-wrap">
+                    <h2 class="title-main">상세재정통계</h2>
+                </div>
+
+                <div class="stat-layout">
+                    <script id="stat-side-template">
+                        // 통계목록 좌측 패널
+                        $.ajax({url:"common/stat-side.html", dataType:"text", success:function(data){
+                            $('#stat-side-template').replaceWith(data);
+                            initStatisticsSide();
+                        }});
+                    </script>
+                    <div class="stat-main">
+                        <div class="tab-main tab-closable">
+                            <ul role="tablist" aria-label="열린 통계">
+                                <li class="on">
+                                    <a href="javascript:void(0);" data-tab-id="sample-stat-tab1" role="tab" aria-selected="true"><span>사회복지사회복지사회복지</span></a>
+                                    <button type="button" class="btn-tab-close" aria-label="사회복지 탭 닫기"></button>
+                                </li>
+                            </ul>
+                            <button type="button" class="btn-tab-expand" aria-label="통계 화면 확대"></button>
+                        </div>
+
+                        <div class="tab-content">
+                            <nav class="content-breadcrumb" aria-label="현재 경로">
+                                <ol class="content-breadcrumb-list">
+                                    <li><a href="javascript:void(0);">중앙재정</a></li>
+                                    <li><a href="javascript:void(0);">결산</a></li>
+                                    <li><a href="javascript:void(0);">세출결산</a></li>
+                                    <li><a href="javascript:void(0);">분야별 세출</a></li>
+                                    <li><span class="is-current" aria-current="page">사회복지</span></li>
+                                </ol>
+                            </nav>
+                            <div class="title-secondary-wrap">
+                                <h3 class="title-secondary">우리 지자체 세입세출현황</h3>
+                            </div>
+                            <div class="tab-filter" role="tablist" aria-label="데이터 제공 유형">
+                                <button type="button" role="tab" class="on" data-tab-id="stat-link" aria-selected="true">LINK</button>
+                            </div>
+                            <div class="tab-content" id="stat-link">
+                                <form class="form-search-box st-search-options" onsubmit="return false;">
+                                    <div class="search-option-chips">
+                                        <div class="search-filter-wrap">
+                                            <button type="button" class="btn-sm btn-blue-line js-search-filter-toggle" aria-haspopup="dialog" aria-expanded="false" aria-controls="statDetailSearchFilterPop">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 3-.6 2.4-1.8 1-2.4-.7-3 5.2L3 12.6v2.1l-1.8 1.7 3 5.2 2.4-.7 1.8 1L9 24h6l.6-2.1 1.8-1 2.4.7 3-5.2-1.8-1.7v-2.1l1.8-1.7-3-5.2-2.4.7-1.8-1L15 3H9Z" transform="translate(2 0) scale(.83)" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="12" cy="11.2" r="3" stroke="currentColor" stroke-width="1.3"/></svg>
+                                                검색조건 설정
+                                            </button>
+                                            <!-- 검색조건 설정 레이어팝업 -->
+                                            <div class="search-filter-layer" id="statDetailSearchFilterPop" hidden role="dialog" aria-modal="false" aria-label="검색조건 설정">
+                                                <div class="search-filter-body">
+                                                    <div class="search-filter-group is-open" data-filter-id="area" data-chip-label="지역구분">
+                                                        <h4 class="search-filter-head">
+                                                            <button type="button" class="search-filter-toggle js-search-filter-acc" aria-expanded="true" aria-controls="statFilterPanelArea">
+                                                                <span class="tit">지역명</span>
+                                                                <span class="sum">서울 외 <em>2</em>건</span>
+                                                            </button>
+                                                        </h4>
+                                                        <div class="search-filter-panel" id="statFilterPanelArea">
+                                                            <div class="search-filter-search">
+                                                                <div class="search-filter-search-row">
+                                                                    <div class="inp">
+                                                                        <label for="statFilterAreaKeyword" class="sr-only">지역명 항목 검색</label>
+                                                                        <input type="text" id="statFilterAreaKeyword" placeholder="항목 검색" autocomplete="off">
+                                                                    </div>
+                                                                    <button type="button" class="btn-sm btn-dark">검색</button>
+                                                                </div>
+                                                                <div class="search-filter-search-util">
+                                                                    <div class="input-choice">
+                                                                        <input type="checkbox" id="statFilterAreaAll">
+                                                                        <label for="statFilterAreaAll">전체선택</label>
+                                                                    </div>
+                                                                    <button type="button" class="btn-filter-reset">초기화</button>
+                                                                </div>
+                                                            </div>
+                                                            <div class="search-filter-list">
+                                                                <div class="input-choice"><input type="checkbox" name="statFilterArea" id="statFilterArea1" value="서울" checked><label for="statFilterArea1">서울</label></div>
+                                                                <div class="input-choice"><input type="checkbox" name="statFilterArea" id="statFilterArea2" value="부산" checked><label for="statFilterArea2">부산</label></div>
+                                                                <div class="input-choice"><input type="checkbox" name="statFilterArea" id="statFilterArea3" value="대구" checked><label for="statFilterArea3">대구</label></div>
+                                                                <div class="input-choice"><input type="checkbox" name="statFilterArea" id="statFilterArea4" value="인천"><label for="statFilterArea4">인천</label></div>
+                                                                <div class="input-choice"><input type="checkbox" name="statFilterArea" id="statFilterArea5" value="광주"><label for="statFilterArea5">광주</label></div>
+                                                                <div class="input-choice"><input type="checkbox" name="statFilterArea" id="statFilterArea6" value="대전"><label for="statFilterArea6">대전</label></div>
+                                                                <div class="input-choice"><input type="checkbox" name="statFilterArea" id="statFilterArea7" value="울산"><label for="statFilterArea7">울산</label></div>
+                                                                <div class="input-choice"><input type="checkbox" name="statFilterArea" id="statFilterArea8" value="세종"><label for="statFilterArea8">세종</label></div>
+                                                                <div class="input-choice"><input type="checkbox" name="statFilterArea" id="statFilterArea9" value="경기"><label for="statFilterArea9">경기</label></div>
+                                                                <div class="input-choice"><input type="checkbox" name="statFilterArea" id="statFilterArea10" value="강원"><label for="statFilterArea10">강원</label></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="search-filter-group" data-filter-id="sector" data-chip-label="부문">
+                                                        <h4 class="search-filter-head">
+                                                            <button type="button" class="search-filter-toggle js-search-filter-acc" aria-expanded="false" aria-controls="statFilterPanelSector">
+                                                                <span class="tit">부문</span>
+                                                                <span class="sum"></span>
+                                                            </button>
+                                                        </h4>
+                                                        <div class="search-filter-panel" id="statFilterPanelSector">
+                                                            <div class="search-filter-search">
+                                                                <div class="search-filter-search-row">
+                                                                    <div class="inp">
+                                                                        <label for="statFilterSectorKeyword" class="sr-only">부문 항목 검색</label>
+                                                                        <input type="text" id="statFilterSectorKeyword" placeholder="항목 검색" autocomplete="off">
+                                                                    </div>
+                                                                    <button type="button" class="btn-sm btn-dark">검색</button>
+                                                                </div>
+                                                                <div class="search-filter-search-util is-single">
+                                                                    <button type="button" class="btn-filter-reset">초기화</button>
+                                                                </div>
+                                                            </div>
+                                                            <div class="search-filter-list">
+                                                                <div class="input-choice"><input type="radio" name="statFilterSector" id="statFilterSector1" value="합계"><label for="statFilterSector1">합계</label></div>
+                                                                <div class="input-choice"><input type="radio" name="statFilterSector" id="statFilterSector2" value="유치원" checked><label for="statFilterSector2">유치원</label></div>
+                                                                <div class="input-choice"><input type="radio" name="statFilterSector" id="statFilterSector3" value="초등학교"><label for="statFilterSector3">초등학교</label></div>
+                                                                <div class="input-choice"><input type="radio" name="statFilterSector" id="statFilterSector4" value="중학교"><label for="statFilterSector4">중학교</label></div>
+                                                                <div class="input-choice"><input type="radio" name="statFilterSector" id="statFilterSector5" value="고등학교"><label for="statFilterSector5">고등학교</label></div>
+                                                                <div class="input-choice"><input type="radio" name="statFilterSector" id="statFilterSector6" value="특수학교"><label for="statFilterSector6">특수학교</label></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="search-filter-group" data-filter-id="program" data-chip-label="프로그램명">
+                                                        <h4 class="search-filter-head">
+                                                            <button type="button" class="search-filter-toggle js-search-filter-acc" aria-expanded="false" aria-controls="statFilterPanelProgram">
+                                                                <span class="tit">프로그램명</span>
+                                                                <span class="sum"></span>
+                                                            </button>
+                                                        </h4>
+                                                        <div class="search-filter-panel" id="statFilterPanelProgram">
+                                                            <div class="search-filter-search">
+                                                                <div class="search-filter-search-row">
+                                                                    <div class="inp">
+                                                                        <label for="statFilterProgramKeyword" class="sr-only">프로그램명 항목 검색</label>
+                                                                        <input type="text" id="statFilterProgramKeyword" placeholder="항목 검색" autocomplete="off">
+                                                                    </div>
+                                                                    <button type="button" class="btn-sm btn-dark">검색</button>
+                                                                </div>
+                                                                <div class="search-filter-search-util is-single">
+                                                                    <button type="button" class="btn-filter-reset">초기화</button>
+                                                                </div>
+                                                            </div>
+                                                            <div class="search-filter-list">
+                                                                <div class="input-choice"><input type="radio" name="statFilterProgram" id="statFilterProgram1" value="교육지원" checked><label for="statFilterProgram1">교육지원</label></div>
+                                                                <div class="input-choice"><input type="radio" name="statFilterProgram" id="statFilterProgram2" value="유아교육"><label for="statFilterProgram2">유아교육</label></div>
+                                                                <div class="input-choice"><input type="radio" name="statFilterProgram" id="statFilterProgram3" value="평생교육"><label for="statFilterProgram3">평생교육</label></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="search-filter-foot">
+                                                    <button type="button" class="btn-filter-reset is-lg">초기화</button>
+                                                    <button type="button" class="btn-nm btn-blue js-search-filter-apply">적용</button>
+                                                </div>
+                                            </div>
+                                            <!-- // 검색조건 설정 레이어팝업 -->
+                                        </div>
+                                        <span class="search-option-chip" data-filter-target="area"><span>지역구분: 서울 외 2</span><button type="button" aria-label="지역구분 검색조건 삭제"><img src="../images/common/ico-file-remove.svg" width="14" height="14" alt=""></button></span>
+                                        <span class="search-option-chip" data-filter-target="sector"><span>부문: 유치원</span><button type="button" aria-label="부문 검색조건 삭제"><img src="../images/common/ico-file-remove.svg" width="14" height="14" alt=""></button></span>
+                                        <span class="search-option-chip" data-filter-target="program"><span>프로그램명: 교육지원</span><button type="button" aria-label="프로그램명 검색조건 삭제"><img src="../images/common/ico-file-remove.svg" width="14" height="14" alt=""></button></span>
+                                    </div>
+                                    <div class="form-search-btns">
+                                        <button type="reset" class="btn-reset">초기화</button>
+                                        <button type="submit" class="btn-search">검색</button>
+                                    </div>
+                                </form>
+
+                                <div class="data-util">
+                                    <div class="left">
+                                        <div class="total">총 <em>1</em>건</div>
+                                    </div>
+                                </div>
+                                <div class="data-default line-type stat-link-table">
+                                    <div class="scroll">
+                                        <table>
+                                            <caption class="sr-only">바로가기 목록 — NO, URL, 바로가기, URL명, 조회수, 등록일자</caption>
+                                            <colgroup>
+                                                <col style="width:80px;">
+                                                <col style="min-width:340px;">
+                                                <col style="width:100px;min-width:100px;">
+                                                <col style="width:200px;min-width:200px;">
+                                                <col style="width:80px;min-width:80px;">
+                                                <col style="width:160px;min-width:160px;">
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">NO</th>
+                                                    <th scope="col">URL</th>
+                                                    <th scope="col">바로가기</th>
+                                                    <th scope="col">URL명</th>
+                                                    <th scope="col">조회수</th>
+                                                    <th scope="col">등록일자</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>https://tasis.nts.go.kr/</td>
+                                                    <td><a href="https://tasis.nts.go.kr/" class="btn-xsm btn-white" target="_blank" rel="noopener">바로가기<span class="sr-only">(새 창 열림)</span></a></td>
+                                                    <td>국세통계</td>
+                                                    <td>495</td>
+                                                    <td>2022-01-02</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>https://tasis.nts.go.kr/</td>
+                                                    <td><a href="https://tasis.nts.go.kr/" class="btn-xsm btn-white" target="_blank" rel="noopener">바로가기<span class="sr-only">(새 창 열림)</span></a></td>
+                                                    <td>국세통계</td>
+                                                    <td>495</td>
+                                                    <td>2022-01-02</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>https://tasis.nts.go.kr/</td>
+                                                    <td><a href="https://tasis.nts.go.kr/" class="btn-xsm btn-white" target="_blank" rel="noopener">바로가기<span class="sr-only">(새 창 열림)</span></a></td>
+                                                    <td>국세통계</td>
+                                                    <td>495</td>
+                                                    <td>2022-01-02</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="pagination-wrap">
+                                  <nav class="pagination-type" aria-label="페이지네이션" id="pagination">
+                                      <button type="button" class="pg-prev" aria-label="이전 페이지" disabled="">
+                                      <i class="ico-pg-arrow"></i>
+                                      <span>이전</span>
+                                      </button>
+                                      <ul class="pg-list"><li class="on"><button type="button" aria-current="page">1</button></li><li><button type="button" aria-label="2페이지">2</button></li><li><button type="button" aria-label="3페이지">3</button></li><li><button type="button" aria-label="4페이지">4</button></li><li><button type="button" aria-label="5페이지">5</button></li><li><button type="button" aria-label="6페이지">6</button></li><li><button type="button" aria-label="7페이지">7</button></li><li><button type="button" aria-label="8페이지">8</button></li><li class="pg-ellipsis"><button type="button" aria-label="8페이지 이동"><span class="dots"><span></span><span></span><span></span></span></button></li><li><button type="button" aria-label="99페이지">99</button></li></ul>
+                                      <button type="button" class="pg-next" aria-label="다음 페이지">
+                                      <span>다음</span>
+                                      <i class="ico-pg-arrow"></i>
+                                      </button>
+                                  </nav>
+                              </div>
+                            </div>
+                            <!-- // tab-content -->
+
+                            
+                            <!-- // tab-content stat-openapi -->
+
+                            <div class="data-detail">
+                                <table>
+                                    <caption class="sr-only">통계 메타 정보 — 자료출처, 마감시간, 통계생산기관, 최초공개일자</caption>
+                                    <colgroup>
+                                        <col style="width:160px">
+                                        <col>
+                                        <col style="width:160px">
+                                        <col>
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">자료출처</th>
+                                            <td>각 연도 주요 재정통계</td>
+                                            <th scope="row">마감시간</th>
+                                            <td>
+                                                <p>본 저작물은 ‘공공누리’ 제3유형·출처표시+변경금지 조건에 따라 이용할 수 있습니다.</p>
+                                                <span class="kogl"><img src="../images/content/img-kogl.png" alt="공공누리 제3유형 출처표시+변경금지"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">통계생산기관</th>
+                                            <td>한국재정정보원</td>
+                                            <th scope="row">최초공개일자</th>
+                                            <td>2021-11-13</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // stat-main -->
+                </div>
+                <!-- // stat-layout -->
+
+                <script id="feedback-template">
+                    // 피드백
+                    $.ajax({url:"common/feedback.txt", dataType:"text", success:function(data){
+                        $('#feedback-template').replaceWith(data);
+                        pageFeedback();
+                    }});
+                </script>
+            </div>
+            <!-- //contents -->
+
+            <script id="floating-template">
+                // 플로팅메뉴
+                $.ajax({url:"common/floating.txt", dataType:"text", success:function(data){
+                    $('#floating-template').replaceWith(data);
+                }});
+            </script>
+        </div>
+        <script id="footer-template">
+            // 푸터
+            $.ajax({url:"common/footer.txt", dataType:"text", success:function(data){
+                $('#footer-template').replaceWith(data);
+            }});
+        </script>
+    </div>
+    <!-- // wrap -->
+
+
+
+<!-- 검색조건 설정 레이어팝업 -->
+<script>
+// 검색조건 설정 레이어팝업 열기/닫기
+function statSearchFilterLayer(){
+    var $wrap = $('.search-filter-wrap');
+    if(!$wrap.length) return;
+
+    var $layer = $wrap.find('.search-filter-layer');
+    var $toggle = $wrap.find('.js-search-filter-toggle');
+    var lastFocus = null;
+
+    function openLayer(){
+        lastFocus = document.activeElement;
+        $wrap.addClass('is-open');
+        $layer.removeAttr('hidden').attr('aria-modal', 'true');
+        $toggle.attr('aria-expanded', 'true');
+
+        // 열 때마다 첫번째(지역명) 아코디언이 열린 상태로 시작
+        statSearchFilterAccordionReset($layer);
+        $layer.find('.search-filter-body').scrollTop(0);
+
+        // 적용하지 않고 닫았던 변경값은 되돌림
+        $layer.trigger('searchfilter:open');
+
+        setTimeout(function(){
+            var $first = $layer.find('.search-filter-group.is-open .search-filter-toggle').first();
+            if(!$first.length) $first = $layer.find('.search-filter-toggle').first();
+            $first.trigger('focus');
+        }, 0);
+    }
+
+    function closeLayer(){
+        if(!$wrap.hasClass('is-open')) return;
+        $wrap.removeClass('is-open');
+        $layer.attr({'hidden': true, 'aria-modal': 'false'});
+        $toggle.attr('aria-expanded', 'false');
+
+        if(lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
+        lastFocus = null;
+    }
+
+    // 버튼으로 열기/닫기
+    $toggle.on('click', function(e){
+        e.stopPropagation();
+        if($wrap.hasClass('is-open')) closeLayer();
+        else openLayer();
+    });
+
+    // 적용 버튼으로 닫기
+    $layer.on('click', '.js-search-filter-apply', function(){
+        closeLayer();
+    });
+
+    // 레이어 내부 클릭은 닫히지 않도록
+    $layer.on('click', function(e){
+        e.stopPropagation();
+    });
+
+    // 바깥 클릭 / ESC 로 닫기
+    $(document).on('click.searchFilterLayer', function(){
+        closeLayer();
+    });
+
+    $(document).on('keydown.searchFilterLayer', function(e){
+        if(e.key === 'Escape' || e.keyCode === 27) closeLayer();
+    });
+}
+
+// 검색조건 설정 레이어팝업 아코디언 초기화 (첫번째 그룹만 열림)
+function statSearchFilterAccordionReset($layer){
+    if(!$layer || !$layer.length) return;
+
+    var $groups = $layer.find('.search-filter-group');
+    $groups.removeClass('is-open').find('.search-filter-toggle').attr('aria-expanded', 'false');
+    $groups.first().addClass('is-open').find('.search-filter-toggle').attr('aria-expanded', 'true');
+}
+
+// 검색조건 설정 레이어팝업 아코디언
+function statSearchFilterAccordion(){
+    var $layer = $('.search-filter-layer');
+    if(!$layer.length) return;
+
+    $layer.on('click', '.js-search-filter-acc', function(){
+        var $group = $(this).closest('.search-filter-group');
+
+        if($group.hasClass('is-open')){
+            $group.removeClass('is-open');
+            $(this).attr('aria-expanded', 'false');
+            return;
+        }
+
+        $group.closest('.search-filter-body').find('.search-filter-group').removeClass('is-open')
+            .find('.search-filter-toggle').attr('aria-expanded', 'false');
+        $group.addClass('is-open');
+        $(this).attr('aria-expanded', 'true');
+    });
+}
+
+// 검색조건 설정 레이어팝업 초기화 버튼
+function statSearchFilterReset(){
+    var $layer = $('.search-filter-layer');
+    if(!$layer.length) return;
+
+    // 그룹 선택값 / 전체선택 / 항목검색어 비우기
+    function resetGroup($group){
+        $group.find('.search-filter-list input').prop('checked', false);
+        $group.find('.search-filter-search-util input[type="checkbox"]').prop('checked', false);
+        $group.find('.search-filter-search-row input[type="text"]').val('');
+    }
+
+    // 그룹 초기화
+    $layer.on('click', '.search-filter-panel .btn-filter-reset', function(){
+        resetGroup($(this).closest('.search-filter-group'));
+        $layer.trigger('searchfilter:reset');
+    });
+
+    // 전체 초기화
+    $layer.on('click', '.search-filter-foot .btn-filter-reset', function(){
+        $layer.find('.search-filter-group').each(function(){
+            resetGroup($(this));
+        });
+        $layer.trigger('searchfilter:reset');
+    });
+}
+
+// 검색조건 설정 레이어팝업 선택값 → 검색조건 칩 반영
+function statSearchFilterChip(){
+    var $wrap = $('.search-filter-wrap');
+    if(!$wrap.length) return;
+
+    var $chipArea = $wrap.parent('.search-option-chips');
+    var $layer = $wrap.find('.search-filter-layer');
+    if(!$chipArea.length || !$layer.length) return;
+
+    // 마지막으로 적용된 선택값 { 그룹id: [input id, ...] }
+    var applied = {};
+
+    // 현재 선택값을 적용값으로 저장
+    function saveApplied(){
+        applied = {};
+        $layer.find('.search-filter-group').each(function(){
+            var $group = $(this);
+            var ids = [];
+            $group.find('.search-filter-list input').filter(':checked').each(function(){
+                ids.push(this.id);
+            });
+            applied[$group.attr('data-filter-id')] = ids;
+        });
+    }
+
+    // 적용값으로 되돌리기 (적용 없이 닫은 경우)
+    function restoreApplied(){
+        $layer.find('.search-filter-group').each(function(){
+            var $group = $(this);
+            var ids = applied[$group.attr('data-filter-id')] || [];
+
+            $group.find('.search-filter-list input').each(function(){
+                this.checked = ids.indexOf(this.id) > -1;
+            });
+            $group.find('.search-filter-search-util input[type="checkbox"]').prop('checked', false);
+            $group.find('.search-filter-search-row input[type="text"]').val('');
+        });
+        renderSummary();
+    }
+
+    // 그룹에서 선택한 항목명 수집
+    function getSelected($group){
+        var labels = [];
+        $group.find('.search-filter-list input').filter(':checked').each(function(){
+            labels.push($(this).closest('.input-choice').find('label').text().replace(/^\s+|\s+$/g, ''));
+        });
+        return labels;
+    }
+
+    // 아코디언 헤더 우측 요약문구 (예: 서울 외 2건)
+    function renderSummary(){
+        $layer.find('.search-filter-group').each(function(){
+            var $group = $(this);
+            var labels = getSelected($group);
+            var $sum = $group.find('.search-filter-toggle .sum');
+
+            if(!labels.length) $sum.empty();
+            else if(labels.length === 1) $sum.text(labels[0]);
+            else $sum.html($('<span></span>').text(labels[0]).html() + ' 외 <em>' + (labels.length - 1) + '</em>건');
+        });
+    }
+
+    // 검색조건 칩 다시 그리기
+    function renderChips(){
+        $chipArea.children('.search-option-chip').remove();
+
+        $layer.find('.search-filter-group').each(function(){
+            var $group = $(this);
+            var labels = getSelected($group);
+            if(!labels.length) return;
+
+            var name = $group.attr('data-chip-label');
+            var text = labels.length === 1 ? labels[0] : labels[0] + ' 외 ' + (labels.length - 1);
+
+            $chipArea.append(
+                $('<span class="search-option-chip"></span>')
+                    .attr('data-filter-target', $group.attr('data-filter-id'))
+                    .append($('<span></span>').text(name + ': ' + text))
+                    .append($('<button type="button"></button>')
+                        .attr('aria-label', name + ' 검색조건 삭제')
+                        .append('<img src="../images/common/ico-file-remove.svg" width="14" height="14" alt="">'))
+            );
+        });
+    }
+
+    // 항목 선택 / 초기화 시 헤더 요약문구 갱신
+    $layer.on('change', '.search-filter-list input', function(){
+        renderSummary();
+    });
+
+    $layer.on('searchfilter:reset', function(){
+        renderSummary();
+    });
+
+    // 레이어를 열 때 마지막 적용값으로 되돌리기
+    $layer.on('searchfilter:open', function(){
+        restoreApplied();
+    });
+
+    // 적용 → 선택값 저장 + 칩 갱신
+    $layer.on('click', '.js-search-filter-apply', function(){
+        saveApplied();
+        renderChips();
+    });
+
+    // 칩 삭제 → 해당 그룹 선택 해제
+    $chipArea.on('click', '.search-option-chip button', function(){
+        var target = $(this).closest('.search-option-chip').attr('data-filter-target');
+        $layer.find('.search-filter-group[data-filter-id="' + target + '"]')
+            .find('.search-filter-list input').prop('checked', false);
+        saveApplied();
+        renderSummary();
+        renderChips();
+    });
+
+    saveApplied();
+    renderSummary();
+    renderChips();
+}
+
+$(function(){
+    statSearchFilterLayer();
+    statSearchFilterAccordion();
+    statSearchFilterChip();
+    statSearchFilterReset();
+});
+</script>
+</body>
+</html>

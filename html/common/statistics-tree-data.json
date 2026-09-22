@@ -1,0 +1,2939 @@
+[
+  {
+    "id": "A101",
+    "parent": "#",
+    "text": "중앙정부",
+    "otptOrd": 100,
+    "state": {
+      "opened": true
+    }
+  },
+  {
+    "id": "B050",
+    "parent": "A101",
+    "text": "주요재정통계",
+    "otptOrd": 1,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "C201",
+    "parent": "B050",
+    "text": "재정수입",
+    "otptOrd": 3,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "D301",
+    "parent": "C201",
+    "text": "총수입",
+    "otptOrd": 1,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "D302",
+    "parent": "C201",
+    "text": "국세수입",
+    "otptOrd": 2,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "D303",
+    "parent": "C201",
+    "text": "세외수입",
+    "otptOrd": 3,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "C202",
+    "parent": "B050",
+    "text": "재정지출",
+    "otptOrd": 250,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "D304",
+    "parent": "C202",
+    "text": "총지출",
+    "otptOrd": 1,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "D305",
+    "parent": "C202",
+    "text": "회계·기금별",
+    "otptOrd": 2,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "D306",
+    "parent": "C202",
+    "text": "분야별",
+    "otptOrd": 3,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "D307",
+    "parent": "C202",
+    "text": "의무·재량별",
+    "otptOrd": 4,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "D308",
+    "parent": "C202",
+    "text": "소관별",
+    "otptOrd": 5,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "D309",
+    "parent": "C202",
+    "text": "성질별",
+    "otptOrd": 6,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "D310",
+    "parent": "C202",
+    "text": "유형별",
+    "otptOrd": 7,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "D311",
+    "parent": "C202",
+    "text": "예산의집행(총지출기준)",
+    "otptOrd": 8,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "C206",
+    "parent": "B050",
+    "text": "재정건전성",
+    "otptOrd": 260,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "D312",
+    "parent": "C206",
+    "text": "재정수지",
+    "otptOrd": 1,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "D313",
+    "parent": "C206",
+    "text": "국가채무(D1)",
+    "otptOrd": 2,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "D329",
+    "parent": "C206",
+    "text": "일반정부부채(D2),공공부문부채(D3)",
+    "otptOrd": 3,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "C205",
+    "parent": "B050",
+    "text": "세계잉여금",
+    "otptOrd": 290,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "C207",
+    "parent": "B050",
+    "text": "지방재정조정",
+    "otptOrd": 300,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "B052",
+    "parent": "B050",
+    "text": "기금별운용현황",
+    "otptOrd": 310,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "C232",
+    "parent": "B050",
+    "text": "분야별 프로그램",
+    "otptOrd": 311,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "B140",
+    "parent": "A101",
+    "text": "상세재정통계",
+    "otptOrd": 2,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "C234",
+    "parent": "B140",
+    "text": "예산",
+    "otptOrd": 1,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "D314",
+    "parent": "C234",
+    "text": "세출/지출",
+    "otptOrd": 1,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "D315",
+    "parent": "C234",
+    "text": "세입/수입",
+    "otptOrd": 2,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "D330",
+    "parent": "C234",
+    "text": "정부구매예산",
+    "otptOrd": 3,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "C235",
+    "parent": "B140",
+    "text": "집행",
+    "otptOrd": 3,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "D319",
+    "parent": "C235",
+    "text": "수입",
+    "otptOrd": 1,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "D318",
+    "parent": "C235",
+    "text": "지출",
+    "otptOrd": 2,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "D316",
+    "parent": "C235",
+    "text": "집행실적",
+    "otptOrd": 3,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "D317",
+    "parent": "C235",
+    "text": "총사업비",
+    "otptOrd": 4,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "C236",
+    "parent": "B140",
+    "text": "결산",
+    "otptOrd": 5,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "D327",
+    "parent": "C236",
+    "text": "국유재산",
+    "otptOrd": 1,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "D323",
+    "parent": "C236",
+    "text": "부담금",
+    "otptOrd": 3,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "D320",
+    "parent": "C236",
+    "text": "세입/세출",
+    "otptOrd": 4,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "D326",
+    "parent": "C236",
+    "text": "연기금투자풀",
+    "otptOrd": 5,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "D322",
+    "parent": "C236",
+    "text": "재무제표(2025이전)",
+    "otptOrd": 6,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "D343",
+    "parent": "C236",
+    "text": "재무제표(2025이후)",
+    "otptOrd": 7,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "D328",
+    "parent": "C236",
+    "text": "일시차입",
+    "otptOrd": 8,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "D324",
+    "parent": "C236",
+    "text": "채권",
+    "otptOrd": 9,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "D325",
+    "parent": "C236",
+    "text": "출자",
+    "otptOrd": 10,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "C237",
+    "parent": "B140",
+    "text": "국가채무",
+    "otptOrd": 10,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "B053",
+    "parent": "A101",
+    "text": "월간재정동향",
+    "otptOrd": 20,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "C239",
+    "parent": "B053",
+    "text": "수입",
+    "otptOrd": 1,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "C240",
+    "parent": "B053",
+    "text": "지출",
+    "otptOrd": 2,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "C238",
+    "parent": "B053",
+    "text": "채무",
+    "otptOrd": 3,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "C241",
+    "parent": "B053",
+    "text": "수지",
+    "otptOrd": 4,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "B060",
+    "parent": "A101",
+    "text": "통합재정통계",
+    "otptOrd": 50,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "C208",
+    "parent": "B060",
+    "text": "86 GFS",
+    "otptOrd": 330,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "C209",
+    "parent": "B060",
+    "text": "01 GFS",
+    "otptOrd": 340,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "C255",
+    "parent": "B060",
+    "text": "중앙정부",
+    "otptOrd": 341,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "B080",
+    "parent": "A101",
+    "text": "재정보고서",
+    "otptOrd": 480,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "C233",
+    "parent": "B080",
+    "text": "국가재정운용계획",
+    "otptOrd": 410,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "A102",
+    "parent": "#",
+    "text": "지방정부",
+    "otptOrd": 522,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "B090",
+    "parent": "A102",
+    "text": "지방재정",
+    "otptOrd": 190,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "C216",
+    "parent": "B090",
+    "text": "예산",
+    "otptOrd": 440,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "C247",
+    "parent": "B090",
+    "text": "집행",
+    "otptOrd": 450,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "C217",
+    "parent": "B090",
+    "text": "결산",
+    "otptOrd": 460,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "C218",
+    "parent": "B090",
+    "text": "재정건전성",
+    "otptOrd": 470,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "C249",
+    "parent": "B090",
+    "text": "재무제표",
+    "otptOrd": 471,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "C219",
+    "parent": "B090",
+    "text": "재정여건",
+    "otptOrd": 472,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "C252",
+    "parent": "B090",
+    "text": "기금",
+    "otptOrd": 473,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "B100",
+    "parent": "A102",
+    "text": "지방교육재정",
+    "otptOrd": 430,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "C220",
+    "parent": "B100",
+    "text": "예산",
+    "otptOrd": 490,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "C250",
+    "parent": "B100",
+    "text": "집행",
+    "otptOrd": 500,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "C221",
+    "parent": "B100",
+    "text": "결산",
+    "otptOrd": 510,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "C222",
+    "parent": "B100",
+    "text": "재정건전성",
+    "otptOrd": 520,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "C251",
+    "parent": "B100",
+    "text": "재무제표",
+    "otptOrd": 521,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "C223",
+    "parent": "B100",
+    "text": "재정여건",
+    "otptOrd": 521,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "C253",
+    "parent": "B100",
+    "text": "기금",
+    "otptOrd": 522,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "B026",
+    "parent": "#",
+    "text": "국세통계연보(국세청)",
+    "otptOrd": 523,
+    "state": {
+      "opened": false
+    }
+  },
+  {
+    "id": "VC0T4J24EEW5D3258BK570SWJ",
+    "parent": "C221",
+    "text": "성질별 학교회계전출금",
+    "odtId": "VC0T4J24EEW5D3258BK570SWJ",
+    "otptOrd": 384,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "86S5N4Q5P4V0XR60T5EWH1GNL",
+    "parent": "B026",
+    "text": "연도별·세목별 세수 실적",
+    "odtId": "86S5N4Q5P4V0XR60T5EWH1GNL",
+    "otptOrd": 114,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "J78283OUC46U3E7M5FKTZ417Q",
+    "parent": "B026",
+    "text": "법인세 신고 현황Ⅰ(소재지,업태)",
+    "odtId": "J78283OUC46U3E7M5FKTZ417Q",
+    "otptOrd": 141,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "474P018K2FZ57117274NN3E71",
+    "parent": "B026",
+    "text": "법인세 신고 현황(소득금액,과세표준,총부담세액)",
+    "odtId": "474P018K2FZ57117274NN3E71",
+    "otptOrd": 142,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "S6F8ZPP5DDB1M8A3CE48605Y1",
+    "parent": "B026",
+    "text": "업태별수입금액규모별 법인세 주요항목 신고 현황",
+    "odtId": "S6F8ZPP5DDB1M8A3CE48605Y1",
+    "otptOrd": 143,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "J43L32VS4BZ0033C1445E87NX",
+    "parent": "B026",
+    "text": "세부 업종별 법인세 주요항목 신고 현황",
+    "odtId": "J43L32VS4BZ0033C1445E87NX",
+    "otptOrd": 144,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "5MDHE44WHF8S7N20ST34BY54E",
+    "parent": "B026",
+    "text": "상속세 신고 현황(납세지)",
+    "odtId": "5MDHE44WHF8S7N20ST34BY54E",
+    "otptOrd": 145,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "P181PEC80Z05ZTN8QTJ6HQ5H8",
+    "parent": "B026",
+    "text": "증여세 신고 현황(납세지)",
+    "odtId": "P181PEC80Z05ZTN8QTJ6HQ5H8",
+    "otptOrd": 146,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "H6878IT30ZCIG3N2CLR2P77K7",
+    "parent": "B026",
+    "text": "부가가치세 신고 현황 총괄",
+    "odtId": "H6878IT30ZCIG3N2CLR2P77K7",
+    "otptOrd": 147,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "Z150F08RLU61EBKVV22K7N11B",
+    "parent": "B026",
+    "text": "부가가치율 현황",
+    "odtId": "Z150F08RLU61EBKVV22K7N11B",
+    "otptOrd": 148,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "0DS7YY8AOB3FUEZ5OM531QZ0Z",
+    "parent": "B026",
+    "text": "사업자 현황 (지역, 업태)",
+    "odtId": "0DS7YY8AOB3FUEZ5OM531QZ0Z",
+    "otptOrd": 149,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "R83QZS6DVFIK6JV36NP614173",
+    "parent": "C238",
+    "text": "월별 국가채무(중앙정부)",
+    "odtId": "R83QZS6DVFIK6JV36NP614173",
+    "otptOrd": 151,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "J4767STHIN5GDO6V457576815",
+    "parent": "D318",
+    "text": "월별 지출운용상황",
+    "odtId": "J4767STHIN5GDO6V457576815",
+    "otptOrd": 94,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "11UN000D6M7UJ2LFRO76OG35Y",
+    "parent": "C237",
+    "text": "국가채무(D1)",
+    "odtId": "11UN000D6M7UJ2LFRO76OG35Y",
+    "otptOrd": 153,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "415EFE7TWXE4SE40IE8E4JJA7",
+    "parent": "C237",
+    "text": "공공부문 부채(D3)",
+    "odtId": "415EFE7TWXE4SE40IE8E4JJA7",
+    "otptOrd": 155,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "CR1335G515AW73XVX75034WWS",
+    "parent": "D310",
+    "text": "분야별출자금추이",
+    "odtId": "CR1335G515AW73XVX75034WWS",
+    "otptOrd": 224,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "WJ6862ARP5QC0XZ4PP21H6614",
+    "parent": "D311",
+    "text": "불용성질별추이",
+    "odtId": "WJ6862ARP5QC0XZ4PP21H6614",
+    "otptOrd": 248,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "6C822850W150334J1N3C0F8UO",
+    "parent": "D310",
+    "text": "기본경비추이",
+    "odtId": "6C822850W150334J1N3C0F8UO",
+    "otptOrd": 202,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "6566DKY5Y5UR183VPK467V062",
+    "parent": "D310",
+    "text": "본예산기준인건비,경비,사업비추이",
+    "odtId": "6566DKY5Y5UR183VPK467V062",
+    "otptOrd": 207,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "LEJYY1MIICN4BNPXJJ4B16R48",
+    "parent": "D311",
+    "text": "회계·기금별집행추이",
+    "odtId": "LEJYY1MIICN4BNPXJJ4B16R48",
+    "otptOrd": 199,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "XX3FNQ2KVW3474X45T6H28R4H",
+    "parent": "D311",
+    "text": "이월의성질별추이",
+    "odtId": "XX3FNQ2KVW3474X45T6H28R4H",
+    "otptOrd": 247,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "876GQ258BG0HO7OQW517HI2I0",
+    "parent": "C220",
+    "text": "세출예산",
+    "odtId": "876GQ258BG0HO7OQW517HI2I0",
+    "otptOrd": 64,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "B167HAT3S6EV1QT7OO041OEEK",
+    "parent": "D327",
+    "text": "지역별 국유지 현황",
+    "odtId": "B167HAT3S6EV1QT7OO041OEEK",
+    "otptOrd": 256,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "VZWQ110DL74Q2210S4IVF4307",
+    "parent": "D309",
+    "text": "성질별지출추이",
+    "odtId": "VZWQ110DL74Q2210S4IVF4307",
+    "otptOrd": 243,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "217EPV2FL8GAZCTI1767203UN",
+    "parent": "D310",
+    "text": "자본지출현황",
+    "odtId": "217EPV2FL8GAZCTI1767203UN",
+    "otptOrd": 215,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "WZE104GQC037H2BCSXZ8QX4CH",
+    "parent": "D310",
+    "text": "출연금지출추이",
+    "odtId": "WZE104GQC037H2BCSXZ8QX4CH",
+    "otptOrd": 238,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "5JVB22KUDE71A1SMR67O50R63",
+    "parent": "D306",
+    "text": "16대분야별재원배분(총지출기준)",
+    "odtId": "5JVB22KUDE71A1SMR67O50R63",
+    "otptOrd": 216,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "3CI1223X5YVY182YYL370GPO1",
+    "parent": "D307",
+    "text": "의무·재량지출규모추이",
+    "odtId": "3CI1223X5YVY182YYL370GPO1",
+    "otptOrd": 237,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "02S6HQ5B5TG63EWH0BDO7533R",
+    "parent": "D310",
+    "text": "분야별융자지출추이",
+    "odtId": "02S6HQ5B5TG63EWH0BDO7533R",
+    "otptOrd": 225,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "8R3P781UEN155J8310607M1P3",
+    "parent": "D311",
+    "text": "회계·기금별이월추이",
+    "odtId": "8R3P781UEN155J8310607M1P3",
+    "otptOrd": 218,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "X6SBD1UL071O5RL176R0T8F08",
+    "parent": "D311",
+    "text": "분야별집행추이",
+    "odtId": "X6SBD1UL071O5RL176R0T8F08",
+    "otptOrd": 235,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "H7GCV636S3DS176V22KI22D45",
+    "parent": "D311",
+    "text": "분야별불용추이",
+    "odtId": "H7GCV636S3DS176V22KI22D45",
+    "otptOrd": 234,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "68EHHHFZH403WYI43Q3GM8YQ0",
+    "parent": "C207",
+    "text": "자치단체국고보조사업추이",
+    "odtId": "68EHHHFZH403WYI43Q3GM8YQ0",
+    "otptOrd": 250,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "11530303I1O6I7G20C3VF8F27",
+    "parent": "C208",
+    "text": "수입의경제적분류(86GFS결산)",
+    "odtId": "11530303I1O6I7G20C3VF8F27",
+    "otptOrd": 321,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "1E7AP8EN76ROE56740OFWKHWV",
+    "parent": "C208",
+    "text": "지출및순융자의경제적분류(86GFS결산)",
+    "odtId": "1E7AP8EN76ROE56740OFWKHWV",
+    "otptOrd": 322,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "I66U7HVSKV60Y51B003671U4A",
+    "parent": "C208",
+    "text": "지출및순융자의기능적분류(86GFS결산)",
+    "odtId": "I66U7HVSKV60Y51B003671U4A",
+    "otptOrd": 323,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "UZ5G3R0X5GN7K51Y1THAK6IY2",
+    "parent": "C208",
+    "text": "순융자(86GFS결산)",
+    "odtId": "UZ5G3R0X5GN7K51Y1THAK6IY2",
+    "otptOrd": 324,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "ZVLJ68QP80424S1F4G23UQ260",
+    "parent": "C208",
+    "text": "보전재원(86GFS결산)",
+    "odtId": "ZVLJ68QP80424S1F4G23UQ260",
+    "otptOrd": 325,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "Q07SH6745Q7Y1L48DLFN4AT4X",
+    "parent": "C208",
+    "text": "내부거래(86GFS결산)",
+    "odtId": "Q07SH6745Q7Y1L48DLFN4AT4X",
+    "otptOrd": 326,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "AN6GOYS6S880H560VV7A5SFKU",
+    "parent": "C208",
+    "text": "통합재정수지(86GFS결산)",
+    "odtId": "AN6GOYS6S880H560VV7A5SFKU",
+    "otptOrd": 320,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "1031YN1S5J6E6857QM66I0C2T",
+    "parent": "C237",
+    "text": "일반정부 부채(D2)",
+    "odtId": "1031YN1S5J6E6857QM66I0C2T",
+    "otptOrd": 154,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "TZ22TWORNU617Q04MX4C4601K",
+    "parent": "C209",
+    "text": "정부운영표(01GFS)",
+    "odtId": "TZ22TWORNU617Q04MX4C4601K",
+    "otptOrd": 327,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "MFF513MAFFQ3M632BNT10P7OL",
+    "parent": "C209",
+    "text": "수익명세(01GFS)",
+    "odtId": "MFF513MAFFQ3M632BNT10P7OL",
+    "otptOrd": 328,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "LJ15TN67007D426E40YAU238G",
+    "parent": "C209",
+    "text": "비용명세(01GFS)",
+    "odtId": "LJ15TN67007D426E40YAU238G",
+    "otptOrd": 329,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "F4JS48TDMTWQG403455YN5TMT",
+    "parent": "C209",
+    "text": "거래명세(01GFS)",
+    "odtId": "F4JS48TDMTWQG403455YN5TMT",
+    "otptOrd": 330,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "Z8WTLI43TW06H25X40O281QLA",
+    "parent": "C209",
+    "text": "거래외명세(01GFS)",
+    "odtId": "Z8WTLI43TW06H25X40O281QLA",
+    "otptOrd": 331,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "ETYTQ6M7F8HW7ZZKL2E5242GS",
+    "parent": "C209",
+    "text": "재정상태표(01GFS)",
+    "odtId": "ETYTQ6M7F8HW7ZZKL2E5242GS",
+    "otptOrd": 332,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "31204IP4MI43LL36DW2T1Q32L",
+    "parent": "B052",
+    "text": "기금 자산운용 현황",
+    "odtId": "31204IP4MI43LL36DW2T1Q32L",
+    "otptOrd": 138,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "IHXZ4318JCZ8JN5G846EGDHD1",
+    "parent": "B052",
+    "text": "기금별 자산배분비중 현황",
+    "odtId": "IHXZ4318JCZ8JN5G846EGDHD1",
+    "otptOrd": 139,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "J782S37488H5F520G25X6AV2Z",
+    "parent": "B052",
+    "text": "기금별 투자풀 예치비중",
+    "odtId": "J782S37488H5F520G25X6AV2Z",
+    "otptOrd": 140,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "W440806600WI67286PX3VN23H",
+    "parent": "D324",
+    "text": "국가채권추이",
+    "odtId": "W440806600WI67286PX3VN23H",
+    "otptOrd": 58,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "QPD003G3C77N5W3CDH21M8E41",
+    "parent": "D324",
+    "text": "회계·기금별 국가채권 현황",
+    "odtId": "QPD003G3C77N5W3CDH21M8E41",
+    "otptOrd": 125,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "AC0B6OZCJ44DF1P38V0KBFRZ5",
+    "parent": "D325",
+    "text": "정부출자현황",
+    "odtId": "AC0B6OZCJ44DF1P38V0KBFRZ5",
+    "otptOrd": 127,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "2A8KD8BJ3S638S180S212IFAD",
+    "parent": "C205",
+    "text": "연도별총세입·총세출예산및결산",
+    "odtId": "2A8KD8BJ3S638S180S212IFAD",
+    "otptOrd": 204,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "32V45TS6G7ASLL4V5AQ1PM372",
+    "parent": "D312",
+    "text": "작성기준별주요재정통계(중앙정부기준)",
+    "odtId": "32V45TS6G7ASLL4V5AQ1PM372",
+    "otptOrd": 180,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "WJ56L22528WSH8KGX8T83I5K3",
+    "parent": "D310",
+    "text": "국고보조사업지출추이",
+    "odtId": "WJ56L22528WSH8KGX8T83I5K3",
+    "otptOrd": 232,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "FFSG86IZ6446853KGZA0Q1657",
+    "parent": "C207",
+    "text": "연도별지방교부세추이",
+    "odtId": "FFSG86IZ6446853KGZA0Q1657",
+    "otptOrd": 209,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "Z0WGFIO1VS1T7D1Q1841487YS",
+    "parent": "C207",
+    "text": "연도별교육재정교부금추이",
+    "odtId": "Z0WGFIO1VS1T7D1Q1841487YS",
+    "otptOrd": 210,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "JXBTUO2CD3PO6J2H6FV2734XA",
+    "parent": "D316",
+    "text": "소관별 주요관리대상사업 집행실적",
+    "odtId": "JXBTUO2CD3PO6J2H6FV2734XA",
+    "otptOrd": 97,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "66QV24FDSKW617H665112QT4G",
+    "parent": "C233",
+    "text": "중기 재정수입 전망",
+    "odtId": "66QV24FDSKW617H665112QT4G",
+    "otptOrd": 184,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "52QEPZ3V48ZK154WO6WU01F5I",
+    "parent": "D329",
+    "text": "부문별부채추이",
+    "odtId": "52QEPZ3V48ZK154WO6WU01F5I",
+    "otptOrd": 205,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "4T3MD406N3C52D2448JWR6173",
+    "parent": "C233",
+    "text": "중기 재정지출 계획",
+    "odtId": "4T3MD406N3C52D2448JWR6173",
+    "otptOrd": 223,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "4N52OPT74174436ZZ4Y8R3TPF",
+    "parent": "D305",
+    "text": "기금운용구분별운용규모(총지출기준)",
+    "odtId": "4N52OPT74174436ZZ4Y8R3TPF",
+    "otptOrd": 201,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "44147412J8180M163YA40VR4W",
+    "parent": "D311",
+    "text": "회계·기금별불용추이",
+    "odtId": "44147412J8180M163YA40VR4W",
+    "otptOrd": 226,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "L6LUL6R02S57M3O4Y83N65U0E",
+    "parent": "C233",
+    "text": "조세부담률 및 국민부담률",
+    "odtId": "L6LUL6R02S57M3O4Y83N65U0E",
+    "otptOrd": 219,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "A86O76VN8N1G3MHCF54HBB5A4",
+    "parent": "C221",
+    "text": "세출예산(결산)",
+    "odtId": "A86O76VN8N1G3MHCF54HBB5A4",
+    "otptOrd": 70,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "7N4C154L6N26LL4Q71037TDMY",
+    "parent": "C221",
+    "text": "세입예산(결산)",
+    "odtId": "7N4C154L6N26LL4Q71037TDMY",
+    "otptOrd": 73,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "388T035580BUGEUIZK0B8S32X",
+    "parent": "C233",
+    "text": "중기 재정수지 전망",
+    "odtId": "388T035580BUGEUIZK0B8S32X",
+    "otptOrd": 223,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "YW3J4NBTR6AV08556171T60TY",
+    "parent": "D310",
+    "text": "분야별국고보조사업지출추이",
+    "odtId": "YW3J4NBTR6AV08556171T60TY",
+    "otptOrd": 233,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "G6N84J7J0SV265X4GGZN03302",
+    "parent": "D310",
+    "text": "분야별출연금지출추이",
+    "odtId": "G6N84J7J0SV265X4GGZN03302",
+    "otptOrd": 240,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "61C3HFQ25W75RE85K31CSE234",
+    "parent": "D311",
+    "text": "총지출기준집행추이",
+    "odtId": "61C3HFQ25W75RE85K31CSE234",
+    "otptOrd": 193,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "H12FFF8C54K8FE541J5Q60TL2",
+    "parent": "C223",
+    "text": "재정자주도(결산)",
+    "odtId": "H12FFF8C54K8FE541J5Q60TL2",
+    "otptOrd": 229,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "G6S4THBC5271843AU4B2771TM",
+    "parent": "D327",
+    "text": "용도별 국유건물 현황",
+    "odtId": "G6S4THBC5271843AU4B2771TM",
+    "otptOrd": 258,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "56USXWDX7FU77F74ZI5376846",
+    "parent": "C217",
+    "text": "지역통합 자산결산",
+    "odtId": "56USXWDX7FU77F74ZI5376846",
+    "otptOrd": 83,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "E55U3H1UJOF3CK65K65ITHFDQ",
+    "parent": "D327",
+    "text": "e나라재산 바로가기",
+    "odtId": "E55U3H1UJOF3CK65K65ITHFDQ",
+    "otptOrd": 439,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "8GQMQ1M1OH2UWO5044P15TU0N",
+    "parent": "C216",
+    "text": "중기지방재정계획",
+    "odtId": "8GQMQ1M1OH2UWO5044P15TU0N",
+    "otptOrd": 62,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "B0UI4061526T5EB3F665EGF76",
+    "parent": "C216",
+    "text": "기능별 단체별 세출예산",
+    "odtId": "B0UI4061526T5EB3F665EGF76",
+    "otptOrd": 65,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "L851I16S0H2ZOY2FFV62LGI86",
+    "parent": "C218",
+    "text": "통합재정수지비율 최종",
+    "odtId": "L851I16S0H2ZOY2FFV62LGI86",
+    "otptOrd": 87,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "4LCI4C817GZY5EQMEG1H7PBMC",
+    "parent": "C218",
+    "text": "예산대비채무비율",
+    "odtId": "4LCI4C817GZY5EQMEG1H7PBMC",
+    "otptOrd": 111,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "1MV144D7CS5I2C1E4Q8O4Q65H",
+    "parent": "C219",
+    "text": "재정자립도 결산",
+    "odtId": "1MV144D7CS5I2C1E4Q8O4Q65H",
+    "otptOrd": 113,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "0GLW6FV1H0TI3K0G8NQY2D3S2",
+    "parent": "D327",
+    "text": "국유재산 증감 및 현재액 총괄",
+    "odtId": "0GLW6FV1H0TI3K0G8NQY2D3S2",
+    "otptOrd": 134,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "WT615T73GN6GGOMBG704A1EWQ",
+    "parent": "C221",
+    "text": "무상급식비",
+    "odtId": "WT615T73GN6GGOMBG704A1EWQ",
+    "otptOrd": 383,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "6058U304D2OF2L751WKI16Y74",
+    "parent": "B026",
+    "text": "국세통계 바로가기",
+    "odtId": "6058U304D2OF2L751WKI16Y74",
+    "otptOrd": 150,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "6K2VC056U3I7G523Q5JP7QQT7",
+    "parent": "D302",
+    "text": "국세수입추이",
+    "odtId": "6K2VC056U3I7G523Q5JP7QQT7",
+    "otptOrd": 116,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "TP4FSW28245A1NKL8L05N5611",
+    "parent": "D302",
+    "text": "조세부담률및국민부담률추이",
+    "odtId": "TP4FSW28245A1NKL8L05N5611",
+    "otptOrd": 117,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "03RQ3NT3C4244E10BXGZW40B0",
+    "parent": "D303",
+    "text": "일반·특별회계세외수입추이",
+    "odtId": "03RQ3NT3C4244E10BXGZW40B0",
+    "otptOrd": 118,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "R05004TTAY3MZ5F7H76SOXJ6E",
+    "parent": "D303",
+    "text": "기금수입추이",
+    "odtId": "R05004TTAY3MZ5F7H76SOXJ6E",
+    "otptOrd": 133,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "HN2O6P3040O8TX5RA1S480262",
+    "parent": "C232",
+    "text": "분야별 프로그램 예산",
+    "odtId": "HN2O6P3040O8TX5RA1S480262",
+    "otptOrd": 119,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "76AU23AE21UGY07B863TV5243",
+    "parent": "D304",
+    "text": "재정지출추이(본예산총지출기준)",
+    "odtId": "76AU23AE21UGY07B863TV5243",
+    "otptOrd": 120,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "36887EA4M7RLM4M74552S1GEG",
+    "parent": "D304",
+    "text": "재정지출추이(총계기준)",
+    "odtId": "36887EA4M7RLM4M74552S1GEG",
+    "otptOrd": 121,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "RQ7802G7Z8A6E16M31VSF6Q5B",
+    "parent": "D305",
+    "text": "특별회계별재정지출추이(총지출기준)",
+    "odtId": "RQ7802G7Z8A6E16M31VSF6Q5B",
+    "otptOrd": 122,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "O56V8Y1FY2H607JFEDB0M15EJ",
+    "parent": "D305",
+    "text": "기금성격별운용규모(총지출기준)",
+    "odtId": "O56V8Y1FY2H607JFEDB0M15EJ",
+    "otptOrd": 123,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "T3M5318056G201RQJ3DI1RSGT",
+    "parent": "C217",
+    "text": "교부세정산현황",
+    "odtId": "T3M5318056G201RQJ3DI1RSGT",
+    "otptOrd": 124,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "631L026PTAS17SX4282E010L3",
+    "parent": "D325",
+    "text": "정부출자기관 정부배당 현황",
+    "odtId": "631L026PTAS17SX4282E010L3",
+    "otptOrd": 128,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "1B6PWD03U064ZPP05GF811O0G",
+    "parent": "D326",
+    "text": "연기금투자풀 수탁규모(분기별)",
+    "odtId": "1B6PWD03U064ZPP05GF811O0G",
+    "otptOrd": 129,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "64058QZ8CLNL0OMO17EHS7XJ5",
+    "parent": "D326",
+    "text": "연기금투자풀 기간수익률(분기별)",
+    "odtId": "64058QZ8CLNL0OMO17EHS7XJ5",
+    "otptOrd": 130,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "2EI4CJANJ00TX0Z3443355X4P",
+    "parent": "D326",
+    "text": "연기금투자풀 수탁규모",
+    "odtId": "2EI4CJANJ00TX0Z3443355X4P",
+    "otptOrd": 131,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "X48645A8UR8UYX8378R783V61",
+    "parent": "D326",
+    "text": "연기금투자풀 기간수익률",
+    "odtId": "X48645A8UR8UYX8378R783V61",
+    "otptOrd": 132,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "0754F30NJD22E4T047346LC08",
+    "parent": "D301",
+    "text": "재정수입구조(본예산총수입기준)",
+    "odtId": "0754F30NJD22E4T047346LC08",
+    "otptOrd": 115,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "02E24574H7250R68WO3T27178",
+    "parent": "D322",
+    "text": "재정상태표",
+    "odtId": "02E24574H7250R68WO3T27178",
+    "otptOrd": 50,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "P1KWW78EBDX7661UQO7AUCY8B",
+    "parent": "D327",
+    "text": "국유재산현황",
+    "odtId": "P1KWW78EBDX7661UQO7AUCY8B",
+    "otptOrd": 136,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "ZV7LKVT60RDGZ1P88286Z7K30",
+    "parent": "D327",
+    "text": "국유지현황",
+    "odtId": "ZV7LKVT60RDGZ1P88286Z7K30",
+    "otptOrd": 137,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "S8G7T031M7Q5F2MT1582OG8K1",
+    "parent": "D318",
+    "text": "일별 지출운용상황",
+    "odtId": "S8G7T031M7Q5F2MT1582OG8K1",
+    "otptOrd": 152,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "D46IFSSM0WKG88ISZ73URDUBR",
+    "parent": "D314",
+    "text": "세부사업 예산편성현황(총액)",
+    "odtId": "D46IFSSM0WKG88ISZ73URDUBR",
+    "otptOrd": 37,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "43L7Z4X13Q5MY8N3522W2B0M4",
+    "parent": "C247",
+    "text": "분야별 세출현황",
+    "odtId": "43L7Z4X13Q5MY8N3522W2B0M4",
+    "otptOrd": 387,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "RI8Q2343B6ILZS7712K6724E6",
+    "parent": "D314",
+    "text": "세목 예산편성현황(총액)",
+    "odtId": "RI8Q2343B6ILZS7712K6724E6",
+    "otptOrd": 38,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "3P155X783257W0RNMW2T6DD3X",
+    "parent": "D314",
+    "text": "세부사업 예산편성현황(외화)",
+    "odtId": "3P155X783257W0RNMW2T6DD3X",
+    "otptOrd": 42,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "5Y5A50K2L4CW2IRKI2J0F2C8T",
+    "parent": "D314",
+    "text": "세부사업 예산편성현황(총지출)",
+    "odtId": "5Y5A50K2L4CW2IRKI2J0F2C8T",
+    "otptOrd": 39,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "VS56A5JZC482754X262R7500I",
+    "parent": "D324",
+    "text": "채권현재액명세서",
+    "odtId": "VS56A5JZC482754X262R7500I",
+    "otptOrd": 126,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "343MEXDMRD1K57YO5702C3N67",
+    "parent": "D314",
+    "text": "세목 예산편성현황(총지출)",
+    "odtId": "343MEXDMRD1K57YO5702C3N67",
+    "otptOrd": 41,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "D7326777RIVGYOS5N62FOS184",
+    "parent": "D314",
+    "text": "세목 예산편성현황(외화)",
+    "odtId": "D7326777RIVGYOS5N62FOS184",
+    "otptOrd": 43,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "6LL3V46VU0YS14H3EK67K2M8F",
+    "parent": "D314",
+    "text": "세출 세부사업 예산편성현황(추경포함)",
+    "odtId": "6LL3V46VU0YS14H3EK67K2M8F",
+    "otptOrd": 44,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "C4JR75NC87R12N02T274G0X64",
+    "parent": "D314",
+    "text": "세출 세목 예산편성현황(추경포함)",
+    "odtId": "C4JR75NC87R12N02T274G0X64",
+    "otptOrd": 45,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "84PKC05HI6AM1MEXAUIX1V746",
+    "parent": "D330",
+    "text": "정부구매예산",
+    "odtId": "84PKC05HI6AM1MEXAUIX1V746",
+    "otptOrd": 46,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "VODU4KH60SJMX67JOUSMNSXQS",
+    "parent": "D315",
+    "text": "예산편성현황(총액)",
+    "odtId": "VODU4KH60SJMX67JOUSMNSXQS",
+    "otptOrd": 47,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "O081M865QYR810KF3ZQ20NO0R",
+    "parent": "D315",
+    "text": "예산편성현황(총수입)",
+    "odtId": "O081M865QYR810KF3ZQ20NO0R",
+    "otptOrd": 48,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "L86X28BEQW33BSEJC88180454",
+    "parent": "D319",
+    "text": "월별 수입징수상황",
+    "odtId": "L86X28BEQW33BSEJC88180454",
+    "otptOrd": 49,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "XW3V2A0YELM3K3NUGK4UJV2YY",
+    "parent": "D322",
+    "text": "재정운영표",
+    "odtId": "XW3V2A0YELM3K3NUGK4UJV2YY",
+    "otptOrd": 51,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "128R3S30MO3040H52TY8M87UU",
+    "parent": "D322",
+    "text": "소관별 재정운영표",
+    "odtId": "128R3S30MO3040H52TY8M87UU",
+    "otptOrd": 72,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "N0ZIL7RX38546V86IV5O8D362",
+    "parent": "D322",
+    "text": "회계·기금별 재정상태표",
+    "odtId": "N0ZIL7RX38546V86IV5O8D362",
+    "otptOrd": 99,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "1GY13N71B67AQQUY1147NTE0S",
+    "parent": "D322",
+    "text": "회계·기금별 재정운영표",
+    "odtId": "1GY13N71B67AQQUY1147NTE0S",
+    "otptOrd": 135,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "2HZT05JHSA6666K2YWEDPJA5Y",
+    "parent": "D315",
+    "text": "예산편성현황(외화)",
+    "odtId": "2HZT05JHSA6666K2YWEDPJA5Y",
+    "otptOrd": 54,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "0WU6VMB84UJK4M6O433YR16TN",
+    "parent": "D315",
+    "text": "세입 예산편성현황(추경포함)",
+    "odtId": "0WU6VMB84UJK4M6O433YR16TN",
+    "otptOrd": 55,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "Q8ERB0MRCQ5F8SDPAC8W1TSL6",
+    "parent": "D320",
+    "text": "세계잉여금",
+    "odtId": "Q8ERB0MRCQ5F8SDPAC8W1TSL6",
+    "otptOrd": 445,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "L214V65W2H7L13UID7M02D46O",
+    "parent": "D323",
+    "text": "부담금운용현황",
+    "odtId": "L214V65W2H7L13UID7M02D46O",
+    "otptOrd": 57,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "2A0L03ZYQ2G117XCOSXW5064N",
+    "parent": "D324",
+    "text": "국가채권현황",
+    "odtId": "2A0L03ZYQ2G117XCOSXW5064N",
+    "otptOrd": 40,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "1QIY7828RO358ML1QB1U23E11",
+    "parent": "D328",
+    "text": "재정증권 발행 및 상환내역",
+    "odtId": "1QIY7828RO358ML1QB1U23E11",
+    "otptOrd": 59,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "0Y8DM440O1435Y1XYRH75TGYH",
+    "parent": "C216",
+    "text": "세입예산",
+    "odtId": "0Y8DM440O1435Y1XYRH75TGYH",
+    "otptOrd": 61,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "4616L14BDFZP52L32WY0J5Z43",
+    "parent": "C216",
+    "text": "재원별 단체별 세입예산",
+    "odtId": "4616L14BDFZP52L32WY0J5Z43",
+    "otptOrd": 100,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "60BSROJ82G78458U76I0233Z6",
+    "parent": "C216",
+    "text": "자체사업비중",
+    "odtId": "60BSROJ82G78458U76I0233Z6",
+    "otptOrd": 109,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "4W36OH6TOL46MF71LX0D0H580",
+    "parent": "C216",
+    "text": "보조사업비중",
+    "odtId": "4W36OH6TOL46MF71LX0D0H580",
+    "otptOrd": 110,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "130E185675HK057VD54V2U6GH",
+    "parent": "C220",
+    "text": "중기지방교육재정계획",
+    "odtId": "130E185675HK057VD54V2U6GH",
+    "otptOrd": 81,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "4L67W82OBN02168L2M22VE3RQ",
+    "parent": "C216",
+    "text": "사회복지비중",
+    "odtId": "4L67W82OBN02168L2M22VE3RQ",
+    "otptOrd": 393,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "I61H21FXJ3S511RIE0V2UXNVK",
+    "parent": "C217",
+    "text": "세출결산",
+    "odtId": "I61H21FXJ3S511RIE0V2UXNVK",
+    "otptOrd": 66,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "R5Y50ZI2188283VG186G4OG2J",
+    "parent": "C217",
+    "text": "기금결산",
+    "odtId": "R5Y50ZI2188283VG186G4OG2J",
+    "otptOrd": 68,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "4DHVHON2TBTE43R84O5712XOC",
+    "parent": "C217",
+    "text": "기능별 단체별 세출결산",
+    "odtId": "4DHVHON2TBTE43R84O5712XOC",
+    "otptOrd": 69,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "BH404II2IHL1NBP04O1XT66F5",
+    "parent": "C217",
+    "text": "성질별 단체별 세출결산",
+    "odtId": "BH404II2IHL1NBP04O1XT66F5",
+    "otptOrd": 74,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "A0O7BZYK8U2JL1A6S8Z425VSY",
+    "parent": "C221",
+    "text": "기능별 정책사업별 세출예산(결산)",
+    "odtId": "A0O7BZYK8U2JL1A6S8Z425VSY",
+    "otptOrd": 101,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "747H6301T8SHE37Z2KFK71L53",
+    "parent": "D322",
+    "text": "소관별 순자산변동표",
+    "odtId": "747H6301T8SHE37Z2KFK71L53",
+    "otptOrd": 96,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "D7FY8PTY1N0S2H568ISXJC3G6",
+    "parent": "C221",
+    "text": "재원별 단체별 세입예산(결산)",
+    "odtId": "D7FY8PTY1N0S2H568ISXJC3G6",
+    "otptOrd": 220,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "FJZ7UEXYYNS33Q00NWSDF5301",
+    "parent": "C217",
+    "text": "재원별 회계별 세입결산",
+    "odtId": "FJZ7UEXYYNS33Q00NWSDF5301",
+    "otptOrd": 75,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "JRZT1ZN62ULKN0B0R553L20A0",
+    "parent": "C217",
+    "text": "성질별 단체별 세입결산",
+    "odtId": "JRZT1ZN62ULKN0B0R553L20A0",
+    "otptOrd": 76,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "53G8PZF4ZJI13O5YLS8BX54RQ",
+    "parent": "C217",
+    "text": "지역통합 세입결산",
+    "odtId": "53G8PZF4ZJI13O5YLS8BX54RQ",
+    "otptOrd": 82,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "IE205O42KUEJD8H4I7C8V3488",
+    "parent": "C222",
+    "text": "지방교육채",
+    "odtId": "IE205O42KUEJD8H4I7C8V3488",
+    "otptOrd": 197,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "SUUZ2AR3NU73UQ0X126313N2W",
+    "parent": "C220",
+    "text": "세입예산",
+    "odtId": "SUUZ2AR3NU73UQ0X126313N2W",
+    "otptOrd": 78,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "83H1T38Z071KV2H5I2JXOGT65",
+    "parent": "D319",
+    "text": "월별 수입운용상황",
+    "odtId": "83H1T38Z071KV2H5I2JXOGT65",
+    "otptOrd": 79,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "CLN1162KUPYESXR5P6Y3ABNVP",
+    "parent": "C217",
+    "text": "세입결산",
+    "odtId": "CLN1162KUPYESXR5P6Y3ABNVP",
+    "otptOrd": 67,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "Z0D341X5FUAWF10P006H131O7",
+    "parent": "C220",
+    "text": "단위사업별 세출예산",
+    "odtId": "Z0D341X5FUAWF10P006H131O7",
+    "otptOrd": 252,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "P53FG87Y8P7CTEZ651PW7ID4B",
+    "parent": "C217",
+    "text": "시도별징수율",
+    "odtId": "P53FG87Y8P7CTEZ651PW7ID4B",
+    "otptOrd": 104,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "571Q71KX7K1XTZM5Z0YXPETG6",
+    "parent": "C217",
+    "text": "세목별징수율",
+    "odtId": "571Q71KX7K1XTZM5Z0YXPETG6",
+    "otptOrd": 107,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "M8P22AV08K85X2NXLTKE504N3",
+    "parent": "C218",
+    "text": "지자체 부채비율",
+    "odtId": "M8P22AV08K85X2NXLTKE504N3",
+    "otptOrd": 84,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "4GM67UIP84J8X30UGR08QG0H0",
+    "parent": "C218",
+    "text": "통합재정수지비율 당초",
+    "odtId": "4GM67UIP84J8X30UGR08QG0H0",
+    "otptOrd": 85,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "74WK5U2SKF564D3128RGT4X63",
+    "parent": "D327",
+    "text": "중앙관서별 국유건물현황",
+    "odtId": "74WK5U2SKF564D3128RGT4X63",
+    "otptOrd": 259,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "64MQUM35Y2YDHB4AHW1P0T8I5",
+    "parent": "C221",
+    "text": "교부금정산현황",
+    "odtId": "64MQUM35Y2YDHB4AHW1P0T8I5",
+    "otptOrd": 221,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "E61EJ1OW64Q5T6C3OTS77H7EV",
+    "parent": "C218",
+    "text": "통합재정수지비율 결산",
+    "odtId": "E61EJ1OW64Q5T6C3OTS77H7EV",
+    "otptOrd": 92,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "QSB8M4G824ZQV364W002YM40A",
+    "parent": "D327",
+    "text": "중앙관서별 국유지 현황",
+    "odtId": "QSB8M4G824ZQV364W002YM40A",
+    "otptOrd": 255,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "3FG6182B5YG0BZ15207653DQX",
+    "parent": "D327",
+    "text": "지역별 국유건물 현황",
+    "odtId": "3FG6182B5YG0BZ15207653DQX",
+    "otptOrd": 260,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "45XI5FV5R84K7WPFI11A51XJH",
+    "parent": "C219",
+    "text": "재정자주도 최종",
+    "odtId": "45XI5FV5R84K7WPFI11A51XJH",
+    "otptOrd": 89,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "A30YW325IN6M7PFA31A00G4Y2",
+    "parent": "C219",
+    "text": "재정자주도 결산",
+    "odtId": "A30YW325IN6M7PFA31A00G4Y2",
+    "otptOrd": 90,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "82O01LX8633BLG727XYE45315",
+    "parent": "C219",
+    "text": "재정자립도 당초",
+    "odtId": "82O01LX8633BLG727XYE45315",
+    "otptOrd": 91,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "144NL70LX0A7H6V82F5186Y08",
+    "parent": "C219",
+    "text": "재정자립도 최종",
+    "odtId": "144NL70LX0A7H6V82F5186Y08",
+    "otptOrd": 105,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "83W0XH36J34C26PJ61Q4F64JZ",
+    "parent": "C222",
+    "text": "부채총괄",
+    "odtId": "83W0XH36J34C26PJ61Q4F64JZ",
+    "otptOrd": 112,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "ST4UXKT26MX3P1WJ75F75EJ0O",
+    "parent": "C223",
+    "text": "재정자주도(당초)",
+    "odtId": "ST4UXKT26MX3P1WJ75F75EJ0O",
+    "otptOrd": 93,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "BNED1VXEB643Y775E75O0R76R",
+    "parent": "D318",
+    "text": "월별 지출집행상황",
+    "odtId": "BNED1VXEB643Y775E75O0R76R",
+    "otptOrd": 27,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "0J6S326KE28PQEB185HK804VN",
+    "parent": "C221",
+    "text": "누리과정",
+    "odtId": "0J6S326KE28PQEB185HK804VN",
+    "otptOrd": 382,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "MLTZTVZ42Q0IRSNI338C28A46",
+    "parent": "C247",
+    "text": "세부사업별 세출현황",
+    "odtId": "MLTZTVZ42Q0IRSNI338C28A46",
+    "otptOrd": 388,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "UNFED4F5B72HYDU23534MOM0T",
+    "parent": "D319",
+    "text": "일별 수입운용상황",
+    "odtId": "UNFED4F5B72HYDU23534MOM0T",
+    "otptOrd": 95,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "08W562M2ZVK307AJO2B6FSRUL",
+    "parent": "D322",
+    "text": "순자산변동표",
+    "odtId": "08W562M2ZVK307AJO2B6FSRUL",
+    "otptOrd": 52,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "41DR8UWDM5S5JG30MN87QKMRT",
+    "parent": "D316",
+    "text": "공공기관별 주요관리대상사업 집행실적",
+    "odtId": "41DR8UWDM5S5JG30MN87QKMRT",
+    "otptOrd": 211,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "3WY7H4YJ6C572GABHX1N3S142",
+    "parent": "D317",
+    "text": "총사업비현황",
+    "odtId": "3WY7H4YJ6C572GABHX1N3S142",
+    "otptOrd": 98,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "63L4B4BHL4N2QETDYIF6OYTEN",
+    "parent": "D322",
+    "text": "회계·기금별 순자산변동표",
+    "odtId": "63L4B4BHL4N2QETDYIF6OYTEN",
+    "otptOrd": 161,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "356I3O2F560N4U2CR61B32JP4",
+    "parent": "C216",
+    "text": "세출예산",
+    "odtId": "356I3O2F560N4U2CR61B32JP4",
+    "otptOrd": 60,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "42753M0TY637Z70NY21044DAR",
+    "parent": "C221",
+    "text": "성질별 단체별 세출예산(결산)",
+    "odtId": "42753M0TY637Z70NY21044DAR",
+    "otptOrd": 86,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "3E778OV0YSNG0K8M04D53OP07",
+    "parent": "C216",
+    "text": "기능별 재원별 세출예산",
+    "odtId": "3E778OV0YSNG0K8M04D53OP07",
+    "otptOrd": 63,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "45V5B4O11W858X17NA1GD3F1C",
+    "parent": "D327",
+    "text": "종류별 국유재산 현황",
+    "odtId": "45V5B4O11W858X17NA1GD3F1C",
+    "otptOrd": 254,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "10V88233G3HY8R8NA7Q6A3TE1",
+    "parent": "C217",
+    "text": "지역통합 세출결산",
+    "odtId": "10V88233G3HY8R8NA7Q6A3TE1",
+    "otptOrd": 80,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "BY32HBB46024IMBKN60LW5TK3",
+    "parent": "C217",
+    "text": "지역통합 부채결산",
+    "odtId": "BY32HBB46024IMBKN60LW5TK3",
+    "otptOrd": 103,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "3V30E28K66XGPI835J7V106AX",
+    "parent": "C219",
+    "text": "재정자주도 당초",
+    "odtId": "3V30E28K66XGPI835J7V106AX",
+    "otptOrd": 88,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "6141G1O6O0I1DA31US6IN38LO",
+    "parent": "C222",
+    "text": "통합재정수지",
+    "odtId": "6141G1O6O0I1DA31US6IN38LO",
+    "otptOrd": 77,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "8BXF30QMS42H04RM0L05OV4FN",
+    "parent": "C216",
+    "text": "기능별 회계별 세출예산",
+    "odtId": "8BXF30QMS42H04RM0L05OV4FN",
+    "otptOrd": 102,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "0226EITBNLRVIKP760I1IV2J8",
+    "parent": "C222",
+    "text": "재정상태표",
+    "odtId": "0226EITBNLRVIKP760I1IV2J8",
+    "otptOrd": 394,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "5235VH4D0WC6Y54WQ2MZKIWNH",
+    "parent": "D328",
+    "text": "한은 일시차입 차입 및 상환내역",
+    "odtId": "5235VH4D0WC6Y54WQ2MZKIWNH",
+    "otptOrd": 396,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "42L8N38RK72E44X8FD155M0BX",
+    "parent": "C249",
+    "text": "통합재정운영표",
+    "odtId": "42L8N38RK72E44X8FD155M0BX",
+    "otptOrd": 398,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "4VEHV7L2OND7YZ24VLK3MBE6Y",
+    "parent": "C249",
+    "text": "순자산변동표",
+    "odtId": "4VEHV7L2OND7YZ24VLK3MBE6Y",
+    "otptOrd": 399,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "27Y8SN382CLX3I228K681WWM8",
+    "parent": "C249",
+    "text": "재정상태표",
+    "odtId": "27Y8SN382CLX3I228K681WWM8",
+    "otptOrd": 400,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "K584NUJ8IMWT607DY4GDHX282",
+    "parent": "C217",
+    "text": "신속(조기)집행실적",
+    "odtId": "K584NUJ8IMWT607DY4GDHX282",
+    "otptOrd": 401,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "P36QA7J002G00C1NM25IW0JVL",
+    "parent": "C217",
+    "text": "교육비특별회계 세입세출결산",
+    "odtId": "P36QA7J002G00C1NM25IW0JVL",
+    "otptOrd": 402,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "6U327OA453KD1828N030B225S",
+    "parent": "C217",
+    "text": "구조별 기능별 세출결산",
+    "odtId": "6U327OA453KD1828N030B225S",
+    "otptOrd": 403,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "ORZ1WZSUB5MR76INB3008633E",
+    "parent": "D306",
+    "text": "12대분야별(총지출기준)",
+    "odtId": "ORZ1WZSUB5MR76INB3008633E",
+    "otptOrd": 395,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "B5ZHU35MBNX7478I0C5J14PUF",
+    "parent": "C217",
+    "text": "지방세 징수실적",
+    "odtId": "B5ZHU35MBNX7478I0C5J14PUF",
+    "otptOrd": 397,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "VE76OTHO41O0U51U18J27LF17",
+    "parent": "C217",
+    "text": "회계별 단체별 세출결산",
+    "odtId": "VE76OTHO41O0U51U18J27LF17",
+    "otptOrd": 404,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "5X8K1RKQ3A36R3TO2WPE42H41",
+    "parent": "C217",
+    "text": "우리 지자체 세입세출현황",
+    "odtId": "5X8K1RKQ3A36R3TO2WPE42H41",
+    "otptOrd": 405,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "5D27OFI2NP8GNGJO2585A8672",
+    "parent": "C217",
+    "text": "지방세 지출현황",
+    "odtId": "5D27OFI2NP8GNGJO2585A8672",
+    "otptOrd": 406,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "02B2F0XC4Q0HKY23U13KF7SMK",
+    "parent": "C217",
+    "text": "지방세 및 세외수입 체납 누계액",
+    "odtId": "02B2F0XC4Q0HKY23U13KF7SMK",
+    "otptOrd": 408,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "LWU1813J1220U65FC83N0SENE",
+    "parent": "C221",
+    "text": "결산통합공시(총계)",
+    "odtId": "LWU1813J1220U65FC83N0SENE",
+    "otptOrd": 409,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "7217485BII1511W0N1Q5A3580",
+    "parent": "C221",
+    "text": "결산통합공시(통합재정통계)",
+    "odtId": "7217485BII1511W0N1Q5A3580",
+    "otptOrd": 411,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "VI3558R2EI45FRWD84AK7KJLK",
+    "parent": "C221",
+    "text": "결산통합공시(지역통합재정통계)",
+    "odtId": "VI3558R2EI45FRWD84AK7KJLK",
+    "otptOrd": 412,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "7FI6FZ6475M45534XC6H1SC83",
+    "parent": "C221",
+    "text": "내부거래(성질별세출)",
+    "odtId": "7FI6FZ6475M45534XC6H1SC83",
+    "otptOrd": 414,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "8KI1H2RD6DG5TY4AF4E2MR836",
+    "parent": "C253",
+    "text": "기금조성세부명세서",
+    "odtId": "8KI1H2RD6DG5TY4AF4E2MR836",
+    "otptOrd": 416,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "WTKZT4HORTA7MGJX65AOI2GLE",
+    "parent": "C223",
+    "text": "예비비비율",
+    "odtId": "WTKZT4HORTA7MGJX65AOI2GLE",
+    "otptOrd": 417,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "0T6428420110DBBXS6DERAGNJ",
+    "parent": "C223",
+    "text": "채권",
+    "odtId": "0T6428420110DBBXS6DERAGNJ",
+    "otptOrd": 419,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "Z080Y67X845OV3UE7443N8HNI",
+    "parent": "C221",
+    "text": "학교회계전출금(학교급별)",
+    "odtId": "Z080Y67X845OV3UE7443N8HNI",
+    "otptOrd": 420,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "2144CJ578YI4T0WIYP35DBNKW",
+    "parent": "C221",
+    "text": "예산집행비율",
+    "odtId": "2144CJ578YI4T0WIYP35DBNKW",
+    "otptOrd": 421,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "V6AO6QDT8BZ58TU5I34GC6ROT",
+    "parent": "C250",
+    "text": "예산조기집행비율",
+    "odtId": "V6AO6QDT8BZ58TU5I34GC6ROT",
+    "otptOrd": 422,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "8ZZM61N4NX7I2LM8KD3GOJDLQ",
+    "parent": "C251",
+    "text": "재정운영표",
+    "odtId": "8ZZM61N4NX7I2LM8KD3GOJDLQ",
+    "otptOrd": 423,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "HE8CC6XW8JT807MRA41581256",
+    "parent": "C251",
+    "text": "순자산변동표",
+    "odtId": "HE8CC6XW8JT807MRA41581256",
+    "otptOrd": 424,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "203383JG70YVAHC2YF0OS07G8",
+    "parent": "C220",
+    "text": "예산통합공시(총계)",
+    "odtId": "203383JG70YVAHC2YF0OS07G8",
+    "otptOrd": 427,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "Z6X0YM8B5I7P3QACC41H0X4LC",
+    "parent": "C221",
+    "text": "내부거래(세입)",
+    "odtId": "Z6X0YM8B5I7P3QACC41H0X4LC",
+    "otptOrd": 413,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "Y8TH7K0ZA606AQU2EJD584H0T",
+    "parent": "C253",
+    "text": "기금조성총괄",
+    "odtId": "Y8TH7K0ZA606AQU2EJD584H0T",
+    "otptOrd": 415,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "8Z4MZX03L22VR6GDV0YDO0E68",
+    "parent": "C252",
+    "text": "기금현재액",
+    "odtId": "8Z4MZX03L22VR6GDV0YDO0E68",
+    "otptOrd": 407,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "14NC24OPC6M8Q0VJ745E4T360",
+    "parent": "C221",
+    "text": "결산통합공시(순계)",
+    "odtId": "14NC24OPC6M8Q0VJ745E4T360",
+    "otptOrd": 410,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "MM3QPIJ6Z237R3U4T24TKT3G2",
+    "parent": "C223",
+    "text": "기금전출금비율",
+    "odtId": "MM3QPIJ6Z237R3U4T24TKT3G2",
+    "otptOrd": 418,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "EM31456IR5U7J82L573VO2015",
+    "parent": "C221",
+    "text": "성인지결산",
+    "odtId": "EM31456IR5U7J82L573VO2015",
+    "otptOrd": 425,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "I65CYVBY7ESTRI277H4VE4NCP",
+    "parent": "C222",
+    "text": "재정분석",
+    "odtId": "I65CYVBY7ESTRI277H4VE4NCP",
+    "otptOrd": 426,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "7ZOT11A45SYR17VFTSTQU87YU",
+    "parent": "C220",
+    "text": "예산통합공시(순계)",
+    "odtId": "7ZOT11A45SYR17VFTSTQU87YU",
+    "otptOrd": 428,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "40T6F1A0J6L0T156ED26Y8U6T",
+    "parent": "C220",
+    "text": "예산통합공시(통합재정통계)",
+    "odtId": "40T6F1A0J6L0T156ED26Y8U6T",
+    "otptOrd": 429,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "K17378Z37E2J18780B3ABGJ82",
+    "parent": "C220",
+    "text": "예산통합공시(지역통합재정통계)",
+    "odtId": "K17378Z37E2J18780B3ABGJ82",
+    "otptOrd": 430,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "1ZUGJCGLS178Z70WPL68GLF0B",
+    "parent": "C220",
+    "text": "내부거래(세입)",
+    "odtId": "1ZUGJCGLS178Z70WPL68GLF0B",
+    "otptOrd": 431,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "TEK733J0U4Q1W551P8M7R7FW6",
+    "parent": "C253",
+    "text": "기금",
+    "odtId": "TEK733J0U4Q1W551P8M7R7FW6",
+    "otptOrd": 432,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "51T6D8WMQ836U4NPLXIGZ828X",
+    "parent": "C220",
+    "text": "성인지예산",
+    "odtId": "51T6D8WMQ836U4NPLXIGZ828X",
+    "otptOrd": 433,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "6ZX11SF3EJ8218QUJADBAGC02",
+    "parent": "C255",
+    "text": "기업특별회계운용",
+    "odtId": "6ZX11SF3EJ8218QUJADBAGC02",
+    "otptOrd": 434,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "2A10A2G2340Z5WV13S6486W0N",
+    "parent": "D327",
+    "text": "종합계획유형별국유재산현황",
+    "odtId": "2A10A2G2340Z5WV13S6486W0N",
+    "otptOrd": 379,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "AG4BJ26SGF2MX34EZ8Y514FCA",
+    "parent": "D327",
+    "text": "특례운용집행실적",
+    "odtId": "AG4BJ26SGF2MX34EZ8Y514FCA",
+    "otptOrd": 435,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "2P80TE6K1BYW1Z6DL5X70D42K",
+    "parent": "D327",
+    "text": "관리처분계획총괄표",
+    "odtId": "2P80TE6K1BYW1Z6DL5X70D42K",
+    "otptOrd": 436,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "73656A1AR1A1V450073L814F5",
+    "parent": "C237",
+    "text": "보증채무 현황",
+    "odtId": "73656A1AR1A1V450073L814F5",
+    "otptOrd": 334,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "XNF28G45EA0R5FV18LJST145Q",
+    "parent": "C238",
+    "text": "월별 보증채무 현황",
+    "odtId": "XNF28G45EA0R5FV18LJST145Q",
+    "otptOrd": 156,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "507GT417LA1CN304P6FQ6VLVF",
+    "parent": "C239",
+    "text": "총수입",
+    "odtId": "507GT417LA1CN304P6FQ6VLVF",
+    "otptOrd": 157,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "88P8HW7O032LK2M35M41I5IEY",
+    "parent": "C239",
+    "text": "국세수입",
+    "odtId": "88P8HW7O032LK2M35M41I5IEY",
+    "otptOrd": 158,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "3L314EM5528L52ZBFY3RC523P",
+    "parent": "C239",
+    "text": "세외수입",
+    "odtId": "3L314EM5528L52ZBFY3RC523P",
+    "otptOrd": 159,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "13PO3GOKFK8B62DZ2H673K4I5",
+    "parent": "C239",
+    "text": "기금수입",
+    "odtId": "13PO3GOKFK8B62DZ2H673K4I5",
+    "otptOrd": 160,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "7508PJVB21V2KRN8T7375BU8A",
+    "parent": "D322",
+    "text": "소관별 재정상태표",
+    "odtId": "7508PJVB21V2KRN8T7375BU8A",
+    "otptOrd": 53,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "KXB8M1QM10T1V8XNA43KY7M07",
+    "parent": "C240",
+    "text": "총지출",
+    "odtId": "KXB8M1QM10T1V8XNA43KY7M07",
+    "otptOrd": 162,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "45DHAZ24H7WWJ0VG03Q666V46",
+    "parent": "C241",
+    "text": "재정수지",
+    "odtId": "45DHAZ24H7WWJ0VG03Q666V46",
+    "otptOrd": 163,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "FF8V1041JB1IJ6C7LM585J1X5",
+    "parent": "D320",
+    "text": "소관별 세입/세출 결산 현황",
+    "odtId": "FF8V1041JB1IJ6C7LM585J1X5",
+    "otptOrd": 164,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "0DQI772XKU07LENQ7756Y454T",
+    "parent": "D320",
+    "text": "세입/수입 결산 현황",
+    "odtId": "0DQI772XKU07LENQ7756Y454T",
+    "otptOrd": 167,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "0Q8HP2OO5F12GW4NV37P34H0F",
+    "parent": "D320",
+    "text": "세출/지출 결산 현황",
+    "odtId": "0Q8HP2OO5F12GW4NV37P34H0F",
+    "otptOrd": 168,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "N880E0VQS7023U1RHI206WC2F",
+    "parent": "D320",
+    "text": "회계별 세입/세출 결산 현황",
+    "odtId": "N880E0VQS7023U1RHI206WC2F",
+    "otptOrd": 169,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "MN4CTTNO5BH2ZMI5RUPIQ4J54",
+    "parent": "D320",
+    "text": "기금별 수입/지출 결산 현황",
+    "odtId": "MN4CTTNO5BH2ZMI5RUPIQ4J54",
+    "otptOrd": 441,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "7C64BMKYI6AMI004PNYW1J67P",
+    "parent": "D320",
+    "text": "회계별 세입 결산 현황",
+    "odtId": "7C64BMKYI6AMI004PNYW1J67P",
+    "otptOrd": 170,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "T34Y3MBP2ZRJ7320CZ74K3B0A",
+    "parent": "D320",
+    "text": "회계별 세출 결산 현황",
+    "odtId": "T34Y3MBP2ZRJ7320CZ74K3B0A",
+    "otptOrd": 440,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "1V2E6B2TGUYYM7K1X8ES2NJ54",
+    "parent": "D310",
+    "text": "분야별이차보전지출추이",
+    "odtId": "1V2E6B2TGUYYM7K1X8ES2NJ54",
+    "otptOrd": 230,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "I4403GZ5782K541AZE1XVC51R",
+    "parent": "D329",
+    "text": "비금융공기업부채추이",
+    "odtId": "I4403GZ5782K541AZE1XVC51R",
+    "otptOrd": 236,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "LALKAK43HEB304367570XL8TB",
+    "parent": "C220",
+    "text": "기능별 정책사업별 세출예산",
+    "odtId": "LALKAK43HEB304367570XL8TB",
+    "otptOrd": 191,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "J4D7XQ84EU2M100R7C5C656E8",
+    "parent": "C222",
+    "text": "통합재정수지(결산)",
+    "odtId": "J4D7XQ84EU2M100R7C5C656E8",
+    "otptOrd": 106,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "13182K410ZHZ5JT5IS2RTA6DL",
+    "parent": "C233",
+    "text": "분야별 재원배분 계획",
+    "odtId": "13182K410ZHZ5JT5IS2RTA6DL",
+    "otptOrd": 251,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "3M2E4U08557ONKX2EATLOJDI8",
+    "parent": "D305",
+    "text": "사업성기금운용규모(총지출기준)",
+    "odtId": "3M2E4U08557ONKX2EATLOJDI8",
+    "otptOrd": 185,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "32RG281CE3H40Z4378D57442N",
+    "parent": "C220",
+    "text": "성질별 단체별 세출예산",
+    "odtId": "32RG281CE3H40Z4378D57442N",
+    "otptOrd": 181,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "RU2CSY5HZ02642W348T8OD0PP",
+    "parent": "C220",
+    "text": "의무지출 및 재량지출",
+    "odtId": "RU2CSY5HZ02642W348T8OD0PP",
+    "otptOrd": 380,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "ZP80G57D625MHAA0VUZML7LW5",
+    "parent": "C221",
+    "text": "이월액 및 집행잔액",
+    "odtId": "ZP80G57D625MHAA0VUZML7LW5",
+    "otptOrd": 381,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "XN811507VGT3NGBFHC7NCQAYP",
+    "parent": "C247",
+    "text": "계약현황",
+    "odtId": "XN811507VGT3NGBFHC7NCQAYP",
+    "otptOrd": 385,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "8818A6J56CQ3V76AQZ60B6U72",
+    "parent": "C247",
+    "text": "세입현황",
+    "odtId": "8818A6J56CQ3V76AQZ60B6U72",
+    "otptOrd": 386,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "46VGJ27T1FLG141I4VX84JDAJ",
+    "parent": "D327",
+    "text": "지목별 국유지 현황",
+    "odtId": "46VGJ27T1FLG141I4VX84JDAJ",
+    "otptOrd": 257,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "45D7DP4ZKR53QY6IT0T6S32M4",
+    "parent": "D311",
+    "text": "분야별이월추이",
+    "odtId": "45D7DP4ZKR53QY6IT0T6S32M4",
+    "otptOrd": 231,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "4QX5DE62F3X01M6Z20P7BUI15",
+    "parent": "D313",
+    "text": "성질별국가채무추이",
+    "odtId": "4QX5DE62F3X01M6Z20P7BUI15",
+    "otptOrd": 196,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "25QAC7Y8KV18L7Y04A4HVP463",
+    "parent": "D329",
+    "text": "지방정부부채추이",
+    "odtId": "25QAC7Y8KV18L7Y04A4HVP463",
+    "otptOrd": 213,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "KJ23JDGF1184J7J3V0240N7M4",
+    "parent": "C222",
+    "text": "민간투자사업(BTL)",
+    "odtId": "KJ23JDGF1184J7J3V0240N7M4",
+    "otptOrd": 200,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "Q2P60JHT8LIXM17O6PVA2B54C",
+    "parent": "C220",
+    "text": "재원별 단체별 세입예산",
+    "odtId": "Q2P60JHT8LIXM17O6PVA2B54C",
+    "otptOrd": 198,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "7L8O1IGZ3S7S2873G54C75F3U",
+    "parent": "D311",
+    "text": "성질별집행추이",
+    "odtId": "7L8O1IGZ3S7S2873G54C75F3U",
+    "otptOrd": 245,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "WHFDLEJ0WYTNZ1RJ1Z466IH61",
+    "parent": "D308",
+    "text": "중앙관서별총지출추이",
+    "odtId": "WHFDLEJ0WYTNZ1RJ1Z466IH61",
+    "otptOrd": 242,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "MJ4A435ZFD5D677VU85KTC0K0",
+    "parent": "D310",
+    "text": "인건비편성사업지출추이",
+    "odtId": "MJ4A435ZFD5D677VU85KTC0K0",
+    "otptOrd": 176,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "551UKLBX247PULO4I7ROW63W7",
+    "parent": "D320",
+    "text": "과목별결산세입수입현황",
+    "odtId": "551UKLBX247PULO4I7ROW63W7",
+    "otptOrd": 442,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "BF16TBXIG68102HY41N3433D1",
+    "parent": "D320",
+    "text": "소관별결산세출현황(일반회계)",
+    "odtId": "BF16TBXIG68102HY41N3433D1",
+    "otptOrd": 166,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "B3KOF267QG31IXQ76046038H0",
+    "parent": "D327",
+    "text": "중앙관서별특례운용계획",
+    "odtId": "B3KOF267QG31IXQ76046038H0",
+    "otptOrd": 437,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "1J2LNIM80VX0YB5E80J46UB22",
+    "parent": "C255",
+    "text": "세입의경제적분류(94년이전)",
+    "odtId": "1J2LNIM80VX0YB5E80J46UB22",
+    "otptOrd": 446,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "25V2GX28N464AU07072WI544J",
+    "parent": "D320",
+    "text": "소관별결산세입현황(일반회계)",
+    "odtId": "25V2GX28N464AU07072WI544J",
+    "otptOrd": 165,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "20DO7ZNLCZOBW463T30B6QB4R",
+    "parent": "D312",
+    "text": "통합재정기준중앙정부규모",
+    "odtId": "20DO7ZNLCZOBW463T30B6QB4R",
+    "otptOrd": 444,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "1T8KV8PNT8V221I42M8XD62U3",
+    "parent": "D343",
+    "text": "회계·기금별 재정운영표",
+    "odtId": "1T8KV8PNT8V221I42M8XD62U3",
+    "otptOrd": 338,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "4600CE218XDW075081EW3I6ZM",
+    "parent": "D343",
+    "text": "소관별 재정운영표",
+    "odtId": "4600CE218XDW075081EW3I6ZM",
+    "otptOrd": 333,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "463B8AXMQX28J5467NAD47ZR7",
+    "parent": "D343",
+    "text": "현금흐름표",
+    "odtId": "463B8AXMQX28J5467NAD47ZR7",
+    "otptOrd": 331,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "5KF141HQ4TXI18V4R6T033X0E",
+    "parent": "D343",
+    "text": "소관별 현금흐름표",
+    "odtId": "5KF141HQ4TXI18V4R6T033X0E",
+    "otptOrd": 336,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "61XY75KP0502DZV6U320GTLCI",
+    "parent": "D343",
+    "text": "회계·기금별 현금흐름표",
+    "odtId": "61XY75KP0502DZV6U320GTLCI",
+    "otptOrd": 341,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "658LJY2MX56K5GV6GT1237X16",
+    "parent": "D343",
+    "text": "회계·기금별 재정상태표",
+    "odtId": "658LJY2MX56K5GV6GT1237X16",
+    "otptOrd": 337,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "6X3G10EM23BV53A68I86K6RP2",
+    "parent": "D343",
+    "text": "소관별 성질별재정운영표",
+    "odtId": "6X3G10EM23BV53A68I86K6RP2",
+    "otptOrd": 335,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "74851155V0EMC703I50RG5D87",
+    "parent": "D343",
+    "text": "재정운영표",
+    "odtId": "74851155V0EMC703I50RG5D87",
+    "otptOrd": 328,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "74N01L38GR861L3056SLTK2FO",
+    "parent": "D343",
+    "text": "재정상태표",
+    "odtId": "74N01L38GR861L3056SLTK2FO",
+    "otptOrd": 327,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "868771PTA13R6V4LWEA822855",
+    "parent": "D343",
+    "text": "회계·기금별 순자산변동표",
+    "odtId": "868771PTA13R6V4LWEA822855",
+    "otptOrd": 339,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "88U3JLNI4U12JM84REWOAB4K1",
+    "parent": "D343",
+    "text": "회계·기금별 성질별재정운영표",
+    "odtId": "88U3JLNI4U12JM84REWOAB4K1",
+    "otptOrd": 340,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "CWKKDJ441P143L52P0T4PN086",
+    "parent": "D343",
+    "text": "소관별 재정상태표",
+    "odtId": "CWKKDJ441P143L52P0T4PN086",
+    "otptOrd": 332,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "KXOHRZ80O3Z8874E3YU20ZR70",
+    "parent": "D343",
+    "text": "순자산변동표",
+    "odtId": "KXOHRZ80O3Z8874E3YU20ZR70",
+    "otptOrd": 329,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "U22PTXAMB45282450B1W3H745",
+    "parent": "D343",
+    "text": "성질별재정운영표",
+    "odtId": "U22PTXAMB45282450B1W3H745",
+    "otptOrd": 330,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "X5Z7B5OLTNQI741K78LA53C34",
+    "parent": "D343",
+    "text": "소관별 순자산변동표",
+    "odtId": "X5Z7B5OLTNQI741K78LA53C34",
+    "otptOrd": 334,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "B7R43PY2C3TMGXIUF3PC15415",
+    "parent": "D327",
+    "text": "연도별국유재산취득처분현황",
+    "odtId": "B7R43PY2C3TMGXIUF3PC15415",
+    "otptOrd": 438,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "OWBQ568MV182UHWWC545SQFF2",
+    "parent": "D320",
+    "text": "사업별결산세출지출현황",
+    "odtId": "OWBQ568MV182UHWWC545SQFF2",
+    "otptOrd": 443,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "6VA6046X4YK2H4571BGO8731A",
+    "parent": "D320",
+    "text": "중앙정부결산",
+    "odtId": "6VA6046X4YK2H4571BGO8731A",
+    "otptOrd": 56,
+    "icon": "jstree-file"
+  },
+  {
+    "id": "45D51CR855L5G7H80G6138U27",
+    "parent": "C255",
+    "text": "세출및순융자의기능적분류(94년이전)",
+    "odtId": "45D51CR855L5G7H80G6138U27",
+    "otptOrd": 447,
+    "icon": "jstree-file"
+  }
+]

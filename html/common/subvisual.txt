@@ -57,3 +57,15 @@
         </div>
     </div>
 </div>
+
+<div class="sub-visual visual-total-search" id="visual-total-search">
+    <div class="wrapper">
+        <div class="sub-visual-text">
+            <p class="tit">통합검색</p>
+            <p class="desc">검색어와 관련된 메뉴별 정보를 편리하게 확인</p>
+        </div>
+        <div class="sub-visual-img" aria-hidden="true">
+            <img src="../images/common/sub-visual/visual-total-search.png" alt="">
+        </div>
+    </div>
+</div>

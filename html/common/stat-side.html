@@ -1,0 +1,52 @@
+<aside class="stat-side" aria-label="통계목록">
+    <div class="stat-side-inner">
+        <div class="side-head">
+            <div class="side-head-top">
+                <h3 class="side-title">통계목록</h3>
+                <button type="button" class="side-toggle" aria-pressed="false">
+                    <i class="ico-side-collapse" aria-hidden="true"></i>
+                    <i class="ico-side-expand" aria-hidden="true"></i>
+                    <span class="side-toggle-label is-close">닫힘</span>
+                    <span class="side-toggle-label is-open">펼침</span>
+                </button>
+            </div>
+            <div class="side-search">
+                <label class="sr-only" for="stat-side-search">통계명 검색</label>
+                <input type="search" id="stat-side-search" class="side-search-input" placeholder="통계명 검색">
+            </div>
+        </div>
+        <div class="side-filter">
+            <div class="side-filter-row">
+                <span class="side-filter-label">생산기관</span>
+                <div class="sel side-filter-sel">
+                    <select aria-label="생산기관">
+                        <option selected>전체</option>
+                    </select>
+                </div>
+            </div>
+            <div class="side-filter-row">
+                <span class="side-filter-label">자료출처</span>
+                <div class="sel side-filter-sel">
+                    <select aria-label="자료출처">
+                        <option selected>전체</option>
+                    </select>
+                </div>
+            </div>
+            <div class="side-filter-row">
+                <span class="side-filter-label">서비스 유형</span>
+                <div class="sel side-filter-sel">
+                    <select aria-label="서비스 유형">
+                        <option selected>전체</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="side-tree">
+            <div class="treebox">
+                <div class="tree_cont" id="statistics_M" aria-label="재정통계 분류"></div>
+            </div>
+        </div>
+    </div>
+    <button type="button" class="btn-lg st-blue w-full btn-side-excel"><i class="ico-download" aria-hidden="true"></i>통계 목록 엑셀 다운로드</button>
+</aside>
+

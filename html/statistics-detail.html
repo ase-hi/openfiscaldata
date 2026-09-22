@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title>열린재정</title>
+
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<link type="text/css" rel="stylesheet" href="../css/plugin.css">
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
+<script src="../js/pub-ui.js"></script>
+
+<link rel="stylesheet" href="../js/jstree/style.css">
+<script src="../js/jstree/jstree.min.js"></script>
+</head>
+<body>
+
+    <dl class="skipLink">
+        <dt>바로가기 메뉴</dt>
+        <dd><a href="#gnbMenu">주메뉴 바로가기</a></dd>
+        <dd><a href="#content">본문 바로가기</a></dd>
+    </dl>
+    <div class="wrap">
+        <script id="header-template">
+            // 헤더
+            $.ajax({url:"common/header.txt", dataType:"text", success:function(data){
+                $('#header-template').replaceWith(data);
+            }});
+        </script>
+
+        <div class="container" id="content">
+            <script id="subvisual-template">
+                $.ajax({url:"common/subvisual.txt", dataType:"text", success:function(data){
+                    $('#subvisual-template').replaceWith($(data).filter('#visual-lab'));
+                }});
+            </script>
+
+            <script id="breadcrumb-template">
+                // breadcrumb메뉴
+                $.ajax({url:"common/breadcrumb.txt", dataType:"text", success:function(data){
+                    $('#breadcrumb-template').replaceWith(data);
+                    breadcrumbMenu();
+                }});
+            </script>
+
+            <div class="contents">
+                <div class="title-main-wrap">
+                    <h2 class="title-main">상세재정통계</h2>
+                </div>
+
+                <div class="stat-layout">
+                    <script id="stat-side-template">
+                        // 통계목록 좌측 패널
+                        $.ajax({url:"common/stat-side.html", dataType:"text", success:function(data){
+                            $('#stat-side-template').replaceWith(data);
+                            initStatisticsSide();
+                        }});
+                    </script>
+                    <div class="stat-main">
+                        <div class="tab-main tab-closable">
+                            <ul role="tablist" aria-label="열린 통계">
+                                <li class="on">
+                                    <a href="javascript:void(0);" data-tab-id="sample-stat-tab1" role="tab" aria-selected="true"><span>사회복지</span></a>
+                                    <button type="button" class="btn-tab-close" aria-label="사회복지 탭 닫기"></button>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" data-tab-id="sample-stat-tab2" role="tab" aria-selected="false"><span>지방교육1</span></a>
+                                    <button type="button" class="btn-tab-close" aria-label="지방교육1 탭 닫기"></button>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" data-tab-id="sample-stat-tab3" role="tab" aria-selected="false"><span>지방교육2</span></a>
+                                    <button type="button" class="btn-tab-close" aria-label="지방교육2 탭 닫기"></button>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" data-tab-id="sample-stat-tab4" role="tab" aria-selected="false"><span>지방교육3</span></a>
+                                    <button type="button" class="btn-tab-close" aria-label="지방교육3 탭 닫기"></button>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" data-tab-id="sample-stat-tab5" role="tab" aria-selected="false"><span>지방교육4</span></a>
+                                    <button type="button" class="btn-tab-close" aria-label="지방교육4 탭 닫기"></button>
+                                </li>
+                            </ul>
+                            <button type="button" class="btn-tab-expand" aria-label="통계 화면 확대"></button>
+                        </div>
+
+                        <div class="tab-content">
+                            <nav class="content-breadcrumb" aria-label="현재 경로">
+                                <ol class="content-breadcrumb-list">
+                                    <li><a href="javascript:void(0);">중앙재정</a></li>
+                                    <li><a href="javascript:void(0);">결산</a></li>
+                                    <li><a href="javascript:void(0);">세출결산</a></li>
+                                    <li><a href="javascript:void(0);">분야별 세출</a></li>
+                                    <li><span class="is-current" aria-current="page">사회복지</span></li>
+                                </ol>
+                            </nav>
+                            <div class="title-secondary-wrap">
+                                <h3 class="title-secondary">사회복지</h3>
+                                <p class="title-secondary-desc">『사회복지』 현황 데이터입니다. 회계연도 및 지역구분 기준으로 조회할 수 있습니다.</p>
+                            </div>
+                            <div class="tab-filter" role="tablist" aria-label="데이터 제공 유형">
+                                <button type="button" role="tab" class="on" data-tab-id="stat-sheet" aria-selected="true">SHEET</button>
+                                <button type="button" role="tab" data-tab-id="stat-openapi" aria-selected="false">OPEN API</button>
+                            </div>
+                            <div class="tab-content" id="stat-sheet">
+                                <form class="form-search-box st-search-options" onsubmit="return false;">
+                                    <div class="form-search-fields">
+                                        <div class="fm">
+                                            <label for="statDetailYearStart" class="label">회계연도</label>
+                                            <div class="input-date">
+                                                <div class="sel"><select id="statDetailYearStart" name="yearStart" aria-label="회계연도 시작"><option value="" selected>선택</option><option>2026</option><option>2025</option><option>2024</option></select></div>
+                                                <span class="dash">~</span>
+                                                <div class="sel"><select name="yearEnd" aria-label="회계연도 종료"><option value="" selected>선택</option><option>2026</option><option>2025</option><option>2024</option></select></div>
+                                            </div>
+                                        </div>
+                                        <div class="fm">
+                                            <label for="statDetailExecutionDay" class="label">집행일</label>
+                                            <div class="sel"><select id="statDetailExecutionDay" name="executionDay"><option value="" selected>선택</option></select></div>
+                                        </div>
+                                    </div>
+                                    <div class="search-option-chips">
+                                        <div class="search-filter-wrap">
+                                            <button type="button" class="btn-sm btn-blue-line js-search-filter-toggle" aria-haspopup="dialog" aria-expanded="false" aria-controls="statDetailSearchFilterPop">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 3-.6 2.4-1.8 1-2.4-.7-3 5.2L3 12.6v2.1l-1.8 1.7 3 5.2 2.4-.7 1.8 1L9 24h6l.6-2.1 1.8-1 2.4.7 3-5.2-1.8-1.7v-2.1l1.8-1.7-3-5.2-2.4.7-1.8-1L15 3H9Z" transform="translate(2 0) scale(.83)" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="12" cy="11.2" r="3" stroke="currentColor" stroke-width="1.3"/></svg>
+                                                검색조건 설정
+                                            </button>
+                                            <!-- 검색조건 설정 레이어팝업 -->
+                                            <div class="search-filter-layer" id="statDetailSearchFilterPop" hidden role="dialog" aria-modal="false" aria-label="검색조건 설정">
+                                                <div class="search-filter-body">
+                                                    <div class="search-filter-group is-open" data-filter-id="area" data-chip-label="지역구분">
+                                                        <h4 class="search-filter-head">
+                                                            <button type="button" class="search-filter-toggle js-search-filter-acc" aria-expanded="true" aria-controls="statFilterPanelArea">
+                                                                <span class="tit">지역명</span>
+                                                                <span class="sum">서울 외 <em>2</em>건</span>
+                                                            </button>
+                                                        </h4>
+                                                        <div class="search-filter-panel" id="statFilterPanelArea">
+                                                            <div class="search-filter-search">
+                                                                <div class="search-filter-search-row">
+                                                                    <div class="inp">
+                                                                        <label for="statFilterAreaKeyword" class="sr-only">지역명 항목 검색</label>
+                                                                        <input type="text" id="statFilterAreaKeyword" placeholder="항목 검색" autocomplete="off">
+                                                                    </div>
+                                                                    <button type="button" class="btn-sm btn-dark">검색</button>
+                                                                </div>
+                                                                <div class="search-filter-search-util">
+                                                                    <div class="input-choice">
+                                                                        <input type="checkbox" id="statFilterAreaAll">
+                                                                        <label for="statFilterAreaAll">전체선택</label>
+                                                                    </div>
+                                                                    <button type="button" class="btn-filter-reset">초기화</button>
+                                                                </div>
+                                                            </div>
+                                                            <div class="search-filter-list">
+                                                                <div class="input-choice"><input type="checkbox" name="statFilterArea" id="statFilterArea1" value="서울" checked><label for="statFilterArea1">서울</label></div>
+                                                                <div class="input-choice"><input type="checkbox" name="statFilterArea" id="statFilterArea2" value="부산" checked><label for="statFilterArea2">부산</label></div>
+                                                                <div class="input-choice"><input type="checkbox" name="statFilterArea" id="statFilterArea3" value="대구" checked><label for="statFilterArea3">대구</label></div>
+                                                                <div class="input-choice"><input type="checkbox" name="statFilterArea" id="statFilterArea4" value="인천"><label for="statFilterArea4">인천</label></div>
+                                                                <div class="input-choice"><input type="checkbox" name="statFilterArea" id="statFilterArea5" value="광주"><label for="statFilterArea5">광주</label></div>
+                                                                <div class="input-choice"><input type="checkbox" name="statFilterArea" id="statFilterArea6" value="대전"><label for="statFilterArea6">대전</label></div>
+                                                                <div class="input-choice"><input type="checkbox" name="statFilterArea" id="statFilterArea7" value="울산"><label for="statFilterArea7">울산</label></div>
+                                                                <div class="input-choice"><input type="checkbox" name="statFilterArea" id="statFilterArea8" value="세종"><label for="statFilterArea8">세종</label></div>
+                                                                <div class="input-choice"><input type="checkbox" name="statFilterArea" id="statFilterArea9" value="경기"><label for="statFilterArea9">경기</label></div>
+                                                                <div class="input-choice"><input type="checkbox" name="statFilterArea" id="statFilterArea10" value="강원"><label for="statFilterArea10">강원</label></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="search-filter-group" data-filter-id="sector" data-chip-label="부문">
+                                                        <h4 class="search-filter-head">
+                                                            <button type="button" class="search-filter-toggle js-search-filter-acc" aria-expanded="false" aria-controls="statFilterPanelSector">
+                                                                <span class="tit">부문</span>
+                                                                <span class="sum"></span>
+                                                            </button>
+                                                        </h4>
+                                                        <div class="search-filter-panel" id="statFilterPanelSector">
+                                                            <div class="search-filter-search">
+                                                                <div class="search-filter-search-row">
+                                                                    <div class="inp">
+                                                                        <label for="statFilterSectorKeyword" class="sr-only">부문 항목 검색</label>
+                                                                        <input type="text" id="statFilterSectorKeyword" placeholder="항목 검색" autocomplete="off">
+                                                                    </div>
+                                                                    <button type="button" class="btn-sm btn-dark">검색</button>
+                                                                </div>
+                                                                <div class="search-filter-search-util is-single">
+                                                                    <button type="button" class="btn-filter-reset">초기화</button>
+                                                                </div>
+                                                            </div>
+                                                            <div class="search-filter-list">
+                                                                <div class="input-choice"><input type="radio" name="statFilterSector" id="statFilterSector1" value="합계"><label for="statFilterSector1">합계</label></div>
+                                                                <div class="input-choice"><input type="radio" name="statFilterSector" id="statFilterSector2" value="유치원" checked><label for="statFilterSector2">유치원</label></div>
+                                                                <div class="input-choice"><input type="radio" name="statFilterSector" id="statFilterSector3" value="초등학교"><label for="statFilterSector3">초등학교</label></div>
+                                                                <div class="input-choice"><input type="radio" name="statFilterSector" id="statFilterSector4" value="중학교"><label for="statFilterSector4">중학교</label></div>
+                                                                <div class="input-choice"><input type="radio" name="statFilterSector" id="statFilterSector5" value="고등학교"><label for="statFilterSector5">고등학교</label></div>
+                                                                <div class="input-choice"><input type="radio" name="statFilterSector" id="statFilterSector6" value="특수학교"><label for="statFilterSector6">특수학교</label></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="search-filter-group" data-filter-id="program" data-chip-label="프로그램명">
+                                                        <h4 class="search-filter-head">
+                                                            <button type="button" class="search-filter-toggle js-search-filter-acc" aria-expanded="false" aria-controls="statFilterPanelProgram">
+                                                                <span class="tit">프로그램명</span>
+                                                                <span class="sum"></span>
+                                                            </button>
+                                                        </h4>
+                                                        <div class="search-filter-panel" id="statFilterPanelProgram">
+                                                            <div class="search-filter-search">
+                                                                <div class="search-filter-search-row">
+                                                                    <div class="inp">
+                                                                        <label for="statFilterProgramKeyword" class="sr-only">프로그램명 항목 검색</label>
+                                                                        <input type="text" id="statFilterProgramKeyword" placeholder="항목 검색" autocomplete="off">
+                                                                    </div>
+                                                                    <button type="button" class="btn-sm btn-dark">검색</button>
+                                                                </div>
+                                                                <div class="search-filter-search-util is-single">
+                                                                    <button type="button" class="btn-filter-reset">초기화</button>
+                                                                </div>
+                                                            </div>
+                                                            <div class="search-filter-list">
+                                                                <div class="input-choice"><input type="radio" name="statFilterProgram" id="statFilterProgram1" value="교육지원" checked><label for="statFilterProgram1">교육지원</label></div>
+                                                                <div class="input-choice"><input type="radio" name="statFilterProgram" id="statFilterProgram2" value="유아교육"><label for="statFilterProgram2">유아교육</label></div>
+                                                                <div class="input-choice"><input type="radio" name="statFilterProgram" id="statFilterProgram3" value="평생교육"><label for="statFilterProgram3">평생교육</label></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="search-filter-foot">
+                                                    <button type="button" class="btn-filter-reset is-lg">초기화</button>
+                                                    <button type="button" class="btn-nm btn-blue js-search-filter-apply">적용</button>
+                                                </div>
+                                            </div>
+                                            <!-- // 검색조건 설정 레이어팝업 -->
+                                        </div>
+                                        <span class="search-option-chip" data-filter-target="area"><span>지역구분: 서울 외 2</span><button type="button" aria-label="지역구분 검색조건 삭제"><img src="../images/common/ico-file-remove.svg" width="14" height="14" alt=""></button></span>
+                                        <span class="search-option-chip" data-filter-target="sector"><span>부문: 유치원</span><button type="button" aria-label="부문 검색조건 삭제"><img src="../images/common/ico-file-remove.svg" width="14" height="14" alt=""></button></span>
+                                        <span class="search-option-chip" data-filter-target="program"><span>프로그램명: 교육지원</span><button type="button" aria-label="프로그램명 검색조건 삭제"><img src="../images/common/ico-file-remove.svg" width="14" height="14" alt=""></button></span>
+                                    </div>
+                                    <div class="form-search-btns">
+                                        <button type="reset" class="btn-reset">초기화</button>
+                                        <button type="submit" class="btn-search">검색</button>
+                                    </div>
+                                </form>
+                                <div class="data-util">
+                                    <div class="left">
+                                        <div class="total">총 <em>240</em>건</div>
+                                        <span class="bar" aria-hidden="true"></span>
+                                        <div class="total">전체 <em>408</em>건</div>
+                                    </div>
+                                    <div class="right">
+                                        <button type="button" class="btn-sm btn-blue">다차원 분석</button>
+                                        <div class="download-format-wrap">
+                                            <button type="button" class="btn-sm btn-white js-stat-download-toggle" aria-haspopup="dialog" aria-expanded="false" aria-controls="statDetailDownloadFormatPop">
+                                                <i class="ico-download" aria-hidden="true"></i>
+                                                <span>다운로드</span>
+                                            </button>
+                                            <div class="download-format-layer" id="statDetailDownloadFormatPop" hidden role="dialog" aria-modal="false" aria-labelledby="statDetailDownloadFormatPopTitle">
+                                                <div class="download-format-head">
+                                                    <h2 class="title" id="statDetailDownloadFormatPopTitle">포맷</h2>
+                                                    <button type="button" class="btn-close js-stat-download-close"><i class="ico-close"><span class="sr-only">닫기</span></i></button>
+                                                </div>
+                                                <div class="download-format-body">
+                                                    <div class="input-choice-wrap is-format-list" role="radiogroup" aria-label="다운로드 포맷">
+                                                        <div class="input-choice">
+                                                            <input type="radio" name="statDetailDownloadFormat" id="statDetailDownloadFormatXlsx" value="xlsx" checked>
+                                                            <label for="statDetailDownloadFormatXlsx">XLSX</label>
+                                                        </div>
+                                                        <div class="input-choice">
+                                                            <input type="radio" name="statDetailDownloadFormat" id="statDetailDownloadFormatXml" value="xml">
+                                                            <label for="statDetailDownloadFormatXml">XML</label>
+                                                        </div>
+                                                        <div class="input-choice">
+                                                            <input type="radio" name="statDetailDownloadFormat" id="statDetailDownloadFormatJson" value="json">
+                                                            <label for="statDetailDownloadFormatJson">JSON</label>
+                                                        </div>
+                                                        <div class="input-choice">
+                                                            <input type="radio" name="statDetailDownloadFormat" id="statDetailDownloadFormatCsv" value="csv">
+                                                            <label for="statDetailDownloadFormatCsv">CSV</label>
+                                                        </div>
+                                                        <div class="input-choice">
+                                                            <input type="radio" name="statDetailDownloadFormat" id="statDetailDownloadFormatTxt" value="txt">
+                                                            <label for="statDetailDownloadFormatTxt">TXT</label>
+                                                        </div>
+                                                        <div class="input-choice">
+                                                            <input type="radio" name="statDetailDownloadFormat" id="statDetailDownloadFormatXls" value="xls">
+                                                            <label for="statDetailDownloadFormatXls">XLS</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="download-format-actions">
+                                                        <button type="button" class="btn-sm btn-blue">
+                                                            <i class="ico-download" aria-hidden="true"></i>
+                                                            <span>다운로드</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="data-default" style="height: 500px;background: #dedede;display:flex;justify-content:center;align-items:center;font-size:30px;">테이블영역</div>
+                                
+                            </div>
+                            <!-- // tab-content -->
+
+                            <div class="tab-content" id="stat-openapi" style="display:none;">
+                                <div class="stat-openapi-panel">
+                                    <section class="section-wrap">
+                                        <div class="title-section-wrap">
+                                            <h4 class="title-section">요청주소</h4>
+                                            <p class="title-section-note stat-openapi-limit">요청제한 횟수 : 제한없음</p>
+                                        </div>
+                                        <div class="stat-openapi-request">
+                                            <div class="stat-openapi-url-group">
+                                                <div class="inp stat-openapi-url">
+                                                    <label for="statOpenapiRequestUrl" class="sr-only">요청주소</label>
+                                                    <input type="text" id="statOpenapiRequestUrl" value="http://openapi.eduinfo.go.kr/openApi.do?requestType=opclTotal" disabled>
+                                                </div>
+                                                <button type="button" class="btn-nm st-dark stat-openapi-copy">복사</button>
+                                            </div>
+                                            <button type="button" class="btn-nm btn-blue-line">
+                                                <i class="ico-download" aria-hidden="true"></i>
+                                                <span>명세서 다운로드</span>
+                                            </button>
+                                        </div>
+                                    </section>
+
+                                    <section class="section-wrap">
+                                        <div class="title-section-wrap">
+                                            <h4 class="title-section">기본 인자</h4>
+                                        </div>
+                                        <div class="data-default">
+                                            <div class="scroll">
+                                              <table>
+                                                  <caption class="sr-only">기본 인자 — 변수명, 요청인자타입, 설명, 비고</caption>
+                                                  <colgroup>
+                                                      <col style="width:25%;min-width:125px;">
+                                                      <col style="width:25%;min-width:125px;">
+                                                      <col style="width:25%;min-width:125px;">
+                                                      <col style="width:25%;min-width:125px;">
+                                                  </colgroup>
+                                                  <thead>
+                                                      <tr>
+                                                          <th scope="col">변수명</th>
+                                                          <th scope="col">요청인자타입</th>
+                                                          <th scope="col">설명</th>
+                                                          <th scope="col">비고</th>
+                                                      </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                      <tr>
+                                                          <td>Type</td>
+                                                          <td>String(필수)</td>
+                                                          <td>호출 문서(xml,json)</td>
+                                                          <td>기본값: XML</td>
+                                                      </tr>
+                                                  </tbody>
+                                              </table>
+                                            </div>
+                                        </div>
+                                    </section>
+
+                                    <section class="section-wrap">
+                                        <div class="title-section-wrap">
+                                            <h4 class="title-section">검색 요청인자</h4>
+                                        </div>
+                                        <div class="data-default">
+                                            <div class="scroll">
+                                              <table>
+                                                  <caption class="sr-only">검색 요청인자 — 항목명, 요청인자타입, 설명</caption>
+                                                  <colgroup>
+                                                      <col style="width:33.33%;min-width:125px;">
+                                                      <col style="width:33.33%;min-width:125px;">
+                                                      <col style="width:33.34%;min-width:125px;">
+                                                  </colgroup>
+                                                  <thead>
+                                                      <tr>
+                                                          <th scope="col">항목명</th>
+                                                          <th scope="col">요청인자타입</th>
+                                                          <th scope="col">설명</th>
+                                                      </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                      <tr>
+                                                          <td>YMQ</td>
+                                                          <td>String(필수)</td>
+                                                          <td>회계연도</td>
+                                                      </tr>
+                                                  </tbody>
+                                              </table>
+                                            </div>
+                                        </div>
+                                    </section>
+
+                                    <section class="section-wrap">
+                                        <div class="tab-filter st-sm" role="tablist" aria-label="OPEN API 결과 확인">
+                                            <button type="button" role="tab" data-tab-id="stat-openapi-output" aria-selected="false">출력값</button>
+                                            <button type="button" role="tab" data-tab-id="stat-openapi-sample" aria-selected="false">샘플URL</button>
+                                            <button type="button" role="tab" class="on" data-tab-id="stat-openapi-test" aria-selected="true">Open API</button>
+                                            <button type="button" role="tab" data-tab-id="stat-openapi-result" aria-selected="false">결과메세지</button>
+                                        </div>
+                                        <div class="tab-content" id="stat-openapi-output" style="display:none;" aria-hidden="true">
+                                            <div class="data-default">
+                                                <div class="scroll">
+                                                  <table>
+                                                      <caption class="sr-only">출력값 — No, 항목 ID, 항목명, 설명</caption>
+                                                      <colgroup>
+                                                          <col style="width:80px;">
+                                                          <col style="width:25%;min-width:150px;">
+                                                          <col style="width:25%;min-width:150px;">
+                                                          <col style="min-width:150px;">
+                                                      </colgroup>
+                                                      <thead>
+                                                          <tr>
+                                                              <th scope="col">No</th>
+                                                              <th scope="col">항목 ID</th>
+                                                              <th scope="col">항목명</th>
+                                                              <th scope="col">설명</th>
+                                                          </tr>
+                                                      </thead>
+                                                      <tbody>
+                                                          <tr>
+                                                              <td class="align-c">1</td>
+                                                              <td>ACNT_YR</td>
+                                                              <td>회계연도</td>
+                                                              <td>회계연도</td>
+                                                          </tr>
+                                                          <tr>
+                                                              <td class="align-c">2</td>
+                                                              <td>BC_DIV_NM</td>
+                                                              <td>예산결산구분명</td>
+                                                              <td>예산결산구분명</td>
+                                                          </tr>
+                                                      </tbody>
+                                                  </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-content" id="stat-openapi-sample" style="display:none;" aria-hidden="true">
+                                            <div class="data-default">
+                                                <div class="scroll">
+                                                  <table>
+                                                      <caption class="sr-only">샘플 URL — No, URL명, 주소</caption>
+                                                      <colgroup>
+                                                          <col style="width:80px;">
+                                                          <col style="min-width:200px;">
+                                                          <col style="min-width:240px;">
+                                                      </colgroup>
+                                                      <thead>
+                                                          <tr>
+                                                              <th scope="col">No</th>
+                                                              <th scope="col">URL명</th>
+                                                              <th scope="col">주소</th>
+                                                          </tr>
+                                                      </thead>
+                                                      <tbody>
+                                                          <tr>
+                                                              <td class="align-c">1</td>
+                                                              <td class="align-l">재정지출추이(총계기준)</td>
+                                                              <td class="align-l">https://openapi.openfiscaldata.go.kr/OPFI160?ACNT_YR=2015</td>
+                                                          </tr>
+                                                      </tbody>
+                                                  </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-content" id="stat-openapi-test">
+                                            <div class="data-default">
+                                                <div class="scroll">
+                                                  <table>
+                                                      <caption class="sr-only">Open API 테스트 — 구분, 설명, 입력값</caption>
+                                                      <colgroup>
+                                                          <col style="width:180px;">
+                                                          <col style="min-width: 200px;">
+                                                          <col style="min-width: 250px;">
+                                                      </colgroup>
+                                                      <thead>
+                                                          <tr>
+                                                              <th scope="col">구분</th>
+                                                              <th scope="col">설명</th>
+                                                              <th scope="col">입력값</th>
+                                                          </tr>
+                                                      </thead>
+                                                      <tbody>
+                                                          <tr>
+                                                              <td>YMQ</td>
+                                                              <td>연도를 입력합니다. EX) 2016</td>
+                                                              <td class="align-l">
+                                                                  <div class="inp">
+                                                                      <label for="statOpenapiParamYmq" class="sr-only">YMQ 입력값</label>
+                                                                      <input type="text" id="statOpenapiParamYmq" name="ymq">
+                                                                  </div>
+                                                              </td>
+                                                          </tr>
+                                                      </tbody>
+                                                  </table>
+                                                </div>
+                                            </div>
+                                            <div class="content-btn-wrap">
+                                                <div class="right"><button type="button" class="btn-sm btn-blue">조회</button></div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-content" id="stat-openapi-result" style="display:none;" aria-hidden="true">
+                                            <div class="data-default">
+                                                <div class="scroll">
+                                                  <table>
+                                                      <caption class="sr-only">결과 메세지 — No, 메세지구분, 메세지코드, 메세지설명</caption>
+                                                      <colgroup>
+                                                          <col style="width:80px;">
+                                                          <col style="width:120px;min-width:120px;">
+                                                          <col style="width:120px;min-width:120px;">
+                                                          <col style="min-width:300px;">
+                                                      </colgroup>
+                                                      <thead>
+                                                          <tr>
+                                                              <th scope="col">No</th>
+                                                              <th scope="col">메세지구분</th>
+                                                              <th scope="col">메세지코드</th>
+                                                              <th scope="col">메세지설명</th>
+                                                          </tr>
+                                                      </thead>
+                                                      <tbody>
+                                                          <tr>
+                                                              <td class="align-c">1</td>
+                                                              <td class="align-c">INFO</td>
+                                                              <td class="align-c">000</td>
+                                                              <td class="align-l">정상 처리되었습니다.</td>
+                                                          </tr>
+                                                          <tr>
+                                                              <td class="align-c">2</td>
+                                                              <td class="align-c">ERROR</td>
+                                                              <td class="align-c">300</td>
+                                                              <td class="align-l">필수 값이 누락되어 있습니다.<br>요청인자를 참고 하십시오.</td>
+                                                          </tr>
+                                                          <tr>
+                                                              <td class="align-c">3</td>
+                                                              <td class="align-c">ERROR</td>
+                                                              <td class="align-c">290</td>
+                                                              <td class="align-l">&quot;인증키가 유효하지 않습니다.<br>인증키가 없는 경우, 홈페이지에서 인증키를 신청하십시오.&quot;</td>
+                                                          </tr>
+                                                      </tbody>
+                                                  </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                            <!-- // tab-content stat-openapi -->
+
+                            <div class="data-detail">
+                                <table>
+                                    <caption class="sr-only">통계 메타 정보 — 자료출처, 마감시간, 통계생산기관, 최초공개일자</caption>
+                                    <colgroup>
+                                        <col style="width:160px">
+                                        <col>
+                                        <col style="width:160px">
+                                        <col>
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">자료출처</th>
+                                            <td>각 연도 주요 재정통계</td>
+                                            <th scope="row">마감시간</th>
+                                            <td>
+                                                <p>본 저작물은 ‘공공누리’ 제3유형·출처표시+변경금지 조건에 따라 이용할 수 있습니다.</p>
+                                                <span class="kogl"><img src="../images/content/img-kogl.png" alt="공공누리 제3유형 출처표시+변경금지"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">통계생산기관</th>
+                                            <td>한국재정정보원</td>
+                                            <th scope="row">최초공개일자</th>
+                                            <td>2021-11-13</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="related-info-box">
+                                <strong class="related-info-tit">· 관련정보</strong>
+                                <ul class="related-info-list">
+                                    <li><a href="javascript:void(0);" class="related-info-link">순자산변동표<i class="ico-link-external" aria-hidden="true"></i></a></li>
+                                    <li><a href="javascript:void(0);" class="related-info-link">재정상태표<i class="ico-link-external" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // stat-main -->
+                </div>
+                <!-- // stat-layout -->
+
+                <script id="feedback-template">
+                    // 피드백
+                    $.ajax({url:"common/feedback.txt", dataType:"text", success:function(data){
+                        $('#feedback-template').replaceWith(data);
+                        pageFeedback();
+                    }});
+                </script>
+            </div>
+            <!-- //contents -->
+
+            <script id="floating-template">
+                // 플로팅메뉴
+                $.ajax({url:"common/floating.txt", dataType:"text", success:function(data){
+                    $('#floating-template').replaceWith(data);
+                }});
+            </script>
+        </div>
+        <script id="footer-template">
+            // 푸터
+            $.ajax({url:"common/footer.txt", dataType:"text", success:function(data){
+                $('#footer-template').replaceWith(data);
+            }});
+        </script>
+    </div>
+    <!-- // wrap -->
+
+
+
+<!-- 검색조건 설정 레이어팝업 -->
+<script>
+// 검색조건 설정 레이어팝업 열기/닫기
+function statSearchFilterLayer(){
+    var $wrap = $('.search-filter-wrap');
+    if(!$wrap.length) return;
+
+    var $layer = $wrap.find('.search-filter-layer');
+    var $toggle = $wrap.find('.js-search-filter-toggle');
+    var lastFocus = null;
+
+    function openLayer(){
+        lastFocus = document.activeElement;
+        $wrap.addClass('is-open');
+        $layer.removeAttr('hidden').attr('aria-modal', 'true');
+        $toggle.attr('aria-expanded', 'true');
+
+        // 열 때마다 첫번째(지역명) 아코디언이 열린 상태로 시작
+        statSearchFilterAccordionReset($layer);
+        $layer.find('.search-filter-body').scrollTop(0);
+
+        // 적용하지 않고 닫았던 변경값은 되돌림
+        $layer.trigger('searchfilter:open');
+
+        setTimeout(function(){
+            var $first = $layer.find('.search-filter-group.is-open .search-filter-toggle').first();
+            if(!$first.length) $first = $layer.find('.search-filter-toggle').first();
+            $first.trigger('focus');
+        }, 0);
+    }
+
+    function closeLayer(){
+        if(!$wrap.hasClass('is-open')) return;
+        $wrap.removeClass('is-open');
+        $layer.attr({'hidden': true, 'aria-modal': 'false'});
+        $toggle.attr('aria-expanded', 'false');
+
+        if(lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
+        lastFocus = null;
+    }
+
+    // 버튼으로 열기/닫기
+    $toggle.on('click', function(e){
+        e.stopPropagation();
+        if($wrap.hasClass('is-open')) closeLayer();
+        else openLayer();
+    });
+
+    // 적용 버튼으로 닫기
+    $layer.on('click', '.js-search-filter-apply', function(){
+        closeLayer();
+    });
+
+    // 레이어 내부 클릭은 닫히지 않도록
+    $layer.on('click', function(e){
+        e.stopPropagation();
+    });
+
+    // 바깥 클릭 / ESC 로 닫기
+    $(document).on('click.searchFilterLayer', function(){
+        closeLayer();
+    });
+
+    $(document).on('keydown.searchFilterLayer', function(e){
+        if(e.key === 'Escape' || e.keyCode === 27) closeLayer();
+    });
+}
+
+// 검색조건 설정 레이어팝업 아코디언 초기화 (첫번째 그룹만 열림)
+function statSearchFilterAccordionReset($layer){
+    if(!$layer || !$layer.length) return;
+
+    var $groups = $layer.find('.search-filter-group');
+    $groups.removeClass('is-open').find('.search-filter-toggle').attr('aria-expanded', 'false');
+    $groups.first().addClass('is-open').find('.search-filter-toggle').attr('aria-expanded', 'true');
+}
+
+// 검색조건 설정 레이어팝업 아코디언
+function statSearchFilterAccordion(){
+    var $layer = $('.search-filter-layer');
+    if(!$layer.length) return;
+
+    $layer.on('click', '.js-search-filter-acc', function(){
+        var $group = $(this).closest('.search-filter-group');
+
+        if($group.hasClass('is-open')){
+            $group.removeClass('is-open');
+            $(this).attr('aria-expanded', 'false');
+            return;
+        }
+
+        $group.closest('.search-filter-body').find('.search-filter-group').removeClass('is-open')
+            .find('.search-filter-toggle').attr('aria-expanded', 'false');
+        $group.addClass('is-open');
+        $(this).attr('aria-expanded', 'true');
+    });
+}
+
+// 검색조건 설정 레이어팝업 초기화 버튼
+function statSearchFilterReset(){
+    var $layer = $('.search-filter-layer');
+    if(!$layer.length) return;
+
+    // 그룹 선택값 / 전체선택 / 항목검색어 비우기
+    function resetGroup($group){
+        $group.find('.search-filter-list input').prop('checked', false);
+        $group.find('.search-filter-search-util input[type="checkbox"]').prop('checked', false);
+        $group.find('.search-filter-search-row input[type="text"]').val('');
+    }
+
+    // 그룹 초기화
+    $layer.on('click', '.search-filter-panel .btn-filter-reset', function(){
+        resetGroup($(this).closest('.search-filter-group'));
+        $layer.trigger('searchfilter:reset');
+    });
+
+    // 전체 초기화
+    $layer.on('click', '.search-filter-foot .btn-filter-reset', function(){
+        $layer.find('.search-filter-group').each(function(){
+            resetGroup($(this));
+        });
+        $layer.trigger('searchfilter:reset');
+    });
+}
+
+// 검색조건 설정 레이어팝업 선택값 → 검색조건 칩 반영
+function statSearchFilterChip(){
+    var $wrap = $('.search-filter-wrap');
+    if(!$wrap.length) return;
+
+    var $chipArea = $wrap.parent('.search-option-chips');
+    var $layer = $wrap.find('.search-filter-layer');
+    if(!$chipArea.length || !$layer.length) return;
+
+    // 마지막으로 적용된 선택값 { 그룹id: [input id, ...] }
+    var applied = {};
+
+    // 현재 선택값을 적용값으로 저장
+    function saveApplied(){
+        applied = {};
+        $layer.find('.search-filter-group').each(function(){
+            var $group = $(this);
+            var ids = [];
+            $group.find('.search-filter-list input').filter(':checked').each(function(){
+                ids.push(this.id);
+            });
+            applied[$group.attr('data-filter-id')] = ids;
+        });
+    }
+
+    // 적용값으로 되돌리기 (적용 없이 닫은 경우)
+    function restoreApplied(){
+        $layer.find('.search-filter-group').each(function(){
+            var $group = $(this);
+            var ids = applied[$group.attr('data-filter-id')] || [];
+
+            $group.find('.search-filter-list input').each(function(){
+                this.checked = ids.indexOf(this.id) > -1;
+            });
+            $group.find('.search-filter-search-util input[type="checkbox"]').prop('checked', false);
+            $group.find('.search-filter-search-row input[type="text"]').val('');
+        });
+        renderSummary();
+    }
+
+    // 그룹에서 선택한 항목명 수집
+    function getSelected($group){
+        var labels = [];
+        $group.find('.search-filter-list input').filter(':checked').each(function(){
+            labels.push($(this).closest('.input-choice').find('label').text().replace(/^\s+|\s+$/g, ''));
+        });
+        return labels;
+    }
+
+    // 아코디언 헤더 우측 요약문구 (예: 서울 외 2건)
+    function renderSummary(){
+        $layer.find('.search-filter-group').each(function(){
+            var $group = $(this);
+            var labels = getSelected($group);
+            var $sum = $group.find('.search-filter-toggle .sum');
+
+            if(!labels.length) $sum.empty();
+            else if(labels.length === 1) $sum.text(labels[0]);
+            else $sum.html($('<span></span>').text(labels[0]).html() + ' 외 <em>' + (labels.length - 1) + '</em>건');
+        });
+    }
+
+    // 검색조건 칩 다시 그리기
+    function renderChips(){
+        $chipArea.children('.search-option-chip').remove();
+
+        $layer.find('.search-filter-group').each(function(){
+            var $group = $(this);
+            var labels = getSelected($group);
+            if(!labels.length) return;
+
+            var name = $group.attr('data-chip-label');
+            var text = labels.length === 1 ? labels[0] : labels[0] + ' 외 ' + (labels.length - 1);
+
+            $chipArea.append(
+                $('<span class="search-option-chip"></span>')
+                    .attr('data-filter-target', $group.attr('data-filter-id'))
+                    .append($('<span></span>').text(name + ': ' + text))
+                    .append($('<button type="button"></button>')
+                        .attr('aria-label', name + ' 검색조건 삭제')
+                        .append('<img src="../images/common/ico-file-remove.svg" width="14" height="14" alt="">'))
+            );
+        });
+    }
+
+    // 항목 선택 / 초기화 시 헤더 요약문구 갱신
+    $layer.on('change', '.search-filter-list input', function(){
+        renderSummary();
+    });
+
+    $layer.on('searchfilter:reset', function(){
+        renderSummary();
+    });
+
+    // 레이어를 열 때 마지막 적용값으로 되돌리기
+    $layer.on('searchfilter:open', function(){
+        restoreApplied();
+    });
+
+    // 적용 → 선택값 저장 + 칩 갱신
+    $layer.on('click', '.js-search-filter-apply', function(){
+        saveApplied();
+        renderChips();
+    });
+
+    // 칩 삭제 → 해당 그룹 선택 해제
+    $chipArea.on('click', '.search-option-chip button', function(){
+        var target = $(this).closest('.search-option-chip').attr('data-filter-target');
+        $layer.find('.search-filter-group[data-filter-id="' + target + '"]')
+            .find('.search-filter-list input').prop('checked', false);
+        saveApplied();
+        renderSummary();
+        renderChips();
+    });
+
+    saveApplied();
+    renderSummary();
+    renderChips();
+}
+
+$(function(){
+    statSearchFilterLayer();
+    statSearchFilterAccordion();
+    statSearchFilterChip();
+    statSearchFilterReset();
+});
+</script>
+
+</body>
+</html>

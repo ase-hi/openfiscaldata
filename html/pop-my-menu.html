@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title>열린재정</title>
+
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
+<script src="../js/pub-ui.js"></script>
+
+</head>
+<body>
+
+
+
+<div class="popup-wrap" id="tempPopId">
+  <div class="dim"></div>
+  <div class="pop-wrap">
+    <div class="popup my-menu-pop">
+      <div class="pop-header">
+        <div class="left">
+          <h2 class="title">내 메뉴</h2>
+          <div class="tooltip-wrap">
+            <button type="button" class="tooltip-btn" aria-label="도움말 보기" aria-expanded="false" aria-controls="tooltip-mymenu">
+              <img src="../images/common/ico-tooltip-info.svg" alt="">
+            </button>
+            <div class="tooltip" id="tooltip-mymenu" role="tooltip">
+              <p class="tooltip-text">내 메뉴는 최대 8개까지 설정 가능하며, 내 메뉴 편집에서<br>자유롭게 구성할 수 있습니다</p>
+              <button type="button" class="tooltip-close" aria-label="툴팁 닫기">
+                <img src="../images/common/ico-tooltip-close.svg" alt="">
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="right">
+          <button type="button" class="btn-close"><i class="ico-close"><span class="sr-only">닫기</span></i></button>
+        </div>
+      </div>
+      <div class="pop-body">
+        <div class="my-menu-pop-inner">
+          <div class="pop-guide">
+            <p class="pop-guide-text">
+              내 메뉴를 등록하면 어느 페이지에서든 바로 이동할 수 있습니다.<br>
+              저장한 내 메뉴는 72시간동안 유지됩니다.
+            </p>
+            <button type="button" class="btn-nm btn-blue-line">
+              <i class="ico-my-menu-setting" aria-hidden="true"></i>
+              내 메뉴 편집
+            </button>
+          </div>
+          <div class="my-menu-pop-content">
+            <ul class="my-menu-pop-grid">
+              <li><a href="javascript:void(0);" class="my-menu-pop-link">재정개요</a></li>
+              <li><a href="javascript:void(0);" class="my-menu-pop-link">온라인 재정박물관</a></li>
+              <li><a href="javascript:void(0);" class="my-menu-pop-link">한 눈에 보는 국가재정</a></li>
+              <li><a href="javascript:void(0);" class="my-menu-pop-link">재정통계분석 AI</a></li>
+              <li><a href="javascript:void(0);" class="my-menu-pop-link">재정자료분석 AI</a></li>
+              <li><a href="javascript:void(0);" class="my-menu-pop-link">재정법령 AI</a></li>
+              <li><a href="javascript:void(0);" class="my-menu-pop-link">지원사업 간편검색</a></li>
+              <li><a href="javascript:void(0);" class="my-menu-pop-link">공지사항</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script>
+  popOpen('#tempPopId');
+</script>
+
+</body>
+</html>

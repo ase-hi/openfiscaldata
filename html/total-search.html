@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title>열린재정</title>
+
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
+<link type="text/css" rel="preload" href="../css/font.css">
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
+<script src="../js/pub-ui.js"></script>
+
+</head>
+<body>
+
+    <dl class="skipLink">
+        <dt>바로가기 메뉴</dt>	
+        <dd><a href="#gnbMenu">주메뉴 바로가기</a></dd>
+        <dd><a href="#content">본문 바로가기</a></dd>
+    </dl>
+    <div class="wrap">
+        <script id="header-template">
+            // 헤더
+            $.ajax({url:"common/header.txt", dataType:"text", success:function(data){
+                $('#header-template').replaceWith(data);
+            }});
+        </script>
+
+        <div class="container" id="content">
+            <script id="subvisual-template">
+                $.ajax({url:"common/subvisual.txt", dataType:"text", success:function(data){
+                    $('#subvisual-template').replaceWith($(data).filter('#visual-total-search'));
+                }});
+            </script>
+
+            <script id="breadcrumb-template">
+                // breadcrumb메뉴
+                $.ajax({url:"common/breadcrumb.txt", dataType:"text", success:function(data){
+                    $('#breadcrumb-template').replaceWith(data);
+                    breadcrumbMenu();
+                }});
+            </script>
+            
+            <div class="contents total-search-page">
+                <div class="title-main-wrap">
+                    <h2 class="title-main">통합검색</h2>
+                </div>
+
+                <div class="total-search-top">
+                    <div class="form-search-box row-type">
+                        <div class="form-search-fields">
+                            <div class="fm auto">
+                            <div class="sel">
+                                <select id="eval-jurisdiction" aria-label="소관">
+                                <option selected="">선택</option>
+                                </select>
+                            </div>
+                            <div class="inp auto">
+                                <input type="text" id="bar-keyword" placeholder="검색어를 입력하세요." aria-label="검색어">
+                            </div>
+                            <button type="button" class="btn-search">검색</button>
+                            </div>
+                            <div class="input-choice mo-oneline">
+                            <input type="checkbox" id="bar-research">
+                            <label for="bar-research">결과내 재검색</label>
+                            </div>
+                            <button type="button" class="btn-filter-close btn-nm btn-white">
+                            <span>상세 검색</span>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M16.4452 7.0051C16.7189 7.25139 16.7411 7.67292 16.4948 7.94661L10.4955 14.6133C10.3691 14.7538 10.1889 14.834 9.99994 14.834C9.81095 14.834 9.63083 14.7538 9.50439 14.6133L3.50439 7.94663C3.25809 7.67296 3.28027 7.25143 3.55395 7.00513C3.82762 6.75882 4.24915 6.78101 4.49545 7.05468L9.9999 13.1707L15.5037 7.05471C15.75 6.78102 16.1715 6.75881 16.4452 7.0051Z" fill="#33363D"/>
+                            </svg>
+                            </button>
+                        </div>
+                    </div>
+
+
+                    <!-- case2 : 입찰 검색 -->
+                    <div class="form-search-box detail-filter" id="detailFilter" style="display:none;">
+                    <div class="form-search-fields">
+                        <div class="form-row">
+                        <div class="fm">
+                            <label for="bid-no-detail" class="label">모두 포함된 결과(AND)</label>
+                            <div class="inp">
+                            <input type="text" id="bid-no-detail" placeholder="검색어를 입력하세요." aria-label="검색어">
+                            </div>
+                        </div>
+                        <div class="fm">
+                            <label for="bid-name-detail" class="label">하나라도 포함된 결과(OR)</label>
+                            <div class="inp">
+                            <input type="text" id="bid-name" placeholder="검색어를 입력하세요." aria-label="검색어">
+                            </div>
+                        </div>
+                        </div>
+                        <div class="form-row">
+                        <div class="fm">
+                            <label for="bid-start-date" class="label">검색기간</label>
+                            <div class="input-date">
+                            <input type="text" id="bid-start-date" class="datepicker start-date" placeholder="YYYY-MM-DD" title="시작일" aria-label="입찰 시작일">
+                            <span class="dash">~</span>
+                            <input type="text" class="datepicker end-date" placeholder="YYYY-MM-DD" title="종료일" aria-label="입찰 종료일">
+                            </div>
+                            <div class="btn-date-tab-group">
+                            <button type="button" class="btn-tab on">전체</button>
+                            <button type="button" class="btn-tab">3개월</button>
+                            <button type="button" class="btn-tab">6개월</button>
+                            <button type="button" class="btn-tab">1년</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="form-search-btns">
+                        <button type="button" class="btn-nm st-white btn-detail-filter-close">닫기</button>
+                        <button type="button" class="btn-search">검색</button>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="total-search-tab-row">
+                    <div class="total-search-cat-tabs" role="tablist" aria-label="통합검색 구분">
+                        <button type="button" class="on" role="tab" data-tab-id="total-search-all" aria-selected="true">전체</button>
+                        <button type="button" role="tab" data-tab-id="total-search-finance" aria-selected="false">알기쉬운 재정</button>
+                        <button type="button" role="tab" data-tab-id="total-search-stats" aria-selected="false">알기쉬운 재정통계</button>
+                        <button type="button" role="tab" data-tab-id="total-search-lab" aria-selected="false">재정연구실</button>
+                        <button type="button" role="tab" data-tab-id="total-search-together" aria-selected="false">함께하는 재정</button>
+                        <button type="button" role="tab" data-tab-id="total-search-notice" aria-selected="false">알림·안내</button>
+                    </div>
+                    <div class="total-search-hot">
+                        <strong class="total-search-hot-tit">인기검색어 TOP3</strong>
+                        <div class="total-search-hot-pop-wrap">
+                            <button type="button" class="total-search-hot-item js-total-search-hot-toggle" aria-expanded="false" aria-controls="totalSearchHotPop" aria-haspopup="dialog">
+                                <span class="total-search-hot-roll">
+                                    <span class="total-search-hot-roll-inner">
+                                        <span class="txt-rank"><span class="num">1.</span><span class="txt">재정자립도</span></span>
+                                        <span class="txt-rank"><span class="num">2.</span><span class="txt">세부사업별 세출현황</span></span>
+                                        <span class="txt-rank"><span class="num">3.</span><span class="txt">Open API</span></span>
+                                    </span>
+                                </span>
+                            </button>
+                            <div class="total-search-hot-pop" id="totalSearchHotPop" hidden role="dialog" aria-modal="false" aria-label="인기검색어 TOP3">
+                                <div class="total-search-hot-tabs" role="tablist" aria-label="인기검색어 기간">
+                                    <button type="button" class="on" role="tab" data-tab-id="total-search-hot-daily" aria-selected="true" aria-controls="total-search-hot-daily">일간</button>
+                                    <button type="button" role="tab" data-tab-id="total-search-hot-weekly" aria-selected="false" aria-controls="total-search-hot-weekly">주간</button>
+                                    <button type="button" role="tab" data-tab-id="total-search-hot-monthly" aria-selected="false" aria-controls="total-search-hot-monthly">월간</button>
+                                </div>
+                                <ol class="total-search-hot-list" id="total-search-hot-daily" role="tabpanel" aria-label="일간 인기검색어">
+                                    <li>
+                                        <span class="total-search-hot-rank" aria-hidden="true">1</span>
+                                        <a href="javascript:void(0);">재정자립도</a>
+                                    </li>
+                                    <li>
+                                        <span class="total-search-hot-rank" aria-hidden="true">2</span>
+                                        <a href="javascript:void(0);">세부사업별 세출현황</a>
+                                    </li>
+                                    <li>
+                                        <span class="total-search-hot-rank" aria-hidden="true">3</span>
+                                        <a href="javascript:void(0);">Open API</a>
+                                    </li>
+                                </ol>
+                                <ol class="total-search-hot-list" id="total-search-hot-weekly" role="tabpanel" aria-label="주간 인기검색어" style="display:none;" aria-hidden="true">
+                                    <li>
+                                        <span class="total-search-hot-rank" aria-hidden="true">1</span>
+                                        <a href="javascript:void(0);">국고채 3년물</a>
+                                    </li>
+                                    <li>
+                                        <span class="total-search-hot-rank" aria-hidden="true">2</span>
+                                        <a href="javascript:void(0);">재정자립도</a>
+                                    </li>
+                                    <li>
+                                        <span class="total-search-hot-rank" aria-hidden="true">3</span>
+                                        <a href="javascript:void(0);">지방교육재정</a>
+                                    </li>
+                                </ol>
+                                <ol class="total-search-hot-list" id="total-search-hot-monthly" role="tabpanel" aria-label="월간 인기검색어" style="display:none;" aria-hidden="true">
+                                    <li>
+                                        <span class="total-search-hot-rank" aria-hidden="true">1</span>
+                                        <a href="javascript:void(0);">세출결산</a>
+                                    </li>
+                                    <li>
+                                        <span class="total-search-hot-rank" aria-hidden="true">2</span>
+                                        <a href="javascript:void(0);">국가채무</a>
+                                    </li>
+                                    <li>
+                                        <span class="total-search-hot-rank" aria-hidden="true">3</span>
+                                        <a href="javascript:void(0);">재정자립도</a>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="total-search-all">
+                    <div class="total-search-result-head">
+                        <div class="data-util">
+                            <div class="left">
+                                <p class="total-search-result-msg"><em class="total-search-mark">&quot;국고채 3년물&quot;</em>(으)로 검색한 결과, 총 <em>13,622</em>건 의 검색결과가 있습니다.</p>
+                            </div>
+                            <div class="right">
+                                <div class="sort-toggle" role="group" aria-label="정렬">
+                                    <button type="button" class="on" aria-pressed="true">정확도</button>
+                                    <button type="button" aria-pressed="false">최신순</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <section class="total-search-group" aria-labelledby="totalSearchGroup1">
+                        <div class="total-search-group-head">
+                            <h3 class="total-search-group-tit" id="totalSearchGroup1"><span>알기쉬운 재정</span><span class="total-search-group-count"><em>18</em>건</span></h3>
+                            <button type="button" class="total-search-more"><span>더보기</span><i class="ico-arr-r" aria-hidden="true"></i></button>
+                        </div>
+                        <ul class="total-search-list">
+                            <li>
+                                <article class="total-search-item">
+                                    <div class="total-search-item-path">
+                                        <span>알기쉬운 재정</span><i class="ico-arr-r" aria-hidden="true"></i><span>재정정보</span><i class="ico-arr-r" aria-hidden="true"></i><span>국고채 입찰</span>
+                                    </div>
+                                    <h4 class="total-search-item-tit"><a href="javascript:void(0);"><mark class="total-search-mark">국고채 3년물</mark> ”국고 03500-2906” 통합발행 경쟁입찰 결과</a></h4>
+                                    <p class="total-search-item-desc">□ 입찰개요 ○ 입찰일시 : '26.8.10.(월) 10:40~11:00 (발행일: '26.6.10.) ○ 입찰금액 : 3년물(국고03500-2906) 36,000억원 □ 응찰결과 ○ 응찰금액 : 92,620억원 ○ 응찰률 : 257.3% ○ 응찰금리 : 3.745 ~ 3.795% □ 낙찰결과 ○ 낙찰금액 :36,000억원 ○ 최저낙찰금리 : 3.780%, 최고낙찰금리 : ...</p>
+                                </article>
+                            </li>
+                            <li>
+                                <article class="total-search-item">
+                                    <div class="total-search-item-path">
+                                        <span>알기쉬운 재정</span><i class="ico-arr-r" aria-hidden="true"></i><span>재정정보</span><i class="ico-arr-r" aria-hidden="true"></i><span>국고채 입찰</span>
+                                    </div>
+                                    <h4 class="total-search-item-tit"><a href="javascript:void(0);">물가연동국고채 “물가01125-3606” 통합발행 경쟁입찰 결과</a></h4>
+                                    <p class="total-search-item-desc">□ 입찰개요 ○ 입찰일시 : '26.8.10.(월) 10:40~11:00 (발행일: '26.6.10.) ○ 입찰금액 : 3년물(국고03500-2906) 36,000억원 □ 응찰결과 ○ 응찰금액 : 92,620억원 ○ 응찰률 : 257.3% ○ 응찰금리 : 3.745 ~ 3.795% □ 낙찰결과 ○ 낙찰금액 :36,000억원 ○ 최저낙찰금리 : 3.780%, 최고낙찰금리 : ...</p>
+                                </article>
+                            </li>
+                            <li>
+                                <article class="total-search-item">
+                                    <div class="total-search-item-path">
+                                        <span>알기쉬운 재정</span><i class="ico-arr-r" aria-hidden="true"></i><span>재정정보</span><i class="ico-arr-r" aria-hidden="true"></i><span>국고채 입찰</span>
+                                    </div>
+                                    <h4 class="total-search-item-tit"><a href="javascript:void(0);"><mark class="total-search-mark">국고채 3년물</mark> ”국고 03500-2906” 통합발행 경쟁입찰 결과</a></h4>
+                                    <p class="total-search-item-desc">□ 입찰개요 ○ 입찰일시 : '26.8.10.(월) 10:40~11:00 (발행일: '26.6.10.) ○ 입찰금액 : 3년물(국고03500-2906) 36,000억원 □ 응찰결과 ○ 응찰금액 : 92,620억원 ○ 응찰률 : 257.3% ○ 응찰금리 : 3.745 ~ 3.795% □ 낙찰결과 ○ 낙찰금액 :36,000억원 ○ 최저낙찰금리 : 3.780%, 최고낙찰금리 : ...</p>
+                                </article>
+                            </li>
+                        </ul>
+                    </section>
+                    <section class="total-search-group" aria-labelledby="totalSearchGroup2">
+                        <div class="total-search-group-head">
+                            <h3 class="total-search-group-tit" id="totalSearchGroup2"><span>알기쉬운 재정통계</span><span class="total-search-group-count"><em>18</em>건</span></h3>
+                            <button type="button" class="total-search-more"><span>더보기</span><i class="ico-arr-r" aria-hidden="true"></i></button>
+                        </div>
+                        <ul class="total-search-list">
+                            <li>
+                                <article class="total-search-item">
+                                    <div class="total-search-item-path">
+                                        <span>알기쉬운 재정통계</span><i class="ico-arr-r" aria-hidden="true"></i><span>통계</span><i class="ico-arr-r" aria-hidden="true"></i><span>분류</span>
+                                    </div>
+                                    <h4 class="total-search-item-tit"><a href="javascript:void(0);">비용의 성질별 분류</a></h4>
+                                    <p class="total-search-item-desc">□ 입찰개요 ○ 입찰일시 : '26.8.10.(월) 10:40~11:00 (발행일: '26.6.10.) ○ 입찰금액 : 3년물(국고03500-2906) 36,000억원 □ 응찰결과 ○ 응찰금액 : 92,620억원 ○ 응찰률 : 257.3% ○ 응찰금리 : 3.745 ~ 3.795% □ 낙찰결과 ○ 낙찰금액 :36,000억원 ○ 최저낙찰금리 : 3.780%, 최고낙찰금리 : ...</p>
+                                </article>
+                            </li>
+                            <li>
+                                <article class="total-search-item">
+                                    <div class="total-search-item-path">
+                                        <span>알기쉬운 재정통계</span><i class="ico-arr-r" aria-hidden="true"></i><span>통계</span><i class="ico-arr-r" aria-hidden="true"></i><span>분류</span>
+                                    </div>
+                                    <h4 class="total-search-item-tit"><a href="javascript:void(0);">일반정부재정수지</a></h4>
+                                    <p class="total-search-item-desc">□ 입찰개요 ○ 입찰일시 : '26.8.10.(월) 10:40~11:00 (발행일: '26.6.10.) ○ 입찰금액 : 3년물(국고03500-2906) 36,000억원 □ 응찰결과 ○ 응찰금액 : 92,620억원 ○ 응찰률 : 257.3% ○ 응찰금리 : 3.745 ~ 3.795% □ 낙찰결과 ○ 낙찰금액 :36,000억원 ○ 최저낙찰금리 : 3.780%, 최고낙찰금리 : ...</p>
+                                </article>
+                            </li>
+                            <li>
+                                <article class="total-search-item">
+                                    <div class="total-search-item-path">
+                                        <span>알기쉬운 재정통계</span><i class="ico-arr-r" aria-hidden="true"></i><span>통계</span><i class="ico-arr-r" aria-hidden="true"></i><span>분류</span>
+                                    </div>
+                                    <h4 class="total-search-item-tit"><a href="javascript:void(0);">총수입</a></h4>
+                                    <p class="total-search-item-desc">□ 입찰개요 ○ 입찰일시 : '26.8.10.(월) 10:40~11:00 (발행일: '26.6.10.) ○ 입찰금액 : 3년물(국고03500-2906) 36,000억원 □ 응찰결과 ○ 응찰금액 : 92,620억원 ○ 응찰률 : 257.3% ○ 응찰금리 : 3.745 ~ 3.795% □ 낙찰결과 ○ 낙찰금액 :36,000억원 ○ 최저낙찰금리 : 3.780%, 최고낙찰금리 : ...</p>
+                                </article>
+                            </li>
+                        </ul>
+                    </section>
+                    <section class="total-search-group" aria-labelledby="totalSearchGroup3">
+                        <div class="total-search-group-head">
+                            <h3 class="total-search-group-tit" id="totalSearchGroup3"><span>재정연구실</span><span class="total-search-group-count"><em>18</em>건</span></h3>
+                            <button type="button" class="total-search-more"><span>더보기</span><i class="ico-arr-r" aria-hidden="true"></i></button>
+                        </div>
+                        <ul class="total-search-list">
+                            <li>
+                                <article class="total-search-item">
+                                    <div class="total-search-item-path">
+                                        <span>재정연구실</span><i class="ico-arr-r" aria-hidden="true"></i><span>재정데이터셋</span><i class="ico-arr-r" aria-hidden="true"></i><span>통계제공현황</span>
+                                    </div>
+                                    <h4 class="total-search-item-tit"><a href="javascript:void(0);"><mark class="total-search-mark">국고채 3년물</mark> ”국고 03500-2906” 통합발행 경쟁입찰 결과</a></h4>
+                                    <p class="total-search-item-desc">□ 입찰개요 ○ 입찰일시 : '26.8.10.(월) 10:40~11:00 (발행일: '26.6.10.) ○ 입찰금액 : 3년물(국고03500-2906) 36,000억원 □ 응찰결과 ○ 응찰금액 : 92,620억원 ○ 응찰률 : 257.3% ○ 응찰금리 : 3.745 ~ 3.795% □ 낙찰결과 ○ 낙찰금액 :36,000억원 ○ 최저낙찰금리 : 3.780%, 최고낙찰금리 : ...</p>
+                                </article>
+                            </li>
+                        </ul>
+                    </section>
+                    <section class="total-search-group" aria-labelledby="totalSearchGroup4">
+                        <div class="total-search-group-head">
+                            <h3 class="total-search-group-tit" id="totalSearchGroup4"><span>함께하는 재정</span><span class="total-search-group-count"><em>18</em>건</span></h3>
+                            <button type="button" class="total-search-more"><span>더보기</span><i class="ico-arr-r" aria-hidden="true"></i></button>
+                        </div>
+                        <ul class="total-search-list">
+                            <li>
+                                <article class="total-search-item">
+                                    <div class="total-search-item-path">
+                                        <span>함께하는 재정</span><i class="ico-arr-r" aria-hidden="true"></i><span>재정 이모저모</span><i class="ico-arr-r" aria-hidden="true"></i><span>빅데이터 재정뉴스</span>
+                                    </div>
+                                    <h4 class="total-search-item-tit"><a href="javascript:void(0);"><mark class="total-search-mark">국고채 3년물</mark> ”국고 03500-2906” 통합발행 경쟁입찰 결과</a></h4>
+                                    <p class="total-search-item-desc">□ 입찰개요 ○ 입찰일시 : '26.8.10.(월) 10:40~11:00 (발행일: '26.6.10.) ○ 입찰금액 : 3년물(국고03500-2906) 36,000억원 □ 응찰결과 ○ 응찰금액 : 92,620억원 ○ 응찰률 : 257.3% ○ 응찰금리 : 3.745 ~ 3.795% □ 낙찰결과 ○ 낙찰금액 :36,000억원 ○ 최저낙찰금리 : 3.780%, 최고낙찰금리 : ...</p>
+                                </article>
+                            </li>
+                            <li>
+                                <article class="total-search-item">
+                                    <div class="total-search-item-path">
+                                        <span>함께하는 재정</span><i class="ico-arr-r" aria-hidden="true"></i><span>재정 이모저모</span><i class="ico-arr-r" aria-hidden="true"></i><span>빅데이터 재정뉴스</span>
+                                    </div>
+                                    <h4 class="total-search-item-tit"><a href="javascript:void(0);"><mark class="total-search-mark">국고채 3년물</mark> ”국고 03500-2906” 통합발행 경쟁입찰 결과</a></h4>
+                                    <p class="total-search-item-desc">□ 입찰개요 ○ 입찰일시 : '26.8.10.(월) 10:40~11:00 (발행일: '26.6.10.) ○ 입찰금액 : 3년물(국고03500-2906) 36,000억원 □ 응찰결과 ○ 응찰금액 : 92,620억원 ○ 응찰률 : 257.3% ○ 응찰금리 : 3.745 ~ 3.795% □ 낙찰결과 ○ 낙찰금액 :36,000억원 ○ 최저낙찰금리 : 3.780%, 최고낙찰금리 : ...</p>
+                                </article>
+                            </li>
+                            <li>
+                                <article class="total-search-item">
+                                    <div class="total-search-item-path">
+                                        <span>함께하는 재정</span><i class="ico-arr-r" aria-hidden="true"></i><span>재정 이모저모</span><i class="ico-arr-r" aria-hidden="true"></i><span>빅데이터 재정뉴스</span>
+                                    </div>
+                                    <h4 class="total-search-item-tit"><a href="javascript:void(0);"><mark class="total-search-mark">국고채 3년물</mark> ”국고 03500-2906” 통합발행 경쟁입찰 결과</a></h4>
+                                    <p class="total-search-item-desc">□ 입찰개요 ○ 입찰일시 : '26.8.10.(월) 10:40~11:00 (발행일: '26.6.10.) ○ 입찰금액 : 3년물(국고03500-2906) 36,000억원 □ 응찰결과 ○ 응찰금액 : 92,620억원 ○ 응찰률 : 257.3% ○ 응찰금리 : 3.745 ~ 3.795% □ 낙찰결과 ○ 낙찰금액 :36,000억원 ○ 최저낙찰금리 : 3.780%, 최고낙찰금리 : ...</p>
+                                </article>
+                            </li>
+                        </ul>
+                    </section>
+                    <section class="total-search-group" aria-labelledby="totalSearchGroup5">
+                        <div class="total-search-group-head">
+                            <h3 class="total-search-group-tit" id="totalSearchGroup5"><span>알림·안내</span><span class="total-search-group-count"><em>18</em>건</span></h3>
+                            <button type="button" class="total-search-more"><span>더보기</span><i class="ico-arr-r" aria-hidden="true"></i></button>
+                        </div>
+                        <ul class="total-search-list">
+                            <li>
+                                <article class="total-search-item">
+                                    <div class="total-search-item-path">
+                                        <span>알림·안내</span><i class="ico-arr-r" aria-hidden="true"></i><span>재정 이모저모</span><i class="ico-arr-r" aria-hidden="true"></i><span>빅데이터 재정뉴스</span>
+                                    </div>
+                                    <h4 class="total-search-item-tit"><a href="javascript:void(0);"><mark class="total-search-mark">국고채 3년물</mark> ”국고 03500-2906” 통합발행 경쟁입찰 결과</a></h4>
+                                    <p class="total-search-item-desc">□ 입찰개요 ○ 입찰일시 : '26.8.10.(월) 10:40~11:00 (발행일: '26.6.10.) ○ 입찰금액 : 3년물(국고03500-2906) 36,000억원 □ 응찰결과 ○ 응찰금액 : 92,620억원 ○ 응찰률 : 257.3% ○ 응찰금리 : 3.745 ~ 3.795% □ 낙찰결과 ○ 낙찰금액 :36,000억원 ○ 최저낙찰금리 : 3.780%, 최고낙찰금리 : ...</p>
+                                </article>
+                            </li>
+                            <li>
+                                <article class="total-search-item">
+                                    <div class="total-search-item-path">
+                                        <span>알림·안내</span><i class="ico-arr-r" aria-hidden="true"></i><span>재정 이모저모</span><i class="ico-arr-r" aria-hidden="true"></i><span>빅데이터 재정뉴스</span>
+                                    </div>
+                                    <h4 class="total-search-item-tit"><a href="javascript:void(0);"><mark class="total-search-mark">국고채 3년물</mark> ”국고 03500-2906” 통합발행 경쟁입찰 결과</a></h4>
+                                    <p class="total-search-item-desc">□ 입찰개요 ○ 입찰일시 : '26.8.10.(월) 10:40~11:00 (발행일: '26.6.10.) ○ 입찰금액 : 3년물(국고03500-2906) 36,000억원 □ 응찰결과 ○ 응찰금액 : 92,620억원 ○ 응찰률 : 257.3% ○ 응찰금리 : 3.745 ~ 3.795% □ 낙찰결과 ○ 낙찰금액 :36,000억원 ○ 최저낙찰금리 : 3.780%, 최고낙찰금리 : ...</p>
+                                </article>
+                            </li>
+                            <li>
+                                <article class="total-search-item">
+                                    <div class="total-search-item-path">
+                                        <span>알림·안내</span><i class="ico-arr-r" aria-hidden="true"></i><span>재정 이모저모</span><i class="ico-arr-r" aria-hidden="true"></i><span>빅데이터 재정뉴스</span>
+                                    </div>
+                                    <h4 class="total-search-item-tit"><a href="javascript:void(0);"><mark class="total-search-mark">국고채 3년물</mark> ”국고 03500-2906” 통합발행 경쟁입찰 결과</a></h4>
+                                    <p class="total-search-item-desc">□ 입찰개요 ○ 입찰일시 : '26.8.10.(월) 10:40~11:00 (발행일: '26.6.10.) ○ 입찰금액 : 3년물(국고03500-2906) 36,000억원 □ 응찰결과 ○ 응찰금액 : 92,620억원 ○ 응찰률 : 257.3% ○ 응찰금리 : 3.745 ~ 3.795% □ 낙찰결과 ○ 낙찰금액 :36,000억원 ○ 최저낙찰금리 : 3.780%, 최고낙찰금리 : ...</p>
+                                </article>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+
+                <div class="tab-content" id="total-search-finance" style="display:none;">
+                    <div class="total-search-result-head">
+                        <div class="data-util">
+                            <div class="left">
+                                <div class="total">전체 <em>85,007</em>건</div>
+                            </div>
+                            <div class="right">
+                                <div class="sort-toggle" role="group" aria-label="정렬">
+                                    <button type="button" class="on" aria-pressed="true">정확도</button>
+                                    <button type="button" aria-pressed="false">최신순</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <section class="total-search-group" aria-labelledby="totalSearchGroup1">
+                        <div class="total-search-group-head">
+                            <h3 class="total-search-group-tit" id="totalSearchGroup1"><span>알기쉬운 재정</span><span class="total-search-group-count"><em>18</em>건</span></h3>
+                            <button type="button" class="total-search-more"><span>더보기</span><i class="ico-arr-r" aria-hidden="true"></i></button>
+                        </div>
+                        <ul class="total-search-list">
+                            <li>
+                                <article class="total-search-item">
+                                    <div class="total-search-item-path">
+                                        <span>알기쉬운 재정</span><i class="ico-arr-r" aria-hidden="true"></i><span>재정정보</span><i class="ico-arr-r" aria-hidden="true"></i><span>국고채 입찰</span>
+                                    </div>
+                                    <h4 class="total-search-item-tit"><a href="javascript:void(0);"><mark class="total-search-mark">국고채 3년물</mark> ”국고 03500-2906” 통합발행 경쟁입찰 결과</a></h4>
+                                    <p class="total-search-item-desc">□ 입찰개요 ○ 입찰일시 : '26.8.10.(월) 10:40~11:00 (발행일: '26.6.10.) ○ 입찰금액 : 3년물(국고03500-2906) 36,000억원 □ 응찰결과 ○ 응찰금액 : 92,620억원 ○ 응찰률 : 257.3% ○ 응찰금리 : 3.745 ~ 3.795% □ 낙찰결과 ○ 낙찰금액 :36,000억원 ○ 최저낙찰금리 : 3.780%, 최고낙찰금리 : ...</p>
+                                </article>
+                            </li>
+                            <li>
+                                <article class="total-search-item">
+                                    <div class="total-search-item-path">
+                                        <span>알기쉬운 재정</span><i class="ico-arr-r" aria-hidden="true"></i><span>재정정보</span><i class="ico-arr-r" aria-hidden="true"></i><span>국고채 입찰</span>
+                                    </div>
+                                    <h4 class="total-search-item-tit"><a href="javascript:void(0);">물가연동국고채 “물가01125-3606” 통합발행 경쟁입찰 결과</a></h4>
+                                    <p class="total-search-item-desc">□ 입찰개요 ○ 입찰일시 : '26.8.10.(월) 10:40~11:00 (발행일: '26.6.10.) ○ 입찰금액 : 3년물(국고03500-2906) 36,000억원 □ 응찰결과 ○ 응찰금액 : 92,620억원 ○ 응찰률 : 257.3% ○ 응찰금리 : 3.745 ~ 3.795% □ 낙찰결과 ○ 낙찰금액 :36,000억원 ○ 최저낙찰금리 : 3.780%, 최고낙찰금리 : ...</p>
+                                </article>
+                            </li>
+                            <li>
+                                <article class="total-search-item">
+                                    <div class="total-search-item-path">
+                                        <span>알기쉬운 재정</span><i class="ico-arr-r" aria-hidden="true"></i><span>재정정보</span><i class="ico-arr-r" aria-hidden="true"></i><span>국고채 입찰</span>
+                                    </div>
+                                    <h4 class="total-search-item-tit"><a href="javascript:void(0);"><mark class="total-search-mark">국고채 3년물</mark> ”국고 03500-2906” 통합발행 경쟁입찰 결과</a></h4>
+                                    <p class="total-search-item-desc">□ 입찰개요 ○ 입찰일시 : '26.8.10.(월) 10:40~11:00 (발행일: '26.6.10.) ○ 입찰금액 : 3년물(국고03500-2906) 36,000억원 □ 응찰결과 ○ 응찰금액 : 92,620억원 ○ 응찰률 : 257.3% ○ 응찰금리 : 3.745 ~ 3.795% □ 낙찰결과 ○ 낙찰금액 :36,000억원 ○ 최저낙찰금리 : 3.780%, 최고낙찰금리 : ...</p>
+                                </article>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+
+                <script id="feedback-template">
+                    // 피드백
+                    $.ajax({url:"common/feedback.txt", dataType:"text", success:function(data){
+                        $('#feedback-template').replaceWith(data);
+                        pageFeedback();
+                    }});
+                </script>
+            </div>
+            <!-- //contents -->
+
+            <script id="floating-template">
+                // 플로팅메뉴
+                $.ajax({url:"common/floating.txt", dataType:"text", success:function(data){
+                    $('#floating-template').replaceWith(data);
+                }});
+            </script>
+        </div>
+        <script id="footer-template">
+            // 푸터
+            $.ajax({url:"common/footer.txt", dataType:"text", success:function(data){
+                $('#footer-template').replaceWith(data);
+            }});
+        </script>
+    </div>
+    <!-- // wrap -->
+
+    <script>
+    
+      var $detailFilter = $('#detailFilter');
+      var $filterBtn = $('.btn-filter-close');
+
+      $filterBtn.on('click', function(){
+        var $btn = $(this);
+        $btn.toggleClass('on');
+        $detailFilter.toggle();
+      });
+
+      $('.btn-detail-filter-close').on('click', function(){
+        $detailFilter.hide();
+      });
+
+    </script>
+
+<!-- 인기검색어 TOP3 레이어팝업 -->
+<script>
+// 인기검색어 TOP3 레이어팝업 열기/닫기
+function totalSearchHotLayer(){
+    var $wrap = $('.total-search-hot-pop-wrap');
+    if(!$wrap.length) return;
+
+    var $pop = $wrap.find('.total-search-hot-pop');
+    var $toggle = $wrap.find('.js-total-search-hot-toggle');
+    var lastFocus = null;
+
+    function openPop(){
+        lastFocus = document.activeElement;
+        $wrap.addClass('is-open');
+        $pop.removeAttr('hidden');
+        $toggle.attr('aria-expanded', 'true');
+    }
+
+    function closePop(){
+        if(!$wrap.hasClass('is-open')) return;
+        $wrap.removeClass('is-open');
+        $pop.attr('hidden', true);
+        $toggle.attr('aria-expanded', 'false');
+
+        if(lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
+        lastFocus = null;
+    }
+
+    // 버튼으로 열기/닫기
+    $toggle.on('click', function(e){
+        e.stopPropagation();
+        if($wrap.hasClass('is-open')) closePop();
+        else openPop();
+    });
+
+    // 레이어 내부 클릭은 닫히지 않도록
+    $pop.on('click', function(e){
+        e.stopPropagation();
+    });
+
+    // 검색어 선택 시 닫기
+    $pop.on('click', '.total-search-hot-list a', function(){
+        closePop();
+    });
+
+    // 바깥 클릭 / ESC 로 닫기
+    $(document).on('click.totalSearchHotLayer', function(){
+        closePop();
+    });
+
+    $(document).on('keydown.totalSearchHotLayer', function(e){
+        if(e.key === 'Escape' || e.keyCode === 27) closePop();
+    });
+}
+
+// 인기검색어 TOP3 버튼 롤링
+function totalSearchHotRolling(){
+    var $roll = $('.total-search-hot-roll');
+    if(!$roll.length) return;
+
+    var $wrap = $roll.closest('.total-search-hot-pop-wrap');
+    var $inner = $roll.find('.total-search-hot-roll-inner');
+    var $items = $inner.children();
+    var total = $items.length;
+    if(total <= 1) return;
+
+    var ROLL_DELAY = 2500;   // 한 항목이 머무는 시간
+    var ROLL_SPEED = 500;    // 올라가는 시간
+    var idx = 0;
+    var timer = null;
+
+    // 마지막에서 처음으로 끊김 없이 넘어가도록 첫 항목 복제
+    $inner.append($items.eq(0).clone());
+
+    function move(useTransition){
+        $inner.css({
+            'transition': useTransition ? 'transform ' + ROLL_SPEED + 'ms ease' : 'none',
+            'transform': 'translateY(-' + (idx * $roll.height()) + 'px)'
+        });
+    }
+
+    function next(){
+        // 레이어가 열려있는 동안은 멈춤
+        if($wrap.hasClass('is-open')) return;
+
+        idx++;
+        move(true);
+
+        // 복제본까지 올라갔으면 전환 없이 처음으로 되돌림
+        if(idx >= total){
+            setTimeout(function(){
+                idx = 0;
+                move(false);
+            }, ROLL_SPEED);
+        }
+    }
+
+    function start(){
+        stop();
+        timer = setInterval(next, ROLL_DELAY);
+    }
+
+    function stop(){
+        if(timer){
+            clearInterval(timer);
+            timer = null;
+        }
+    }
+
+    // 마우스오버 / 포커스 중에는 멈춤
+    $wrap.on('mouseenter focusin', stop);
+    $wrap.on('mouseleave focusout', start);
+
+    $(window).on('resize.totalSearchHotRolling', function(){
+        move(false);
+    });
+
+    start();
+}
+
+$(function(){
+    totalSearchHotLayer();
+    totalSearchHotRolling();
+});
+</script>
+
+</body>
+</html>

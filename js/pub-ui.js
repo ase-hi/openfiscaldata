@@ -551,6 +551,9 @@ function fontSettingMenu(){
   function applyFontSize(size){
     var key = zoomMap[size] !== undefined ? size : 'md';
     document.documentElement.style.zoom = zoomMap[key];
+    document.documentElement.style.setProperty('--page-min-height', (100 / zoomMap[key]) + 'vh');
+    $('body').removeClass('font-size-sm font-size-md font-size-lg font-size-xl font-size-xxl')
+      .addClass('font-size-' + key);
     try{ localStorage.setItem(storageKey, key); }catch(e){}
     $('.font-setting-list [data-fs]').removeClass('is-active');
     $('.font-setting-list [data-fs="' + key + '"]').addClass('is-active');
@@ -607,6 +610,8 @@ function fontSettingMenu(){
     if($(obj).length <= 0) return;
     function f($self){
       let $input = $self.find('input');
+      if(!$input.length || $input.is(':disabled')) return;
+
       let $del = $('<button type="button" style="display:none;" class="btn-del"></button>');
       $self.append($del);
 
@@ -625,6 +630,45 @@ function fontSettingMenu(){
     })
   }
 
+
+  function tabClosable(){
+    $(document).off('click.tabClosableClose').on('click.tabClosableClose', '.tab-closable .btn-tab-close', function(e){
+      e.preventDefault();
+      e.stopPropagation();
+
+      var $li = $(this).closest('li');
+      var $ul = $li.parent();
+      if($ul.children('li').length <= 1) return;
+
+      var wasOn = $li.hasClass('on');
+      var $activate = wasOn ? ($li.next('li').length ? $li.next('li') : $li.prev('li')) : null;
+
+      $li.remove();
+
+      if($activate && $activate.length){
+        $activate.find('[data-tab-id]').first().trigger('click');
+      }
+    });
+
+    // 화면 확대/축소 — body, .contents 에 wide 클래스 토글
+    $(document).off('click.tabClosableExpand').on('click.tabClosableExpand', '.tab-closable .btn-tab-expand', function(e){
+      e.preventDefault();
+
+      var $btn = $(this);
+      var isWide = !$btn.hasClass('is-on');
+
+      $btn.toggleClass('is-on', isWide);
+      $btn.attr({
+        'aria-pressed': isWide ? 'true' : 'false',
+        'aria-label': isWide ? '통계 화면 축소' : '통계 화면 확대'
+      });
+
+      $('body').toggleClass('wide', isWide);
+      $btn.closest('.contents').toggleClass('wide', isWide);
+
+      if(isWide) window.scrollTo(0, 0);
+    });
+  }
 
   function tabEvt(){
     let tabs = [];
@@ -924,7 +968,7 @@ function tryFloatingQuickMobile(){
 // floating-quick이 푸터 영역 아래로 내려가지 않도록 고정 (PC, min-width:1025px)
 function floatingQuickStop(){
   var mq = window.matchMedia('(min-width:1025px)');
-  var baseBottom = 135; // css .floating-quick{bottom:135px;}와 동일한 값
+  var baseTop = 250; // css .floating-quick{top:250px;}와 동일한 값
   var footerGap = 79; // 푸터와 최소로 띄울 간격
   var sideGap = 60; // 컨텐츠 오른쪽 끝에서 띄울 간격 (기존 translateX(700px) 기준값)
   var visualGap = 16; // 상단 비주얼/배너와 최소로 띄울 간격
@@ -937,30 +981,28 @@ function floatingQuickStop(){
     if(!$floating.length || !content) return;
 
     if(!mq.matches){
-      $floating.css({bottom: '', left: ''});
+      $floating.css({top: '', bottom: '', left: ''});
       return;
     }
 
-    var contentRight = content.getBoundingClientRect().right;
+    // getBoundingClientRect 좌표를 CSS zoom 적용 전 좌표로 환산
+    var zoom = parseFloat(document.documentElement.style.zoom) || 1;
+    var contentRight = content.getBoundingClientRect().right / zoom;
     $floating.css('left', (contentRight + sideGap) + 'px');
 
+    var menuHeight = $floating[0].offsetHeight;
+    var top = baseTop;
     if($footer.length){
-      var footerTop = $footer.offset().top;
-      var viewportBottom = $(window).scrollTop() + $(window).height();
-      var needed = viewportBottom - footerTop + footerGap;
-      $floating.css('bottom', needed > baseBottom ? needed + 'px' : '');
+      var footerTop = $footer[0].getBoundingClientRect().top / zoom;
+      top = Math.min(top, footerTop - footerGap - menuHeight);
     }
 
     var $visual = $('.title-main-wrap, .main-hero').first();
     if($visual.length){
-      var visualBottom = $visual[0].getBoundingClientRect().bottom;
-      var menuHeight = $floating[0].offsetHeight;
-      var maxBottomForVisual = $(window).height() - menuHeight - visualBottom - visualGap;
-      var currentBottom = parseFloat($floating.css('bottom')) || baseBottom;
-      if(maxBottomForVisual < currentBottom){
-        $floating.css('bottom', Math.max(0, maxBottomForVisual) + 'px');
-      }
+      var visualBottom = $visual[0].getBoundingClientRect().bottom / zoom;
+      top = Math.max(top, visualBottom + visualGap);
     }
+    $floating.css({top: Math.max(0, top) + 'px', bottom: ''});
   }
 
   function tryInit(){
@@ -1029,9 +1071,14 @@ let lastFocusedElement = null;
 
 function popClose(popup){
   let $popup = $(popup);
-  $popup.fadeOut();
-  $('body, html').css('overflow', '');
-  $('body').removeClass('pop-open');
+  // 닫기 애니메이션이 끝난 뒤 판정한다.
+  // 다른 팝업이 아직 열려 있으면 배경 스크롤 잠금을 유지한다.
+  $popup.fadeOut(function(){
+    if($('.popup-wrap:visible').length === 0){
+      $('body, html').css('overflow', '');
+      $('body').removeClass('pop-open');
+    }
+  });
   
   // 팝업을 닫을 때 원래 포커스 위치로 복귀
   if(lastFocusedElement) {
@@ -1412,9 +1459,407 @@ function fileUpload(){
   });
 }
 
+// 통계 등 data-util 다운로드 포맷 레이어 (.download-format-wrap)
+function downloadFormatLayer(){
+  if($('body').data('downloadFormatLayerInit')) return;
+  $('body').data('downloadFormatLayerInit', true);
+
+  var downloadFormatLastFocus = null;
+  var focusableSel = 'button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+  function getDownloadFormatRadios($wrap){
+    return $wrap.find('.download-format-layer input[type="radio"]');
+  }
+
+  function syncDownloadFormatRadioTabindex($wrap){
+    getDownloadFormatRadios($wrap).each(function(){
+      this.tabIndex = this.checked ? 0 : -1;
+    });
+  }
+
+  function getDownloadFormatFocusables($wrap){
+    var $layer = $wrap.find('.download-format-layer');
+    return $layer.find(focusableSel).filter(function(){
+      if(this.type === 'radio' && this.tabIndex < 0) return false;
+      return $(this).is(':visible');
+    });
+  }
+
+  function bindDownloadFormatRadioKeys($wrap){
+    var $radios = getDownloadFormatRadios($wrap);
+    var $group = $wrap.find('.download-format-layer [role="radiogroup"]');
+
+    $radios.off('change.downloadFormatRadio').on('change.downloadFormatRadio', function(){
+      syncDownloadFormatRadioTabindex($wrap);
+    });
+
+    $group.off('keydown.downloadFormatRadio').on('keydown.downloadFormatRadio', function(e){
+      if(e.key !== 'ArrowDown' && e.key !== 'ArrowRight' && e.key !== 'ArrowUp' && e.key !== 'ArrowLeft') return;
+      e.preventDefault();
+      var $checked = $radios.filter(':checked');
+      var idx = $radios.index($checked);
+      if(idx < 0) idx = 0;
+      var nextIdx = idx;
+      if(e.key === 'ArrowDown' || e.key === 'ArrowRight'){
+        nextIdx = (idx + 1) % $radios.length;
+      } else {
+        nextIdx = (idx - 1 + $radios.length) % $radios.length;
+      }
+      $radios.eq(nextIdx).prop('checked', true).trigger('change').focus();
+    });
+  }
+
+  function bindDownloadFormatLayerKeys($wrap){
+    var $layer = $wrap.find('.download-format-layer');
+    $layer.off('keydown.downloadFormatLayerTab');
+
+    $layer.on('keydown.downloadFormatLayerTab', function(e){
+      if(e.key !== 'Tab') return;
+
+      var $focusables = getDownloadFormatFocusables($wrap);
+      if(!$focusables.length) return;
+
+      var first = $focusables.first()[0];
+      var last = $focusables.last()[0];
+      var $close = $wrap.find('.js-stat-download-close');
+      var $activeRadio = getDownloadFormatRadios($wrap).filter(':checked');
+
+      if(!e.shiftKey && document.activeElement === $close[0]){
+        e.preventDefault();
+        if($activeRadio.length) $activeRadio.focus();
+        else getDownloadFormatRadios($wrap).first().focus();
+        return;
+      }
+
+      if(e.shiftKey && document.activeElement === first){
+        e.preventDefault();
+        last.focus();
+        return;
+      }
+      if(!e.shiftKey && document.activeElement === last){
+        e.preventDefault();
+        first.focus();
+      }
+    });
+  }
+
+  function closeDownloadFormatLayer($wrap){
+    if(!$wrap || !$wrap.length) return;
+    $wrap.removeClass('is-open');
+    $wrap.find('.download-format-layer').attr({'hidden': true, 'aria-modal': 'false'});
+    $wrap.find('.js-stat-download-toggle').attr('aria-expanded', 'false');
+    $wrap.find('.download-format-layer').off('keydown.downloadFormatLayerTab');
+
+    if(downloadFormatLastFocus && typeof downloadFormatLastFocus.focus === 'function'){
+      downloadFormatLastFocus.focus();
+    }
+    downloadFormatLastFocus = null;
+  }
+
+  function openDownloadFormatLayer($wrap){
+    $('.download-format-wrap.is-open').not($wrap).each(function(){
+      closeDownloadFormatLayer($(this));
+    });
+
+    downloadFormatLastFocus = document.activeElement;
+
+    $wrap.addClass('is-open');
+    $wrap.find('.download-format-layer').removeAttr('hidden').attr('aria-modal', 'true');
+    $wrap.find('.js-stat-download-toggle').attr('aria-expanded', 'true');
+
+    syncDownloadFormatRadioTabindex($wrap);
+    bindDownloadFormatRadioKeys($wrap);
+    bindDownloadFormatLayerKeys($wrap);
+
+    setTimeout(function(){
+      var $close = $wrap.find('.js-stat-download-close');
+      if($close.length) $close.focus();
+    }, 0);
+  }
+
+  $(document).off('click.downloadFormatLayer').on('click.downloadFormatLayer', '.js-stat-download-toggle', function(e){
+    e.stopPropagation();
+    var $wrap = $(this).closest('.download-format-wrap');
+    if($wrap.hasClass('is-open')){
+      closeDownloadFormatLayer($wrap);
+    } else {
+      openDownloadFormatLayer($wrap);
+    }
+  });
+
+  $(document).off('click.downloadFormatLayerClose').on('click.downloadFormatLayerClose', '.js-stat-download-close', function(e){
+    e.stopPropagation();
+    closeDownloadFormatLayer($(this).closest('.download-format-wrap'));
+  });
+
+  $(document).off('click.downloadFormatLayerOutside').on('click.downloadFormatLayerOutside', function(){
+    closeDownloadFormatLayer($('.download-format-wrap.is-open'));
+  });
+
+  $(document).off('click.downloadFormatLayerStop').on('click.downloadFormatLayerStop', '.download-format-layer', function(e){
+    e.stopPropagation();
+  });
+
+  $(document).off('keydown.downloadFormatLayer').on('keydown.downloadFormatLayer', function(e){
+    if(e.key === 'Escape'){
+      closeDownloadFormatLayer($('.download-format-wrap.is-open'));
+    }
+  });
+}
+
+// 차트 뷰 옵션 메뉴
+function chartUtilMenu(){
+  if($('body').data('chartUtilMenuInit')) return;
+  $('body').data('chartUtilMenuInit', true);
+
+  var chartUtilMenuLastFocus = null;
+
+  // .chart-util-menu-wrap 이 없으면 버튼/레이어의 부모를 기준으로 사용
+  function getChartUtilMenuWrap($el){
+    var $wrap = $el.closest('.chart-util-menu-wrap');
+    return $wrap.length ? $wrap : $el.parent();
+  }
+
+  function getOpenChartUtilMenus(){
+    return $('.chart-util-menu-layer').not('[hidden]').parent();
+  }
+
+  function closeChartUtilMenu($wrap){
+    if(!$wrap || !$wrap.length) return;
+    $wrap.removeClass('is-open');
+    $wrap.find('.chart-util-menu-layer').attr('hidden', true);
+    $wrap.find('.js-chart-util-menu-toggle').attr('aria-expanded', 'false');
+    if(chartUtilMenuLastFocus && typeof chartUtilMenuLastFocus.focus === 'function'){
+      chartUtilMenuLastFocus.focus();
+    }
+    chartUtilMenuLastFocus = null;
+  }
+
+  function openChartUtilMenu($wrap){
+    getOpenChartUtilMenus().not($wrap).each(function(){
+      closeChartUtilMenu($(this));
+    });
+    chartUtilMenuLastFocus = document.activeElement;
+    $wrap.addClass('is-open');
+    $wrap.find('.chart-util-menu-layer').removeAttr('hidden');
+    $wrap.find('.js-chart-util-menu-toggle').attr('aria-expanded', 'true');
+    setTimeout(function(){
+      var $first = $wrap.find('.chart-util-menu-item').first();
+      if($first.length) $first.focus();
+    }, 0);
+  }
+
+  $(document).off('click.chartUtilMenu').on('click.chartUtilMenu', '.js-chart-util-menu-toggle', function(e){
+    e.stopPropagation();
+    var $wrap = getChartUtilMenuWrap($(this));
+    if($wrap.hasClass('is-open')){
+      closeChartUtilMenu($wrap);
+    } else {
+      openChartUtilMenu($wrap);
+    }
+  });
+
+  $(document).off('click.chartUtilMenuOutside').on('click.chartUtilMenuOutside', function(){
+    closeChartUtilMenu(getOpenChartUtilMenus());
+  });
+
+  $(document).off('click.chartUtilMenuStop').on('click.chartUtilMenuStop', '.chart-util-menu-layer', function(e){
+    e.stopPropagation();
+  });
+
+  $(document).off('keydown.chartUtilMenu').on('keydown.chartUtilMenu', function(e){
+    if(e.key === 'Escape'){
+      closeChartUtilMenu(getOpenChartUtilMenus());
+      return;
+    }
+    var $open = getOpenChartUtilMenus();
+    if(!$open.length) return;
+    if(e.key !== 'ArrowDown' && e.key !== 'ArrowUp' && e.key !== 'Home' && e.key !== 'End') return;
+    var $items = $open.find('.chart-util-menu-item');
+    if(!$items.length) return;
+    var idx = $items.index(document.activeElement);
+    e.preventDefault();
+    if(e.key === 'Home'){
+      $items.first().focus();
+      return;
+    }
+    if(e.key === 'End'){
+      $items.last().focus();
+      return;
+    }
+    if(idx < 0) idx = 0;
+    if(e.key === 'ArrowDown'){
+      $items.eq((idx + 1) % $items.length).focus();
+    } else {
+      $items.eq((idx - 1 + $items.length) % $items.length).focus();
+    }
+  });
+}
+
+// 통계 분류 트리 데이터 경로 (페이지 기준 상대경로, data-tree-url 로 변경 가능)
+var STATISTICS_TREE_URL = 'common/statistics-tree-data.json';
+
+function renderStatisticsTree($tree, data){
+  if ($tree.jstree(true)) {
+      $tree.jstree('destroy');
+  }
+  $tree.jstree({
+      core: {
+          data: data,
+          multiple: false,
+          force_text: true
+      },
+      plugins: ['sort'],
+      sort: function(a, b){
+          return (this.get_node(a).original.otptOrd || 0) - (this.get_node(b).original.otptOrd || 0);
+      }
+  });
+}
+
+function initStatisticsSide(){
+  var $tree = $('#statistics_M');
+  if (!$tree.length) return;
+
+  $('.stat-side .side-toggle').off('click.statSideToggle').on('click.statSideToggle', function(){
+      var $btn = $(this);
+      var pressed = $btn.toggleClass('is-open').hasClass('is-open');
+      $btn.attr('aria-pressed', pressed ? 'true' : 'false');
+  });
+
+  // 페이지에 인라인 데이터가 있으면 그대로 사용
+  var inline = document.getElementById('statistics-tree-data');
+  if (inline) {
+      renderStatisticsTree($tree, JSON.parse(inline.textContent));
+      return;
+  }
+
+  $.getJSON($tree.attr('data-tree-url') || STATISTICS_TREE_URL, function(data){
+      renderStatisticsTree($tree, data);
+  });
+}
 
 
 // ready
+/* 툴팁 */
+/* 열릴 때 body 로 옮겨(포털) 아이콘 좌표에 맞춘다.
+   .popup{overflow:hidden} 같은 조상 때문에 잘리는 것을 막기 위함. */
+function tooltipInit(){
+  if(!$('.tooltip-wrap').length) return;
+
+  var GAP     = 9;    // 아이콘과의 간격(화살표 높이)
+  var SHIFT   = -40;  // 아이콘 왼쪽 기준 가로 이동량
+  var MARGIN  = 16;   // 화면 가장자리 최소 여백
+  var ARROW_W = 13;   // 화살표 폭
+  var ARROW_PAD = 10; // 화살표가 모서리에 붙지 않도록 남기는 여백
+
+  // 트리거 위치에 맞춰 좌표 갱신. 화면 밖으로 나가면 안쪽으로 당긴다.
+  function position($tip){
+    var $btn = $tip.data('tooltipBtn');
+    if(!$btn || !$btn.length) return;
+
+    var vw    = document.documentElement.clientWidth;
+    var avail = vw - MARGIN * 2;
+
+    // 이전 보정을 지우고 원래 폭부터 다시 잰다
+    $tip.removeClass('is-wrap').css('maxWidth', '');
+    if($tip.outerWidth() > avail){
+      $tip.addClass('is-wrap').css('maxWidth', avail + 'px');  // 좁으면 줄바꿈 허용
+    }
+
+    var r = $btn[0].getBoundingClientRect();
+    var w = $tip.outerWidth();
+
+    var left = r.left + SHIFT;
+    left = Math.min(left, vw - MARGIN - w);  // 오른쪽으로 넘치면 당기고
+    left = Math.max(left, MARGIN);           // 왼쪽으로 넘쳐도 당긴다
+    $tip.css({ top: r.bottom + GAP, left: left });
+
+    // 툴팁이 밀려도 화살표는 아이콘 중심 아래에 둔다
+    var arrow = r.left + r.width / 2 - left - ARROW_W / 2;
+    arrow = Math.max(ARROW_PAD, Math.min(w - ARROW_W - ARROW_PAD, arrow));
+    $tip[0].style.setProperty('--tooltip-arrow-left', arrow + 'px');
+  }
+
+  // 열려 있는 툴팁을 원래 자리로 되돌린다
+  function close($tip){
+    var $wrap = $tip.data('tooltipWrap');
+    $tip.removeClass('is-open is-portal is-wrap').removeAttr('style');
+    if($wrap && $wrap.length){
+      $tip.appendTo($wrap);
+      $wrap.find('.tooltip-btn').attr('aria-expanded', 'false');
+    }
+  }
+
+  function closeAll(){
+    $('.tooltip.is-open').each(function(){ close($(this)); });
+    $('.tooltip-btn').attr('aria-expanded', 'false');
+  }
+
+  // body 로 옮겨진 뒤에는 wrap 안에서 찾을 수 없으므로 트리거로 역추적한다
+  function findTip($btn, $wrap){
+    var $tip = $wrap.find('.tooltip');
+    if($tip.length) return $tip;
+    return $('body > .tooltip.is-portal').filter(function(){
+      var $b = $(this).data('tooltipBtn');
+      return $b && $b[0] === $btn[0];
+    });
+  }
+
+  // 트리거 클릭 → 토글 (열려 있던 다른 툴팁은 닫는다)
+  $(document).off('click.tooltip').on('click.tooltip', '.tooltip-btn', function(e){
+    e.stopPropagation();
+    var $btn  = $(this);
+    var $wrap = $btn.closest('.tooltip-wrap');
+    var $tip  = findTip($btn, $wrap);
+    if(!$tip.length) return;
+
+    var opened = $tip.hasClass('is-open');
+    closeAll();
+    if(opened) return;
+
+    $tip.data('tooltipBtn', $btn).data('tooltipWrap', $wrap);
+    $tip.appendTo('body').addClass('is-open is-portal');
+    position($tip);
+    $btn.attr('aria-expanded', 'true');
+  });
+
+  // 닫기 버튼 → 닫고 트리거로 포커스 복귀
+  $(document).off('click.tooltipClose').on('click.tooltipClose', '.tooltip-close', function(){
+    var $tip = $(this).closest('.tooltip');
+    var $btn = $tip.data('tooltipBtn');
+    close($tip);
+    if($btn && $btn.length) $btn.focus();
+  });
+
+  // 바깥 클릭 → 닫기
+  $(document).off('click.tooltipOutside').on('click.tooltipOutside', function(e){
+    if($(e.target).closest('.tooltip-wrap, .tooltip').length) return;
+    closeAll();
+  });
+
+  // ESC → 닫고 트리거로 포커스 복귀
+  $(document).off('keydown.tooltip').on('keydown.tooltip', function(e){
+    if(e.key !== 'Escape') return;
+    var $open = $('.tooltip.is-open');
+    if(!$open.length) return;
+    var $btn = $open.data('tooltipBtn');
+    close($open);
+    if($btn && $btn.length) $btn.focus();
+  });
+
+  // 화면이 움직이면 좌표를 다시 맞춘다
+  function reposition(){
+    $('body > .tooltip.is-open').each(function(){ position($(this)); });
+  }
+  $(window).off('resize.tooltip').on('resize.tooltip', reposition);
+  // scroll 은 버블링되지 않아 내부 스크롤 영역까지 캡처 단계로 받는다
+  if(tooltipInit._onScroll){
+    document.removeEventListener('scroll', tooltipInit._onScroll, true);
+  }
+  tooltipInit._onScroll = reposition;
+  document.addEventListener('scroll', tooltipInit._onScroll, true);
+}
+
 $(function(){
   function tryGnbMenu() {
     if ($('.gnb-menu-wrap').length) {
@@ -1440,6 +1885,7 @@ $(function(){
   segmentedToggle();
   contSlideSwiper();
   tabEvt();
+  tabClosable();
   tabMainSwiper();
   inputDel('.inp');
   inputDel('.input-search');
@@ -1448,7 +1894,10 @@ $(function(){
   floatingQuickStop();
   tryFloatingQuickMobile();
   fileUpload();
+  downloadFormatLayer();
+  chartUtilMenu();
   datepicker();
+  tooltipInit();
 
   $(document).on('click', '.floating-top', function(){
     $('html, body').stop(true).animate({scrollTop: 0}, 300);

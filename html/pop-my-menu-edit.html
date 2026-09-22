@@ -1,0 +1,265 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title>열린재정</title>
+
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
+<script src="../js/pub-ui.js"></script>
+
+</head>
+<body>
+
+
+
+<div class="popup-wrap" id="tempPopId">
+  <div class="dim"></div>
+  <div class="pop-wrap">
+    <div class="popup">
+      <div class="pop-header">
+        <div class="left">
+          <h2 class="title">내 메뉴</h2>
+          <div class="tooltip-wrap">
+            <button type="button" class="tooltip-btn" aria-label="도움말 보기" aria-expanded="false" aria-controls="tooltip-mymenu">
+                <img src="../images/common/ico-tooltip-info.svg" alt="">
+            </button>
+            <div class="tooltip" id="tooltip-mymenu" role="tooltip">
+                <p class="tooltip-text">내 메뉴는 최대 8개까지 설정 가능하며, 내 메뉴 편집에서<br class="mo-hide">자유롭게 구성할 수 있습니다</p>
+                <button type="button" class="tooltip-close" aria-label="툴팁 닫기">
+                    <img src="../images/common/ico-tooltip-close.svg" alt="">
+                </button>
+            </div>
+        </div>
+        </div>
+        <div class="right">
+          <button type="button" class="btn-close"><i class="ico-close"></i></button>
+        </div>
+      </div>
+      <div class="pop-body">
+        <div class="mymenu">
+
+          <!-- 안내 -->
+          <div class="pop-guide">
+            <p class="pop-guide-text">
+              내 메뉴를 등록하면 어느 페이지에서든 바로 이동할 수 있습니다.<br>
+              저장한 내 메뉴는 72시간동안 유지됩니다.
+            </p>
+            <button type="button" class="btn-nm btn-blue-line">
+              <i class="ico-my-menu-setting" aria-hidden="true"></i>
+              내 메뉴 편집
+            </button>
+          </div>
+
+          <div class="mymenu-body">
+
+            <!-- 메뉴 선택 -->
+            <div class="mymenu-select">
+              <div class="mymenu-search">
+                <label for="mymenu-keyword" class="mymenu-search-label">메뉴 검색</label>
+                <div class="mymenu-search-field">
+                  <input type="text" id="mymenu-keyword" placeholder="메뉴명을 입력하세요.">
+                  <button type="button" class="btn-nm btn-dark">검색</button>
+                </div>
+              </div>
+
+        <div class="mymenu-group is-open">
+          <button type="button" class="mymenu-group-head" aria-expanded="true" aria-controls="mymenu-group-1">
+            <span class="mymenu-group-title">알기쉬운 재정</span>
+          </button>
+          <div class="mymenu-group-body" id="mymenu-group-1">
+            <div class="mymenu-sub">
+              <p class="mymenu-sub-title">재정의 이해</p>
+              <div class="mymenu-check-list">
+            <div class="input-choice"><input type="checkbox" id="mm-1" checked><label for="mm-1">재정개요</label></div>
+            <div class="input-choice"><input type="checkbox" id="mm-2" checked><label for="mm-2">예산・결산・운용절차</label></div>
+            <div class="input-choice"><input type="checkbox" id="mm-3"><label for="mm-3">재정수지와 국가채무</label></div>
+            <div class="input-choice"><input type="checkbox" id="mm-4"><label for="mm-4">재정제도</label></div>
+              </div>
+            </div>
+            <div class="mymenu-sub">
+              <p class="mymenu-sub-title">멀티미디어 재정교실</p>
+              <div class="mymenu-check-list">
+            <div class="input-choice"><input type="checkbox" id="mm-5"><label for="mm-5">멀티미디어 재정교실</label></div>
+              </div>
+            </div>
+            <div class="mymenu-sub">
+              <p class="mymenu-sub-title">청소년 재정교실</p>
+              <div class="mymenu-check-list">
+            <div class="input-choice"><input type="checkbox" id="mm-6"><label for="mm-6">멀티미디어</label></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mymenu-group">
+          <button type="button" class="mymenu-group-head" aria-expanded="false" aria-controls="mymenu-group-2">
+            <span class="mymenu-group-title">알기쉬운 재정통계</span>
+          </button>
+          <div class="mymenu-group-body" id="mymenu-group-2">
+            <div class="mymenu-sub">
+              <p class="mymenu-sub-title">한 눈에 보는 국가재정</p>
+              <div class="mymenu-check-list">
+                <div class="input-choice"><input type="checkbox" id="mm-7"><label for="mm-7">한 눈에 보는 국가재정</label></div>
+              </div>
+            </div>
+            <div class="mymenu-sub">
+              <p class="mymenu-sub-title">중앙재정</p>
+              <div class="mymenu-check-list">
+                <div class="input-choice"><input type="checkbox" id="mm-8"><label for="mm-8">한눈에 보는 중앙재정</label></div>
+                <div class="input-choice"><input type="checkbox" id="mm-9"><label for="mm-9">재정사업</label></div>
+                <div class="input-choice"><input type="checkbox" id="mm-10"><label for="mm-10">재정수입</label></div>
+                <div class="input-choice"><input type="checkbox" id="mm-11"><label for="mm-11">재정지출</label></div>
+                <div class="input-choice"><input type="checkbox" id="mm-12"><label for="mm-12">재정수치</label></div>
+                <div class="input-choice"><input type="checkbox" id="mm-13"><label for="mm-13">국가채무</label></div>
+                <div class="input-choice"><input type="checkbox" id="mm-14"><label for="mm-14">성과관리</label></div>
+              </div>
+            </div>
+            <div class="mymenu-sub">
+              <p class="mymenu-sub-title">지방재정</p>
+              <div class="mymenu-check-list">
+                <div class="input-choice"><input type="checkbox" id="mm-15"><label for="mm-15">한눈에 보는 지방재정</label></div>
+                <div class="input-choice"><input type="checkbox" id="mm-16"><label for="mm-16">분야별(사업별) 지출</label></div>
+                <div class="input-choice"><input type="checkbox" id="mm-17"><label for="mm-17">세입·세출 예산</label></div>
+                <div class="input-choice"><input type="checkbox" id="mm-18"><label for="mm-18">세입·세출 결산</label></div>
+                <div class="input-choice"><input type="checkbox" id="mm-19"><label for="mm-19">중기지방재정계획</label></div>
+              </div>
+            </div>
+            <div class="mymenu-sub">
+              <p class="mymenu-sub-title">지방교육재정</p>
+              <div class="mymenu-check-list">
+                <div class="input-choice"><input type="checkbox" id="mm-20"><label for="mm-20">한눈에 보는 지방교육재정</label></div>
+                <div class="input-choice"><input type="checkbox" id="mm-21"><label for="mm-21">분야별(사업별) 지출</label></div>
+                <div class="input-choice"><input type="checkbox" id="mm-22"><label for="mm-22">세입·세출 예산</label></div>
+                <div class="input-choice"><input type="checkbox" id="mm-23"><label for="mm-23">세입·세출 결산</label></div>
+                <div class="input-choice"><input type="checkbox" id="mm-24"><label for="mm-24">중기지방교육재정계획</label></div>
+              </div>
+            </div>
+            <div class="mymenu-sub">
+              <p class="mymenu-sub-title">기타</p>
+              <div class="mymenu-check-list">
+                <div class="input-choice"><input type="checkbox" id="mm-25"><label for="mm-25">경제통계지표</label></div>
+                <div class="input-choice"><input type="checkbox" id="mm-26"><label for="mm-26">국제통계지표</label></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mymenu-group">
+          <button type="button" class="mymenu-group-head" aria-expanded="false" aria-controls="mymenu-group-3">
+            <span class="mymenu-group-title">함께하는 재정 / 지원사업</span>
+          </button>
+          <div class="mymenu-group-body" id="mymenu-group-3">
+            <div class="mymenu-sub">
+              <p class="mymenu-sub-title">참여예산제도 소개</p>
+              <div class="mymenu-check-list">
+                <div class="input-choice"><input type="checkbox" id="mm-27"><label for="mm-27">국민참여예산제도</label></div>
+                <div class="input-choice"><input type="checkbox" id="mm-28"><label for="mm-28">주민참여예산제도</label></div>
+                <div class="input-choice"><input type="checkbox" id="mm-29"><label for="mm-29">우수제안사례</label></div>
+              </div>
+            </div>
+            <div class="mymenu-sub">
+              <p class="mymenu-sub-title">정부혜택찾기</p>
+              <div class="mymenu-check-list">
+                <div class="input-choice"><input type="checkbox" id="mm-30"><label for="mm-30">정부지원사업은?</label></div>
+                <div class="input-choice"><input type="checkbox" id="mm-31"><label for="mm-31">지원사업 간편검색</label></div>
+                <div class="input-choice"><input type="checkbox" id="mm-32"><label for="mm-32">지원사업 상세검색</label></div>
+              </div>
+            </div>
+            <div class="mymenu-sub">
+              <p class="mymenu-sub-title">정부발주사업</p>
+              <div class="mymenu-check-list">
+                <div class="input-choice"><input type="checkbox" id="mm-33"><label for="mm-33">정부구매예산 사업정보</label></div>
+                <div class="input-choice"><input type="checkbox" id="mm-34"><label for="mm-34">세부사업정보</label></div>
+                <div class="input-choice"><input type="checkbox" id="mm-35"><label for="mm-35">나라장터 조달정보</label></div>
+              </div>
+            </div>
+            <div class="mymenu-sub">
+              <p class="mymenu-sub-title">개선요청・설문조사</p>
+              <div class="mymenu-check-list">
+                <div class="input-choice"><input type="checkbox" id="mm-36"><label for="mm-36">모두의재정 개선요청</label></div>
+                <div class="input-choice"><input type="checkbox" id="mm-37"><label for="mm-37">설문조사</label></div>
+              </div>
+            </div>
+            <div class="mymenu-sub">
+              <p class="mymenu-sub-title">재정원정대</p>
+              <div class="mymenu-check-list">
+                <div class="input-choice"><input type="checkbox" id="mm-38"><label for="mm-38">주요활동</label></div>
+                <div class="input-choice"><input type="checkbox" id="mm-39"><label for="mm-39">의견제안</label></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mymenu-group">
+          <button type="button" class="mymenu-group-head" aria-expanded="false" aria-controls="mymenu-group-4">
+            <span class="mymenu-group-title">알림 · 정보공개</span>
+          </button>
+          <div class="mymenu-group-body" id="mymenu-group-4">
+            <div class="mymenu-sub">
+              <p class="mymenu-sub-title">알림·안내</p>
+              <div class="mymenu-check-list">
+                <div class="input-choice"><input type="checkbox" id="mm-40"><label for="mm-40">공지사항</label></div>
+                <div class="input-choice"><input type="checkbox" id="mm-41"><label for="mm-41">자주 묻는 질문</label></div>
+                <div class="input-choice"><input type="checkbox" id="mm-42"><label for="mm-42">Q&amp;A</label></div>
+                <div class="input-choice"><input type="checkbox" id="mm-43"><label for="mm-43">재정관련 사이트</label></div>
+              </div>
+            </div>
+          </div>
+        </div>
+            </div>
+
+            <!-- 내 메뉴 -->
+            <div class="mymenu-picked">
+              <div class="mymenu-picked-head">
+                <h3 class="mymenu-picked-title">내 메뉴</h3>
+                <button type="button" class="mymenu-reset">
+                  <img src="../images/common/ico-mymenu-reset.svg" alt="">
+                  <span>초기화</span>
+                </button>
+              </div>
+              <ul class="mymenu-picked-list">
+            <li>
+              <span>재정개요</span>
+              <button type="button" class="mymenu-picked-del" aria-label="재정개요 삭제"><img src="../images/common/ico-mymenu-remove.svg" alt=""></button>
+            </li>
+            <li>
+              <span>예산・결산・운용절차</span>
+              <button type="button" class="mymenu-picked-del" aria-label="예산・결산・운용절차 삭제"><img src="../images/common/ico-mymenu-remove.svg" alt=""></button>
+            </li>
+            <li>
+              <span>한눈에 보는 지방재정</span>
+              <button type="button" class="mymenu-picked-del" aria-label="한눈에 보는 지방재정 삭제"><img src="../images/common/ico-mymenu-remove.svg" alt=""></button>
+            </li>
+            <li>
+              <span>내 월급은 어떻게 쓰일까?</span>
+              <button type="button" class="mymenu-picked-del" aria-label="내 월급은 어떻게 쓰일까? 삭제"><img src="../images/common/ico-mymenu-remove.svg" alt=""></button>
+            </li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script>
+  popOpen('#tempPopId');
+
+  /* 메뉴 그룹 아코디언 */
+  $(document).on('click', '.mymenu-group-head', function(){
+    var $group = $(this).closest('.mymenu-group').toggleClass('is-open');
+    $(this).attr('aria-expanded', $group.hasClass('is-open') ? 'true' : 'false');
+  });
+</script>
+
+</body>
+</html>

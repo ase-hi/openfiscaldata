@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title>열린재정</title>
+
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
+<script src="../js/pub-ui.js"></script>
+
+</head>
+<body>
+
+    <dl class="skipLink">
+        <dt>바로가기 메뉴</dt>
+        <dd><a href="#gnbMenu">주메뉴 바로가기</a></dd>
+        <dd><a href="#content">본문 바로가기</a></dd>
+    </dl>
+    <div class="wrap">
+        <script id="header-template">
+            $.ajax({url:"common/header.txt", dataType:"text", success:function(data){
+                $('#header-template').replaceWith(data);
+            }});
+        </script>
+
+        <div class="container" id="content">
+            <script id="subvisual-template">
+                $.ajax({url:"common/subvisual.txt", dataType:"text", success:function(data){
+                    $('#subvisual-template').replaceWith($(data).filter('#visual-lab'));
+                }});
+            </script>
+
+            <script id="breadcrumb-template">
+                $.ajax({url:"common/breadcrumb.txt", dataType:"text", success:function(data){
+                    $('#breadcrumb-template').replaceWith(data);
+                    breadcrumbMenu();
+                }});
+            </script>
+
+            <div class="contents ai-analysis-page">
+                <div class="title-main-wrap">
+                    <h2 class="title-main">재정자료분석 AI</h2>
+                    <div class="right">
+                        <a href="javascript:void(0);" class="btn-nm btn-white">
+                            <span>재정 수입자료 보러가기</span>
+                            <i class="ico-arr-r" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="info-guide is-summary ai-analysis-intro">
+                    <div class="info-guide-head">
+                        <img src="../images/content/img-ai-intro.png" width="24" height="24" alt="" class="ai-analysis-intro-ico">
+                        <strong class="info-guide-tit">재정자료, AI가 대신 읽고 요약해 드립니다.</strong>
+                    </div>
+                    <div class="info-guide-body">
+                        <p class="ai-analysis-intro-note">
+                            <em>※ 재정자료분석 AI는 바로 실행할 수 없습니다. 재정자료에서 분석할 문서를 먼저 선택해야 이용할 수 있습니다.</em>
+                            <br>문서를 선택하면 핵심 내용을 요약하고 근거를 원문에서 인용해 설명합니다.
+                        </p>
+                    </div>
+                </div>
+
+                <section class="section-wrap ai-analysis-section">
+                    <div class="title-section-wrap">
+                        <h3 class="title-section">주요기능</h3>
+                    </div>
+                    <ul class="ai-analysis-feature-list">
+                        <li class="is-blue">
+                            <div class="ai-analysis-feature-visual">
+                                <img src="../images/content/img-ai-feature-01.png" width="280" height="210" alt="">
+                            </div>
+                            <div class="ai-analysis-feature-text">
+                                <strong class="ai-analysis-feature-tit">문서 요약</strong>
+                                <p class="ai-analysis-feature-desc">자료의 핵심 내용을 한눈에 요약</p>
+                            </div>
+                        </li>
+                        <li class="is-gray">
+                            <div class="ai-analysis-feature-visual">
+                                <img src="../images/content/img-ai-feature-02.png" width="280" height="228" alt="">
+                            </div>
+                            <div class="ai-analysis-feature-text">
+                                <strong class="ai-analysis-feature-tit">근거 인용</strong>
+                                <p class="ai-analysis-feature-desc">답변의 출처를 원문에서 인용·표시</p>
+                            </div>
+                        </li>
+                        <li class="is-purple">
+                            <div class="ai-analysis-feature-visual">
+                                <img src="../images/content/img-ai-feature-03.png" width="280" height="220" alt="">
+                            </div>
+                            <div class="ai-analysis-feature-text">
+                                <strong class="ai-analysis-feature-tit">질의응답</strong>
+                                <p class="ai-analysis-feature-desc">자료 내용에 대해 자유롭게 질문</p>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="section-wrap ai-analysis-section">
+                    <div class="title-section-wrap">
+                        <h3 class="title-section">다룰 수 있는 재정자료</h3>
+                    </div>
+                    <ul class="ai-analysis-data-list">
+                        <li class="is-blue">
+                            <strong class="ai-analysis-data-tit">재정사업별 설명자료</strong>
+                            <p class="ai-analysis-data-desc">예산·기금 사업설명자료</p>
+                        </li>
+                        <li class="is-teal">
+                            <strong class="ai-analysis-data-tit">재정보고서 및 문서</strong>
+                            <p class="ai-analysis-data-desc">결산·국가채무·재정동향 등</p>
+                        </li>
+                        <li class="is-navy">
+                            <strong class="ai-analysis-data-tit">재정간행물</strong>
+                            <p class="ai-analysis-data-desc">월간재정동향 등 정기 간행물</p>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="section-wrap ai-analysis-section">
+                    <div class="title-section-wrap">
+                        <h3 class="title-section">이용절차</h3>
+                    </div>
+                    <div class="ai-analysis-step-flow">
+                        <div class="ai-analysis-step-item">
+                            <div class="ai-analysis-step-head">
+                                <span class="ai-analysis-step-label">STEP</span>
+                                <span class="ai-analysis-step-badge">1</span>
+                            </div>
+                            <div class="ai-analysis-step-body">
+                                <img src="../images/content/img-ai-step-01.png" width="128" height="128" alt="" class="ai-analysis-step-ico">
+                                <div class="ai-analysis-step-text">
+                                    <strong class="ai-analysis-step-tit">재정자료선택</strong>
+                                    <p class="ai-analysis-step-desc">유형·분야로 찾아 문서 선택</p>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="ai-analysis-step-arrow" aria-hidden="true">
+                            <img src="../images/content/img-ai-step-arrow.png" width="27" height="22" alt="">
+                        </span>
+                        <div class="ai-analysis-step-item">
+                            <div class="ai-analysis-step-head">
+                                <span class="ai-analysis-step-label">STEP</span>
+                                <span class="ai-analysis-step-badge">2</span>
+                            </div>
+                            <div class="ai-analysis-step-body">
+                                <img src="../images/content/img-ai-step-02.png" width="128" height="128" alt="" class="ai-analysis-step-ico">
+                                <div class="ai-analysis-step-text">
+                                    <strong class="ai-analysis-step-tit">AI 요약·분석</strong>
+                                    <p class="ai-analysis-step-desc">핵심 내용 자동 요약</p>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="ai-analysis-step-arrow" aria-hidden="true">
+                            <img src="../images/content/img-ai-step-arrow.png" width="27" height="22" alt="">
+                        </span>
+                        <div class="ai-analysis-step-item">
+                            <div class="ai-analysis-step-head">
+                                <span class="ai-analysis-step-label">STEP</span>
+                                <span class="ai-analysis-step-badge">3</span>
+                            </div>
+                            <div class="ai-analysis-step-body">
+                                <img src="../images/content/img-ai-step-03.png" width="128" height="128" alt="" class="ai-analysis-step-ico">
+                                <div class="ai-analysis-step-text">
+                                    <strong class="ai-analysis-step-tit">질문·답변</strong>
+                                    <p class="ai-analysis-step-desc">자료 내용을 자유롭게 질의</p>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="ai-analysis-step-arrow" aria-hidden="true">
+                            <img src="../images/content/img-ai-step-arrow.png" width="27" height="22" alt="">
+                        </span>
+                        <div class="ai-analysis-step-item">
+                            <div class="ai-analysis-step-head">
+                                <span class="ai-analysis-step-label">STEP</span>
+                                <span class="ai-analysis-step-badge">4</span>
+                            </div>
+                            <div class="ai-analysis-step-body">
+                                <img src="../images/content/img-ai-step-04.png" width="128" height="128" alt="" class="ai-analysis-step-ico">
+                                <div class="ai-analysis-step-text">
+                                    <strong class="ai-analysis-step-tit">원문 근거 확인</strong>
+                                    <p class="ai-analysis-step-desc">답변 출처를 원문에서 확인</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="ai-analysis-step-note">※ 답변에는 근거가 된 원문 문단·페이지가 함께 표시되며, 원문 문서로 바로 이동할 수 있습니다</p>
+                </section>
+
+                <div class="ai-analysis-cta">
+                    <a href="javascript:void(0);" class="btn-lg btn-blue">
+                        <span>재정자료에서 문서 선택으로 시작하기</span>
+                        <i class="ico-arr-r-w" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <script id="feedback-template">
+                    $.ajax({url:"common/feedback.txt", dataType:"text", success:function(data){
+                        $('#feedback-template').replaceWith(data);
+                        pageFeedback();
+                    }});
+                </script>
+            </div>
+            <!-- //contents -->
+
+            <script id="floating-template">
+                $.ajax({url:"common/floating.txt", dataType:"text", success:function(data){
+                    $('#floating-template').replaceWith(data);
+                }});
+            </script>
+        </div>
+        <script id="footer-template">
+            $.ajax({url:"common/footer.txt", dataType:"text", success:function(data){
+                $('#footer-template').replaceWith(data);
+            }});
+        </script>
+    </div>
+    <!-- // wrap -->
+
+</body>
+</html>

@@ -1,0 +1,341 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title>열린재정</title>
+
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
+<script src="../js/pub-ui.js"></script>
+
+</head>
+<body>
+
+
+
+<div class="popup-wrap" id="pop-pivot">
+  <div class="dim"></div>
+  <div class="pop-wrap">
+    <div class="popup" style="width: 1000px;">
+      <div class="pop-header">
+        <h2 class="title">다차원분석 (PIVOT)</h2>
+        <div class="right">
+          <button type="button" class="btn-close"><i class="ico-close"></i></button>
+        </div>
+      </div>
+      <div class="pop-body">
+        <div class="realpivot-view">
+          <div class="realpivot-view-toolbar">
+            <div class="realpivot-view-tools">
+              <button type="button" class="realpivot-view-tool" aria-label="필드 설정">
+                <img src="../images/common/ico-pivot-field.svg" alt="">
+              </button>
+              <button type="button" class="realpivot-view-tool" aria-label="환경 설정">
+                <img src="../images/common/ico-pivot-setting.svg" alt="">
+              </button>
+            </div>
+            <select class="realpivot-view-select" aria-label="분류 기준">
+              <option value="class">분류명</option>
+            </select>
+          </div>
+          <!-- 테이블 영역: 별도 작업 -->
+           <br>
+           <br>
+           <br>
+           <br>
+           <br>
+        </div>
+      </div>
+      <div class="pop-footer line-t">
+        <div class="btn-wrap">
+          <button type="button" class="btn-nm btn-white" onclick="popClose('#pop-pivot')">닫기</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="popup-wrap" id="pop-pivot-setup">
+  <div class="dim"></div>
+  <div class="pop-wrap">
+    <div class="popup" style="width: 850px;">
+      <div class="pop-header">
+        <h2 class="title">PIVOT SETUP</h2>
+        <div class="right">
+          <button type="button" class="btn-close"><i class="ico-close"></i></button>
+        </div>
+      </div>
+      <div class="pop-body">
+        <div class="realpivot-setup-table">
+          <div class="realpivot-setup-row">
+            <div class="realpivot-setup-cell realpivot-setup-cell-all">
+              <div class="realpivot-setup-section-title">
+                <div class="realpivot-setup-section-title-field"></div>
+                <span class="realpivot-setup-section-title">전체 필드</span>
+              </div>
+              <div class="realpivot-setup-section-merged">
+                <div class="realpivot-setup-field"><span class="realpivot-setup-field">2007</span></div>
+                <div class="realpivot-setup-field"><span class="realpivot-setup-field">2008</span></div>
+                <div class="realpivot-setup-field"><span class="realpivot-setup-field">2009</span></div>
+                <div class="realpivot-setup-field"><span class="realpivot-setup-field">2010</span></div>
+                <div class="realpivot-setup-field"><span class="realpivot-setup-field">2011</span></div>
+                <div class="realpivot-setup-field"><span class="realpivot-setup-field">2012</span></div>
+                <div class="realpivot-setup-field"><span class="realpivot-setup-field">2013</span></div>
+                <div class="realpivot-setup-field"><span class="realpivot-setup-field">2014</span></div>
+                <div class="realpivot-setup-field"><span class="realpivot-setup-field">2015</span></div>
+                <div class="realpivot-setup-field"><span class="realpivot-setup-field">2016</span></div>
+                <div class="realpivot-setup-field"><span class="realpivot-setup-field">2017</span></div>
+                <div class="realpivot-setup-field"><span class="realpivot-setup-field">2018</span></div>
+                <div class="realpivot-setup-field"><span class="realpivot-setup-field">2019</span></div>
+                <div class="realpivot-setup-field"><span class="realpivot-setup-field">2020</span></div>
+                <div class="realpivot-setup-field"><span class="realpivot-setup-field">2021</span></div>
+                <div class="realpivot-setup-field"><span class="realpivot-setup-field">2022</span></div>
+                <div class="realpivot-setup-field"><span class="realpivot-setup-field">2023</span></div>
+                <div class="realpivot-setup-field"><span class="realpivot-setup-field">2024</span></div>
+                <div class="realpivot-setup-field"><span class="realpivot-setup-field">2025</span></div>
+                <div class="realpivot-setup-field"><span class="realpivot-setup-field">2026</span></div>
+                <div class="realpivot-setup-field"><span class="realpivot-setup-field">통계명</span></div>
+                <div class="realpivot-setup-field"><span class="realpivot-setup-field">분류명</span></div>
+                <div class="realpivot-setup-field"><span class="realpivot-setup-field">항목</span></div>
+                <div class="realpivot-setup-field"><span class="realpivot-setup-field">자료구분</span></div>
+              </div>
+            </div>
+            <div class="realpivot-setup-cell realpivot-setup-cell-normal">
+              <div class="realpivot-setup-section-title">
+                <div class="realpivot-setup-section-title-column"></div>
+                <span class="realpivot-setup-section-title">컬럼 필드 </span>
+              </div>
+              <div class="realpivot-setup-section">
+                <div class="realpivot-setup-field">
+                  <span class="realpivot-setup-field">분류명</span>
+                  <div class="realpivot-setup-field-remove"></div>
+                  <div class="realpivot-setup-field-sort-desc"></div>
+                </div>
+                <div class="realpivot-setup-field">
+                  <span class="realpivot-setup-field">항목</span>
+                  <div class="realpivot-setup-field-remove"></div>
+                  <div class="realpivot-setup-field-sort-asc"></div>
+                </div>
+              </div>
+              <div class="realpivot-setup-section-title">
+                <div class="realpivot-setup-section-title-value"></div>
+                <span class="realpivot-setup-section-title">값 필드</span>
+              </div>
+              <div class="realpivot-setup-section">
+                <div class="realpivot-setup-field">
+                  <span class="realpivot-setup-field">항목</span>
+                  <div class="realpivot-setup-field-remove"></div>
+                  <input type="button" class="realpivot-setup btn-default btn-small realpivot-setup-field-value" value="설정">
+                  <select class="realpivot-setup realpivot-setup-field-value">
+                    <option value="sum">합계</option>
+                    <option value="count">건수</option>
+                    <option value="min">최소</option>
+                    <option value="max">최대</option>
+                    <option value="avg">평균</option>
+                    <option value="distinct">고유</option>
+                  </select>
+                </div>
+                <div class="realpivot-setup-field">
+                  <span class="realpivot-setup-field">자료구분</span>
+                  <div class="realpivot-setup-field-remove"></div>
+                  <input type="button" class="realpivot-setup btn-default btn-small realpivot-setup-field-value" value="설정">
+                  <select class="realpivot-setup realpivot-setup-field-value">
+                    <option value="sum">합계</option>
+                    <option value="count">건수</option>
+                    <option value="min">최소</option>
+                    <option value="max">최대</option>
+                    <option value="avg">평균</option>
+                    <option value="distinct">고유</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="realpivot-setup-cell realpivot-setup-cell-normal">
+              <div class="realpivot-setup-section-title">
+                <div class="realpivot-setup-section-title-row"></div>
+                <span class="realpivot-setup-section-title">행 필드</span>
+              </div>
+              <div class="realpivot-setup-section">
+                <div class="realpivot-setup-field">
+                  <span class="realpivot-setup-field">자료구분</span>
+                  <div class="realpivot-setup-field-remove"></div>
+                  <div class="realpivot-setup-field-sort-asc"></div>
+                </div>
+                <div class="realpivot-setup-field">
+                  <span class="realpivot-setup-field">통계명</span>
+                  <div class="realpivot-setup-field-remove"></div>
+                  <div class="realpivot-setup-field-sort-asc"></div>
+                </div>
+              </div>
+              <div class="realpivot-setup-section-title">
+                <div class="realpivot-setup-section-title-filter"></div>
+                <span class="realpivot-setup-section-title">필터 필드</span>
+                <select class="realpivot-setup realpivot-setup-field-filter">
+                  <option value="and">AND</option>
+                  <option value="or">OR</option>
+                </select>
+              </div>
+              <div class="realpivot-setup-section">
+                <div class="realpivot-setup-field">
+                  <span class="realpivot-setup-field">항목</span>
+                  <div class="realpivot-setup-field-remove"></div>
+                  <div class="realpivot-setup-field-filter"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- 값 설정 -->
+<div class="popup-wrap" id="pop-pivot-value-setup" style="z-index:510;">
+  <div class="dim"></div>
+  <div class="pop-wrap">
+    <div class="popup" style="width:520px;">
+      <div class="pop-header">
+        <h2 class="title">값 설정 <span>(2010)</span></h2>
+        <div class="right">
+          <button type="button" class="btn-close"><i class="ico-close"></i></button>
+        </div>
+      </div>
+      <div class="pop-body">
+        <div class="pivot-value-form">
+          <div class="fm mo-column">
+            <label for="pivot-value-sort-col" class="label">컬럼 값 기준 정렬</label>
+            <div class="sel">
+              <select id="pivot-value-sort-col" aria-label="컬럼 값 기준 정렬">
+                <option value="" selected>설정하지 않음</option>
+              </select>
+            </div>
+          </div>
+          <div class="fm mo-column">
+            <label for="pivot-value-sort-row" class="label">행 값 기준 정렬</label>
+            <div class="sel">
+              <select id="pivot-value-sort-row" aria-label="행 값 기준 정렬">
+                <option value="" selected>설정하지 않음</option>
+              </select>
+            </div>
+          </div>
+          <div class="fm mo-column">
+            <label for="pivot-value-format" class="label">표시형식</label>
+            <div class="sel">
+              <select id="pivot-value-format" aria-label="표시형식">
+                <option value="int" selected>정수(#,##0)</option>
+              </select>
+            </div>
+          </div>
+          <div class="fm mo-column">
+            <label for="pivot-value-align" class="label">맞춤방식</label>
+            <div class="sel">
+              <select id="pivot-value-align" aria-label="맞춤방식">
+                <option value="" selected>기본</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pop-footer line-t">
+        <div class="btn-wrap">
+          <button type="button" class="btn-nm btn-white" onclick="popClose('#pop-pivot-value-setup')">취소</button>
+          <button type="button" class="btn-nm btn-blue" onclick="popClose('#pop-pivot-value-setup')">적용</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 필터 설정 -->
+<div class="popup-wrap" id="pop-pivot-filter-setup" style="z-index:510;">
+  <div class="dim"></div>
+  <div class="pop-wrap">
+    <div class="popup" style="width:480px;">
+      <div class="pop-header">
+        <h2 class="title">필터 설정 <span>(통계명)</span></h2>
+        <div class="right">
+          <button type="button" class="btn-close"><i class="ico-close"></i></button>
+        </div>
+      </div>
+      <div class="pop-body">
+        <div class="pivot-filter-form">
+          <div class="pivot-filter-row">
+            <div class="input-choice">
+              <input type="checkbox" id="pivot-filter-all" checked>
+              <label for="pivot-filter-all">전체</label>
+            </div>
+          </div>
+          <div class="pivot-filter-row">
+            <div class="input-choice">
+              <input type="checkbox" id="pivot-filter-expr">
+              <label for="pivot-filter-expr" class="sr-only">조건식 사용</label>
+            </div>
+            <div class="inp">
+              <input type="text" class="pivot-filter-expr" placeholder="예) value &gt; 0" aria-label="조건식" disabled>
+            </div>
+          </div>
+          <div class="pivot-filter-list">
+            <div class="input-choice"><input type="checkbox" id="pivot-filter-v1" checked><label for="pivot-filter-v1">회계별 예산편성현황</label></div>
+            <div class="input-choice"><input type="checkbox" id="pivot-filter-v2" checked><label for="pivot-filter-v2">분야별 재정지출현황</label></div>
+            <div class="input-choice"><input type="checkbox" id="pivot-filter-v3" checked><label for="pivot-filter-v3">세입세출 결산현황</label></div>
+            <div class="input-choice"><input type="checkbox" id="pivot-filter-v4" checked><label for="pivot-filter-v4">국고보조금 집행현황</label></div>
+          </div>
+        </div>
+      </div>
+      <div class="pop-footer line-t">
+        <div class="btn-wrap">
+          <button type="button" class="btn-nm btn-white" onclick="popClose('#pop-pivot-filter-setup')">취소</button>
+          <button type="button" class="btn-nm btn-blue" onclick="popClose('#pop-pivot-filter-setup')">확인</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  popOpen('#pop-pivot');
+  popOpen('#pop-pivot-setup');
+
+  /* 값 필드의 '설정' 버튼 → 값 설정 팝업 */
+  $(document).on('click', '#pop-pivot-setup input.realpivot-setup-field-value', function(){
+    var name = $(this).closest('.realpivot-setup-field').find('span.realpivot-setup-field').text();
+    $('#pop-pivot-value-setup .pop-header h2 span').text('(' + name + ')');
+    popOpen('#pop-pivot-value-setup');
+  });
+
+  /* 필터 필드의 필터 아이콘 → 필터 설정 팝업 */
+  $(document).on('click', '#pop-pivot-setup div.realpivot-setup-field > .realpivot-setup-field-filter', function(){
+    var name = $(this).closest('.realpivot-setup-field').find('span.realpivot-setup-field').text();
+    $('#pop-pivot-filter-setup .pop-header h2 span').text('(' + name + ')');
+    popOpen('#pop-pivot-filter-setup');
+  });
+
+  /* 필터 설정 - 조건식 체크 시 입력창 활성화 */
+  $(document).on('change', '#pivot-filter-expr', function(){
+    $('#pop-pivot-filter-setup input.pivot-filter-expr').prop('disabled', !this.checked);
+  });
+
+  /* 필터 설정 - 전체 선택 연동 */
+  $(document).on('change', '#pivot-filter-all', function(){
+    $('#pop-pivot-filter-setup .pivot-filter-list input[type="checkbox"]').prop('checked', this.checked);
+  });
+  $(document).on('change', '#pop-pivot-filter-setup .pivot-filter-list input[type="checkbox"]', function(){
+    var $item = $('#pop-pivot-filter-setup .pivot-filter-list input[type="checkbox"]');
+    $('#pivot-filter-all').prop('checked', $item.length === $item.filter(':checked').length);
+  });
+</script>
+
+
+</body>
+</html>
