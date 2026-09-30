@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title>열린재정</title>
+
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
+<link type="text/css" rel="preload" href="../css/font.css">
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
+<script src="../js/pub-ui.js"></script>
+
+</head>
+<body>
+
+    <dl class="skipLink">
+        <dt>바로가기 메뉴</dt>	
+        <dd><a href="#gnbMenu">주메뉴 바로가기</a></dd>
+        <dd><a href="#content">본문 바로가기</a></dd>
+    </dl>
+    <div class="wrap">
+        <script id="header-template">
+            // 헤더
+            $.ajax({url:"common/header.txt", dataType:"text", success:function(data){
+                $('#header-template').replaceWith(data);
+            }});
+        </script>
+
+        <div class="container" id="content">
+            <script id="subvisual-template">
+                $.ajax({url:"common/subvisual.txt", dataType:"text", success:function(data){
+                    $('#subvisual-template').replaceWith($(data).filter('#visual-statistics'));
+                }});
+            </script>
+
+            <script id="breadcrumb-template">
+                // breadcrumb메뉴
+                $.ajax({url:"common/breadcrumb.txt", dataType:"text", success:function(data){
+                    $('#breadcrumb-template').replaceWith(data);
+                    breadcrumbMenu();
+                }});
+            </script>
+            
+            <div class="contents">
+                <div class="finance-stat-wrap stat-central-wrap stat-debt-wrap">
+                    <!-- 요약 지표 카드 -->
+                    <div class="stat-card-list">
+                        <div class="stat-card">
+                            <strong class="stat-card-tit">국가채무(D1)</strong>
+                            <p class="stat-card-value"><em>1,127</em><span>조</span></p>
+                            <div class="stat-card-foot">
+                                <span class="stat-card-label">GDP대비</span>
+                                <span class="stat-card-rate">46.9%</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <strong class="stat-card-tit">일반정부부채(D2)</strong>
+                            <p class="stat-card-value"><em>1,127</em><span>조</span></p>
+                            <div class="stat-card-foot">
+                                <span class="stat-card-label">GDP대비</span>
+                                <span class="stat-card-rate">50.7%</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <strong class="stat-card-tit">공공부문부채(D3)</strong>
+                            <p class="stat-card-value"><em>1,673</em><span>조</span></p>
+                            <div class="stat-card-foot">
+                                <span class="stat-card-label">GDP대비</span>
+                                <span class="stat-card-rate">69.7%</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <strong class="stat-card-tit">포괄범위</strong>
+                            <p class="stat-card-value"><em>D1 ⊂ D2 ⊂ D3</em></p>
+                            <div class="stat-card-foot">
+                                <span class="stat-card-label">좁음 → 넓음</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 국가채무 탭 (메뉴 페이지 이동) -->
+                    <div class="tab-main">
+                        <ul>
+                            <li class="on"><a href="stat-central-debt-understanding.html" aria-current="page">국가채무와 부채의 이해</a></li>
+                            <li><a href="stat-central-debt-d1.html">국가채무(D1)</a></li>
+                            <li><a href="stat-central-debt-d2.html">일반정부부채(D2)</a></li>
+                            <li><a href="stat-central-debt-d3.html">공공부문부채(D3)</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-content">
+                        <!-- 안내 -->
+                        <div class="cont-box st2">
+                            <p><b>국가채무</b>는 정부가 갚아야 할 빚의 누적액입니다.<br>재정수지 적자가 쌓이면 국채 발행으로 메우며 늘어나고, 재정준칙은 D1 기준 GDP 대비 60%를 관리선으로 봅니다.</p>
+                        </div>
+
+                        <!-- 포괄 범위에 따른 3대 부채 통계 -->
+                        <div class="stat-debt-section">
+                            <div class="title-section-wrap">
+                                <h3 class="title-section">포괄 범위에 따른 3대 부채 통계</h3>
+                            </div>
+                            <div class="debt-card-list">
+                                <div class="debt-card st-blue">
+                                    <span class="debt-card-badge">국가채무 D1</span>
+                                    <p class="debt-card-value"><em>1,175.0</em><span>조</span></p>
+                                    <p class="debt-card-info"><span class="debt-card-rate">GDP <b>46.0%</b></span><span>중앙 · 지방정부 회계 · 기금</span></p>
+                                    <p class="debt-card-desc">중앙·지방정부의 회계와 기금만 포함합니다.<br>국내 재정 운용의 기준이 됩니다</p>
+                                </div>
+                                <div class="debt-card st-green">
+                                    <span class="debt-card-badge">일반정부부채 D2</span>
+                                    <p class="debt-card-value"><em>1,270.8</em><span>조</span></p>
+                                    <p class="debt-card-info"><span class="debt-card-rate">GDP <b>49.6%</b></span><span>D1 + 비영리공공기관</span></p>
+                                    <p class="debt-card-desc">D1에 비영리공공기관을 더합니다.<br>다른 나라와 비교(IMF·OECD)할 때 씁니다.</p>
+                                </div>
+                                <div class="debt-card st-red">
+                                    <span class="debt-card-badge">공공부문부채 D3</span>
+                                    <p class="debt-card-value"><em>1,175.0</em><span>조</span></p>
+                                    <p class="debt-card-info"><span class="debt-card-rate">GDP <b>67.8%</b></span><span>D2 + 비금융공기업</span></p>
+                                    <p class="debt-card-desc">D2에 비금융공기업(한전·LH 등)까지 더합니다.<br>공공부문 전체 건전성을 점검합니다.</p>
+                                </div>
+                            </div>
+                            <div class="txt-ps-wrap">
+                                <p class="txt-ps">포함 범위가 넓어질수록 금액이 커지므로 순서는 늘 D1 &lt; D2 &lt; D3 입니다. 목적에 맞는 통계를 골라 보면 됩니다.</p>
+                            </div>
+                        </div>
+
+                        <!-- 포괄 범위에 따른 3대 부채 통계 : 도식 -->
+                        <div class="stat-debt-section">
+                            <div class="title-section-wrap">
+                                <h3 class="title-section">포괄 범위에 따른 3대 부채 통계</h3>
+                            </div>
+                            <div class="diagram-box diagram-stat-central-debt-scope">
+                                <div class="diagram">
+                                    <img src="../images/content/diagram-stat-central-debt-scope.png" alt="현금주의 국가채무(D1)는 중앙재정 채무와 지방재정 채무를 합한 것이고, 발생주의 일반정부 부채(D2)는 중앙재정 부채와 지방재정 채무에 비영리 공공기관 부채를 더한 것이며, 공공부문 부채(D3)는 D2에 비영리 공공기관 부채를 더한 것임을 보여주는 도식. 중앙재정 부채에 연금충당 부채 등을 더하면 재무제표상 부채가 됨. 재정은 회계·기금을 의미">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 한눈에 정리하는 4가지 부채 지표 -->
+                        <div class="stat-debt-section">
+                            <div class="title-section-wrap">
+                                <h3 class="title-section">한눈에 정리하는 4가지 부채 지표</h3>
+                            </div>
+                            <div class="debt-type-list">
+                                <div class="debt-type-card">
+                                    <p class="debt-type-head st-type1">우리나라 재정을 관리·계획할 때</p>
+                                    <div class="debt-type-body">
+                                        <strong class="debt-type-tit">국가채무 (D1)</strong>
+                                        <p class="debt-type-desc">국채 · 차입금 · 국고채무부담행위 등 정부가 갚아야 할 확정 채무</p>
+                                    </div>
+                                    <dl class="debt-type-info">
+                                        <div><dt>포함</dt><dd>중앙 + 지방정부 회계·기금</dd></div>
+                                        <div><dt>기준</dt><dd>현금주의 · 국가재정법</dd></div>
+                                        <div><dt>활용</dt><dd>국내 재정운용·관리의 기준</dd></div>
+                                    </dl>
+                                </div>
+                                <div class="debt-type-card">
+                                    <p class="debt-type-head st-type2">다른 나라와 비교할 때</p>
+                                    <div class="debt-type-body">
+                                        <strong class="debt-type-tit">일반정부부채 (D2)</strong>
+                                        <p class="debt-type-desc">D1 + 비영리공공기관 부채까지포함</p>
+                                    </div>
+                                    <dl class="debt-type-info">
+                                        <div><dt>포함</dt><dd>정부 + 비영리공공기관</dd></div>
+                                        <div><dt>기준</dt><dd>발생주의 · 국제지침(PSDS)</dd></div>
+                                        <div><dt>활용</dt><dd>IMF·OECD 국제비교</dd></div>
+                                    </dl>
+                                </div>
+                                <div class="debt-type-card">
+                                    <p class="debt-type-head st-type3">공기업까지 공공부문 전체를 볼 때</p>
+                                    <div class="debt-type-body">
+                                        <strong class="debt-type-tit">공공부문부채 (D3)</strong>
+                                        <p class="debt-type-desc">국채 · 차입금 · 국고채무부담행위 등 정부가 갚아야 할 확정 채무</p>
+                                    </div>
+                                    <dl class="debt-type-info">
+                                        <div><dt>포함</dt><dd>+ 비금융공기업</dd></div>
+                                        <div><dt>기준</dt><dd>발생주의 · 국제지침(PSDS)</dd></div>
+                                        <div><dt>활용</dt><dd>공공부문 재정건전성 점검</dd></div>
+                                    </dl>
+                                </div>
+                                <div class="debt-type-card">
+                                    <p class="debt-type-head st-type4">연금 등 미래 지급 부담까지 볼 때</p>
+                                    <div class="debt-type-body">
+                                        <strong class="debt-type-tit">국가결산 재무제표상 부채</strong>
+                                        <p class="debt-type-desc">발생주의 회계로 인식한 부채(연금충당부채 등 포함)</p>
+                                    </div>
+                                    <dl class="debt-type-info">
+                                        <div><dt>포함</dt><dd>정부 회계·기금 + 공공기관 관리기금</dd></div>
+                                        <div><dt>기준</dt><dd>발생주의(재무제표) · 국가회계법</dd></div>
+                                        <div><dt>활용</dt><dd>미래 지급의무까지 반영한 재무건전성</dd></div>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div class="txt-ps-wrap">
+                                <p class="txt-ps">※ 같은 부채라도 포함 범위·인식 기준에 따라 규모가 다릅니다. 목적에 맞는 지표를 보세요. (정확한 규모는 아래 통계 표 참고)</p>
+                            </div>
+                        </div>
+
+                        <!-- 부채 유형별 통계 현황 표 -->
+                        <div class="stat-debt-section">
+                            <div class="title-section-wrap">
+                                <h3 class="title-section"><span class="title-section-inner">부채 유형별 통계 현황<span class="title-section-unit">(단위 : 조원)</span></span></h3>
+                                <div class="right">
+                                    <button type="button" class="btn-sm btn-white"><i class="ico-chart-stat" aria-hidden="true"></i><span>통계설명</span></button>
+                                    <button type="button" class="btn-sm btn-white"><i class="ico-chart-term" aria-hidden="true"></i><span>용어설명</span></button>
+                                </div>
+                            </div>
+                            <div class="data-default" style="height: 500px;background: #dedede;display:flex;justify-content:center;align-items:center;font-size:30px;">테이블영역</div>
+                        </div>
+
+                        <!-- D1 · D2 · D3 추이 표 -->
+                        <div class="stat-debt-section">
+                            <div class="title-section-wrap">
+                                <h3 class="title-section"><span class="title-section-inner">D1 · D2 · D3 추이<span class="title-section-unit">(단위 : 조원)</span></span></h3>
+                                <div class="right">
+                                    <button type="button" class="btn-sm btn-white"><i class="ico-chart-stat" aria-hidden="true"></i><span>통계설명</span></button>
+                                    <button type="button" class="btn-sm btn-white"><i class="ico-chart-term" aria-hidden="true"></i><span>용어설명</span></button>
+                                </div>
+                            </div>
+                            <div class="data-default" style="height: 500px;background: #dedede;display:flex;justify-content:center;align-items:center;font-size:30px;">테이블영역</div>
+                            <div class="txt-ps-wrap">
+                                <p class="txt-ps">※ 세 부채 지표가 2020~2024년 모두 늘어나는 흐름을 보여 줍니다. 포함 범위가 넓은 D3일수록 규모가 큽니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <script id="feedback-template">
+                    // 피드백
+                    $.ajax({url:"common/feedback.txt", dataType:"text", success:function(data){
+                        $('#feedback-template').replaceWith(data);
+                        pageFeedback();
+                    }});
+                </script>
+            </div>
+            <!-- //contents -->
+
+            <script id="floating-template">
+                // 플로팅메뉴
+                $.ajax({url:"common/floating.txt", dataType:"text", success:function(data){
+                    $('#floating-template').replaceWith(data);
+                }});
+            </script>
+        </div>
+        <script id="footer-template">
+            // 푸터
+            $.ajax({url:"common/footer.txt", dataType:"text", success:function(data){
+                $('#footer-template').replaceWith(data);
+            }});
+        </script>
+    </div>
+    <!-- // wrap -->
+
+
+</body>
+</html>

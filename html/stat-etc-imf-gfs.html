@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title>열린재정</title>
+
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
+<link type="text/css" rel="preload" href="../css/font.css">
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
+<script src="../js/pub-ui.js"></script>
+
+</head>
+<body>
+
+    <dl class="skipLink">
+        <dt>바로가기 메뉴</dt>	
+        <dd><a href="#gnbMenu">주메뉴 바로가기</a></dd>
+        <dd><a href="#content">본문 바로가기</a></dd>
+    </dl>
+    <div class="wrap">
+        <script id="header-template">
+            // 헤더
+            $.ajax({url:"common/header.txt", dataType:"text", success:function(data){
+                $('#header-template').replaceWith(data);
+            }});
+        </script>
+
+        <div class="container" id="content">
+            <script id="subvisual-template">
+                $.ajax({url:"common/subvisual.txt", dataType:"text", success:function(data){
+                    $('#subvisual-template').replaceWith($(data).filter('#visual-statistics'));
+                }});
+            </script>
+
+            <script id="breadcrumb-template">
+                // breadcrumb메뉴
+                $.ajax({url:"common/breadcrumb.txt", dataType:"text", success:function(data){
+                    $('#breadcrumb-template').replaceWith(data);
+                    breadcrumbMenu();
+                }});
+            </script>
+            
+            <div class="contents">
+                <div class="stat-indicator-wrap stat-imf-wrap">
+                    <div class="title-main-wrap">
+                        <h2 class="title-main">국제통계지표</h2>
+                    </div>
+
+                    <!-- 국제통계지표 탭 (메뉴 페이지 이동) -->
+                    <div class="tab-main">
+                        <ul>
+                            <li><a href="stat-etc-international.html">국제지표</a></li>
+                            <li class="on"><a href="stat-etc-imf-gfs.html" aria-current="page">IMF 정부재정통계</a></li>
+                            <li><a href="stat-etc-oecd-public-sector.html">OECD 공공부문통계</a></li>
+                            <li><a href="stat-etc-g20-major.html">G20 주요통계</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-content">
+                        <!-- 안내 -->
+                        <div class="info-guide st-plain">
+                            <div class="info-guide-head">
+                                <strong class="info-guide-tit st-lg">IMF 정부재정통계(GFS: Government Financial Statistics)와 부채통계(PSDS: Public Sector Debt Statistics)</strong>
+                            </div>
+                            <div class="info-guide-body">
+                                <ul class="dash-list">
+                                    <li>IMF의 GFSM(GFS Manual: 정부재정통계편람)은 정부의 재정상태를 명확히 파악할 수 있는 국가 결산통계 생산을 위해 1974년 처음 제정되었고 총 3차례 개정(1986, 2001, 2014)되었으며, 한국은 1986년도 GFS, 2001년도 GFS에 따른 통계를 모두 발표하고 있습니다.</li>
+                                    <li>2001년 전면개정을 통해 발생주의 기준으로 회계처리 방식을 변경해 UN SNA와 일치시켰습니다.</li>
+                                    <li>정부, 비영리공공기관을 포함한 일반정부를 작성대상으로 합니다. PSDS는 2008년 금융위기 이후 공공부문 부채에 대한 통계자료 필요성 제기에 따라 IMF, OECD 등의 국제기구 합동으로 작성한 부채통계 세부 작성지침으로, 2013년에 발표되었습니다.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- 재정통계 구분 탭 (컨텐츠 전환) -->
+                        <div class="tab-filter" role="tablist" aria-label="IMF 정부재정통계 구분">
+                            <button type="button" role="tab" class="on" data-tab-id="imfTabRevenue" aria-selected="true">일반정부 재정수입</button>
+                            <button type="button" role="tab" data-tab-id="imfTabExpense" aria-selected="false">일반정부 재정지출</button>
+                            <button type="button" role="tab" data-tab-id="imfTabBalance" aria-selected="false">일반정부 재정수지</button>
+                            <button type="button" role="tab" data-tab-id="imfTabDebt" aria-selected="false">일반정부 부채(D2)</button>
+                        </div>
+
+                        <!-- 국가별 GFS 일반정부 재정수입 -->
+                        <div class="tab-content" id="imfTabRevenue" role="tabpanel">
+                            <!-- 검색 -->
+                            <form class="form-search-box st-search-options centered" onsubmit="return false;">
+                                <div class="form-search-fields">
+                                    <div class="fm">
+                                        <label for="imfTabRevenueYearStart" class="label">회계연도</label>
+                                        <div class="input-date">
+                                            <div class="sel"><select id="imfTabRevenueYearStart" name="yearStart" aria-label="조회 시작 회계연도"><option value="">선택</option><option>2030</option><option>2029</option><option>2028</option><option>2027</option><option>2026</option></select></div>
+                                            <span class="dash">~</span>
+                                            <div class="sel"><select name="yearEnd" aria-label="조회 종료 회계연도"><option value="">선택</option><option>2030</option><option>2029</option><option>2028</option><option>2027</option><option>2026</option></select></div>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn-search">검색</button>
+                                </div>
+                            </form>
+
+                            <!-- 국가별 GFS 일반정부 재정수입 표 -->
+                            <div class="title-section-wrap">
+                                <h3 class="title-section"><span class="title-section-inner">국가별 GFS 일반정부 재정수입<span class="title-section-unit">(단위 : GDP 대비 %)</span></span></h3>
+                                <div class="right">
+                                    <button type="button" class="btn-sm btn-white"><i class="ico-chart-stat" aria-hidden="true"></i><span>통계설명</span></button>
+                                    <button type="button" class="btn-sm btn-white"><i class="ico-chart-term" aria-hidden="true"></i><span>용어설명</span></button>
+                                </div>
+                            </div>
+                            <div class="data-default" style="height: 500px;background: #dedede;display:flex;justify-content:center;align-items:center;font-size:30px;">테이블영역</div>
+                        </div>
+
+                        <!-- 국가별 GFS 일반정부 재정지출 -->
+                        <div class="tab-content" id="imfTabExpense" role="tabpanel" style="display:none;">
+                            <!-- 검색 -->
+                            <form class="form-search-box st-search-options centered" onsubmit="return false;">
+                                <div class="form-search-fields">
+                                    <div class="fm">
+                                        <label for="imfTabExpenseYearStart" class="label">회계연도</label>
+                                        <div class="input-date">
+                                            <div class="sel"><select id="imfTabExpenseYearStart" name="yearStart" aria-label="조회 시작 회계연도"><option value="">선택</option><option>2030</option><option>2029</option><option>2028</option><option>2027</option><option>2026</option></select></div>
+                                            <span class="dash">~</span>
+                                            <div class="sel"><select name="yearEnd" aria-label="조회 종료 회계연도"><option value="">선택</option><option>2030</option><option>2029</option><option>2028</option><option>2027</option><option>2026</option></select></div>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn-search">검색</button>
+                                </div>
+                            </form>
+
+                            <!-- 국가별 GFS 일반정부 재정지출 표 -->
+                            <div class="title-section-wrap">
+                                <h3 class="title-section"><span class="title-section-inner">국가별 GFS 일반정부 재정지출<span class="title-section-unit">(단위 : GDP 대비 %)</span></span></h3>
+                                <div class="right">
+                                    <button type="button" class="btn-sm btn-white"><i class="ico-chart-stat" aria-hidden="true"></i><span>통계설명</span></button>
+                                    <button type="button" class="btn-sm btn-white"><i class="ico-chart-term" aria-hidden="true"></i><span>용어설명</span></button>
+                                </div>
+                            </div>
+                            <div class="data-default" style="height: 500px;background: #dedede;display:flex;justify-content:center;align-items:center;font-size:30px;">테이블영역</div>
+                        </div>
+
+                        <!-- 국가별 GFS 일반정부 재정수지 -->
+                        <div class="tab-content" id="imfTabBalance" role="tabpanel" style="display:none;">
+                            <!-- 검색 -->
+                            <form class="form-search-box st-search-options centered" onsubmit="return false;">
+                                <div class="form-search-fields">
+                                    <div class="fm">
+                                        <label for="imfTabBalanceYearStart" class="label">회계연도</label>
+                                        <div class="input-date">
+                                            <div class="sel"><select id="imfTabBalanceYearStart" name="yearStart" aria-label="조회 시작 회계연도"><option value="">선택</option><option>2030</option><option>2029</option><option>2028</option><option>2027</option><option>2026</option></select></div>
+                                            <span class="dash">~</span>
+                                            <div class="sel"><select name="yearEnd" aria-label="조회 종료 회계연도"><option value="">선택</option><option>2030</option><option>2029</option><option>2028</option><option>2027</option><option>2026</option></select></div>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn-search">검색</button>
+                                </div>
+                            </form>
+
+                            <!-- 국가별 GFS 일반정부 재정수지 표 -->
+                            <div class="title-section-wrap">
+                                <h3 class="title-section"><span class="title-section-inner">국가별 GFS 일반정부 재정수지<span class="title-section-unit">(단위 : GDP 대비 %)</span></span></h3>
+                                <div class="right">
+                                    <button type="button" class="btn-sm btn-white"><i class="ico-chart-stat" aria-hidden="true"></i><span>통계설명</span></button>
+                                    <button type="button" class="btn-sm btn-white"><i class="ico-chart-term" aria-hidden="true"></i><span>용어설명</span></button>
+                                </div>
+                            </div>
+                            <div class="data-default" style="height: 500px;background: #dedede;display:flex;justify-content:center;align-items:center;font-size:30px;">테이블영역</div>
+                        </div>
+
+                        <!-- 국가별 PSDS 일반정부 부채(D2) -->
+                        <div class="tab-content" id="imfTabDebt" role="tabpanel" style="display:none;">
+                            <!-- 검색 -->
+                            <form class="form-search-box st-search-options centered" onsubmit="return false;">
+                                <div class="form-search-fields">
+                                    <div class="fm">
+                                        <label for="imfTabDebtYearStart" class="label">회계연도</label>
+                                        <div class="input-date">
+                                            <div class="sel"><select id="imfTabDebtYearStart" name="yearStart" aria-label="조회 시작 회계연도"><option value="">선택</option><option>2030</option><option>2029</option><option>2028</option><option>2027</option><option>2026</option></select></div>
+                                            <span class="dash">~</span>
+                                            <div class="sel"><select name="yearEnd" aria-label="조회 종료 회계연도"><option value="">선택</option><option>2030</option><option>2029</option><option>2028</option><option>2027</option><option>2026</option></select></div>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn-search">검색</button>
+                                </div>
+                            </form>
+
+                            <!-- 국가별 PSDS 일반정부 부채(D2) 표 -->
+                            <div class="title-section-wrap">
+                                <h3 class="title-section"><span class="title-section-inner">국가별 PSDS 일반정부 부채(D2)<span class="title-section-unit">(단위 : GDP 대비 %)</span></span></h3>
+                                <div class="right">
+                                    <button type="button" class="btn-sm btn-white"><i class="ico-chart-stat" aria-hidden="true"></i><span>통계설명</span></button>
+                                    <button type="button" class="btn-sm btn-white"><i class="ico-chart-term" aria-hidden="true"></i><span>용어설명</span></button>
+                                </div>
+                            </div>
+                            <div class="data-default" style="height: 500px;background: #dedede;display:flex;justify-content:center;align-items:center;font-size:30px;">테이블영역</div>
+                        </div>
+
+                        <!-- 상세보기 -->
+                        <div class="stat-indicator-foot">
+                            <a href="javascript:void(0);" class="btn-md st-dark">국가데이터처(국제기구) 지표 상세보기<i class="ico-arr-r-w" aria-hidden="true"></i></a>
+                            <p class="stat-indicator-foot-note">※ 정확한 지표는 본사이트의 원본데이터를 확인바랍니다.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <script id="feedback-template">
+                    // 피드백
+                    $.ajax({url:"common/feedback.txt", dataType:"text", success:function(data){
+                        $('#feedback-template').replaceWith(data);
+                        pageFeedback();
+                    }});
+                </script>
+            </div>
+            <!-- //contents -->
+
+            <script id="floating-template">
+                // 플로팅메뉴
+                $.ajax({url:"common/floating.txt", dataType:"text", success:function(data){
+                    $('#floating-template').replaceWith(data);
+                }});
+            </script>
+        </div>
+        <script id="footer-template">
+            // 푸터
+            $.ajax({url:"common/footer.txt", dataType:"text", success:function(data){
+                $('#footer-template').replaceWith(data);
+            }});
+        </script>
+    </div>
+    <!-- // wrap -->
+
+
+
+</body>
+</html>

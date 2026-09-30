@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title>열린재정</title>
+
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
+<link type="text/css" rel="preload" href="../css/font.css">
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
+<script src="../js/pub-ui.js"></script>
+
+</head>
+<body>
+
+    <dl class="skipLink">
+        <dt>바로가기 메뉴</dt>	
+        <dd><a href="#gnbMenu">주메뉴 바로가기</a></dd>
+        <dd><a href="#content">본문 바로가기</a></dd>
+    </dl>
+    <div class="wrap">
+        <script id="header-template">
+            // 헤더
+            $.ajax({url:"common/header.txt", dataType:"text", success:function(data){
+                $('#header-template').replaceWith(data);
+            }});
+        </script>
+
+        <div class="container" id="content">
+            <script id="subvisual-template">
+                $.ajax({url:"common/subvisual.txt", dataType:"text", success:function(data){
+                    $('#subvisual-template').replaceWith($(data).filter('#visual-statistics'));
+                }});
+            </script>
+
+            <script id="breadcrumb-template">
+                // breadcrumb메뉴
+                $.ajax({url:"common/breadcrumb.txt", dataType:"text", success:function(data){
+                    $('#breadcrumb-template').replaceWith(data);
+                    breadcrumbMenu();
+                }});
+            </script>
+            
+            <div class="contents">
+                <div class="finance-stat-wrap stat-central-wrap stat-perf-wrap">
+                    <!-- 성과관리제도 바로가기 -->
+                    <div class="stat-perf-top">
+                        <a href="finance-understand-system-performance.html" class="btn-chart-link">성과관리제도 자세히 보기</a>
+                    </div>
+
+                    <!-- 요약 지표 카드 -->
+                    <div class="stat-card-list">
+                        <div class="stat-card">
+                            <strong class="stat-card-tit">전략목표</strong>
+                            <p class="stat-card-value"><em>4</em><span>개</span></p>
+                            <div class="stat-card-foot">
+                                <span class="stat-card-label">종합 정책방향</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <strong class="stat-card-tit">프로그램 목표</strong>
+                            <p class="stat-card-value"><em>12</em><span>개</span></p>
+                            <div class="stat-card-foot">
+                                <span class="stat-card-label">전략목표 하위</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <strong class="stat-card-tit">성과지표</strong>
+                            <p class="stat-card-value"><em>13</em><span>개</span></p>
+                            <div class="stat-card-foot">
+                                <span class="stat-card-label">달성도 측정</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <strong class="stat-card-tit">핵심재정사업</strong>
+                            <p class="stat-card-value"><em>30</em><span>개</span></p>
+                            <div class="stat-card-foot">
+                                <span class="stat-card-label">성과 점검 대상</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 성과관리 탭 (메뉴 페이지 이동) -->
+                    <div class="tab-main">
+                        <ul>
+                            <li><a href="stat-central-performance-target.html">성과목표관리</a></li>
+                            <li class="on"><a href="stat-central-performance-key-projects.html" aria-current="page">핵심재정사업 성과관리</a></li>
+                            <li><a href="stat-central-performance-evaluation.html">재정사업평가결과</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-content">
+                        <!-- 안내 -->
+                        <div class="cont-box st2">
+                            <p><b>핵심재정사업은</b> 국정과제·부처 핵심업무와 연결된 주요 사업입니다.<br>성과지표·목표 설정 → 연중 성과점검·현장조사 → 사업재설계·투자방향 조정 으로 이어지는 환류(Feedback) 순환으로 운용됩니다.</p>
+                        </div>
+
+                        <!-- 제도 개요 · 성과관리 체계 -->
+                        <div class="title-section-wrap">
+                            <h3 class="title-section">제도 개요 · 성과관리 체계</h3>
+                        </div>
+                        <div class="diagram-box diagram-stat-central-performance-key-projects">
+                            <div class="diagram">
+                                <img src="../images/content/diagram-stat-central-performance-key-projects.png" alt="핵심재정사업 성과관리 체계: 1 계획 - 성과지표·목표 설정(사업별 성과지표와 달성 목표를 사전에 설정), 2 점검 - 연중 성과점검·현장조사(추진상황 상시 점검하고 현장에서 확인), 3 환류 - 사업재설계·투자방향 조정(결과를 제도·예산 배분에 반영), 환류 결과는 다시 계획 단계로 이어짐">
+                            </div>
+                        </div>
+
+                        <!-- 검색 -->
+                        <form class="form-search-box st-search-options centered" onsubmit="return false;">
+                            <div class="form-search-fields">
+                                <div class="fm">
+                                    <label for="perfKeyProject" class="label">과제명</label>
+                                    <div class="sel" style="width: 396px;"><select id="perfKeyProject" name="project"><option value="">선택</option><option>팁스(TIPS) 프로그램</option></select></div>
+                                </div>
+                                <button type="submit" class="btn-search">검색</button>
+                            </div>
+                        </form>
+
+                        <!-- 팁스(TIPS) 프로그램 — 성과지표·목표 -->
+                        <div class="title-section-wrap">
+                            <h3 class="title-section">팁스(TIPS) 프로그램 — 성과지표·목표</h3>
+                        </div>
+                        <div class="stat-perf-key-img">
+                            <img src="../images/content/img-stat-central-performance-tips.jpg" alt="핵심재정사업 성과지표·목표 - 팁스(TIPS) 프로그램(Tech Incubator Program for Startup). 개요: 대표적인 민간주도의 벤처·스타트업 지원정책으로서 민간운영사가 先투자(1~2억원)한 창업기업에 정부가 R&amp;D, 사업화자금 등을 연계 지원. 25.3분기 추진상황(우수): 분기별 성과지표와 추진계획은 정상이행 중. 수시 선정 구조로 3분기 실집행은 계획대비 미달하였으나, 4분기 내 모든 과제 선정평가가 완료될 경우 전액 집행이 가능할 예정. 또한 VC정례 IR 개최 등 창업기업의 자금조달 및 성장 지원을 위한 후속 프로그램 기획과 제도개선 노력이 지속되고 있는 점이 긍정적으로 평가됨. 추진상황 구분: 우수, 양호, 주의, 미흡">
+                        </div>
+                    </div>
+                </div>
+
+                <script id="feedback-template">
+                    // 피드백
+                    $.ajax({url:"common/feedback.txt", dataType:"text", success:function(data){
+                        $('#feedback-template').replaceWith(data);
+                        pageFeedback();
+                    }});
+                </script>
+            </div>
+            <!-- //contents -->
+
+            <script id="floating-template">
+                // 플로팅메뉴
+                $.ajax({url:"common/floating.txt", dataType:"text", success:function(data){
+                    $('#floating-template').replaceWith(data);
+                }});
+            </script>
+        </div>
+        <script id="footer-template">
+            // 푸터
+            $.ajax({url:"common/footer.txt", dataType:"text", success:function(data){
+                $('#footer-template').replaceWith(data);
+            }});
+        </script>
+    </div>
+    <!-- // wrap -->
+
+</body>
+</html>

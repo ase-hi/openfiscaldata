@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title>열린재정</title>
+
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
+<link type="text/css" rel="preload" href="../css/font.css">
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
+<script src="../js/pub-ui.js"></script>
+
+</head>
+<body>
+
+    <dl class="skipLink">
+        <dt>바로가기 메뉴</dt>	
+        <dd><a href="#gnbMenu">주메뉴 바로가기</a></dd>
+        <dd><a href="#content">본문 바로가기</a></dd>
+    </dl>
+    <div class="wrap">
+        <script id="header-template">
+            // 헤더
+            $.ajax({url:"common/header.txt", dataType:"text", success:function(data){
+                $('#header-template').replaceWith(data);
+            }});
+        </script>
+
+        <div class="container" id="content">
+            <script id="subvisual-template">
+                $.ajax({url:"common/subvisual.txt", dataType:"text", success:function(data){
+                    $('#subvisual-template').replaceWith($(data).filter('#visual-statistics'));
+                }});
+            </script>
+
+            <script id="breadcrumb-template">
+                // breadcrumb메뉴
+                $.ajax({url:"common/breadcrumb.txt", dataType:"text", success:function(data){
+                    $('#breadcrumb-template').replaceWith(data);
+                    breadcrumbMenu();
+                }});
+            </script>
+            
+            <div class="contents">
+                <div class="stat-indicator-wrap">
+                    <div class="title-main-wrap">
+                        <h2 class="title-main">경제통계지표</h2>
+                    </div>
+
+                    <!-- 안내 -->
+                    <div class="info-guide st-plain">
+                        <div class="info-guide-head">
+                            <strong class="info-guide-tit st-lg">한국은행, 국가데이터처에서 제공 중인 주요 경제통계지표를 제공합니다.</strong>
+                        </div>
+                        <div class="info-guide-body">
+                            <p>전문 홈페이지 이동 시(하단의 지표 상세보기 바로가기 참조)보다 많은 통계정보를 볼 수 있습니다.</p>
+                        </div>
+                    </div>
+
+
+                    <!-- 탭 (컨텐츠 전환) -->
+                    <div class="tab-main">
+                        <ul role="tablist">
+                            <li class="on"><a href="javascript:void(0);" data-tab-id="indicatorTab1" role="tab" aria-selected="true">한국은행 100대 지표</a></li>
+                            <li><a href="javascript:void(0);" data-tab-id="indicatorTab2" role="tab" aria-selected="false">국가데이터처 주요 지표</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- 탭1 : 한국은행 100대 지표 -->
+                    <div class="tab-content" id="indicatorTab1" role="tabpanel">
+                            <!-- 카테고리 선택 -->
+                            <div class="title-section-wrap">
+                                <h3 class="title-section">카테고리 선택<span class="title-section-desc">보고 싶은 분류를 선택하면 해당 표로 이동하며 자동으로 펼쳐집니다.</span></h3>
+                                <div class="right">
+                                    <button type="button" class="btn-sm btn-white"><i class="ico-chart-stat" aria-hidden="true"></i><span>통계설명</span></button>
+                                    <button type="button" class="btn-sm btn-white"><i class="ico-chart-term" aria-hidden="true"></i><span>용어설명</span></button>
+                                </div>
+                            </div>
+                            <div class="stat-indicator-cat">
+                            <ul class="stat-indicator-chips st-col7">
+                                <li><button type="button" class="stat-indicator-chip" data-acc-target="bokAccMarket">시장금리</button></li>
+                                <li><button type="button" class="stat-indicator-chip" data-acc-target="bokAccDeposit">여수신금리</button></li>
+                                <li><button type="button" class="stat-indicator-chip">예금/대출금</button></li>
+                                <li><button type="button" class="stat-indicator-chip">통화량</button></li>
+                                <li><button type="button" class="stat-indicator-chip">환율</button></li>
+                                <li><button type="button" class="stat-indicator-chip">주식</button></li>
+                                <li><button type="button" class="stat-indicator-chip">채권</button></li>
+                                <li><button type="button" class="stat-indicator-chip">성장률</button></li>
+                                <li><button type="button" class="stat-indicator-chip">소득</button></li>
+                                <li><button type="button" class="stat-indicator-chip">GDP대비 비율</button></li>
+                                <li><button type="button" class="stat-indicator-chip">생산</button></li>
+                                <li><button type="button" class="stat-indicator-chip">소비</button></li>
+                                <li><button type="button" class="stat-indicator-chip">투자</button></li>
+                                <li><button type="button" class="stat-indicator-chip">경기순환지표</button></li>
+                                <li><button type="button" class="stat-indicator-chip">심리지표</button></li>
+                                <li><button type="button" class="stat-indicator-chip">기업경영지표</button></li>
+                                <li><button type="button" class="stat-indicator-chip">가계</button></li>
+                                <li><button type="button" class="stat-indicator-chip">소득분배지표</button></li>
+                                <li><button type="button" class="stat-indicator-chip">고용</button></li>
+                                <li><button type="button" class="stat-indicator-chip">노동</button></li>
+                                <li><button type="button" class="stat-indicator-chip">인구</button></li>
+                                <li><button type="button" class="stat-indicator-chip">국제수지</button></li>
+                                <li><button type="button" class="stat-indicator-chip">통관수출입</button></li>
+                                <li><button type="button" class="stat-indicator-chip">대외채권/채무</button></li>
+                                <li><button type="button" class="stat-indicator-chip">소비자/생산자물가</button></li>
+                                <li><button type="button" class="stat-indicator-chip">수출입 물가</button></li>
+                                <li><button type="button" class="stat-indicator-chip">부동산 가격</button></li>
+                                <li><button type="button" class="stat-indicator-chip" data-acc-target="bokAccCommodity">국제원자재가격</button></li>
+                            </ul>
+                            </div>
+
+                            <!-- 지표 목록 (아코디언) -->
+                            <div class="stat-indicator-acc">
+                                <div class="stat-indicator-acc-util">
+                                    <button type="button" class="btn-sm btn-blue-line btn-acc-all" aria-pressed="false">전부 펼치기</button>
+                                </div>
+                            <div class="stat-indicator-acc-item is-open" id="bokAccMarket">
+                                <h3 class="stat-indicator-acc-head">
+                                    <button type="button" class="stat-indicator-acc-btn" aria-expanded="true" aria-controls="bokAccMarketBody">시장금리</button>
+                                </h3>
+                                <div class="stat-indicator-acc-body" id="bokAccMarketBody">
+                                    <div class="stat-both-tables">
+                                        <div class="data-default line-type">
+                                            <div class="scroll">
+                                                <table>
+                                                    <caption class="sr-only">시장금리 1 — 주기, 지표명, 수치, 단위</caption>
+                                                    <colgroup>
+                                                        <col style="width:80px">
+                                                        <col style="width:auto;min-width: 150px;;">
+                                                        <col style="width:140px">
+                                                        <col style="width:80px">
+                                                    </colgroup>
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col">주기</th>
+                                                            <th scope="col">지표명</th>
+                                                            <th scope="col">수치</th>
+                                                            <th scope="col">단위</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>일</td>
+                                                        <td class="align-l">한국은행 기준금리('26.08.10)</td>
+                                                        <td class="align-r">2.75</td>
+                                                        <td>%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>일</td>
+                                                        <td class="align-l">KORIBOR(3개월)('26.08.12)</td>
+                                                        <td class="align-r">2.75</td>
+                                                        <td>%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>일</td>
+                                                        <td class="align-l">통안증권수익률(364일)('26.08.12)</td>
+                                                        <td class="align-r">2.75</td>
+                                                        <td>%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>일</td>
+                                                        <td class="align-l">한국은행 기준금리('26.08.10)</td>
+                                                        <td class="align-r">2.75</td>
+                                                        <td>%</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="data-default line-type">
+                                            <div class="scroll">
+                                                <table>
+                                                    <caption class="sr-only">시장금리 2 — 주기, 지표명, 수치, 단위</caption>
+                                                    <colgroup>
+                                                        <col style="width:80px">
+                                                        <col style="width:auto;min-width: 150px;;">
+                                                        <col style="width:140px">
+                                                        <col style="width:80px">
+                                                    </colgroup>
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col">주기</th>
+                                                            <th scope="col">지표명</th>
+                                                            <th scope="col">수치</th>
+                                                            <th scope="col">단위</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>일</td>
+                                                        <td class="align-l">콜금리(익일물)('26.08.11)</td>
+                                                        <td class="align-r">2.75</td>
+                                                        <td>%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>일</td>
+                                                        <td class="align-l">CD수익률(91일)('26.08.12)</td>
+                                                        <td class="align-r">2.75</td>
+                                                        <td>%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>일</td>
+                                                        <td class="align-l">국고채수익률(3년)('26.08.12)</td>
+                                                        <td class="align-r">2.75</td>
+                                                        <td>%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>일</td>
+                                                        <td class="align-l">회사채수익률(3년,AA-)('26.08.12)</td>
+                                                        <td class="align-r">2.75</td>
+                                                        <td>%</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="stat-indicator-acc-item" id="bokAccDeposit">
+                                <h3 class="stat-indicator-acc-head">
+                                    <button type="button" class="stat-indicator-acc-btn" aria-expanded="false" aria-controls="bokAccDepositBody">여수신 금리</button>
+                                </h3>
+                                <div class="stat-indicator-acc-body" id="bokAccDepositBody" hidden>
+                                    <div class="stat-both-tables">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="stat-indicator-acc-item" id="bokAccCommodity">
+                                <h3 class="stat-indicator-acc-head">
+                                    <button type="button" class="stat-indicator-acc-btn" aria-expanded="false" aria-controls="bokAccCommodityBody">국제원자재 가격</button>
+                                </h3>
+                                <div class="stat-indicator-acc-body" id="bokAccCommodityBody" hidden>
+                                    <div class="stat-both-tables">
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+
+                            <!-- 상세보기 -->
+                            <div class="stat-indicator-foot">
+                                <a href="javascript:void(0);" class="btn-md st-dark">한국은행 지표 상세보기<i class="ico-arr-r-w" aria-hidden="true"></i></a>
+                                <p class="stat-indicator-foot-note">※ 정확한 지표는 본사이트의 원본데이터를 확인바랍니다. (업데이트 갱신일 : 20XX-XX-XX)</p>
+                            </div>
+                    </div>
+
+                    <!-- 탭2 : 국가데이터처 주요 지표 -->
+                    <div class="tab-content" id="indicatorTab2" role="tabpanel" style="display:none;">
+                            <!-- 카테고리 선택 -->
+                            <div class="title-section-wrap">
+                                <h3 class="title-section">카테고리 선택<span class="title-section-desc">보고 싶은 분류를 선택하면 해당 표로 이동하며 자동으로 펼쳐집니다.</span></h3>
+                                <div class="right">
+                                    <button type="button" class="btn-sm btn-white"><i class="ico-chart-stat" aria-hidden="true"></i><span>통계설명</span></button>
+                                    <button type="button" class="btn-sm btn-white"><i class="ico-chart-term" aria-hidden="true"></i><span>용어설명</span></button>
+                                </div>
+                            </div>
+                            <div class="stat-indicator-cat">
+                            <ul class="stat-indicator-chips st-col5">
+                                <li><button type="button" class="stat-indicator-chip" data-acc-target="kostatAccMarket">인구</button></li>
+                                <li><button type="button" class="stat-indicator-chip">사회 · 범죄 · 안전</button></li>
+                                <li><button type="button" class="stat-indicator-chip">노동 · 가계</button></li>
+                                <li><button type="button" class="stat-indicator-chip">보건 · 복지</button></li>
+                                <li><button type="button" class="stat-indicator-chip">교육 · 문화 · 주거 · 국토</button></li>
+                                <li><button type="button" class="stat-indicator-chip">경기 · 기업 · 임금 · 물가</button></li>
+                                <li><button type="button" class="stat-indicator-chip">농림 · 제조 · 서비스</button></li>
+                                <li><button type="button" class="stat-indicator-chip">건설 · 교통 · 과학</button></li>
+                                <li><button type="button" class="stat-indicator-chip">국민계정 · 재정 · 무역</button></li>
+                                <li><button type="button" class="stat-indicator-chip">환경 · 에너지</button></li>
+                            </ul>
+                            </div>
+
+                            <!-- 지표 목록 (아코디언) -->
+                            <div class="stat-indicator-acc">
+                                <div class="stat-indicator-acc-util">
+                                    <button type="button" class="btn-sm btn-blue-line btn-acc-all" aria-pressed="false">전부 펼치기</button>
+                                </div>
+                            <div class="stat-indicator-acc-item is-open" id="kostatAccMarket">
+                                <h3 class="stat-indicator-acc-head">
+                                    <button type="button" class="stat-indicator-acc-btn" aria-expanded="true" aria-controls="kostatAccMarketBody">시장금리</button>
+                                </h3>
+                                <div class="stat-indicator-acc-body" id="kostatAccMarketBody">
+                                    <div class="stat-both-tables">
+                                        <div class="data-default line-type">
+                                            <div class="scroll">
+                                                <table>
+                                                    <caption class="sr-only">시장금리 1 — 주기, 지표명, 수치, 단위</caption>
+                                                    <colgroup>
+                                                        <col style="width:80px">
+                                                        <col style="width:auto">
+                                                        <col style="width:140px">
+                                                        <col style="width:80px">
+                                                    </colgroup>
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col">주기</th>
+                                                            <th scope="col">지표명</th>
+                                                            <th scope="col">수치</th>
+                                                            <th scope="col">단위</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>년</td>
+                                                        <td class="align-l">추계인구 (`26)</td>
+                                                        <td class="align-r">51,609,121</td>
+                                                        <td>명</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>년</td>
+                                                        <td class="align-l">주민등록인구 (`25)</td>
+                                                        <td class="align-r">51,117,378</td>
+                                                        <td>명</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>년</td>
+                                                        <td class="align-l">통안증권수익률(364일)('26.08.12)</td>
+                                                        <td class="align-r">51,117,378</td>
+                                                        <td>명</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>년</td>
+                                                        <td class="align-l">총부양비 (`26)</td>
+                                                        <td class="align-r">45.4</td>
+                                                        <td>명</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="data-default line-type">
+                                            <div class="scroll">
+                                                <table>
+                                                    <caption class="sr-only">시장금리 2 — 주기, 지표명, 수치, 단위</caption>
+                                                    <colgroup>
+                                                        <col style="width:80px">
+                                                        <col style="width:auto">
+                                                        <col style="width:140px">
+                                                        <col style="width:80px">
+                                                    </colgroup>
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col">주기</th>
+                                                            <th scope="col">지표명</th>
+                                                            <th scope="col">수치</th>
+                                                            <th scope="col">단위</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>년</td>
+                                                        <td class="align-l">총인구(인구총조사 기준_내국인) (`25)</td>
+                                                        <td class="align-r">49,708,442</td>
+                                                        <td>명</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>년</td>
+                                                        <td class="align-l">고령인구 비율(65세이상) (`26)</td>
+                                                        <td class="align-r">21.6</td>
+                                                        <td>%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>년</td>
+                                                        <td class="align-l">통안증권수익률(364일)('26.08.12)</td>
+                                                        <td class="align-r">51,117,378</td>
+                                                        <td>%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>년</td>
+                                                        <td class="align-l">회사채수익률(3년,AA-)('26.08.12)</td>
+                                                        <td class="align-r">4.49</td>
+                                                        <td>%</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+
+                            <!-- 상세보기 -->
+                            <div class="stat-indicator-foot">
+                                <a href="javascript:void(0);" class="btn-md st-dark">국가데이터처 지표 상세보기<i class="ico-arr-r-w" aria-hidden="true"></i></a>
+                                <p class="stat-indicator-foot-note">※ 정확한 지표는 본사이트의 원본데이터를 확인바랍니다. (업데이트 갱신일 : 20XX-XX-XX)</p>
+                            </div>
+                    </div>
+                </div>
+
+                <script id="feedback-template">
+                    // 피드백
+                    $.ajax({url:"common/feedback.txt", dataType:"text", success:function(data){
+                        $('#feedback-template').replaceWith(data);
+                        pageFeedback();
+                    }});
+                </script>
+            </div>
+            <!-- //contents -->
+
+            <script id="floating-template">
+                // 플로팅메뉴
+                $.ajax({url:"common/floating.txt", dataType:"text", success:function(data){
+                    $('#floating-template').replaceWith(data);
+                }});
+            </script>
+        </div>
+        <script id="footer-template">
+            // 푸터
+            $.ajax({url:"common/footer.txt", dataType:"text", success:function(data){
+                $('#footer-template').replaceWith(data);
+            }});
+        </script>
+    </div>
+    <!-- // wrap -->
+
+
+    <script>
+    $(function(){
+        // 경제통계지표 : 아코디언 열기/닫기
+        function setAcc($item, open){
+            $item.toggleClass('is-open', open);
+            $item.find('.stat-indicator-acc-btn').attr('aria-expanded', open ? 'true' : 'false');
+            $item.find('.stat-indicator-acc-body').prop('hidden', !open);
+        }
+        $('.stat-indicator-acc').on('click', '.stat-indicator-acc-btn', function(){
+            var $item = $(this).closest('.stat-indicator-acc-item');
+            setAcc($item, !$item.hasClass('is-open'));
+        });
+        // 전부 펼치기 / 전부 접기
+        $('.btn-acc-all').on('click', function(){
+            var open = $(this).attr('aria-pressed') !== 'true';
+            setAcc($(this).closest('.stat-indicator-acc').find('.stat-indicator-acc-item'), open);
+            $(this).attr('aria-pressed', open ? 'true' : 'false').text(open ? '전부 접기' : '전부 펼치기');
+        });
+        // 카테고리 선택 : 해당 표로 이동 후 펼침
+        $('.stat-indicator-chip').on('click', function(){
+            var $item = $('#' + $(this).data('acc-target'));
+            $(this).closest('.stat-indicator-chips').find('.stat-indicator-chip').removeClass('on').removeAttr('aria-current');
+            $(this).addClass('on').attr('aria-current', 'true');
+            if(!$item.length) return;
+            setAcc($item, true);
+            $('html, body').animate({scrollTop: $item.offset().top - 120}, 300);
+        });
+    });
+    </script>
+
+</body>
+</html>

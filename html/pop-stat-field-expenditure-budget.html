@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title>열린재정</title>
+
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
+<script src="../js/pub-ui.js"></script>
+
+</head>
+<body>
+
+
+
+<div class="popup-wrap" id="tempPopId">
+  <div class="dim"></div>
+  <div class="pop-wrap">
+    <div class="popup" style="width: 650px;">
+      <div class="pop-header">
+        <div class="left">
+          <h2 class="title">분야별 세출 예산 (16대분야 연도별)</h2>
+        </div>
+        <div class="right">
+          <button type="button" class="btn-close"><i class="ico-close"><span class="sr-only">닫기</span></i></button>
+        </div>
+      </div>
+      <div class="pop-body">
+        <div class="stat-desc-acc">
+          <div class="stat-desc-acc-item is-open">
+            <button type="button" class="stat-desc-acc-btn" aria-expanded="true" aria-controls="statDescAcc1">본예산</button>
+            <div class="stat-desc-acc-panel" id="statDescAcc1">
+              <p>본예산은 회계연도 개시 전, 국회의 심의·의결을 거쳐 확정된 당초 예산을 말합니다.</p>
+            </div>
+          </div>
+          <div class="stat-desc-acc-item">
+            <button type="button" class="stat-desc-acc-btn" aria-expanded="false" aria-controls="statDescAcc2">부문</button>
+            <div class="stat-desc-acc-panel" id="statDescAcc2" hidden>
+              <p>설명 내용이 들어갑니다.</p>
+            </div>
+          </div>
+          <div class="stat-desc-acc-item">
+            <button type="button" class="stat-desc-acc-btn" aria-expanded="false" aria-controls="statDescAcc3">분야</button>
+            <div class="stat-desc-acc-panel" id="statDescAcc3" hidden>
+              <p>설명 내용이 들어갑니다.</p>
+            </div>
+          </div>
+          <div class="stat-desc-acc-item">
+            <button type="button" class="stat-desc-acc-btn" aria-expanded="false" aria-controls="statDescAcc4">사회복지서비스</button>
+            <div class="stat-desc-acc-panel" id="statDescAcc4" hidden>
+              <p>설명 내용이 들어갑니다.</p>
+            </div>
+          </div>
+          <div class="stat-desc-acc-item">
+            <button type="button" class="stat-desc-acc-btn" aria-expanded="false" aria-controls="statDescAcc5">세출예산</button>
+            <div class="stat-desc-acc-panel" id="statDescAcc5" hidden>
+              <p>설명 내용이 들어갑니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script>
+  popOpen('#tempPopId');
+
+  // 통계설명 아코디언 : 항목별 열기/닫기
+  $('.stat-desc-acc').on('click', '.stat-desc-acc-btn', function(){
+    var $item = $(this).closest('.stat-desc-acc-item');
+    var open = !$item.hasClass('is-open');
+    $item.toggleClass('is-open', open);
+    $(this).attr('aria-expanded', open ? 'true' : 'false');
+    $item.find('.stat-desc-acc-panel').prop('hidden', !open);
+  });
+</script>
+
+</body>
+</html>

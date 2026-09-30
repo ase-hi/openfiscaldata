@@ -1860,6 +1860,61 @@ function tooltipInit(){
   document.addEventListener('scroll', tooltipInit._onScroll, true);
 }
 
+
+// 교육청별 지도 : 단계별 색상 + 영역 hover/focus 시 툴팁
+// data  : { 지역키: { level:1~5, list:[{ name:'교육청명', value:'값' }] } }
+//         level : 범례 단계(1 낮음 ~ 5 높음), 0 또는 없으면 '값 없음'(회색)
+//         value 없으면 툴팁에 '데이터 없음'
+// title : 툴팁 값 앞 항목명 (예: '세출')
+function korMap(data, title){
+  var $map = $('.kor-map');
+
+  // 단계별 색상 적용
+  $map.find('.kor-map-area').each(function(){
+    var $area = $(this), item = data[$area.data('area')];
+    var level = item && item.level >= 1 && item.level <= 5 ? item.level : 0;
+    $area.removeClass('lv1 lv2 lv3 lv4 lv5 is-empty').addClass(level ? 'lv' + level : 'is-empty');
+  });
+
+  function tipHtml(area){
+    var list = data[area] ? data[area].list || [] : [];
+    var html = '';
+    for (var i = 0; i < list.length; i++) {
+      html += '<dl class="kor-map-tip-item"><dt>' + list[i].name + '</dt><dd>' + (list[i].value ? title + ' <strong>' + list[i].value + '</strong>' : '데이터 없음') + '</dd></dl>';
+    }
+    return html;
+  }
+
+  function tipMove($inner, $tip, x, y){
+    var w = $inner.outerWidth(), tw = $tip.outerWidth(), th = $tip.outerHeight();
+    var left = x + 16, top = y - th - 12;
+    if (left + tw > w) left = x - tw - 16;
+    if (top < 0) top = y + 20;
+    $tip.css({ left: Math.max(0, left), top: top });
+  }
+
+  $map.off('.korMap').on('mouseenter.korMap focus.korMap', '.kor-map-area', function(e){
+    var $area = $(this), $inner = $area.closest('.kor-map-inner'), $tip = $inner.find('.kor-map-tip');
+    $inner.find('.kor-map-area').removeClass('is-hover');
+    $area.addClass('is-hover');
+    $tip.html(tipHtml($area.data('area'))).addClass('is-show').attr('aria-hidden', 'false');
+    if (e.type === 'focusin' || e.type === 'focus') {
+      var ib = $inner[0].getBoundingClientRect(), ab = this.getBoundingClientRect();
+      tipMove($inner, $tip, ab.left - ib.left + ab.width / 2, ab.top - ib.top + ab.height / 2);
+    }
+  }).on('mousemove.korMap', '.kor-map-area', function(e){
+    var $inner = $(this).closest('.kor-map-inner'), ib = $inner[0].getBoundingClientRect();
+    tipMove($inner, $inner.find('.kor-map-tip'), e.clientX - ib.left, e.clientY - ib.top);
+  }).on('mouseleave.korMap blur.korMap', '.kor-map-area', function(){
+    var $inner = $(this).closest('.kor-map-inner');
+    $(this).removeClass('is-hover');
+    $inner.find('.kor-map-tip').removeClass('is-show').attr('aria-hidden', 'true');
+  });
+}
+
+
+
+
 $(function(){
   function tryGnbMenu() {
     if ($('.gnb-menu-wrap').length) {

@@ -1,0 +1,337 @@
+DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title>열린재정</title>
+
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
+<link type="text/css" rel="preload" href="../css/font.css">
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
+<script src="../js/pub-ui.js"></script>
+
+</head>
+<body>
+
+    <dl class="skipLink">
+        <dt>바로가기 메뉴</dt>	
+        <dd><a href="#gnbMenu">주메뉴 바로가기</a></dd>
+        <dd><a href="#content">본문 바로가기</a></dd>
+    </dl>
+    <div class="wrap">
+        <script id="header-template">
+            // 헤더
+            $.ajax({url:"common/header.txt", dataType:"text", success:function(data){
+                $('#header-template').replaceWith(data);
+            }});
+        </script>
+
+        <div class="container" id="content">
+            <script id="subvisual-template">
+                $.ajax({url:"common/subvisual.txt", dataType:"text", success:function(data){
+                    $('#subvisual-template').replaceWith($(data).filter('#visual-statistics'));
+                }});
+            </script>
+
+            <script id="breadcrumb-template">
+                // breadcrumb메뉴
+                $.ajax({url:"common/breadcrumb.txt", dataType:"text", success:function(data){
+                    $('#breadcrumb-template').replaceWith(data);
+                    breadcrumbMenu();
+                }});
+            </script>
+            
+            <div class="contents">
+                <div class="stat-indicator-wrap stat-imf-wrap stat-g20-wrap">
+                    <div class="title-main-wrap">
+                        <h2 class="title-main">국제통계지표</h2>
+                    </div>
+
+                    <!-- 국제통계지표 탭 (메뉴 페이지 이동) -->
+                    <div class="tab-main">
+                        <ul>
+                            <li><a href="stat-etc-international.html">국제지표</a></li>
+                            <li><a href="stat-etc-imf-gfs.html">IMF 정부재정통계</a></li>
+                            <li><a href="stat-etc-oecd-public-sector.html">OECD 공공부문통계</a></li>
+                            <li class="on"><a href="stat-etc-g20-major.html" aria-current="page">G20 주요통계</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-content">
+                        <!-- G20 구분 탭 (컨텐츠 전환) -->
+                        <div class="tab-filter" role="tablist" aria-label="G20 주요통계 구분">
+                            <button type="button" role="tab" class="on" data-tab-id="g20TabCountry" aria-selected="true">G20 국가별</button>
+                            <button type="button" role="tab" data-tab-id="g20TabIndicator" aria-selected="false">통계지표별</button>
+                        </div>
+
+                        <!-- 탭1 : G20 국가별 -->
+                        <div class="tab-content" id="g20TabCountry" role="tabpanel">
+                            <!-- 검색 -->
+                            <form class="form-search-box st-search-options centered" onsubmit="return false;">
+                                <div class="form-search-fields">
+                                    <div class="fm">
+                                        <label for="g20CountryYearStart" class="label">회계연도</label>
+                                        <div class="input-date">
+                                            <div class="sel"><select id="g20CountryYearStart" name="yearStart" aria-label="조회 시작 회계연도"><option value="">선택</option><option>2028</option><option>2027</option><option>2026</option><option>2025</option><option>2024</option></select></div>
+                                            <span class="dash">~</span>
+                                            <div class="sel"><select name="yearEnd" aria-label="조회 종료 회계연도"><option value="">선택</option><option>2028</option><option>2027</option><option>2026</option><option>2025</option><option>2024</option></select></div>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn-search">검색</button>
+                                </div>
+                            </form>
+
+                            <!-- G20 국가별 표기 -->
+                            <div class="title-section-wrap">
+                                <h3 class="title-section"><span class="title-section-inner">G20 국가별 표기<span class="title-section-unit">G20국가는 유럽연합 의장국(매변 변경)을 제외한 19개국 표기</span></span></h3>
+                            </div>
+                            <div class="world-map">
+                                <div class="world-map-inner">
+                                    <img src="../images/common/img-world-map.svg" class="world-map-img" width="680" height="396" alt="세계 지도">
+                                    <button type="button" class="map-pin" style="left:343px;top:92px;" aria-pressed="false"><span class="map-pin-box">캐나다</span><i class="map-pin-arrow" aria-hidden="true"></i></button>
+                                    <button type="button" class="map-pin" style="left:404px;top:140px;" aria-pressed="false"><span class="map-pin-box">미국</span><i class="map-pin-arrow" aria-hidden="true"></i></button>
+                                    <button type="button" class="map-pin" style="left:392px;top:200px;" aria-pressed="false"><span class="map-pin-box">멕시코</span><i class="map-pin-arrow" aria-hidden="true"></i></button>
+                                    <button type="button" class="map-pin" style="left:487px;top:272px;" aria-pressed="false"><span class="map-pin-box">브라질</span><i class="map-pin-arrow" aria-hidden="true"></i></button>
+                                    <button type="button" class="map-pin" style="left:462px;top:314px;" aria-pressed="false"><span class="map-pin-box">아르헨티나</span><i class="map-pin-arrow" aria-hidden="true"></i></button>
+                                    <button type="button" class="map-pin st-up" style="left:584px;top:168px;" aria-pressed="false"><i class="map-pin-arrow" aria-hidden="true"></i><span class="map-pin-box">프랑스</span></button>
+                                    <button type="button" class="map-pin" style="left:659px;top:178px;" aria-pressed="false"><span class="map-pin-box">튀르키예</span><i class="map-pin-arrow" aria-hidden="true"></i></button>
+                                    <button type="button" class="map-pin" style="left:599px;top:314px;" aria-pressed="false"><span class="map-pin-box">남아프리카공화국</span><i class="map-pin-arrow" aria-hidden="true"></i></button>
+                                    <button type="button" class="map-pin" style="left:771px;top:161px;" aria-pressed="false"><span class="map-pin-box">중국</span><i class="map-pin-arrow" aria-hidden="true"></i></button>
+                                    <button type="button" class="map-pin on" style="left:837px;top:139px;" aria-pressed="true"><span class="map-pin-box">한국</span><i class="map-pin-arrow" aria-hidden="true"></i></button>
+                                    <button type="button" class="map-pin st-up" style="left:844px;top:193px;" aria-pressed="false"><i class="map-pin-arrow" aria-hidden="true"></i><span class="map-pin-box">일본</span></button>
+                                    <button type="button" class="map-pin" style="left:783px;top:257px;" aria-pressed="false"><span class="map-pin-box">인도네시아</span><i class="map-pin-arrow" aria-hidden="true"></i></button>
+                                    <button type="button" class="map-pin" style="left:847px;top:310px;" aria-pressed="false"><span class="map-pin-box">오스트레일리아</span><i class="map-pin-arrow" aria-hidden="true"></i></button>
+                                </div>
+                            </div>
+
+                            <!-- 선택 국가 지표 -->
+                            <div class="title-section-wrap">
+                                <h3 class="title-section"><span class="title-section-inner"><i class="ico-map-pin" aria-hidden="true"></i><span class="g20-country-name">한국</span><span class="title-section-unit">G20</span></span></h3>
+                                <div class="right">
+                                    <button type="button" class="btn-sm btn-white"><i class="ico-chart-stat" aria-hidden="true"></i><span>통계설명</span></button>
+                                    <button type="button" class="btn-sm btn-white"><i class="ico-chart-term" aria-hidden="true"></i><span>용어설명</span></button>
+                                </div>
+                            </div>
+                            <div class="data-default line-type">
+                                <div class="scroll">
+                                    <table>
+                                        <caption class="sr-only">G20 국가별 주요지표 — 지표명, 수치, 단위, 연도</caption>
+                                        <colgroup>
+                                            <col style="width:auto;min-width:200px;">
+                                            <col style="width:180px">
+                                            <col style="width:180px">
+                                            <col style="width:180px">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">지표명</th>
+                                                <th scope="col">수치</th>
+                                                <th scope="col">단위</th>
+                                                <th scope="col">연도</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="align-l">1인당 국민총소득(1인당 국민총소득(당해년가격))</td>
+                                                <td class="align-r">35,990</td>
+                                                <td>달러</td>
+                                                <td>2022</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="align-l">경제성장률(경제성장률(기준년가격 GDP))</td>
+                                                <td class="align-r">2.6</td>
+                                                <td>%</td>
+                                                <td>2022</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="align-l">고용률(고용률)</td>
+                                                <td class="align-r">68.51</td>
+                                                <td>%</td>
+                                                <td>2022</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="align-l">국가경쟁력 순위(순위)</td>
+                                                <td class="align-r">28</td>
+                                                <td>순위</td>
+                                                <td>2022</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="align-l">국민총생산(GDP)(국내총생산(당해년가격))</td>
+                                                <td class="align-r">1,673.26</td>
+                                                <td>10억 US$</td>
+                                                <td>2022</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="align-l">무역의존도(수입)</td>
+                                                <td class="align-r">43.71</td>
+                                                <td>%</td>
+                                                <td>2022</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="align-l">무역의존도(수출)</td>
+                                                <td class="align-r">40.85</td>
+                                                <td>%</td>
+                                                <td>2022</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="align-l">비교물가수준(비교물가수준(한국기준))</td>
+                                                <td class="align-r">100</td>
+                                                <td>한국=100</td>
+                                                <td>2022</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="align-l">외환보유액(금제외)</td>
+                                                <td class="align-r">418,368.91</td>
+                                                <td>100만 달러 기말</td>
+                                                <td>2022</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="align-l">외환보유액(외환보유액)</td>
+                                                <td class="align-r">423,163.66</td>
+                                                <td>100만 달러 기말</td>
+                                                <td>2022</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="align-l">정부 부채(일반정부 총부채 비율(GDP 대비))</td>
+                                                <td class="align-r">51.5</td>
+                                                <td>%</td>
+                                                <td>2022</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="align-l">평균근로자 세금(노동비용 대비)</td>
+                                                <td class="align-r">24.19</td>
+                                                <td>%</td>
+                                                <td>2022</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <!-- 상세보기 -->
+                            <div class="stat-indicator-foot">
+                                <a href="javascript:void(0);" class="btn-md st-dark">국가데이터처(국제기구) 지표 상세보기<i class="ico-arr-r-w" aria-hidden="true"></i></a>
+                                <p class="stat-indicator-foot-note">※ 정확한 지표는 본사이트의 원본데이터를 확인바랍니다.</p>
+                            </div>
+                        </div>
+
+                        <!-- 탭2 : 통계지표별 -->
+                        <div class="tab-content" id="g20TabIndicator" role="tabpanel" style="display:none;">
+                            <!-- 통계지표 선택 -->
+                            <div class="stat-indicator-cat">
+                                <ul class="stat-indicator-chips st-col5">
+                                    <li><button type="button" class="stat-indicator-chip">정부 부채</button></li>
+                                    <li><button type="button" class="stat-indicator-chip">평균근로자 세금</button></li>
+                                    <li><button type="button" class="stat-indicator-chip">경제성장률</button></li>
+                                    <li><button type="button" class="stat-indicator-chip">국민총생산(GDP)</button></li>
+                                    <li><button type="button" class="stat-indicator-chip">1인당 국민총소득</button></li>
+                                    <li><button type="button" class="stat-indicator-chip">고용률</button></li>
+                                    <li><button type="button" class="stat-indicator-chip">비교물가수준</button></li>
+                                    <li><button type="button" class="stat-indicator-chip">외환보유액</button></li>
+                                    <li><button type="button" class="stat-indicator-chip">무역의존도</button></li>
+                                    <li><button type="button" class="stat-indicator-chip">국가경쟁력 순위</button></li>
+                                </ul>
+                            </div>
+
+                            <!-- 검색 -->
+                            <form class="form-search-box st-search-options centered" onsubmit="return false;">
+                                <div class="form-search-fields">
+                                    <div class="fm">
+                                        <label for="g20IndicatorYearStart" class="label">회계연도</label>
+                                        <div class="input-date">
+                                            <div class="sel"><select id="g20IndicatorYearStart" name="yearStart" aria-label="조회 시작 회계연도"><option value="">선택</option><option>2028</option><option>2027</option><option>2026</option><option>2025</option><option>2024</option></select></div>
+                                            <span class="dash">~</span>
+                                            <div class="sel"><select name="yearEnd" aria-label="조회 종료 회계연도"><option value="">선택</option><option>2028</option><option>2027</option><option>2026</option><option>2025</option><option>2024</option></select></div>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn-search">검색</button>
+                                </div>
+                            </form>
+
+                            <!-- 통계지표별 표 -->
+                            <div class="title-section-wrap">
+                                <h3 class="title-section"><span class="title-section-inner">통계지표별<span class="title-section-unit">(단위 %)</span></span></h3>
+                                <div class="right">
+                                    <button type="button" class="btn-sm btn-white"><i class="ico-chart-stat" aria-hidden="true"></i><span>통계설명</span></button>
+                                    <button type="button" class="btn-sm btn-white"><i class="ico-chart-term" aria-hidden="true"></i><span>용어설명</span></button>
+                                </div>
+                            </div>
+                            <div class="data-default" style="height: 500px;background: #dedede;display:flex;justify-content:center;align-items:center;font-size:30px;">테이블영역</div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <script id="feedback-template">
+                    // 피드백
+                    $.ajax({url:"common/feedback.txt", dataType:"text", success:function(data){
+                        $('#feedback-template').replaceWith(data);
+                        pageFeedback();
+                    }});
+                </script>
+            </div>
+            <!-- //contents -->
+
+            <script id="floating-template">
+                // 플로팅메뉴
+                $.ajax({url:"common/floating.txt", dataType:"text", success:function(data){
+                    $('#floating-template').replaceWith(data);
+                }});
+            </script>
+        </div>
+        <script id="footer-template">
+            // 푸터
+            $.ajax({url:"common/footer.txt", dataType:"text", success:function(data){
+                $('#footer-template').replaceWith(data);
+            }});
+        </script>
+    </div>
+    <!-- // wrap -->
+
+
+
+    <script>
+    $(function(){
+
+        // 세계 지도 : 1024px 이하에서 지도 영역(700px)을 화면 폭에 맞춰 축소
+        function fitWorldMap(){
+            $('.world-map').each(function(){
+                var w = $(this).width();
+                if(window.innerWidth > 1024 || !w){
+                    this.style.removeProperty('--map-scale');
+                    this.style.removeProperty('--pin-scale');
+                    return;
+                }
+                var s = Math.min(1, w / 700);
+                this.style.setProperty('--map-scale', s);
+                this.style.setProperty('--pin-scale', Math.max(s, 0.7) / s);
+            });
+        }
+        fitWorldMap();
+        $(window).on('resize', fitWorldMap);
+        $('[data-tab-id]').on('click', function(){ setTimeout(fitWorldMap, 0); });
+
+        // 세계 지도 툴팁 : 클릭 시 선택(파란색) - 박스 내 단일 선택
+        $('.world-map').on('click', '.map-pin', function(){
+            var $pin = $(this);
+            var $map = $pin.closest('.world-map');
+            $map.find('.map-pin').removeClass('on').attr('aria-pressed', 'false');
+            $pin.addClass('on').attr('aria-pressed', 'true');
+        });
+
+        // 통계지표별 : 지표 선택
+        $('.stat-indicator-chips').on('click', '.stat-indicator-chip', function(){
+            $(this).closest('.stat-indicator-chips').find('.stat-indicator-chip').removeClass('on').removeAttr('aria-current');
+            $(this).addClass('on').attr('aria-current', 'true');
+        });
+    });
+    </script>
+
+
+</body>
+</html>

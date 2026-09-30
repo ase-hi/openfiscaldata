@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title>열린재정</title>
+
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
+<link type="text/css" rel="preload" href="../css/font.css">
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
+<script src="../js/pub-ui.js"></script>
+
+</head>
+<body>
+
+    <dl class="skipLink">
+        <dt>바로가기 메뉴</dt>	
+        <dd><a href="#gnbMenu">주메뉴 바로가기</a></dd>
+        <dd><a href="#content">본문 바로가기</a></dd>
+    </dl>
+    <div class="wrap">
+        <script id="header-template">
+            // 헤더
+            $.ajax({url:"common/header.txt", dataType:"text", success:function(data){
+                $('#header-template').replaceWith(data);
+            }});
+        </script>
+
+        <div class="container" id="content">
+            <script id="subvisual-template">
+                $.ajax({url:"common/subvisual.txt", dataType:"text", success:function(data){
+                    $('#subvisual-template').replaceWith($(data).filter('#visual-statistics'));
+                }});
+            </script>
+
+            <script id="breadcrumb-template">
+                // breadcrumb메뉴
+                $.ajax({url:"common/breadcrumb.txt", dataType:"text", success:function(data){
+                    $('#breadcrumb-template').replaceWith(data);
+                    breadcrumbMenu();
+                }});
+            </script>
+            
+            <div class="contents">
+                <div class="stat-indicator-wrap stat-imf-wrap stat-oecd-wrap">
+                    <div class="title-main-wrap">
+                        <h2 class="title-main">국제통계지표</h2>
+                    </div>
+
+                    <!-- 국제통계지표 탭 (메뉴 페이지 이동) -->
+                    <div class="tab-main">
+                        <ul>
+                            <li><a href="stat-etc-international.html">국제지표</a></li>
+                            <li><a href="stat-etc-imf-gfs.html">IMF 정부재정통계</a></li>
+                            <li class="on"><a href="stat-etc-oecd-public-sector.html" aria-current="page">OECD 공공부문통계</a></li>
+                            <li><a href="stat-etc-g20-major.html">G20 주요통계</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-content">
+                        <!-- 안내 -->
+                        <div class="info-guide st-plain">
+                            <div class="info-guide-group">
+                                <div class="info-guide-head">
+                                    <strong class="info-guide-tit st-lg">UN의 국민계정통계(SNA: System of National Accounts)의 공공부문 통계</strong>
+                                </div>
+                                <div class="info-guide-body">
+                                    <ul class="dash-list">
+                                        <li>국민계정통계는 한 나라 내에서 일어나는 모든 경제주체의 경제활동을 설명하고자 기록하는 국민경제의 종합재무제표이며, UN에서 1953년 첫 국민소득통계 편제지침서를 발간한 후 1968년, 1993년, 2008년에 주요 개정이 있었음</li>
+                                        <li>중앙-지방을 포함하는 일반정부 통계 외에 2008년도 SNA부터 공기업을 포괄하는 공공부문 통계 작성이 권고되었으며, 한국은 2014년부터 SNA기준에 의한 공공부문 통계가 산출되고 있음</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="info-guide-group">
+                                <div class="info-guide-head">
+                                    <strong class="info-guide-tit st-lg">SNA, GFS 모두 일반정부를 기준으로 한 통계가 산출 및 제공</strong>
+                                </div>
+                                <div class="info-guide-body">
+                                    <ul class="dash-list">
+                                        <li>OECD 통계자료는 SNA와 일치하고 있음</li>
+                                        <li>국제적으로 통용되는 표준지침은 SNA이며, GFS/PSDS도 대부분 개념의 정의나 준거틀은 SNA를 따르고 있음</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 재정통계 구분 탭 (컨텐츠 전환) -->
+                        <div class="tab-filter" role="tablist" aria-label="OECD 공공부문통계 구분">
+                            <button type="button" role="tab" class="on" data-tab-id="oecdTabRevenue" aria-selected="true">재정수입</button>
+                            <button type="button" role="tab" data-tab-id="oecdTabExpense" aria-selected="false">재정지출</button>
+                            <button type="button" role="tab" data-tab-id="oecdTabBalance" aria-selected="false">재정수지</button>
+                        </div>
+
+                        <!-- 국가별 재정수입 -->
+                        <div class="tab-content" id="oecdTabRevenue" role="tabpanel">
+                            <!-- 검색 -->
+                            <form class="form-search-box st-search-options centered" onsubmit="return false;">
+                                <div class="form-search-fields">
+                                    <div class="fm">
+                                        <label for="oecdRevenueYearStart" class="label">회계연도</label>
+                                        <div class="input-date">
+                                            <div class="sel"><select id="oecdRevenueYearStart" name="yearStart" aria-label="조회 시작 회계연도"><option value="">선택</option><option>2024</option><option>2023</option><option>2022</option><option>2021</option><option>2020</option></select></div>
+                                            <span class="dash">~</span>
+                                            <div class="sel"><select name="yearEnd" aria-label="조회 종료 회계연도"><option value="">선택</option><option>2024</option><option>2023</option><option>2022</option><option>2021</option><option>2020</option></select></div>
+                                        </div>
+                                    </div>
+                                    <div class="fm">
+                                        <span class="label">항목선택</span>
+                                        <div class="input-choice-wrap">
+                                            <div class="input-choice"><input type="radio" name="oecdRevenueItem" id="oecdRevenueItemAll"><label for="oecdRevenueItemAll">전체</label></div>
+                                            <div class="input-choice"><input type="radio" name="oecdRevenueItem" id="oecdRevenueItemAmount"><label for="oecdRevenueItemAmount">금액</label></div>
+                                            <div class="input-choice"><input type="radio" name="oecdRevenueItem" id="oecdRevenueItemGdp"><label for="oecdRevenueItemGdp">GDP 대비 비중(%)</label></div>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn-search">조회</button>
+                                </div>
+                            </form>
+
+                            <!-- 국가별 재정수입 표 -->
+                            <div class="title-section-wrap">
+                                <h3 class="title-section"><span class="title-section-inner">국가별 재정수입<span class="title-section-unit">(단위 : 일반정부 기준, 백만 달러, GDP대비 %)</span></span></h3>
+                                <div class="right">
+                                    <button type="button" class="btn-sm btn-white"><i class="ico-chart-stat" aria-hidden="true"></i><span>통계설명</span></button>
+                                    <button type="button" class="btn-sm btn-white"><i class="ico-chart-term" aria-hidden="true"></i><span>용어설명</span></button>
+                                </div>
+                            </div>
+                            <div class="data-default" style="height: 500px;background: #dedede;display:flex;justify-content:center;align-items:center;font-size:30px;">테이블영역</div>
+                            <div class="txt-ps-wrap">
+                                <p class="txt-ps"><span class="mark">※</span><span class="txt">정확한 지표는 본사이트의 원본데이터를 확인바랍니다.</span></p>
+                            </div>
+                        </div>
+
+                        <!-- 재정지출 (탭 내용 미작업) -->
+                        <div class="tab-content" id="oecdTabExpense" role="tabpanel" style="display:none;"></div>
+
+                        <!-- 재정수지 (탭 내용 미작업) -->
+                        <div class="tab-content" id="oecdTabBalance" role="tabpanel" style="display:none;"></div>
+
+                        <!-- 상세보기 -->
+                        <div class="stat-indicator-foot">
+                            <a href="javascript:void(0);" class="btn-md st-dark">국가데이터처(국제기구) 지표 상세보기<i class="ico-arr-r-w" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <script id="feedback-template">
+                    // 피드백
+                    $.ajax({url:"common/feedback.txt", dataType:"text", success:function(data){
+                        $('#feedback-template').replaceWith(data);
+                        pageFeedback();
+                    }});
+                </script>
+            </div>
+            <!-- //contents -->
+
+            <script id="floating-template">
+                // 플로팅메뉴
+                $.ajax({url:"common/floating.txt", dataType:"text", success:function(data){
+                    $('#floating-template').replaceWith(data);
+                }});
+            </script>
+        </div>
+        <script id="footer-template">
+            // 푸터
+            $.ajax({url:"common/footer.txt", dataType:"text", success:function(data){
+                $('#footer-template').replaceWith(data);
+            }});
+        </script>
+    </div>
+    <!-- // wrap -->
+
+
+</body>
+</html>

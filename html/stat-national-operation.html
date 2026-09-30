@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title>열린재정</title>
+
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
+<link type="text/css" rel="preload" href="../css/font.css">
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
+<script src="../js/pub-ui.js"></script>
+
+</head>
+<body>
+
+    <dl class="skipLink">
+        <dt>바로가기 메뉴</dt>	
+        <dd><a href="#gnbMenu">주메뉴 바로가기</a></dd>
+        <dd><a href="#content">본문 바로가기</a></dd>
+    </dl>
+    <div class="wrap">
+        <script id="header-template">
+            // 헤더
+            $.ajax({url:"common/header.txt", dataType:"text", success:function(data){
+                $('#header-template').replaceWith(data);
+            }});
+        </script>
+
+        <div class="container" id="content">
+            <script id="subvisual-template">
+                $.ajax({url:"common/subvisual.txt", dataType:"text", success:function(data){
+                    $('#subvisual-template').replaceWith($(data).filter('#visual-statistics'));
+                }});
+            </script>
+
+            <script id="breadcrumb-template">
+                // breadcrumb메뉴
+                $.ajax({url:"common/breadcrumb.txt", dataType:"text", success:function(data){
+                    $('#breadcrumb-template').replaceWith(data);
+                    breadcrumbMenu();
+                }});
+            </script>
+            
+            <div class="contents">
+                <div class="finance-stat-wrap stat-national-wrap stat-operation-wrap">
+                    <div class="title-main-wrap">
+                        <h2 class="title-main">국가재정 운용통계</h2>
+                    </div>
+
+                    <!-- 예산 · 집행 · 조달 흐름 -->
+                    <div class="flow-box st-icon">
+                        <div class="flow-item st-blue">
+                            <div class="flow-item-head">
+                                <i class="ico-flow-budget" aria-hidden="true"></i>
+                                <strong class="flow-tit">예산</strong>
+                            </div>
+                            <div class="flow-item-body">
+                                <strong class="flow-item-tit">정부예산안·국회확정</strong>
+                                <p class="flow-item-sub">세부사업·세목</p>
+                            </div>
+                        </div>
+                        <i class="flow-arrow st-blue" aria-hidden="true"></i>
+                        <div class="flow-item st-teal">
+                            <div class="flow-item-head">
+                                <i class="ico-flow-exec" aria-hidden="true"></i>
+                                <strong class="flow-tit">집행</strong>
+                            </div>
+                            <div class="flow-item-body">
+                                <strong class="flow-item-tit">월별·일별 집행정보</strong>
+                                <p class="flow-item-sub">세부사업</p>
+                            </div>
+                        </div>
+                        <i class="flow-arrow st-teal" aria-hidden="true"></i>
+                        <div class="flow-item st-navy">
+                            <div class="flow-item-head">
+                                <i class="ico-flow-procure" aria-hidden="true"></i>
+                                <strong class="flow-tit">조달</strong>
+                            </div>
+                            <div class="flow-item-body">
+                                <strong class="flow-item-tit">나라장터 전자조달</strong>
+                                <p class="flow-item-sub">세부사업·계약</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 안내 -->
+                    <div class="info-guide st-plain">
+                        <div class="info-guide-head">
+                            <strong class="info-guide-tit">예산·집행·조달(나라장터 계약)을 세부사업 단위로 연계해 공개하는 화면입니다.</strong>
+                        </div>
+                        <div class="info-guide-body">
+                            <p>조달은 dBrain이 보유한 나라장터 전자조달 계약정보를 재구성하며, ’26년 자료부터 세부사업 단위 연계 공개합니다.<br>(안보·외교 등 일부 세부사업은 부처 협의로 제외)</p>
+                        </div>
+                    </div>
+
+                    <!-- 검색 -->
+                    <div class="form-search-box">
+                        <div class="form-search-fields">
+                            <div class="form-row">
+                                <div class="fm">
+                                    <label for="opsYear" class="label">회계연도</label>
+                                    <div class="sel">
+                                        <select id="opsYear" aria-label="회계연도">
+                                            <option selected>선택</option>
+                                            <option>2026</option>
+                                            <option>2025</option>
+                                            <option>2024</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="fm">
+                                    <label for="opsDept" class="label">소관</label>
+                                    <div class="inp st-search">
+                                        <input type="text" id="opsDept" placeholder="소관을(를) 입력하세요." aria-label="소관">
+                                        <button type="button" class="btn-inp-search"><span class="sr-only">소관 검색</span></button>
+                                    </div>
+                                </div>
+                                <div class="fm">
+                                    <label for="opsAccount" class="label">회계</label>
+                                    <div class="inp st-search">
+                                        <input type="text" id="opsAccount" placeholder="회계을(를) 입력하세요." aria-label="회계">
+                                        <button type="button" class="btn-inp-search"><span class="sr-only">회계 검색</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="fm">
+                                    <label for="opsProject" class="label">세부사업명</label>
+                                    <div class="inp">
+                                        <input type="text" id="opsProject" placeholder="내용을 입력하세요." aria-label="세부사업명">
+                                    </div>
+                                </div>
+                                <div class="fm">
+                                    <label for="opsContract" class="label">계약번호/명</label>
+                                    <div class="inp">
+                                        <input type="text" id="opsContract" placeholder="내용을 입력하세요." aria-label="계약번호/명">
+                                    </div>
+                                </div>
+                                <div class="fm">
+                                    <label for="opsDemandOrg" class="label">수요기관명</label>
+                                    <div class="inp">
+                                        <input type="text" id="opsDemandOrg" placeholder="내용을 입력하세요" aria-label="수요기관명">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row st-choice">
+                                <div class="fm fm-span-all">
+                                    <span class="label">항목</span>
+                                    <div class="input-choice-wrap st-sm">
+                                        <div class="input-choice"><input type="checkbox" id="opsItemAccount"><label for="opsItemAccount">회계명</label></div>
+                                        <div class="input-choice"><input type="checkbox" id="opsItemField"><label for="opsItemField">분야명</label></div>
+                                        <div class="input-choice"><input type="checkbox" id="opsItemSector"><label for="opsItemSector">부문명</label></div>
+                                        <div class="input-choice"><input type="checkbox" id="opsItemProgram"><label for="opsItemProgram">프로그램명</label></div>
+                                        <div class="input-choice"><input type="checkbox" id="opsItemUnit"><label for="opsItemUnit">단위사업명</label></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-search-btns">
+                            <button type="button" class="btn-reset">초기화</button>
+                            <button type="button" class="btn-search">검색</button>
+                        </div>
+                    </div>
+
+                    <!-- 단위 + 다운로드 -->
+                    <div class="data-util">
+                        <div class="left">
+                            <span class="data-unit st-sm">(단위 : 억원 · %)</span>
+                        </div>
+                        <div class="right">
+                            <button type="button" class="btn-sm btn-white">PIVOT</button>
+                            <button type="button" class="btn-sm btn-white">XLSX</button>
+                            <button type="button" class="btn-sm btn-white">XML</button>
+                            <button type="button" class="btn-sm btn-white">JSON</button>
+                            <button type="button" class="btn-sm btn-white">CSV</button>
+                            <button type="button" class="btn-sm btn-white">TXT</button>
+                            <button type="button" class="btn-sm btn-white">XLS</button>
+                        </div>
+                    </div>
+
+                    <!-- 국가재정 운용통계 표 -->
+                    <div class="data-default" style="height: 300px;background: #dedede;display:flex;justify-content:center;align-items:center;font-size:30px;">테이블영역</div>
+                    <div class="txt-ps-wrap">
+                        <p class="txt-ps"><span class="mark">※</span><span class="txt">예산은 전체 공개하고, 집행·조달은 세부사업 단위로 제외 여부를 관리합니다.<br>조달은 나라장터 전자조달 계약 건을 연계하며(단순 물품구입건 제외), 데이터는 생성 시기에 맞춰 일별·월별로 현행화합니다.</span></p>
+                    </div>
+                </div>
+
+                <script id="feedback-template">
+                    // 피드백
+                    $.ajax({url:"common/feedback.txt", dataType:"text", success:function(data){
+                        $('#feedback-template').replaceWith(data);
+                        pageFeedback();
+                    }});
+                </script>
+            </div>
+            <!-- //contents -->
+
+            <script id="floating-template">
+                // 플로팅메뉴
+                $.ajax({url:"common/floating.txt", dataType:"text", success:function(data){
+                    $('#floating-template').replaceWith(data);
+                }});
+            </script>
+        </div>
+        <script id="footer-template">
+            // 푸터
+            $.ajax({url:"common/footer.txt", dataType:"text", success:function(data){
+                $('#footer-template').replaceWith(data);
+            }});
+        </script>
+    </div>
+    <!-- // wrap -->
+
+
+</body>
+</html>

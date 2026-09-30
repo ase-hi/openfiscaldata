@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title>열린재정</title>
+
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
+<script src="../js/pub-ui.js"></script>
+
+</head>
+<body>
+
+
+
+<div class="popup-wrap" id="tempPopId">
+  <div class="dim"></div>
+  <div class="pop-wrap">
+    <div class="popup">
+      <div class="pop-header">
+        <div class="left">
+          <h2 class="title">집행실적 연계기관 정보</h2>
+        </div>
+        <div class="right">
+          <button type="button" class="btn-close"><i class="ico-close"><span class="sr-only">닫기</span></i></button>
+        </div>
+      </div>
+      <div class="pop-body">
+        <div class="data-default">
+          <div class="scroll">
+            <table>
+              <caption class="sr-only">집행실적 연계기관 정보 — 부처, 회계/기금, 운영기관</caption>
+              <colgroup>
+                <col style="width:33.33%;min-width: 200px;">
+                <col style="width:33.33%;min-width: 200px;">
+                <col style="width:33.33%;min-width: 200px;">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">부처</th>
+                  <th scope="col">회계/기금</th>
+                  <th scope="col">운영기관</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td rowspan="6">국방부</td>
+                  <td>일반회계</td>
+                  <td rowspan="6">국방부</td>
+                </tr>
+                <tr>
+                  <td>주한미국기지이전특별회계</td>
+                </tr>
+                <tr>
+                  <td>국방 · 군사시설이전특별회계</td>
+                </tr>
+                <tr>
+                  <td>군인연금기금</td>
+                </tr>
+                <tr>
+                  <td>국인복지기금</td>
+                </tr>
+                <tr>
+                  <td>국방부</td>
+                </tr>
+                <tr>
+                  <td>방위사업청</td>
+                  <td>일반회계</td>
+                  <td>방위사업청</td>
+                </tr>
+                <tr>
+                  <td>환경부</td>
+                  <td>근로복지진흥기금</td>
+                  <td>근로복지공단</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script>
+  popOpen('#tempPopId');
+</script>
+
+</body>
+</html>

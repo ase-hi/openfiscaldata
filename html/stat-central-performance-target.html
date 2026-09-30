@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title>열린재정</title>
+
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
+<link type="text/css" rel="preload" href="../css/font.css">
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
+<script src="../js/pub-ui.js"></script>
+
+</head>
+<body>
+
+    <dl class="skipLink">
+        <dt>바로가기 메뉴</dt>	
+        <dd><a href="#gnbMenu">주메뉴 바로가기</a></dd>
+        <dd><a href="#content">본문 바로가기</a></dd>
+    </dl>
+    <div class="wrap">
+        <script id="header-template">
+            // 헤더
+            $.ajax({url:"common/header.txt", dataType:"text", success:function(data){
+                $('#header-template').replaceWith(data);
+            }});
+        </script>
+
+        <div class="container" id="content">
+            <script id="subvisual-template">
+                $.ajax({url:"common/subvisual.txt", dataType:"text", success:function(data){
+                    $('#subvisual-template').replaceWith($(data).filter('#visual-statistics'));
+                }});
+            </script>
+
+            <script id="breadcrumb-template">
+                // breadcrumb메뉴
+                $.ajax({url:"common/breadcrumb.txt", dataType:"text", success:function(data){
+                    $('#breadcrumb-template').replaceWith(data);
+                    breadcrumbMenu();
+                }});
+            </script>
+            
+            <div class="contents">
+                <div class="finance-stat-wrap stat-central-wrap stat-perf-wrap">
+                    <!-- 성과관리제도 바로가기 -->
+                    <div class="stat-perf-top">
+                        <a href="finance-understand-system-performance.html" class="btn-chart-link">성과관리제도 자세히 보기</a>
+                    </div>
+
+                    <!-- 요약 지표 카드 -->
+                    <div class="stat-card-list">
+                        <div class="stat-card">
+                            <strong class="stat-card-tit">전략목표</strong>
+                            <p class="stat-card-value"><em>4</em><span>개</span></p>
+                            <div class="stat-card-foot">
+                                <span class="stat-card-label">종합 정책방향</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <strong class="stat-card-tit">프로그램 목표</strong>
+                            <p class="stat-card-value"><em>12</em><span>개</span></p>
+                            <div class="stat-card-foot">
+                                <span class="stat-card-label">전략목표 하위</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <strong class="stat-card-tit">성과지표</strong>
+                            <p class="stat-card-value"><em>13</em><span>개</span></p>
+                            <div class="stat-card-foot">
+                                <span class="stat-card-label">달성도 측정</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <strong class="stat-card-tit">핵심재정사업</strong>
+                            <p class="stat-card-value"><em>30</em><span>개</span></p>
+                            <div class="stat-card-foot">
+                                <span class="stat-card-label">성과 점검 대상</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 성과관리 탭 (메뉴 페이지 이동) -->
+                    <div class="tab-main">
+                        <ul>
+                            <li class="on"><a href="stat-central-performance-target.html" aria-current="page">성과목표관리</a></li>
+                            <li><a href="stat-central-performance-key-projects.html">핵심재정사업 성과관리</a></li>
+                            <li><a href="stat-central-performance-evaluation.html">재정사업평가결과</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-content">
+                        <!-- 검색 -->
+                        <form class="form-search-box st-search-options centered" onsubmit="return false;">
+                            <div class="form-search-fields">
+                            <div class="fm">
+                                <label for="caseDeptYear" class="label">회계연도</label>
+                                <div class="sel st-minw"><select id="caseDeptYear" name="year"><option value="">선택</option><option>2026</option><option>2025</option><option>2024</option></select></div>
+                            </div>
+                            <div class="fm">
+                                <label for="caseDept" class="label">소관</label>
+                                <div class="sel st-minw"><select id="caseDept" name="dept"><option value="">선택</option></select></div>
+                            </div>
+                            <div class="form-search-btns">
+                                <button type="reset" class="btn-reset">초기화</button>
+                                <button type="submit" class="btn-search">검색</button>
+                            </div>
+                            </div>
+                        </form>
+                        <!-- 성과목표관리 하위 탭 (컨텐츠 전환) -->
+                        <div class="tab-filter" role="tablist" aria-label="성과목표관리 구분">
+                            <button type="button" role="tab" class="on" data-tab-id="perfTab1" aria-selected="true">목표 및 현황</button>
+                            <button type="button" role="tab" data-tab-id="perfTab2" aria-selected="false">전략목표 재원배분계획</button>
+                            <button type="button" role="tab" data-tab-id="perfTab3" aria-selected="false">프로그램 성과지표</button>
+                            <button type="button" role="tab" data-tab-id="perfTab4" aria-selected="false">성과달성도</button>
+                        </div>
+
+                        <!-- 탭1 : 목표 및 현황 -->
+                        <div class="tab-content" id="perfTab1" role="tabpanel">
+                            <div class="stat-perf-intro">
+                                <h3 class="title-section">임무</h3>
+                                <p>재정경제부는 거시경제의 안정적 운영과 경제정책의 합리적 조정, 적극적 국부창출, 공공기관 대국민 서비스 품질 향상, 합리적 조세정책, 국제금융 및 대외협력 강화 등을 통해 우리 경제의 활력을 제고하고, 국민들의 삶의 질 제고를 위해 노력한다.</p>
+                            </div>
+                            <div class="stat-perf-intro">
+                                <h3 class="title-section">비전</h3>
+                                <p>초혁신경제 전환을 통한 성장잠재력 확충으로 경제 성장을 구현한다.</p>
+                            </div>
+
+                            <div class="stat-perf-count">
+                                <dl>
+                                    <dt>전략목표</dt>
+                                    <dd>4</dd>
+                                </dl>
+                                <dl>
+                                    <dt>프로그램 목표</dt>
+                                    <dd>12</dd>
+                                </dl>
+                            </div>
+                            <div class="data-default" style="height: 500px;background: #dedede;display:flex;justify-content:center;align-items:center;font-size:30px;">테이블영역</div>
+                        </div>
+
+                        <!-- 탭2 : 전략목표 재원배분계획 -->
+                        <div class="tab-content" id="perfTab2" role="tabpanel" style="display:none;">
+                            <div class="title-section-wrap">
+                                <h3 class="title-section"><span class="title-section-inner">2026년 재원배분 계획<span class="title-section-unit">(단위 : 억원 · %)</span></span></h3>
+                                <div class="right">
+                                    <button type="button" class="btn-sm btn-white"><i class="ico-chart-stat" aria-hidden="true"></i><span>통계설명</span></button>
+                                    <button type="button" class="btn-sm btn-white"><i class="ico-chart-term" aria-hidden="true"></i><span>용어설명</span></button>
+                                    <button type="button" class="btn-sm btn-white btn-excel">
+                                        <i class="ico-excel" aria-hidden="true"></i>
+                                        <span>엑셀 다운로드</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="data-default" style="height: 500px;background: #dedede;display:flex;justify-content:center;align-items:center;font-size:30px;">테이블영역</div>
+
+                            <div class="title-section-wrap">
+                                <h3 class="title-section"><span class="title-section-inner">전년도 대비 전략목표별 재원배분 변화<span class="title-section-unit">(단위 : 조원)</span></span></h3>
+                                <div class="right">
+                                    <button type="button" class="btn-sm btn-white"><i class="ico-chart-stat" aria-hidden="true"></i><span>통계설명</span></button>
+                                    <button type="button" class="btn-sm btn-white"><i class="ico-chart-term" aria-hidden="true"></i><span>용어설명</span></button>
+                                </div>
+                            </div>
+                            <div class="chart-line-row">
+                                <div class="chart-line-box stat-perf-donut">
+                                    <img src="data:image/png;base64,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" alt="">
+                                    <p class="stat-perf-donut-label">2025년도</p>
+                                </div>
+                                <div class="chart-line-box stat-perf-donut">
+                                    <img src="data:image/png;base64,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" alt="">
+                                    <p class="stat-perf-donut-label">2025년도</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 탭3 : 프로그램 성과지표 -->
+                        <div class="tab-content" id="perfTab3" role="tabpanel" style="display:none;">
+                            <div class="title-section-wrap">
+                                <h3 class="title-section"><span class="title-section-inner">총괄현황<span class="title-section-unit">(단위 : 개)</span></span></h3>
+                                <div class="right">
+                                    <button type="button" class="btn-sm btn-white"><i class="ico-chart-stat" aria-hidden="true"></i><span>통계설명</span></button>
+                                    <button type="button" class="btn-sm btn-white"><i class="ico-chart-term" aria-hidden="true"></i><span>용어설명</span></button>
+                                    <button type="button" class="btn-sm btn-white btn-excel">
+                                        <i class="ico-excel" aria-hidden="true"></i>
+                                        <span>엑셀 다운로드</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="data-default">
+                                <div class="scroll">
+                                    <table>
+                                        <caption class="sr-only">총괄현황 — 전략목표, 프로그램 목표, 프로그램 목표의 성과지표 수, 성과지표 성격(투입·과정·산출·결과), 정량지표수(비중)</caption>
+                                        <colgroup>
+                                            <col style="width:200px">
+                                            <col style="width:200px">
+                                            <col style="width:200px">
+                                            <col style="width:85px">
+                                            <col style="width:85px">
+                                            <col style="width:85px">
+                                            <col style="width:85px">
+                                            <col style="width:auto">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col" rowspan="2">전략목표</th>
+                                                <th scope="col" rowspan="2">프로그램 목표</th>
+                                                <th scope="col" rowspan="2">프로그램 목표의<br>성과지표 수</th>
+                                                <th scope="colgroup" colspan="4">성과지표 성격</th>
+                                                <th scope="col" rowspan="2">정량지표수<br>(비중)</th>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">투입</th>
+                                                <th scope="col">과정</th>
+                                                <th scope="col">산출</th>
+                                                <th scope="col">결과</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td rowspan="2">4</td>
+                                                <td rowspan="2">12</td>
+                                                <td>13</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>2</td>
+                                                <td>11</td>
+                                                <td rowspan="2">8(61.5%)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>100%</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>15.4%</td>
+                                                <td>84.6%</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="txt-ps-wrap">
+                                <p class="txt-ps">전략목표·프로그램목표 수와, 성과지표를 투입·산출·결과 성격으로 집계한 현황입니다. 세부 지표는 아래 표에서 확인합니다.</p>
+                            </div>
+
+                            <div class="title-section-wrap">
+                                <h3 class="title-section">세부현황</h3>
+                            </div>
+                            <div class="data-default performance-indicator-table">
+                                <div class="scroll">
+                                    <table>
+                                        <caption class="sr-only">성과지표 — 프로그램목표, 지표명, 가중치, 성과분야, 목표치, 지표종류, 비고</caption>
+                                        <colgroup>
+                                            <col style="width:200px">
+                                            <col style="width:auto;min-width:280px">
+                                            <col style="width:100px">
+                                            <col style="width:100px">
+                                            <col style="width:200px">
+                                            <col style="width:100px">
+                                            <col style="width:100px">
+                                            <col style="width:80px">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col" rowspan="2">프로그램목표(소관실국)</th>
+                                                <th scope="colgroup" colspan="3">성과지표 성격</th>
+                                                <th scope="col" rowspan="2">목표치</th>
+                                                <th scope="colgroup" colspan="2">지표종류</th>
+                                                <th scope="col" rowspan="2">비고</th>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">지표명</th>
+                                                <th scope="col">가중치</th>
+                                                <th scope="col">성과분야</th>
+                                                <th scope="col">투입</th>
+                                                <th scope="col">과정</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="st-blue">
+                                                <th scope="row" colspan="8">전략목표 Ⅰ. 경제 반등과 성장잠재력 제고에 주력한다</th>
+                                            </tr>
+                                            <tr class="st-sky">
+                                                <th scope="row" colspan="8">프로그램목표 Ⅰ-1. 거시경제를 안정적으로 관리하고 민생회복을 지원한다</th>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" class="perf-dept">경제정책</th>
+                                                <td class="align-l">1인당 GNI</td>
+                                                <td class="align-c">1.0</td>
+                                                <td class="align-c">일반재정</td>
+                                                <td class="align-r">5,400 (만원)</td>
+                                                <td class="align-c">결과</td>
+                                                <td class="align-c">정량</td>
+                                                <td class="align-c">-</td>
+                                            </tr>
+                                            <tr class="st-sky">
+                                                <th scope="row" colspan="8">프로그램목표 Ⅰ-2. 경제활력 제고를 위한 성장 기반을 확충한다</th>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" class="perf-dept">정책조정</th>
+                                                <td class="align-l">규제개선 건수 (규제샌드박스 포함)</td>
+                                                <td class="align-c">1.0</td>
+                                                <td class="align-c">일반재정</td>
+                                                <td class="align-r">490 (건수)</td>
+                                                <td class="align-c">산출</td>
+                                                <td class="align-c">정량</td>
+                                                <td class="align-c">-</td>
+                                            </tr>
+                                            <tr class="st-blue">
+                                                <th scope="row" colspan="8">전략목표 Ⅱ. 국고 관리 효율성 및 공공부문의 역량을 제고한다</th>
+                                            </tr>
+                                            <tr class="st-sky">
+                                                <th scope="row" colspan="8">프로그램목표 Ⅱ-1. 세제선진화 및 글로벌화를 지원한다</th>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" class="perf-dept">조세정책</th>
+                                                <td class="align-l">관세협상 전문가 만족도</td>
+                                                <td class="align-c">1.0</td>
+                                                <td class="align-c">일반재정</td>
+                                                <td class="align-r">92.8 (점)</td>
+                                                <td class="align-c">결과</td>
+                                                <td class="align-c">정량</td>
+                                                <td class="align-c">-</td>
+                                            </tr>
+                                            <tr class="st-white">
+                                                <th scope="row" colspan="8">프로그램목표 Ⅱ-2. 적극적, 선제적 국고관리로 효율적인 재정운용을 지원한다</th>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" class="perf-dept">국고관리</th>
+                                                <td class="align-l">예산규모(총계) 대비 국고금 통합계정 일일평잔 비중</td>
+                                                <td class="align-c">1.0</td>
+                                                <td class="align-c">일반재정</td>
+                                                <td class="align-r">0.06 (%)</td>
+                                                <td class="align-c">결과</td>
+                                                <td class="align-c">정량</td>
+                                                <td class="align-c">-</td>
+                                            </tr>
+                                            <tr class="st-sky">
+                                                <th scope="row" colspan="8">프로그램목표 Ⅱ-3. 장래 행정수요(청,관사 신축 등)에 적정하게 대비하기 위해 비축부동산을 선제적으로 매입한다.</th>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" class="perf-dept">국유토지비축(기획재정부)</th>
+                                                <td class="align-l">비축부동산 활용면적</td>
+                                                <td class="align-c">1.0</td>
+                                                <td class="align-c">일반재정</td>
+                                                <td class="align-r">129 (천㎡)</td>
+                                                <td class="align-c">결과</td>
+                                                <td class="align-c">정량</td>
+                                                <td class="align-c">-</td>
+                                            </tr>
+                                            <tr class="st-white">
+                                                <th scope="row" colspan="8">프로그램목표 Ⅱ-4. 국가결산을 통해 재정의 투명성을 제고한다.</th>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" class="perf-dept">재정관리</th>
+                                                <td class="align-l">국가결산보고서 제출의 법정기한 준수 건수</td>
+                                                <td class="align-c">1.0</td>
+                                                <td class="align-c">일반재정</td>
+                                                <td class="align-r">2 (건)</td>
+                                                <td class="align-c">산출</td>
+                                                <td class="align-c">정량</td>
+                                                <td class="align-c">-</td>
+                                            </tr>
+                                            <tr class="st-sky">
+                                                <th scope="row" colspan="8">프로그램목표 Ⅱ-5. 공공기관의 생산성 및 서비스 수준 제고를 지원한다</th>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" class="perf-dept">공공정책</th>
+                                                <td class="align-l">공공기관 고객만족도</td>
+                                                <td class="align-c">0.7</td>
+                                                <td class="align-c">일반재정</td>
+                                                <td class="align-r">85 (점)</td>
+                                                <td class="align-c">결과</td>
+                                                <td class="align-c">정성</td>
+                                                <td class="align-c">-</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" class="perf-dept">공공정책</th>
+                                                <td class="align-l">공공기관 경영정보 공개시스템 방문자</td>
+                                                <td class="align-c">0.3</td>
+                                                <td class="align-c">일반재정</td>
+                                                <td class="align-r">1,305 (만명)</td>
+                                                <td class="align-c">결과</td>
+                                                <td class="align-c">정량</td>
+                                                <td class="align-c">-</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+    
+                        </div>
+
+                        <!-- 탭4 : 성과달성도 -->
+                        <div class="tab-content" id="perfTab4" role="tabpanel" style="display:none;">
+                            <div class="title-section-wrap">
+                                <h3 class="title-section"><span class="title-section-inner">총괄현황<span class="title-section-unit">(단위 : 개)</span></span></h3>
+                                <div class="right">
+                                    <button type="button" class="btn-sm btn-white"><i class="ico-chart-stat" aria-hidden="true"></i><span>통계설명</span></button>
+                                    <button type="button" class="btn-sm btn-white"><i class="ico-chart-term" aria-hidden="true"></i><span>용어설명</span></button>
+                                    <button type="button" class="btn-sm btn-white btn-excel">
+                                        <i class="ico-excel" aria-hidden="true"></i>
+                                        <span>엑셀 다운로드</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="data-default">
+                                <div class="scroll">
+                                    <table>
+                                        <caption class="sr-only">총괄현황 — 전략목표, 프로그램 목표, 프로그램 목표의 성과지표 수, 성과 달성도(초과달성·달성·미달성)</caption>
+                                        <colgroup>
+                                            <col style="width:200px">
+                                            <col style="width:200px">
+                                            <col style="width:200px">
+                                            <col style="width:auto">
+                                            <col style="width:auto">
+                                            <col style="width:auto">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col" rowspan="2">전략목표</th>
+                                                <th scope="col" rowspan="2">프로그램 목표</th>
+                                                <th scope="col" rowspan="2">프로그램 목표의<br>성과지표 수</th>
+                                                <th scope="colgroup" colspan="3">성과 달성도</th>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">초과달성</th>
+                                                <th scope="col">달성</th>
+                                                <th scope="col">미달성</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>12</td>
+                                                <td>13</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="txt-ps-wrap">
+                                <p class="txt-ps">전략목표·프로그램목표 수와, 성과지표를 투입·산출·결과 성격으로 집계한 현황입니다. 세부 지표는 아래 표에서 확인합니다.</p>
+                            </div>
+
+                            <div class="title-section-wrap">
+                                <h3 class="title-section">세부현황</h3>
+                            </div>
+                            <div class="data-default" style="height: 500px;background: #dedede;display:flex;justify-content:center;align-items:center;font-size:30px;">테이블영역</div>
+                        </div>
+                    </div>
+                </div>
+
+                <script id="feedback-template">
+                    // 피드백
+                    $.ajax({url:"common/feedback.txt", dataType:"text", success:function(data){
+                        $('#feedback-template').replaceWith(data);
+                        pageFeedback();
+                    }});
+                </script>
+            </div>
+            <!-- //contents -->
+
+            <script id="floating-template">
+                // 플로팅메뉴
+                $.ajax({url:"common/floating.txt", dataType:"text", success:function(data){
+                    $('#floating-template').replaceWith(data);
+                }});
+            </script>
+        </div>
+        <script id="footer-template">
+            // 푸터
+            $.ajax({url:"common/footer.txt", dataType:"text", success:function(data){
+                $('#footer-template').replaceWith(data);
+            }});
+        </script>
+    </div>
+    <!-- // wrap -->
+
+
+</body>
+</html>

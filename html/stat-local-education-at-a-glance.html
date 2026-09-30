@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title>열린재정</title>
+
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
+<link type="text/css" rel="preload" href="../css/font.css">
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
+<script src="../js/pub-ui.js"></script>
+
+</head>
+<body>
+
+    <dl class="skipLink">
+        <dt>바로가기 메뉴</dt>	
+        <dd><a href="#gnbMenu">주메뉴 바로가기</a></dd>
+        <dd><a href="#content">본문 바로가기</a></dd>
+    </dl>
+    <div class="wrap">
+        <script id="header-template">
+            // 헤더
+            $.ajax({url:"common/header.txt", dataType:"text", success:function(data){
+                $('#header-template').replaceWith(data);
+            }});
+        </script>
+
+        <div class="container" id="content">
+            <script id="subvisual-template">
+                $.ajax({url:"common/subvisual.txt", dataType:"text", success:function(data){
+                    $('#subvisual-template').replaceWith($(data).filter('#visual-statistics'));
+                }});
+            </script>
+
+            <script id="breadcrumb-template">
+                // breadcrumb메뉴
+                $.ajax({url:"common/breadcrumb.txt", dataType:"text", success:function(data){
+                    $('#breadcrumb-template').replaceWith(data);
+                    breadcrumbMenu();
+                }});
+            </script>
+            
+            <div class="contents">
+                <div class="stat-glance-wrap">
+                    <!-- 요약 지표 카드 -->
+                    <div class="stat-card-list">
+                        <div class="stat-card st-white">
+                            <strong class="stat-card-tit">세입 예산</strong>
+                            <p class="stat-card-value"><em>93.1</em><span>조 원</span></p>
+                            <div class="stat-card-foot">
+                                <span class="stat-card-label">2026 · 이전재원</span>
+                                <span class="stat-card-rate">99.4%</span>
+                            </div>
+                        </div>
+                        <div class="stat-card st-white">
+                            <strong class="stat-card-tit">세출 예산</strong>
+                            <p class="stat-card-value"><em>92.7</em><span>조 원</span></p>
+                            <div class="stat-card-foot">
+                                <span class="stat-card-label">2026 · 인건비</span>
+                                <span class="stat-card-rate">54.9%</span>
+                            </div>
+                        </div>
+                        <div class="stat-card st-white">
+                            <strong class="stat-card-tit">세출 결산(통합)</strong>
+                            <p class="stat-card-value"><em>95.5</em><span>조 원</span></p>
+                            <div class="stat-card-foot">
+                                <span class="stat-card-label">2024 · 집행</span>
+                                <span class="stat-card-rate">94.4%</span>
+                            </div>
+                        </div>
+                        <div class="stat-card st-white">
+                            <strong class="stat-card-tit">5개년 계획 규모</strong>
+                            <p class="stat-card-value"><em>110.3</em><span>조 원</span></p>
+                            <div class="stat-card-foot">
+                                <span class="stat-card-label">2030 전망 · 연평균</span>
+                                <span class="stat-card-rate st-up">+4.4%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 안내 -->
+                    <div class="cont-box st2">
+                        <p>전국 16개 시·도교육청의 교육비특별회계 정책사업별 지출 · 세입/세출에 대한 예산 및 결산·중기지방교육재정계획을 한 화면에 요약했습니다.<br>아래 금액은 기금이 포함된 수치이며, 각 항목의 [자세히 보기]를 통해 상세페이지로 이동합니다.</p>
+                    </div>
+
+                    <!-- 항목별 요약 -->
+                    <div class="glance-panel-grid">
+                            <div class="glance-panel">
+                                <div class="glance-panel-head">
+                                    <strong class="glance-panel-tit">정책사업별 지출 현황</strong>
+                                    <a href="javascript:void(0);" class="btn-more">자세히보기</a>
+                                </div>
+                                <div class="glance-panel-body">
+                                    <div class="glance-panel-info">
+                                        <p class="glance-panel-value"><em>92.7</em><span>조 원</span></p>
+                                        <p class="glance-panel-desc">2026 지출 현황(월별) · 최대 인건비 50.9조(54.9%)</p>
+                                        <ul class="glance-panel-list">
+                                    <li><span class="glance-panel-label">인건비</span><span class="glance-panel-num"><strong>50.9</strong>조 원</span></li>
+                                    <li><span class="glance-panel-label">교수학습활동지원</span><span class="glance-panel-num"><strong>5.4</strong>조 원</span></li>
+                                    <li><span class="glance-panel-label">프로그램(정책사업)</span><span class="glance-panel-num"><strong>12</strong>개</span></li>
+                                        </ul>
+                                    </div>
+                                    <div class="glance-panel-chart"><img src="data:image/png;base64,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" alt=""></div>
+                                </div>
+                            </div>
+                            <div class="glance-panel">
+                                <div class="glance-panel-head">
+                                    <strong class="glance-panel-tit">재정지출</strong>
+                                    <a href="javascript:void(0);" class="btn-more">자세히보기</a>
+                                </div>
+                                <div class="glance-panel-body">
+                                    <div class="glance-panel-info">
+                                        <p class="glance-panel-value"><em>93.1</em><span>조 원</span><i class="sep">/</i><em>50.9</em><span>조 원</span></p>
+                                        <p class="glance-panel-desc">2026 세입예산 · 이전재원 93.1조(99.4%)<br>2026 세출예산 · 인건비 50.9조(54.9%)</p>
+                                        <ul class="glance-panel-list">
+                                    <li><span class="glance-panel-label">중앙정부 이전</span><span class="glance-panel-num"><strong>72.8</strong>조 원</span></li>
+                                    <li><span class="glance-panel-label">지자체 이전</span><span class="glance-panel-num"><strong>15.2</strong>조 원</span></li>
+                                    <li><span class="glance-panel-label">자체수입</span><span class="glance-panel-num"><strong>0.6</strong>조 원</span></li>
+                                        </ul>
+                                    </div>
+                                    <div class="glance-panel-chart"><img src="data:image/png;base64,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" alt=""></div>
+                                </div>
+                            </div>
+                            <div class="glance-panel">
+                                <div class="glance-panel-head">
+                                    <strong class="glance-panel-tit">세입 · 세출 결산</strong>
+                                    <a href="javascript:void(0);" class="btn-more">자세히보기</a>
+                                </div>
+                                <div class="glance-panel-body">
+                                    <div class="glance-panel-info">
+                                        <p class="glance-panel-value"><em>100.9</em><span>조 원</span><i class="sep">/</i><em>50.9</em><span>조 원</span></p>
+                                        <p class="glance-panel-desc">2024 세입결산 · 집행 95.5조 · 집행률 94.4%<br>2024 세출결산 · 집행 95.5조 · 집행률 94.4%</p>
+                                        <ul class="glance-panel-list">
+                                    <li><span class="glance-panel-label">세출 집행</span><span class="glance-panel-num"><strong>95.5</strong>조</span></li>
+                                    <li><span class="glance-panel-label">집행률</span><span class="glance-panel-num"><strong>94.4</strong>%</span></li>
+                                    <li><span class="glance-panel-label">이월·불용</span><span class="glance-panel-num"><strong>5.6</strong>조</span></li>
+                                        </ul>
+                                    </div>
+                                    <div class="glance-panel-chart"><img src="data:image/png;base64,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" alt=""></div>
+                                </div>
+                            </div>
+                            <div class="glance-panel">
+                                <div class="glance-panel-head">
+                                    <strong class="glance-panel-tit">중기지방교육재정계획</strong>
+                                    <a href="javascript:void(0);" class="btn-more">자세히보기</a>
+                                </div>
+                                <div class="glance-panel-body">
+                                    <div class="glance-panel-info">
+                                        <p class="glance-panel-value"><em>92.7</em><span>조 원</span></p>
+                                        <p class="glance-panel-desc">2026 수립 · 5개년(2026~2030) 전망 → 110.3조</p>
+                                        <ul class="glance-panel-list">
+                                    <li><span class="glance-panel-label">5차년도(2030)</span><span class="glance-panel-num"><strong>113.0</strong>%</span></li>
+                                    <li><span class="glance-panel-label">연평균 증가</span><span class="glance-panel-num"><strong>+4.4</strong>%</span></li>
+                                    <li><span class="glance-panel-label">최대 경기</span><span class="glance-panel-num"><strong>23.1</strong>%</span></li>
+                                        </ul>
+                                    </div>
+                                    <div class="glance-panel-chart"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAACXBIWXMAAAPoAAAD6AG1e1JrAAAEAUlEQVR4Xu3dvWskdRzH8e8m6xnywB5q4mmRa8Ph2WoRLExpZ6MQrCJca6Vg/gKxs1S4QtS/wM6LINxfYIqz9cAHciIudxcu5mFlC5sj9xllZsQkr1e582WWYX5vflssM4PJZDIp4FQzp38MCAQa2EEgEAgEAoFAIBAIBAKBQCAQCAQCgUAgEAgEAoFAIBAIBAKBQCAQCAQCgUAgEAgEAoFAIBAIBAKBQCAQCAQCgUAgEAgEAoFAIBAIBAKBQDBMBzn/vvz293r/5s81fnhcXVpduVTbbz1fm68/U218/vWd+uCT7+qP+39Wl66+sFTbW6/UO29ci3MDb5i62K7duFN397pdfH8bLczWT1+8VG2svXmzfvzlQfVhtPh0/frNjTjjJ9YF11ccU13sSn3FMTV+cNA0IhBI7CAQCAQCgUAgEAgEAoFAIBAIBAKBQCBwnv+s+P3d49rZPa5Hh9Wp0fyg1tdm6uXV2aZRzrEzv4Pc/qH7OKbG+5O6tXvSNMY5d+YDGe9Xbw4OJ00jnHNnPhDok0AgEAgEAoFAIBAIBAKBQCAQCAQCgUAgEAgEAoFAIBAIBAKBQCAQCAQCgUAgEAgEAoFAIBAIBAKBQCAQaPPo0ekTBvfGJ3XS8TPUhrNVzy4O6vKCRvn/alydv93vPo6po+Oqe/d7ODH8l4FMF3JfTjz6lrMeCFxkAoFAIBAIBAKBQCAQCAQCgUAgEAgEAoFAIBAIBAKBQCAQCAQCgUAgEAgEAoFAIBAIBAKBQCAQCAQCgUAgEAgEAoFAIBAIBAKBQCAQCAQCgUAgEAgEAoFAIBAIBAKBQCAQCIbpIO3t7B7VpztHtf+o23fCL48Gtbk+rI3rbmGf7CA9++r2cedxTN0bT+qzW4dNY7QkkJ7tjU+qLw8PmiZoSyAQCAQCgUAgEAgEAoFAIBAIBAKBQCAQCAQCgUAgEAgEAoFAIBAIBAKBQCAQCAQCgUAgEAgEAoFAIBAIBAKBQCAQCAQCgUAgEAgEAoFAIBAIBAKBQCAQCAQCgUAgEAgEAoFAIBAIBAKBQCAQCAQCgUAgEAgEAoFAIBAIBAKBQCAQCAQCgUAgEAgEAoFAIBAIBAKBQCAQCAQCgUAgEAgEAoFAIBAIBAKBQCAQCAQCgUAgEAgEAoFAIBAIBAKBQCAQCAQCgUAgEAgEAoFAIBAIBAKBQCDQJpCZQfVmOFutzT1VvRnNt7/4hbn253iS5VH7c4/mO7gJT3B1uf3NGS1eqr6sXllqH8jKaNDJQj4tvOeWGr++0cb12RrNV+em4a2vtV+A724Ma2XU/jofNz83qM31YbX10daLnSzkeszl+Zn68O0rTWONPn7vtX+0kP+taXjbW682jdVfIH6AhMyMzAUAAAAOdEVYdFNvZnR3YXJlAEZpZ21hnrGWYwAAAABJRU5ErkJggg==" alt=""></div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+
+                <script id="feedback-template">
+                    // 피드백
+                    $.ajax({url:"common/feedback.txt", dataType:"text", success:function(data){
+                        $('#feedback-template').replaceWith(data);
+                        pageFeedback();
+                    }});
+                </script>
+            </div>
+            <!-- //contents -->
+
+            <script id="floating-template">
+                // 플로팅메뉴
+                $.ajax({url:"common/floating.txt", dataType:"text", success:function(data){
+                    $('#floating-template').replaceWith(data);
+                }});
+            </script>
+        </div>
+        <script id="footer-template">
+            // 푸터
+            $.ajax({url:"common/footer.txt", dataType:"text", success:function(data){
+                $('#footer-template').replaceWith(data);
+            }});
+        </script>
+    </div>
+    <!-- // wrap -->
+
+
+    <script>
+        $('body').css('background', '#F6F6F9');
+    </script>
+
+</body>
+</html>
