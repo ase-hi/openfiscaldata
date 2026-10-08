@@ -83,7 +83,7 @@
     .header .masthead .font-setting-reset button:hover{background:#eef2f7;}
     .header .masthead .font-setting-reset button:active{background:#d6e0eb;}
 
-    .body-main .header .header-menu{background:transparent;transition: background 0.5s ease;border:none;}
+    /* .body-main .header .header-menu{background:transparent;transition: background 0.5s ease;border:none;} */
     .body-main.scroll-down .header .header-menu{background:#fff;}
     .header .header-menu{position:relative;background:#fff;border-bottom:1px solid #C9CED9;transition:background-color .2s ease, border-color .2s ease;}
     .header .header-menu .wrapper{display:flex;align-items:center;justify-content:space-between;height:64px;padding:4px 0;}
@@ -547,3 +547,34 @@ a.all-menu-group-tit:hover{color:#0b50d0;}
   .finance-calendar-popup .pop-body{padding:20px 16px 24px;}
   .finance-calendar-empty{min-height:120px;}
 }
+
+/* 상단 공지 */
+.top-notice{position:relative;z-index:30;}
+body:not(.body-main) .top-notice{display:none;}
+.top-notice[hidden]{display:none !important;}
+.top-notice-inner{width:100%;background:#ecf2fe;}
+.top-notice.is-open .top-notice-inner{background:rgba(236,242,254,0.8);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);}
+.top-notice .wrapper{display:flex;flex-direction:column;gap:8px;padding-top:12px;padding-bottom:12px;}
+.top-notice-head{display:flex;align-items:center;gap:8px;width:100%;padding:0;border:0;background:none;text-align:left;cursor:pointer;}
+.top-notice-tit{display:flex;flex:1;align-items:center;gap:8px;min-width:0;font-size:17px;line-height:1.5;}
+.top-notice-tit strong{flex:none;font-weight:700;color:#1f2228;}
+.top-notice-tit .txt{overflow:hidden;font-weight:600;color:#363b4a;white-space:nowrap;text-overflow:ellipsis;}
+.top-notice-badge{display:flex;flex:none;align-items:center;justify-content:center;width:24px;height:24px;border-radius:999px;background:#74809d;}
+.ico-top-notice{display:block;width:16px;height:16px;background:#fff;-webkit-mask:url('../images/common/ico-top-notice-announce.png') no-repeat 50% 50%/contain;mask:url('../images/common/ico-top-notice-announce.png') no-repeat 50% 50%/contain;}
+.ico-top-notice-arrow{display:block;flex:none;width:24px;height:24px;background:url('../images/common/ico-top-notice-arrow-down.svg') no-repeat 50% 50%;background-size:24px 24px;}
+.top-notice.is-open .ico-top-notice-arrow{background-image:url('../images/common/ico-top-notice-arrow-up.svg');}
+.top-notice-body{display:flex;align-items:flex-end;gap:8px;}
+.top-notice-body[hidden]{display:none;}
+.top-notice-desc{flex:1;min-width:0;padding-left:32px;font-size:16px;line-height:1.5;color:#58616a;}
+.top-notice-util{display:flex;flex:none;align-items:center;gap:16px;}
+.top-notice-util .input-choice{align-items:flex-start;}
+.top-notice-util .input-choice input[type='checkbox']{margin-top:3px;}
+.top-notice-close.st-white{border-color:#b1b8be;}
+@media all and (max-width:1024px){
+  .top-notice .wrapper{padding:12px 16px;}
+  .top-notice-tit{font-size:15px;}
+  .top-notice-body{flex-direction:column;align-items:stretch;gap:12px;}
+  .top-notice-desc{padding-left:32px;font-size:15px;}
+  .top-notice-util{justify-content:space-between;padding-left:32px;}
+}
+

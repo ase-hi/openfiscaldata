@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title>모두의재정 소개 | 모두의재정</title>
+
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
+<script src="../js/pub-ui.js"></script>
+
+</head>
+<body>
+
+    <dl class="skipLink">
+        <dt>바로가기 메뉴</dt>	
+        <dd><a href="#gnbMenu">주메뉴 바로가기</a></dd>
+        <dd><a href="#content">본문 바로가기</a></dd>
+    </dl>
+    <div class="wrap">
+        <script id="header-template">
+            // 헤더
+            $.ajax({url:"common/header.txt", dataType:"text", success:function(data){
+                $('#header-template').replaceWith(data);
+            }});
+        </script>
+
+        <div class="container" id="content">
+            <script id="subvisual-template">
+                $.ajax({url:"common/subvisual.txt", dataType:"text", success:function(data){
+                    $('#subvisual-template').replaceWith($(data).filter('#visual-notice'));
+                }});
+            </script>
+
+            <script id="breadcrumb-template">
+                // breadcrumb메뉴
+                $.ajax({url:"common/breadcrumb.txt", dataType:"text", success:function(data){
+                    $('#breadcrumb-template').replaceWith(data);
+                    var $depth = $('.breadcrumb .bc-depth');
+                    $depth.html('<li><button type="button" class="bc-btn"><span>알림·안내</span><i class="ico-bc-arrow"></i></button><ul class="bc-menu"><li><a href="intro-finance.html">모두의재정 소개</a></li><li><a href="faq.html">자주 묻는 질문</a></li></ul></li><li><span class="intro-bc-current" aria-current="page">모두의재정 소개</span></li>');
+                    breadcrumbMenu();
+                }});
+            </script>
+            
+            <div class="contents intro-finance">
+                <div class="title-main-wrap"><h2 class="title-main">모두의재정 소개</h2></div>
+                <div class="info-guide is-summary intro-summary">
+                    <div class="info-guide-head"><i class="ico-info-money" aria-hidden="true"></i><strong class="info-guide-tit">대한민국 나라살림을 더 쉽고, 더 가깝게</strong></div>
+                    <div class="info-guide-body">
+                        <p>모두의 재정은 국민 누구나 대한민국의 재정정보를 쉽고 편리하게 찾아보고 이해할 수 있도록 제공하는 재정정보 플랫폼입니다.</p>
+                        <p>정부가 한 해 동안 얼마의 재원을 마련하고 어디에 사용하는지, 예산과 결산은 어떻게 이루어지는지, 국가채무와 재정수지는 어떻게 변화하고 있는지 등 대한민국 나라살림에 관한 다양한 정보를 한곳에서 확인할 수 있습니다.</p>
+                        <p>표와 숫자 중심 정보에서 한 걸음 더 나아가 AI를 활용한 정보 이용 지원, 지방·교육재정 데이터 확대, 그래프와 차트 중심의 시각화, 이용자 중심의 편리한 정보구조를 통해 어려운 재정정보를 보다 쉽고 직관적으로 전달합니다.</p>
+                    </div>
+                </div>
+                <section class="section-wrap intro-section" aria-labelledby="intro-changes-title">
+                    <div class="title-section-wrap">
+                        <h3 class="title-section" id="intro-changes-title">무엇이 달라졌나요?</h3>
+                    </div>
+                    <ul class="intro-feature-list">
+                        <li><img class="intro-feature-img" src="../images/content/img-intro-feature-01.png" alt="" width="140"
+                                height="140">
+                            <h4>AI로 재정정보를 더 쉽게</h4>
+                            <p>복잡한 재정정보를 보다 쉽고 빠르게 찾고 이해할 수 있도록 <em>AI 기반 기능을 확대</em>하고, 재정에 익숙하지 않은 이용자도 필요한 정보를 쉽게 찾아볼 수 있도록
+                                돕습니다.<br>관련 정보와 콘텐츠를 자연스럽게 연결하여 재정정보에 대한 접근성과 이해도를 높이고, <em>재정정보를 ‘찾는 것’에서 ‘이해하는 것’까지 지원</em>합니다.</p>
+                        </li>
+                        <li><img class="intro-feature-img" src="../images/content/img-intro-feature-02.png" alt="" width="140"
+                                height="140">
+                            <h4>지방·교육재정까지 폭넓게</h4>
+                            <p>대한민국의 나라살림은 중앙정부의 재정만으로 이루어지지 않습니다.<br>모두의 재정에서는 중앙정부 재정정보와 함께 <em>지방재정과 지방교육재정의 공개 데이터를 확대 연계하여 보다 폭넓은
+                                    재정정보를 제공</em>합니다.<br>중앙·지방·교육재정을 함께 살펴보며 서로 다른 영역의 재정정보를 폭넓게 확인하며 대한민국 재정의 전체 모습을 이해할 수 있습니다.</p>
+                        </li>
+                        <li><img class="intro-feature-img" src="../images/content/img-intro-feature-03.png" alt="" width="140"
+                                height="140">
+                            <h4>원하는 정보를 더 편리하게</h4>
+                            <p>필요한 재정정보에 보다 쉽게 접근할 수 있도록 <em>메뉴와 콘텐츠를 이해하기 쉬운 구조로 정비하고 이용 편의성을 높입니다.</em><br>방대한 재정정보를 AI를 활용하여 쉽고, 편리하게
+                                검색, 활용하도록 구성하였으며, 복잡한 재정용어와 정보구조 때문에 어려움을 느끼지 않도록 친절한 설명과 이용자 중심의 콘텐츠를 제공합니다.</p>
+                        </li>
+                    </ul>
+                </section>
+                <section class="section-wrap intro-section" aria-labelledby="intro-services-title">
+                    <div class="title-section-wrap">
+                        <h3 class="title-section" id="intro-services-title">주요 서비스</h3>
+                    </div>
+                    <ul class="intro-service-list">
+                        <li><a href="javascript:void(0);"><span class="intro-service-name"><img
+                                        src="../images/content/ico-intro-service-01.png" alt="" width="56" height="56"><strong>알기쉬운
+                                        재정</strong></span>
+                                <p>중앙부처 약 5,500여 개 국고보조금 내역사업 정보 연계 및 예산편성·보조금 처리 전 과정 통합 관리 시스템</p><i class="ico-arr-r"
+                                    aria-hidden="true"></i>
+                            </a></li>
+                        <li><a href="javascript:void(0);"><span class="intro-service-name"><img
+                                        src="../images/content/ico-intro-service-02.png" alt="" width="56" height="56"><strong>알기쉬운
+                                        재정통계</strong></span>
+                                <p>중앙재정·지방재정·교육재정 등 다양한 재정통계를 그래프와 차트 중심으로 제공하여 대한민국 재정의 규모와 흐름을 한눈에 이해할 수 있도록 지원하는 서비스</p><i
+                                    class="ico-arr-r" aria-hidden="true"></i>
+                            </a></li>
+                        <li><a href="javascript:void(0);"><span class="intro-service-name"><img
+                                        src="../images/content/ico-intro-service-03.png" alt="" width="56"
+                                        height="56"><strong>재정연구실</strong></span>
+                                <p>재정 관련 연구자료와 분석정보를 제공하여 국가재정의 주요 현안과 정책을 보다 깊이 있게 살펴보고 이해할 수 있도록 지원하는 서비스</p><i class="ico-arr-r"
+                                    aria-hidden="true"></i>
+                            </a></li>
+                        <li><a href="javascript:void(0);"><span class="intro-service-name"><img
+                                        src="../images/content/ico-intro-service-04.png" alt="" width="56" height="56"><strong>함께하는
+                                        재정</strong></span>
+                                <p>국민이 재정정보를 확인하는 데서 나아가 나라살림에 관심을 갖고 의견을 나누며 직접 참여할 수 있도록 다양한 참여형 콘텐츠와 서비스를 제공하는 공간</p><i
+                                    class="ico-arr-r" aria-hidden="true"></i>
+                            </a></li>
+                        <li>
+                            <div class="intro-service-item"><span class="intro-service-name"><img
+                                        src="../images/content/ico-intro-service-05.png" alt="" width="56"
+                                        height="56"><strong>재정박물관</strong></span>
+                                <p>대한민국 재정의 역사와 제도 변화, 주요 기록과 자료를 통해 시대별 나라살림의 변천 과정을 쉽고 흥미롭게 살펴볼 수 있는 디지털 재정문화 공간</p>
+                            </div>
+                        </li>
+                        <li><a href="javascript:void(0);"><span class="intro-service-name"><img
+                                        src="../images/content/ico-intro-service-06.png" alt="" width="56" height="56"><strong>재정통계분석
+                                        AI</strong></span>
+                                <p>다양한 재정통계와 지표를 AI로 분석하여 재정의 변화 추이, 주요 특징, 비교 결과와 의미를 쉽고 빠르게 파악할 수 있도록 지원하는 서비스</p><i class="ico-arr-r"
+                                    aria-hidden="true"></i>
+                            </a></li>
+                        <li><a href="javascript:void(0);"><span class="intro-service-name"><img
+                                        src="../images/content/ico-intro-service-07.png" alt="" width="56" height="56"><strong>재정자료 분석
+                                        AI</strong></span>
+                                <p>예산서·결산서·재정 보고서 등 다양한 재정자료를 AI가 분석하여 핵심 내용 요약, 주요 수치 추출, 자료 간 비교와 필요한 정보 탐색을 지원하는 서비스</p><i
+                                    class="ico-arr-r" aria-hidden="true"></i>
+                            </a></li>
+                        <li><a href="javascript:void(0);"><span class="intro-service-name"><img
+                                        src="../images/content/ico-intro-service-08.png" alt="" width="56" height="56"><strong>재정법령
+                                        AI</strong></span>
+                                <p>재정과 관련된 법령과 재정용어를 AI로 검색·분석하여 관련 법적 근거와 주요 내용을 쉽게 확인하고 재정제도와 법률의 관계를 이해할 수 있도록 지원하는 서비스</p><i
+                                    class="ico-arr-r" aria-hidden="true"></i>
+                            </a></li>
+                    </ul>
+                </section>
+                <div class="intro-banner"><img src="../images/content/img-intro-banner.png" width="1280" height="160" alt="대한민국 나라살림을 이해하는 가장 쉬운 방법, 모두의 재정"></div>
+                <script id="feedback-template">
+                    // 피드백
+                    $.ajax({url:"common/feedback.txt", dataType:"text", success:function(data){
+                        $('#feedback-template').replaceWith(data);
+                        pageFeedback();
+                    }});
+                </script>
+
+            </div>
+            <!-- //contents -->
+
+            <script id="floating-template">
+                // 플로팅메뉴
+                $.ajax({url:"common/floating.txt", dataType:"text", success:function(data){
+                    $('#floating-template').replaceWith(data);
+                }});
+            </script>
+        </div>
+        <script id="footer-template">
+            // 푸터
+            $.ajax({url:"common/footer.txt", dataType:"text", success:function(data){
+                $('#footer-template').replaceWith(data);
+            }});
+        </script>
+    </div>
+    <!-- // wrap -->
+
+</body>
+</html>

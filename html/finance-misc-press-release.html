@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title>열린재정</title>
+
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
+<script src="../js/pub-ui.js"></script>
+
+</head>
+<body>
+
+    <dl class="skipLink">
+        <dt>바로가기 메뉴</dt>	
+        <dd><a href="#gnbMenu">주메뉴 바로가기</a></dd>
+        <dd><a href="#content">본문 바로가기</a></dd>
+    </dl>
+    <div class="wrap">
+        <script id="header-template">
+            // 헤더
+            $.ajax({url:"common/header.txt", dataType:"text", success:function(data){
+                $('#header-template').replaceWith(data);
+            }});
+        </script>
+
+        <div class="container" id="content">
+            <script id="subvisual-template">
+                $.ajax({url:"common/subvisual.txt", dataType:"text", success:function(data){
+                    $('#subvisual-template').replaceWith($(data).filter('#visual-together'));
+                }});
+            </script>
+
+            <script id="breadcrumb-template">
+                // breadcrumb메뉴
+                $.ajax({url:"common/breadcrumb.txt", dataType:"text", success:function(data){
+                    $('#breadcrumb-template').replaceWith(data);
+                    breadcrumbMenu();
+                }});
+            </script>
+            
+            <div class="contents">
+                <div class="title-main-wrap">
+                    <h2 class="title-main">재정 보도자료</h2>
+                </div>
+
+                <div class="form-search-box row-type benefit-search-bar">
+                    <div class="form-search-fields">
+                        <div class="fm auto">
+                            <div class="inp auto">
+                                <input type="text" id="benefit-keyword" placeholder="검색어를 입력하세요." aria-label="검색어">
+                            </div>
+                            <button type="button" class="btn-search">검색</button>
+                        </div>
+                        <div class="input-choice mo-oneline">
+                            <input type="checkbox" id="benefit-research">
+                            <label for="benefit-research">결과내 재검색</label>
+                        </div>
+                        <button type="button" class="btn-filter-close btn-nm btn-white">
+                            <span>상세 검색</span>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M16.4452 7.0051C16.7189 7.25139 16.7411 7.67292 16.4948 7.94661L10.4955 14.6133C10.3691 14.7538 10.1889 14.834 9.99994 14.834C9.81095 14.834 9.63083 14.7538 9.50439 14.6133L3.50439 7.94663C3.25809 7.67296 3.28027 7.25143 3.55395 7.00513C3.82762 6.75882 4.24915 6.78101 4.49545 7.05468L9.9999 13.1707L15.5037 7.05471C15.75 6.78102 16.1715 6.75881 16.4452 7.0051Z" fill="#33363D"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+
+                <!-- case2 : 입찰 검색 -->
+                <div class="form-search-box detail-filter row-type st-label-auto" id="detailFilter" style="display:none;">
+                    <div class="form-search-fields">
+                    <div class="form-row">
+                        <div class="fm">
+                        <label for="bid-start-date" class="label">검색기간</label>
+                        <div class="input-date">
+                            <input type="text" id="bid-start-date" class="datepicker start-date" placeholder="YYYY-MM-DD" title="시작일" aria-label="입찰 시작일">
+                            <span class="dash">~</span>
+                            <input type="text" class="datepicker end-date" placeholder="YYYY-MM-DD" title="종료일" aria-label="입찰 종료일">
+                        </div>
+                        <div class="btn-date-tab-group">
+                            <button type="button" class="btn-tab on">전체</button>
+                            <button type="button" class="btn-tab">3개월</button>
+                            <button type="button" class="btn-tab">6개월</button>
+                            <button type="button" class="btn-tab">1년</button>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="form-search-btns">
+                    <button type="button" class="btn-nm st-white btn-detail-filter-close">닫기</button>
+                    <button type="button" class="btn-search">검색</button>
+                    </div>
+                </div>
+  
+
+
+                <div class="data-util">
+                    <div class="left">
+                        <div class="input-choice-wrap" role="radiogroup" aria-label="카테고리 선택">
+                            <div class="input-choice"><input type="radio" name="cate" id="cate1" checked><label for="cate1">전체</label></div>
+                            <div class="input-choice"><input type="radio" name="cate" id="cate2"><label for="cate2">정부혜택</label></div>
+                            <div class="input-choice"><input type="radio" name="cate" id="cate3"><label for="cate3">국고지원사업</label></div>
+                            <div class="input-choice"><input type="radio" name="cate" id="cate4"><label for="cate4">연구개발지원</label></div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="sort-toggle" role="group" aria-label="정렬">
+                            <button type="button" class="on" aria-pressed="true">정확도</button>
+                            <button type="button" aria-pressed="false">최신순</button>
+                            <button type="button" aria-pressed="false">인기순</button>
+                        </div>
+                    </div>
+                </div>
+        
+
+                <div class="tab-content">
+                    <div class="data-util">
+                        <div class="left">
+                            <div class="total">총 <em>85,007</em>건</div>
+                        </div>
+                        <div class="right">
+                            <div class="view-type-toggle" role="group" aria-label="보기 형식">
+                                <button type="button" class="view-type-btn on" data-view="list" aria-pressed="true">
+                                    <i class="ico-list"></i>
+                                    <span>목록</span>
+                                </button>
+                                <button type="button" class="view-type-btn" data-view="card" aria-pressed="false">
+                                    <i class="ico-card"></i>
+                                    <span>카드</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 목록형 -->
+                        <div class="data-default line-type press-list-table press-view" data-view="list">
+                            <div class="scroll">
+                                <table>
+                                    <caption class="sr-only">재정 보도자료 목록 — 번호, 제목, 부처, 부서, 등록일</caption>
+                                    <colgroup>
+                                        <col style="width:80px">
+                                        <col style="width:auto;min-width:300px">
+                                        <col style="width:140px">
+                                        <col style="width:140px">
+                                        <col style="width:140px">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">NO</th>
+                                            <th scope="col">제목</th>
+                                            <th scope="col">부처</th>
+                                            <th scope="col">부서</th>
+                                            <th scope="col">등록일</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>9</td>
+                                        <td class="align-l"><a href="javascript:void(0);" target="_blank" rel="noopener noreferrer" class="press-tit-link link-txt-hover" title="새창열림"><span class="ellips">공공기관 혁신 워크숍 및 청년 AI 서포터즈 발대식 개최</span><i class="ico-open-new-window" aria-hidden="true"></i><img src="../images/common/ico-open-new-window.svg" alt="" class="ico-open-new-window-img"></a></td>
+                                        <td><div class="press-badge-wrap"><span class="press-badge is-blue">재정경제부</span><img src="../images/common/img-badge-mof.png" alt="재정경제부" class="press-badge-img"></div></td>
+                                        <td>공공혁신기획과</td>
+                                        <td>2026-07-23</td>
+                                    </tr>
+                                    <tr>
+                                        <td>8</td>
+                                        <td class="align-l"><a href="javascript:void(0);" target="_blank" rel="noopener noreferrer" class="press-tit-link link-txt-hover" title="새창열림"><span class="ellips">초혁신경제를 위한 미래산업 부품 육성 ‘27년 예산안으로 뒷받침</span><i class="ico-open-new-window" aria-hidden="true"></i><img src="../images/common/ico-open-new-window.svg" alt="" class="ico-open-new-window-img"></a></td>
+                                        <td><div class="press-badge-wrap"><span class="press-badge is-blue">재정경제부</span><img src="../images/common/img-badge-mof.png" alt="재정경제부" class="press-badge-img"></div></td>
+                                        <td>공공혁신기획과</td>
+                                        <td>2026-07-23</td>
+                                    </tr>
+                                    <tr>
+                                        <td>7</td>
+                                        <td class="align-l"><a href="javascript:void(0);" target="_blank" rel="noopener noreferrer" class="press-tit-link link-txt-hover" title="새창열림"><span class="ellips">확대간부회의 개최</span><i class="ico-open-new-window" aria-hidden="true"></i><img src="../images/common/ico-open-new-window.svg" alt="" class="ico-open-new-window-img"></a></td>
+                                        <td><div class="press-badge-wrap"><span class="press-badge is-green">기획예산처</span><img src="../images/common/img-badge-mpb.png" alt="기획예산처" class="press-badge-img"></div></td>
+                                        <td>공공혁신기획과</td>
+                                        <td>2026-07-23</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td class="align-l"><a href="javascript:void(0);" target="_blank" rel="noopener noreferrer" class="press-tit-link link-txt-hover" title="새창열림"><span class="ellips">공공기관 혁신 워크숍 및 청년 AI 서포터즈 발대식 개최</span><i class="ico-open-new-window" aria-hidden="true"></i><img src="../images/common/ico-open-new-window.svg" alt="" class="ico-open-new-window-img"></a></td>
+                                        <td><div class="press-badge-wrap"><span class="press-badge is-blue">재정경제부</span><img src="../images/common/img-badge-mof.png" alt="재정경제부" class="press-badge-img"></div></td>
+                                        <td>공공혁신기획과</td>
+                                        <td>2026-07-23</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td class="align-l"><a href="javascript:void(0);" target="_blank" rel="noopener noreferrer" class="press-tit-link link-txt-hover" title="새창열림"><span class="ellips">초혁신경제를 위한 미래산업 부품 육성 ‘27년 예산안으로 뒷받침</span><i class="ico-open-new-window" aria-hidden="true"></i><img src="../images/common/ico-open-new-window.svg" alt="" class="ico-open-new-window-img"></a></td>
+                                        <td><div class="press-badge-wrap"><span class="press-badge is-blue">재정경제부</span><img src="../images/common/img-badge-mof.png" alt="재정경제부" class="press-badge-img"></div></td>
+                                        <td>공공혁신기획과</td>
+                                        <td>2026-07-23</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td class="align-l"><a href="javascript:void(0);" target="_blank" rel="noopener noreferrer" class="press-tit-link link-txt-hover" title="새창열림"><span class="ellips">확대간부회의 개최</span><i class="ico-open-new-window" aria-hidden="true"></i><img src="../images/common/ico-open-new-window.svg" alt="" class="ico-open-new-window-img"></a></td>
+                                        <td><div class="press-badge-wrap"><span class="press-badge is-green">기획예산처</span><img src="../images/common/img-badge-mpb.png" alt="기획예산처" class="press-badge-img"></div></td>
+                                        <td>공공혁신기획과</td>
+                                        <td>2026-07-23</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td class="align-l"><a href="javascript:void(0);" target="_blank" rel="noopener noreferrer" class="press-tit-link link-txt-hover" title="새창열림"><span class="ellips">공공기관 혁신 워크숍 및 청년 AI 서포터즈 발대식 개최</span><i class="ico-open-new-window" aria-hidden="true"></i><img src="../images/common/ico-open-new-window.svg" alt="" class="ico-open-new-window-img"></a></td>
+                                        <td><div class="press-badge-wrap"><span class="press-badge is-blue">재정경제부</span><img src="../images/common/img-badge-mof.png" alt="재정경제부" class="press-badge-img"></div></td>
+                                        <td>공공혁신기획과</td>
+                                        <td>2026-07-23</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td class="align-l"><a href="javascript:void(0);" target="_blank" rel="noopener noreferrer" class="press-tit-link link-txt-hover" title="새창열림"><span class="ellips">초혁신경제를 위한 미래산업 부품 육성 ‘27년 예산안으로 뒷받침</span><i class="ico-open-new-window" aria-hidden="true"></i><img src="../images/common/ico-open-new-window.svg" alt="" class="ico-open-new-window-img"></a></td>
+                                        <td><div class="press-badge-wrap"><span class="press-badge is-blue">재정경제부</span><img src="../images/common/img-badge-mof.png" alt="재정경제부" class="press-badge-img"></div></td>
+                                        <td>공공혁신기획과</td>
+                                        <td>2026-07-23</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td class="align-l"><a href="javascript:void(0);" target="_blank" rel="noopener noreferrer" class="press-tit-link link-txt-hover" title="새창열림"><span class="ellips">확대간부회의 개최</span><i class="ico-open-new-window" aria-hidden="true"></i><img src="../images/common/ico-open-new-window.svg" alt="" class="ico-open-new-window-img"></a></td>
+                                        <td><div class="press-badge-wrap"><span class="press-badge is-green">기획예산처</span><img src="../images/common/img-badge-mpb.png" alt="기획예산처" class="press-badge-img"></div></td>
+                                        <td>공공혁신기획과</td>
+                                        <td>2026-07-23</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    <!-- 카드형 -->
+                    <div class="benefit-result-table is-press is-card press-view" data-view="card" hidden>
+                        <ul class="benefit-result-list">
+                            <li>
+                                <span class="benefit-badge is-blue">
+                                    <span class="badge-list">재정경제부</span>
+                                    <span class="badge-card">재정경제부</span>
+                                </span>
+                                <a href="javascript:void(0);" target="_blank" rel="noopener noreferrer" class="press-link-new" title="새창열림"><i class="ico-open-new-window" aria-hidden="true"></i><span class="sr-only">공공기관 혁신 워크숍 및 청년 AI 서포터즈 발대식 개최 새창열림</span></a>
+                                <div class="info">
+                                    <a href="javascript:void(0);" class="tit">공공기관 혁신 워크숍 및 청년 AI 서포터즈 발대식 개최</a>
+                                    <p class="desc">재정경제부는 공공기관 혁신 워크숍 및 청년 AI 서포터즈 발대식을 개최하였습니다. 자세한 사항은 첨부를 참고해 주시기 바랍니다.</p>
+                                    <ul class="detail">
+                                        <li><span class="label">첨부파일</span><span class="value">pdf, hwp</span></li>
+                                        <li><span class="label">담당부서</span><span class="value">공공혁신기획과</span></li>
+                                        <li><span class="label">등록일</span><span class="value">2026.07.23</span></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-badge is-blue">
+                                    <span class="badge-list">재정경제부</span>
+                                    <span class="badge-card">재정경제부</span>
+                                </span>
+                                <a href="javascript:void(0);" target="_blank" rel="noopener noreferrer" class="press-link-new" title="새창열림"><i class="ico-open-new-window" aria-hidden="true"></i><span class="sr-only">초혁신경제를 위한 미래산업 부품 육성 ‘27년 예산안으로 뒷받침 새창열림</span></a>
+                                <div class="info">
+                                    <a href="javascript:void(0);" class="tit">초혁신경제를 위한 미래산업 부품 육성 ‘27년 예산안으로 뒷받침</a>
+                                    <p class="desc">허장 재정경제부 제2차관은 9.10일 (목) 로보티즈(서울 강서구)를 방문, 로봇기업 간담회를 개최하였습니다.</p>
+                                    <ul class="detail">
+                                        <li><span class="label">첨부파일</span><span class="value">pdf, hwp</span></li>
+                                        <li><span class="label">담당부서</span><span class="value">공공혁신기획과</span></li>
+                                        <li><span class="label">등록일</span><span class="value">2026.07.23</span></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-badge is-green">
+                                    <span class="badge-list">기획예산처</span>
+                                    <span class="badge-card">기획예산처</span>
+                                </span>
+                                <a href="javascript:void(0);" target="_blank" rel="noopener noreferrer" class="press-link-new" title="새창열림"><i class="ico-open-new-window" aria-hidden="true"></i><span class="sr-only">확대간부회의 개최 새창열림</span></a>
+                                <div class="info">
+                                    <a href="javascript:void(0);" class="tit">확대간부회의 개최</a>
+                                    <p class="desc">9.7(월) 15시, 정부세종청사에서 확대간부회의를 개최하였습니다. 자세한사항은 첨부를 참고해 주시기 바랍니다.</p>
+                                    <ul class="detail">
+                                        <li><span class="label">첨부파일</span><span class="value">pdf, hwp</span></li>
+                                        <li><span class="label">담당부서</span><span class="value">공공혁신기획과</span></li>
+                                        <li><span class="label">등록일</span><span class="value">2026.07.23</span></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-badge is-blue">
+                                    <span class="badge-list">재정경제부</span>
+                                    <span class="badge-card">재정경제부</span>
+                                </span>
+                                <a href="javascript:void(0);" target="_blank" rel="noopener noreferrer" class="press-link-new" title="새창열림"><i class="ico-open-new-window" aria-hidden="true"></i><span class="sr-only">공공기관 혁신 워크숍 및 청년 AI 서포터즈 발대식 개최 새창열림</span></a>
+                                <div class="info">
+                                    <a href="javascript:void(0);" class="tit">공공기관 혁신 워크숍 및 청년 AI 서포터즈 발대식 개최</a>
+                                    <p class="desc">재정경제부는 공공기관 혁신 워크숍 및 청년 AI 서포터즈 발대식을 개최하였습니다. 자세한 사항은 첨부를 참고해 주시기 바랍니다.</p>
+                                    <ul class="detail">
+                                        <li><span class="label">첨부파일</span><span class="value">pdf, hwp</span></li>
+                                        <li><span class="label">담당부서</span><span class="value">공공혁신기획과</span></li>
+                                        <li><span class="label">등록일</span><span class="value">2026.07.23</span></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-badge is-blue">
+                                    <span class="badge-list">재정경제부</span>
+                                    <span class="badge-card">재정경제부</span>
+                                </span>
+                                <a href="javascript:void(0);" target="_blank" rel="noopener noreferrer" class="press-link-new" title="새창열림"><i class="ico-open-new-window" aria-hidden="true"></i><span class="sr-only">초혁신경제를 위한 미래산업 부품 육성 ‘27년 예산안으로 뒷받침 새창열림</span></a>
+                                <div class="info">
+                                    <a href="javascript:void(0);" class="tit">초혁신경제를 위한 미래산업 부품 육성 ‘27년 예산안으로 뒷받침</a>
+                                    <p class="desc">허장 재정경제부 제2차관은 9.10일 (목) 로보티즈(서울 강서구)를 방문, 로봇기업 간담회를 개최하였습니다.</p>
+                                    <ul class="detail">
+                                        <li><span class="label">첨부파일</span><span class="value">pdf, hwp</span></li>
+                                        <li><span class="label">담당부서</span><span class="value">공공혁신기획과</span></li>
+                                        <li><span class="label">등록일</span><span class="value">2026.07.23</span></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-badge is-green">
+                                    <span class="badge-list">기획예산처</span>
+                                    <span class="badge-card">기획예산처</span>
+                                </span>
+                                <a href="javascript:void(0);" target="_blank" rel="noopener noreferrer" class="press-link-new" title="새창열림"><i class="ico-open-new-window" aria-hidden="true"></i><span class="sr-only">확대간부회의 개최 새창열림</span></a>
+                                <div class="info">
+                                    <a href="javascript:void(0);" class="tit">확대간부회의 개최</a>
+                                    <p class="desc">9.7(월) 15시, 정부세종청사에서 확대간부회의를 개최하였습니다. 자세한사항은 첨부를 참고해 주시기 바랍니다.</p>
+                                    <ul class="detail">
+                                        <li><span class="label">첨부파일</span><span class="value">pdf, hwp</span></li>
+                                        <li><span class="label">담당부서</span><span class="value">공공혁신기획과</span></li>
+                                        <li><span class="label">등록일</span><span class="value">2026.07.23</span></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-badge is-blue">
+                                    <span class="badge-list">재정경제부</span>
+                                    <span class="badge-card">재정경제부</span>
+                                </span>
+                                <a href="javascript:void(0);" target="_blank" rel="noopener noreferrer" class="press-link-new" title="새창열림"><i class="ico-open-new-window" aria-hidden="true"></i><span class="sr-only">공공기관 혁신 워크숍 및 청년 AI 서포터즈 발대식 개최 새창열림</span></a>
+                                <div class="info">
+                                    <a href="javascript:void(0);" class="tit">공공기관 혁신 워크숍 및 청년 AI 서포터즈 발대식 개최</a>
+                                    <p class="desc">재정경제부는 공공기관 혁신 워크숍 및 청년 AI 서포터즈 발대식을 개최하였습니다. 자세한 사항은 첨부를 참고해 주시기 바랍니다.</p>
+                                    <ul class="detail">
+                                        <li><span class="label">첨부파일</span><span class="value">pdf, hwp</span></li>
+                                        <li><span class="label">담당부서</span><span class="value">공공혁신기획과</span></li>
+                                        <li><span class="label">등록일</span><span class="value">2026.07.23</span></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-badge is-blue">
+                                    <span class="badge-list">재정경제부</span>
+                                    <span class="badge-card">재정경제부</span>
+                                </span>
+                                <a href="javascript:void(0);" target="_blank" rel="noopener noreferrer" class="press-link-new" title="새창열림"><i class="ico-open-new-window" aria-hidden="true"></i><span class="sr-only">초혁신경제를 위한 미래산업 부품 육성 ‘27년 예산안으로 뒷받침 새창열림</span></a>
+                                <div class="info">
+                                    <a href="javascript:void(0);" class="tit">초혁신경제를 위한 미래산업 부품 육성 ‘27년 예산안으로 뒷받침</a>
+                                    <p class="desc">허장 재정경제부 제2차관은 9.10일 (목) 로보티즈(서울 강서구)를 방문, 로봇기업 간담회를 개최하였습니다.</p>
+                                    <ul class="detail">
+                                        <li><span class="label">첨부파일</span><span class="value">pdf, hwp</span></li>
+                                        <li><span class="label">담당부서</span><span class="value">공공혁신기획과</span></li>
+                                        <li><span class="label">등록일</span><span class="value">2026.07.23</span></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-badge is-green">
+                                    <span class="badge-list">기획예산처</span>
+                                    <span class="badge-card">기획예산처</span>
+                                </span>
+                                <a href="javascript:void(0);" target="_blank" rel="noopener noreferrer" class="press-link-new" title="새창열림"><i class="ico-open-new-window" aria-hidden="true"></i><span class="sr-only">확대간부회의 개최 새창열림</span></a>
+                                <div class="info">
+                                    <a href="javascript:void(0);" class="tit">확대간부회의 개최</a>
+                                    <p class="desc">9.7(월) 15시, 정부세종청사에서 확대간부회의를 개최하였습니다. 자세한사항은 첨부를 참고해 주시기 바랍니다.</p>
+                                    <ul class="detail">
+                                        <li><span class="label">첨부파일</span><span class="value">pdf, hwp</span></li>
+                                        <li><span class="label">담당부서</span><span class="value">공공혁신기획과</span></li>
+                                        <li><span class="label">등록일</span><span class="value">2026.07.23</span></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pagination-wrap">
+                        <nav class="pagination-type" aria-label="페이지네이션">
+                            <button type="button" class="pg-prev" aria-label="이전 페이지" disabled="">
+                                <i class="ico-pg-arrow"></i>
+                                <span>이전</span>
+                            </button>
+                            <ul class="pg-list"><li class="on"><button type="button" aria-current="page">1</button></li><li><button type="button" aria-label="2페이지">2</button></li><li><button type="button" aria-label="3페이지">3</button></li><li><button type="button" aria-label="4페이지">4</button></li><li><button type="button" aria-label="5페이지">5</button></li><li><button type="button" aria-label="6페이지">6</button></li><li><button type="button" aria-label="7페이지">7</button></li><li><button type="button" aria-label="8페이지">8</button></li><li class="pg-ellipsis"><button type="button" aria-label="8페이지 이동"><span class="dots"><span></span><span></span><span></span></span></button></li><li><button type="button" aria-label="99페이지">99</button></li></ul>
+                            <button type="button" class="pg-next" aria-label="다음 페이지">
+                                <span>다음</span>
+                                <i class="ico-pg-arrow"></i>
+                            </button>
+                        </nav>
+                    </div>
+                </div>
+
+                <script id="feedback-template">
+                    // 피드백
+                    $.ajax({url:"common/feedback.txt", dataType:"text", success:function(data){
+                        $('#feedback-template').replaceWith(data);
+                        pageFeedback();
+                    }});
+                </script>
+
+            </div>
+            <!-- //contents -->
+
+            <script id="floating-template">
+                // 플로팅메뉴
+                $.ajax({url:"common/floating.txt", dataType:"text", success:function(data){
+                    $('#floating-template').replaceWith(data);
+                }});
+            </script>
+        </div>
+        <script id="footer-template">
+            // 푸터
+            $.ajax({url:"common/footer.txt", dataType:"text", success:function(data){
+                $('#footer-template').replaceWith(data);
+            }});
+        </script>
+    </div>
+    <!-- // wrap -->
+
+
+
+<script>
+$(function(){
+  $('.view-type-toggle').on('click', '.view-type-btn', function(){
+    var view = $(this).data('view');
+    $(this).addClass('on').attr('aria-pressed', 'true')
+      .siblings('.view-type-btn').removeClass('on').attr('aria-pressed', 'false');
+    // 목록(테이블) / 카드 전환
+    $('.press-view').each(function(){
+      $(this).prop('hidden', $(this).data('view') !== view);
+    });
+  });
+
+
+  var $detailFilter = $('#detailFilter');
+      var $filterBtn = $('.btn-filter-close');
+
+      $filterBtn.on('click', function(){
+        var $btn = $(this);
+        $btn.toggleClass('on');
+        $detailFilter.toggle();
+      });
+
+      $('.btn-detail-filter-close').on('click', function(){
+        $detailFilter.hide();
+      });
+
+
+
+      // 검색기간 탭 → datepicker 적용
+      function formatDate(date){
+        var y = date.getFullYear();
+        var m = ('0' + (date.getMonth() + 1)).slice(-2);
+        var d = ('0' + date.getDate()).slice(-2);
+        return y + '.' + m + '.' + d;
+      }
+
+      function setDatepickerVal($input, date){
+        if(!$input.length) return;
+        if(date){
+          $input.datepicker('setDate', date);
+        }else{
+          $input.datepicker('setDate', null);
+          $input.val('');
+        }
+      }
+
+      $('.btn-date-tab-group').on('click', '.btn-tab', function(){
+        var $tab = $(this);
+        var $group = $tab.closest('.btn-date-tab-group');
+        var $inputDate = $group.siblings('.input-date');
+        if(!$inputDate.length) $inputDate = $group.closest('.fm-row, .fm').find('.input-date').first();
+
+        var $start = $inputDate.find('.start-date');
+        var $end = $inputDate.find('.end-date');
+        var label = $tab.text().trim();
+        var today = new Date();
+        var startDate = null;
+
+        $group.find('.btn-tab').removeClass('on');
+        $tab.addClass('on');
+
+        if(label === '전체'){
+          setDatepickerVal($start, null);
+          setDatepickerVal($end, null);
+          return;
+        }
+
+        if(label === '3개월'){
+          startDate = new Date(today.getFullYear(), today.getMonth() - 3, today.getDate());
+        }else if(label === '6개월'){
+          startDate = new Date(today.getFullYear(), today.getMonth() - 6, today.getDate());
+        }else if(label === '1년'){
+          startDate = new Date(today.getFullYear() - 1, today.getMonth(), today.getDate());
+        }
+
+        setDatepickerVal($start, startDate);
+        setDatepickerVal($end, today);
+      });
+});
+</script>
+
+</body>
+</html>

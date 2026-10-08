@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title>열린재정</title>
+
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
+<script src="../js/pub-ui.js"></script>
+
+</head>
+<body>
+
+    <dl class="skipLink">
+        <dt>바로가기 메뉴</dt>
+        <dd><a href="#gnbMenu">주메뉴 바로가기</a></dd>
+        <dd><a href="#content">본문 바로가기</a></dd>
+    </dl>
+    <div class="wrap">
+        <script id="header-template">
+            // 헤더
+            $.ajax({url:"common/header.txt", dataType:"text", success:function(data){
+                $('#header-template').replaceWith(data);
+            }});
+        </script>
+
+        <div class="container" id="content">
+            <script id="breadcrumb-template">
+                // breadcrumb메뉴
+                $.ajax({url:"common/breadcrumb.txt", dataType:"text", success:function(data){
+                    $('#breadcrumb-template').replaceWith(data);
+                    breadcrumbMenu();
+                }});
+            </script>
+
+            <div class="contents">
+                <div class="rule-wrap">
+                    <div class="title-main-wrap">
+                        <h2 class="title-main">이용약관</h2>
+                    </div>
+
+                    <div class="rule-body st-terms">
+                        <!-- 제1조 -->
+                        <section class="rule-section">
+                            <h3 class="rule-article-tit">제1조 목적</h3>
+                            <p class="rule-desc">이 이용약관(이하 '약관'이라 합니다)은 기획예산처가 모두의재정 서비스의 이용에 관한 제반 사항과 기타 필요한 사항을 규정함을 목적으로 합니다.</p>
+                        </section>
+
+                        <!-- 제2조 -->
+                        <section class="rule-section">
+                            <h3 class="rule-article-tit">제2조 용어의 의의</h3>
+                            <div class="rule-group">
+                                <ol class="rule-circle-list">
+                                    <li><span class="num">①</span>이 약관에서 사용하는 용어의 정의는 다음 각호와 같습니다.</li>
+                                </ol>
+                                <ol class="num-list rule-num-list st-kor">
+                                    <li>모두의재정 서비스라 함은 국민이 자발적인 참여를 통해 자유롭게 정보를 공유하고 창조적인 서비스를 생산할 수 있도록 하기 위하여 기획예산처가 제공 ·운영하는 Open API서비스, 파일변환저장, 다운로드 등의 서비스를 말합니다.</li>
+                                    <li>데이터 제공기관이라 함은 모두의재정 서비스를 위해 보유한 데이터를 제공하는 기획예산처를 말합니다.</li>
+                                    <li>API라 함은 Application Programming interface의 약자로 모두의재정 서비스를 국민이 자신이 구축한 사이트에서 자유롭게 사용할 수 있도록 기획예산처가 제공하는 등록값의 집합을 말합니다.</li>
+                                    <li>Open API서비스라 함은 기획예산처가 운영하는 API(Application Programming interface)를 국민에게 개방하거나 제공하는 등의 서비스를 말합니다.</li>
+                                    <li>인증KEY라 함은 API 서비스 이용허가를 받은 사람임을 식별할 수 있도록 기획예산처가 국민에게 개별적으로 할당하는 고유한 값을 말합니다.</li>
+                                    <li>파일변환저장이라 함은 기획예산처가 데이터베이스 정보를 데이터파일로 변환 저장하는 기능을 제공하는 것을 말합니다.</li>
+                                    <li>다운로드라 함은 기획예산처가 데이터파일을 저장할 수 있는 기능을 제공하는 것을 말합니다.</li>
+                                </ol>
+                                <ol class="rule-circle-list">
+                                    <li><span class="num">②</span>이 약관에서 명시되지 않은 사항에 대해서는 [공공데이터의 제공 및 이용활성화에 관한 법률, 시행령 및 시행규칙] 등에 따르며, 그 외에는 일반 관례에 따릅니다.</li>
+                                </ol>
+                            </div>
+                        </section>
+
+                        <!-- 제3조 -->
+                        <section class="rule-section">
+                            <h3 class="rule-article-tit">제3조 적용범위</h3>
+                            <ol class="rule-circle-list">
+                                <li><span class="num">①</span>본 약관은 기획예산처 모두의재정 서비스를 이용하는 모든 회원 및 비회원에게 적용합니다.</li>
+                                <li><span class="num">②</span>본 약관은 회원 또는 비회원에 대한 모두의재정 서비스 제공행위 및 회원 또는 비회원의 모두의재정 서비스 이용행위에 대하여 적용됩니다.</li>
+                            </ol>
+                        </section>
+
+                        <!-- 제4조 -->
+                        <section class="rule-section">
+                            <h3 class="rule-article-tit">제4조 모두의재정 서비스의 이용 및 변경</h3>
+                            <ol class="rule-circle-list">
+                                <li><span class="num">①</span>모두의재정 Open API를 제외한 모든 서비스는 회원 및 비회원 모두 자유로이 이용할 수 있습니다.</li>
+                                <li><span class="num">②</span>Open API 서비스는 회원에 한하여 제공하며 회원이 Open API 서비스를 이용하고자 하는 경우에는 회원가입 이외에 별도로 Open API 서비스 페이지를 통해 인증Key를 발급 받아야 합니다.</li>
+                                <li><span class="num">③</span>기획예산처는 합리적인 사유가 발생할 경우 본 약관을 변경할 수 있으며, 이 경우 일정한 기간을 정하여 적용일자 및 변경사유를 명시한 사항을 회원 및 비회원에게 공지합니다. 다만, 공지를 하면서 회원 또는 비회원에게 일정한 기간 내에 의사표시를 하지 않으면 의사표시가 표명된 것으로 본다는 뜻을 명확히 전달하였음에도 회원이 명시적으로 거부의 의사표시를 하지 아니한 경우에는 회원 또는 비회원이 개정약관에 동의한 것으로 봅니다.</li>
+                                <li><span class="num">④</span>회원 및 비회원은 모두의재정 서비스를 이용할 시 주기적으로 공지사항을 확인하여야 할 의무가 있습니다.</li>
+                                <li><span class="num">⑤</span>약관의 변경 사실 및 내역을 확인하지 못하여 발생한 모든 손해에 대한 책임은 회원 및 비회원에게 귀속됩니다.</li>
+                            </ol>
+                        </section>
+
+                        <!-- 제5조 -->
+                        <section class="rule-section">
+                            <h3 class="rule-article-tit">제5조 모두의재정 Open API 서비스의 제한</h3>
+                            <ol class="rule-circle-list">
+                                <li><span class="num">①</span>기획예산처는 특정 Open API 서비스의 범위를 제한하거나 별도의 이용 가능 시간 또는 이용 가능 횟수를 지정할 수 있으며, 관련 법률 개정으로 인해 Open API 서비스 제공 대상이 변경되어 더 이상 활용을 할 수 없을 경우, 서비스 활용으로 인해 제공기관의 업무에 지장을 초래하거나 인프라 성능 등의 이유로 서비스 제공 상의 성능 문제가 발생한 경우 활용을 제한할 수 있습니다. 이 경우 이를 회원에게 사전에 고지하여야 합니다.</li>
+                                <li><span class="num">②</span>기획예산처는 회원이 Open API 서비스를 이용함에 있어 법령을 위반하거나 약관 또는 서비스 이용기준 등을 위반한 경우, 제공된 정보를 임의로 위조·변조하여 저작권을 위반하는 경우에는 제1항의 규정에도 불구하고 즉시 인증Key의 이용을 정지하는 등의 조치를 취할 수 있습니다.</li>
+                                <li><span class="num">③</span>기획예산처는 회원이 Open API 서비스에 대한 불법적인 해킹 시도, 비정상적인 방식을 통한 오남용 시도, 네트워크 사용 초과 등의 시도를 하는 경우 제1항의 규정에도 불구하고 즉시 인증Key의 사용을 정지시킬 수 있습니다.</li>
+                                <li><span class="num">④</span>기획예산처는 회원이 Open API 서비스를 활용함에 있어, 일정량 이상의 Traffic을 유발하는 경우, Open API 활용사례 등록을 강제화할 수 있습니다. 이러한 규정에도 불구하고, 활용사례를 등록하지 않을 경우 해당 인증Key의 사용을 제한할 수 있습니다.</li>
+                            </ol>
+                        </section>
+
+                        <!-- 제6조 -->
+                        <section class="rule-section">
+                            <h3 class="rule-article-tit">제6조 인증Key의 이용 및 관리</h3>
+                            <ol class="rule-circle-list">
+                                <li><span class="num">①</span>회원은 발급 받은 인증Key를 타인에게 제공, 공개하거나 공유할 수 없으며, 발급 받은 회원 본인에 한하여 이를 사용할 수 있습니다.</li>
+                                <li><span class="num">②</span>기획예산처는 인증Key를 발급함에 있어 이용기간을 지정할 수 있으며, 이용기간을 변경하고자 하는 경우에는 사전에 이를 고지하여야 합니다.</li>
+                            </ol>
+                        </section>
+
+                        <!-- 제7조 -->
+                        <section class="rule-section">
+                            <h3 class="rule-article-tit">제7조 모두의재정 서비스 이용시의 주의사항</h3>
+                            <ol class="rule-circle-list">
+                                <li><span class="num">①</span>기획예산처는 관계법령의 제·개정 및 기타 정책적 사유 등에 따라 모두의재정 서비스를 변경하거나 중단할 수 있습니다.</li>
+                                <li><span class="num">②</span>기획예산처는 모두의재정 서비스를 운영함에 있어 데이터의 특정범위를 분할하거나 또는 전체에 대하여 별도의 이용가능 시간 또는 이용가능 횟수를 지정할 수 있으며 이를 사전에 고지하여야 합니다.</li>
+                                <li><span class="num">③</span>회원 또는 비회원은 모두의재정 서비스를 이용한 검색결과를 노출함에 있어 선정적, 폭력적, 혐오적인 내용을 포함하여 반사회적, 비도덕적, 불법적인 내용과 결합 또는 연계하거나 인접하도록 구성할 수 없으며, 검색결과의 공공성을 준수하여야 합니다.</li>
+                                <li><span class="num">④</span>기획예산처는 모두의재정 서비스를 이용한 검색결과와 함께 광고를 게재할 권리를 가집니다. 다만 광고를 게재하고자 할 경우 사전에 회원 또는 비회원에게 이를 공지 또는 통지합니다.</li>
+                                <li><span class="num">⑤</span>기획예산처는 개인정보 보호정책을 공시하고 준수합니다.</li>
+                            </ol>
+                        </section>
+
+                        <!-- 제8조 -->
+                        <section class="rule-section">
+                            <h3 class="rule-article-tit">제8조 회원 또는 비회원의 의무</h3>
+                            <ol class="rule-circle-list">
+                                <li><span class="num">①</span>회원 또는 비회원은 모두의재정 서비스를 이용함에 있어서 본 약관에서 규정하는 사항과 기타 기획예산처가 정한 제반 규정, 공지사항 및 관계 법령을 준수하여야 하며, 기획예산처의 업무에 방해가 되는 행위 또는 기획예산처의 명예를 손상시키는 행위를 해서는 안됩니다.</li>
+                                <li><span class="num">②</span>모두의재정 서비스를 이용함에 있어서 회원 또는 비회원의 행위에 대한 모든 책임은 당사자가 부담하며, 회원은 기획예산처를 대리하는 것으로 오해가 될 수 있는 행위를 해서는 안됩니다.</li>
+                                <li><span class="num">③</span>회원 또는 비회원은 모두의재정 서비스 이용 시 기획예산처 및 제3자의 지적재산권을 침해해서는 안됩니다.</li>
+                                <li><span class="num">④</span>기획예산처가 제공하는 API 및 데이터파일, 검색결과 등에 대한 저작권은 기획예산처 혹은 제3자에 있고, 기획예산처의 이용허락으로 인해 회원 또는 비회원이 당해 API 및 데이터파일, 검색결과 등에 대한 저작권을 취득하는 것은 아닙니다. 다만, 회원이 제작한 프로그램에 대한 저작권은 회원 또는 비회원에게 귀속됩니다.</li>
+                                <li><span class="num">⑤</span>회원 또는 비회원은 모두의재정 서비스를 이용하여 검색결과를 노출할 경우, 해당 페이지에 "기획예산처 공공데이터"를 사용한 결과임을 명시해야 합니다. 다만, 기획예산처가 별도의 표시방식을 정한 경우에는 그에 따라야 합니다.</li>
+                            </ol>
+                        </section>
+
+                        <!-- 제9조 -->
+                        <section class="rule-section">
+                            <h3 class="rule-article-tit">제9조 API 및 데이터파일 이용허락 조건</h3>
+                            <p class="rule-desc">기획예산처는 모두의재정 서비스에 대하여 저작자 및 출처 표시 조건으로 자유이용을 허락함을 원칙으로 합니다.<br>단, 기획예산처 이외에 제3자에게 저작권이 귀속된 개별 API 및 데이터파일에 대하여는 해당 저작권자의 이용허락 조건에 따릅니다.</p>
+                        </section>
+
+                        <!-- 제10조 -->
+                        <section class="rule-section">
+                            <h3 class="rule-article-tit">제10조 책임의 제한</h3>
+                            <ol class="rule-circle-list">
+                                <li><span class="num">①</span>모두의재정에서 제공하는 서비스 및 데이터에 대한 책임은 데이터를 보유한 제공기관에게 귀속됩니다. 기획예산처는 모두의재정 서비스에 관하여 약관, 서비스별 안내, 기타 기획예산처가 정한 이용기준 및 관계법령을 준수하지 않은 이용으로 인한 결과에 대하여 책임을 지지 않습니다.</li>
+                                <li><span class="num">②</span>기획예산처는 모두의재정 서비스의 사용불능으로 인하여 회원 또는 비회원에게 발생한 손해에 대하여 책임을 지지 않습니다.</li>
+                                <li><span class="num">③</span>기획예산처는 회원 또는 비회원이 기획예산처 모두의재정 서비스를 이용하여 기대하는 수익을 얻지 못하거나 상실한 것에 대하여 책임을 지지 않습니다.</li>
+                                <li><span class="num">④</span>기획예산처는 회원·비회원·제3자 상호 간에 모두의재정 서비스를 매개로 발생한 분쟁에 대해 개입할 의무가 없으며, 이로 인한 손해를 배상할 책임도 없습니다.</li>
+                            </ol>
+                        </section>
+
+                        <!-- 제11조 -->
+                        <section class="rule-section">
+                            <h3 class="rule-article-tit">제11조 이용자격 박탈 및 손해배상</h3>
+                            <ol class="rule-circle-list">
+                                <li><span class="num">①</span>기획예산처는 회원 또는 비회원이 본 이용약관을 준수하지 않는 경우 서비스 사용 중지 및 이용자격을 박탈할 수 있습니다.</li>
+                                <li><span class="num">②</span>모두의재정 서비스 이용상 회원 또는 비회원의 귀책사유로 인하여 기획예산처에 손해가 발생한 경우 기획예산처는 본 약관에 따른 계약의 해지와는 별도로 손해배상을 청구할 수 있습니다.</li>
+                                <li><span class="num">③</span>기획예산처 모두의재정 서비스의 이용으로 기획예산처와 회원 또는 비회원간에 발생한 분쟁에 관하여 소송이 제기되는 경우 각 당사자는 자신의 주소지를 관할하는 법원에 소송을 제기할 수 있습니다.</li>
+                            </ol>
+                        </section>
+
+                        <!-- 부칙 -->
+                        <section class="rule-section">
+                            <h3 class="rule-article-tit">부칙</h3>
+                            <p class="rule-desc">제1조(시행일) 본 약관은 2018년 1월 19일부터 적용됩니다.</p>
+                        </section>
+                    </div>
+                </div>
+
+            </div>
+            <!-- //contents -->
+
+            <script id="floating-template">
+                // 플로팅메뉴
+                $.ajax({url:"common/floating.txt", dataType:"text", success:function(data){
+                    $('#floating-template').replaceWith(data);
+                }});
+            </script>
+        </div>
+        <script id="footer-template">
+            // 푸터
+            $.ajax({url:"common/footer.txt", dataType:"text", success:function(data){
+                $('#footer-template').replaceWith(data);
+            }});
+        </script>
+    </div>
+    <!-- // wrap -->
+
+</body>
+</html>

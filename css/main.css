@@ -6,7 +6,7 @@
 =========================================== */
 
 /* main hero search */
-.main-hero{position:relative;width:100%;min-height:340px;height:340px;margin-top:-65px;overflow:hidden;border-radius:0 0 80px 80px;background:linear-gradient(169.96deg,#d8e1ff 0%,#bad9eb 40%,#a9cfff 100%);}
+.main-hero{position:relative;width:100%;min-height:340px;height:340px;margin-top:-56px; overflow:hidden;border-radius:0 0 80px 80px;background:linear-gradient(169.96deg,#d8e1ff 0%,#bad9eb 40%,#a9cfff 100%);}
 .main-hero-bg{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
 .main-hero-bg-mo{position:absolute;inset:0;display:none;overflow:hidden;}
 .main-hero-scene{position:absolute;left:50%;top:-51px;width:1652px;max-width:none;height:493px;transform:translateX(-50%);object-fit:cover;pointer-events:none;}
@@ -244,4 +244,18 @@
 @media all and (max-width:768px){
   .main-banner-inner{height:80px;padding:0 12px;}
 
+}
+
+/* 공지 이미지 팝업 */
+.notice-image-popup .pop-wrap .popup{width:auto;min-width:0;}
+.notice-image-popup .pop-header .left{flex:1;min-width:0;}
+.notice-image-popup .pop-body{padding:32px 24px;}
+.notice-image-popup-link{display:block;}
+.notice-image-popup-link img{display:block;width:500px;max-width:100%;height:auto;}
+@media all and (max-width:1024px){
+  .notice-image-popup .pop-wrap{width:calc(100% - 32px);max-width:550px;}
+  .notice-image-popup .pop-wrap .popup{width:100%;max-width:none;}
+  .notice-image-popup .pop-header{padding:24px 16px 0;}
+  .notice-image-popup .pop-body{padding:24px 16px;}
+  .notice-image-popup-link img{width:100%;}
 }

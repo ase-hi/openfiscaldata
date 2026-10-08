@@ -43,6 +43,11 @@
       ["공통페이지", "title", "", "", ""],
       ["", "메인", "", "", "", "html/main.html", "", "", ""],
       ["", "로그인", "", "", "", "html/login.html", "", "", ""],
+      ["", "약관", "이용약관", "", "", "html/rule-terms.html", "", "", ""],
+      ["", "", "개인정보처리방침이란?", "", "", "html/rule-privacy.html", "", "", ""],
+      ["", "", "저작권 및 공공데이터 이용정책", "", "", "html/rule-copyright.html", "", "", ""],
+      ["", "", "이메일무단수집거부", "", "", "html/rule-email-privacy.html", "", "", ""],
+      ["", "", "공공데이터 개방", "", "", "html/rule-open-data.html", "", "", ""],
 
       ["FAB", "title", "", "", ""],
       ["", "통합검색", "", "", "", "html/total-search.html", "", "", ""],
@@ -102,6 +107,7 @@
       ["", "", "내 월급은 어떻게 쓰일까?", "", "", "html/finance-misc-salary.html", "", "", ""],
       ["", "", "사회복지 세출예산 (TOP 10)", "", "", "html/pop-finance-misc-welfare-top10.html", "", "", ""],
       ["", "", "빅데이터 재정뉴스", "", "", "html/finance-misc-bigdata-news.html", "", "", ""],
+      ["", "", "재정 보도자료", "", "", "html/finance-misc-press-release.html", "", "", ""],
       ["", "온라인 재정박물관", "", "", "", "외부링크", "", "", ""],
       ["", "e-재정배움 바로가기", "", "", "", "외부링크", "", "", ""],
 
@@ -163,7 +169,10 @@
       ["", "", "다차원분석(팝업)", "", "", "html/pop-timeseries-multi-analysis.html", "", "", ""],
       ["", "재정자료실", "재정자료분석 AI", "", "", "html/ai-analysis.html", "", "", ""],
       ["", "", "재정사업별 설명자료", "", "", "html/finance-program-docs.html", "", "", ""],
+      ["", "", "", "자료종류보기", "", "html/pop-finance-program-docs-type.html", "", "", ""],
       ["", "", "재정보고서 및 간행물", "", "", "html/finance-reports.html", "", "", ""],
+      ["", "", "", "자료종류보기 1", "", "html/pop-finance-reports-type1.html", "", "", ""],
+      ["", "", "", "자료종류보기 2", "", "html/pop-finance-reports-type2.html", "", "", ""],
       ["", "재정법령", "", "", "", "html/finance-law.html", "", "", ""],
       ["", "OPEN API", "OPEN API란?", "", "", "html/openapi-about.html", "", "", ""],
       ["", "", "OPEN API 목록", "", "", "html/openapi-list.html", "", "", ""],
@@ -218,6 +227,7 @@
       ["", "", "", "", "개인정보 수집 이용동의", "html/pop-finance-squad-privacy.html", "", "", ""],
 
       ["알림·안내", "title", "", "", "", ""], 
+      ["", "모두의재정 소개", "", "", "", "html/intro-finance.html", "", "", ""],
       ["", "공지사항", "", "", "", "html/notice.html", "", "", ""],
       ["", "", "상세", "", "", "html/notice-view.html", "", "", ""],
       ["", "자주 묻는 질문", "", "", "", "html/faq.html", "", "", ""],
@@ -253,7 +263,7 @@
           cell(data[i][3]) +
           cell(data[i][4]) +
           ((data[i][5]).includes('html') ? '<td><a href="'+data[i][5]+'">'+data[i][5]+'</a></td>' :'<td>'+ data[i][5] +'</td>') +
-          cell(data[i][7]) +
+          cell(data[i][6]) +
         '</tr>')
       }
     }
@@ -276,7 +286,7 @@
     <colgroup>
 			<col style="width:120px" />
 			<col style="width:150px" />
-			<col style="width:150px" />
+			<col style="width:160px" />
 			<col style="width:150px" />
 			<col style="width:150px" />
 			<col style="width:300px" />

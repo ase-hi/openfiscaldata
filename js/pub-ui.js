@@ -1372,6 +1372,61 @@ function financeCalendar(){
   });
 }
 
+// 상단 공지 : 펼치기/접기, 닫기, 오늘 하루 열지 않음
+function topNotice(){
+  var $notice = $('#topNotice');
+  var storageKey = 'fis-top-notice-hide';
+  var today = new Date().toDateString();
+
+  // 메인 페이지에서만 노출
+  if(!$('body').hasClass('body-main')){
+    $notice.remove();
+    return;
+  }
+
+  try{
+    if(localStorage.getItem(storageKey) === today){
+      $notice.attr('hidden', true);
+      return;
+    }
+  }catch(e){}
+
+  function setOpen(open){
+    var $head = $notice.find('.top-notice-head');
+    if(open){
+      $notice.addClass('is-open');
+      $notice.find('.top-notice-body').removeAttr('hidden');
+    }else{
+      $notice.removeClass('is-open');
+      $notice.find('.top-notice-body').attr('hidden', true);
+    }
+    $head.attr('aria-expanded', open ? 'true' : 'false');
+    $head.find('.sr-only').text(open ? '공지 접기' : '공지 펼치기');
+  }
+
+  $notice.off('click.topNotice').on('click.topNotice', '.top-notice-head', function(){
+    setOpen(!$notice.hasClass('is-open'));
+  });
+
+  $notice.on('click.topNotice', '.top-notice-close', function(){
+    if($notice.find('#topNoticeToday').is(':checked')){
+      try{ localStorage.setItem(storageKey, today); }catch(e){}
+      $notice.attr('hidden', true);
+      return;
+    }
+    setOpen(false);
+    $notice.find('.top-notice-head').focus();
+  });
+}
+
+function tryTopNotice(){
+  if($('#topNotice').length){
+    topNotice();
+  }else{
+    setTimeout(tryTopNotice, 50);
+  }
+}
+
 function tryFinanceCalendar(){
   if($('#financeCalendarPopup').length && $('#financeCalendarData').length){
     financeCalendar();
@@ -1933,6 +1988,7 @@ $(function(){
   }
   tryAllMenu();
   tryFinanceCalendar();
+  tryTopNotice();
   breadcrumbMenu();
   fontSettingMenu();
   viewFilesToggle();

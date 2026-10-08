@@ -269,6 +269,31 @@
     </div>
     <!-- // wrap -->
 
+    <!-- 공지 이미지 팝업 -->
+    <div class="popup-wrap notice-image-popup" id="noticeImagePopup" style="display:none;">
+        <div class="dim"></div>
+        <div class="pop-wrap">
+            <div class="popup" role="dialog" aria-modal="true" aria-label="모두의 재정 개편 안내">
+                <div class="pop-header">
+                    <div class="left">
+                        <div class="input-choice-wrap st-sm">
+                            <div class="input-choice"><input type="checkbox" id="noticeImagePopupToday"><label for="noticeImagePopupToday">오늘 하루 이창을 열지 않음</label></div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <button type="button" class="btn-close" aria-label="공지 팝업 닫기"><i class="ico-close"></i></button>
+                    </div>
+                </div>
+                <div class="pop-body">
+                    <a href="javascript:void(0);" class="notice-image-popup-link">
+                        <img src="../images/temp/img-notice-popup-banner.png" alt="모두의 재정 개편 안내 - 국민 모두의 재정 새롭게 달라졌습니다! 더 쉽고 편리해진 모두의 재정을 지금 만나보세요. 자세히 보기">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- // 공지 이미지 팝업 -->
+
 
 
 
@@ -278,6 +303,12 @@
 
 
     <script>
+
+
+        // 공지팝업
+         popOpen('#noticeImagePopup');
+
+         
 
         $('.search-mode-toggle button').on('click', function(){
             var mode = $(this).data('search-mode');
