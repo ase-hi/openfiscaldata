@@ -1967,6 +1967,144 @@ function korMap(data, title){
   });
 }
 
+// 시·도 클릭 → 시·군·구 상세 지도 (topojson-client + window.SIGUNGU_TOPO 필요)
+// valueFn(name, code) : 툴팁 값 문자열 반환 (미지정 시 예시 값)
+// 색상 단계(lv1~5) : 선택한 시·도 안에서 값 크기 순으로 5구간 자동 배정
+function sigunguMap(valueFn){
+  if (!window.topojson || !window.SIGUNGU_TOPO) return;
+  var topo = window.SIGUNGU_TOPO;
+  var geoms = topo.objects[Object.keys(topo.objects)[0]].geometries;
+  // kor-map-area → 행정코드 앞 2자리 (KOSTAT 2013)
+  var AREA = {
+    seoul:['서울',['11']], busan:['부산',['21']], daegu:['대구',['22']], incheon:['인천',['23']],
+    daejeon:['대전',['25']], ulsan:['울산',['26']], sejong:['세종',['29']], gyeonggi:['경기',['31']],
+    gangwon:['강원',['32']], chungbuk:['충북',['33']], chungnam:['충남',['34']], jeonbuk:['전북',['35']],
+    jeonnam:['전남 · 광주',['36','24']], gyeongbuk:['경북',['37']], gyeongnam:['경남',['38']], jeju:['제주',['39']]
+  };
+  // 상세 지도 제목 단위 (기본 : 시·군)
+  var UNIT = { seoul:'구', daejeon:'구', busan:'구·군', daegu:'구·군', incheon:'구·군', ulsan:'구·군', sejong:'시', jeonnam:'시·군·구' };
+  var W = 420, H = 470, PAD = 12;
+
+  valueFn = valueFn || function(name){
+    var h = 0;
+    for (var i = 0; i < name.length; i++) h = (h * 31 + name.charCodeAt(i)) % 997;
+    return (0.5 + h / 997 * 9).toFixed(2) + '조';
+  };
+  function shortName(name){
+    return name.length > 2 ? name.replace(/(특별자치시|시|군|구)$/, '') : name;
+  }
+  function ringArea(r){
+    var a = 0;
+    for (var i = 0, j = r.length - 1; i < r.length; j = i++) a += (r[j][0] + r[i][0]) * (r[j][1] - r[i][1]);
+    return Math.abs(a / 2);
+  }
+  function ringCentroid(r){
+    var x = 0, y = 0, a = 0;
+    for (var i = 0, j = r.length - 1; i < r.length; j = i++) {
+      var f = r[j][0] * r[i][1] - r[i][0] * r[j][1];
+      x += (r[j][0] + r[i][0]) * f; y += (r[j][1] + r[i][1]) * f; a += f * 3;
+    }
+    return a ? [x / a, y / a] : r[0];
+  }
+
+  function build(areaKey){
+    var conf = AREA[areaKey];
+    if (!conf) return null;
+    // 같은 시의 구(수원시장안구 …)는 시 단위로 병합
+    var groups = {}, order = [];
+    $.each(geoms, function(_, g){
+      var code = String(g.properties.code);
+      if ($.inArray(code.substr(0, 2), conf[1]) < 0) return;
+      var m = g.properties.name.match(/^(.+?시)(.+구)$/);
+      var key = m ? m[1] : g.properties.name;
+      if (!groups[key]) { groups[key] = { name:key, code:code, list:[] }; order.push(key); }
+      groups[key].list.push(g);
+    });
+    var items = $.map(order, function(k){
+      return { name:k, code:groups[k].code, polys:topojson.merge(topo, groups[k].list).coordinates };
+    });
+    // 경위도 → 평면 (위도 보정)
+    var k0 = Math.cos(36.5 * Math.PI / 180), maxA = 0;
+    $.each(items, function(_, it){
+      it.polys = $.map(it.polys, function(poly){
+        return [$.map(poly, function(ring){
+          return [$.map(ring, function(p){ return [[p[0] * k0, -p[1]]]; })];
+        })];
+      });
+      $.each(it.polys, function(_, poly){ maxA = Math.max(maxA, ringArea(poly[0])); });
+    });
+    // 영역 맞춤 : 아주 작은 먼 섬은 범위 계산에서 제외 (화면 밖은 잘림)
+    var minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+    $.each(items, function(_, it){
+      $.each(it.polys, function(_, poly){
+        if (ringArea(poly[0]) < maxA / 400) return;
+        $.each(poly[0], function(_, p){
+          if (p[0] < minX) minX = p[0]; if (p[0] > maxX) maxX = p[0];
+          if (p[1] < minY) minY = p[1]; if (p[1] > maxY) maxY = p[1];
+        });
+      });
+    });
+    var s = Math.min((W - PAD * 2) / (maxX - minX), (H - PAD * 2) / (maxY - minY));
+    var ox = (W - (maxX - minX) * s) / 2, oy = (H - (maxY - minY) * s) / 2;
+    function px(p){ return [ox + (p[0] - minX) * s, oy + (p[1] - minY) * s]; }
+
+    // 값 → 색상 단계 (5분위)
+    var sorted = $.map(items, function(it){ it.value = valueFn(it.name, it.code); it.num = parseFloat(it.value) || 0; return it; }).slice()
+      .sort(function(a, b){ return a.num - b.num; });
+    $.each(sorted, function(i, it){ it.level = Math.min(5, Math.floor(i / sorted.length * 5) + 1); });
+
+    var svg = '', labels = '';
+    $.each(items, function(_, it){
+      var d = '', best = null, bestA = 0;
+      $.each(it.polys, function(_, poly){
+        $.each(poly, function(ri, ring){
+          var pts = $.map(ring, function(p){ return [px(p)]; });
+          d += 'M' + $.map(pts, function(p){ return p[0].toFixed(1) + ',' + p[1].toFixed(1); }).join('L') + 'Z';
+          if (ri === 0) { var a = ringArea(pts); if (a > bestA) { bestA = a; best = pts; } }
+        });
+      });
+      var c = ringCentroid(best);
+      svg += '<g class="sgg-area lv' + it.level + '" tabindex="0" data-name="' + it.name + '" data-value="' + it.value + '" aria-label="' + it.name + ' ' + it.value + '"><path d="' + d + '"/></g>';
+      labels += '<span class="sgg-label lv' + it.level + '" data-name="' + it.name + '" style="left:' + c[0].toFixed(0) + 'px;top:' + c[1].toFixed(0) + 'px;">' + it.name + '</span>';
+    });
+    return '<svg class="sgg-svg" width="' + W + '" height="' + H + '" viewBox="0 0 ' + W + ' ' + H + '" xmlns="http://www.w3.org/2000/svg">' + svg + '</svg>' + labels;
+  }
+
+  function tipMove($inner, $tip, x, y){
+    var w = $inner.outerWidth(), tw = $tip.outerWidth(), th = $tip.outerHeight();
+    var left = x - tw / 2, top = y + 20;
+    if (left + tw > w) left = w - tw;
+    $tip.css({ left: Math.max(0, left), top: top });
+  }
+
+  var $map = $('.kor-map');
+  $map.on('click.sigungu keydown.sigungu', '.kor-map-area', function(e){
+    if (e.type === 'keydown' && e.which !== 13 && e.which !== 32) return;
+    e.preventDefault();
+    var area = $(this).data('area'), html = build(area);
+    if (!html) return;
+    var $inner = $(this).closest('.kor-map-inner');
+    $inner.find('.kor-map-tip').removeClass('is-show').attr('aria-hidden', 'true');
+    $inner.find('.kor-map-detail-tit').text(AREA[area][0] + ' ' + (UNIT[area] || '시·군') + ' 지도');
+    $inner.find('.kor-map-detail-stage').html(html);
+    $inner.addClass('is-detail').find('.kor-map-detail').removeAttr('hidden');
+    $inner.find('.kor-map-back').focus();
+  }).on('click.sigungu', '.kor-map-back', function(){
+    var $inner = $(this).closest('.kor-map-inner');
+    $inner.removeClass('is-detail').find('.kor-map-detail').attr('hidden', true);
+    $inner.find('.kor-map-tip').removeClass('is-show').attr('aria-hidden', 'true');
+  }).on('mouseenter.sigungu focus.sigungu', '.sgg-area', function(e){
+    var $area = $(this), $inner = $area.closest('.kor-map-inner'), $tip = $inner.find('.kor-map-tip');
+    $area.addClass('is-hover');
+    $tip.html('<dl class="kor-map-tip-item"><dt>' + shortName($area.data('name')) + '</dt><dd><strong>' + $area.data('value') + '</strong></dd></dl>').addClass('is-show').attr('aria-hidden', 'false');
+    var ib = $inner[0].getBoundingClientRect(), ab = this.getBoundingClientRect();
+    tipMove($inner, $tip, ab.left - ib.left + ab.width / 2, ab.top - ib.top + ab.height / 2);
+  }).on('mouseleave.sigungu blur.sigungu', '.sgg-area', function(){
+    $(this).removeClass('is-hover');
+    $(this).closest('.kor-map-inner').find('.kor-map-tip').removeClass('is-show').attr('aria-hidden', 'true');
+  });
+}
+
 
 
 

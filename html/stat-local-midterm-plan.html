@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title>열린재정</title>
+
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
+<link type="text/css" rel="preload" href="../css/font.css">
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
+<script src="../js/pub-ui.js"></script>
+
+</head>
+<body>
+
+    <dl class="skipLink">
+        <dt>바로가기 메뉴</dt>	
+        <dd><a href="#gnbMenu">주메뉴 바로가기</a></dd>
+        <dd><a href="#content">본문 바로가기</a></dd>
+    </dl>
+    <div class="wrap">
+        <script id="header-template">
+            // 헤더
+            $.ajax({url:"common/header.txt", dataType:"text", success:function(data){
+                $('#header-template').replaceWith(data);
+            }});
+        </script>
+
+        <div class="container" id="content">
+            <script id="subvisual-template">
+                $.ajax({url:"common/subvisual.txt", dataType:"text", success:function(data){
+                    $('#subvisual-template').replaceWith($(data).filter('#visual-statistics'));
+                }});
+            </script>
+
+            <script id="breadcrumb-template">
+                // breadcrumb메뉴
+                $.ajax({url:"common/breadcrumb.txt", dataType:"text", success:function(data){
+                    $('#breadcrumb-template').replaceWith(data);
+                    breadcrumbMenu();
+                }});
+            </script>
+            
+            <div class="contents">
+                <div class="finance-stat-wrap stat-local-wrap">
+                    <!-- 회계연도 선택 -->
+                    <div class="data-util">
+                        <div class="right">
+                            <div class="fm">
+                                <label for="midtermYear" class="label">회계연도</label>
+                                <div class="sel st-year">
+                                    <select id="midtermYear">
+                                        <option selected>2026</option>
+                                        <option>2025</option>
+                                        <option>2024</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 요약 지표 카드 -->
+                    <div class="stat-card-list">
+                        <div class="stat-card">
+                            <strong class="stat-card-tit">1차년도 재정규모</strong>
+                            <p class="stat-card-value"><em>568.1</em><span>조</span></p>
+                            <div class="stat-card-foot">
+                                <span class="stat-card-label">2026 · 광역+기초</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <strong class="stat-card-tit">5차년도 전망</strong>
+                            <p class="stat-card-value"><em>617.9</em><span>조</span></p>
+                            <div class="stat-card-foot">
+                                <span class="stat-card-label">2030년 계획</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <strong class="stat-card-tit">5년 연평균 증가율</strong>
+                            <p class="stat-card-value"><em>2.1</em><span>%</span></p>
+                            <div class="stat-card-foot">
+                                <span class="stat-card-label">기준 2026→2030</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <strong class="stat-card-tit">최다 시도</strong>
+                            <p class="stat-card-value"><em>117.1</em><span>조</span></p>
+                            <div class="stat-card-foot">
+                                <span class="stat-card-label">경기 · 1차년도</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 안내 -->
+                    <div class="cont-box st2">
+                        <p><b>중기지방재정계획</b>은 지방자치단체가 향후 5년간 재정운용 방향과 재정규모를 매년 수립하는 계획입니다.<br>수립연도가 1차년도이며, 세입과 세출을 같은 규모로 균형 있게 전망합니다.</p>
+                    </div>
+
+                    <!-- 개념 설명 -->
+                    <div class="title-section-wrap">
+                        <h3 class="title-section">중기지방재정계획 개념 설명</h3>
+                    </div>
+                    <div class="flow-box">
+                        <div class="flow-item st-blue">
+                            <strong class="flow-tit"><span class="flow-num st-blue">1</span>매년 수립</strong>
+                            <p class="flow-desc">자치단체가 해마다 향후 5년치 계획을 새로 세움</p>
+                        </div>
+                        <i class="flow-arrow" aria-hidden="true"></i>
+                        <div class="flow-item st-teal">
+                            <strong class="flow-tit"><span class="flow-num st-teal">2</span>5개년 전망</strong>
+                            <p class="flow-desc">수립연도(1차년도)부터 5년간 재정규모를 전망</p>
+                        </div>
+                        <i class="flow-arrow" aria-hidden="true"></i>
+                        <div class="flow-item st-navy">
+                            <strong class="flow-tit"><span class="flow-num st-navy">3</span>예산 편성 기준</strong>
+                            <p class="flow-desc">이듬해 예산 편성·투자 우선순위의 토대</p>
+                        </div>
+                    </div>
+
+                    <!-- 전망 탭 -->
+                    <div class="tab-main">
+                        <ul>
+                            <li class="on"><a href="javascript:void(0);" data-tab-id="tab-outlook">5개년 재정운용 전망</a></li>
+                            <li><a href="javascript:void(0);" data-tab-id="tab-region">시·도별 계획 규모</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-content" id="tab-outlook">
+                        <!-- 차트 : 5개년 재정운용 전망 -->
+                        <div class="chart-line-box">
+                          <div class="chart-head">
+                            <div class="chart-tit-wrap">
+                              <strong class="chart-tit">5개년 재정운용 전망</strong>
+                              <span class="chart-sub">(단위 : 조원)</span>
+                            </div>
+                            <div class="chart-btns">
+                              <button type="button" class="btn-sm btn-white"><i class="ico-chart-stat" aria-hidden="true"></i><span>통계설명</span></button>
+                              <button type="button" class="btn-sm btn-white"><i class="ico-chart-term" aria-hidden="true"></i><span>용어설명</span></button>
+                            </div>
+                          </div>
+                          <div class="chart-body">
+                            <img src="data:image/png;base64,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" alt="">
+                          </div>
+                        </div>
+
+                        <!-- 연도별 재정규모 전망 내역 -->
+                        <div class="title-section-wrap">
+                            <h3 class="title-section"><span class="title-section-inner">연도별 재정규모 전망 내역<span class="title-section-unit">(단위 : 조원)</span></span></h3>
+                            <div class="right">
+                                <button type="button" class="btn-sm btn-white"><i class="ico-chart-stat" aria-hidden="true"></i><span>통계설명</span></button>
+                                <button type="button" class="btn-sm btn-white"><i class="ico-chart-term" aria-hidden="true"></i><span>용어설명</span></button>
+                                <button type="button" class="btn-sm btn-white btn-excel">
+                                    <i class="ico-excel" aria-hidden="true"></i>
+                                    <span>엑셀 다운로드</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="data-default" style="height: 500px;background: #dedede;display:flex;justify-content:center;align-items:center;font-size:30px;">테이블영역</div>
+                    </div>
+
+                    <div class="tab-content" id="tab-region" style="display:none">
+                        <!-- 차트 : 시·도별 계획 재정규모 / 계획 규모 순위 -->
+                        <div class="chart-line-row">
+                            <div class="chart-line-box">
+                              <div class="chart-head">
+                                <div class="chart-tit-wrap">
+                                  <strong class="chart-tit">시·도별 계획 재정규모</strong>
+                                  <span class="chart-sub">(단위 : 조원)</span>
+                                </div>
+                                <div class="chart-btns">
+                                  <button type="button" class="btn-sm btn-white"><i class="ico-chart-stat" aria-hidden="true"></i><span>통계설명</span></button>
+                                  <button type="button" class="btn-sm btn-white"><i class="ico-chart-term" aria-hidden="true"></i><span>용어설명</span></button>
+                                </div>
+                              </div>
+                              <div class="chart-body">
+                                    <script id="map-template">
+                                        $.ajax({url:"common/map.html", dataType:"text", success:function(data){
+                                            $('#map-template').replaceWith(data);
+                                            $(function(){ initKorMap(); }); // 지도 마크업이 들어온 뒤(페이지 파싱 완료 후) 색상·툴팁·시군구 적용
+                                        }});
+                                    </script>
+                              </div>
+                            </div>
+                            <div class="chart-line-box">
+                              <div class="chart-head">
+                                <div class="chart-tit-wrap">
+                                  <strong class="chart-tit">계획 규모 순위</strong>
+                                  <span class="chart-sub">(단위 : 조원)</span>
+                                </div>
+                                <div class="chart-btns">
+                                  <button type="button" class="btn-sm btn-white"><i class="ico-chart-stat" aria-hidden="true"></i><span>통계설명</span></button>
+                                  <button type="button" class="btn-sm btn-white"><i class="ico-chart-term" aria-hidden="true"></i><span>용어설명</span></button>
+                                </div>
+                              </div>
+                              <div class="chart-body">
+                                <ol class="rank-list st-dense">
+                                    <li>
+                                    <span class="rank-name"><em>1</em>경기</span>
+                                    <span class="rank-bar"><span style="width:80.0%;"></span></span>
+                                    <span class="rank-value"><strong>117.1</strong>조</span>
+                                    </li>
+                                    <li>
+                                    <span class="rank-name"><em>2</em>서울</span>
+                                    <span class="rank-bar"><span style="width:56.2%;"></span></span>
+                                    <span class="rank-value"><strong>82.2</strong>조</span>
+                                    </li>
+                                    <li>
+                                    <span class="rank-name"><em>3</em>경북</span>
+                                    <span class="rank-bar"><span style="width:28.9%;"></span></span>
+                                    <span class="rank-value"><strong>42.3</strong>조</span>
+                                    </li>
+                                    <li>
+                                    <span class="rank-name"><em>4</em>경남</span>
+                                    <span class="rank-bar"><span style="width:25.7%;"></span></span>
+                                    <span class="rank-value"><strong>37.6</strong>조</span>
+                                    </li>
+                                    <li>
+                                    <span class="rank-name"><em>5</em>전남</span>
+                                    <span class="rank-bar"><span style="width:22.6%;"></span></span>
+                                    <span class="rank-value"><strong>33.1</strong>조</span>
+                                    </li>
+                                    <li>
+                                    <span class="rank-name"><em>6</em>부산</span>
+                                    <span class="rank-bar"><span style="width:21.0%;"></span></span>
+                                    <span class="rank-value"><strong>30.7</strong>조</span>
+                                    </li>
+                                    <li>
+                                    <span class="rank-name"><em>7</em>충남</span>
+                                    <span class="rank-bar"><span style="width:20.7%;"></span></span>
+                                    <span class="rank-value"><strong>30.3</strong>조</span>
+                                    </li>
+                                    <li>
+                                    <span class="rank-name"><em>8</em>전북</span>
+                                    <span class="rank-bar"><span style="width:18.2%;"></span></span>
+                                    <span class="rank-value"><strong>26.6</strong>조</span>
+                                    </li>
+                                    <li>
+                                    <span class="rank-name"><em>9</em>인천</span>
+                                    <span class="rank-bar"><span style="width:17.1%;"></span></span>
+                                    <span class="rank-value"><strong>25.1</strong>조</span>
+                                    </li>
+                                    <li>
+                                    <span class="rank-name"><em>10</em>강원</span>
+                                    <span class="rank-bar"><span style="width:16.7%;"></span></span>
+                                    <span class="rank-value"><strong>24.5</strong>조</span>
+                                    </li>
+                                    <li>
+                                    <span class="rank-name"><em>11</em>충북</span>
+                                    <span class="rank-bar"><span style="width:14.3%;"></span></span>
+                                    <span class="rank-value"><strong>20.9</strong>조</span>
+                                    </li>
+                                    <li>
+                                    <span class="rank-name"><em>12</em>대구</span>
+                                    <span class="rank-bar"><span style="width:13.7%;"></span></span>
+                                    <span class="rank-value"><strong>20.0</strong>조</span>
+                                    </li>
+                                    <li>
+                                    <span class="rank-name"><em>13</em>광주</span>
+                                    <span class="rank-bar"><span style="width:8.7%;"></span></span>
+                                    <span class="rank-value"><strong>12.8</strong>조</span>
+                                    </li>
+                                    <li>
+                                    <span class="rank-name"><em>14</em>대전</span>
+                                    <span class="rank-bar"><span style="width:8.5%;"></span></span>
+                                    <span class="rank-value"><strong>12.4</strong>조</span>
+                                    </li>
+                                    <li>
+                                    <span class="rank-name"><em>15</em>울산</span>
+                                    <span class="rank-bar"><span style="width:6.6%;"></span></span>
+                                    <span class="rank-value"><strong>9.7</strong>조</span>
+                                    </li>
+                                    <li>
+                                    <span class="rank-name"><em>16</em>제주</span>
+                                    <span class="rank-bar"><span style="width:5.5%;"></span></span>
+                                    <span class="rank-value"><strong>8.0</strong>조</span>
+                                    </li>
+                                    <li>
+                                    <span class="rank-name"><em>17</em>세종</span>
+                                    <span class="rank-bar"><span style="width:1.6%;"></span></span>
+                                    <span class="rank-value"><strong>2.4</strong>조</span>
+                                    </li>
+                                </ol>
+                              </div>
+                            </div>
+                        </div>
+
+                        <!-- 시·도별 계획 규모 내역 -->
+                        <div class="title-section-wrap">
+                            <h3 class="title-section"><span class="title-section-inner">시·도별 계획 규모 내역<span class="title-section-unit">(단위 : 조원)</span></span></h3>
+                            <div class="right">
+                                <button type="button" class="btn-sm btn-white"><i class="ico-chart-stat" aria-hidden="true"></i><span>통계설명</span></button>
+                                <button type="button" class="btn-sm btn-white"><i class="ico-chart-term" aria-hidden="true"></i><span>용어설명</span></button>
+                                <button type="button" class="btn-sm btn-white btn-excel">
+                                    <i class="ico-excel" aria-hidden="true"></i>
+                                    <span>엑셀 다운로드</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="data-default" style="height: 500px;background: #dedede;display:flex;justify-content:center;align-items:center;font-size:30px;">테이블영역</div>
+                        <div class="btn-more-wrap">
+                            <button type="button" class="btn-sm btn-white btn-more-view"><i class="ico-btn-more" aria-hidden="true"></i><span>더보기</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <script id="feedback-template">
+                    // 피드백
+                    $.ajax({url:"common/feedback.txt", dataType:"text", success:function(data){
+                        $('#feedback-template').replaceWith(data);
+                        pageFeedback();
+                    }});
+                </script>
+            </div>
+            <!-- //contents -->
+
+            <script id="floating-template">
+                // 플로팅메뉴
+                $.ajax({url:"common/floating.txt", dataType:"text", success:function(data){
+                    $('#floating-template').replaceWith(data);
+                }});
+            </script>
+        </div>
+        <script id="footer-template">
+            // 푸터
+            $.ajax({url:"common/footer.txt", dataType:"text", success:function(data){
+                $('#footer-template').replaceWith(data);
+            }});
+        </script>
+    </div>
+    <!-- // wrap -->
+
+
+<!-- 시·군·구 경계 -->
+<script src="../js/topojson-client.min.js"></script>
+<script src="../js/sigungu-topo-2013.js"></script>         
+<script>
+
+function initKorMap(){
+  // 시·도별 계획 재정규모 지도 : 예시 데이터 (level : 1~5 색상 단계, 0 = 값 없음)
+  var korMapData = {
+    seoul:     { level:5, list:[{ name:'서울특별시',       value:'82.2조원' }] },
+    busan:     { level:3, list:[{ name:'부산광역시',       value:'30.7조원' }] },
+    daegu:     { level:2, list:[{ name:'대구광역시',       value:'20.0조원' }] },
+    incheon:   { level:3, list:[{ name:'인천광역시',       value:'25.1조원' }] },
+    jeonnam:   { level:3, list:[{ name:'전라남도',         value:'33.1조원' }, { name:'광주광역시', value:'12.8조원' }] },
+    daejeon:   { level:1, list:[{ name:'대전광역시',       value:'12.4조원' }] },
+    ulsan:     { level:1, list:[{ name:'울산광역시',       value:'9.7조원' }] },
+    sejong:    { level:1, list:[{ name:'세종특별자치시',   value:'2.4조원' }] },
+    gyeonggi:  { level:5, list:[{ name:'경기도',           value:'117.1조원' }] },
+    gangwon:   { level:2, list:[{ name:'강원특별자치도',   value:'24.5조원' }] },
+    chungbuk:  { level:2, list:[{ name:'충청북도',         value:'20.9조원' }] },
+    chungnam:  { level:3, list:[{ name:'충청남도',         value:'30.3조원' }] },
+    jeonbuk:   { level:2, list:[{ name:'전북특별자치도',   value:'26.6조원' }] },
+    gyeongbuk: { level:4, list:[{ name:'경상북도',         value:'42.3조원' }] },
+    gyeongnam: { level:4, list:[{ name:'경상남도',         value:'37.6조원' }] },
+    jeju:      { level:1, list:[{ name:'제주특별자치도',   value:'8.0조원' }] }
+  };
+  korMap(korMapData, '계획규모');
+  // 시·도 클릭 → 시·군·구 상세 지도
+  sigunguMap();
+}
+
+
+</script>
+
+
+</body>
+</html>
