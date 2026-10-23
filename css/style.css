@@ -2380,6 +2380,7 @@ button.realpivot-view-tool > img{width:20px;height:20px;}
 .mymenu-search-field > .btn-nm{flex:none;}
 
 /* 메뉴 그룹(아코디언) */
+.mymenu-group-wrap{overflow-y:auto;max-height:460px;}
 .mymenu-group{display:flex;flex-direction:column;}
 button.mymenu-group-head{display:flex;align-items:center;gap:8px;width:100%;padding:16px;border:0;border-bottom:1px solid #000;border-radius:0;background:transparent;text-align:left;cursor:pointer;box-sizing:border-box;}
 button.mymenu-group-head::before{content:'';flex:none;width:20px;height:20px;background:url("../images/common/ico-mymenu-folder-empty.svg") no-repeat 50% 50%;background-size:20px 20px;}
@@ -2612,8 +2613,8 @@ button.btn-doc-icon > img{display:block;width:24px;height:24px;}
 .stat-card-foot{display:flex;align-items:center;gap:12px;white-space:nowrap;}
 .stat-card-label{font-size:17px;font-weight:400;line-height:1.5;color:#6d7882;}
 .stat-card-rate{font-size:17px;font-weight:600;line-height:1.5;color:#000;}
-.stat-card-rate.st-up{color:#ab2b36;}
-.stat-card-rate.st-blue{color:#0B50D0;}
+.stat-card-rate.st-up{color:#0B50D0;}
+.stat-card-rate.st-down{color:#ab2b36;}
 
 @media all and (max-width:1024px){
   .stat-card-list{flex-wrap:wrap;gap:16px;}

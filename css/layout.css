@@ -199,9 +199,11 @@
     .header .header-util-btn:nth-child(2){min-width:71px;}
     .header .header-util-btn .ico-header-calendar,
     .header .header-util-btn .ico-header-login,
+    .header .header-util-btn .ico-header-logout,
     .header .header-util-btn .ico-header-menu{display:block;flex:none;width:20px;height:20px;background-repeat:no-repeat;background-position:50% 50%;background-size:20px 20px;}
     .header .header-util-btn .ico-header-calendar{background-image:url('../images/common/ico-header-calendar.svg');}
     .header .header-util-btn .ico-header-login{background-image:url('../images/common/ico-header-login.svg');}
+    .header .header-util-btn .ico-header-logout{background-image:url('../images/common/ico-header-logout.svg');}
     .header .header-util-btn .ico-header-menu{background-image:url('../images/common/ico-header-menu.svg');}
 
     .header .gnb-menu-sub {display:none; position:fixed;top:0;left:-100%;width:100%;background:#fff;height:100vh;z-index: 80;overflow-y:auto;transition: all 0.5s ease;z-index: 10;}

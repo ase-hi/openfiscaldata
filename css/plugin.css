@@ -11,6 +11,7 @@
 .rg-body .rg-table tr td{vertical-align: middle;border-color:#cdd1d5;padding-left:8px !important;padding-right:8px !important; color:#464c53;font-weight:400;font-size:15px;background:initial !important;}
 .rg-body .rg-table tr td .ico-lock{vertical-align:middle;margin-left:5px;transform:translateY(-1px);}
 .rg-body .rg-table tr.rg-fixed-row td{background:#F5F8FD !important;padding:8px;}
+.rg-body .rg-table tr .rg-renderer{width:auto;}
 .rg-fixed-row-bar{display:none;}
 
 

@@ -277,6 +277,10 @@
             <i class="ico-header-login" aria-hidden="true"></i>
             <span>SNS 로그인</span>
           </button>
+          <!-- <button type="button" class="header-util-btn">
+            <i class="ico-header-logout" aria-hidden="true"></i>
+            <span>SNS 로그아웃</span>
+          </button> -->
           <button type="button" class="btn-m-menu header-util-btn btn-all-menu-open">
             <i class="ico-header-menu" aria-hidden="true"></i>
             <span>전체메뉴</span>
