@@ -860,8 +860,12 @@ html .ui-datepicker.month .ui-datepicker-buttonpane{margin-top:0;border-top:none
 .popup-wrap .pop-body .top-text + *{margin-top:24px;}
 .popup-wrap .pop-body .title-article-wrap ~ .title-article-wrap{margin-top:40px;}
 .popup-wrap .pop-body .pop-text{display:flex;flex-direction: column;gap:16px;}
+.popup-wrap .pop-body .section-wrap ~ .section-wrap{margin-top:40px;}
 @media all and (max-width:1024px){
     .popup-wrap .pop-body .top-text{font-size:15px;}
+}
+@media all and (max-width:768px){
+    .popup-wrap .section-wrap ~ .section-wrap{margin-top:32px;}
 }
 
 .popup-wrap .pop-guide{display:flex;align-items:center;gap:24px;padding:16px 24px;border:1px solid #d6e0eb;border-radius:8px;background:#eef2f7;box-sizing:border-box;}
