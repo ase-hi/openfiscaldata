@@ -3341,6 +3341,7 @@ button.btn-doc-icon > img{display:block;width:24px;height:24px;}
 .rule-table table tbody td *{font-size:15px;}
 .rule-table table tbody td.align-l{text-align:left;}
 .rule-change{display:flex;flex-direction:column;align-items:flex-start;gap:8px;}
+.rule-compare-table > .scroll > table > tbody > tr > td{vertical-align:top;}
 
 /* 개인정보처리방침 : 권리 행사 절차 */
 .rule-flow-box{padding:24px 40px;border-radius:8px;background:#ecf2fe;box-sizing:border-box;}

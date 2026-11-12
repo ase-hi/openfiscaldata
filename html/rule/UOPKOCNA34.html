@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title>열린재정</title>
+
+<link type="text/css" rel="stylesheet" href="../../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../../js/swiper10.3.1/swiper-bundle.min.css">
+<link type="text/css" rel="stylesheet" href="../../css/style.css">
+<script src="../../js/jquery-1.12.4.min.js"></script>
+<script src="../../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../../js/swiper10.3.1/swiper-bundle.min.js"></script>
+<script src="../../js/pub-ui.js"></script>
+
+</head>
+<body>
+
+    <dl class="skipLink">
+        <dt>바로가기 메뉴</dt>
+        <dd><a href="#gnbMenu">주메뉴 바로가기</a></dd>
+        <dd><a href="#content">본문 바로가기</a></dd>
+    </dl>
+    <div class="wrap">
+        <script id="header-template">
+            // 헤더
+            $.ajax({url:"../common/header.txt", dataType:"text", success:function(data){
+                $('#header-template').replaceWith(data.replace(/"\.\.\//g, '"../../')); // rule/ 하위 경로 보정
+            }});
+        </script>
+
+        <div class="container" id="content">
+            <script id="breadcrumb-template">
+                // breadcrumb메뉴
+                $.ajax({url:"../common/breadcrumb.txt", dataType:"text", success:function(data){
+                    $('#breadcrumb-template').replaceWith(data.replace(/"\.\.\//g, '"../../')); // rule/ 하위 경로 보정
+                    breadcrumbMenu();
+                }});
+            </script>
+
+            <div class="contents">
+                <div class="rule-wrap">
+                    <div class="title-main-wrap">
+                        <h2 class="title-main">개인정보처리방침이란?</h2>
+                    </div>
+
+                    <div class="rule-intro">
+                        <p>기획재정부(모두의재정)는 개인정보보호법 제30조에 따라 정보주체의 개인정보를 보호하고 이와 관련한 고충을 신속하고 원활하게 처리할 수 있도록 하기 위하여 다음과 같이 개인정보 처리방침을 수립ㆍ공개합니다.</p>
+                    </div>
+
+                    <div class="rule-body">
+                        <!-- 개인정보처리 절차 -->
+                        <section class="rule-section">
+                            <h3 class="title-section">개인정보처리 절차</h3>
+                            <p class="rule-desc">기획재정부(모두의재정)의 개인정보 처리절차는 <strong class="rule-em">수집&gt;이용&gt;보유&gt;파기</strong>로 구분됩니다.</p>
+                            <ol class="rule-process">
+                                <li>
+                                    <span class="rule-process-ico"><i class="ico-privacy ico-privacy-01" aria-hidden="true"></i></span>
+                                    <strong class="rule-process-tit">수집</strong>
+                                    <p class="rule-process-txt">모두의재정<br>서비스 제공</p>
+                                </li>
+                                <li>
+                                    <span class="rule-process-ico"><i class="ico-privacy ico-privacy-02" aria-hidden="true"></i></span>
+                                    <strong class="rule-process-tit">이용</strong>
+                                    <p class="rule-process-txt">데이터 주문, 질의응답 등<br>6개 업무</p>
+                                </li>
+                                <li>
+                                    <span class="rule-process-ico"><i class="ico-privacy ico-privacy-03" aria-hidden="true"></i></span>
+                                    <strong class="rule-process-tit">보유</strong>
+                                    <p class="rule-process-txt">1년, 10년, 담당자 변경 등<br>목적 달성시</p>
+                                </li>
+                                <li>
+                                    <span class="rule-process-ico"><i class="ico-privacy ico-privacy-04" aria-hidden="true"></i></span>
+                                    <strong class="rule-process-tit">파기</strong>
+                                    <p class="rule-process-txt">보유기간 만료 후<br>지체없이 파기</p>
+                                </li>
+                            </ol>
+                        </section>
+
+                        <!-- 한눈에 알아보는 개인정보처리방침 -->
+                        <section class="rule-section">
+                            <h3 class="title-section">한눈에 알아보는 개인정보처리방침</h3>
+                            <ul class="rule-card-list">
+                                <li>
+                                    <i class="ico-privacy ico-privacy-02" aria-hidden="true"></i>
+                                    <strong class="rule-card-tit">왜 개인정보를 수집하나요 ?</strong>
+                                    <p class="rule-card-txt">Open API 인증키 발급 및 데이터 주문<br>등 모두의재정 서비스 제공</p>
+                                </li>
+                                <li>
+                                    <i class="ico-privacy ico-privacy-01" aria-hidden="true"></i>
+                                    <strong class="rule-card-tit">어떤 개인정보를 수집하나요?</strong>
+                                    <p class="rule-card-txt">성명, 직업, 연락처 등 일반 개인정보 수집(6개 업무)</p>
+                                </li>
+                                <li>
+                                    <i class="ico-privacy ico-privacy-03" aria-hidden="true"></i>
+                                    <strong class="rule-card-tit">언제까지 개인정보를 보유하나요?</strong>
+                                    <p class="rule-card-txt">· 설문조사, KODAS 이용 : 1년<br>· 온라인모니터링단 개선제안, 인증키 발급, 기관자료 등록 서비스 : 목적달성 시<br>· 데이터 가공요청 : 10년</p>
+                                </li>
+                                <li>
+                                    <i class="ico-privacy ico-privacy-05" aria-hidden="true"></i>
+                                    <strong class="rule-card-tit">개인정보를 누구에게 위탁하나요?</strong>
+                                    <p class="rule-card-txt">(수탁자) 한국재정정보원<br>(위탁업무) 모두의재정 운영</p>
+                                </li>
+                                <li>
+                                    <i class="ico-privacy ico-privacy-06" aria-hidden="true"></i>
+                                    <strong class="rule-card-tit">누구에게 문의해야 하나요?</strong>
+                                    <p class="rule-card-txt">· (부서) 기획재정부 재정정책국 재정정보과<br>· (전화) 044-215-7392</p>
+                                </li>
+                                <li>
+                                    <i class="ico-privacy ico-privacy-07" aria-hidden="true"></i>
+                                    <strong class="rule-card-tit">어떻게 보호하나요?</strong>
+                                    <p class="rule-card-txt">· 관리적ㆍ기술적ㆍ물리적 안전성 확보 조치<br>· 개인정보보호활동</p>
+                                </li>
+                            </ul>
+                        </section>
+
+                        <!-- 목차 -->
+                        <section class="rule-section">
+                            <h3 class="title-section">목차</h3>
+                            <p class="rule-desc">기획재정부(모두의재정) 개인정보 처리방침은 다음과 같은 내용으로 구성되어 있습니다.</p>
+                            <div class="rule-toc">
+                                <p class="rule-toc-note">※ 목차 클릭 시 해당 조문으로 이동합니다.</p>
+                                <ul class="rule-toc-list">
+                                    <li><a href="#rule01"><i class="ico-privacy ico-privacy-02" aria-hidden="true"></i>제1조 개인정보의 처리목적</a></li>
+                                    <li><a href="#rule02"><i class="ico-privacy ico-privacy-03" aria-hidden="true"></i>제2조 개인정보의 처리 및 보유기간</a></li>
+                                    <li><a href="#rule03"><i class="ico-privacy ico-privacy-09" aria-hidden="true"></i>제3조 개인정보 파일의 등록현황 및 처리하는 개인정보 항목</a></li>
+                                    <li><a href="#rule04"><i class="ico-privacy ico-privacy-08" aria-hidden="true"></i>제4조 개인정보의 제3자 제공</a></li>
+                                    <li><a href="#rule05"><i class="ico-privacy ico-privacy-05" aria-hidden="true"></i>제5조 개인정보처리 위탁</a></li>
+                                    <li><a href="#rule06"><i class="ico-privacy ico-privacy-04" aria-hidden="true"></i>제6조 개인정보의 파기</a></li>
+                                    <li><a href="#rule07"><i class="ico-privacy ico-privacy-10" aria-hidden="true"></i>제7조 정보주체와 법정대리인의 권리ㆍ의무</a></li>
+                                    <li><a href="#rule08"><i class="ico-privacy ico-privacy-07" aria-hidden="true"></i>제8조 개인정보의 안전성 확보 조치</a></li>
+                                    <li><a href="#rule09"><i class="ico-privacy ico-privacy-12" aria-hidden="true"></i>제9조 개인정보 자동 수집 장치의 설치ㆍ운영 및 거부</a></li>
+                                    <li><a href="#rule10"><i class="ico-privacy ico-privacy-13" aria-hidden="true"></i>제10조 개인정보보호책임자</a></li>
+                                    <li><a href="#rule11"><i class="ico-privacy ico-privacy-14" aria-hidden="true"></i>제11조 개인정보 열람청구</a></li>
+                                    <li><a href="#rule12"><i class="ico-privacy ico-privacy-15" aria-hidden="true"></i>제12조 권익침해 구제방법</a></li>
+                                    <li><a href="#rule13"><i class="ico-privacy ico-privacy-16" aria-hidden="true"></i>제13조 개인정보의 추가적인 이용ㆍ제공 기준</a></li>
+                                    <li><a href="#rule14"><i class="ico-privacy ico-privacy-17" aria-hidden="true"></i>제14조 기타 사항</a></li>
+                                    <li><a href="#rule15"><i class="ico-privacy ico-privacy-18" aria-hidden="true"></i>제15조 개인정보 처리방침의 변경</a></li>
+                                </ul>
+                            </div>
+                        </section>
+
+                        <!-- 제1조 -->
+                        <section class="rule-section" id="rule01">
+                            <h3 class="rule-article-tit"><i class="ico-privacy ico-privacy-02" aria-hidden="true"></i>제1조 개인정보의 처리 목적</h3>
+                            <div class="rule-group">
+                                <p class="rule-desc">기획재정부(모두의재정)는 질의응답 서비스, 온라인모니터링단 서비스, OpenAPI 인증키 발급 및 서비스, 데이터 주문 서비스, 기관자료 등록 서비스 등 동의 받은 목적으로 개인정보를 처리합니다.<br>개인정보는 목적 이외의 용도로는 사용되지 않으며 이용 목적이 변경될 시에는 개인정보보호법 제18조에 따라 별도의 동의를 받는 등 필요한 조치를 이행할 예정입니다.<br><br>기획재정부(모두의재정)는 개인정보 보호법 제32조에 따라 등록ㆍ공개하는 개인정보파일의 처리목적은 다음과 같습니다.</p>
+                                <div class="table-secondary rule-table">
+                                    <div class="scroll">
+                                        <table>
+                                            <caption class="sr-only">개인정보의 처리목적 — 개인정보파일명, 근거, 목적</caption>
+                                            <colgroup>
+                                                <col style="width:25%">
+                                                <col style="width:25%">
+                                                <col style="width:50%">
+                                            </colgroup>
+                                            <thead>
+                                                <tr><th scope="col">개인정보파일명</th><th scope="col">근거</th><th scope="col">목적</th></tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr><td>모두의재정 설문조사</td><td>정보주체 동의</td><td>모두의재정 설문조사 결과 정보 제공</td></tr>
+                                                <tr><td>모두의재정 온라인<br>모니터링단 개선제안</td><td>정보주체 동의</td><td>온라인 모니터링단 활동ㆍ의견 관리</td></tr>
+                                                <tr><td>모두의재정 OpenAPI<br>인증키 발급</td><td>정보주체 동의</td><td>OpenAPI 인증키 발급 및 서비스 제공</td></tr>
+                                                <tr><td>모두의재정<br>데이터 가공 요청</td><td>정보주체 동의</td><td>모두의재정의 재정데이터 가공요청 서비스 제공</td></tr>
+                                                <tr><td>모두의재정 기관자료<br>등록 서비스</td><td>정보주체 동의</td><td>모두의재정 기관자료 등록 서비스 제공</td></tr>
+                                                <tr><td>재정데이터<br>분석서비스(KODAS) 이용</td><td>정보주체 동의</td><td>재정데이터분석센터 방문자 명단 관리</td></tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <p class="rule-desc">※ 모두의재정시스템에서 등록ㆍ공개하는 개인정보파일의 상세내용은 개인정보보호위원회 개인정보 포털(www.privacy.go.kr) → 개인서비스 → 정보주체 권리행사 → 개인정보 열람등요구 → 개인정보파일 목록검색 메뉴를 활용해 주시기 바랍니다.<br>※ 개인정보파일의 등록현황의 요약 내용은 제1조, 제2조, 제3조에서 안내하는 개인정보파일명, 수집근거, 수집목적, 보유기간, 수집항목, 수집방법으로 갈음합니다.</p>
+                            </div>
+                        </section>
+
+                        <!-- 제2조 -->
+                        <section class="rule-section" id="rule02">
+                            <h3 class="rule-article-tit"><i class="ico-privacy ico-privacy-03" aria-hidden="true"></i>제2조 개인정보의 처리 및 보유 기간</h3>
+                            <div class="rule-group">
+                                <ol class="rule-circle-list">
+                                    <li><span class="num">①</span>기획재정부(모두의재정)는 법령에 따른 개인정보 보유ㆍ이용기간 또는 정보주체로부터 개인정보를 수집시에 동의받은 개인정보 보유ㆍ이용기간 내에서 개인정보를 처리ㆍ보유합니다.</li>
+                                    <li><span class="num">②</span>개인정보 처리 및 보유 기간은 다음과 같습니다.</li>
+                                </ol>
+                                <div class="table-secondary rule-table">
+                                    <div class="scroll">
+                                        <table>
+                                            <caption class="sr-only">처리하는 개인정보의 항목 — 개인정보파일명, 목적, 보유기간</caption>
+                                            <colgroup>
+                                                <col style="width:33%">
+                                                <col style="width:33%">
+                                                <col style="width:33%">
+                                            </colgroup>
+                                            <thead>
+                                                <tr><th scope="col">개인정보파일명</th><th scope="col">목적</th><th scope="col">보유기간</th></tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr><td>모두의재정 설문조사</td><td>모두의재정 설문조사 결과 정보 제공</td><td>수집 후 1년</td></tr>
+                                                <tr><td>모두의재정 온라인<br>모니터링단 개선제안</td><td>온라인모니터링단 활동ㆍ의견 관리</td><td>온라인모니터링단<br>활동 종료 시까지</td></tr>
+                                                <tr><td>모두의재정 OpenAPI<br>인증키 발급</td><td>OpenAPI 인증키 발급 및 서비스 제공</td><td>인증키 폐기 시까지</td></tr>
+                                                <tr><td>모두의재정 데이터<br>가공 요청</td><td>모두의재정의 재정데이터가공요청 서비스 제공</td><td>수집 후 10년</td></tr>
+                                                <tr><td>모두의재정 기관자료<br>등록 서비스</td><td>모두의재정 기관자료 등록 서비스 제공</td><td>담당자 변경 시까지</td></tr>
+                                                <tr><td>재정데이터 분석서비스<br>(KODAS) 이용</td><td>재정데이터분석센터 방문자 명단 관리</td><td>수집 후 1년</td></tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <p class="rule-desc">※ 관계 법령 위반에 따른 수사ㆍ조사 등이 진행 중인 경우에는 해당 수사ㆍ조사 종료 시까지</p>
+                            </div>
+                        </section>
+
+                        <!-- 제3조 -->
+                        <section class="rule-section" id="rule03">
+                            <h3 class="rule-article-tit"><i class="ico-privacy ico-privacy-09" aria-hidden="true"></i>제3조 개인정보 파일의 등록현황 및 처리하는 개인정보 항목</h3>
+                            <div class="rule-group">
+                                <p class="rule-desc">기획재정부(모두의재정)에서 서비스 제공 등을 위해 처리하는 개인정보의 항목 및 수집 방법은 다음과 같습니다.</p>
+                                <div class="table-secondary rule-table">
+                                    <div class="scroll">
+                                        <table>
+                                            <caption class="sr-only">처리하는 개인정보의 항목 — 개인정보파일명, 개인정보항목, 수집방법</caption>
+                                            <colgroup>
+                                                <col style="width:20%">
+                                                <col style="width:50%">
+                                                <col style="width:30%">
+                                            </colgroup>
+                                            <thead>
+                                                <tr><th scope="col">개인정보파일명</th><th scope="col">개인정보항목</th><th scope="col">수집방법</th></tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr><td>모두의재정 설문조사</td><td>(필수) 성별, 연령, 직업, 연락처, 이메일</td><td>온라인 수집</td></tr>
+                                                <tr><td>모두의재정 온라인<br>모니터링단 개선제안</td><td>(필수) 담당자, 이메일</td><td>온라인 수집</td></tr>
+                                                <tr><td>모두의재정 OpenAPI<br>인증키 발급</td><td>(필수) 신청자명</td><td>온라인 수집</td></tr>
+                                                <tr><td>모두의재정 데이터<br>가공 요청</td><td>(필수) 신청자, 이메일</td><td>온라인 수집</td></tr>
+                                                <tr><td>모두의재정 기관자료<br>등록 서비스</td><td>(필수) 담당자명,소관</td><td>온라인 수집</td></tr>
+                                                <tr><td>재정데이터 분석서비스<br>(KODAS) 이용</td><td>(필수) 이름,이메일,연락처</td><td>온라인 수집</td></tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- 제4조 -->
+                        <section class="rule-section" id="rule04">
+                            <h3 class="rule-article-tit"><i class="ico-privacy ico-privacy-08" aria-hidden="true"></i>제4조 개인정보의 제3자 제공</h3>
+                            <div class="rule-group">
+                                <p class="rule-desc">기획재정부(모두의재정)는 정보주체의 동의, 법률의 특별한 규정 등 「개인정보보호법」, 제17조(개인정보의 제공) 및 제18조(개인정보의 목적 외 이용ㆍ제공 제한)에 해당하는 경우에만 개인정보를 제3자에게 제공합니다.<br>현재 제17조에 따른 제3자 제공은 없습니다. 제18조에 따른 제3자 제공이 발생할 경우에는 홈페이지에 공개할 예정입니다.</p>
+                            </div>
+                        </section>
+
+                        <!-- 제5조 -->
+                        <section class="rule-section" id="rule05">
+                            <h3 class="rule-article-tit"><i class="ico-privacy ico-privacy-05" aria-hidden="true"></i>제5조 개인정보처리 위탁</h3>
+                            <div class="rule-group">
+                                <ol class="rule-circle-list">
+                                    <li><span class="num">①</span>기획재정부(모두의재정)는 원활한 개인정보 업무처리를 위하여 다음과 같이 관련 업무를 위탁하고 있습니다.</li>
+                                </ol>
+                                <div class="table-secondary rule-table">
+                                    <div class="scroll">
+                                        <table>
+                                            <caption class="sr-only">개인정보처리 위탁 — 위탁받는 자(수탁자), 위탁하는 업무의 내용, 수탁자 연락처, 위수탁기간</caption>
+                                            <colgroup>
+                                                <col style="width:25%">
+                                                <col style="width:25%">
+                                                <col style="width:25%">
+                                                <col style="width:25%">
+                                            </colgroup>
+                                            <thead>
+                                                <tr><th scope="col">위탁받는 자(수탁자)</th><th scope="col">위탁하는 업무의 내용</th><th scope="col">수탁자 연락처</th><th scope="col">위수탁기간</th></tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr><td>한국재정정보원</td><td>모두의재정 운영</td><td>02-6908-8200</td><td>2023.1.1~2023.12.31.</td></tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="table-secondary rule-table">
+                                    <div class="scroll">
+                                        <table>
+                                            <caption class="sr-only">개인정보처리 재위탁 — 재위탁받는 자(재수탁자), 위탁하는 업무의 내용, 수탁자 연락처, 위수탁기간</caption>
+                                            <colgroup>
+                                                <col style="width:25%">
+                                                <col style="width:25%">
+                                                <col style="width:25%">
+                                                <col style="width:25%">
+                                            </colgroup>
+                                            <thead>
+                                                <tr><th scope="col">재위탁받는 자(재수탁자)</th><th scope="col">위탁하는 업무의 내용</th><th scope="col">수탁자 연락처</th><th scope="col">위수탁기간</th></tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr><td>(주)세림티에스지</td><td>모두의재정 전산장비 유지관리</td><td>042-600-0600</td><td>2023.1.1~2025.12.31.</td></tr>
+                                                <tr><td>(주)효성아이티엑스</td><td>모두의재정 고객센터 운영</td><td>02-2106-1900</td><td>2023.7.1~2025.6.30.</td></tr>
+                                                <tr><td>(주)코드프레소</td><td>재정분석 교육 운영</td><td>02-6954-7733</td><td>2023.6.12~2023.12.21.</td></tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <ol class="rule-circle-list">
+                                    <li><span class="num">②</span>기획재정부(모두의재정)는 위탁계약 체결 시 개인정보 보호법 제26조에 따라 위탁업무 수행목적 외 개인정보 처리금지, 기술적ㆍ관리적 보호조치, 위탁업무의 목적 및 범위, 재 위탁 제한, 개인정보에 대한 접근 제한 등 안전성 확보 조치에 관한 사항, 위탁업무와 관련하여 보유하고 있는 개인정보의 관리 현황 점검 등 감독에 관한 사항, 수탁자에 대한 관리ㆍ감독, 수탁자가 준수하여야 할 의무를 위반한 경우의 손해배상 등 책임에 관한 사항을 계약서 등 문서에 명시하고, 수탁자가 개인정보를 안전하게 처리하는지를 감독하고 있습니다.</li>
+                                    <li><span class="num">③</span>위탁업무의 내용이나 수탁자가 변경될 경우에는 지체 없이 본 개인정보 처리방침을 통하여 공개하고 있습니다.</li>
+                                </ol>
+                            </div>
+                        </section>
+
+                        <!-- 제6조 -->
+                        <section class="rule-section" id="rule06">
+                            <h3 class="rule-article-tit"><i class="ico-privacy ico-privacy-04" aria-hidden="true"></i>제6조 개인정보의 파기</h3>
+                            <div class="rule-group">
+                                <ol class="rule-circle-list">
+                                    <li><span class="num">①</span>기획재정부(모두의재정)는 원칙적으로 개인정보 보유기간의 경과, 처리목적 달성, 회원 탈퇴해지 신청 등 개인정보가 불필요하게 되었을 때에는 지체없이 해당 개인정보를 파기합니다.</li>
+                                    <li><span class="num">②</span>정보주체로부터 동의받은 개인정보 보유기간이 경과하거나 처리목적이 달성되었음에도 불구하고 다른 법령에 따라 개인정보를 계속 보존하여야 하는 경우에는,<br>해당 개인정보(또는 개인정보파일)를 별도의 데이터베이스(DB)로 옮기거나 보관장소를 달리하여 보존합니다.</li>
+                                    <li><span class="num">③</span>개인정보 파기의 절차 및 방법은 다음과 같습니다.<br>1. 파기절차<br>기획재정부(모두의재정)는 파기하여야 하는 개인정보에 대하여 개인정보 파기 계획을 수립하여 파기합니다.<br>기획재정부(모두의재정)는 파기 사유가 발생한 개인정보를 선정하고, 기획재정부의 개인정보 보호책임자의 승인을 받아 개인정보를 파기합니다.<br>2. 파기방법<br>전자적 파일형태의 정보는 기록을 재생할 수 없는 기술적 방법을 사용합니다. 종이에 출력된 개인정보는 분쇄기로 분쇄하거나 소각을 통하여 파기합니다.</li>
+                                </ol>
+                            </div>
+                        </section>
+
+                        <!-- 제7조 -->
+                        <section class="rule-section" id="rule07">
+                            <h3 class="rule-article-tit"><i class="ico-privacy ico-privacy-10" aria-hidden="true"></i>제7조 정보주체와 법정대리인의 권리ㆍ의무 및 행사방법</h3>
+                            <div class="rule-group">
+                                <ol class="rule-circle-list">
+                                    <li><span class="num">①</span>정보주체(만 14세 미만인 경우에는 법정대리인을 말함)는 언제든지 다음 각 호의 개인정보 보호 관련 권리를 행사할 수 있습니다.</li>
+                                </ol>
+                                <ol class="num-list rule-num-list">
+                                    <li>개인정보 열람요구</li>
+                                    <li>오류 등이 있을 경우 정정 요구</li>
+                                    <li>삭제요구</li>
+                                    <li>처리정지 요구</li>
+                                </ol>
+                                <ol class="rule-circle-list">
+                                    <li><span class="num">②</span>제1항에 따른 권리 행사는 서면, 전자우편, 모사전송(FAX) 등을 통하여 하실 수 있으며, 이에 대해 지체 없이 조치하겠습니다.</li>
+                                    <li><span class="num">③</span>정보주체가 개인정보의 오류 등에 대한 정정 또는 삭제를 요구한 경우에는 정정 또는 삭제를 완료할 때까지 당해 개인정보를 이용하거나 제공하지 않습니다.</li>
+                                </ol>
+                                <div class="rule-btns st-indent">
+                                    <a href="https://www.openfiscaldata.go.kr/images/common/Privacy_01_20210218.hwp" class="btn-sm st-white"><i class="ico-document" aria-hidden="true"></i>[서식] 개인정보 열람 요구서</a>
+                                    <a href="https://www.openfiscaldata.go.kr/images/common/Privacy_02_20210218.hwp" class="btn-sm st-white"><i class="ico-document" aria-hidden="true"></i>[서식] 개인정보 정정ㆍ삭제 처리정지 요구서</a>
+                                </div>
+                                <ol class="rule-circle-list">
+                                    <li><span class="num">④</span>제1항에 따른 권리 행사는 정보주체의 법정대리인이나 위임을 받은 자 등 대리인을 통하여 하실 수 있습니다. 이 경우 개인정보처리방법에 관한 고시 별지 제11호 서식에 따른 위임장을 제출하셔야 합니다.</li>
+                                </ol>
+                                <div class="rule-btns st-indent">
+                                    <a href="https://www.openfiscaldata.go.kr/images/common/Privacy_03_20210218.hwp" class="btn-sm st-white"><i class="ico-document" aria-hidden="true"></i>[개인정보 처리방법에 관한 고시 별지 제11호서식] 위임장</a>
+                                </div>
+                                <ol class="rule-circle-list">
+                                    <li><span class="num">⑤</span>개인정보 열람 및 처리정지 요구는 개인정보보호법 제35조 제5항, 제37조 제2항에 의하여 정보주체의 권리가 제한 될 수 있습니다.</li>
+                                    <li><span class="num">⑥</span>개인정보의 정정 및 삭제 요구는 다른 법령에서 그 개인정보가 수집 대상으로 명시되어 있는 경우에는 그 삭제를 요구할 수 없습니다.</li>
+                                    <li><span class="num">⑦</span>정보주체는 개인정보 보호법 등 관계볍령을 위반하여 기획재정부가 처리하고 있는 정보주체 본인이나 타인의 개인정보 및 사생활을 침해하여서는 아니됩니다.</li>
+                                    <li><span class="num">⑧</span>정보주체 권리에 따른 열람의 요구, 정정·삭제의 요구, 처리정지의 요구 시 열람 등 요구를 한 자가 본인이거나 정당한 대리인인지를 확인합니다.</li>
+                                    <li><span class="num">⑨</span>개인정보 처리와 관련한 불만 처리, 피해구제 등은 아래와 같은 절차로 처리됩니다.</li>
+                                </ol>
+                            </div>
+                            <div class="rule-flow-box">
+                                <div class="tab-filter" role="tablist" aria-label="권리 행사 절차">
+                                    <button type="button" role="tab" class="on" data-tab-id="ruleFlow1" aria-selected="true">① 열람 청구</button>
+                                    <button type="button" role="tab" data-tab-id="ruleFlow2" aria-selected="false">② 정정·삭제·처리정지 청구</button>
+                                    <button type="button" role="tab" data-tab-id="ruleFlow3" aria-selected="false">①, ② 거부에 따른 이의제기</button>
+                                </div>
+                                <div class="tab-content" id="ruleFlow1" role="tabpanel">
+                                    <div class="rule-flow">
+                                        <div class="rule-flow-person"><i class="ico-privacy-person" aria-hidden="true"></i><strong>정보 주체</strong></div>
+                                        <i class="ico-privacy-arrow" aria-hidden="true"></i>
+                                        <ol class="rule-flow-steps">
+                                            <li><div class="rule-flow-card"><strong>STEP 1</strong><span>열람 청구</span></div></li>
+                                            <li class="is-org-start"><div class="rule-flow-card"><strong>STEP 2</strong><span>접수 청구</span></div></li>
+                                            <li class="is-org-end"><div class="rule-flow-card"><strong>STEP 3</strong><span>열람 범위·제한사항 확인</span></div></li>
+                                            <li><div class="rule-flow-card"><strong>STEP 4</strong><span>결과 통지</span></div><em class="rule-flow-note">결정통지: 허용 / 제안 / 연기 / 거부</em></li>
+                                        </ol>
+                                        <span class="rule-flow-org">기획재정부</span>
+                                    </div>
+                                    <p class="rule-flow-contact">※ 문의 기획재정부 재정정책국 재정정보과 · 044-215-7392 · hoseok@korea.kr</p>
+                                </div>
+                                <div class="tab-content" id="ruleFlow2" role="tabpanel" style="display:none;">
+                                    <div class="rule-flow">
+                                        <div class="rule-flow-person"><i class="ico-privacy-person" aria-hidden="true"></i><strong>정보 주체</strong></div>
+                                        <i class="ico-privacy-arrow" aria-hidden="true"></i>
+                                        <ol class="rule-flow-steps">
+                                            <li><div class="rule-flow-card"><strong>STEP 1</strong><span>정정 등 청구</span></div></li>
+                                            <li class="is-org-start"><div class="rule-flow-card"><strong>STEP 2</strong><span>청구 접수</span></div></li>
+                                            <li class="is-org-end"><div class="rule-flow-card"><strong>STEP 3</strong><span>정정 등 범위·제한사항 확인</span></div></li>
+                                            <li><div class="rule-flow-card"><strong>STEP 4</strong><span>결과 통지</span></div><em class="rule-flow-note">결과 통지: 처리 결과 / 거절 등</em></li>
+                                        </ol>
+                                        <span class="rule-flow-org">기획재정부</span>
+                                    </div>
+                                    <p class="rule-flow-contact">※ 문의 기획재정부 재정정책국 재정정보과 · 044-215-7392 · hoseok@korea.kr</p>
+                                </div>
+                                <div class="tab-content" id="ruleFlow3" role="tabpanel" style="display:none;">
+                                    <div class="rule-flow">
+                                        <div class="rule-flow-person"><i class="ico-privacy-person" aria-hidden="true"></i><strong>정보 주체</strong></div>
+                                        <i class="ico-privacy-arrow" aria-hidden="true"></i>
+                                        <ol class="rule-flow-steps">
+                                            <li><div class="rule-flow-card"><strong>STEP 1</strong><span>이의제기</span></div></li>
+                                            <li class="is-org-start"><div class="rule-flow-card"><strong>STEP 2</strong><span>이의제기·불만 접수</span></div></li>
+                                            <li class="is-org-end"><div class="rule-flow-card"><strong>STEP 3</strong><span>접수 내용 검토 및 조치</span></div></li>
+                                            <li><div class="rule-flow-card"><strong>STEP 4</strong><span>결과 통지</span></div><em class="rule-flow-note">결과 통지: 이의제기 처리 결과 등</em></li>
+                                        </ol>
+                                        <span class="rule-flow-org">기획재정부</span>
+                                    </div>
+                                    <p class="rule-flow-contact">※ 문의 기획재정부 재정정책국 재정정보과 · 044-215-7392 · hoseok@korea.kr</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- 제8조 -->
+                        <section class="rule-section" id="rule08">
+                            <h3 class="rule-article-tit"><i class="ico-privacy ico-privacy-07" aria-hidden="true"></i>제8조 개인정보의 안전성 확보 조치</h3>
+                            <div class="rule-group">
+                                <p class="rule-desc">기획재정부(모두의재정)는 개인정보보호법 제29조에 따라 다음과 같이 안전성 확보에 필요한 관리적ㆍ기술적 및 물리적 조치를 취하고 있습니다.</p>
+                                <div class="table-secondary rule-table">
+                                    <div class="scroll">
+                                        <table>
+                                            <caption class="sr-only">개인정보처리 안전성 확보 — 관리적 조치, 기술적 조치, 물리적 조치</caption>
+                                            <colgroup>
+                                                <col style="width:33%">
+                                                <col style="width:33%">
+                                                <col style="width:33%">
+                                            </colgroup>
+                                            <thead>
+                                                <tr><th scope="col">관리적 조치</th><th scope="col">기술적 조치</th><th scope="col">물리적 조치</th></tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr><td>내부관리계획 수립ㆍ시행<br>정기적 직원 교육 등</td><td>접근권한 관리<br>접근통제시스템 설치<br>보안프로그램 설치</td><td>접근통제</td></tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- 제9조 -->
+                        <section class="rule-section" id="rule09">
+                            <h3 class="rule-article-tit"><i class="ico-privacy ico-privacy-12" aria-hidden="true"></i>제9조 개인정보의 자동 수집 장치의 설치·운영 및 거부에 관한 사항</h3>
+                            <div class="rule-group">
+                                <ol class="rule-circle-list">
+                                    <li><span class="num">①</span>기획재정부(모두의재정)는 정보주체의 이용정보를 저장하고 수시로 불러오는 '쿠키(cookie)'를 사용하지 않습니다.</li>
+                                </ol>
+                            </div>
+                        </section>
+
+                        <!-- 제10조 -->
+                        <section class="rule-section" id="rule10">
+                            <h3 class="rule-article-tit"><i class="ico-privacy ico-privacy-13" aria-hidden="true"></i>제10조 개인정보 보호책임자</h3>
+                            <div class="rule-group">
+                                <ol class="rule-circle-list">
+                                    <li><span class="num">①</span>기획재정부(모두의재정)는 개인정보 처리에 관한 업무를 총괄해서 책임지고, 개인정보 처리와 관련한 정보주체의 불만처리 및 피해구제 등을 위하여 아래와 같이 개인정보 보호책임자를 지정하고 있습니다.</li>
+                                </ol>
+                                <div class="table-secondary rule-table">
+                                    <div class="scroll">
+                                        <table>
+                                            <caption class="sr-only">개인정보 보호책임자 및 담당자 연락처 — 구분, 담당부서, 성명, 연락처</caption>
+                                            <colgroup>
+                                                <col style="width:25%">
+                                                <col style="width:25%">
+                                                <col style="width:25%">
+                                                <col style="width:25%">
+                                            </colgroup>
+                                            <thead>
+                                                <tr><th scope="col">구분</th><th scope="col">담당부서</th><th scope="col">성명</th><th scope="col">연락처</th></tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr><td>개인정보보호책임자</td><td>기획조정실</td><td>김언성</td><td>044-215-2631</td></tr>
+                                                <tr><td>개인정보보호담당자</td><td>정보화담당관</td><td>정명수</td><td>044-215-2631<br>msjeong17@korea.kr</td></tr>
+                                                <tr><td>개인정보보호 분야별 담당자</td><td>재정정책국<br>재정정보과</td><td>정호석</td><td>044-215-7392<br>hoseok@korea.kr</td></tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <ol class="rule-circle-list">
+                                    <li><span class="num">②</span>정보주체는 모두의재정시스템의 서비스를 이용하면서 발생한 모든 개인정보 보호 관련 문의, 불만처리, 피해규제 등에 관한 사항을 개인정보 보호책임자 및 담당부서로 문의하실 수 있습니다. 기획재정부는 정보주체의 문의에 대해 지체없이 답변 및 처리해드릴 것입니다.</li>
+                                    <li><span class="num">②</span>개인정보 처리와 관련한 불만 처리, 피해구제 등은 아래와 같은 절차로 처리됩니다.</li>
+                                </ol>
+                            </div>
+                            <div class="rule-flow-box st-return">
+                                <div class="rule-flow">
+                                    <div class="rule-flow-person"><i class="ico-privacy-person" aria-hidden="true"></i><strong>정보 주체</strong></div>
+                                    <i class="ico-privacy-arrow" aria-hidden="true"></i>
+                                    <ol class="rule-flow-steps">
+                                        <li><div class="rule-flow-card"><strong>STEP 1</strong><span>불만처리· 피해구제 문의</span></div></li>
+                                        <li class="is-org-start"><div class="rule-flow-card"><strong>STEP 2</strong><span>접수</span></div></li>
+                                        <li class="is-org-end"><div class="rule-flow-card"><strong>STEP 3</strong><span>피해구제 방안 검토</span></div></li>
+                                        <li><div class="rule-flow-card"><strong>STEP 4</strong><span>피해구제 절차 이행</span></div></li>
+                                    </ol>
+                                    <span class="rule-flow-org">기획재정부</span>
+                                    <span class="rule-flow-return"><span class="rule-flow-return-txt">처리결과 통지</span></span>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- 제11조 -->
+                        <section class="rule-section" id="rule11">
+                            <h3 class="rule-article-tit"><i class="ico-privacy ico-privacy-14" aria-hidden="true"></i>제11조 개인정보 열람청구</h3>
+                            <div class="rule-group">
+                                <ol class="rule-circle-list">
+                                    <li><span class="num">①</span>정보주체는 개인정보 보호법 제35조에 따른 개인정보의 열람 청구를 아래의 부서에 할 수 있습니다. 기획재정부는 정보주체의 개인정보 열람청구가 신속하게 처리되도록 노력하겠습니다.</li>
+                                </ol>
+                                <div class="table-secondary rule-table">
+                                    <div class="scroll">
+                                        <table>
+                                            <caption class="sr-only">부서및기획재정부 재정혁신국 재정정보과 — 개인정보 열람 청구접수·처리 부서명, 성명, 전화, 이메일</caption>
+                                            <colgroup>
+                                                <col style="width:25%">
+                                                <col style="width:25%">
+                                                <col style="width:25%">
+                                                <col style="width:25%">
+                                            </colgroup>
+                                            <thead>
+                                                <tr><th scope="col">개인정보 열람 청구<br>접수·처리 부서명</th><th scope="col">성명</th><th scope="col">전화</th><th scope="col">이메일</th></tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr><td>기획재정부 재정정책국<br>재정정보과</td><td>정호석</td><td>044-215-7392</td><td>hoseok@korea.kr</td></tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <ol class="rule-circle-list">
+                                    <li><span class="num">②</span>정보주체는 제1항의 열람청구 접수·처리부서 이외에, 개인정보보호위원회의 '개인정보 포털' 웹사이트(www.privacy.go.kr)를 통하여서도 개인정보 열람청구를 하실 수 있습니다.</li>
+                                </ol>
+                                <ul class="rule-dash-list">
+                                    <li>개인정보보호위원회 개인정보 포털 → 개인서비스 → 정보주체 권리행사 → 개인정보 열람등요구(공공아이핀을 통한 실명인증 필요)</li>
+                                </ul>
+                            </div>
+                        </section>
+
+                        <!-- 제12조 -->
+                        <section class="rule-section" id="rule12">
+                            <h3 class="rule-article-tit"><i class="ico-privacy ico-privacy-15" aria-hidden="true"></i>제12조 권익침해 구제 방법</h3>
+                            <div class="rule-group">
+                                <p class="rule-desc">정보주체는 개인정보침해로 인한 구제를 받기 위하여 개인정보 분쟁조정위원회, 한국인터넷진흥원 개인정보 침해신고센터 등에 분쟁해결이나 상담 등을 신청할 수 있습니다.<br>이 밖에 기타 개인정보침해의 신고 및 상담에 대하여는 아래의 기관에 문의하시기를 바랍니다.</p>
+                                <div class="table-secondary rule-table">
+                                    <div class="scroll">
+                                        <table>
+                                            <caption class="sr-only">권익침해 구제방법 — 구분, 홈페이지, 전화번호</caption>
+                                            <colgroup>
+                                                <col style="width:33%">
+                                                <col style="width:33%">
+                                                <col style="width:33%">
+                                            </colgroup>
+                                            <thead>
+                                                <tr><th scope="col">구분</th><th scope="col">홈페이지</th><th scope="col">전화번호</th></tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr><td>개인정보 분쟁조정위원회</td><td>www.kopico.go.kr</td><td>1833-6972</td></tr>
+                                                <tr><td>개인정보 침해신고센터</td><td>privacy.kisa.or.kr</td><td>(국번없이) 118</td></tr>
+                                                <tr><td>개인정보 포털</td><td>www.privacy.go.kr</td><td>(국번없이) 118</td></tr>
+                                                <tr><td>대검찰청</td><td>www.spo.go.kr</td><td>(국번없이) 1301</td></tr>
+                                                <tr><td>경찰청</td><td>ecrm.cyber.go.kr</td><td>(국번없이) 182</td></tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- 제13조 -->
+                        <section class="rule-section" id="rule13">
+                            <h3 class="rule-article-tit"><i class="ico-privacy ico-privacy-16" aria-hidden="true"></i>제13조 개인정보의 추가적인 이용·제공 기준</h3>
+                            <div class="rule-group">
+                                <ol class="rule-circle-list">
+                                    <li><span class="num">①</span>기획재정부(모두의재정)는 개인정보 보호법 제15조 제3항(개인정보의 추가적인 이용의 기준) 또는 제17조 제4항(개인정보의 추가적인 제공의 기준)에 따라<br>정보주체의 동의 없이 개인정보를 추가적으로 이용 또는 제공하는 경우 같은 법 시행령 제14조2(개인정보의 추가적인 이용·제공의 기준 등)를 준수하여 정보주체에게 안내하고 이용·제공 하도록 하겠습니다.<br>현재 개인정보 보호법 제15조 제3항과 제 17조 제4항에 따른 추가적인 개인정보 이용·제공은 없습니다.</li>
+                                </ol>
+                            </div>
+                        </section>
+
+                        <!-- 제14조 -->
+                        <section class="rule-section" id="rule14">
+                            <h3 class="rule-article-tit"><i class="ico-privacy ico-privacy-17" aria-hidden="true"></i>제14조 기타 사항</h3>
+                            <div class="rule-group">
+                                <ol class="rule-circle-list">
+                                    <li><span class="num">①</span>기획재정부(모두의재정)는 운영하고 있는 개인정보 처리시스템이 정보주체의 개인정보파일에 미칠 영향에 대해 조사, 분석, 평가하기 위해 「개인정보 보호법」제33조에 따라 "개인정보 영향평가"를 받고 있으며, 개인정보파일에 대해 영향평가를 수행하였습니다.</li>
+                                    <li><span class="num">②</span>기획재정부(모두의재정)는 정보주체의 개인정보를 안전하게 관리하기 위해 「개인정보 보호법」제11조에 따라 매년 개인정보보호위원회 에서 실시하는 "공공기관 개인정보 관리수준진단"을 받고 있으며, 2022년도 개인정보 관리수준진단 평가에서 'S'등급을 획득하였습니다.</li>
+                                    <li><span class="num">③</span>기획재정부(모두의재정)는 개인정보의 안전성을 획득하기 위하여 법령에서 규정하고 있는 사항 이외에도 다음과 같은 활동을 시행하고 있습니다.<br>- 개인정보활동 : 개인정보보호 캠페인</li>
+                                </ol>
+                                <div class="table-secondary rule-table">
+                                    <div class="scroll">
+                                        <table>
+                                            <caption class="sr-only">기타사항 — 개인정보파일의 명칭, 개인정보파일에 기록되는 개인정보의 항목, 영향평가 수행연도</caption>
+                                            <colgroup>
+                                                <col style="width:30%">
+                                                <col style="width:40%">
+                                                <col style="width:30%">
+                                            </colgroup>
+                                            <thead>
+                                                <tr><th scope="col">개인정보파일의 명칭</th><th scope="col">개인정보파일에 기록되는 개인정보의 항목</th><th scope="col">영향평가 수행연도</th></tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr><td>모두의재정 설문조사</td><td>(필수) 성별, 연령, 직업, 연락처, 이메일</td><td rowspan="6">2021년</td></tr>
+                                                <tr><td>모두의재정 온라인<br>모니터링단 개선제안</td><td>(필수) 담당자, 이메일</td></tr>
+                                                <tr><td>모두의재정 OpenAPI<br>인증키 발급</td><td>(필수) 신청자명</td></tr>
+                                                <tr><td>모두의재정 데이터<br>가공 요청</td><td>(필수) 신청자, 이메일</td></tr>
+                                                <tr><td>모두의재정 기관자료<br>등록 서비스</td><td>(필수) 담당자명,소관</td></tr>
+                                                <tr><td>재정데이터 분석서비스<br>(KODAS) 이용</td><td>(필수) 이름,이메일,연락처</td></tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- 제15조 -->
+                        <section class="rule-section" id="rule15">
+                            <h3 class="rule-article-tit"><i class="ico-privacy ico-privacy-18" aria-hidden="true"></i>제15조 개인정보 처리방침 변경</h3>
+                            <div class="rule-group">
+                                <p class="rule-desc">이 개인정보 처리방침은 2023.11.27.부터 적용됩니다. 이전 방침은 아래에서 확인하실 수 있습니다.</p>
+                                <script id="privacy-history-template">
+                                    // 개인정보 처리방침 변경 이력
+                                    $.ajax({url:"privacy-history.txt", dataType:"text", success:function(data){
+                                        $('#privacy-history-template').replaceWith(data);
+                                    }});
+                                </script>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+
+            </div>
+            <!-- //contents -->
+
+            <script id="floating-template">
+                // 플로팅메뉴
+                $.ajax({url:"../common/floating.txt", dataType:"text", success:function(data){
+                    $('#floating-template').replaceWith(data.replace(/"\.\.\//g, '"../../')); // rule/ 하위 경로 보정
+                }});
+            </script>
+        </div>
+        <script id="footer-template">
+            // 푸터
+            $.ajax({url:"../common/footer.txt", dataType:"text", success:function(data){
+                $('#footer-template').replaceWith(data.replace(/"\.\.\//g, '"../../')); // rule/ 하위 경로 보정
+            }});
+        </script>
+    </div>
+    <!-- // wrap -->
+
+    <script>
+        // 개인정보 처리방침 변경 이력 : 숨김 처리된 변경 전/후 내용을 비교보기 팝업에 채워서 표시
+        ruleChangeCompare('.btn-change-compare', '#privacyChangePop');
+    </script>
+
+</body>
+</html>

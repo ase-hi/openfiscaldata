@@ -1119,6 +1119,66 @@ function popOpen(popup, callback){
   if(callback) callback();
 }
 
+// 변경 이력 비교보기 : 행 안에 숨김 처리된 변경 전/후 내용을 비교 팝업 표에 채워서 표시
+// 사용 : ruleChangeCompare('.btn-change-compare', '#privacyChangePop');
+// 팝업 마크업이 페이지에 없으면 body 끝에 생성
+function ruleChangeCompare(btn, popup){
+  if(!$(popup).length){
+    var id = popup.replace('#', '');
+    $('body').append(
+      '<div class="popup-wrap" id="' + id + '">' +
+        '<div class="dim"></div>' +
+        '<div class="pop-wrap">' +
+          '<div class="popup" role="dialog" aria-modal="true" aria-labelledby="' + id + 'Title">' +
+            '<div class="pop-header">' +
+              '<h2 class="title" id="' + id + 'Title">변경 내용 상세 비교보기</h2>' +
+              '<div class="right">' +
+                '<button type="button" class="btn-close" aria-label="변경 내용 상세 비교보기 닫기"><i class="ico-close" aria-hidden="true"></i></button>' +
+              '</div>' +
+            '</div>' +
+            '<div class="pop-body">' +
+              '<div class="table-secondary rule-compare-table">' +
+                '<div class="scroll">' +
+                  '<table>' +
+                    '<caption class="sr-only">개인정보 처리방침 변경 내용 상세 비교 — 변경 전, 변경 후</caption>' +
+                    '<colgroup><col style="width:50%"><col style="width:50%"></colgroup>' +
+                    '<thead><tr><th scope="col">변경 전</th><th scope="col">변경 후</th></tr></thead>' +
+                    '<tbody></tbody>' +
+                  '</table>' +
+                '</div>' +
+              '</div>' +
+            '</div>' +
+          '</div>' +
+        '</div>' +
+      '</div>'
+    );
+  }
+
+  $(document).on('click', btn, function(e){
+    e.preventDefault();
+    var $row = $(this).closest('tr');
+    var $before = $row.find('.rule-change-before .rule-change-item');
+    var $after = $row.find('.rule-change-after .rule-change-item');
+    var rows = '';
+    $after.each(function(i){
+      var title = $(this).data('title') || '';
+      var bHtml = $before.eq(i).html() || '';
+      var aHtml = $(this).html();
+      var isNew = $before.eq(i).text().trim() === '<신설>';
+      function withTitle(h){ // 본문이 조항명으로 시작하지 않으면 조항명을 첫 줄에 표시
+        var key = title.split('(')[0];
+        return !title || (h.indexOf(key) > -1 && h.indexOf(key) < 10) ? h : '<p><strong>' + title + '</strong></p>' + h;
+      }
+      rows += '<tr>' +
+        '<td class="' + (isNew ? 'align-c' : 'align-l') + '">' + (isNew ? bHtml : withTitle(bHtml)) + '</td>' +
+        '<td class="align-l">' + withTitle(aHtml) + '</td>' +
+      '</tr>';
+    });
+    $(popup).find('tbody').html(rows);
+    popOpen(popup);
+  });
+}
+
 function setupFocusTrap($popup) {
   // 팝업 내부의 포커스 가능한 모든 요소 찾기
   const focusableElements = $popup.find(

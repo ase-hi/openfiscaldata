@@ -1,0 +1,433 @@
+<div class="table-secondary rule-table">
+    <div class="scroll">
+        <table>
+            <caption class="sr-only">개인정보 처리방침 변경 이력 — 변경 및 시행시기, 주요항목(조항), 주요 변경내용(요약), 전문보기</caption>
+            <colgroup>
+                <col style="width:160px">
+                <col style="min-width:160px">
+                <col hidden>
+                <col hidden>
+                <col style="min-width:300px">
+                <col style="width:100px">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th scope="col">변경 및 시행시기</th>
+                    <th scope="col">주요항목 (조항)</th>
+                    <th scope="col" hidden>변경 전</th>
+                    <th scope="col" hidden>변경 후</th>
+                    <th scope="col">주요 변경내용 (요약)</th>
+                    <th scope="col">전문보기</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2021. 8. 13</td>
+                    <td class="align-l">최초 제정</td>
+                    <td class="rule-change-before" hidden>
+                        <div class="rule-change-item" data-title=""><p>-</p></div>
+                    </td>
+                    <td class="rule-change-after" hidden>
+                        <div class="rule-change-item" data-title=""><p>-</p></div>
+                    </td>
+                    <td class="align-l">-</td>
+                    <td><a href="UOPKOCNA20.html" class="btn-xsm st-white" title="이전 내용보러가기">보기</a></td>
+                </tr>
+                <tr>
+                    <td>2022. 1. 20</td>
+                    <td class="align-l">① 재정데이터 분석서비스(KODAS) 제공에 따른 처리하는 개인정보 항목 및 보유기간 게시<br>② 개인정보보호법 시행규칙 폐지에 따른 법령 현행화</td>
+                    <td class="rule-change-before" hidden>
+                        <div class="rule-change-item" data-title=""><p>① 재정데이터 분석서비스(KODAS) 제공을 위한 개인정보 처리 메뉴 추가<br>② 개인정보보호법 시행규칙 폐지에 따른 법령 현행화 미흡</p></div>
+                    </td>
+                    <td class="rule-change-after" hidden>
+                        <div class="rule-change-item" data-title=""><p>① 재정데이터 분석서비스(KODAS) 제공에 따른 처리하는 개인정보 항목 및 보유기간 게시<br>② 개인정보보호법 시행규칙 폐지에 따른 법령 현행화</p></div>
+                    </td>
+                    <td class="align-l"><div class="rule-change"><a href="#privacyChangePop" class="btn-xsm st-white btn-change-compare" aria-haspopup="dialog" aria-controls="privacyChangePop">변경 내용 상세 비교 보기</a></div></td>
+                    <td><a href="UOPKOCNA22.html" class="btn-xsm st-white" title="이전 내용보러가기">보기</a></td>
+                </tr>
+                <tr>
+                    <td>2022. 2. 11</td>
+                    <td class="align-l">① 제5조(개인정보처리위탁) 위수탁 기간 변경에 따른 수탁자의 위수탁기간 변경 및 수탁자 현행화</td>
+                    <td class="rule-change-before" hidden>
+                        <div class="rule-change-item" data-title=""><p>① 수탁자 변경 발생</p></div>
+                    </td>
+                    <td class="rule-change-after" hidden>
+                        <div class="rule-change-item" data-title=""><p>① 제5조(개인정보처리위탁) 위수탁 기간 변경에 따른 수탁자의 위수탁기간 변경 및 수탁자 현행화</p></div>
+                    </td>
+                    <td class="align-l"><div class="rule-change"><a href="#privacyChangePop" class="btn-xsm st-white btn-change-compare" aria-haspopup="dialog" aria-controls="privacyChangePop">변경 내용 상세 비교 보기</a></div></td>
+                    <td><a href="UOPKOCNA23.html" class="btn-xsm st-white" title="이전 내용보러가기">보기</a></td>
+                </tr>
+                <tr>
+                    <td>2022. 5. 24</td>
+                    <td class="align-l">① 제5조(개인정보처리위탁) 위수탁 기간 만료에 따른 수탁자 현행화<br>② 질의응답 및 개선제안에 따른 처리하는 개인정보 항목 및 보유기간 게시</td>
+                    <td class="rule-change-before" hidden>
+                        <div class="rule-change-item" data-title=""><p>① 수탁자 변경 발생<br>② 질의응답 및 개선제안을 위한 개인정보 처리메뉴 추가</p></div>
+                    </td>
+                    <td class="rule-change-after" hidden>
+                        <div class="rule-change-item" data-title=""><p>① 제5조(개인정보처리위탁) 위수탁 기간 만료에 따른 수탁자 현행화<br>② 질의응답 및 개선제안에 따른 처리하는 개인정보 항목 및 보유기간 게시</p></div>
+                    </td>
+                    <td class="align-l"><div class="rule-change"><a href="#privacyChangePop" class="btn-xsm st-white btn-change-compare" aria-haspopup="dialog" aria-controls="privacyChangePop">변경 내용 상세 비교 보기</a></div></td>
+                    <td><a href="UOPKOCNA24.html" class="btn-xsm st-white" title="이전 내용보러가기">보기</a></td>
+                </tr>
+                <tr>
+                    <td>2022. 7. 5</td>
+                    <td class="align-l">① 제10조(개인정보보호책임자) 개인정보보호책임자 변경에 따른 현행화</td>
+                    <td class="rule-change-before" hidden>
+                        <div class="rule-change-item" data-title=""><p>① 개인정보보호책임자 변경 발생</p></div>
+                    </td>
+                    <td class="rule-change-after" hidden>
+                        <div class="rule-change-item" data-title=""><p>① 제10조(개인정보보호책임자) 개인정보보호책임자 변경에 따른 현행화</p></div>
+                    </td>
+                    <td class="align-l"><div class="rule-change"><a href="#privacyChangePop" class="btn-xsm st-white btn-change-compare" aria-haspopup="dialog" aria-controls="privacyChangePop">변경 내용 상세 비교 보기</a></div></td>
+                    <td><a href="UOPKOCNA25.html" class="btn-xsm st-white" title="이전 내용보러가기">보기</a></td>
+                </tr>
+                <tr>
+                    <td>2022. 10. 12</td>
+                    <td class="align-l">① 제10조(개인정보보호책임자) 개인정보보호 분야별 담당자에 변경 따른 현행화<br>② 제11조(개인정보 열람청구) 열람청구 부서 담당자 변경에 따른 현행화</td>
+                    <td class="rule-change-before" hidden>
+                        <div class="rule-change-item" data-title=""><p>① 개인정보보호 분야별 담당자 변경<br>② 개인정보 열람청구 부서 담당자 변경</p></div>
+                    </td>
+                    <td class="rule-change-after" hidden>
+                        <div class="rule-change-item" data-title=""><p>① 제10조(개인정보보호책임자) 개인정보보호 분야별 담당자에 변경 따른 현행화<br>② 제11조(개인정보 열람청구) 열람청구 부서 담당자 변경에 따른 현행화</p></div>
+                    </td>
+                    <td class="align-l"><div class="rule-change"><a href="#privacyChangePop" class="btn-xsm st-white btn-change-compare" aria-haspopup="dialog" aria-controls="privacyChangePop">변경 내용 상세 비교 보기</a></div></td>
+                    <td><a href="UOPKOCNA26.html" class="btn-xsm st-white" title="이전 내용보러가기">보기</a></td>
+                </tr>
+                <tr>
+                    <td>2022. 12. 6</td>
+                    <td class="align-l">① 개인정보처리방침 작성 지침 (2022.03 개정) 권고사항 추가</td>
+                    <td class="rule-change-before" hidden>
+                        <div class="rule-change-item" data-title=""><p>-</p></div>
+                    </td>
+                    <td class="rule-change-after" hidden>
+                        <div class="rule-change-item" data-title=""><p>① 정보주체 관점의 이해성과 가독성 제고를 위한 콘텐츠 개편<br>② 개인정보보호 책임자 변경</p></div>
+                    </td>
+                    <td class="align-l"><div class="rule-change"><a href="#privacyChangePop" class="btn-xsm st-white btn-change-compare" aria-haspopup="dialog" aria-controls="privacyChangePop">변경 내용 상세 비교 보기</a></div></td>
+                    <td><a href="UOPKOCNA27.html" class="btn-xsm st-white" title="이전 내용보러가기">보기</a></td>
+                </tr>
+                <tr>
+                    <td>2023. 1. 13</td>
+                    <td class="align-l">① 개인정보 처리 위수탁 기간 및 재수탁자 변경</td>
+                    <td class="rule-change-before" hidden>
+                        <div class="rule-change-item" data-title=""><p>① 개인정보 처리 위수탁 기간 및 재수탁자 현행화 필요</p></div>
+                    </td>
+                    <td class="rule-change-after" hidden>
+                        <div class="rule-change-item" data-title=""><p>① 개인정보 처리 위수탁 기간 및 재수탁자 현행화 완료</p></div>
+                    </td>
+                    <td class="align-l"><div class="rule-change"><a href="#privacyChangePop" class="btn-xsm st-white btn-change-compare" aria-haspopup="dialog" aria-controls="privacyChangePop">변경 내용 상세 비교 보기</a></div></td>
+                    <td><a href="UOPKOCNA28.html" class="btn-xsm st-white" title="이전 내용보러가기">보기</a></td>
+                </tr>
+                <tr>
+                    <td>2023. 3. 30</td>
+                    <td class="align-l">① 유관기관 관련 정보 현행화<br>② 개인정보보호 분야별 담당자 부서명 현행화<br>③ 개인정보 열람청구 부서 현행화</td>
+                    <td class="rule-change-before" hidden>
+                        <div class="rule-change-item" data-title=""><p>① 유관기관 관련 정보 변경 발생<br>② 개인정보보호 분야별 담당자 부서명 변경 발생<br>③ 개인정보 열람청구 부서명 변경 발생</p></div>
+                    </td>
+                    <td class="rule-change-after" hidden>
+                        <div class="rule-change-item" data-title=""><p>① 유관기관 관련 정보 변경(개인정보 포털)<br>② 개인정보보호 분야별 담당자 부서명 변경<br>③ 개인정보 열람청구 부서명 변경</p></div>
+                    </td>
+                    <td class="align-l"><div class="rule-change"><a href="#privacyChangePop" class="btn-xsm st-white btn-change-compare" aria-haspopup="dialog" aria-controls="privacyChangePop">변경 내용 상세 비교 보기</a></div></td>
+                    <td><a href="UOPKOCNA29.html" class="btn-xsm st-white" title="이전 내용보러가기">보기</a></td>
+                </tr>
+                <tr>
+                    <td>2023. 5. 18</td>
+                    <td class="align-l">① 공공기관 개인정보 관리수준 진단 등급 현행화</td>
+                    <td class="rule-change-before" hidden>
+                        <div class="rule-change-item" data-title=""><p>① 2021년 공공기관 개인정보 관리수준 진단 결과 공개 중</p></div>
+                    </td>
+                    <td class="rule-change-after" hidden>
+                        <div class="rule-change-item" data-title=""><p>① 2022년 공공기관 개인정보 관리수준 진단 등급 공개</p></div>
+                    </td>
+                    <td class="align-l"><div class="rule-change"><a href="#privacyChangePop" class="btn-xsm st-white btn-change-compare" aria-haspopup="dialog" aria-controls="privacyChangePop">변경 내용 상세 비교 보기</a></div></td>
+                    <td><a href="UOPKOCNA30.html" class="btn-xsm st-white" title="이전 내용보러가기">보기</a></td>
+                </tr>
+                <tr>
+                    <td>2023. 7. 1</td>
+                    <td class="align-l">① 개인정보 처리 위수탁 기간 및 재수탁자 변경</td>
+                    <td class="rule-change-before" hidden>
+                        <div class="rule-change-item" data-title=""><p>① 개인정보 처리 위수탁 기간 및 재수탁자 현행화 필요</p></div>
+                    </td>
+                    <td class="rule-change-after" hidden>
+                        <div class="rule-change-item" data-title=""><p>① 개인정보 처리 위수탁 기간 및 재수탁자 현행화 완료</p></div>
+                    </td>
+                    <td class="align-l"><div class="rule-change"><a href="#privacyChangePop" class="btn-xsm st-white btn-change-compare" aria-haspopup="dialog" aria-controls="privacyChangePop">변경 내용 상세 비교 보기</a></div></td>
+                    <td><a href="UOPKOCNA31.html" class="btn-xsm st-white" title="이전 내용보러가기">보기</a></td>
+                </tr>
+                <tr>
+                    <td>2023. 7. 25</td>
+                    <td class="align-l">① 정보주체와 법정대리인 권리·의무 관련 담당자 현행화<br>② 개인정보보호 분야별담당자 현행화<br>③ 개인정보 열람 청구 담당자 현행화</td>
+                    <td class="rule-change-before" hidden>
+                        <div class="rule-change-item" data-title=""><p>① 정보주체와 법정대리인 권리·의무 관련 담당자 현행화 필요<br>② 개인정보보호 분야별담당자 현행화 필요<br>③ 개인정보 열람 청구 담당자 현행화 필요</p></div>
+                    </td>
+                    <td class="rule-change-after" hidden>
+                        <div class="rule-change-item" data-title=""><p>① 정보주체와 법정대리인 권리·의무 관련 담당자 변경 완료<br>② 개인정보보호 분야별담당자 변경 완료<br>③ 개인정보 열람 청구 담당자 변경 완료</p></div>
+                    </td>
+                    <td class="align-l"><div class="rule-change"><a href="#privacyChangePop" class="btn-xsm st-white btn-change-compare" aria-haspopup="dialog" aria-controls="privacyChangePop">변경 내용 상세 비교 보기</a></div></td>
+                    <td><a href="UOPKOCNA32.html" class="btn-xsm st-white" title="이전 내용보러가기">보기</a></td>
+                </tr>
+                <tr>
+                    <td>2023. 9. 20</td>
+                    <td class="align-l">① 개인정보보호 책임자 변경</td>
+                    <td class="rule-change-before" hidden>
+                        <div class="rule-change-item" data-title=""><p>① 개인정보보호 책임자 변경에 따른 현행화 필요</p></div>
+                    </td>
+                    <td class="rule-change-after" hidden>
+                        <div class="rule-change-item" data-title=""><p>① 개인정보보호 책임자 현행화 완료</p></div>
+                    </td>
+                    <td class="align-l"><div class="rule-change"><a href="#privacyChangePop" class="btn-xsm st-white btn-change-compare" aria-haspopup="dialog" aria-controls="privacyChangePop">변경 내용 상세 비교 보기</a></div></td>
+                    <td><a href="UOPKOCNA33.html" class="btn-xsm st-white" title="이전 내용보러가기">보기</a></td>
+                </tr>
+                <tr>
+                    <td>2023. 11. 27</td>
+                    <td class="align-l">① 개인정보 보유기간 변경에 따른 보유기간 현행화<br>② 개인정보 수집 항목 변경에 따른 개인정보 항목 현행화<br>③ 정보주체 권리 보장을 위해 "동의 철회"방법 안내<br>④ 권익침해 구제 방법 안내<br>⑤ 라벨링 변경</td>
+                    <td class="rule-change-before" hidden>
+                        <div class="rule-change-item" data-title=""><p>① 개인정보 보유기간 현행화 필요<br>② 개인정보 수집 항목 현행화 필요<br>③ '23.9 개인정보 보호 법령 개정 전 정보주체 권리 보장 기준으로 안내(열람, 정정, 삭제, 처리정지)<br>④ 권익침해 구제 방법 안내 문구 변경 필요<br>⑤ 라벨링 변경 필요</p></div>
+                    </td>
+                    <td class="rule-change-after" hidden>
+                        <div class="rule-change-item" data-title=""><p>① 개인정보 보유기간 현행화 완료<br>② 개인정보 수집 항목 현행화 완료<br>③ 정보주체 권리 보장을 위해 "동의 철회"방법 추가 안내<br>④ 권익침해 구제 방법 안내 문구 변경 완료<br>⑤ 라벨링 변경 완료</p></div>
+                    </td>
+                    <td class="align-l"><div class="rule-change"><a href="#privacyChangePop" class="btn-xsm st-white btn-change-compare" aria-haspopup="dialog" aria-controls="privacyChangePop">변경 내용 상세 비교 보기</a></div></td>
+                    <td><a href="UOPKOCNA34.html" class="btn-xsm st-white" title="이전 내용보러가기">보기</a></td>
+                </tr>
+                <tr>
+                    <td>2024. 1. 31</td>
+                    <td class="align-l">① 개인정보 처리 위수탁 기간 및 재수탁자 변경</td>
+                    <td class="rule-change-before" hidden>
+                        <div class="rule-change-item" data-title=""><p>① 개인정보 처리 위수탁 기간 및 재수탁자 현행화 필요</p></div>
+                    </td>
+                    <td class="rule-change-after" hidden>
+                        <div class="rule-change-item" data-title=""><p>① 개인정보 처리 위수탁 기간 및 재수탁자 현행화 완료</p></div>
+                    </td>
+                    <td class="align-l"><div class="rule-change"><a href="#privacyChangePop" class="btn-xsm st-white btn-change-compare" aria-haspopup="dialog" aria-controls="privacyChangePop">변경 내용 상세 비교 보기</a></div></td>
+                    <td><a href="UOPKOCNA35.html" class="btn-xsm st-white" title="이전 내용보러가기">보기</a></td>
+                </tr>
+                <tr>
+                    <td>2024. 4. 30</td>
+                    <td class="align-l">① 개인정보보호 책임자 및 담당자 변경<br>② 개인정보 열람청구 담당자 변경<br>③ 개인정보 관리수준진단 평가 등급 현행화</td>
+                    <td class="rule-change-before" hidden>
+                        <div class="rule-change-item" data-title=""><p>① 개인정보보호 책임자 및 담당자 변경에 따른 현행화 필요<br>② 개인정보 열람청구 담당자 연락처 변경에 따른 현행화 필요<br>③ 개인정보 관리수준진단 평가 등급 현행화 필요</p></div>
+                    </td>
+                    <td class="rule-change-after" hidden>
+                        <div class="rule-change-item" data-title=""><p>① 개인정보보호 책임자 및 담당자 현행화 완료<br>② 개인정보 열람청구 담당자 연락처 현행화 완료<br>③ 개인정보 관리수준진단 평가 등급 현행화 완료</p></div>
+                    </td>
+                    <td class="align-l"><div class="rule-change"><a href="#privacyChangePop" class="btn-xsm st-white btn-change-compare" aria-haspopup="dialog" aria-controls="privacyChangePop">변경 내용 상세 비교 보기</a></div></td>
+                    <td><a href="UOPKOCNA36.html" class="btn-xsm st-white" title="이전 내용보러가기">보기</a></td>
+                </tr>
+                <tr>
+                    <td>2024. 9. 19</td>
+                    <td class="align-l">① 제3조(개인정보 파일의 등록현황 및 처리하는 개인정보 항목)<br>② 제5조(개인정보처리 위탁)<br>③ 제8조의 2(민감정보의 공개 가능성 및 비공개를 선택하는 방법)</td>
+                    <td class="rule-change-before" hidden>
+                        <div class="rule-change-item" data-title=""><p>① 처리하는 개인정보 항목 현행화 및 정보주체 동의 없이 처리하는 항목 공개 필요<br>② 개인정보 처리업무를 재위탁하는 경우 기획재정부(열린재정)의 동의필요<br>③ 민감정보 공개가능성 선택 미반영</p></div>
+                    </td>
+                    <td class="rule-change-after" hidden>
+                        <div class="rule-change-item" data-title=""><p>① 정보주체 동의 유무에 따라 처리하는 개인정보 항목 분류<br>② 개인정보 처리업무를 재위탁하는 경우 기획재정부(열린재정)의 동의필요 문구 작성완료<br>③ 민감정보 공개가능성 선택 반영</p></div>
+                    </td>
+                    <td class="align-l"><div class="rule-change"><a href="#privacyChangePop" class="btn-xsm st-white btn-change-compare" aria-haspopup="dialog" aria-controls="privacyChangePop">변경 내용 상세 비교 보기</a></div></td>
+                    <td><a href="UOPKOCNA37.html" class="btn-xsm st-white" title="이전 내용보러가기">보기</a></td>
+                </tr>
+                <tr>
+                    <td>2024. 10. 23</td>
+                    <td class="align-l">① 제7조(정보주체와 법정대리인의 권리·의무 및 그 행사방법)<br>② 제10조(개인정보 보호책임자)<br>③ 제11조(개인정보 열람청구)</td>
+                    <td class="rule-change-before" hidden>
+                        <div class="rule-change-item" data-title=""><p>① 개인정보 담당자 변경으로 인한 전화번호, 이메일 미반영<br>② 개인정보 담당자 변경으로 인한 전화번호, 이메일 미반영<br>③ 개인정보 담당자 변경으로 인한 전화번호, 이메일 미반영</p></div>
+                    </td>
+                    <td class="rule-change-after" hidden>
+                        <div class="rule-change-item" data-title=""><p>① 변경 된 개인정보 담당자 전화번호, 이메일 반영(044-215-5356, nheelee@korea.kr)<br>② 변경 된 개인정보 담당자 이름, 전화번호, 이메일 반영(이남희, 044-215-5356, nheelee@korea.kr)<br>③ 변경 된 개인정보 담당자 이름, 전화번호, 이메일 반영(이남희, 044-215-5356, nheelee@korea.kr)</p></div>
+                    </td>
+                    <td class="align-l"><div class="rule-change"><a href="#privacyChangePop" class="btn-xsm st-white btn-change-compare" aria-haspopup="dialog" aria-controls="privacyChangePop">변경 내용 상세 비교 보기</a></div></td>
+                    <td><a href="UOPKOCNA38.html" class="btn-xsm st-white" title="이전 내용보러가기">보기</a></td>
+                </tr>
+                <tr>
+                    <td>2024. 11. 21</td>
+                    <td class="align-l">① 제12조(권익침해 구제방법)</td>
+                    <td class="rule-change-before" hidden>
+                        <div class="rule-change-item" data-title=""><p>① 권익침해 구제방법 경찰청 홈페이지 주소 변경 미반영</p></div>
+                    </td>
+                    <td class="rule-change-after" hidden>
+                        <div class="rule-change-item" data-title=""><p>① 변경 된 경찰청 홈페이지 주소 반영( ecrm.cyber.go.kr --&gt; ecrm.police.go.kr)</p></div>
+                    </td>
+                    <td class="align-l"><div class="rule-change"><a href="#privacyChangePop" class="btn-xsm st-white btn-change-compare" aria-haspopup="dialog" aria-controls="privacyChangePop">변경 내용 상세 비교 보기</a></div></td>
+                    <td><a href="UOPKOCNA39.html" class="btn-xsm st-white" title="이전 내용보러가기">보기</a></td>
+                </tr>
+                <tr>
+                    <td>2025. 1. 8</td>
+                    <td class="align-l">① 제5조(개인정보처리 위탁)<br>② 제7조(정보주체외 법정대리인의 권리·의무 및 행사방법)<br>③ 제10조(개인정보 보호책임자)<br>④ 제11조(개인정보 열람청구)</td>
+                    <td class="rule-change-before" hidden>
+                        <div class="rule-change-item" data-title=""><p>① 개인정보 처리 위수탁현행화 필요<br>② 개인정보보호 분야별 담당자 인사 발령에 따른 현행화 필요<br>③ 개인정보보호 담당자 인사 발령에 따른 현행화 및 분야별 책임자 공시필요<br>④ 개인정보보호 분야별 담당자 인사 발령에 따른 현행화 필요</p></div>
+                    </td>
+                    <td class="rule-change-after" hidden>
+                        <div class="rule-change-item" data-title=""><p>① 개인정보 처리 위수탁 현행화 완료(위수탁 기간 변경 완료)<br>② 개인정보보호 분야별 담당자 번호, 이메일 현행화 완료<br>③ 개인정보보호 분야별 담당자 담당 부서, 성명, 번호, 이메일 현행화 완료 및 분야별 책임자 추가 완료<br>④ 개인정보보호 분야별 담당자 담당 부서, 성명, 번호, 이메일 현행화 완료</p></div>
+                    </td>
+                    <td class="align-l"><div class="rule-change"><a href="#privacyChangePop" class="btn-xsm st-white btn-change-compare" aria-haspopup="dialog" aria-controls="privacyChangePop">변경 내용 상세 비교 보기</a></div></td>
+                    <td><a href="UOPKOCNA40.html" class="btn-xsm st-white" title="이전 내용보러가기">보기</a></td>
+                </tr>
+                <tr>
+                    <td>2025. 3. 28</td>
+                    <td class="align-l">① 제7조(정보주체외 법정대리인의 권리·의무 및 행사방법)<br>② 제10조(개인정보 보호책임자)<br>③ 제11조(개인정보 열람청구)</td>
+                    <td class="rule-change-before" hidden>
+                        <div class="rule-change-item" data-title=""><p>① 개인정보보호 분야별 담당자 인사 발령에 따른 현행화 필요<br>② 개인정보보호 담당자 인사 발령에 따른 현황화 필요<br>③ 개인정보보호 분야별 담당자 인사 발령에 따른 현행화 필요</p></div>
+                    </td>
+                    <td class="rule-change-after" hidden>
+                        <div class="rule-change-item" data-title=""><p>① 개인정보보호 분야별 담당자 번호, 이메일 현행화 완료<br>② 개인정보보호 분야별 담당자 담당 부서, 성명, 번호, 이메일 현행화 완료<br>③ 개인정보보호 분야별 담당자 담당 부서, 성명, 번호, 이메일 현행화 완료</p></div>
+                    </td>
+                    <td class="align-l"><div class="rule-change"><a href="#privacyChangePop" class="btn-xsm st-white btn-change-compare" aria-haspopup="dialog" aria-controls="privacyChangePop">변경 내용 상세 비교 보기</a></div></td>
+                    <td><a href="UOPKOCNA41.html" class="btn-xsm st-white" title="이전 내용보러가기">보기</a></td>
+                </tr>
+                <tr>
+                    <td>2025. 7. 2</td>
+                    <td class="align-l">① 제5조(개인정보처리 위탁)</td>
+                    <td class="rule-change-before" hidden>
+                        <div class="rule-change-item" data-title=""><table><thead><tr><th scope="col">재위탁받는 자<br>(재수탁자)</th><th scope="col">위수탁기간</th></tr></thead><tbody><tr><td>효성아이티엑스</td><td>2023.7.1~ 2025.6.30</td></tr></tbody></table></div>
+                    </td>
+                    <td class="rule-change-after" hidden>
+                        <div class="rule-change-item" data-title=""><table><thead><tr><th scope="col">재위탁받는 자<br>(재수탁자)</th><th scope="col">위수탁기간</th></tr></thead><tbody><tr><td>㈜케이티씨에스</td><td>2025.7.1.~2027.6.30.</td></tr></tbody></table></div>
+                    </td>
+                    <td class="align-l"><div class="rule-change"><a href="#privacyChangePop" class="btn-xsm st-white btn-change-compare" aria-haspopup="dialog" aria-controls="privacyChangePop">변경 내용 상세 비교 보기</a></div></td>
+                    <td><a href="UOPKOCNA43.html" class="btn-xsm st-white" title="이전 내용보러가기">보기</a></td>
+                </tr>
+                <tr>
+                    <td>2026. 1. 8</td>
+                    <td class="align-l">개인정보 처리방침이란?<br>개인정보 처리 절차 인포그래픽<br>한눈에 알아보는 개인정보 처리방침<br>목차<br>제1조(개인정보의 처리목적)<br>제2조(개인정보의 처리 및 보유기간)<br>제3조(개인정보 파일의 등록현황 및 처리하는 개인정보 항목)<br>제4조(개인정보의 제3자 제공)<br>제5조(개인정보처리 위탁)<br>제6조(개인정보의 파기)<br>제7조(정보주체와 법정대리인의 권리·의무 및 그 행사방법)<br>제8조(개인정보의 안전성 확보 조치)<br>제8조의2(민감정보의 공개 가능성 및 비공개를 선택하는 방법)<br>제9조(개인정보 자동 수집 장치의 설치·운영 및 거부)<br>제10조(개인정보 보호 책임자)<br>제11조(개인정보 열람청구)<br>제13조(개인정보의 추가적인 이용·제공 기준)<br>제14조(기타사항)</td>
+                    <td class="rule-change-before" hidden>
+                        <div class="rule-change-item" data-title="개인정보 처리방침이란?"><p>기획재정부(열린재정)는 … 수립하여 공개합니다.</p></div>
+                        <div class="rule-change-item" data-title="개인정보 처리 절차 인포그래픽"><p>기획재정부(열린재정)의 ··· 구분됩니다.</p></div>
+                        <div class="rule-change-item" data-title="한눈에 알아보는 개인정보 처리방침"><table><tbody><tr><td>누구에게 문의해야 하나요?</td></tr><tr><td>○ (부서) 기획재정부 재정정책국 재정정보과<br>○ (전화) 044-215-5771</td></tr></tbody></table></div>
+                        <div class="rule-change-item" data-title="목차"><p>기획재정부(열린재정) 개인정보 처리방침··· 있습니다.</p></div>
+                        <div class="rule-change-item" data-title="제1조(개인정보의 처리목적)"><p>기획재정부(열린재정)는 … 처리합니다.<br>기획재정부(열린재정)가 … 다음과 같습니다.</p></div>
+                        <div class="rule-change-item" data-title="제2조(개인정보의 처리 및 보유기간)"><p>① 기획재정부(열린재정)는 … 처리‧보유합니다.</p></div>
+                        <div class="rule-change-item" data-title="제3조(개인정보 파일의 등록현황 및 처리하는 개인정보 항목)"><p>① 기획재정부(열린재정)는 … 수집‧이용합니다.<br>② 기획재정부(열린재정)는··· 없습니다.<br>③ 기획재정부(열린재정)는··· 처리하고 있습니다.<br>※ 기획재정부(열린재정)가 … 갈음합니다.</p></div>
+                        <div class="rule-change-item" data-title="제4조(개인정보의 제3자 제공)"><p>① 기획재정부(열린재정)는 … 제공합니다</p></div>
+                        <div class="rule-change-item" data-title="제5조(개인정보처리 위탁)"><p>① 기획재정부(열린재정)는 … 위탁하고 있습니다.</p><table><thead><tr><th scope="col">위탁받는 자(수탁자)</th><th scope="col">위수탁기간</th></tr><tr><th scope="col">재위탁받는 자(재수탁자)</th><th scope="col">위수탁기간</th></tr></thead><tbody><tr><td>한국재정정보원</td><td>2025. 1. 1. ~ 2025. 12. 31.</td></tr><tr><td>세림티에스지(주)</td><td>2023. 1. 1. ~ 2025. 12. 31.</td></tr></tbody></table><p>② 기획재정부(열린재정)는··· 감독하고 있습니다.<br>③ … 기획재정부(열린재정)의 동의를 받고 있습니다.</p></div>
+                        <div class="rule-change-item" data-title="제6조(개인정보의 파기)"><p>① 기획재정부(열린재정)는 … 파기합니다.<br>③ … 기획재정부(열린재정)는··· 수립하여 파기합니다.<br>기획재정부(열린재정)는 … 선정하고, 기획재정부의 … 개인정보를 파기합니다.</p></div>
+                        <div class="rule-change-item" data-title="제7조(정보주체와 법정대리인의 권리·의무 및 그 행사방법)"><p>① … 기획재정부(열린재정)는 … 아니됩니다.<br>인포그래픽 문구 수정(기획재정부)<br>※ (문의) 기획재정부 재정정책국 재정정보과(044-215-5771, leesh187@korea.kr)</p></div>
+                        <div class="rule-change-item" data-title="제8조(개인정보의 안전성 확보 조치)"><p>기획재정부(열린재정)는 … 취하고 있습니다.</p></div>
+                        <div class="rule-change-item" data-title="제8조의2(민감정보의 공개 가능성 및 비공개를 선택하는 방법)"><p>기획재정부(열린재정)는 … 포함될 수 있습니다.<br>② … 기획재정부는··· 처리해드릴 것입니다.</p></div>
+                        <div class="rule-change-item" data-title="제9조(개인정보 자동 수집 장치의 설치·운영 및 거부)"><p>① 기획재정부(열린재정)는 정보주체의 이용정보를 저장하고 수시로 불러오는 ‘쿠키(cookie)’를 사용하지 않습니다.</p></div>
+                        <div class="rule-change-item" data-title="제10조(개인정보 보호 책임자)"><p>① 기획재정부(열린재정)는 … 지정하고 있습니다.</p><table><thead><tr><th scope="col">담당부서</th><th scope="col">성명</th><th scope="col">연락처</th></tr></thead><tbody><tr><td>기획조정실</td><td>김진명</td><td>044-215-2009</td></tr><tr><td>정보화담당관</td><td>이철영</td><td>044-215-2642<br>topman21@korea.kr</td></tr><tr><td>재정정책국 재정정보과</td><td>주영</td><td>044-215-5770<br>young91@korea.kr</td></tr><tr><td>재정정책국 재정정보과</td><td>이성한</td><td>044-215-5771<br>leesh187@korea.kr</td></tr></tbody></table><p>② … 기획재정부(열린재정)의··· 문의할 수 있습니다.<br>기획재정부는··· 처리해드릴 것입니다.<br>③ (생략)인포그래픽 문구 수정(기획재정부)</p></div>
+                        <div class="rule-change-item" data-title="제11조(개인정보 열람청구)"><p>① … 기획재정부(열린재정)는 … 노력하겠습니다.</p><table><thead><tr><th scope="col">개인정보 열람 청구 접수·처리 부서명</th><th scope="col">성명</th><th scope="col">전화</th><th scope="col">이메일</th></tr></thead><tbody><tr><td>재정정책국 재정정보과</td><td>이성한</td><td>044-215-5771</td><td>leesh187@korea.kr</td></tr></tbody></table></div>
+                        <div class="rule-change-item" data-title="제13조(개인정보의 추가적인 이용·제공 기준)"><p>① 기획재정부(열린재정)는 … 하겠습니다.</p></div>
+                        <div class="rule-change-item" data-title="제14조(기타사항)"><p>① 기획재정부(열린재정) … 영향평가를 수행하였습니다.<br>② 기획재정부(열린재정)는 정보주체의 개인정보를 안전하게 관리하기 위해 개인정보 보호법 제11조에 따라 매년 개인정보보호위원회에서 실시하는 “공공기관 개인정보 관리수준진단”을 받고 있으며, 2023년도 개인정보 관리수준진단 평가에서 “A”등급을 획득하였습니다.<br>③ 기획예산처(열린재정)는 … 시행하고 있습니다.</p></div>
+                    </td>
+                    <td class="rule-change-after" hidden>
+                        <div class="rule-change-item" data-title="개인정보 처리방침이란?"><p>기획예산처(열린재정)는 … 수립하여 공개합니다.</p></div>
+                        <div class="rule-change-item" data-title="개인정보 처리 절차 인포그래픽"><p>기획예산처(열린재정)의 ··· 구분됩니다.</p></div>
+                        <div class="rule-change-item" data-title="한눈에 알아보는 개인정보 처리방침"><table><tbody><tr><td>누구에게 문의해야 하나요?</td></tr><tr><td>○ (부서) 기획예산처 열린재정정보과<br>○ (전화) 044-214-1951</td></tr></tbody></table></div>
+                        <div class="rule-change-item" data-title="목차"><p>기획예산처(열린재정) 개인정보 처리방침 ··· 있습니다.</p></div>
+                        <div class="rule-change-item" data-title="제1조(개인정보의 처리목적)"><p>기획예산처(열린재정)는 … 처리합니다.<br>기획예산처(열린재정)가 … 다음과 같습니다.</p></div>
+                        <div class="rule-change-item" data-title="제2조(개인정보의 처리 및 보유기간)"><p>① 기획예산처(열린재정)는 … 처리‧보유합니다.</p></div>
+                        <div class="rule-change-item" data-title="제3조(개인정보 파일의 등록현황 및 처리하는 개인정보 항목)"><p>① 기획예산처(열린재정)는 … 수집‧이용합니다.<br>② 기획예산처(열린재정)는··· 없습니다.<br>③ 기획예산처(열린재정)는··· 처리하고 있습니다.<br>※ 기획예산처(열린재정)가 … 갈음합니다.</p></div>
+                        <div class="rule-change-item" data-title="제4조(개인정보의 제3자 제공)"><p>① 기획예산처(열린재정)는 … 제공합니다.</p></div>
+                        <div class="rule-change-item" data-title="제5조(개인정보처리 위탁)"><p>① 기획예산처(열린재정)는 … 위탁하고 있습니다.</p><table><thead><tr><th scope="col">위탁받는 자(수탁자)</th><th scope="col">위수탁기간</th></tr><tr><th scope="col">재위탁받는 자(재수탁자)</th><th scope="col">위수탁기간</th></tr></thead><tbody><tr><td>한국재정정보원</td><td>2026. 1. 1. ~ 2026. 12. 31.</td></tr><tr><td>세림티에스지(주)</td><td>2026. 1. 1. ~ 2028. 12. 31.</td></tr></tbody></table><p>② 기획예산처(열린재정)는··· 감독하고 있습니다.<br>③ … 기획예산처(열린재정)의 동의를 받고 있습니다.</p></div>
+                        <div class="rule-change-item" data-title="제6조(개인정보의 파기)"><p>① 기획예산처(열린재정)는 … 파기합니다.<br>③ … 기획예산처(열린재정)는··· 수립하여 파기합니다.<br>기획예산처(열린재정)는 … 선정하고, 기획예산처(열린재정)의 … 개인정보를 파기합니다.</p></div>
+                        <div class="rule-change-item" data-title="제7조(정보주체와 법정대리인의 권리·의무 및 그 행사방법)"><p>⑦ … 기획예산처(열린재정)가 … 아니됩니다.<br>인포그래픽 문구 수정(기획예산처)<br>※ (문의) 기획예산처 열린재정정보과(044-214-1951, leesh187@korea.kr)</p></div>
+                        <div class="rule-change-item" data-title="제8조(개인정보의 안전성 확보 조치)"><p>기획예산처(열린재정)는 … 취하고 있습니다.</p></div>
+                        <div class="rule-change-item" data-title="제8조의2(민감정보의 공개 가능성 및 비공개를 선택하는 방법)"><p>① 기획예산처(열린재정)는 … 포함될 수 있습니다.<br>② … 기획예산처(열린재정)는··· 처리해드릴 것입니다.</p></div>
+                        <div class="rule-change-item" data-title="제9조(개인정보 자동 수집 장치의 설치·운영 및 거부)"><p>① 기획예산처(열린재정)는 정보주체에게 개별적인 서비스와 편의를 제공하기 위해 이용정보를 저장하고 수시로 불러오는 쿠키(cookie)를 사용합니다.<br>② 쿠키는 웹사이트 운영에 이용되는 서버(http)가 정보주체의 브라우저에게 보내는 소량의 정보로서 정보주체의 컴퓨터 또는 모바일에 저장되며, 웹사이트 접속 시 정보주체의 브라우저에서 서버로 자동 전송됩니다.<br>③ 정보주체는 브라우저 옵션 설정을 통해 쿠키 허용, 차단 등의 설정을 할 수 있습니다.<br>웹 브라우저에서 쿠키 허용/차단<br>크롬(Chrome) : 웹브라우저 오른쪽 상단 ‘⋮’ 표시 선택 〉 새 시크릿 창 (단축키 : Ctrl+Shift+N)<br>엣지(Edge) : 웹브라우저 오른쪽 상단 ‘⋯’ 표시 선택 〉 새 InPrivate 창 (단축기 : Ctrl+Shift+N)<br>모바일 브라우저에서 쿠키 허용/차단<br>크롬(Chrome) : 모바일 브라우저 오른쪽 상단 ‘⋮’ 표시 선택 〉 새 시크릿 탭<br>사파리(Safari) : 모바일 기기 설정 〉 사파리(Safari) 〉 고급 〉 모든 쿠키 차단<br>삼성 인터넷 : 모바일 브라우저 아래쪽 ‘탭’ 아이콘 선택 〉 비밀 모드 켜기 〉 시작</p></div>
+                        <div class="rule-change-item" data-title="제10조(개인정보 보호 책임자)"><p>① 기획예산처(열린재정)는 … 지정하고 있습니다.</p><table><thead><tr><th scope="col">담당부서</th><th scope="col">성명</th><th scope="col">연락처</th></tr></thead><tbody><tr><td>정책기획관</td><td>김태곤</td><td>044-214-2500</td></tr><tr><td>정보화담당관</td><td>구본균</td><td>044-214-1477<br>koo382@korea.kr</td></tr><tr><td>열린재정정보과</td><td>최진광</td><td>044-214-1950<br>jk.choi.kmof@korea.kr</td></tr><tr><td>열린재정정보과</td><td>이성한</td><td>044-214-1951<br>leesh187@korea.kr</td></tr></tbody></table><p>② … 기획예산처(열린재정)의··· 문의할 수 있습니다.<br>기획예산처(열린재정)는··· 처리해드릴 것입니다.<br>③ (생략) 인포그래픽 문구 수정(기획예산처)</p></div>
+                        <div class="rule-change-item" data-title="제11조(개인정보 열람청구)"><p>① … 기획예산처(열린재정)는 … 노력하겠습니다.</p><table><thead><tr><th scope="col">개인정보 열람 청구 접수·처리 부서명</th><th scope="col">성명</th><th scope="col">전화</th><th scope="col">이메일</th></tr></thead><tbody><tr><td>열린재정정보과</td><td>이성한</td><td>044-214-1951</td><td>leesh187@korea.kr</td></tr></tbody></table></div>
+                        <div class="rule-change-item" data-title="제13조(개인정보의 추가적인 이용·제공 기준)"><p>① 기획예산처(열린재정)는 … 하겠습니다.</p></div>
+                        <div class="rule-change-item" data-title="제14조(기타사항)"><p>① 기획예산처(열린재정) … 영향평가를 수행하였습니다.<br>② 기획예산처(열린재정)는 정보주체의 개인정보를 안전하게 관리하기 위해 개인정보 보호법 제11조의2에 따라 매년 개인정보보호위원회에서 실시하는 “개인정보 보호수준 평가”을 받고 있으며, 2024년도 개인정보 보호수준 평가에서 “A”등급을 획득하였습니다.<br>③ 기획예산처(열린재정)는 ···시행하고 있습니다.</p></div>
+                    </td>
+                    <td class="align-l"><div class="rule-change"><a href="#privacyChangePop" class="btn-xsm st-white btn-change-compare" aria-haspopup="dialog" aria-controls="privacyChangePop">변경 내용 상세 비교 보기</a></div></td>
+                    <td><a href="UOPKOCNA44.html" class="btn-xsm st-white" title="이전 내용보러가기">보기</a></td>
+                </tr>
+                <tr>
+                    <td>2026. 3. 16</td>
+                    <td class="align-l">제10조 개인정보 보호책임자</td>
+                    <td class="rule-change-before" hidden>
+                        <div class="rule-change-item" data-title="제10조(개인정보 보호 책임자)"><p>① (생략)</p><table><thead><tr><th scope="col">담당부서</th><th scope="col">성명</th><th scope="col">연락처</th></tr></thead><tbody><tr><td>정책기획관</td><td>김태곤</td><td>044-214-2500</td></tr><tr><td>정보화담당관</td><td>구본균</td><td>044-214-1477<br>koo382@korea.kr</td></tr><tr><td>열린재정정보과</td><td>최진광</td><td>044-214-1950<br>jk.choi.kmof@korea.kr</td></tr><tr><td>열린재정정보과</td><td>이성한</td><td>044-214-1951<br>leesh187@korea.kr</td></tr></tbody></table><p>②~③ (생략)</p></div>
+                    </td>
+                    <td class="rule-change-after" hidden>
+                        <div class="rule-change-item" data-title="제10조(개인정보 보호 책임자)"><p>① (현행과 같음)</p><table><thead><tr><th scope="col">담당부서</th><th scope="col">성명</th><th scope="col">연락처</th></tr></thead><tbody><tr><td>정책기획관</td><td>박봉용</td><td>044-214-1400</td></tr><tr><td>정보화담당관</td><td>구본균</td><td>044-214-1477<br>koo382@korea.kr</td></tr><tr><td>열린재정정보과</td><td>문진주</td><td>044-214-1950<br>answlswn@korea.kr</td></tr><tr><td>열린재정정보과</td><td>이성한</td><td>044-214-1951<br>leesh187@korea.kr</td></tr></tbody></table><p>②~③ (현행과 같음)</p></div>
+                    </td>
+                    <td class="align-l"><div class="rule-change"><a href="#privacyChangePop" class="btn-xsm st-white btn-change-compare" aria-haspopup="dialog" aria-controls="privacyChangePop">변경 내용 상세 비교 보기</a></div></td>
+                    <td><a href="UOPKOCNA45.html" class="btn-xsm st-white" title="이전 내용보러가기">보기</a></td>
+                </tr>
+                <tr>
+                    <td>2026. 5. 26</td>
+                    <td class="align-l">제5조 개인정보처리의 위탁<br>제7조 정보주체와 법정대리인의 권리·의무 및 그 행사방법<br>제10조 개인정보 보호책임자<br>제11조 개인정보 열람청구<br>제14조 기타사항</td>
+                    <td class="rule-change-before" hidden>
+                        <div class="rule-change-item" data-title="제5조(개인정보처리 위탁)"><p>① (생략)</p><table><thead><tr><th scope="col">위탁받는자(재수탁자)</th><th scope="col">위수탁기간</th></tr></thead><tbody><tr><td colspan="2">(생략)</td></tr></tbody></table><table><thead><tr><th scope="col">재위탁받는자(재수탁자)</th><th scope="col">위수탁기간</th></tr></thead><tbody><tr><td colspan="2">(생략)</td></tr></tbody></table><p>②~④ (생략)</p></div>
+                        <div class="rule-change-item" data-title="제7조(정보주체와 법정대리인의 권리·의무 및 그 행사방법)"><p>①~⑧ (생략)<br>⑨ 개인정보 처리와 관련한 불만 처리, 피해구제 등은 아래와 같은 절차로 처리됩니다.<br>인포그래픽<br>※ (문의) 기획예산처 열린재정정보과(044-214-1951, leesh187@korea.kr)</p></div>
+                        <div class="rule-change-item" data-title="제10조(개인정보 보호책임자)"><p>① 기획예산처(열린재정)는 개인정보 처리에 관한 업무를 총괄해서 책임지고, 개인정보 처리와 관련한 정보주체의 불만처리 및 피해구제 등을 위하여 아래와 같이 개인정보 보호책임자를 지정하고 있습니다.</p><table><thead><tr><th scope="col">구분</th><th scope="col">담당부서</th><th scope="col">성명</th><th scope="col">연락처</th></tr></thead><tbody><tr><td colspan="4">현행과 같음</td></tr><tr><td>개인정보보호 분야별담당자</td><td>열린재정정보과</td><td>이성한</td><td>044-214-1951<br>leesh187@korea.kr</td></tr></tbody></table><p>②~③ (생략)</p></div>
+                        <div class="rule-change-item" data-title="제11조(개인정보 열람청구)"><p>① 정보주체는 개인정보 보호법 제35조에 따른 개인정보의 열람 청구를 아래의 부서에 할 수 있습니다.<br>기획예산처(열린재정)는 정보주체의 개인정보 열람청구가 신속하게 처리되도록 노력하겠습니다.</p><table><thead><tr><th scope="col">개인정보 열람 청구<br>접수·처리 부서명</th><th scope="col">성명</th><th scope="col">전화</th><th scope="col">이메일</th></tr></thead><tbody><tr><td>열린재정정보과</td><td>이성한</td><td>044-214-1951</td><td>leesh187@korea.kr</td></tr></tbody></table><p>② (생략)</p></div>
+                        <div class="rule-change-item" data-title="제14조(기타 사항)"><p>① (생략)<br>② 기획예산처(열린재정)는 정보주체의 개인정보를 안전하게 관리하기 위해 개인정보 보호법 제11조의2에 따라 매년 개인정보보호위원회에서 실시하는 “개인정보 보호수준 평가”을 받고 있으며, 2024년도 개인정보 보호수준 평가에서 “A”등급을 획득하였습니다.<br>③ (생략)</p></div>
+                    </td>
+                    <td class="rule-change-after" hidden>
+                        <div class="rule-change-item" data-title="제5조(개인정보처리 위탁)"><p>① (현행과 같음)</p><table><thead><tr><th scope="col">위탁받는자(수탁자)</th><th scope="col">위수탁기간</th></tr></thead><tbody><tr><td colspan="2">(현행과 같음)</td></tr><tr><td>㈜씨지인사이드</td><td>2026.4.6.~2027.3.2</td></tr><tr><td>㈜세명소프트</td><td>2026.4.6.~2027.3.2</td></tr></tbody></table><table><thead><tr><th scope="col">재위탁받는 자(재수탁자)</th><th scope="col">위수탁기간</th></tr></thead><tbody><tr><td colspan="2">(현행과 같음)</td></tr><tr><td>㈜한국무역정보통신</td><td>2026.1.1.~2028.12.31.</td></tr><tr><td>주식회사 마제스타지</td><td>2026.4.23.~2026.12.15.</td></tr><tr><td>㈜리빈에이아이</td><td>2026.1.1.~2026.12.31.</td></tr></tbody></table><table><thead><tr><th scope="col">재재위탁받는 자(재재수탁자)</th><th scope="col">위수탁기간</th></tr></thead><tbody><tr><td>(주)마크로밀 엠브레인</td><td>2026.5.14. ~ 2026.12.15.</td></tr></tbody></table><p>②~④ (현행과 같음)</p></div>
+                        <div class="rule-change-item" data-title="제7조(정보주체와 법정대리인의 권리·의무 및 그 행사방법)"><p>①~⑧ (현행과 같음)<br>⑨ 개인정보 처리와 관련한 불만 처리, 피해구제 등은 아래와 같은 절차로 처리됩니다.<br>인포그래픽<br>※ (문의) 기획예산처 열린재정정보과(044-214-1951, ioi9912@korea.kr)</p></div>
+                        <div class="rule-change-item" data-title="제10조(개인정보 보호책임자)"><p>① 기획예산처(열린재정)는 개인정보 처리에 관한 업무를 총괄해서 책임지고, 개인정보 처리와 관련한 정보주체의 불만처리 및 피해구제 등을 위하여 아래와 같이 개인정보 보호책임자를 지정하고 있습니다.</p><table><thead><tr><th scope="col">구분</th><th scope="col">담당부서</th><th scope="col">성명</th><th scope="col">연락처</th></tr></thead><tbody><tr><td colspan="4">현행과 같음</td></tr><tr><td>개인정보보호 분야별담당자</td><td>열린재정정보과</td><td>김숙</td><td>044-214-1951<br>ioi9912@korea.kr</td></tr></tbody></table><p>②~③ (현행과 같음)</p></div>
+                        <div class="rule-change-item" data-title="제11조(개인정보 열람청구)"><p>① 정보주체는 개인정보 보호법 제35조에 따른 개인정보의 열람 청구를 아래의 부서에 할 수 있습니다.<br>기획예산처(열린재정)는 정보주체의 개인정보 열람청구가 신속하게 처리되도록 노력하겠습니다.</p><table><thead><tr><th scope="col">개인정보 열람 청구<br>접수·처리 부서명</th><th scope="col">성명</th><th scope="col">전화</th><th scope="col">이메일</th></tr></thead><tbody><tr><td>열린재정정보과</td><td>김숙</td><td>044-214-1951</td><td>ioi9912@korea.kr</td></tr></tbody></table><p>② (현행과 같음)</p></div>
+                        <div class="rule-change-item" data-title="제14조(기타 사항)"><p>① (현행과 같음)<br>② 기획예산처(열린재정)는 정보주체의 개인정보를 안전하게 관리하기 위해 개인정보 보호법 제11조의2에 따라 매년 개인정보보호위원회에서 실시하는 “개인정보 보호수준 평가”을 받고 있으며, 2025년도 개인정보 보호수준 평가에서 “A”등급을 획득하였습니다.<br>③ (현행과 같음)</p></div>
+                    </td>
+                    <td class="align-l"><div class="rule-change"><a href="#privacyChangePop" class="btn-xsm st-white btn-change-compare" aria-haspopup="dialog" aria-controls="privacyChangePop">변경 내용 상세 비교 보기</a></div></td>
+                    <td><a href="UOPKOCNA46.html" class="btn-xsm st-white" title="이전 내용보러가기">보기</a></td>
+                </tr>
+                <tr>
+                    <td>2026. 6. 18</td>
+                    <td class="align-l">한눈에 알아보는 개인정보 처리방침<br>제7조 정보주체와 법정대리인의 권리·의무 및 그 행사방법<br>제10조 개인정보 보호책임자<br>제11조 개인정보 열람청구</td>
+                    <td class="rule-change-before" hidden>
+                        <div class="rule-change-item" data-title="한눈에 알아보는 개인정보 처리방침"><table><tbody><tr><td>누구에게 문의해야 하나요?</td></tr><tr><td>○ (부서) 기획예산처 열린재정정보과<br>○ (전화) 044-214-1951</td></tr></tbody></table></div>
+                        <div class="rule-change-item" data-title="제7조(정보주체와 법정대리인의 권리·의무 및 그 행사방법)"><p>① (생략)<br>1. ~ 5. (생략)<br>6. &lt;신설&gt;<br>② 제1항에 … 지체 없이 조치하겠습니다.<br>③ ~ ⑨ (생략)<br>⑩ &lt;신설&gt;<br>인포그래픽<br>※ (문의) 기획예산처 열린재정정보과<br>(044-214-1951, ioi9912@korea.kr)</p></div>
+                        <div class="rule-change-item" data-title="제10조(개인정보 보호책임자)"><p>① (생략)</p><table><thead><tr><th scope="col">구분</th><th scope="col">담당부서</th><th scope="col">성명</th><th scope="col">연락처</th></tr></thead><tbody><tr><td colspan="4">(생략)</td></tr><tr><td>개인정보보호 분야별담당자</td><td>열린재정정보과</td><td>김숙</td><td>044-214-1951<br>ioi9912@korea.kr</td></tr></tbody></table><p>②~③ (생략)</p></div>
+                        <div class="rule-change-item" data-title="제11조(개인정보 열람청구)"><p>① (생략)</p><table><thead><tr><th scope="col">개인정보 열람 청구<br>접수·처리 부서명</th><th scope="col">성명</th><th scope="col">전화</th><th scope="col">이메일</th></tr></thead><tbody><tr><td>열린재정정보과</td><td>김숙</td><td>044-214-1951</td><td>ioi9912@korea.kr</td></tr></tbody></table><p>② (생략)</p></div>
+                    </td>
+                    <td class="rule-change-after" hidden>
+                        <div class="rule-change-item" data-title="한눈에 알아보는 개인정보 처리방침"><table><tbody><tr><td>누구에게 문의해야 하나요?</td></tr><tr><td>○ (부서) 기획예산처 열린재정정보과<br>○ (전화) 044-214-1953</td></tr></tbody></table></div>
+                        <div class="rule-change-item" data-title="제7조(정보주체와 법정대리인의 권리·의무 및 그 행사방법)"><p>① (변경 전과 같음)<br>1. ~ 5. (변경 전과 같음)<br>6. 개인정보 본인전송 요구<br>② 제1항제1호에서 제5호까지에 … 지체 없이 조치하겠습니다.<br>③ ~ ⑨ (변경 전과 같음)<br>⑩ 제1항제6호에 따른 권리행사에 대해 정보주체는 언제든지 열린재정 재정정보공개시스템 ‘알림마당 &gt; Q&amp;A’를 통해 개인정보 본인전송을 요구할 수 있습니다.<br>인포그래픽<br>※ (문의) 기획예산처 열린재정정보과<br>(044-214-1953, sm718@korea.kr)</p></div>
+                        <div class="rule-change-item" data-title="제10조(개인정보 보호책임자)"><p>① (변경 전과 같음)</p><table><thead><tr><th scope="col">구분</th><th scope="col">담당부서</th><th scope="col">성명</th><th scope="col">연락처</th></tr></thead><tbody><tr><td colspan="4">(변경 전과 같음)</td></tr><tr><td>개인정보보호 분야별담당자</td><td>열린재정정보과</td><td>이성민</td><td>044-214-1953<br>sm718@korea.kr</td></tr></tbody></table><p>②~③ (변경 전과 같음)</p></div>
+                        <div class="rule-change-item" data-title="제11조(개인정보 열람청구)"><p>① (변경 전과 같음)</p><table><thead><tr><th scope="col">개인정보 열람 청구<br>접수·처리 부서명</th><th scope="col">성명</th><th scope="col">전화</th><th scope="col">이메일</th></tr></thead><tbody><tr><td>열린재정정보과</td><td>이성민</td><td>044-214-1953</td><td>sm718@korea.kr</td></tr></tbody></table><p>② (변경 전과 같음)</p></div>
+                    </td>
+                    <td class="align-l"><div class="rule-change"><a href="#privacyChangePop" class="btn-xsm st-white btn-change-compare" aria-haspopup="dialog" aria-controls="privacyChangePop">변경 내용 상세 비교 보기</a></div></td>
+                    <td><a href="UOPKOCNA47.html" class="btn-xsm st-white" title="이전 내용보러가기">보기</a></td>
+                </tr>
+                <tr>
+                    <td>2026. 7. 10</td>
+                    <td class="align-l">제10조 개인정보 보호책임자</td>
+                    <td class="rule-change-before" hidden>
+                        <div class="rule-change-item" data-title="제10조(개인정보 보호 책임자)"><p>① (생략)</p><table><thead><tr><th scope="col">구분</th><th scope="col">담당부서</th><th scope="col">성명</th><th scope="col">연락처</th></tr></thead><tbody><tr><td>개인정보보호책임자</td><td>정책기획관</td><td>박봉용</td><td>044-214-1400</td></tr><tr><td>개인정보보호 담당자</td><td>정보화담당관실</td><td>구본균</td><td>044-214-1477<br>koo382@korea.kr</td></tr></tbody></table><p>②~③ (생략)</p></div>
+                    </td>
+                    <td class="rule-change-after" hidden>
+                        <div class="rule-change-item" data-title="제10조(개인정보 보호 책임자)"><p>① (현행과 같음)</p><table><thead><tr><th scope="col">구분</th><th scope="col">담당부서</th><th scope="col">성명</th><th scope="col">연락처</th></tr></thead><tbody><tr><td>개인정보보호책임자</td><td>기획조정실</td><td>김명중</td><td>044-214-1039</td></tr><tr><td>개인정보보호 담당자</td><td>정보화담당관실</td><td>정태훈</td><td>044-214-1477<br>mvp@korea.kr</td></tr></tbody></table><p>②~③ (현행과 같음)</p></div>
+                    </td>
+                    <td class="align-l"><div class="rule-change"><a href="#privacyChangePop" class="btn-xsm st-white btn-change-compare" aria-haspopup="dialog" aria-controls="privacyChangePop">변경 내용 상세 비교 보기</a></div></td>
+                    <td><a href="UOPKOCNA48.html" class="btn-xsm st-white" title="이전 내용보러가기">보기</a></td>
+                </tr>
+                <tr>
+                    <td>2026. 7. 15</td>
+                    <td class="align-l">한눈에 알아보는 개인정보 처리방침<br>제7조 정보주체와 법정대리인의 권리·의무 및 그 행사방법<br>제10조 개인정보 보호책임자<br>제11조 개인정보 열람청구</td>
+                    <td class="rule-change-before" hidden>
+                        <div class="rule-change-item" data-title="한눈에 알아보는 개인정보 처리방침"><table><tbody><tr><td>누구에게 문의해야 하나요?</td></tr><tr><td>○ (부서) 기획예산처 열린재정정보과<br>○ (전화) 044-214-1953</td></tr></tbody></table></div>
+                        <div class="rule-change-item" data-title="제7조(정보주체와 법정대리인의 권리·의무 및 그 행사방법)"><p>① (변경 전과 같음)<br>1. ~ 5. (변경 전과 같음)<br>6. 개인정보 본인전송 요구<br>② 제1항제1호에서 제5호까지에 … 지체 없이 조치하겠습니다.<br>③ ~ ⑨ (변경 전과 같음)<br>⑩ 제1항제6호에 따른 권리행사에 대해 정보주체는 언제든지 열린재정 재정정보공개시스템 ‘알림마당 &gt; Q&amp;A’를 통해 개인정보 본인전송을 요구할 수 있습니다.<br>인포그래픽<br>※ (문의) 기획예산처 열린재정정보과<br>(044-214-1953, sm718@korea.kr)</p></div>
+                        <div class="rule-change-item" data-title="제10조(개인정보 보호책임자)"><p>① (생략)</p><table><thead><tr><th scope="col">구분</th><th scope="col">담당부서</th><th scope="col">성명</th><th scope="col">연락처</th></tr></thead><tbody><tr><td colspan="4">(변경 전과 같음)</td></tr><tr><td>개인정보보호 분야별담당자</td><td>열린재정정보과</td><td>이성민</td><td>044-214-1953<br>sm718@korea.kr</td></tr></tbody></table></div>
+                        <div class="rule-change-item" data-title="제11조(개인정보 열람청구)"><p>① (생략)</p><table><thead><tr><th scope="col">개인정보 열람 청구<br>접수·처리 부서명</th><th scope="col">성명</th><th scope="col">전화</th><th scope="col">이메일</th></tr></thead><tbody><tr><td>열린재정정보과</td><td>이성민</td><td>044-214-1953</td><td>sm718@korea.kr</td></tr></tbody></table><p>② (생략)</p></div>
+                    </td>
+                    <td class="rule-change-after" hidden>
+                        <div class="rule-change-item" data-title="한눈에 알아보는 개인정보 처리방침"><table><tbody><tr><td>누구에게 문의해야 하나요?</td></tr><tr><td>○ (부서) 기획예산처 열린재정정보과<br>○ (전화) 044-214-1951</td></tr></tbody></table></div>
+                        <div class="rule-change-item" data-title="제7조(정보주체와 법정대리인의 권리·의무 및 그 행사방법)"><p>① ~⑩ (변경 전과 같음)<br>인포그래픽<br>※ (문의) 기획예산처 열린재정정보과<br>(044-214-1951, p1384@korea.kr)</p></div>
+                        <div class="rule-change-item" data-title="제10조(개인정보 보호책임자)"><p>① (변경 전과 같음)</p><table><thead><tr><th scope="col">구분</th><th scope="col">담당부서</th><th scope="col">성명</th><th scope="col">연락처</th></tr></thead><tbody><tr><td colspan="4">(변경 전과 같음)</td></tr><tr><td>개인정보보호 분야별담당자</td><td>열린재정정보과</td><td>박선주</td><td>044-214-1951<br>p1384@korea.kr</td></tr></tbody></table></div>
+                        <div class="rule-change-item" data-title="제11조(개인정보 열람청구)"><p>① (변경 전과 같음)</p><table><thead><tr><th scope="col">개인정보 열람 청구<br>접수·처리 부서명</th><th scope="col">성명</th><th scope="col">전화</th><th scope="col">이메일</th></tr></thead><tbody><tr><td>열린재정정보과</td><td>박선주</td><td>044-214-1951</td><td>p1384@korea.kr</td></tr></tbody></table><p>② (변경 전과 같음)</p></div>
+                    </td>
+                    <td class="align-l"><div class="rule-change"><a href="#privacyChangePop" class="btn-xsm st-white btn-change-compare" aria-haspopup="dialog" aria-controls="privacyChangePop">변경 내용 상세 비교 보기</a></div></td>
+                    <td><a href="UOPKOCNA49.html" class="btn-xsm st-white" title="이전 내용보러가기">보기</a></td>
+                </tr>
+                <tr>
+                    <td>2026. 8. 14</td>
+                    <td class="align-l">제7조의2 사전 협의되지 않은 자동화된 도구의 접근 제한<br>제7조의3 대리인의 의무 및 책임</td>
+                    <td class="rule-change-before" hidden>
+                        <div class="rule-change-item" data-title="제7조의2(사전 협의되지 않은 자동화된 도구의 접근 제한)"><p>&lt;신설&gt;</p></div>
+                        <div class="rule-change-item" data-title="제7조의3(대리인의 의무 및 책임)"><p>&lt;신설&gt;</p></div>
+                    </td>
+                    <td class="rule-change-after" hidden>
+                        <div class="rule-change-item" data-title="제7조의2(사전 협의되지 않은 자동화된 도구의 접근 제한)"><p>제7조의2(사전 협의되지 않은 자동화된 도구의 접근 제한)<br>① 사용자의 위임을 받은 대리인(이하 “대리인”이라 함)이 자동화된 도구(Open API 등)를 이용하여 개인정보 전송을 요구하는 경우, 개인정보의 안전성 확보 및 시스템 부하 방지 등을 위하여 기획예산처(열린재정)와 해당 대리인이 사전에 기술적 방식 및 개인정보의 안전성 확보 등 보안 사항에 대해 협의한 방식이어야 합니다.<br>② 기획예산처(열린재정)는 다음 각 호의 어느 하나에 해당하는 경우에는 서비스 접근을 제한할 수 있습니다.<br>1. 사전 허락 없이 자동화된 수단을 이용하여 개인정보를 스크래핑하는 행위<br>2. 사전 허락 없이 자동화된 수단을 이용하여 서비스에 로그인을 시도 또는 로그인하는 행위(인증정보를 이용하여 로그인 후 개인정보를 수집하는 행위를 포함)<br>3. 기획예산처(열린재정)와 사전에 서면 또는 전자적 방식으로 전송 규격 및 보안 정책을 협의하지 않은 경우<br>4. 과도한 트래픽을 유발하여 기획예산처(열린재정)의 시스템 성능을 저하하거나 다른 이용자의 정상적인 서비스 이용에 장애를 줄 우려가 있는 경우<br>5. 보안상 취약점이 발견되었거나 해킹 등 부정 의심 접속으로 판단되는 경우<br>6. IP를 지속적으로 바꿔가며 접속하는 행위<br>7. CAPTCHA를 외부 솔루션 등을 통해 우회하거나 무력화하는 행위</p></div>
+                        <div class="rule-change-item" data-title="제7조의3(대리인의 의무 및 책임)"><p>제7조의3(대리인의 의무 및 책임)<br>① 자동화된 도구를 이용하여 전송요구권을 대리하는 대리인은 기획예산처(열린재정)가 제시하는 보안 규격 및 기술적 사양을 준수해야 합니다.<br>※ (문의) 기획예산처 열린재정정보과(044-214-1951, p1384@korea.kr)<br>② 기획예산처(열린재정)와 사전에 협의되지 않은 방식을 무단으로 사용하여 발생하는 시스템 장애, 개인정보 유출 등에 대한 모든 책임은 해당 대리인에게 있습니다.<br>③ 기획예산처(열린재정)는 안전한 개인정보 전송을 위해 대리인에게 표준 API방식의 이용을 권고할 수 있으며, 이에 응하지 않을 경우 전송 서비스 제공이 제한될 수 있습니다.</p></div>
+                    </td>
+                    <td class="align-l"><div class="rule-change">
+                        <a href="#privacyChangePop" class="btn-xsm st-white btn-change-compare" aria-haspopup="dialog" aria-controls="privacyChangePop">변경 내용 상세 비교 보기</a>
+                    </div></td>
+                    <td><a href="UOPKOCNA17.html" class="btn-xsm st-white" title="현재 내용보러가기">현재</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
